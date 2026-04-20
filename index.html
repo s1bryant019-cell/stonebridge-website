@@ -7,16 +7,16 @@
   <meta name="description" content="Stonebridge Psychological Group offers clinical therapy, psychological assessment, and forensic services with clarity, steadiness, and professional integrity." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <div class="brand">
+      <a class="brand" href="#">
         <div class="brand-mark">STONEBRIDGE</div>
         <div class="brand-sub">Psychological Group</div>
-      </div>
+      </a>
       <button class="menu-toggle" aria-label="Toggle menu">Menu</button>
       <nav class="menu">
         <a href="#services">Services</a>
@@ -43,18 +43,27 @@
           </div>
         </div>
 
-        <div class="hero-card-wrap">
+        <div class="hero-visual">
           <div class="hero-card">
-            <div class="bridge-graphic" aria-hidden="true">
-              <div class="bridge-top"></div>
-              <div class="bridge-arches">
-                <span></span><span class="center"></span><span></span>
+            <div class="bridge-frame">
+              <div class="bridge-illustration">
+                <div class="bridge-deck"></div>
+                <div class="bridge-piers">
+                  <span></span>
+                  <span class="center"></span>
+                  <span></span>
+                </div>
+                <div class="water-line"></div>
               </div>
-            </div>
-            <div class="card-brand">STONEBRIDGE</div>
-            <div class="card-sub">Psychological Group</div>
-            <div class="placeholder-lines">
-              <span></span><span></span><span></span>
+
+              <div class="card-brand">STONEBRIDGE</div>
+              <div class="card-sub">Psychological Group</div>
+
+              <div class="placeholder-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
         </div>
@@ -67,6 +76,7 @@
           <div class="eyebrow">Services</div>
           <h2>Clear pathways for care, assessment, and consultation.</h2>
         </div>
+
         <div class="cards">
           <article class="service-card">
             <h3>Clinical Therapy</h3>
@@ -106,23 +116,36 @@
     <section id="approach" class="section section-white">
       <div class="container">
         <div class="pillars">
-          <article class="pillar"><div class="icon-box"></div><h3>Grounded presence</h3></article>
-          <article class="pillar"><div class="icon-box"></div><h3>Thoughtful evaluation</h3></article>
-          <article class="pillar"><div class="icon-box"></div><h3>Clinical depth</h3></article>
-          <article class="pillar"><div class="icon-box"></div><h3>Professional integrity</h3></article>
+          <article class="pillar">
+            <div class="icon-box"></div>
+            <h3>Grounded presence</h3>
+          </article>
+          <article class="pillar">
+            <div class="icon-box"></div>
+            <h3>Thoughtful evaluation</h3>
+          </article>
+          <article class="pillar">
+            <div class="icon-box"></div>
+            <h3>Clinical depth</h3>
+          </article>
+          <article class="pillar">
+            <div class="icon-box"></div>
+            <h3>Professional integrity</h3>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section section-dark">
-      <div class="container split contact-split">
-        <div>
+      <div class="container contact-grid">
+        <div class="contact-copy">
           <div class="eyebrow eyebrow-light">Contact</div>
           <h2>Begin with a consultation.</h2>
-          <p class="light-copy">
+          <p>
             Connect to discuss therapy, assessment, or forensic services and determine whether Stonebridge is the right fit for your needs.
           </p>
         </div>
+
         <form class="contact-card" onsubmit="return submitDemoForm(event)">
           <label>
             <span>Name</span>
@@ -145,7 +168,7 @@
             <textarea placeholder="A short note is fine."></textarea>
           </label>
           <button class="btn btn-light" type="submit">Send Inquiry</button>
-          <p class="form-note">Demo form only. You can later connect this to a real contact form service.</p>
+          <p class="form-note">Demo form only for now. We can connect this to a real form next.</p>
         </form>
       </div>
     </section>
@@ -157,7 +180,7 @@
         <div class="footer-brand">STONEBRIDGE</div>
         <div class="footer-sub">Psychological Group</div>
       </div>
-      <div class="footer-copy">Placeholder site mockup prepared for deployment and further customization.</div>
+      <div class="footer-copy">A refined launch-ready mockup for continued customization.</div>
     </div>
   </footer>
 
