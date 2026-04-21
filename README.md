@@ -1,13 +1,3 @@
-# Stonebridge Multi-Page Mockup
+# Stonebridge Mockup Match Update
 
-Included:
-- index.html
-- about.html
-- services.html
-- contact.html
-- styles.css
-- script.js
-- stonebridge-logo.png
-- founder-photo.jpg
-
-Replace the files in your GitHub repo with these, then commit changes. Vercel will redeploy automatically.
+This version is adjusted to more closely match the visual mockup: larger bridge watermark across the right side of the hero and structured footer with logo on the right.
