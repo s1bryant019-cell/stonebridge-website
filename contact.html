@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Stonebridge Psychological Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html">
+      <div class="brand-mark">STONEBRIDGE</div>
+      <div class="brand-sub">Psychological Group</div>
+    </a>
+    <button class="mobile-toggle" aria-label="Toggle menu">Menu</button>
+    <nav class="menu">
+      <a href="index.html" class="">Home</a>
+      <a href="about.html" class="">About</a>
+      <a href="services.html" class="">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-hero section-dark">
+    <div class="container contact-grid">
+      <div class="contact-copy">
+        <div class="eyebrow eyebrow-light">Contact</div>
+        <h1>Begin with a consultation.</h1>
+        <p>Connect to discuss therapy, assessment, or the broader direction of the practice. This contact page is a mockup for now and can later be connected to a real form or scheduling workflow.</p>
+      </div>
+      <form class="contact-card" onsubmit="return submitDemoForm(event)">
+        <label><span>Name</span><input type="text" placeholder="Your name" /></label>
+        <label><span>Email</span><input type="email" placeholder="you@example.com" /></label>
+        <label><span>I'm interested in</span>
+          <select>
+            <option>Clinical Therapy</option>
+            <option>Psychological Assessment</option>
+            <option>Forensic Services</option>
+          </select>
+        </label>
+        <label><span>Briefly share what you're looking for</span><textarea placeholder="A short note is fine."></textarea></label>
+        <button class="btn btn-light" type="submit">Send Inquiry</button>
+        <p class="form-note">Demo form only for now. We can connect this to a real contact form later.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div>
+      <div class="footer-brand">STONEBRIDGE</div>
+      <div class="footer-sub">Psychological Group</div>
+    </div>
+    <div class="footer-copy">Multi-page mockup for continued customization.</div>
+  </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
