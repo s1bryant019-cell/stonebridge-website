@@ -1,1 +1,1 @@
-Version v6: tighter bridge-only watermark crop and adjusted placement to better match the approved reference.
+v7 adjusts the existing bridge-only asset with tighter cropping and CSS transforms to approximate the flatter reference perspective.
