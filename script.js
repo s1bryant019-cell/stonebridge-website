@@ -1,1 +1,6 @@
-document.querySelectorAll('.mobile-toggle').forEach((button)=>{button.addEventListener('click',()=>{const menu=document.querySelector('.menu');if(menu)menu.classList.toggle('open');});});function submitDemoForm(event){event.preventDefault();alert('This is a mockup form for now. It can be connected to a real contact form later.');return false;}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  const toggle=document.querySelector('.mobile-toggle');
+  const menu=document.querySelector('.menu');
+  if(toggle && menu){toggle.addEventListener('click',()=>menu.classList.toggle('open'));}
+});
