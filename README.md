@@ -1,3 +1,3 @@
-# Stonebridge Cleaner Version
+# Stonebridge Approved Mockup Update
 
-This version uses the cleaner homepage style: large right-side bridge watermark, minimal homepage content, and structured footer with right-side logo.
+This version uses a bridge-only watermark in the homepage hero and a footer layout matching the approved mockup.
