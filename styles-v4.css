@@ -1,0 +1,6 @@
+.hero{
+height:400px;
+background:url('bridge-only.png') no-repeat right center;
+background-size:contain;
+opacity:0.2;
+}
