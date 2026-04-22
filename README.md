@@ -1,3 +1,3 @@
-# Stonebridge Mockup Match Update
+# Stonebridge Cleaner Version
 
-This version is adjusted to more closely match the visual mockup: larger bridge watermark across the right side of the hero and structured footer with logo on the right.
+This version uses the cleaner homepage style: large right-side bridge watermark, minimal homepage content, and structured footer with right-side logo.
