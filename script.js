@@ -1,6 +1,1 @@
-
-document.addEventListener('DOMContentLoaded',()=>{
-  const toggle=document.querySelector('.mobile-toggle');
-  const menu=document.querySelector('.menu');
-  if(toggle && menu){toggle.addEventListener('click',()=>menu.classList.toggle('open'));}
-});
+document.addEventListener('DOMContentLoaded',()=>{const t=document.querySelector('.mobile-toggle');const m=document.querySelector('.menu');if(t&&m){t.addEventListener('click',()=>m.classList.toggle('open'));}});
