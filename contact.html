@@ -7,647 +7,174 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *{box-sizing:border-box}
-    :root{
-      --bg:#f6f2ed;
-      --bg-2:#f2ebe4;
-      --surface:#fbf8f4;
-      --border:#ddd3c7;
-      --text:#25303b;
-      --muted:#67737d;
-      --deep:#24303b;
-      --blue:#122b46;
-      --blue-2:#173753;
-      --gold:#c9ab7a;
-      --shadow:0 24px 60px rgba(29,38,46,.08);
-      --card-shadow:0 16px 40px rgba(29,38,46,.05)
-    }
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:"Inter",system-ui,sans-serif;
-      line-height:1.6
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1240px,calc(100% - 64px));margin:0 auto}
-
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:20;
-      backdrop-filter:blur(12px);
-      background:rgba(246,242,237,.94);
-      border-bottom:1px solid rgba(221,211,199,.65)
-    }
-    .nav{
-      min-height:92px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px
-    }
-    .brand-lockup{
-      display:flex;
-      align-items:center;
-      gap:14px
-    }
-    .brand-lockup img{
-      height:46px;
-      width:auto
-    }
-    .menu-wrap{
-      display:flex;
-      align-items:center;
-      gap:34px
-    }
-    .menu{
-      display:flex;
-      align-items:center;
-      gap:30px;
-      color:var(--muted);
-      font-size:.96rem;
-      flex-wrap:wrap
-    }
-    .menu a:hover,.menu a.active{color:var(--text)}
-    .mobile-toggle{
-      display:none;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background:var(--surface);
-      color:var(--text);
-      font:inherit;
-      padding:10px 16px
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:52px;
-      padding:0 24px;
-      border-radius:16px;
-      font-weight:500;
-      border:1px solid transparent;
-      transition:.2s ease
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{
-      background:var(--deep);
-      color:#fff;
-      box-shadow:var(--shadow)
-    }
-
-    .consult-wrap{padding:22px 0 34px}
-    .consult-grid{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:28px;
-      align-items:start
-    }
-    .consult-left{
-      position:relative;
-      overflow:hidden;
-      min-height:740px;
-      border-radius:0 0 0 0;
-      background:linear-gradient(135deg,var(--blue) 0%,#153555 56%,#193d62 100%);
-      color:#fffdf8;
-      padding:56px 58px 320px 58px;
-      border:1px solid rgba(221,211,199,.18)
-    }
-    .consult-left .eyebrow{
-      display:inline-block;
-      padding:8px 14px;
-      border:1px solid rgba(255,255,255,.26);
-      border-radius:999px;
-      text-transform:uppercase;
-      letter-spacing:.22em;
-      font-size:.68rem;
-      color:#efe3d4;
-      background:rgba(255,255,255,.06)
-    }
-    .consult-left h1{
-      margin:22px 0 0;
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.7rem,5vw,5.5rem);
-      line-height:.92;
-      max-width:7.8ch;
-      color:#fffdf8
-    }
-    .gold-rule{
-      width:46px;
-      height:3px;
-      border-radius:999px;
-      background:var(--gold);
-      margin:24px 0 22px
-    }
-    .consult-left p{
-      margin:0 0 20px;
-      max-width:32rem;
-      color:rgba(255,248,239,.95);
-      font-size:1.07rem
-    }
-    .consult-art{
-      position:absolute;
-      left:24px;
-      right:24px;
-      bottom:18px;
-      display:flex;
-      justify-content:flex-start;
-      pointer-events:none
-    }
-    .consult-art img{
-      width:min(100%,520px);
-      opacity:.9;
-      filter:drop-shadow(0 10px 22px rgba(10,20,32,.18))
-    }
-
-    .consult-card{
-      border:1px solid var(--border);
-      box-shadow:var(--card-shadow);
-      background:linear-gradient(180deg,#fcfbf9,#f8f4ef);
-      border-radius:30px;
-      padding:28px 28px 26px
-    }
-    .consult-form{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px 22px;
-      align-items:start
-    }
-    .form-group{display:grid;gap:8px}
-    .form-group.full{grid-column:1 / -1}
-    .form-label{
-      font-size:.94rem;
-      font-weight:600;
-      color:var(--text);
-      line-height:1.2
-    }
-    .form-input,.form-select,.form-textarea{
-      width:100%;
-      border:1px solid rgba(213,201,188,.95);
-      border-radius:16px;
-      background:rgba(255,255,255,.86);
-      color:var(--text);
-      font:inherit;
-      padding:14px 16px;
-      outline:none;
-      transition:border-color .2s ease, box-shadow .2s ease, background .2s ease
-    }
-    .form-input:focus,.form-select:focus,.form-textarea:focus{
-      border-color:#bcae9f;
-      box-shadow:0 0 0 4px rgba(188,174,159,.14);
-      background:#fff
-    }
-    .form-textarea{min-height:122px;resize:vertical}
-    .helper-note{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      color:var(--muted);
-      font-size:.95rem;
-      margin-top:34px
-    }
-    .helper-note svg{width:20px;height:20px;flex:0 0 20px;opacity:.7;margin-top:1px}
-    .dynamic-note{
-      color:var(--muted);
-      font-size:.92rem;
-      min-height:2.6em
-    }
-    .submit-row{
-      margin-top:18px;
-      padding-top:18px;
-      border-top:1px solid rgba(221,211,199,.7);
-      display:grid;
-      grid-template-columns:auto 1fr;
-      gap:22px;
-      align-items:center
-    }
-    .submit-row .btn{
-      min-width:310px;
-      justify-content:center
-    }
-    .submit-note{
-      display:flex;
-      align-items:flex-start;
-      gap:12px;
-      color:var(--muted);
-      font-size:.95rem;
-      max-width:32rem
-    }
-    .submit-note svg{width:18px;height:18px;flex:0 0 18px;opacity:.78;margin-top:2px}
-
-    .consult-lower{
-      margin-top:22px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px
-    }
-    .info-card{
-      border:1px solid var(--border);
-      box-shadow:var(--card-shadow);
-      background:linear-gradient(180deg,#fcfbf9,#f8f4ef);
-      border-radius:24px;
-      padding:22px 22px 20px;
-      display:grid;
-      grid-template-columns:auto 1fr;
-      gap:18px;
-      align-items:start
-    }
-    .info-icon{
-      width:82px;
-      height:82px;
-      border-radius:999px;
-      background:rgba(233,224,210,.58);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden
-    }
-    .info-icon img{width:52px;height:52px;object-fit:contain}
-    .info-card h3{
-      margin:2px 0 8px;
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:2rem;
-      line-height:1;
-      color:var(--deep)
-    }
-    .info-card p{
-      margin:0;
-      color:var(--muted);
-      font-size:1rem
-    }
-
-    .site-footer{
-      padding:40px 0 22px;
-      border-top:1px solid rgba(221,211,199,.65);
-      background:var(--bg-2)
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.25fr .85fr .85fr 1fr 1.1fr;
-      gap:28px;
-      align-items:start;
-      padding-bottom:28px;
-      border-bottom:1px solid rgba(221,211,199,.7)
-    }
-    .footer-brand{
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.8rem;
-      line-height:.95;
-      letter-spacing:.18em
-    }
-    .footer-sub{
-      margin-top:7px;
-      text-transform:uppercase;
-      letter-spacing:.34em;
-      font-size:.74rem;
-      color:var(--muted)
-    }
-    .footer-title{
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.02rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      margin-bottom:14px
-    }
-    .footer-links{display:grid;gap:10px}
-    .footer-copy,.footer-links a,.footer-links span,.footer-small{
-      color:var(--muted);
-      font-size:.98rem
-    }
-    .footer-logo-right{
-      display:flex;
-      justify-content:flex-end;
-      align-items:center;
-      min-height:170px;
-      padding-left:12px;
-      border-left:1px solid rgba(221,211,199,.7)
-    }
-    .footer-logo-right img{width:min(100%,220px);opacity:.94}
-    .footer-bottom{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      align-items:center;
-      padding-top:16px
-    }
-
-    .nav-dropdown{position:relative;display:flex;align-items:center}
-    .nav-dropdown>a{display:inline-flex;align-items:center}
-    .nav-dropdown::after{content:"";position:absolute;left:0;right:0;top:100%;height:14px}
-    .dropdown-menu{
-      position:absolute;
-      top:100%;
-      left:0;
-      min-width:240px;
-      display:none;
-      flex-direction:column;
-      padding:10px;
-      border-radius:18px;
-      background:rgba(255,255,255,.98);
-      border:1px solid rgba(221,211,199,.9);
-      box-shadow:0 18px 40px rgba(29,38,46,.10);
-      z-index:50
-    }
-    .dropdown-menu a{padding:10px 12px;border-radius:12px;color:var(--muted);white-space:nowrap}
-    .dropdown-menu a:hover{background:rgba(242,235,228,.8);color:var(--text)}
-    .nav-dropdown:hover .dropdown-menu{display:flex}
-
-    @media (max-width:1100px){
-      .consult-grid{grid-template-columns:1fr}
-      .consult-left{min-height:auto;padding:54px 32px 250px}
-      .consult-art img{width:min(100%,460px)}
-      .consult-lower{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr 1fr}
-      .footer-logo-right{justify-content:flex-start;border-left:none;padding-left:0}
-    }
-    @media (max-width:760px){
-      .container{width:min(1240px,calc(100% - 36px))}
-      .mobile-toggle{display:inline-flex}
-      .menu{display:none;position:absolute;top:78px;left:20px;right:20px;flex-direction:column;align-items:flex-start;gap:16px;padding:18px;border-radius:22px;background:rgba(255,255,255,.98);border:1px solid var(--border);box-shadow:var(--shadow)}
-      .menu.open{display:flex}
-      .menu-wrap{gap:14px}
-      .brand-lockup img{height:36px}
-      .consult-left{padding:44px 22px 210px}
-      .consult-card{padding:20px 18px 22px;border-radius:24px}
-      .consult-form{grid-template-columns:1fr}
-      .submit-row{grid-template-columns:1fr}
-      .submit-row .btn{min-width:unset;width:100%}
-      .helper-note{margin-top:0}
-      .info-card{grid-template-columns:1fr}
-      .footer-grid,.footer-bottom{grid-template-columns:1fr;display:grid}
-      .footer-logo-right{justify-content:flex-start;border-left:none;padding-left:0}
-      .nav-dropdown{width:100%;flex-direction:column;align-items:flex-start}
-      .dropdown-menu{position:static;display:flex;min-width:unset;width:100%;margin-top:8px;padding:8px 0 0;border:none;box-shadow:none;background:transparent}
-      .dropdown-menu a{padding:8px 0 8px 12px}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a href="index.html" class="brand-lockup" aria-label="Stonebridge home">
-        <img src="stonebridge_psychological_group_logo_design.png" alt="Stonebridge Psychological Group logo">
-      </a>
-
-      <button class="mobile-toggle" aria-label="Toggle menu">Menu</button>
-
-      <div class="menu-wrap">
-        <nav class="menu">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="team.html">Team</a>
-          <div class="nav-dropdown">
-            <a href="services.html">Services</a>
-            <div class="dropdown-menu">
-              <a href="services.html">Services Overview</a>
-              <a href="psychotherapy.html">Psychotherapy</a>
-              <a href="assessment.html">Psychological Assessment</a>
-              <a href="forensic.html">Forensic Services</a>
-            </div>
-          </div>
-          <a href="portal.html">Portal</a>
-        </nav>
-
-        <div class="header-cta">
-          <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+<header class="site-header"><div class="container nav"><a class="site-brand" href="index.html"><img src="stonebridge-header-logo.png" alt="Stonebridge Psychological Group"></a><button class="mobile-toggle" aria-label="Toggle menu">Menu</button><div class="menu-wrap"><nav class="menu"><a href="index.html" class="">Home</a><a href="about.html" class="">About</a><div class="nav-dropdown"><a href="team.html" class="">Team</a><div class="dropdown-menu"><a href="team.html">Team Overview</a><a href="team.html#psychologists">Psychologists</a><a href="team.html#therapists">Therapists</a></div></div><div class="nav-dropdown"><a href="services.html" class="">Services</a><div class="dropdown-menu"><a href="services.html">Services Overview</a><a href="psychotherapy.html">Psychotherapy</a><a href="assessment.html">Psychological Assessment</a><a href="forensic.html">Forensic Services</a></div></div><a href="portal.html" class="">Portal</a></nav><div class="header-cta"><a class="btn btn-primary" href="contact.html">Request a Consultation</a></div></div></div></header>
+<main>
+  <section class="consultation-shell">
+    <div class="container consultation-grid">
+      <section class="consultation-panel">
+        <div class="consultation-panel-inner">
+          <div class="consultation-eyebrow">Consultation Request</div>
+          <div class="consultation-gold-rule"></div>
+          <h1>Consultation<br>Request</h1>
+          <p>Thank you for your interest in Stonebridge Psychological Group. Please complete the form to submit an initial inquiry.</p>
+          <p>We offer psychotherapy, clinical assessment, and forensic assessment services. The follow-up questions adjust based on the service you select so we can better understand your needs from the start.</p>
+          <p>If clinically appropriate, we may offer a free 15-minute consultation to help determine whether our services may be a good fit for your needs.</p>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="consult-wrap">
-    <div class="container">
-      <section class="consult-grid">
-        <div class="consult-left">
-          <div class="eyebrow">Consultation Request</div>
-          <h1>Consultation Request</h1>
-          <div class="gold-rule"></div>
-
-          <p>
-            Thank you for your interest in Stonebridge Psychological Group. Please complete the form to submit an initial inquiry.
-          </p>
-          <p>
-            We offer psychotherapy, clinical assessment, and forensic assessment services. Questions on the right adjust based on the service you select so we can understand your needs more clearly.
-          </p>
-          <p>
-            If clinically appropriate, we may offer a free 15-minute consultation to help determine whether our services are a good fit for your needs.
-          </p>
-
-          <div class="consult-art">
-            <img src="elegant_architectural_and_security_symbols.png" alt="Architectural consultation illustration">
-          </div>
-        </div>
-
-        <div>
-          <div class="consult-card">
-            <form class="consult-form" action="#" method="post">
-              <div class="form-group">
-                <label class="form-label" for="service-requested">Service Requested</label>
-                <select class="form-select" id="service-requested" name="service-requested">
-                  <option value="psychotherapy" selected>Psychotherapy</option>
-                  <option value="clinical-assessment">Clinical / Diagnostic Assessment</option>
-                  <option value="forensic-assessment">Forensic Assessment</option>
-                </select>
-              </div>
-
-              <div class="helper-note">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 16v-4"></path>
-                  <path d="M12 8h.01"></path>
-                </svg>
-                <span>Form questions update based on service selection.</span>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="service-format" id="secondary-label">Psychotherapy Format</label>
-                <select class="form-select" id="service-format" name="service-format">
-                  <option>Telehealth only</option>
-                </select>
-                <div class="dynamic-note" id="secondary-note">Psychotherapy is currently offered via telehealth.</div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="full-name">Full Name</label>
-                <input class="form-input" type="text" id="full-name" name="full-name" placeholder="Your full name">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="patient-name">Proposed Patient’s Name</label>
-                <input class="form-input" type="text" id="patient-name" name="patient-name" placeholder="Name of the individual seeking services">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="email">Email Address</label>
-                <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com">
-              </div>
-
-              <div class="form-group full">
-                <label class="form-label" for="insurance">Insurance / Payment Information</label>
-                <input class="form-input" type="text" id="insurance" name="insurance" placeholder="Insurance provider, plan name, or self-pay">
-              </div>
-
-              <div class="form-group full">
-                <label class="form-label" for="reason" id="reason-label">Reason for Seeking Psychotherapy</label>
-                <textarea class="form-textarea" id="reason" name="reason" placeholder="Please share a brief description of what brings you (or your loved one) to seek support."></textarea>
-              </div>
-            </form>
-
-            <div class="submit-row">
-              <button class="btn btn-primary" type="submit">Send Consultation Request</button>
-
-              <div class="submit-note">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 17v-6"></path>
-                  <path d="M9 11V8a3 3 0 1 1 6 0v3"></path>
-                  <rect x="5" y="11" width="14" height="10" rx="2"></rect>
-                </svg>
-                <span>This form is currently in design stage and does not submit data. It will later connect to an email workflow or secure intake process.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="consult-lower">
-            <div class="info-card">
-              <div class="info-icon">
-                <img src="elegant_architectural_and_security_symbols.png" alt="Referral and fit illustration">
-              </div>
-              <div>
-                <h3>Good fit not determined?</h3>
-                <p>
-                  If we determine that Stonebridge is not the best fit for your needs, we will provide thoughtful referrals to trusted providers and resources in the community.
-                </p>
-              </div>
-            </div>
-
-            <div class="info-card">
-              <div class="info-icon">
-                <img src="elegant_architectural_and_security_symbols.png" alt="Next steps illustration">
-              </div>
-              <div>
-                <h3>Next Steps</h3>
-                <p id="next-steps-text">
-                  All inquiries are reviewed by our clinical team. If your request is determined to be clinically appropriate, we will follow up via email with next steps and scheduling information.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="consultation-illustration">
+          <img src="consultation-bridge-illustration.png" alt="Decorative bridge illustration">
         </div>
       </section>
+
+      <section class="consultation-form-card">
+        <form class="consultation-form" action="#" method="post">
+          <div class="form-row full-row top-service-row">
+            <div class="form-field">
+              <label for="service-requested">Service Requested <span class="required">*</span></label>
+              <select id="service-requested" name="service_requested" class="form-control">
+                <option value="psychotherapy">Psychotherapy</option>
+                <option value="clinical-assessment">Clinical / Diagnostic Assessment</option>
+                <option value="forensic-assessment">Forensic Assessment</option>
+              </select>
+            </div>
+            <div class="selection-note">
+              <span class="selection-note-icon">i</span>
+              <span>Form questions update based on service selection.</span>
+            </div>
+          </div>
+
+          <div class="form-row two-col-row">
+            <div class="form-field">
+              <label id="secondary-label" for="secondary-select">Psychotherapy Format</label>
+              <select id="secondary-select" name="secondary_detail" class="form-control"></select>
+              <div class="field-helper" id="secondary-helper">Psychotherapy is currently offered via telehealth.</div>
+            </div>
+            <div class="form-field">
+              <label for="full-name">Full Name <span class="required">*</span></label>
+              <input id="full-name" name="full_name" class="form-control" type="text" placeholder="Your full name">
+            </div>
+          </div>
+
+          <div class="form-row two-col-row">
+            <div class="form-field">
+              <label for="patient-name">Proposed Patient’s Name</label>
+              <input id="patient-name" name="patient_name" class="form-control" type="text" placeholder="Name of the individual seeking services">
+            </div>
+            <div class="form-field">
+              <label for="email-address">Email Address <span class="required">*</span></label>
+              <input id="email-address" name="email" class="form-control" type="email" placeholder="you@example.com">
+            </div>
+          </div>
+
+          <div class="form-row full-row">
+            <div class="form-field">
+              <label for="insurance-info">Insurance / Payment Information</label>
+              <input id="insurance-info" name="insurance_info" class="form-control" type="text" placeholder="Insurance provider, plan name, or self-pay">
+            </div>
+          </div>
+
+          <div class="form-row full-row">
+            <div class="form-field">
+              <label id="reason-label" for="reason-textarea">Reason for Seeking Psychotherapy <span class="required">*</span></label>
+              <textarea id="reason-textarea" name="reason" class="form-control form-textarea" placeholder="Please share a brief description of what brings you (or your loved one) to seek support."></textarea>
+            </div>
+          </div>
+
+          <div class="submit-divider"></div>
+
+          <div class="form-row submit-row">
+            <button type="button" class="btn consultation-submit-btn">Send Consultation Request</button>
+            <div class="submit-note-box">
+              <div class="submit-note-icon" aria-hidden="true">🔒</div>
+              <p>This form is currently in design stage and does not submit data. It will later connect to an email workflow or secure intake process.</p>
+            </div>
+          </div>
+        </form>
+      </section>
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">STONEBRIDGE</div>
-        <div class="footer-sub">Psychological Group</div>
-        <p class="footer-copy">Clinical therapy, psychological assessment, and forensic services rooted in clarity, steadiness, and professional integrity.</p>
-      </div>
-
-      <div>
-        <div class="footer-title">Services</div>
-        <div class="footer-links">
-          <a href="psychotherapy.html">Psychotherapy</a>
-          <a href="assessment.html">Psychological Assessment</a>
-          <a href="forensic.html">Forensic Services</a>
-          <a href="contact.html">Consultation</a>
+  <section class="consultation-lower-band">
+    <div class="container consult-lower-grid">
+      <article class="consult-mini-card">
+        <div class="mini-icon-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3.4 8.4 7 10 3.6-1.6 7-5 7-10V6l-7-3Zm0 2.2 5 2.1V11c0 4-2.5 6.8-5 8-2.5-1.2-5-4-5-8V7.3l5-2.1Zm0 2.8a3.2 3.2 0 0 0-3.2 3.2v1.1H8v4.7h8v-4.7h-.8v-1.1A3.2 3.2 0 0 0 12 8Zm-1.4 4.3v-1.1a1.4 1.4 0 1 1 2.8 0v1.1h-2.8Z" fill="currentColor"/></svg>
         </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Quick Links</div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="team.html">Team</a>
-          <a href="services.html">Services</a>
-          <a href="portal.html">Portal</a>
-          <a href="contact.html">Consultation</a>
+        <div>
+          <h3>Good fit not determined?</h3>
+          <p>If we determine that Stonebridge is not the best fit for your needs, we will provide thoughtful referrals to trusted providers and resources in the community.</p>
         </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
-          <span>Serving Illinois and surrounding areas</span>
-          <span>info@stonebridgepsych.com</span>
-          <span>(555) 555-0198</span>
+      </article>
+      <article class="consult-mini-card">
+        <div class="mini-icon-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6v2h3a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V2Zm0 4H6v13h12V6h-3v2H9V6Zm2-2v2h2V4h-2Zm-3 7h6v2H8v-2Zm0 4h4v2H8v-2Zm7-4 1.6 1.6-4 4L11 15l1.4-1.4 1.2 1.2 2.6-2.6L15 11Z" fill="currentColor"/></svg>
         </div>
-      </div>
-
-      <div class="footer-logo-right">
-        <img src="stonebridge_psychological_group_logo_design.png" alt="Stonebridge Psychological Group logo">
-      </div>
+        <div>
+          <h3>Next Steps</h3>
+          <p>All inquiries are reviewed by the clinical team. If your request is determined to be clinically appropriate, we will follow up by email with next steps and scheduling information.</p>
+        </div>
+      </article>
     </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><div class="footer-brand">STONEBRIDGE</div><div class="footer-sub">Psychological Group</div><p class="footer-copy">Clinical therapy, psychological assessment, and forensic services rooted in clarity, steadiness, and professional integrity.</p></div><div><div class="footer-title">Services</div><div class="footer-links"><a href="psychotherapy.html">Psychotherapy</a><a href="assessment.html">Psychological Assessment</a><a href="forensic.html">Forensic Services</a><a href="contact.html">Consultation</a></div></div><div><div class="footer-title">Quick Links</div><div class="footer-links"><a href="about.html">About</a><a href="team.html">Team</a><a href="services.html">Services</a><a href="portal.html">Portal</a><a href="contact.html">Consultation</a></div></div><div><div class="footer-title">Contact</div><div class="footer-links"><span>Serving Illinois and surrounding areas</span><span>info@stonebridgepsych.com</span><span>(555) 555-0198</span></div></div><div class="footer-logo-right"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo"></div></div><div class="container footer-bottom"><div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div><div class="footer-small">Mockup site for continued customization.</div></div></footer>
+<script src="script.js"></script>
+<script>
+  const serviceRequested = document.getElementById('service-requested');
+  const secondaryLabel = document.getElementById('secondary-label');
+  const secondarySelect = document.getElementById('secondary-select');
+  const secondaryHelper = document.getElementById('secondary-helper');
+  const reasonLabel = document.getElementById('reason-label');
+  const reasonTextarea = document.getElementById('reason-textarea');
 
-    <div class="container footer-bottom">
-      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small">Mockup site for continued customization.</div>
-    </div>
-  </footer>
+  function setOptions(options){
+    secondarySelect.innerHTML = '';
+    options.forEach(opt => {
+      const option = document.createElement('option');
+      option.value = opt.value;
+      option.textContent = opt.label;
+      secondarySelect.appendChild(option);
+    });
+  }
 
-  <script>
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const menu = document.querySelector('.menu');
-    if (mobileToggle && menu) {
-      mobileToggle.addEventListener('click', () => menu.classList.toggle('open'));
+  function updateConsultationForm(){
+    const value = serviceRequested.value;
+
+    if(value === 'clinical-assessment'){
+      secondaryLabel.textContent = 'Assessment Type';
+      setOptions([
+        {value:'diagnostic-clinical', label:'Diagnostic / Clinical Assessment'},
+        {value:'psychological-assessment', label:'Psychological Assessment'},
+        {value:'unsure', label:'Not sure yet'}
+      ]);
+      secondaryHelper.textContent = 'Select the type of assessment you are seeking, or choose “Not sure yet.”';
+      reasonLabel.innerHTML = 'Reason for Seeking Assessment <span class="required">*</span>';
+      reasonTextarea.placeholder = 'Please share the main questions, concerns, or diagnostic clarification you are seeking.';
+    } else if(value === 'forensic-assessment'){
+      secondaryLabel.textContent = 'Forensic Service Type';
+      setOptions([
+        {value:'forensic-assessment', label:'Forensic assessment'},
+        {value:'forensic-consultation', label:'Forensic consultation'},
+        {value:'unsure', label:'Not sure yet'}
+      ]);
+      secondaryHelper.textContent = 'Choose the forensic service that best matches your inquiry.';
+      reasonLabel.innerHTML = 'Reason for Seeking Forensic Services <span class="required">*</span>';
+      reasonTextarea.placeholder = 'Please describe the nature of the referral, consultation request, or forensic question.';
+    } else {
+      secondaryLabel.textContent = 'Psychotherapy Format';
+      setOptions([
+        {value:'telehealth-only', label:'Telehealth only'}
+      ]);
+      secondaryHelper.textContent = 'Psychotherapy is currently offered via telehealth.';
+      reasonLabel.innerHTML = 'Reason for Seeking Psychotherapy <span class="required">*</span>';
+      reasonTextarea.placeholder = 'Please share a brief description of what brings you (or your loved one) to seek support.';
     }
+  }
 
-    const serviceRequested = document.getElementById('service-requested');
-    const secondaryLabel = document.getElementById('secondary-label');
-    const secondarySelect = document.getElementById('service-format');
-    const secondaryNote = document.getElementById('secondary-note');
-    const reasonLabel = document.getElementById('reason-label');
-    const reasonField = document.getElementById('reason');
-    const nextStepsText = document.getElementById('next-steps-text');
-
-    function setOptions(options) {
-      secondarySelect.innerHTML = '';
-      options.forEach(optionText => {
-        const option = document.createElement('option');
-        option.textContent = optionText;
-        option.value = optionText.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-        secondarySelect.appendChild(option);
-      });
-    }
-
-    function updateConsultForm() {
-      const value = serviceRequested.value;
-
-      if (value === 'psychotherapy') {
-        secondaryLabel.textContent = 'Psychotherapy Format';
-        setOptions(['Telehealth only']);
-        secondaryNote.textContent = 'Psychotherapy is currently offered via telehealth.';
-        reasonLabel.textContent = 'Reason for Seeking Psychotherapy';
-        reasonField.placeholder = 'Please share a brief description of what brings you (or your loved one) to seek support.';
-        nextStepsText.textContent = 'All inquiries are reviewed by our clinical team. If your request is determined to be clinically appropriate, we will follow up via email with next steps and scheduling information.';
-      }
-
-      if (value === 'clinical-assessment') {
-        secondaryLabel.textContent = 'Assessment Type';
-        setOptions(['Diagnostic clarification', 'General clinical assessment', 'Not sure yet']);
-        secondaryNote.textContent = 'You can select the closest option even if you are still unsure of the exact evaluation needed.';
-        reasonLabel.textContent = 'Reason for Seeking Assessment';
-        reasonField.placeholder = 'Please describe what kind of clarification, diagnosis, documentation, or evaluation question you are hoping to address.';
-        nextStepsText.textContent = 'All assessment inquiries are reviewed to determine whether the request appears appropriate for Stonebridge. If so, we will follow up via email regarding fit, next steps, and possible scheduling.';
-      }
-
-      if (value === 'forensic-assessment') {
-        secondaryLabel.textContent = 'Forensic Service Type';
-        setOptions(['Forensic assessment', 'Forensic consultation', 'Not sure yet']);
-        secondaryNote.textContent = 'For forensic matters, a brief description of the legal or evaluative context can be helpful in the initial message.';
-        reasonLabel.textContent = 'Reason for Seeking Forensic Services';
-        reasonField.placeholder = 'Please describe the nature of the referral, legal or evaluative context, and what type of forensic service you are seeking.';
-        nextStepsText.textContent = 'Forensic inquiries are reviewed to determine whether the requested service appears appropriate for Stonebridge. If so, we will follow up via email regarding fit, scope, and possible next steps.';
-      }
-    }
-
-    serviceRequested.addEventListener('change', updateConsultForm);
-    updateConsultForm();
-  </script>
+  serviceRequested.addEventListener('change', updateConsultationForm);
+  updateConsultationForm();
+</script>
 </body>
 </html>
