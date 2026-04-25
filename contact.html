@@ -4,134 +4,224 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consultation Request | Stonebridge Psychological Group</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
   <style>
-    .consult-hero{
-      position:relative;
-      overflow:hidden;
-      padding:72px 0 54px;
-      border-bottom:1px solid rgba(221,211,199,.55);
-      background:var(--bg);
+    .consult-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 0 54px;
+      border-bottom: 1px solid rgba(221,211,199,.55);
+      background: var(--bg);
     }
-    .consult-hero::after{
-      content:"";
-      position:absolute;
-      right:-2%;
-      bottom:8px;
-      width:min(46vw,620px);
-      height:220px;
-      background:url('bridge-only.png') no-repeat center/contain;
-      opacity:.08;
-      pointer-events:none;
+
+    .consult-hero::after {
+      content: "";
+      position: absolute;
+      right: -2%;
+      bottom: 10px;
+      width: min(48vw, 720px);
+      height: 260px;
+      background: url('stone_arch_bridge_over_calm_water.png') no-repeat center/contain;
+      opacity: .08;
+      pointer-events: none;
     }
-    .consult-grid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:38px;
-      align-items:start;
-      position:relative;
-      z-index:1;
+
+    .consult-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 40px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
     }
-    .consult-copy h1{
-      max-width:8.2ch;
-      line-height:.94;
-      margin-top:18px;
+
+    .consult-copy h1 {
+      max-width: 9ch;
+      margin-top: 18px;
+      font-size: clamp(3.6rem, 5.2vw, 5.4rem);
+      line-height: .96;
     }
-    .consult-copy p{
-      max-width:44rem;
-      margin-top:18px;
+
+    .consult-copy p {
+      max-width: 46rem;
+      margin-top: 20px;
     }
-    .consult-copy .hero-note{
-      margin-top:24px;
-      max-width:none;
-      padding:18px 20px;
-      border-radius:18px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.62);
-      color:var(--muted);
-      font-size:.98rem;
+
+    .consult-summary {
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      box-shadow: var(--card-shadow);
+      padding: 28px;
+      background: linear-gradient(180deg,#fcfbf9,#f8f4ef);
     }
-    .consult-panel{
-      border-radius:28px;
-      border:1px solid var(--border);
-      box-shadow:var(--card-shadow);
-      padding:28px;
-      background:linear-gradient(180deg,#fcfbf9,#f8f4ef);
+
+    .consult-summary h3 {
+      margin-bottom: 12px;
+      font-size: 2rem;
+      line-height: 1;
     }
-    .consult-panel h3{
-      margin-bottom:10px;
-      font-size:2rem;
+
+    .consult-summary p {
+      margin: 0 0 14px;
     }
-    .consult-panel p{
-      margin:0 0 12px;
+
+    .summary-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
     }
-    .consult-meta{
-      display:grid;
-      gap:10px;
-      margin-top:14px;
-      color:var(--muted);
-      font-size:.98rem;
+
+    .summary-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: .98rem;
     }
-    .consult-meta strong{
-      color:var(--text);
-      font-weight:600;
+
+    .summary-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--deep);
+      margin-top: 8px;
+      flex: 0 0 10px;
     }
-    .consult-section{
-      padding:56px 0 76px;
+
+    .consult-form-section {
+      padding: 62px 0 80px;
+      background: var(--surface);
     }
-    .consult-intro{
-      max-width:none;
-      margin:0 0 28px;
+
+    .consult-intro {
+      max-width: 78rem;
+      margin: 0 0 26px;
     }
-    .intake-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
-      margin-top:28px;
+
+    .consult-form-wrap {
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      box-shadow: var(--card-shadow);
+      padding: 30px;
+      background: linear-gradient(180deg,#fcfbf9,#f8f4ef);
     }
-    .intake-card{
-      border-radius:24px;
-      border:1px solid var(--border);
-      box-shadow:var(--card-shadow);
-      padding:24px;
-      background:linear-gradient(180deg,#fcfbf9,#f8f4ef);
+
+    .consult-form-title {
+      margin-bottom: 10px;
+      font-size: 2rem;
+      line-height: 1;
     }
-    .intake-card h4{
-      margin:0 0 10px;
-      font-size:1.35rem;
-      line-height:1.05;
-      font-family:"EB Garamond",Georgia,serif;
-      color:var(--deep);
+
+    .consult-form-subtext {
+      margin-bottom: 26px;
+      max-width: 62rem;
     }
-    .intake-list{
-      margin:0;
-      padding-left:1.15rem;
+
+    .consult-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 20px;
     }
-    .intake-list li{
-      margin-bottom:.45rem;
+
+    .form-group {
+      display: grid;
+      gap: 8px;
     }
-    .consult-footnote{
-      margin-top:26px;
-      padding:18px 20px;
-      border-radius:18px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.62);
-      color:var(--muted);
+
+    .form-group.full {
+      grid-column: 1 / -1;
     }
-    @media (max-width:1000px){
+
+    .form-label {
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      border: 1px solid rgba(213,201,188,.95);
+      border-radius: 16px;
+      background: rgba(255,255,255,.82);
+      color: var(--text);
+      font: inherit;
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: #bcae9f;
+      box-shadow: 0 0 0 4px rgba(188,174,159,.14);
+      background: #fff;
+    }
+
+    .form-textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 26px;
+    }
+
+    .form-note {
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.6);
+      padding: 18px 20px;
+    }
+
+    .form-note h4 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+      line-height: 1.05;
+    }
+
+    .form-note p {
+      margin: 0;
+      font-size: .97rem;
+    }
+
+    .consult-submit {
+      margin-top: 28px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .form-disclaimer {
+      color: var(--muted);
+      font-size: .94rem;
+      max-width: 48rem;
+    }
+
+    @media (max-width: 1000px) {
       .consult-grid,
-      .intake-grid{
-        grid-template-columns:1fr;
+      .consult-form,
+      .form-note-grid {
+        grid-template-columns: 1fr;
       }
-      .consult-hero::after{
-        width:min(82vw,520px);
-        height:180px;
-        right:0;
-        bottom:12px;
-        opacity:.09;
+
+      .consult-hero::after {
+        width: min(86vw, 560px);
+        height: 190px;
+        right: 0;
+        bottom: 8px;
+        opacity: .09;
       }
     }
   </style>
@@ -150,15 +240,7 @@
         <nav class="menu">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-
-          <div class="nav-dropdown">
-            <a href="team.html">Team</a>
-            <div class="dropdown-menu">
-              <a href="team.html">Team Overview</a>
-              <a href="team.html#psychologists">Psychologists</a>
-              <a href="team.html#therapists">Therapists</a>
-            </div>
-          </div>
+          <a href="team.html">Team</a>
 
           <div class="nav-dropdown">
             <a href="services.html">Services</a>
@@ -171,6 +253,7 @@
           </div>
 
           <a href="portal.html">Portal</a>
+          <a href="contact.html" class="active">Contact</a>
         </nav>
 
         <div class="header-cta">
@@ -185,91 +268,149 @@
       <div class="container consult-grid">
         <div class="consult-copy">
           <div class="eyebrow">Consultation Request</div>
-          <h1>Begin with a consultation request.</h1>
+          <h1>Request a consultation.</h1>
           <p>
-            This page is intended to make initial outreach straightforward and thoughtful.
-            Stonebridge offers a free 15-minute consultation to help determine whether the
-            practice may be a good fit. When appropriate, referrals can also be offered if
-            another provider or setting appears to be a better match.
+            This page is intended to make initial outreach clearer and more useful. Stonebridge offers a
+            free 15-minute consultation to help determine whether the practice may be a good fit and,
+            when appropriate, to help guide referrals if another provider or setting appears better suited.
           </p>
-          <div class="hero-note">
-            Inquiry information is placeholder for now, but this section can eventually guide
-            prospective clients through what to expect: a brief message, a few practical details,
-            and a first step toward determining fit, availability, and service needs.
-          </div>
+          <p>
+            For now, the form below is a design-forward intake structure. Later, it can be connected so
+            inquiry submissions are sent directly to your email and used as part of a more thoughtful
+            screening and fit process.
+          </p>
         </div>
 
-        <aside class="consult-panel">
+        <aside class="consult-summary">
           <h3>Inquiry Information</h3>
-          <div class="consult-meta">
-            <div><strong>Email:</strong> info@stonebridgepsych.com</div>
-            <div><strong>Phone:</strong> (555) 555-0198</div>
-            <div><strong>Location:</strong> Serving Illinois and surrounding areas</div>
-            <div><strong>Consultation Length:</strong> Free 15-minute consultation</div>
-          </div>
-          <p style="margin-top:18px;">
-            This area can eventually include actual contact instructions, consultation
-            expectations, response time, and directions for new inquiries.
+          <p>
+            The goal of this first step is to gather enough information to respond thoughtfully while
+            keeping the process approachable and not overwhelming.
           </p>
+
+          <div class="summary-list">
+            <div class="summary-item">
+              <span class="summary-dot"></span>
+              <span>Free 15-minute consultation for prospective clients</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-dot"></span>
+              <span>Used to assess initial fit, service needs, and next steps</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-dot"></span>
+              <span>Can later be connected to a true email intake workflow</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-dot"></span>
+              <span>May also be used to provide referrals when appropriate</span>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="consult-section section-white">
+    <section class="consult-form-section">
       <div class="container">
-        <div class="section-kicker">What to include in an initial inquiry</div>
+        <div class="section-kicker">Initial inquiry form</div>
         <p class="consult-intro">
-          Over time, this section can become a more concrete inquiry guide rather than a general
-          contact page. The goal is to help prospective clients provide enough information for an
-          informed first response, while still keeping the process simple and approachable.
+          This section is designed to feel interactive and concrete rather than simply descriptive. Over time,
+          it can become a fuller intake and screening form. For now, it visually shows the type of
+          information Stonebridge may request when a prospective client reaches out.
         </p>
 
-        <div class="intake-grid">
-          <article class="intake-card">
-            <h4>Basic contact details</h4>
-            <ul class="intake-list">
-              <li>Name</li>
-              <li>Phone number</li>
-              <li>Email address</li>
-              <li>Preferred way to be contacted</li>
-            </ul>
-          </article>
+        <div class="consult-form-wrap">
+          <h2 class="consult-form-title">Tell us a little about what brings you here.</h2>
+          <p class="consult-form-subtext">
+            Please share a few details below. This does not need to be exhaustive — the purpose is simply
+            to begin the conversation and help determine whether a consultation should be scheduled.
+          </p>
 
-          <article class="intake-card">
-            <h4>Practical information</h4>
-            <ul class="intake-list">
-              <li>Current insurance or payment questions</li>
-              <li>Scheduling availability</li>
-              <li>General location if relevant</li>
-              <li>Whether the inquiry is for therapy, assessment, or consultation</li>
-            </ul>
-          </article>
+          <form class="consult-form" action="#" method="post">
+            <div class="form-group">
+              <label class="form-label" for="full-name">Full name</label>
+              <input class="form-input" type="text" id="full-name" name="full-name" placeholder="Your full name">
+            </div>
 
-          <article class="intake-card">
-            <h4>Reason for seeking services</h4>
-            <ul class="intake-list">
-              <li>A brief description of current concerns</li>
-              <li>What the person is hoping help with</li>
-              <li>Any urgency or time-sensitive needs</li>
-              <li>Whether they are looking for short-term or longer-term work</li>
-            </ul>
-          </article>
+            <div class="form-group">
+              <label class="form-label" for="email">Email address</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com">
+            </div>
 
-          <article class="intake-card">
-            <h4>Fit and next steps</h4>
-            <ul class="intake-list">
-              <li>Whether Stonebridge seems clinically appropriate</li>
-              <li>Whether a consultation should be scheduled</li>
-              <li>Whether referral options may be more useful</li>
-              <li>How to proceed after the first reply</li>
-            </ul>
-          </article>
-        </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone number</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(555) 555-0198">
+            </div>
 
-        <div class="consult-footnote">
-          This does not need to become a full intake form right away. For now, it can function as
-          a more thoughtful consultation request page that explains the process clearly and sets
-          expectations for what a prospective client should send in an initial message.
+            <div class="form-group">
+              <label class="form-label" for="contact-preference">Preferred contact method</label>
+              <select class="form-select" id="contact-preference" name="contact-preference">
+                <option value="">Select one</option>
+                <option>Email</option>
+                <option>Phone</option>
+                <option>Either is fine</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="service-interest">Service of interest</label>
+              <select class="form-select" id="service-interest" name="service-interest">
+                <option value="">Select one</option>
+                <option>Psychotherapy</option>
+                <option>Psychological Assessment</option>
+                <option>Forensic Services</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="insurance">Current insurance / payment information</label>
+              <input class="form-input" type="text" id="insurance" name="insurance" placeholder="Insurance plan or self-pay">
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label" for="availability">General availability</label>
+              <input class="form-input" type="text" id="availability" name="availability" placeholder="Weekdays, evenings, mornings, flexible, etc.">
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label" for="reason">Reason for seeking services</label>
+              <textarea class="form-textarea" id="reason" name="reason" placeholder="Briefly describe what brings you in, what you are hoping for support with, and anything important to know at the outset."></textarea>
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label" for="additional-notes">Additional notes</label>
+              <textarea class="form-textarea" id="additional-notes" name="additional-notes" placeholder="Anything else you would like Stonebridge to know — urgency, referrals, scheduling preferences, or fit questions."></textarea>
+            </div>
+          </form>
+
+          <div class="form-note-grid">
+            <div class="form-note">
+              <h4>What happens next</h4>
+              <p>
+                This request can later route to your email, allowing you to review whether the inquiry looks
+                clinically appropriate, whether a consultation should be scheduled, and whether a referral may
+                be more useful.
+              </p>
+            </div>
+
+            <div class="form-note">
+              <h4>Good-fit consultation</h4>
+              <p>
+                Stonebridge will offer a free 15-minute consultation to help determine fit. The intention is not
+                simply to book everyone automatically, but to begin with a thoughtful screening process that
+                supports both the prospective client and the practice.
+              </p>
+            </div>
+          </div>
+
+          <div class="consult-submit">
+            <button class="btn btn-primary" type="submit">Send Consultation Request</button>
+            <div class="form-disclaimer">
+              Design note: this form is not wired to email yet. Once you are ready, we can connect it to a real
+              submission workflow.
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -303,7 +444,7 @@
           <a href="team.html">Team</a>
           <a href="services.html">Services</a>
           <a href="portal.html">Portal</a>
-          <a href="contact.html">Consultation</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
 
