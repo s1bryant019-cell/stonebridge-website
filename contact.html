@@ -10,171 +10,298 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site-header"><div class="container nav"><a class="site-brand" href="index.html"><img src="stonebridge-header-logo.png" alt="Stonebridge Psychological Group"></a><button class="mobile-toggle" aria-label="Toggle menu">Menu</button><div class="menu-wrap"><nav class="menu"><a href="index.html" class="">Home</a><a href="about.html" class="">About</a><div class="nav-dropdown"><a href="team.html" class="">Team</a><div class="dropdown-menu"><a href="team.html">Team Overview</a><a href="team.html#psychologists">Psychologists</a><a href="team.html#therapists">Therapists</a></div></div><div class="nav-dropdown"><a href="services.html" class="">Services</a><div class="dropdown-menu"><a href="services.html">Services Overview</a><a href="psychotherapy.html">Psychotherapy</a><a href="assessment.html">Psychological Assessment</a><a href="forensic.html">Forensic Services</a></div></div><a href="portal.html" class="">Portal</a></nav><div class="header-cta"><a class="btn btn-primary" href="contact.html">Request a Consultation</a></div></div></div></header>
-<main>
-  <section class="consultation-shell">
-    <div class="container consultation-grid">
-      <section class="consultation-panel">
-        <div class="consultation-panel-inner">
-          <div class="consultation-eyebrow">Consultation Request</div>
-          <div class="consultation-gold-rule"></div>
-          <h1>Consultation<br>Request</h1>
-          <p>Thank you for your interest in Stonebridge Psychological Group. Please complete the form to submit an initial inquiry.</p>
-          <p>We offer psychotherapy, clinical assessment, and forensic assessment services. The follow-up questions adjust based on the service you select so we can better understand your needs from the start.</p>
-          <p>If clinically appropriate, we may offer a free 15-minute consultation to help determine whether our services may be a good fit for your needs.</p>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html">
+        <div class="brand-mark">STONEBRIDGE</div>
+        <div class="brand-sub">Psychological Group</div>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle menu">Menu</button>
+
+      <div class="menu-wrap">
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+
+          <div class="nav-dropdown">
+            <a href="team.html">Team</a>
+            <div class="dropdown-menu">
+              <a href="team.html">Team Overview</a>
+              <a href="team.html#psychologists">Psychologists</a>
+              <a href="team.html#therapists">Therapists</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <a href="services.html">Services</a>
+            <div class="dropdown-menu">
+              <a href="services.html">Services Overview</a>
+              <a href="psychotherapy.html">Psychotherapy</a>
+              <a href="assessment.html">Psychological Assessment</a>
+              <a href="forensic.html">Forensic Services</a>
+            </div>
+          </div>
+
+          <a href="portal.html">Portal</a>
+        </nav>
+
+        <div class="header-cta">
+          <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
         </div>
-        <div class="consultation-illustration">
-          <img src="consultation-bridge-illustration.png" alt="Decorative bridge illustration">
-        </div>
-      </section>
-
-      <section class="consultation-form-card">
-        <form class="consultation-form" action="#" method="post">
-          <div class="form-row full-row top-service-row">
-            <div class="form-field">
-              <label for="service-requested">Service Requested <span class="required">*</span></label>
-              <select id="service-requested" name="service_requested" class="form-control">
-                <option value="psychotherapy">Psychotherapy</option>
-                <option value="clinical-assessment">Clinical / Diagnostic Assessment</option>
-                <option value="forensic-assessment">Forensic Assessment</option>
-              </select>
-            </div>
-            <div class="selection-note">
-              <span class="selection-note-icon">i</span>
-              <span>Form questions update based on service selection.</span>
-            </div>
-          </div>
-
-          <div class="form-row two-col-row">
-            <div class="form-field">
-              <label id="secondary-label" for="secondary-select">Psychotherapy Format</label>
-              <select id="secondary-select" name="secondary_detail" class="form-control"></select>
-              <div class="field-helper" id="secondary-helper">Psychotherapy is currently offered via telehealth.</div>
-            </div>
-            <div class="form-field">
-              <label for="full-name">Full Name <span class="required">*</span></label>
-              <input id="full-name" name="full_name" class="form-control" type="text" placeholder="Your full name">
-            </div>
-          </div>
-
-          <div class="form-row two-col-row">
-            <div class="form-field">
-              <label for="patient-name">Proposed Patient’s Name</label>
-              <input id="patient-name" name="patient_name" class="form-control" type="text" placeholder="Name of the individual seeking services">
-            </div>
-            <div class="form-field">
-              <label for="email-address">Email Address <span class="required">*</span></label>
-              <input id="email-address" name="email" class="form-control" type="email" placeholder="you@example.com">
-            </div>
-          </div>
-
-          <div class="form-row full-row">
-            <div class="form-field">
-              <label for="insurance-info">Insurance / Payment Information</label>
-              <input id="insurance-info" name="insurance_info" class="form-control" type="text" placeholder="Insurance provider, plan name, or self-pay">
-            </div>
-          </div>
-
-          <div class="form-row full-row">
-            <div class="form-field">
-              <label id="reason-label" for="reason-textarea">Reason for Seeking Psychotherapy <span class="required">*</span></label>
-              <textarea id="reason-textarea" name="reason" class="form-control form-textarea" placeholder="Please share a brief description of what brings you (or your loved one) to seek support."></textarea>
-            </div>
-          </div>
-
-          <div class="submit-divider"></div>
-
-          <div class="form-row submit-row">
-            <button type="button" class="btn consultation-submit-btn">Send Consultation Request</button>
-            <div class="submit-note-box">
-              <div class="submit-note-icon" aria-hidden="true">🔒</div>
-              <p>This form is currently in design stage and does not submit data. It will later connect to an email workflow or secure intake process.</p>
-            </div>
-          </div>
-        </form>
-      </section>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <section class="consultation-lower-band">
-    <div class="container consult-lower-grid">
-      <article class="consult-mini-card">
-        <div class="mini-icon-wrap">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3.4 8.4 7 10 3.6-1.6 7-5 7-10V6l-7-3Zm0 2.2 5 2.1V11c0 4-2.5 6.8-5 8-2.5-1.2-5-4-5-8V7.3l5-2.1Zm0 2.8a3.2 3.2 0 0 0-3.2 3.2v1.1H8v4.7h8v-4.7h-.8v-1.1A3.2 3.2 0 0 0 12 8Zm-1.4 4.3v-1.1a1.4 1.4 0 1 1 2.8 0v1.1h-2.8Z" fill="currentColor"/></svg>
+  <main>
+    <section class="consultation-shell">
+      <div class="container consultation-grid">
+        <section class="consultation-panel">
+          <div class="consultation-panel-inner">
+            <div class="consultation-eyebrow">Consultation Request</div>
+            <div class="consultation-gold-rule"></div>
+
+            <h1>Consultation<br>Request</h1>
+
+            <p>
+              Thank you for your interest in Stonebridge Psychological Group.
+              Please complete the form to submit an initial inquiry.
+            </p>
+
+            <p>
+              We offer psychotherapy, clinical assessment, and forensic
+              assessment services. The follow-up questions adjust based on
+              the service you select so we can better understand your needs
+              from the start.
+            </p>
+
+            <p>
+              If clinically appropriate, we may offer a free 15-minute
+              consultation to help determine whether our services may be
+              a good fit for your needs.
+            </p>
+          </div>
+        </section>
+
+        <section class="consultation-form-card">
+          <form class="consultation-form" action="#" method="post">
+            <div class="form-row full-row top-service-row">
+              <div class="form-field">
+                <label for="service-requested">Service Requested <span class="required">*</span></label>
+                <select id="service-requested" name="service_requested" class="form-control">
+                  <option value="psychotherapy">Psychotherapy</option>
+                  <option value="clinical-assessment">Clinical / Diagnostic Assessment</option>
+                  <option value="forensic-assessment">Forensic Assessment</option>
+                </select>
+              </div>
+
+              <div class="selection-note">
+                <span class="selection-note-icon">i</span>
+                <span>Form questions update based on service selection.</span>
+              </div>
+            </div>
+
+            <div class="form-row two-col-row">
+              <div class="form-field">
+                <label id="secondary-label" for="secondary-select">Psychotherapy Format</label>
+                <select id="secondary-select" name="secondary_detail" class="form-control"></select>
+                <div class="field-helper" id="secondary-helper">Psychotherapy is currently offered via telehealth.</div>
+              </div>
+
+              <div class="form-field">
+                <label for="full-name">Full Name <span class="required">*</span></label>
+                <input id="full-name" name="full_name" class="form-control" type="text" placeholder="Your full name">
+              </div>
+            </div>
+
+            <div class="form-row two-col-row">
+              <div class="form-field">
+                <label for="patient-name">Proposed Patient’s Name</label>
+                <input id="patient-name" name="patient_name" class="form-control" type="text" placeholder="Name of the individual seeking services">
+              </div>
+
+              <div class="form-field">
+                <label for="email-address">Email Address <span class="required">*</span></label>
+                <input id="email-address" name="email" class="form-control" type="email" placeholder="you@example.com">
+              </div>
+            </div>
+
+            <div class="form-row full-row">
+              <div class="form-field">
+                <label for="insurance-info">Insurance / Payment Information</label>
+                <input id="insurance-info" name="insurance_info" class="form-control" type="text" placeholder="Insurance provider, plan name, or self-pay">
+              </div>
+            </div>
+
+            <div class="form-row full-row">
+              <div class="form-field">
+                <label id="reason-label" for="reason-textarea">Reason for Seeking Psychotherapy <span class="required">*</span></label>
+                <textarea id="reason-textarea" name="reason" class="form-control form-textarea" placeholder="Please share a brief description of what brings you (or your loved one) to seek support."></textarea>
+              </div>
+            </div>
+
+            <div class="submit-divider"></div>
+
+            <div class="form-row submit-row">
+              <button type="button" class="btn consultation-submit-btn">Send Consultation Request</button>
+
+              <div class="submit-note-box">
+                <div class="submit-note-icon" aria-hidden="true">🔒</div>
+                <p>
+                  This form is currently in design stage and does not submit data.
+                  It will later connect to an email workflow or secure intake process.
+                </p>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="consultation-lower-band">
+      <div class="container consult-lower-grid">
+        <article class="consult-mini-card">
+          <div class="mini-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3 5 6v5c0 5 3.4 8.4 7 10 3.6-1.6 7-5 7-10V6l-7-3Zm0 2.2 5 2.1V11c0 4-2.5 6.8-5 8-2.5-1.2-5-4-5-8V7.3l5-2.1Zm0 2.8a3.2 3.2 0 0 0-3.2 3.2v1.1H8v4.7h8v-4.7h-.8v-1.1A3.2 3.2 0 0 0 12 8Zm-1.4 4.3v-1.1a1.4 1.4 0 1 1 2.8 0v1.1h-2.8Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Good fit not determined?</h3>
+            <p>
+              If we determine that Stonebridge is not the best fit for your
+              needs, we will provide thoughtful referrals to trusted providers
+              and resources in the community.
+            </p>
+          </div>
+        </article>
+
+        <article class="consult-mini-card">
+          <div class="mini-icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 2h6v2h3a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V2Zm0 4H6v13h12V6h-3v2H9V6Zm2-2v2h2V4h-2Zm-3 7h6v2H8v-2Zm0 4h4v2H8v-2Zm7-4 1.6 1.6-4 4L11 15l1.4-1.4 1.2 1.2 2.6-2.6L15 11Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Next Steps</h3>
+            <p>
+              All inquiries are reviewed by the clinical team. If your request
+              is determined to be clinically appropriate, we will follow up by
+              email with next steps and scheduling information.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">
+          Clinical therapy, psychological assessment, and forensic services rooted in clarity,
+          steadiness, and professional integrity.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-title">Services</div>
+        <div class="footer-links">
+          <a href="psychotherapy.html">Psychotherapy</a>
+          <a href="assessment.html">Psychological Assessment</a>
+          <a href="forensic.html">Forensic Services</a>
+          <a href="contact.html">Consultation</a>
         </div>
-        <div>
-          <h3>Good fit not determined?</h3>
-          <p>If we determine that Stonebridge is not the best fit for your needs, we will provide thoughtful referrals to trusted providers and resources in the community.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="services.html">Services</a>
+          <a href="portal.html">Portal</a>
+          <a href="contact.html">Consultation</a>
         </div>
-      </article>
-      <article class="consult-mini-card">
-        <div class="mini-icon-wrap">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6v2h3a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V2Zm0 4H6v13h12V6h-3v2H9V6Zm2-2v2h2V4h-2Zm-3 7h6v2H8v-2Zm0 4h4v2H8v-2Zm7-4 1.6 1.6-4 4L11 15l1.4-1.4 1.2 1.2 2.6-2.6L15 11Z" fill="currentColor"/></svg>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois and surrounding areas</span>
+          <span>info@stonebridgepsych.com</span>
+          <span>(555) 555-0198</span>
         </div>
-        <div>
-          <h3>Next Steps</h3>
-          <p>All inquiries are reviewed by the clinical team. If your request is determined to be clinically appropriate, we will follow up by email with next steps and scheduling information.</p>
-        </div>
-      </article>
+      </div>
+
+      <div class="footer-logo-right">
+        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo">
+      </div>
     </div>
-  </section>
-</main>
-<footer class="site-footer"><div class="container footer-grid"><div><div class="footer-brand">STONEBRIDGE</div><div class="footer-sub">Psychological Group</div><p class="footer-copy">Clinical therapy, psychological assessment, and forensic services rooted in clarity, steadiness, and professional integrity.</p></div><div><div class="footer-title">Services</div><div class="footer-links"><a href="psychotherapy.html">Psychotherapy</a><a href="assessment.html">Psychological Assessment</a><a href="forensic.html">Forensic Services</a><a href="contact.html">Consultation</a></div></div><div><div class="footer-title">Quick Links</div><div class="footer-links"><a href="about.html">About</a><a href="team.html">Team</a><a href="services.html">Services</a><a href="portal.html">Portal</a><a href="contact.html">Consultation</a></div></div><div><div class="footer-title">Contact</div><div class="footer-links"><span>Serving Illinois and surrounding areas</span><span>info@stonebridgepsych.com</span><span>(555) 555-0198</span></div></div><div class="footer-logo-right"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo"></div></div><div class="container footer-bottom"><div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div><div class="footer-small">Mockup site for continued customization.</div></div></footer>
-<script src="script.js"></script>
-<script>
-  const serviceRequested = document.getElementById('service-requested');
-  const secondaryLabel = document.getElementById('secondary-label');
-  const secondarySelect = document.getElementById('secondary-select');
-  const secondaryHelper = document.getElementById('secondary-helper');
-  const reasonLabel = document.getElementById('reason-label');
-  const reasonTextarea = document.getElementById('reason-textarea');
 
-  function setOptions(options){
-    secondarySelect.innerHTML = '';
-    options.forEach(opt => {
-      const option = document.createElement('option');
-      option.value = opt.value;
-      option.textContent = opt.label;
-      secondarySelect.appendChild(option);
-    });
-  }
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small">Mockup site for continued customization.</div>
+    </div>
+  </footer>
 
-  function updateConsultationForm(){
-    const value = serviceRequested.value;
+  <script src="script.js"></script>
+  <script>
+    const serviceRequested = document.getElementById('service-requested');
+    const secondaryLabel = document.getElementById('secondary-label');
+    const secondarySelect = document.getElementById('secondary-select');
+    const secondaryHelper = document.getElementById('secondary-helper');
+    const reasonLabel = document.getElementById('reason-label');
+    const reasonTextarea = document.getElementById('reason-textarea');
 
-    if(value === 'clinical-assessment'){
-      secondaryLabel.textContent = 'Assessment Type';
-      setOptions([
-        {value:'diagnostic-clinical', label:'Diagnostic / Clinical Assessment'},
-        {value:'psychological-assessment', label:'Psychological Assessment'},
-        {value:'unsure', label:'Not sure yet'}
-      ]);
-      secondaryHelper.textContent = 'Select the type of assessment you are seeking, or choose “Not sure yet.”';
-      reasonLabel.innerHTML = 'Reason for Seeking Assessment <span class="required">*</span>';
-      reasonTextarea.placeholder = 'Please share the main questions, concerns, or diagnostic clarification you are seeking.';
-    } else if(value === 'forensic-assessment'){
-      secondaryLabel.textContent = 'Forensic Service Type';
-      setOptions([
-        {value:'forensic-assessment', label:'Forensic assessment'},
-        {value:'forensic-consultation', label:'Forensic consultation'},
-        {value:'unsure', label:'Not sure yet'}
-      ]);
-      secondaryHelper.textContent = 'Choose the forensic service that best matches your inquiry.';
-      reasonLabel.innerHTML = 'Reason for Seeking Forensic Services <span class="required">*</span>';
-      reasonTextarea.placeholder = 'Please describe the nature of the referral, consultation request, or forensic question.';
-    } else {
-      secondaryLabel.textContent = 'Psychotherapy Format';
-      setOptions([
-        {value:'telehealth-only', label:'Telehealth only'}
-      ]);
-      secondaryHelper.textContent = 'Psychotherapy is currently offered via telehealth.';
-      reasonLabel.innerHTML = 'Reason for Seeking Psychotherapy <span class="required">*</span>';
-      reasonTextarea.placeholder = 'Please share a brief description of what brings you (or your loved one) to seek support.';
+    function setOptions(options) {
+      secondarySelect.innerHTML = '';
+      options.forEach(opt => {
+        const option = document.createElement('option');
+        option.value = opt.value;
+        option.textContent = opt.label;
+        secondarySelect.appendChild(option);
+      });
     }
-  }
 
-  serviceRequested.addEventListener('change', updateConsultationForm);
-  updateConsultationForm();
-</script>
+    function updateConsultationForm() {
+      const value = serviceRequested.value;
+
+      if (value === 'clinical-assessment') {
+        secondaryLabel.textContent = 'Assessment Type';
+        setOptions([
+          { value: 'diagnostic-clinical', label: 'Diagnostic / Clinical Assessment' },
+          { value: 'psychological-assessment', label: 'Psychological Assessment' },
+          { value: 'unsure', label: 'Not sure yet' }
+        ]);
+        secondaryHelper.textContent = 'Select the type of assessment you are seeking, or choose “Not sure yet.”';
+        reasonLabel.innerHTML = 'Reason for Seeking Assessment <span class="required">*</span>';
+        reasonTextarea.placeholder = 'Please share the main questions, concerns, or diagnostic clarification you are seeking.';
+      } else if (value === 'forensic-assessment') {
+        secondaryLabel.textContent = 'Forensic Service Type';
+        setOptions([
+          { value: 'forensic-assessment', label: 'Forensic assessment' },
+          { value: 'forensic-consultation', label: 'Forensic consultation' },
+          { value: 'unsure', label: 'Not sure yet' }
+        ]);
+        secondaryHelper.textContent = 'Choose the forensic service that best matches your inquiry.';
+        reasonLabel.innerHTML = 'Reason for Seeking Forensic Services <span class="required">*</span>';
+        reasonTextarea.placeholder = 'Please describe the nature of the referral, consultation request, or forensic question.';
+      } else {
+        secondaryLabel.textContent = 'Psychotherapy Format';
+        setOptions([
+          { value: 'telehealth-only', label: 'Telehealth only' }
+        ]);
+        secondaryHelper.textContent = 'Psychotherapy is currently offered via telehealth.';
+        reasonLabel.innerHTML = 'Reason for Seeking Psychotherapy <span class="required">*</span>';
+        reasonTextarea.placeholder = 'Please share a brief description of what brings you (or your loved one) to seek support.';
+      }
+    }
+
+    serviceRequested.addEventListener('change', updateConsultationForm);
+    updateConsultationForm();
+  </script>
 </body>
 </html>
