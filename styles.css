@@ -29,3 +29,64 @@ h1,h2,h3,h4{margin:0;line-height:.98;color:var(--deep)}h1{margin-top:22px;font-s
 @media (max-width:1100px){.footer-grid{grid-template-columns:1fr 1fr}.footer-logo-right{justify-content:flex-start;border-left:none;padding-left:0}.cards,.three-up{grid-template-columns:1fr 1fr}}
 @media (max-width:1000px){.page-grid,.page-grid-tight,.portal-grid,.image-split,.contact-grid,.content-blocks,.cards,.three-up,.team-grid,.team-card.founder,.portal-cards{grid-template-columns:1fr}.section,.hero,.page-hero,.page-hero-wide{padding-top:62px;padding-bottom:62px}.hero-copy{min-height:520px}.hero::after{right:-20%;bottom:11%;width:108vw;height:220px;opacity:.10}.page-hero-wide::after{position:relative;display:block;right:auto;top:auto;width:100%;max-width:520px;height:240px;margin:24px 0 0;opacity:.18}}
 @media (max-width:760px){.mobile-toggle{display:inline-flex}.header-cta{display:none}.menu{display:none;position:absolute;top:78px;left:20px;right:20px;flex-direction:column;align-items:flex-start;gap:16px;padding:18px;border-radius:22px;background:rgba(255,255,255,.98);border:1px solid var(--border);box-shadow:var(--shadow)}.menu.open{display:flex}.footer-grid,.footer-bottom{grid-template-columns:1fr;display:grid}.footer-logo-right{justify-content:flex-start;border-left:none;padding-left:0}.hero::after{right:-30%;width:124vw;height:180px;opacity:.09}.container{width:min(1240px,calc(100% - 36px))}.hero-copy h1{max-width:9ch}}
+
+
+.nav-dropdown{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.nav-dropdown > a{
+  display:inline-flex;
+  align-items:center;
+}
+.dropdown-menu{
+  position:absolute;
+  top:calc(100% + 14px);
+  left:0;
+  min-width:240px;
+  display:none;
+  flex-direction:column;
+  padding:10px;
+  border-radius:18px;
+  background:rgba(255,255,255,.98);
+  border:1px solid rgba(221,211,199,.9);
+  box-shadow:0 18px 40px rgba(29,38,46,.10);
+  z-index:50;
+}
+.dropdown-menu a{
+  padding:10px 12px;
+  border-radius:12px;
+  color:var(--muted);
+  white-space:nowrap;
+}
+.dropdown-menu a:hover,
+.dropdown-menu a.active-sub{
+  background:rgba(242,235,228,.8);
+  color:var(--text);
+}
+.nav-dropdown:hover .dropdown-menu{
+  display:flex;
+}
+@media (max-width:760px){
+  .nav-dropdown{
+    width:100%;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .dropdown-menu{
+    position:static;
+    display:flex;
+    min-width:unset;
+    width:100%;
+    margin-top:8px;
+    padding:8px 0 0;
+    border:none;
+    box-shadow:none;
+    background:transparent;
+  }
+  .dropdown-menu a{
+    padding:8px 0 8px 12px;
+  }
+}
+
