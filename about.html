@@ -20,8 +20,8 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 74% 26%, rgba(191,161,104,.13), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,.72), rgba(248,244,238,.96));
+        radial-gradient(circle at 74% 28%, rgba(191,161,104,.10), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.76), rgba(248,244,238,.96));
       pointer-events:none;
     }
 
@@ -36,25 +36,25 @@
 
     .about-hero-grid{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
+      grid-template-columns:1.05fr .95fr;
       gap:58px;
       align-items:center;
     }
 
     .about-hero-copy h1{
-      max-width:780px;
+      max-width:760px;
     }
 
     .about-hero-copy p{
-      max-width:690px;
+      max-width:680px;
       margin-top:20px;
       font-size:1.08rem;
       line-height:1.85;
     }
 
-    .about-hero-copy .hero-note{
+    .about-hero-note{
       margin-top:26px;
-      max-width:620px;
+      max-width:630px;
       padding-left:20px;
       border-left:2px solid rgba(191,161,104,.55);
       color:var(--muted);
@@ -108,38 +108,158 @@
       color:rgba(255,250,242,.82);
     }
 
-    .about-intro-panel{
-      max-width:980px;
-      margin:0 auto;
-      text-align:center;
+    .founder-section{
+      background:#fff;
     }
 
-    .about-intro-panel h2{
+    .founder-grid{
+      display:grid;
+      grid-template-columns:1fr .86fr;
+      gap:54px;
+      align-items:center;
+    }
+
+    .founder-copy{
+      max-width:780px;
+    }
+
+    .founder-copy h2{
       margin-bottom:20px;
     }
 
-    .about-intro-panel p{
-      font-size:1.06rem;
-      line-height:1.85;
+    .founder-copy p{
       color:var(--muted);
+      line-height:1.85;
+      margin-bottom:18px;
     }
 
-    .about-principles{
+    .founder-signoff{
+      margin-top:26px;
+      padding:24px 26px;
+      border-radius:24px;
+      background:linear-gradient(180deg,#fbf8f3,#f4eee6);
+      border:1px solid rgba(221,211,199,.86);
+    }
+
+    .founder-signoff strong{
+      display:block;
+      color:var(--navy);
+      font-family:var(--serif);
+      font-size:1.25rem;
+      margin-bottom:4px;
+    }
+
+    .founder-signoff span{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .founder-placeholder-card{
+      border-radius:34px;
+      border:1px solid var(--border);
+      background:
+        linear-gradient(135deg,rgba(18,39,61,.96),rgba(28,55,82,.92));
+      box-shadow:var(--card-shadow);
+      padding:26px;
+      color:#fffaf2;
+      min-height:520px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .founder-placeholder-card::before{
+      content:"";
+      position:absolute;
+      inset:24px;
+      border-radius:26px;
+      border:1px dashed rgba(255,250,242,.34);
+      background:
+        radial-gradient(circle at 24% 20%, rgba(191,161,104,.25), transparent 26%),
+        radial-gradient(circle at 80% 10%, rgba(255,250,242,.10), transparent 28%);
+    }
+
+    .founder-placeholder-card::after{
+      content:"";
+      position:absolute;
+      right:-120px;
+      bottom:-150px;
+      width:360px;
+      height:360px;
+      border-radius:999px;
+      background:rgba(191,161,104,.12);
+    }
+
+    .founder-placeholder-content{
+      position:relative;
+      z-index:1;
+      border-radius:24px;
+      padding:24px;
+      background:rgba(10,24,39,.62);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,250,242,.14);
+    }
+
+    .founder-placeholder-label{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.68rem;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:rgba(255,250,242,.72);
+      margin-bottom:14px;
+    }
+
+    .founder-placeholder-content h3{
+      color:#fffaf2;
+      margin-bottom:10px;
+    }
+
+    .founder-placeholder-content p{
+      margin:0;
+      color:rgba(255,250,242,.78);
+      line-height:1.65;
+      font-size:.95rem;
+    }
+
+    .model-section{
+      background:linear-gradient(180deg,#f8f4ef,#f2ebe2);
+    }
+
+    .model-intro{
+      max-width:900px;
+      margin:0 auto 38px;
+      text-align:center;
+    }
+
+    .model-intro h2{
+      margin-bottom:18px;
+    }
+
+    .model-intro p{
+      color:var(--muted);
+      line-height:1.85;
+      font-size:1.04rem;
+    }
+
+    .model-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:22px;
-      margin-top:42px;
     }
 
-    .about-principle-card{
+    .model-card{
       border:1px solid var(--border);
       border-radius:28px;
-      background:linear-gradient(180deg,#ffffff,#faf7f2);
+      background:linear-gradient(180deg,#ffffff,#fbf8f3);
       box-shadow:var(--card-shadow);
       padding:30px;
     }
 
-    .about-principle-number{
+    .model-number{
       width:42px;
       height:42px;
       border-radius:999px;
@@ -152,197 +272,70 @@
       margin-bottom:20px;
     }
 
-    .about-principle-card h3{
+    .model-card h3{
       margin-bottom:12px;
     }
 
-    .about-principle-card p{
+    .model-card p{
+      margin:0;
       color:var(--muted);
       line-height:1.75;
     }
 
-    .about-quote-section{
-      background:
-        radial-gradient(circle at 85% 20%, rgba(191,161,104,.16), transparent 28%),
-        linear-gradient(135deg, #12273d, #1b3652);
-      color:#fffaf2;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .about-quote-section::before{
-      content:"";
-      position:absolute;
-      inset:auto -120px -220px auto;
-      width:520px;
-      height:520px;
-      border-radius:999px;
-      background:rgba(191,161,104,.12);
-    }
-
-    .about-quote-wrap{
-      position:relative;
-      z-index:1;
-      max-width:1000px;
-    }
-
-    .about-quote{
-      font-family:var(--serif);
-      font-size:clamp(2.1rem,4vw,4.15rem);
-      line-height:1.06;
-      letter-spacing:-.035em;
-      margin-bottom:26px;
-    }
-
-    .about-quote-copy{
-      max-width:760px;
-      color:rgba(255,250,242,.78);
-      font-size:1.04rem;
-      line-height:1.85;
-    }
-
-    .about-origin-grid{
+    .stance-grid{
       display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:48px;
+      grid-template-columns:.92fr 1.08fr;
+      gap:54px;
       align-items:start;
     }
 
-    .about-origin-copy p{
-      margin-top:16px;
-      color:var(--muted);
-      line-height:1.85;
-    }
-
-    .about-origin-card{
-      border:1px solid var(--border);
-      border-radius:32px;
-      background:#fff;
-      box-shadow:var(--card-shadow);
-      padding:34px;
-    }
-
-    .about-origin-card h3{
-      margin-bottom:14px;
-    }
-
-    .about-origin-card p{
-      color:var(--muted);
-      line-height:1.8;
-    }
-
-    .about-origin-list{
-      margin-top:24px;
-      display:grid;
-      gap:14px;
-    }
-
-    .about-origin-list div{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      color:var(--muted);
-      line-height:1.65;
-    }
-
-    .about-origin-list .dot{
-      margin-top:8px;
-      flex:0 0 auto;
-    }
-
-    .about-work-grid{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:52px;
-      align-items:start;
-    }
-
-    .about-work-copy{
-      position:sticky;
-      top:110px;
-    }
-
-    .about-work-copy p{
-      margin-top:16px;
-      color:var(--muted);
-      line-height:1.85;
-    }
-
-    .about-pathways{
-      display:grid;
-      gap:18px;
-    }
-
-    .about-pathway{
-      display:grid;
-      grid-template-columns:72px 1fr;
-      gap:22px;
-      padding:26px;
-      border:1px solid var(--border);
-      border-radius:28px;
-      background:#fff;
-      box-shadow:var(--card-shadow);
-    }
-
-    .about-pathway-icon{
-      width:56px;
-      height:56px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#f2eadf;
-      color:var(--navy);
-      font-family:var(--serif);
-      font-size:1.35rem;
-      font-weight:700;
-    }
-
-    .about-pathway h3{
-      margin-bottom:8px;
-    }
-
-    .about-pathway p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.72;
-    }
-
-    .about-standard{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:34px;
-      align-items:center;
-    }
-
-    .about-standard-panel{
+    .stance-image{
       border-radius:34px;
       overflow:hidden;
       border:1px solid var(--border);
       box-shadow:var(--card-shadow);
       background:#f5efe8;
+      position:sticky;
+      top:110px;
     }
 
-    .about-standard-panel img{
+    .stance-image img{
       width:100%;
       height:560px;
       object-fit:cover;
       display:block;
     }
 
-    .about-standard-copy p{
-      margin-top:18px;
+    .stance-copy h2{
+      margin-bottom:20px;
+    }
+
+    .stance-copy p{
       color:var(--muted);
       line-height:1.85;
+      margin-bottom:18px;
     }
 
-    .about-standard-list{
+    .stance-panel{
       margin-top:28px;
+      border-radius:28px;
+      background:#fff;
+      border:1px solid var(--border);
+      box-shadow:var(--card-shadow);
+      padding:30px;
+    }
+
+    .stance-panel h3{
+      margin-bottom:14px;
+    }
+
+    .stance-list{
       display:grid;
       gap:14px;
+      margin-top:18px;
     }
 
-    .about-standard-item{
+    .stance-list div{
       display:flex;
       gap:12px;
       align-items:flex-start;
@@ -350,53 +343,87 @@
       line-height:1.65;
     }
 
-    .about-standard-item .dot{
+    .stance-list .dot{
       margin-top:8px;
       flex:0 0 auto;
     }
 
-    .about-fit-panel{
-      border-radius:34px;
-      border:1px solid rgba(221,211,199,.9);
-      background:
-        linear-gradient(135deg,rgba(255,255,255,.9),rgba(248,244,238,.96));
-      box-shadow:var(--card-shadow);
-      padding:42px;
+    .clarity-section{
+      background:var(--navy);
+      color:#fffaf2;
+      position:relative;
+      overflow:hidden;
     }
 
-    .about-fit-grid{
+    .clarity-section::before{
+      content:"";
+      position:absolute;
+      right:-160px;
+      bottom:-220px;
+      width:560px;
+      height:560px;
+      border-radius:999px;
+      background:rgba(191,161,104,.13);
+    }
+
+    .clarity-grid{
+      position:relative;
+      z-index:1;
       display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:42px;
+      grid-template-columns:.9fr 1.1fr;
+      gap:54px;
       align-items:start;
     }
 
-    .about-fit-copy p{
-      margin-top:16px;
-      color:var(--muted);
+    .clarity-copy h2{
+      color:#fffaf2;
+      margin-bottom:18px;
+    }
+
+    .clarity-copy p{
+      color:rgba(255,250,242,.78);
       line-height:1.85;
+      margin-bottom:0;
     }
 
-    .about-fit-points{
+    .clarity-cards{
       display:grid;
-      gap:18px;
+      gap:16px;
     }
 
-    .about-fit-point{
+    .clarity-card{
+      display:grid;
+      grid-template-columns:56px 1fr;
+      gap:20px;
       padding:24px;
       border-radius:24px;
-      background:#fff;
-      border:1px solid var(--border);
+      background:rgba(255,250,242,.08);
+      border:1px solid rgba(255,250,242,.14);
+      backdrop-filter:blur(10px);
     }
 
-    .about-fit-point h3{
+    .clarity-icon{
+      width:44px;
+      height:44px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,250,242,.12);
+      color:#fffaf2;
+      font-family:var(--serif);
+      font-weight:700;
+    }
+
+    .clarity-card h3{
+      color:#fffaf2;
       margin-bottom:8px;
     }
 
-    .about-fit-point p{
+    .clarity-card p{
       margin:0;
-      color:var(--muted);
-      line-height:1.7;
+      color:rgba(255,250,242,.76);
+      line-height:1.65;
     }
 
     .about-cta{
@@ -445,28 +472,27 @@
 
     @media (max-width:980px){
       .about-hero-grid,
-      .about-origin-grid,
-      .about-work-grid,
-      .about-standard,
-      .about-fit-grid,
+      .founder-grid,
+      .stance-grid,
+      .clarity-grid,
       .about-cta-grid{
         grid-template-columns:1fr;
       }
 
-      .about-principles{
+      .model-grid{
         grid-template-columns:1fr;
       }
 
-      .about-work-copy{
+      .stance-image{
         position:static;
+      }
+
+      .stance-image img{
+        height:auto;
       }
 
       .about-cta-actions{
         justify-content:flex-start;
-      }
-
-      .about-standard-panel img{
-        height:auto;
       }
     }
 
@@ -480,11 +506,14 @@
         min-height:260px;
       }
 
-      .about-pathway{
+      .founder-placeholder-card{
+        min-height:420px;
+      }
+
+      .clarity-card{
         grid-template-columns:1fr;
       }
 
-      .about-fit-panel,
       .about-cta{
         padding:32px 24px;
       }
@@ -542,19 +571,18 @@
       <div class="container about-hero-grid">
         <div class="about-hero-copy">
           <div class="eyebrow">About Stonebridge</div>
-          <h1>A steady place for careful psychological work.</h1>
+          <h1>Built for psychological work that requires steadiness.</h1>
           <p>
-            Stonebridge Psychological Group was created around a practical clinical idea: people often
-            seek help during crossings — periods of uncertainty, conflict, evaluation, transition, or
-            distress. The work is not to rush people across, sell them a service, or offer the same
-            answer to everyone. The work is to provide a steady structure where the right questions can
-            be asked carefully and the next step can be considered honestly.
+            Stonebridge Psychological Group was created for therapy, assessment, and forensic services
+            that require careful attention, honest judgment, and respect for complexity. The practice is
+            grounded in a simple idea: good psychological work depends not only on the clinician in the room,
+            but on the structure that allows that clinician to think clearly, work carefully, and remain present.
           </p>
 
-          <div class="hero-note">
+          <div class="about-hero-note">
             Stonebridge is meant to be warm, but not vague. Thoughtful, but not passive.
-            Clinically serious, but not cold. It is a practice built around fit, judgment, and respect
-            for the complexity of people’s lives.
+            Clinically serious, but not cold. It is a practice built around fit, judgment, and the conditions
+            that make careful work possible.
           </div>
         </div>
 
@@ -571,273 +599,191 @@
       </div>
     </section>
 
-    <section class="section section-white">
-      <div class="container">
-        <div class="about-intro-panel">
-          <div class="section-kicker">The idea behind the practice</div>
-          <h2>Not a volume clinic. Not a slogan. A deliberate clinical home.</h2>
+    <section class="section founder-section">
+      <div class="container founder-grid">
+        <div class="founder-copy">
+          <div class="section-kicker">From the Founder</div>
+          <h2>Why I created Stonebridge.</h2>
+
           <p>
-            Stonebridge grew out of experience across community mental health, hospital settings,
+            I created Stonebridge after working across community mental health, hospital settings,
             private practice, partial hospitalization and intensive outpatient programs, and forensic
-            clinical work. Across those settings, one phrase is repeated often: “meet people where they
-            are.” That phrase can be meaningful, but only when it is paired with judgment, structure,
-            and an honest understanding of what a person actually needs. Stonebridge is not designed
-            to take every referral or offer every service. It is designed to do careful work with people
-            who are likely to benefit from the kind of care, assessment, or consultation we can provide.
+            evaluation. In many of those settings, I saw committed clinicians doing meaningful work inside
+            systems that did not always support the care they claimed to value.
           </p>
-        </div>
 
-        <div class="about-principles">
-          <article class="about-principle-card">
-            <div class="about-principle-number">01</div>
-            <h3>Fit matters</h3>
-            <p>
-              A consultation is not a sales process. It is a clinical decision point. We value a client’s
-              time, money, and trust enough to be direct about whether Stonebridge is the right fit.
-            </p>
-          </article>
-
-          <article class="about-principle-card">
-            <div class="about-principle-number">02</div>
-            <h3>Depth matters</h3>
-            <p>
-              Psychological work should not flatten people into symptoms, labels, or quick explanations.
-              Good care leaves room for history, conflict, development, defenses, grief, hope, and change.
-            </p>
-          </article>
-
-          <article class="about-principle-card">
-            <div class="about-principle-number">03</div>
-            <h3>Clinicians matter</h3>
-            <p>
-              Stonebridge is also built around respect for clinicians. The work asks a great deal of
-              people. A healthy practice should not require clinicians to sacrifice themselves to belong.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section about-quote-section">
-      <div class="container about-quote-wrap">
-        <div class="about-quote">
-          Meeting people where they are only matters if there is somewhere thoughtful to go from there.
-        </div>
-        <p class="about-quote-copy">
-          Stonebridge is built around the belief that care should be humane without becoming boundaryless,
-          practical without becoming mechanical, and clinically deep without losing sight of real decisions.
-          The goal is not to be everything to everyone. The goal is to be steady, useful, and honest about
-          what kind of work is being done.
-        </p>
-      </div>
-    </section>
-
-    <section class="section section-white">
-      <div class="container about-origin-grid">
-        <div class="about-origin-copy">
-          <div class="section-kicker">Clinical orientation</div>
-          <h2>A relational practice with clear boundaries.</h2>
           <p>
-            Stonebridge is influenced by traditions that take the person seriously: the dignity and
-            directness of humanistic work, the attention to agency and anxiety found in Otto Rank, the
-            importance of self-cohesion and empathic understanding in Kohut, and Winnicott’s emphasis
-            on holding, reliability, and the conditions that allow people to become more fully themselves.
+            Clients usually do not see that part. They come to therapy, assessment, or evaluation hoping
+            the person across from them is supported, focused, and able to think carefully with them.
+            They often do not know whether that clinician is carrying an unmanageable caseload, working
+            under unrealistic productivity demands, completing documentation late into the evening, or
+            trying to provide thoughtful care while already depleted.
           </p>
+
           <p>
-            These ideas do not appear here as academic decoration. They shape the tone of the practice:
-            listen closely, do not reduce people too quickly, maintain boundaries, and create a setting
-            where difficult material can be approached without panic or performance.
-          </p>
-        </div>
-
-        <article class="about-origin-card">
-          <h3>The difference is not softness. It is seriousness.</h3>
-          <p>
-            Warmth is not the same as agreeableness. Empathy is not the same as taking every case.
-            Clinical care requires presence, but it also requires discernment. Sometimes the most respectful
-            thing a practice can do is clarify what it can offer, what it cannot offer, and what may be a
-            better path.
+            That matters. It matters for clinicians, and it matters for clients. Stonebridge is my attempt
+            to build differently. Not perfectly. Not dramatically. But deliberately.
           </p>
 
-          <div class="about-origin-list">
-            <div>
-              <span class="dot"></span>
-              <span>We aim to understand the person, not simply the presenting problem.</span>
-            </div>
-
-            <div>
-              <span class="dot"></span>
-              <span>We use consultation to determine fit, not to pressure people into treatment.</span>
-            </div>
-
-            <div>
-              <span class="dot"></span>
-              <span>We value clarity, because unclear care can waste time, money, and trust.</span>
-            </div>
-
-            <div>
-              <span class="dot"></span>
-              <span>We believe strong clinical work requires clinicians who are supported, not depleted.</span>
-            </div>
+          <div class="founder-signoff">
+            <strong>Stephen W. Bryant, PsyD, LCPC</strong>
+            <span>Founder, Stonebridge Psychological Group</span>
           </div>
-        </article>
+        </div>
+
+        <div class="founder-placeholder-card">
+          <div class="founder-placeholder-content">
+            <div class="founder-placeholder-label">Image placeholder</div>
+            <h3>Founder-led teaching and burnout work</h3>
+            <p>
+              This space is reserved for a future image of Dr. Bryant leading a professional seminar
+              or continuing education presentation related to clinician burnout and sustainable care.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section section-soft">
-      <div class="container about-work-grid">
-        <div class="about-work-copy">
-          <div class="section-kicker">How Stonebridge works</div>
-          <h2>Clinical depth, practical judgment, and forensic clarity.</h2>
+    <section class="section model-section">
+      <div class="container">
+        <div class="model-intro">
+          <div class="section-kicker">The Stonebridge Model</div>
+          <h2>Selective by design.</h2>
           <p>
-            Stonebridge brings together therapy, assessment, and forensic services without pretending
-            they are the same thing. Each pathway has a different purpose. Therapy allows for sustained
-            psychological work. Assessment clarifies complicated questions. Forensic work requires
-            disciplined reasoning, careful documentation, and communication that remains objective and
-            understandable.
-          </p>
-          <p>
-            Across all of these services, the standard is similar: define the question, gather what matters,
-            distinguish what is known from what is inferred, and communicate clearly enough that another
-            thoughtful person can understand the reasoning.
+            Stonebridge is not designed to take every referral. That is intentional. A careful practice
+            should be able to say when it can help, when it cannot, and when another provider, service,
+            or level of care would be more appropriate.
           </p>
         </div>
 
-        <div class="about-pathways">
-          <article class="about-pathway">
-            <div class="about-pathway-icon">C</div>
-            <div>
-              <h3>Consultation before commitment</h3>
-              <p>
-                The first step is to understand what is being asked and whether Stonebridge is positioned
-                to help. When another provider, level of care, or evaluation setting would be more appropriate,
-                that should be named clearly.
-              </p>
-            </div>
+        <div class="model-grid">
+          <article class="model-card">
+            <div class="model-number">01</div>
+            <h3>Respect for fit</h3>
+            <p>
+              A consultation is not a sales process. It is a clinical decision point. Fit matters because
+              people are investing time, money, vulnerability, and trust.
+            </p>
           </article>
 
-          <article class="about-pathway">
-            <div class="about-pathway-icon">T</div>
-            <div>
-              <h3>Psychotherapy with depth</h3>
-              <p>
-                Therapy is not treated as advice-giving or symptom management alone. It is a space for
-                sustained attention to patterns, relationships, emotion, meaning, and change.
-              </p>
-            </div>
+          <article class="model-card">
+            <div class="model-number">02</div>
+            <h3>Respect for clinicians</h3>
+            <p>
+              A practice cannot ask clinicians to be deeply present for others while treating them as
+              interchangeable or endlessly available. Good care requires supported clinicians.
+            </p>
           </article>
 
-          <article class="about-pathway">
-            <div class="about-pathway-icon">A</div>
-            <div>
-              <h3>Assessment that clarifies</h3>
-              <p>
-                Psychological assessment should organize complexity, not bury people in jargon. The goal
-                is to answer meaningful questions and offer recommendations that can actually be used.
-              </p>
-            </div>
-          </article>
-
-          <article class="about-pathway">
-            <div class="about-pathway-icon">F</div>
-            <div>
-              <h3>Forensic work with restraint</h3>
-              <p>
-                Forensic services require objectivity, careful limits, and clear reasoning. The role is not
-                advocacy disguised as evaluation. The role is disciplined psychological judgment applied
-                to a specific legal or referral question.
-              </p>
-            </div>
+          <article class="model-card">
+            <div class="model-number">03</div>
+            <h3>Respect for the work</h3>
+            <p>
+              Psychological work should be bounded, thoughtful, and matched to the question being asked.
+              The goal is not volume. The goal is useful care done carefully.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
     <section class="section section-white">
-      <div class="container about-standard">
-        <div class="about-standard-panel">
+      <div class="container stance-grid">
+        <div class="stance-image">
           <img src="about-stone-detail.png" alt="Warm stone detail">
         </div>
 
-        <div class="about-standard-copy">
-          <div class="section-kicker">The Stonebridge standard</div>
-          <h2>Quiet professionalism, not noise.</h2>
+        <div class="stance-copy">
+          <div class="section-kicker">Clinical stance</div>
+          <h2>Relational, thoughtful, and bounded.</h2>
+
           <p>
-            Stonebridge is intended to feel refined without being distant, serious without being severe,
-            and practical without becoming mechanical. The practice is shaped by the belief that strong
-            clinical work does not need to be loud. It needs to be thoughtful, consistent, and trustworthy.
-          </p>
-          <p>
-            The stone in the name matters. Stone is not flashy. It does not perform. It endures. That is
-            the tone of the practice: steady enough to hold complexity, grounded enough to be useful,
-            and careful enough to know when a question deserves more than a quick answer.
+            The clinical work at Stonebridge is relational and depth-oriented. It is influenced by traditions
+            that take the person seriously: the need to be understood, the struggle for agency, the injuries
+            people carry in their sense of self, and the importance of a reliable setting where difficult
+            material can be approached without performance.
           </p>
 
-          <div class="about-standard-list">
-            <div class="about-standard-item">
-              <span class="dot"></span>
-              <span>Language that is clear, careful, and clinically grounded.</span>
-            </div>
+          <p>
+            But relational work is not boundaryless work. Warmth is not the same as vagueness. Empathy is
+            not the same as saying yes to everything. Good care requires presence, but it also requires
+            judgment.
+          </p>
 
-            <div class="about-standard-item">
-              <span class="dot"></span>
-              <span>Services organized around real psychological questions, not generic categories.</span>
-            </div>
+          <div class="stance-panel">
+            <h3>The standard is simple, but not easy.</h3>
+            <p>
+              Listen closely. Do not reduce people too quickly. Be honest about what is known and what is
+              not. Maintain enough structure for the work to be useful.
+            </p>
 
-            <div class="about-standard-item">
-              <span class="dot"></span>
-              <span>A practice identity that can grow while remaining steady and coherent.</span>
-            </div>
+            <div class="stance-list">
+              <div>
+                <span class="dot"></span>
+                <span>Therapy should leave room for complexity, not flatten people into symptoms alone.</span>
+              </div>
 
-            <div class="about-standard-item">
-              <span class="dot"></span>
-              <span>A tone that respects both the human and professional seriousness of the work.</span>
+              <div>
+                <span class="dot"></span>
+                <span>Assessment should clarify meaningful questions, not bury people in jargon.</span>
+              </div>
+
+              <div>
+                <span class="dot"></span>
+                <span>Forensic work should be careful, restrained, and clear about the limits of opinion.</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft">
-      <div class="container">
-        <div class="about-fit-panel">
-          <div class="about-fit-grid">
-            <div class="about-fit-copy">
-              <div class="section-kicker">A selective practice</div>
-              <h2>Stonebridge is built around appropriate fit.</h2>
+    <section class="section clarity-section">
+      <div class="container clarity-grid">
+        <div class="clarity-copy">
+          <div class="section-kicker">Clinical and forensic clarity</div>
+          <h2>Different services, one standard of care.</h2>
+          <p>
+            Therapy, assessment, and forensic work are not the same thing. Each has a different purpose,
+            and Stonebridge does not blur those boundaries. Across all three areas, the task is to define
+            the question, gather what matters, distinguish what is known from what is inferred, and
+            communicate clearly.
+          </p>
+        </div>
+
+        <div class="clarity-cards">
+          <article class="clarity-card">
+            <div class="clarity-icon">T</div>
+            <div>
+              <h3>Therapy</h3>
               <p>
-                A good practice should not be organized around taking every possible referral. It should
-                be organized around doing the work it is suited to do, doing it well, and being honest
-                when another setting would serve someone better.
+                Therapy provides space for sustained psychological work: patterns, symptoms, relationships,
+                defenses, grief, identity, agency, and change.
               </p>
             </div>
+          </article>
 
-            <div class="about-fit-points">
-              <article class="about-fit-point">
-                <h3>For clients</h3>
-                <p>
-                  We respect that people are investing time, money, vulnerability, and trust. That deserves
-                  more than vague reassurance. It deserves thoughtful guidance about fit and next steps.
-                </p>
-              </article>
-
-              <article class="about-fit-point">
-                <h3>For clinicians</h3>
-                <p>
-                  Stonebridge is intended to be a place where clinicians can do serious work without
-                  being treated as interchangeable providers in a volume system.
-                </p>
-              </article>
-
-              <article class="about-fit-point">
-                <h3>For the work itself</h3>
-                <p>
-                  Psychological care and evaluation are most useful when they are bounded, honest, and
-                  carefully matched to the question being asked.
-                </p>
-              </article>
+          <article class="clarity-card">
+            <div class="clarity-icon">A</div>
+            <div>
+              <h3>Assessment</h3>
+              <p>
+                Assessment is used to clarify meaningful questions. It should organize complexity into
+                findings and recommendations that can actually be used.
+              </p>
             </div>
-          </div>
+          </article>
+
+          <article class="clarity-card">
+            <div class="clarity-icon">F</div>
+            <div>
+              <h3>Forensic services</h3>
+              <p>
+                Forensic work requires restraint. The task is not to advocate, reassure, or dramatize.
+                The task is disciplined psychological judgment applied to a specific referral question.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -845,12 +791,25 @@
     <section class="section section-white">
       <div class="container">
         <div class="about-cta">
-          <div class="about-cta-grid">
+          <div class="about clarify meaningful questions. It should organize complexity into
+                findings and recommendations that can actually be used.
+              </p>
+            </div>
+          </article>
+
+          <article class="clarity-card">
+            <div class="clarity-icon">F</div>
+            <div>
+              <h3>Forensic services</h3>
+              <p>
+                Forensic work requires restraint. The task is not to advocate, reassure, or dramatize.
+                The task is disciplined-cta-grid">
             <div>
               <h2>Begin with a thoughtful consultation.</h2>
               <p>
-                A consultation is a practical first step for determining whether therapy, assessment,
-                forensic services, or another referral pathway is the most appropriate fit.
+                A consultation is a practical first step. It helps determine whether Stonebridge is the
+                right setting, whether another referral would be more appropriate, and what kind of care
+                or evaluation would actually serve the question being brought.
               </p>
             </div>
 
