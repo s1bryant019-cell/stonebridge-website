@@ -13,6 +13,8 @@
     .about-hero{
       position:relative;
       overflow:hidden;
+      padding-top:72px;
+      padding-bottom:74px;
     }
 
     .about-hero::before{
@@ -20,8 +22,8 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 74% 28%, rgba(191,161,104,.08), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,.78), rgba(248,244,238,.96));
+        radial-gradient(circle at 72% 28%, rgba(191,161,104,.08), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,.82), rgba(248,244,238,.96));
       pointer-events:none;
     }
 
@@ -36,29 +38,30 @@
 
     .about-hero-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:54px;
+      grid-template-columns:minmax(0, .95fr) minmax(380px, .82fr);
+      gap:64px;
       align-items:center;
     }
 
     .about-hero-copy h1{
-      max-width:760px;
+      max-width:680px;
+      line-height:.98;
     }
 
     .about-hero-copy p{
-      max-width:680px;
-      margin-top:18px;
-      font-size:1.05rem;
-      line-height:1.8;
+      max-width:610px;
+      margin-top:22px;
+      font-size:1.03rem;
+      line-height:1.78;
     }
 
     .about-hero-note{
       margin-top:24px;
-      max-width:630px;
+      max-width:600px;
       padding-left:20px;
       border-left:2px solid rgba(191,161,104,.55);
       color:var(--muted);
-      font-size:.98rem;
+      font-size:.96rem;
       line-height:1.72;
     }
 
@@ -67,26 +70,27 @@
       border:1px solid rgba(221,211,199,.82);
       background:linear-gradient(180deg,#fffaf2,#f5efe7);
       box-shadow:var(--card-shadow);
-      padding:18px;
+      padding:16px;
       position:relative;
+      margin-top:18px;
     }
 
     .about-visual-card img{
       width:100%;
       display:block;
       border-radius:26px;
-      min-height:370px;
+      height:340px;
       object-fit:cover;
       opacity:.97;
     }
 
     .about-visual-note{
       position:absolute;
-      left:34px;
-      right:34px;
-      bottom:34px;
-      border-radius:22px;
-      padding:20px 22px;
+      left:30px;
+      right:30px;
+      bottom:30px;
+      border-radius:20px;
+      padding:18px 20px;
       background:rgba(18,39,61,.88);
       color:#fffaf2;
       box-shadow:0 18px 38px rgba(18,39,61,.22);
@@ -96,28 +100,48 @@
     .about-visual-note span{
       display:block;
       font-family:var(--serif);
-      font-size:1.35rem;
+      font-size:1.25rem;
       line-height:1.25;
       margin-bottom:6px;
     }
 
     .about-visual-note p{
       margin:0;
-      font-size:.92rem;
-      line-height:1.55;
+      font-size:.88rem;
+      line-height:1.5;
       color:rgba(255,250,242,.82);
     }
 
     .about-tight-section{
-      padding-top:70px;
-      padding-bottom:70px;
+      padding-top:58px;
+      padding-bottom:58px;
+    }
+
+    .founder-section{
+      background:#fff;
+    }
+
+    .founder-quote{
+      max-width:1120px;
+      margin:0 auto 36px;
+      padding:34px 42px;
+      border-left:3px solid rgba(191,161,104,.78);
+      border-radius:0 30px 30px 0;
+      background:linear-gradient(180deg,#fbf8f3,#f4eee6);
+      color:var(--navy);
+      font-family:var(--serif);
+      font-style:italic;
+      font-size:clamp(1.75rem,2.55vw,2.8rem);
+      line-height:1.12;
+      letter-spacing:-.025em;
+      box-shadow:0 18px 42px rgba(18,39,61,.06);
     }
 
     .founder-grid{
       display:grid;
-      grid-template-columns:1fr .92fr;
-      gap:50px;
-      align-items:center;
+      grid-template-columns:minmax(0, .98fr) minmax(360px, .82fr);
+      gap:46px;
+      align-items:start;
     }
 
     .founder-copy h2{
@@ -130,39 +154,18 @@
       margin-bottom:16px;
     }
 
-    .founder-quote{
-      margin:0 0 24px;
-      padding:26px 30px;
-      border-left:3px solid rgba(191,161,104,.75);
-      border-radius:0 26px 26px 0;
-      background:linear-gradient(180deg,#fbf8f3,#f4eee6);
-      color:var(--navy);
-      font-family:var(--serif);
-      font-size:clamp(1.55rem,2.35vw,2.25rem);
-      line-height:1.18;
-      letter-spacing:-.02em;
-    }
-
-    .founder-signoff{
+    .founder-signature{
       margin-top:22px;
-      padding:22px 24px;
-      border-radius:24px;
-      background:#fff;
-      border:1px solid rgba(221,211,199,.86);
-      box-shadow:var(--card-shadow);
-    }
-
-    .founder-signoff strong{
-      display:block;
-      color:var(--navy);
       font-family:var(--serif);
-      font-size:1.25rem;
-      margin-bottom:4px;
+      font-size:1.65rem;
+      line-height:1.1;
+      color:var(--navy);
     }
 
-    .founder-signoff span{
+    .founder-title{
+      margin-top:5px;
       color:var(--muted);
-      font-size:.95rem;
+      font-size:.92rem;
     }
 
     .presentation-card{
@@ -170,7 +173,7 @@
       border:1px solid var(--border);
       background:#fff;
       box-shadow:var(--card-shadow);
-      padding:16px;
+      padding:14px;
     }
 
     .presentation-card img{
@@ -182,9 +185,9 @@
     }
 
     .presentation-caption{
-      margin:14px 6px 2px;
+      margin:12px 6px 2px;
       color:var(--muted);
-      font-size:.92rem;
+      font-size:.9rem;
       line-height:1.55;
     }
 
@@ -199,36 +202,36 @@
 
     .model-grid{
       display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:46px;
-      align-items:start;
+      grid-template-columns:.82fr 1.18fr;
+      gap:42px;
+      align-items:center;
     }
 
     .model-copy p{
       color:var(--muted);
-      line-height:1.8;
+      line-height:1.78;
       margin-top:16px;
     }
 
     .model-points{
       display:grid;
-      gap:16px;
+      gap:14px;
     }
 
     .model-point{
       display:grid;
-      grid-template-columns:54px 1fr;
-      gap:18px;
-      padding:24px;
+      grid-template-columns:52px 1fr;
+      gap:16px;
+      padding:22px;
       border:1px solid var(--border);
-      border-radius:26px;
+      border-radius:24px;
       background:#fff;
       box-shadow:var(--card-shadow);
     }
 
     .model-number{
-      width:42px;
-      height:42px;
+      width:40px;
+      height:40px;
       border-radius:999px;
       display:flex;
       align-items:center;
@@ -236,27 +239,28 @@
       background:rgba(18,39,61,.08);
       color:var(--navy);
       font-weight:600;
+      font-size:.82rem;
     }
 
     .model-point h3{
-      margin-bottom:8px;
+      margin-bottom:7px;
     }
 
     .model-point p{
       margin:0;
       color:var(--muted);
-      line-height:1.68;
+      line-height:1.64;
     }
 
     .stance-grid{
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:50px;
+      grid-template-columns:.82fr 1.18fr;
+      gap:46px;
       align-items:center;
     }
 
     .stance-image{
-      border-radius:34px;
+      border-radius:30px;
       overflow:hidden;
       border:1px solid var(--border);
       box-shadow:var(--card-shadow);
@@ -265,25 +269,25 @@
 
     .stance-image img{
       width:100%;
-      height:520px;
+      height:440px;
       object-fit:cover;
       display:block;
     }
 
     .stance-copy h2{
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
 
     .stance-copy p{
       color:var(--muted);
-      line-height:1.8;
-      margin-bottom:16px;
+      line-height:1.78;
+      margin-bottom:15px;
     }
 
     .stance-list{
       display:grid;
-      gap:12px;
-      margin-top:22px;
+      gap:11px;
+      margin-top:20px;
     }
 
     .stance-list div{
@@ -291,7 +295,7 @@
       gap:12px;
       align-items:flex-start;
       color:var(--muted);
-      line-height:1.62;
+      line-height:1.6;
     }
 
     .stance-list .dot{
@@ -300,7 +304,9 @@
     }
 
     .clarity-section{
-      background:var(--navy);
+      background:
+        radial-gradient(circle at 88% 70%, rgba(191,161,104,.16), transparent 26%),
+        linear-gradient(135deg, #12273d, #1b3652);
       color:#fffaf2;
       position:relative;
       overflow:hidden;
@@ -309,8 +315,8 @@
     .clarity-section::before{
       content:"";
       position:absolute;
-      right:-160px;
-      bottom:-240px;
+      right:-180px;
+      bottom:-260px;
       width:560px;
       height:560px;
       border-radius:999px;
@@ -321,8 +327,8 @@
       position:relative;
       z-index:1;
       display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:46px;
+      grid-template-columns:.82fr 1.18fr;
+      gap:42px;
       align-items:start;
     }
 
@@ -333,7 +339,7 @@
 
     .clarity-copy p{
       color:rgba(255,250,242,.78);
-      line-height:1.78;
+      line-height:1.76;
       margin:0;
     }
 
@@ -346,8 +352,8 @@
     .clarity-card{
       padding:22px;
       border-radius:24px;
-      background:rgba(255,250,242,.08);
-      border:1px solid rgba(255,250,242,.14);
+      background:rgba(255,250,242,.10);
+      border:1px solid rgba(255,250,242,.18);
       backdrop-filter:blur(10px);
     }
 
@@ -358,14 +364,14 @@
 
     .clarity-card p{
       margin:0;
-      color:rgba(255,250,242,.76);
-      line-height:1.62;
+      color:rgba(255,250,242,.78);
+      line-height:1.6;
       font-size:.94rem;
     }
 
     .about-cta{
-      border-radius:34px;
-      padding:42px;
+      border-radius:32px;
+      padding:38px 40px;
       background:
         radial-gradient(circle at 85% 20%, rgba(191,161,104,.22), transparent 28%),
         linear-gradient(135deg,rgba(18,39,61,.98),rgba(28,55,82,.96));
@@ -390,7 +396,7 @@
     .about-cta p{
       max-width:700px;
       color:rgba(255,250,242,.78);
-      line-height:1.72;
+      line-height:1.7;
       margin:0;
     }
 
@@ -431,9 +437,14 @@
     }
 
     @media (max-width:640px){
-      .about-tight-section{
+      .about-hero{
         padding-top:52px;
-        padding-bottom:52px;
+        padding-bottom:54px;
+      }
+
+      .about-tight-section{
+        padding-top:46px;
+        padding-bottom:46px;
       }
 
       .about-visual-note{
@@ -442,19 +453,19 @@
       }
 
       .about-visual-card img{
-        min-height:260px;
+        height:260px;
+      }
+
+      .founder-quote{
+        padding:24px 24px;
       }
 
       .model-point{
         grid-template-columns:1fr;
       }
 
-      .founder-quote{
-        padding:22px 22px;
-      }
-
       .about-cta{
-        padding:32px 24px;
+        padding:30px 24px;
       }
     }
   </style>
@@ -519,9 +530,8 @@
           </p>
 
           <div class="about-hero-note">
-            Stonebridge is meant to be warm, but not vague. Thoughtful, but not passive.
-            Clinically serious, but not cold. It is a practice built around fit, judgment, and the conditions
-            that make careful work possible.
+            Warm, but not vague. Thoughtful, but not passive. Clinically serious, but not cold.
+            Stonebridge is a practice built around fit, judgment, and the conditions that make careful work possible.
           </div>
         </div>
 
@@ -539,45 +549,47 @@
     </section>
 
     <section class="section about-tight-section founder-section">
-      <div class="container founder-grid">
-        <div class="founder-copy">
-          <div class="section-kicker">From the Founder</div>
-          <blockquote class="founder-quote">
-            I created Stonebridge because I had seen too many places where the language of care sounded right,
-            but the structure underneath it did not support the work.
-          </blockquote>
+      <div class="container">
+        <blockquote class="founder-quote">
+          “I created Stonebridge because I had seen too many places where the language of care sounded right,
+          but the structure underneath it did not support the work.”
+        </blockquote>
 
-          <p>
-            I have worked across community mental health, hospital settings, private practice, partial
-            hospitalization and intensive outpatient programs, and forensic evaluation. In many of those
-            settings, I saw committed clinicians doing meaningful work inside systems that did not always
-            support the care they claimed to value.
-          </p>
+        <div class="founder-grid">
+          <div class="founder-copy">
+            <div class="section-kicker">From the Founder</div>
+            <h2>Why I created Stonebridge.</h2>
 
-          <p>
-            Clients usually do not see that part. They come to therapy, assessment, or evaluation hoping
-            the person across from them is supported, focused, and able to think carefully with them.
-            They often do not know whether that clinician is carrying an unmanageable caseload, working
-            under unrealistic productivity demands, or trying to provide thoughtful care while already depleted.
-          </p>
+            <p>
+              I have worked across community mental health, hospital settings, private practice, partial
+              hospitalization and intensive outpatient programs, and forensic evaluation. In many of those
+              settings, I saw committed clinicians doing meaningful work inside systems that did not always
+              support the care they claimed to value.
+            </p>
 
-          <p>
-            That matters. It matters for clinicians, and it matters for clients. Stonebridge is my attempt
-            to build differently. Not perfectly. Not dramatically. But deliberately.
-          </p>
+            <p>
+              Clients usually do not see that part. They come to therapy, assessment, or evaluation hoping
+              the person across from them is supported, focused, and able to think carefully with them.
+              They often do not know whether that clinician is carrying an unmanageable caseload, working
+              under unrealistic productivity demands, or trying to provide thoughtful care while already depleted.
+            </p>
 
-          <div class="founder-signoff">
-            <strong>Stephen W. Bryant, PsyD, LCPC</strong>
-            <span>Founder, Stonebridge Psychological Group</span>
+            <p>
+              That matters. It matters for clinicians, and it matters for clients. Stonebridge is my attempt
+              to build differently. Not perfectly. Not dramatically. But deliberately.
+            </p>
+
+            <div class="founder-signature">Stephen W. Bryant</div>
+            <div class="founder-title">PsyD, LCPC · Founder, Stonebridge Psychological Group</div>
           </div>
-        </div>
 
-        <figure class="presentation-card">
-          <img src="dr-bryant-beyond-burned-out-presentation.png" alt="Dr. Bryant presenting his work on Beyond Burned Out">
-          <figcaption class="presentation-caption">
-            <strong>Dr. Bryant</strong> presenting his work on <em>Beyond Burned Out</em>.
-          </figcaption>
-        </figure>
+          <figure class="presentation-card">
+            <img src="dr-bryant-beyond-burned-out-presentation.png" alt="Dr. Bryant presenting his work on Beyond Burned Out">
+            <figcaption class="presentation-caption">
+              <strong>Dr. Bryant</strong> presenting his work on <em>Beyond Burned Out</em>.
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
