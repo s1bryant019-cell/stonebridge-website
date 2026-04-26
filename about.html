@@ -13,8 +13,13 @@
     .about-hero{
       position:relative;
       overflow:hidden;
-      padding-top:72px;
-      padding-bottom:74px;
+      padding-top:82px;
+      padding-bottom:82px;
+      background:
+        linear-gradient(90deg, rgba(248,244,238,.98) 0%, rgba(248,244,238,.9) 44%, rgba(248,244,238,.42) 100%),
+        url("about-bridge-hero.png");
+      background-size:cover;
+      background-position:center right;
     }
 
     .about-hero::before{
@@ -22,8 +27,8 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 72% 28%, rgba(191,161,104,.08), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,.82), rgba(248,244,238,.96));
+        radial-gradient(circle at 18% 24%, rgba(191,161,104,.18), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,.34), rgba(248,244,238,.88));
       pointer-events:none;
     }
 
@@ -38,20 +43,24 @@
 
     .about-hero-grid{
       display:grid;
-      grid-template-columns:minmax(0, .95fr) minmax(380px, .82fr);
-      gap:64px;
+      grid-template-columns:minmax(0, .92fr) minmax(340px, .62fr);
+      gap:50px;
       align-items:center;
     }
 
+    .about-hero-copy{
+      max-width:740px;
+    }
+
     .about-hero-copy h1{
-      max-width:680px;
+      max-width:720px;
       line-height:.98;
     }
 
     .about-hero-copy p{
-      max-width:610px;
+      max-width:620px;
       margin-top:22px;
-      font-size:1.03rem;
+      font-size:1.04rem;
       line-height:1.78;
     }
 
@@ -59,62 +68,46 @@
       margin-top:24px;
       max-width:600px;
       padding-left:20px;
-      border-left:2px solid rgba(191,161,104,.55);
+      border-left:2px solid rgba(191,161,104,.7);
       color:var(--muted);
       font-size:.96rem;
       line-height:1.72;
     }
 
-    .about-visual-card{
-      border-radius:34px;
-      border:1px solid rgba(221,211,199,.82);
-      background:linear-gradient(180deg,#fffaf2,#f5efe7);
-      box-shadow:var(--card-shadow);
-      padding:16px;
-      position:relative;
-      margin-top:18px;
+    .about-hero-card{
+      align-self:stretch;
+      display:flex;
+      align-items:flex-end;
     }
 
-    .about-visual-card img{
-      width:100%;
-      display:block;
-      border-radius:26px;
-      height:340px;
-      object-fit:cover;
-      opacity:.97;
-    }
-
-    .about-visual-note{
-      position:absolute;
-      left:30px;
-      right:30px;
-      bottom:30px;
-      border-radius:20px;
-      padding:18px 20px;
-      background:rgba(18,39,61,.88);
+    .about-hero-statement{
+      border-radius:30px;
+      padding:30px;
+      background:rgba(18,39,61,.92);
       color:#fffaf2;
-      box-shadow:0 18px 38px rgba(18,39,61,.22);
-      backdrop-filter:blur(10px);
+      box-shadow:0 28px 70px rgba(18,39,61,.22);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,250,242,.15);
     }
 
-    .about-visual-note span{
+    .about-hero-statement span{
       display:block;
       font-family:var(--serif);
-      font-size:1.25rem;
-      line-height:1.25;
-      margin-bottom:6px;
+      font-size:1.7rem;
+      line-height:1.12;
+      margin-bottom:12px;
     }
 
-    .about-visual-note p{
+    .about-hero-statement p{
       margin:0;
-      font-size:.88rem;
-      line-height:1.5;
-      color:rgba(255,250,242,.82);
+      color:rgba(255,250,242,.78);
+      line-height:1.65;
+      font-size:.95rem;
     }
 
     .about-tight-section{
-      padding-top:58px;
-      padding-bottom:58px;
+      padding-top:54px;
+      padding-bottom:54px;
     }
 
     .founder-section{
@@ -123,15 +116,15 @@
 
     .founder-quote{
       max-width:1120px;
-      margin:0 auto 36px;
-      padding:34px 42px;
+      margin:0 auto 34px;
+      padding:32px 40px;
       border-left:3px solid rgba(191,161,104,.78);
       border-radius:0 30px 30px 0;
       background:linear-gradient(180deg,#fbf8f3,#f4eee6);
       color:var(--navy);
       font-family:var(--serif);
       font-style:italic;
-      font-size:clamp(1.75rem,2.55vw,2.8rem);
+      font-size:clamp(1.65rem,2.35vw,2.55rem);
       line-height:1.12;
       letter-spacing:-.025em;
       box-shadow:0 18px 42px rgba(18,39,61,.06);
@@ -139,9 +132,9 @@
 
     .founder-grid{
       display:grid;
-      grid-template-columns:minmax(0, .98fr) minmax(360px, .82fr);
+      grid-template-columns:minmax(0,1fr) 390px;
       gap:46px;
-      align-items:start;
+      align-items:center;
     }
 
     .founder-copy h2{
@@ -169,7 +162,10 @@
     }
 
     .presentation-card{
-      border-radius:34px;
+      width:100%;
+      max-width:390px;
+      margin:0 auto;
+      border-radius:30px;
       border:1px solid var(--border);
       background:#fff;
       box-shadow:var(--card-shadow);
@@ -179,16 +175,17 @@
     .presentation-card img{
       width:100%;
       display:block;
-      border-radius:26px;
+      border-radius:22px;
       object-fit:cover;
-      aspect-ratio:3 / 2;
+      aspect-ratio:4 / 3;
+      object-position:center;
     }
 
     .presentation-caption{
-      margin:12px 6px 2px;
+      margin:14px 6px 3px;
       color:var(--muted);
       font-size:.9rem;
-      line-height:1.55;
+      line-height:1.58;
     }
 
     .presentation-caption strong{
@@ -269,7 +266,7 @@
 
     .stance-image img{
       width:100%;
-      height:440px;
+      height:420px;
       object-fit:cover;
       display:block;
     }
@@ -327,9 +324,13 @@
       position:relative;
       z-index:1;
       display:grid;
-      grid-template-columns:.82fr 1.18fr;
+      grid-template-columns:.78fr 1.22fr;
       gap:42px;
-      align-items:start;
+      align-items:center;
+    }
+
+    .clarity-copy .section-kicker{
+      color:rgba(255,250,242,.72);
     }
 
     .clarity-copy h2{
@@ -338,7 +339,7 @@
     }
 
     .clarity-copy p{
-      color:rgba(255,250,242,.78);
+      color:rgba(255,250,242,.8);
       line-height:1.76;
       margin:0;
     }
@@ -347,24 +348,29 @@
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:14px;
+      align-items:stretch;
     }
 
     .clarity-card{
-      padding:22px;
+      padding:24px;
       border-radius:24px;
-      background:rgba(255,250,242,.10);
-      border:1px solid rgba(255,250,242,.18);
+      background:rgba(255,250,242,.12);
+      border:1px solid rgba(255,250,242,.2);
       backdrop-filter:blur(10px);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height:210px;
     }
 
     .clarity-card h3{
       color:#fffaf2;
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
 
     .clarity-card p{
       margin:0;
-      color:rgba(255,250,242,.78);
+      color:rgba(255,250,242,.8);
       line-height:1.6;
       font-size:.94rem;
     }
@@ -414,6 +420,10 @@
     }
 
     @media (max-width:980px){
+      .about-hero{
+        background-position:center;
+      }
+
       .about-hero-grid,
       .founder-grid,
       .model-grid,
@@ -445,15 +455,6 @@
       .about-tight-section{
         padding-top:46px;
         padding-bottom:46px;
-      }
-
-      .about-visual-note{
-        position:static;
-        margin-top:14px;
-      }
-
-      .about-visual-card img{
-        height:260px;
       }
 
       .founder-quote{
@@ -517,7 +518,7 @@
   </header>
 
   <main>
-    <section class="page-hero-wide about-hero">
+    <section class="about-hero">
       <div class="container about-hero-grid">
         <div class="about-hero-copy">
           <div class="eyebrow">About Stonebridge</div>
@@ -535,9 +536,8 @@
           </div>
         </div>
 
-        <div class="about-visual-card">
-          <img src="about-bridge-hero.png" alt="Old stone bridge over calm water">
-          <div class="about-visual-note">
+        <div class="about-hero-card">
+          <div class="about-hero-statement">
             <span>Present. Durable. Calm.</span>
             <p>
               A bridge does not need to announce itself to be useful. It holds weight, offers passage,
@@ -586,7 +586,10 @@
           <figure class="presentation-card">
             <img src="dr-bryant-beyond-burned-out-presentation.png" alt="Dr. Bryant presenting his work on Beyond Burned Out">
             <figcaption class="presentation-caption">
-              <strong>Dr. Bryant</strong> presenting his work on <em>Beyond Burned Out</em>.
+              <strong>Dr. Bryant</strong> presenting work connected to <em>Beyond Burned Out</em>,
+              his writing and professional education on burnout in mental health care. This work examines
+              how clinician exhaustion, productivity pressure, and unsupported systems affect both providers
+              and the people who rely on them.
             </figcaption>
           </figure>
         </div>
