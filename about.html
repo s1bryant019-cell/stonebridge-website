@@ -61,9 +61,9 @@
       width:100%;
       display:block;
       border-radius:26px;
-      min-height:370px;
+      min-height:390px;
       object-fit:cover;
-      opacity:.95;
+      opacity:.97;
     }
 
     .about-visual-note{
@@ -76,6 +76,7 @@
       background:rgba(18,39,61,.88);
       color:#fffaf2;
       box-shadow:0 18px 38px rgba(18,39,61,.22);
+      backdrop-filter:blur(10px);
     }
 
     .about-visual-note span{
@@ -147,7 +148,9 @@
     }
 
     .about-quote-section{
-      background:var(--navy);
+      background:
+        radial-gradient(circle at 85% 20%, rgba(191,161,104,.16), transparent 28%),
+        linear-gradient(135deg, #12273d, #1b3652);
       color:#fffaf2;
       position:relative;
       overflow:hidden;
@@ -293,13 +296,12 @@
       border-radius:34px;
       padding:46px;
       background:
-        linear-gradient(135deg,rgba(18,39,61,.96),rgba(28,55,82,.94)),
-        url("stone_arch_bridge_over_calm_water.png");
-      background-size:cover;
-      background-position:center;
+        radial-gradient(circle at 85% 20%, rgba(191,161,104,.22), transparent 28%),
+        linear-gradient(135deg,rgba(18,39,61,.98),rgba(28,55,82,.96));
       color:#fffaf2;
       box-shadow:var(--card-shadow);
       overflow:hidden;
+      border:1px solid rgba(255,250,242,.12);
     }
 
     .about-cta-grid{
@@ -440,7 +442,7 @@
         </div>
 
         <div class="about-visual-card">
-          <img src="arch-panel.png" alt="Stonebridge architectural detail">
+          <img src="about-bridge-hero.png" alt="Old stone bridge over calm water">
           <div class="about-visual-note">
             <span>Present. Durable. Calm.</span>
             <p>
@@ -561,7 +563,7 @@
     <section class="section section-white">
       <div class="container about-standard">
         <div class="about-standard-panel">
-          <img src="stone-panel.png" alt="Stone surface detail">
+          <img src="about-stone-detail.png" alt="Warm stone detail">
         </div>
 
         <div class="about-standard-copy">
