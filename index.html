@@ -21,13 +21,14 @@
     }
 
     .hero-video-card{
+      align-self:start;
+      margin-top:92px;
       border:1px solid rgba(221,211,199,.82);
       border-radius:30px;
       overflow:hidden;
       background:rgba(255,255,255,.58);
       box-shadow:0 26px 70px rgba(29,38,46,.12);
       backdrop-filter:blur(8px);
-      transform:translateY(8px);
     }
 
     .hero-video-card video{
@@ -37,14 +38,6 @@
       aspect-ratio:16/9;
       background:#f6f2ed;
       object-fit:cover;
-    }
-
-    .hero-video-note{
-      padding:16px 20px;
-      border-top:1px solid rgba(221,211,199,.7);
-      color:var(--muted);
-      font-size:.94rem;
-      background:rgba(251,248,244,.86);
     }
 
     @media (max-width:1000px){
@@ -59,7 +52,7 @@
       }
 
       .hero-video-card{
-        transform:none;
+        margin-top:0;
       }
     }
   </style>
@@ -127,13 +120,10 @@
         </div>
 
         <div class="hero-video-card">
-          <video id="homeIntroVideo" muted playsinline controls preload="metadata">
+          <video id="homeIntroVideo" autoplay muted playsinline loop controls preload="auto">
             <source src="stonebridge-home-intro.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div class="hero-video-note">
-            A brief introduction to Stonebridge Psychological Group.
-          </div>
         </div>
       </div>
     </section>
@@ -212,20 +202,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    const homeIntroVideo = document.getElementById('homeIntroVideo');
-    const hasPlayedIntro = localStorage.getItem('stonebridgeHomeIntroPlayed');
-
-    if (homeIntroVideo && !hasPlayedIntro) {
-      homeIntroVideo.autoplay = true;
-      homeIntroVideo.muted = true;
-
-      homeIntroVideo.play().then(() => {
-        localStorage.setItem('stonebridgeHomeIntroPlayed', 'true');
-      }).catch(() => {
-        homeIntroVideo.controls = true;
-      });
-    }
-  </script>
 </body>
 </html>
