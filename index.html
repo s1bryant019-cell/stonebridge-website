@@ -10,116 +10,186 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    .home-hero-with-video{
+    .home-hero{
       position:relative;
       overflow:hidden;
       min-height:760px;
+      padding:84px 0 86px;
+      background:
+        linear-gradient(90deg, rgba(248,244,238,.98) 0%, rgba(248,244,238,.92) 44%, rgba(248,244,238,.46) 100%),
+        url("stone_arch_bridge_over_calm_water.png");
+      background-size:cover;
+      background-position:center right;
       border-bottom:1px solid rgba(221,211,199,.65);
     }
 
-    .home-hero-with-video::after{
+    .home-hero::before{
       content:"";
       position:absolute;
-      right:-6%;
-      bottom:2%;
-      width:min(118vw,1850px);
-      height:700px;
-      background:url('stone_arch_bridge_over_calm_water.png') no-repeat center/contain;
-      opacity:.13;
+      inset:0;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(191,161,104,.18), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,.34), rgba(248,244,238,.88));
       pointer-events:none;
-      z-index:0;
     }
 
-    .home-hero-layout{
-      min-height:760px;
-      display:grid;
-      grid-template-columns:.86fr 1.14fr;
-      gap:38px;
-      align-items:center;
+    .home-hero .container{
       position:relative;
-      z-index:2;
+      z-index:1;
+    }
+
+    .home-hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,.92fr) minmax(390px,.72fr);
+      gap:54px;
+      align-items:center;
     }
 
     .home-hero-copy{
-      max-width:640px;
-      padding:76px 0 88px;
-      position:relative;
-      z-index:2;
+      max-width:760px;
     }
 
     .home-hero-copy h1{
-      max-width:8.2ch;
+      max-width:760px;
+      line-height:.98;
     }
 
     .home-hero-copy p{
-      max-width:43rem;
+      max-width:650px;
       margin-top:22px;
+      font-size:1.05rem;
+      line-height:1.78;
     }
 
-    .home-video-wrap{
+    .home-hero-note{
+      margin-top:24px;
+      max-width:610px;
+      padding-left:20px;
+      border-left:2px solid rgba(191,161,104,.7);
+      color:var(--muted);
+      font-size:.96rem;
+      line-height:1.72;
+    }
+
+    .home-hero-actions{
+      margin-top:30px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .home-video-panel{
+      border-radius:34px;
+      border:1px solid rgba(221,211,199,.82);
+      background:linear-gradient(180deg,#fffaf2,#f5efe7);
+      box-shadow:var(--card-shadow);
+      padding:16px;
       position:relative;
-      z-index:2;
-      align-self:center;
-      margin-top:-18px;
     }
 
-    .home-video-card{
-      border:1px solid rgba(221,211,199,.86);
-      border-radius:30px;
-      overflow:hidden;
-      background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(251,248,244,.72));
-      box-shadow:0 28px 80px rgba(29,38,46,.13);
-      backdrop-filter:blur(10px);
-      width:min(100%,820px);
-      margin-left:auto;
-    }
-
-    .home-video-card video{
+    .home-video-panel video{
       display:block;
       width:100%;
-      height:auto;
-      aspect-ratio:16/9;
+      aspect-ratio:16 / 9;
       object-fit:cover;
+      border-radius:26px;
       background:#f6f2ed;
     }
 
-    @media (max-width:1100px){
-      .home-hero-layout{
+    .home-video-caption{
+      margin-top:14px;
+      border-radius:22px;
+      padding:20px 22px;
+      background:rgba(18,39,61,.92);
+      color:#fffaf2;
+    }
+
+    .home-video-caption span{
+      display:block;
+      font-family:var(--serif);
+      font-size:1.35rem;
+      line-height:1.2;
+      margin-bottom:6px;
+    }
+
+    .home-video-caption p{
+      margin:0;
+      color:rgba(255,250,242,.78);
+      line-height:1.55;
+      font-size:.92rem;
+    }
+
+    .home-intro{
+      padding-top:58px;
+      padding-bottom:58px;
+      background:#fff;
+    }
+
+    .home-intro-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:42px;
+      align-items:center;
+    }
+
+    .home-intro-copy p{
+      color:var(--muted);
+      line-height:1.78;
+      margin-top:16px;
+    }
+
+    .home-intro-cards{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .home-intro-card{
+      border:1px solid var(--border);
+      border-radius:26px;
+      background:linear-gradient(180deg,#ffffff,#fbf8f3);
+      box-shadow:var(--card-shadow);
+      padding:26px;
+    }
+
+    .home-intro-card h3{
+      margin-bottom:10px;
+    }
+
+    .home-intro-card p{
+      color:var(--muted);
+      line-height:1.68;
+      margin:0;
+    }
+
+    @media (max-width:980px){
+      .home-hero-grid,
+      .home-intro-grid{
         grid-template-columns:1fr;
-        min-height:auto;
-        gap:34px;
-        padding:62px 0;
       }
 
-      .home-hero-copy{
-        padding:0;
-      }
-
-      .home-video-wrap{
-        margin-top:0;
-      }
-
-      .home-video-card{
-        margin-left:0;
-        width:100%;
-      }
-
-      .home-hero-with-video::after{
-        right:-18%;
-        bottom:4%;
-        width:175vw;
-        height:430px;
-        opacity:.11;
+      .home-intro-cards{
+        grid-template-columns:1fr;
       }
     }
 
-    @media (max-width:760px){
-      .home-hero-layout{
-        padding:48px 0;
+    @media (max-width:640px){
+      .home-hero{
+        padding:54px 0;
       }
 
-      .home-video-card{
-        border-radius:22px;
+      .home-video-panel{
+        padding:12px;
+        border-radius:26px;
+      }
+
+      .home-video-panel video{
+        border-radius:20px;
+      }
+
+      .home-intro{
+        padding-top:46px;
+        padding-bottom:46px;
       }
     }
   </style>
@@ -171,50 +241,72 @@
   </header>
 
   <main>
-    <section class="home-hero-with-video">
-      <div class="container home-hero-layout">
-        <div class="home-hero-copy hero-copy">
+    <section class="home-hero">
+      <div class="container home-hero-grid">
+        <div class="home-hero-copy">
           <div class="eyebrow">Clinical &amp; Forensic Psychological Services</div>
           <h1>Grounded, thoughtful psychological care and evaluation.</h1>
           <p>
-            Stonebridge Psychological Group offers clinical therapy, psychological
-            assessment, and forensic services with an emphasis on clarity,
-            steadiness, and professional integrity.
+            Stonebridge Psychological Group offers therapy, psychological assessment, and forensic services
+            for people and situations that require careful attention, clear judgment, and respect for complexity.
           </p>
-          <div class="hero-actions">
+
+          <div class="home-hero-note">
+            The work is steady by design: warm without becoming vague, clinically serious without becoming cold,
+            and practical without losing sight of the person behind the question.
+          </div>
+
+          <div class="home-hero-actions">
             <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
             <a class="btn btn-secondary" href="services.html">Explore Services</a>
           </div>
         </div>
 
-        <div class="home-video-wrap">
-          <div class="home-video-card">
-            <video id="homeIntroVideo" autoplay muted playsinline loop controls preload="auto">
-              <source src="stonebridge-home-intro.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+        <div class="home-video-panel">
+          <video id="homeIntroVideo" autoplay muted playsinline loop controls preload="auto">
+            <source src="stonebridge-home-intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="home-video-caption">
+            <span>A quieter kind of psychological practice.</span>
+            <p>
+              Stonebridge is built around fit, depth, and clarity — not volume, urgency, or generic care.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft">
-      <div class="container content-blocks">
-        <article class="text-block">
-          <h3>Who We Work With</h3>
+    <section class="home-intro">
+      <div class="container home-intro-grid">
+        <div class="home-intro-copy">
+          <div class="section-kicker">How the practice is organized</div>
+          <h2>One steady frame, several pathways.</h2>
           <p>
-            Adults seeking therapy, assessment, consultation, or forensic-informed care
-            in a setting that values depth, clarity, and careful psychological thinking.
+            Stonebridge brings together clinical therapy, psychological assessment, and forensic services
+            without blurring their purpose. Each pathway is distinct, but the standard remains the same:
+            careful listening, clear reasoning, and useful psychological work.
           </p>
-        </article>
+        </div>
 
-        <article class="text-block">
-          <h3>What the Practice Offers</h3>
-          <p>
-            Psychotherapy first, with assessment and forensic services clearly defined
-            as complementary service pathways.
-          </p>
-        </article>
+        <div class="home-intro-cards">
+          <article class="home-intro-card">
+            <h3>Who We Work With</h3>
+            <p>
+              Adults seeking therapy, assessment, consultation, or forensic-informed care in a setting
+              that values depth, clarity, and careful psychological thinking.
+            </p>
+          </article>
+
+          <article class="home-intro-card">
+            <h3>What the Practice Offers</h3>
+            <p>
+              Psychotherapy first, with assessment and forensic services clearly defined as complementary
+              service pathways.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
