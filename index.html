@@ -13,8 +13,8 @@
     .hero-video-grid{
       min-height:760px;
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:52px;
+      grid-template-columns:.88fr 1.12fr;
+      gap:54px;
       align-items:center;
       position:relative;
       z-index:2;
@@ -25,8 +25,9 @@
       border-radius:30px;
       overflow:hidden;
       background:rgba(255,255,255,.58);
-      box-shadow:0 22px 60px rgba(29,38,46,.10);
+      box-shadow:0 26px 70px rgba(29,38,46,.12);
       backdrop-filter:blur(8px);
+      transform:translateY(8px);
     }
 
     .hero-video-card video{
@@ -34,7 +35,8 @@
       width:100%;
       height:auto;
       aspect-ratio:16/9;
-      background:#fff;
+      background:#f6f2ed;
+      object-fit:cover;
     }
 
     .hero-video-note{
@@ -42,7 +44,7 @@
       border-top:1px solid rgba(221,211,199,.7);
       color:var(--muted);
       font-size:.94rem;
-      background:rgba(251,248,244,.82);
+      background:rgba(251,248,244,.86);
     }
 
     @media (max-width:1000px){
@@ -54,6 +56,10 @@
 
       .hero-copy{
         padding:0;
+      }
+
+      .hero-video-card{
+        transform:none;
       }
     }
   </style>
@@ -121,8 +127,8 @@
         </div>
 
         <div class="hero-video-card">
-          <video autoplay muted playsinline controls preload="metadata">
-            <source src="video_1776920038962.mp4" type="video/mp4">
+          <video id="homeIntroVideo" muted playsinline controls preload="metadata">
+            <source src="stonebridge-home-intro.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <div class="hero-video-note">
@@ -206,5 +212,20 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    const homeIntroVideo = document.getElementById('homeIntroVideo');
+    const hasPlayedIntro = localStorage.getItem('stonebridgeHomeIntroPlayed');
+
+    if (homeIntroVideo && !hasPlayedIntro) {
+      homeIntroVideo.autoplay = true;
+      homeIntroVideo.muted = true;
+
+      homeIntroVideo.play().then(() => {
+        localStorage.setItem('stonebridgeHomeIntroPlayed', 'true');
+      }).catch(() => {
+        homeIntroVideo.controls = true;
+      });
+    }
+  </script>
 </body>
 </html>
