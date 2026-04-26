@@ -8,15 +8,57 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
   <style>
-    .video-section{padding:20px 0 76px;background:transparent}
-    .video-intro{max-width:760px;margin:0 0 22px}
-    .video-intro h3{margin:0 0 10px;font-family:"EB Garamond",Georgia,serif;font-size:clamp(2rem,3vw,2.6rem);line-height:1.05;color:var(--deep,#24303b)}
-    .video-intro p{margin:0;max-width:42rem;color:var(--muted,#67737d)}
-    .video-wrap{border-radius:28px;overflow:hidden;border:1px solid rgba(221,211,199,.7);box-shadow:0 16px 40px rgba(29,38,46,.06);background:#000}
-    .video-wrap video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+    .hero-video-grid{
+      min-height:760px;
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:52px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-video-card{
+      border:1px solid rgba(221,211,199,.82);
+      border-radius:30px;
+      overflow:hidden;
+      background:rgba(255,255,255,.58);
+      box-shadow:0 22px 60px rgba(29,38,46,.10);
+      backdrop-filter:blur(8px);
+    }
+
+    .hero-video-card video{
+      display:block;
+      width:100%;
+      height:auto;
+      aspect-ratio:16/9;
+      background:#fff;
+    }
+
+    .hero-video-note{
+      padding:16px 20px;
+      border-top:1px solid rgba(221,211,199,.7);
+      color:var(--muted);
+      font-size:.94rem;
+      background:rgba(251,248,244,.82);
+    }
+
+    @media (max-width:1000px){
+      .hero-video-grid{
+        grid-template-columns:1fr;
+        min-height:auto;
+        padding:62px 0;
+      }
+
+      .hero-copy{
+        padding:0;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav">
@@ -63,7 +105,7 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="container hero-video-grid">
         <div class="hero-copy">
           <div class="eyebrow">Clinical &amp; Forensic Psychological Services</div>
           <h1>Grounded, thoughtful psychological care and evaluation.</h1>
@@ -75,6 +117,16 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
             <a class="btn btn-secondary" href="services.html">Explore Services</a>
+          </div>
+        </div>
+
+        <div class="hero-video-card">
+          <video autoplay muted playsinline controls preload="metadata">
+            <source src="video_1776920038962.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="hero-video-note">
+            A brief introduction to Stonebridge Psychological Group.
           </div>
         </div>
       </div>
@@ -97,26 +149,6 @@
             as complementary service pathways.
           </p>
         </article>
-      </div>
-    </section>
-
-    <section class="video-section">
-      <div class="container">
-        <div class="video-intro">
-          <div class="eyebrow">Introduction</div>
-          <h3>A brief introduction to Stonebridge.</h3>
-          <p>
-            This video can sit on the homepage as a quiet introduction to the practice,
-            without changing the rest of your design.
-          </p>
-        </div>
-
-        <div class="video-wrap">
-          <video controls playsinline preload="metadata">
-            <source src="video_1776920038962.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
       </div>
     </section>
   </main>
