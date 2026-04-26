@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portal-page-update.css">
 </head>
 <body>
   <header class="site-header">
@@ -53,67 +54,105 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-hero-wide">
-      <div class="container page-grid-tight">
-        <div>
+  <main class="portal-page">
+    <section class="portal-hero">
+      <div class="container portal-hero-grid">
+        <div class="portal-left">
           <div class="eyebrow">Portal</div>
           <h1>Client portal access in one clear place.</h1>
-          <p style="max-width:46rem;margin-top:18px;">
-            The portal page is intended to provide a simple, direct entry point for existing clients.
-            It should feel clear and functional, while still fitting the broader tone and visual identity
-            of Stonebridge Psychological Group.
+          <div class="portal-rule"></div>
+          <p class="portal-lead">
+            Welcome to your secure client hub. From logging in to your TherapyNotes
+            portal to paying bills and completing forms, this page keeps everything
+            you need in one convenient place.
           </p>
+
+          <div class="portal-reassurance">
+            <div class="portal-reassurance-icon" aria-hidden="true">⌂</div>
+            <p>When connected, this page can link directly to your client portal and billing tools.</p>
+          </div>
         </div>
 
-        <div class="subtle-panel">
-          <img src="arch-panel.png" alt="Portal detail image">
+        <div class="portal-right-card">
+          <div class="portal-right-top">
+            <div class="portal-top-icon" aria-hidden="true">🔒</div>
+            <div>
+              <h2>Secure client access</h2>
+              <p>Use the options below to access your account, manage payments, and view important forms.</p>
+            </div>
+          </div>
+
+          <div class="portal-action-list">
+            <a class="portal-action-item" href="#" aria-label="Client Login">
+              <div class="portal-action-icon navy">◯</div>
+              <div class="portal-action-copy">
+                <h3>Client Login</h3>
+                <p>Access your TherapyNotes client portal.</p>
+              </div>
+              <div class="portal-arrow" aria-hidden="true">›</div>
+            </a>
+
+            <a class="portal-action-item" href="#" aria-label="Pay Bills">
+              <div class="portal-action-icon sand">▭</div>
+              <div class="portal-action-copy">
+                <h3>Pay Bills</h3>
+                <p>View your statements and make a payment.</p>
+              </div>
+              <div class="portal-arrow" aria-hidden="true">›</div>
+            </a>
+
+            <a class="portal-action-item" href="#" aria-label="Forms and Documents">
+              <div class="portal-action-icon mist">▤</div>
+              <div class="portal-action-copy">
+                <h3>Forms &amp; Documents</h3>
+                <p>Complete and submit required forms.</p>
+              </div>
+              <div class="portal-arrow" aria-hidden="true">›</div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-white">
-      <div class="container portal-grid">
-        <div>
-          <div class="section-kicker">Existing client access</div>
-          <p>
-            This area can be used for secure client portal access, paperwork completion,
-            appointment-related tasks, or practice communications as the site continues
-            to develop.
-          </p>
-
-          <div class="portal-note">
-            Portal information and links can be updated later with your actual platform details.
-            For now, this page works as a clean placeholder while preserving the site’s overall style.
+    <section class="portal-help">
+      <div class="container">
+        <div class="portal-help-card">
+          <div class="portal-help-left">
+            <div class="portal-help-icon" aria-hidden="true">⌕</div>
+            <div>
+              <h3>Need help accessing your portal?</h3>
+              <p>If you're having trouble logging in or need assistance, we're here to help.</p>
+            </div>
           </div>
-
-          <div style="margin-top:24px;">
-            <a class="btn btn-primary" href="#">Client Portal Login</a>
-          </div>
-        </div>
-
-        <div class="portal-visual">
-          <img src="stone-panel.png" alt="Portal visual">
+          <a class="btn btn-primary portal-help-btn" href="contact.html">Contact Our Practice</a>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft">
-      <div class="container portal-cards">
-        <article class="portal-card">
-          <h3>What this page can hold</h3>
-          <p>
-            Over time, this page can include a portal link, documents, questionnaires,
-            payment information, scheduling instructions, or other client-facing resources.
-          </p>
+    <section class="portal-info">
+      <div class="container portal-info-grid">
+        <article class="portal-info-card">
+          <div class="portal-info-icon">◯</div>
+          <div>
+            <h3>Existing client access</h3>
+            <p>Log in to your TherapyNotes portal to view messages, complete forms, and manage your care.</p>
+          </div>
         </article>
 
-        <article class="portal-card">
-          <h3>Why keep it simple</h3>
-          <p>
-            A portal page should be direct and easy to use. Keeping the structure clean
-            helps clients find what they need quickly without adding unnecessary clutter.
-          </p>
+        <article class="portal-info-card">
+          <div class="portal-info-icon">▤</div>
+          <div>
+            <h3>What this page can hold</h3>
+            <p>Secure messages, important documents, billing, and tools that help support your therapy experience.</p>
+          </div>
+        </article>
+
+        <article class="portal-info-card">
+          <div class="portal-info-icon">⌂</div>
+          <div>
+            <h3>Why keep it simple</h3>
+            <p>A clear, focused portal reduces friction, protects your privacy, and helps you stay connected to your care.</p>
+          </div>
         </article>
       </div>
     </section>
@@ -147,7 +186,6 @@
           <a href="team.html">Team</a>
           <a href="services.html">Services</a>
           <a href="portal.html">Portal</a>
-          <a href="contact.html">Consultation</a>
         </div>
       </div>
 
