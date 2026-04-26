@@ -20,8 +20,8 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 74% 28%, rgba(191,161,104,.10), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,.76), rgba(248,244,238,.96));
+        radial-gradient(circle at 74% 28%, rgba(191,161,104,.08), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.78), rgba(248,244,238,.96));
       pointer-events:none;
     }
 
@@ -37,7 +37,7 @@
     .about-hero-grid{
       display:grid;
       grid-template-columns:1.05fr .95fr;
-      gap:58px;
+      gap:54px;
       align-items:center;
     }
 
@@ -47,19 +47,19 @@
 
     .about-hero-copy p{
       max-width:680px;
-      margin-top:20px;
-      font-size:1.08rem;
-      line-height:1.85;
+      margin-top:18px;
+      font-size:1.05rem;
+      line-height:1.8;
     }
 
     .about-hero-note{
-      margin-top:26px;
+      margin-top:24px;
       max-width:630px;
       padding-left:20px;
       border-left:2px solid rgba(191,161,104,.55);
       color:var(--muted);
       font-size:.98rem;
-      line-height:1.75;
+      line-height:1.72;
     }
 
     .about-visual-card{
@@ -75,7 +75,7 @@
       width:100%;
       display:block;
       border-radius:26px;
-      min-height:390px;
+      min-height:370px;
       object-fit:cover;
       opacity:.97;
     }
@@ -108,37 +108,48 @@
       color:rgba(255,250,242,.82);
     }
 
-    .founder-section{
-      background:#fff;
+    .about-tight-section{
+      padding-top:70px;
+      padding-bottom:70px;
     }
 
     .founder-grid{
       display:grid;
-      grid-template-columns:1fr .86fr;
-      gap:54px;
+      grid-template-columns:1fr .92fr;
+      gap:50px;
       align-items:center;
     }
 
-    .founder-copy{
-      max-width:780px;
-    }
-
     .founder-copy h2{
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
     .founder-copy p{
       color:var(--muted);
-      line-height:1.85;
-      margin-bottom:18px;
+      line-height:1.78;
+      margin-bottom:16px;
+    }
+
+    .founder-quote{
+      margin:0 0 24px;
+      padding:26px 30px;
+      border-left:3px solid rgba(191,161,104,.75);
+      border-radius:0 26px 26px 0;
+      background:linear-gradient(180deg,#fbf8f3,#f4eee6);
+      color:var(--navy);
+      font-family:var(--serif);
+      font-size:clamp(1.55rem,2.35vw,2.25rem);
+      line-height:1.18;
+      letter-spacing:-.02em;
     }
 
     .founder-signoff{
-      margin-top:26px;
-      padding:24px 26px;
+      margin-top:22px;
+      padding:22px 24px;
       border-radius:24px;
-      background:linear-gradient(180deg,#fbf8f3,#f4eee6);
+      background:#fff;
       border:1px solid rgba(221,211,199,.86);
+      box-shadow:var(--card-shadow);
     }
 
     .founder-signoff strong{
@@ -154,109 +165,65 @@
       font-size:.95rem;
     }
 
-    .founder-placeholder-card{
+    .presentation-card{
       border-radius:34px;
       border:1px solid var(--border);
-      background:
-        linear-gradient(135deg,rgba(18,39,61,.96),rgba(28,55,82,.92));
+      background:#fff;
       box-shadow:var(--card-shadow);
-      padding:26px;
-      color:#fffaf2;
-      min-height:520px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      position:relative;
-      overflow:hidden;
+      padding:16px;
     }
 
-    .founder-placeholder-card::before{
-      content:"";
-      position:absolute;
-      inset:24px;
+    .presentation-card img{
+      width:100%;
+      display:block;
       border-radius:26px;
-      border:1px dashed rgba(255,250,242,.34);
-      background:
-        radial-gradient(circle at 24% 20%, rgba(191,161,104,.25), transparent 26%),
-        radial-gradient(circle at 80% 10%, rgba(255,250,242,.10), transparent 28%);
+      object-fit:cover;
+      aspect-ratio:3 / 2;
     }
 
-    .founder-placeholder-card::after{
-      content:"";
-      position:absolute;
-      right:-120px;
-      bottom:-150px;
-      width:360px;
-      height:360px;
-      border-radius:999px;
-      background:rgba(191,161,104,.12);
+    .presentation-caption{
+      margin:14px 6px 2px;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.55;
     }
 
-    .founder-placeholder-content{
-      position:relative;
-      z-index:1;
-      border-radius:24px;
-      padding:24px;
-      background:rgba(10,24,39,.62);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,250,242,.14);
-    }
-
-    .founder-placeholder-label{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:.68rem;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      color:rgba(255,250,242,.72);
-      margin-bottom:14px;
-    }
-
-    .founder-placeholder-content h3{
-      color:#fffaf2;
-      margin-bottom:10px;
-    }
-
-    .founder-placeholder-content p{
-      margin:0;
-      color:rgba(255,250,242,.78);
-      line-height:1.65;
-      font-size:.95rem;
+    .presentation-caption strong{
+      color:var(--navy);
+      font-weight:600;
     }
 
     .model-section{
       background:linear-gradient(180deg,#f8f4ef,#f2ebe2);
     }
 
-    .model-intro{
-      max-width:900px;
-      margin:0 auto 38px;
-      text-align:center;
-    }
-
-    .model-intro h2{
-      margin-bottom:18px;
-    }
-
-    .model-intro p{
-      color:var(--muted);
-      line-height:1.85;
-      font-size:1.04rem;
-    }
-
     .model-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
+      grid-template-columns:.85fr 1.15fr;
+      gap:46px;
+      align-items:start;
     }
 
-    .model-card{
+    .model-copy p{
+      color:var(--muted);
+      line-height:1.8;
+      margin-top:16px;
+    }
+
+    .model-points{
+      display:grid;
+      gap:16px;
+    }
+
+    .model-point{
+      display:grid;
+      grid-template-columns:54px 1fr;
+      gap:18px;
+      padding:24px;
       border:1px solid var(--border);
-      border-radius:28px;
-      background:linear-gradient(180deg,#ffffff,#fbf8f3);
+      border-radius:26px;
+      background:#fff;
       box-shadow:var(--card-shadow);
-      padding:30px;
     }
 
     .model-number{
@@ -269,24 +236,23 @@
       background:rgba(18,39,61,.08);
       color:var(--navy);
       font-weight:600;
-      margin-bottom:20px;
     }
 
-    .model-card h3{
-      margin-bottom:12px;
+    .model-point h3{
+      margin-bottom:8px;
     }
 
-    .model-card p{
+    .model-point p{
       margin:0;
       color:var(--muted);
-      line-height:1.75;
+      line-height:1.68;
     }
 
     .stance-grid{
       display:grid;
       grid-template-columns:.92fr 1.08fr;
-      gap:54px;
-      align-items:start;
+      gap:50px;
+      align-items:center;
     }
 
     .stance-image{
@@ -295,44 +261,29 @@
       border:1px solid var(--border);
       box-shadow:var(--card-shadow);
       background:#f5efe8;
-      position:sticky;
-      top:110px;
     }
 
     .stance-image img{
       width:100%;
-      height:560px;
+      height:520px;
       object-fit:cover;
       display:block;
     }
 
     .stance-copy h2{
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
     .stance-copy p{
       color:var(--muted);
-      line-height:1.85;
-      margin-bottom:18px;
-    }
-
-    .stance-panel{
-      margin-top:28px;
-      border-radius:28px;
-      background:#fff;
-      border:1px solid var(--border);
-      box-shadow:var(--card-shadow);
-      padding:30px;
-    }
-
-    .stance-panel h3{
-      margin-bottom:14px;
+      line-height:1.8;
+      margin-bottom:16px;
     }
 
     .stance-list{
       display:grid;
-      gap:14px;
-      margin-top:18px;
+      gap:12px;
+      margin-top:22px;
     }
 
     .stance-list div{
@@ -340,7 +291,7 @@
       gap:12px;
       align-items:flex-start;
       color:var(--muted);
-      line-height:1.65;
+      line-height:1.62;
     }
 
     .stance-list .dot{
@@ -359,11 +310,11 @@
       content:"";
       position:absolute;
       right:-160px;
-      bottom:-220px;
+      bottom:-240px;
       width:560px;
       height:560px;
       border-radius:999px;
-      background:rgba(191,161,104,.13);
+      background:rgba(191,161,104,.12);
     }
 
     .clarity-grid{
@@ -371,48 +322,33 @@
       z-index:1;
       display:grid;
       grid-template-columns:.9fr 1.1fr;
-      gap:54px;
+      gap:46px;
       align-items:start;
     }
 
     .clarity-copy h2{
       color:#fffaf2;
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
 
     .clarity-copy p{
       color:rgba(255,250,242,.78);
-      line-height:1.85;
-      margin-bottom:0;
+      line-height:1.78;
+      margin:0;
     }
 
     .clarity-cards{
       display:grid;
-      gap:16px;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
     }
 
     .clarity-card{
-      display:grid;
-      grid-template-columns:56px 1fr;
-      gap:20px;
-      padding:24px;
+      padding:22px;
       border-radius:24px;
       background:rgba(255,250,242,.08);
       border:1px solid rgba(255,250,242,.14);
       backdrop-filter:blur(10px);
-    }
-
-    .clarity-icon{
-      width:44px;
-      height:44px;
-      border-radius:16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(255,250,242,.12);
-      color:#fffaf2;
-      font-family:var(--serif);
-      font-weight:700;
     }
 
     .clarity-card h3{
@@ -423,12 +359,13 @@
     .clarity-card p{
       margin:0;
       color:rgba(255,250,242,.76);
-      line-height:1.65;
+      line-height:1.62;
+      font-size:.94rem;
     }
 
     .about-cta{
       border-radius:34px;
-      padding:46px;
+      padding:42px;
       background:
         radial-gradient(circle at 85% 20%, rgba(191,161,104,.22), transparent 28%),
         linear-gradient(135deg,rgba(18,39,61,.98),rgba(28,55,82,.96));
@@ -447,13 +384,13 @@
 
     .about-cta h2{
       color:#fffaf2;
-      margin-bottom:12px;
+      margin-bottom:10px;
     }
 
     .about-cta p{
       max-width:700px;
       color:rgba(255,250,242,.78);
-      line-height:1.75;
+      line-height:1.72;
       margin:0;
     }
 
@@ -473,18 +410,15 @@
     @media (max-width:980px){
       .about-hero-grid,
       .founder-grid,
+      .model-grid,
       .stance-grid,
       .clarity-grid,
       .about-cta-grid{
         grid-template-columns:1fr;
       }
 
-      .model-grid{
+      .clarity-cards{
         grid-template-columns:1fr;
-      }
-
-      .stance-image{
-        position:static;
       }
 
       .stance-image img{
@@ -497,6 +431,11 @@
     }
 
     @media (max-width:640px){
+      .about-tight-section{
+        padding-top:52px;
+        padding-bottom:52px;
+      }
+
       .about-visual-note{
         position:static;
         margin-top:14px;
@@ -506,12 +445,12 @@
         min-height:260px;
       }
 
-      .founder-placeholder-card{
-        min-height:420px;
+      .model-point{
+        grid-template-columns:1fr;
       }
 
-      .clarity-card{
-        grid-template-columns:1fr;
+      .founder-quote{
+        padding:22px 22px;
       }
 
       .about-cta{
@@ -599,25 +538,27 @@
       </div>
     </section>
 
-    <section class="section founder-section">
+    <section class="section about-tight-section founder-section">
       <div class="container founder-grid">
         <div class="founder-copy">
           <div class="section-kicker">From the Founder</div>
-          <h2>Why I created Stonebridge.</h2>
+          <blockquote class="founder-quote">
+            I created Stonebridge because I had seen too many places where the language of care sounded right,
+            but the structure underneath it did not support the work.
+          </blockquote>
 
           <p>
-            I created Stonebridge after working across community mental health, hospital settings,
-            private practice, partial hospitalization and intensive outpatient programs, and forensic
-            evaluation. In many of those settings, I saw committed clinicians doing meaningful work inside
-            systems that did not always support the care they claimed to value.
+            I have worked across community mental health, hospital settings, private practice, partial
+            hospitalization and intensive outpatient programs, and forensic evaluation. In many of those
+            settings, I saw committed clinicians doing meaningful work inside systems that did not always
+            support the care they claimed to value.
           </p>
 
           <p>
             Clients usually do not see that part. They come to therapy, assessment, or evaluation hoping
             the person across from them is supported, focused, and able to think carefully with them.
             They often do not know whether that clinician is carrying an unmanageable caseload, working
-            under unrealistic productivity demands, completing documentation late into the evening, or
-            trying to provide thoughtful care while already depleted.
+            under unrealistic productivity demands, or trying to provide thoughtful care while already depleted.
           </p>
 
           <p>
@@ -631,63 +572,66 @@
           </div>
         </div>
 
-        <div class="founder-placeholder-card">
-          <div class="founder-placeholder-content">
-            <div class="founder-placeholder-label">Image placeholder</div>
-            <h3>Founder-led teaching and burnout work</h3>
-            <p>
-              This space is reserved for a future image of Dr. Bryant leading a professional seminar
-              or continuing education presentation related to clinician burnout and sustainable care.
-            </p>
-          </div>
-        </div>
+        <figure class="presentation-card">
+          <img src="dr-bryant-beyond-burned-out-presentation.png" alt="Dr. Bryant presenting his work on Beyond Burned Out">
+          <figcaption class="presentation-caption">
+            <strong>Dr. Bryant</strong> presenting his work on <em>Beyond Burned Out</em>.
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="section model-section">
-      <div class="container">
-        <div class="model-intro">
+    <section class="section about-tight-section model-section">
+      <div class="container model-grid">
+        <div class="model-copy">
           <div class="section-kicker">The Stonebridge Model</div>
           <h2>Selective by design.</h2>
           <p>
             Stonebridge is not designed to take every referral. That is intentional. A careful practice
             should be able to say when it can help, when it cannot, and when another provider, service,
-            or level of care would be more appropriate.
+            or level of care would be more appropriate. That kind of selectivity is not cold. It is part
+            of ethical care.
           </p>
         </div>
 
-        <div class="model-grid">
-          <article class="model-card">
+        <div class="model-points">
+          <article class="model-point">
             <div class="model-number">01</div>
-            <h3>Respect for fit</h3>
-            <p>
-              A consultation is not a sales process. It is a clinical decision point. Fit matters because
-              people are investing time, money, vulnerability, and trust.
-            </p>
+            <div>
+              <h3>Respect for fit</h3>
+              <p>
+                A consultation is a clinical decision point. Fit matters because people are investing time,
+                money, vulnerability, and trust.
+              </p>
+            </div>
           </article>
 
-          <article class="model-card">
+          <article class="model-point">
             <div class="model-number">02</div>
-            <h3>Respect for clinicians</h3>
-            <p>
-              A practice cannot ask clinicians to be deeply present for others while treating them as
-              interchangeable or endlessly available. Good care requires supported clinicians.
-            </p>
+            <div>
+              <h3>Respect for clinicians</h3>
+              <p>
+                A practice cannot ask clinicians to be deeply present for others while treating them as
+                interchangeable or endlessly available.
+              </p>
+            </div>
           </article>
 
-          <article class="model-card">
+          <article class="model-point">
             <div class="model-number">03</div>
-            <h3>Respect for the work</h3>
-            <p>
-              Psychological work should be bounded, thoughtful, and matched to the question being asked.
-              The goal is not volume. The goal is useful care done carefully.
-            </p>
+            <div>
+              <h3>Respect for the work</h3>
+              <p>
+                Psychological work should be bounded, thoughtful, and matched to the question being asked.
+                The goal is useful care done carefully.
+              </p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-white">
+    <section class="section about-tight-section section-white">
       <div class="container stance-grid">
         <div class="stance-image">
           <img src="about-stone-detail.png" alt="Warm stone detail">
@@ -698,47 +642,38 @@
           <h2>Relational, thoughtful, and bounded.</h2>
 
           <p>
-            The clinical work at Stonebridge is relational and depth-oriented. It is influenced by traditions
-            that take the person seriously: the need to be understood, the struggle for agency, the injuries
-            people carry in their sense of self, and the importance of a reliable setting where difficult
-            material can be approached without performance.
+            The clinical work at Stonebridge is relational and depth-oriented. It is influenced by
+            traditions that take the person seriously: the need to be understood, the struggle for agency,
+            the injuries people carry in their sense of self, and the importance of a reliable setting where
+            difficult material can be approached without performance.
           </p>
 
           <p>
             But relational work is not boundaryless work. Warmth is not the same as vagueness. Empathy is
-            not the same as saying yes to everything. Good care requires presence, but it also requires
-            judgment.
+            not the same as saying yes to everything. Good care requires presence, but it also requires judgment.
           </p>
 
-          <div class="stance-panel">
-            <h3>The standard is simple, but not easy.</h3>
-            <p>
-              Listen closely. Do not reduce people too quickly. Be honest about what is known and what is
-              not. Maintain enough structure for the work to be useful.
-            </p>
+          <div class="stance-list">
+            <div>
+              <span class="dot"></span>
+              <span>Therapy should leave room for complexity, not flatten people into symptoms alone.</span>
+            </div>
 
-            <div class="stance-list">
-              <div>
-                <span class="dot"></span>
-                <span>Therapy should leave room for complexity, not flatten people into symptoms alone.</span>
-              </div>
+            <div>
+              <span class="dot"></span>
+              <span>Assessment should clarify meaningful questions, not bury people in jargon.</span>
+            </div>
 
-              <div>
-                <span class="dot"></span>
-                <span>Assessment should clarify meaningful questions, not bury people in jargon.</span>
-              </div>
-
-              <div>
-                <span class="dot"></span>
-                <span>Forensic work should be careful, restrained, and clear about the limits of opinion.</span>
-              </div>
+            <div>
+              <span class="dot"></span>
+              <span>Forensic work should be careful, restrained, and clear about the limits of opinion.</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section clarity-section">
+    <section class="section about-tight-section clarity-section">
       <div class="container clarity-grid">
         <div class="clarity-copy">
           <div class="section-kicker">Clinical and forensic clarity</div>
@@ -753,63 +688,41 @@
 
         <div class="clarity-cards">
           <article class="clarity-card">
-            <div class="clarity-icon">T</div>
-            <div>
-              <h3>Therapy</h3>
-              <p>
-                Therapy provides space for sustained psychological work: patterns, symptoms, relationships,
-                defenses, grief, identity, agency, and change.
-              </p>
-            </div>
+            <h3>Therapy</h3>
+            <p>
+              Sustained psychological work with attention to patterns, symptoms, relationships,
+              defenses, grief, identity, agency, and change.
+            </p>
           </article>
 
           <article class="clarity-card">
-            <div class="clarity-icon">A</div>
-            <div>
-              <h3>Assessment</h3>
-              <p>
-                Assessment is used to clarify meaningful questions. It should organize complexity into
-                findings and recommendations that can actually be used.
-              </p>
-            </div>
+            <h3>Assessment</h3>
+            <p>
+              Clarifying meaningful questions and organizing complexity into findings and recommendations
+              that can actually be used.
+            </p>
           </article>
 
           <article class="clarity-card">
-            <div class="clarity-icon">F</div>
-            <div>
-              <h3>Forensic services</h3>
-              <p>
-                Forensic work requires restraint. The task is not to advocate, reassure, or dramatize.
-                The task is disciplined psychological judgment applied to a specific referral question.
-              </p>
-            </div>
+            <h3>Forensic services</h3>
+            <p>
+              Disciplined psychological judgment applied with restraint to a specific referral or legal question.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-white">
+    <section class="section about-tight-section section-white">
       <div class="container">
         <div class="about-cta">
-          <div class="about clarify meaningful questions. It should organize complexity into
-                findings and recommendations that can actually be used.
-              </p>
-            </div>
-          </article>
-
-          <article class="clarity-card">
-            <div class="clarity-icon">F</div>
-            <div>
-              <h3>Forensic services</h3>
-              <p>
-                Forensic work requires restraint. The task is not to advocate, reassure, or dramatize.
-                The task is disciplined-cta-grid">
+          <div class="about-cta-grid">
             <div>
               <h2>Begin with a thoughtful consultation.</h2>
               <p>
-                A consultation is a practical first step. It helps determine whether Stonebridge is the
-                right setting, whether another referral would be more appropriate, and what kind of care
-                or evaluation would actually serve the question being brought.
+                A consultation helps determine whether Stonebridge is the right setting, whether another
+                referral would be more appropriate, and what kind of care or evaluation would actually serve
+                the question being brought.
               </p>
             </div>
 
