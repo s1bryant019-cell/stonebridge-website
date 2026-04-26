@@ -10,49 +10,112 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    .hero-video-grid{
+    .home-hero-with-video{
+      position:relative;
+      overflow:hidden;
+      min-height:760px;
+      border-bottom:1px solid rgba(221,211,199,.65);
+    }
+
+    .home-hero-with-video::after{
+      content:"";
+      position:absolute;
+      right:-6%;
+      bottom:2%;
+      width:min(118vw,1850px);
+      height:700px;
+      background:url('stone_arch_bridge_over_calm_water.png') no-repeat center/contain;
+      opacity:.13;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .home-hero-layout{
       min-height:760px;
       display:grid;
-      grid-template-columns:.88fr 1.12fr;
-      gap:54px;
+      grid-template-columns:.95fr 1.05fr;
+      gap:58px;
       align-items:center;
       position:relative;
       z-index:2;
     }
 
-    .hero-video-card{
-      align-self:start;
-      margin-top:92px;
-      border:1px solid rgba(221,211,199,.82);
-      border-radius:30px;
-      overflow:hidden;
-      background:rgba(255,255,255,.58);
-      box-shadow:0 26px 70px rgba(29,38,46,.12);
-      backdrop-filter:blur(8px);
+    .home-hero-copy{
+      max-width:640px;
+      padding:76px 0 88px;
+      position:relative;
+      z-index:2;
     }
 
-    .hero-video-card video{
+    .home-hero-copy h1{
+      max-width:8.2ch;
+    }
+
+    .home-hero-copy p{
+      max-width:43rem;
+      margin-top:22px;
+    }
+
+    .home-video-wrap{
+      position:relative;
+      z-index:2;
+      align-self:center;
+      margin-top:12px;
+    }
+
+    .home-video-card{
+      border:1px solid rgba(221,211,199,.86);
+      border-radius:30px;
+      overflow:hidden;
+      background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(251,248,244,.72));
+      box-shadow:0 28px 80px rgba(29,38,46,.13);
+      backdrop-filter:blur(10px);
+      max-width:720px;
+      margin-left:auto;
+    }
+
+    .home-video-card video{
       display:block;
       width:100%;
       height:auto;
       aspect-ratio:16/9;
-      background:#f6f2ed;
       object-fit:cover;
+      background:#f6f2ed;
     }
 
-    @media (max-width:1000px){
-      .hero-video-grid{
+    @media (max-width:1100px){
+      .home-hero-layout{
         grid-template-columns:1fr;
         min-height:auto;
+        gap:34px;
         padding:62px 0;
       }
 
-      .hero-copy{
+      .home-hero-copy{
         padding:0;
       }
 
-      .hero-video-card{
-        margin-top:0;
+      .home-video-card{
+        margin-left:0;
+        max-width:100%;
+      }
+
+      .home-hero-with-video::after{
+        right:-18%;
+        bottom:4%;
+        width:175vw;
+        height:430px;
+        opacity:.11;
+      }
+    }
+
+    @media (max-width:760px){
+      .home-hero-layout{
+        padding:48px 0;
+      }
+
+      .home-video-card{
+        border-radius:22px;
       }
     }
   </style>
@@ -77,6 +140,7 @@
             <a href="team.html">Team</a>
             <div class="dropdown-menu">
               <a href="team.html">Team Overview</a>
+              <a href="team.html#founder">Founder</a>
               <a href="team.html#psychologists">Psychologists</a>
               <a href="team.html#therapists">Therapists</a>
             </div>
@@ -103,9 +167,9 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-video-grid">
-        <div class="hero-copy">
+    <section class="home-hero-with-video">
+      <div class="container home-hero-layout">
+        <div class="home-hero-copy hero-copy">
           <div class="eyebrow">Clinical &amp; Forensic Psychological Services</div>
           <h1>Grounded, thoughtful psychological care and evaluation.</h1>
           <p>
@@ -119,11 +183,13 @@
           </div>
         </div>
 
-        <div class="hero-video-card">
-          <video id="homeIntroVideo" autoplay muted playsinline loop controls preload="auto">
-            <source src="stonebridge-home-intro.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <div class="home-video-wrap">
+          <div class="home-video-card">
+            <video id="homeIntroVideo" autoplay muted playsinline loop controls preload="auto">
+              <source src="stonebridge-home-intro.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
     </section>
