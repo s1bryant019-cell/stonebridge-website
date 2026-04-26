@@ -8,7 +8,378 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .about-hero{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .about-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(191,161,104,.18), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,.62), rgba(248,244,238,.94));
+      pointer-events:none;
+    }
+
+    .about-hero .container{
+      position:relative;
+      z-index:1;
+    }
+
+    .about-hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:58px;
+      align-items:center;
+    }
+
+    .about-hero-copy h1{
+      max-width:780px;
+    }
+
+    .about-hero-copy p{
+      max-width:690px;
+      margin-top:20px;
+      font-size:1.08rem;
+      line-height:1.85;
+    }
+
+    .about-visual-card{
+      border-radius:34px;
+      border:1px solid rgba(221,211,199,.82);
+      background:linear-gradient(180deg,#fffaf2,#f5efe7);
+      box-shadow:var(--card-shadow);
+      padding:18px;
+      position:relative;
+    }
+
+    .about-visual-card img{
+      width:100%;
+      display:block;
+      border-radius:26px;
+      min-height:370px;
+      object-fit:cover;
+      opacity:.95;
+    }
+
+    .about-visual-note{
+      position:absolute;
+      left:34px;
+      right:34px;
+      bottom:34px;
+      border-radius:22px;
+      padding:20px 22px;
+      background:rgba(18,39,61,.88);
+      color:#fffaf2;
+      box-shadow:0 18px 38px rgba(18,39,61,.22);
+    }
+
+    .about-visual-note span{
+      display:block;
+      font-family:var(--serif);
+      font-size:1.35rem;
+      line-height:1.25;
+      margin-bottom:6px;
+    }
+
+    .about-visual-note p{
+      margin:0;
+      font-size:.92rem;
+      line-height:1.55;
+      color:rgba(255,250,242,.82);
+    }
+
+    .about-intro-panel{
+      max-width:960px;
+      margin:0 auto;
+      text-align:center;
+    }
+
+    .about-intro-panel h2{
+      margin-bottom:20px;
+    }
+
+    .about-intro-panel p{
+      font-size:1.06rem;
+      line-height:1.85;
+      color:var(--muted);
+    }
+
+    .about-principles{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:42px;
+    }
+
+    .about-principle-card{
+      border:1px solid var(--border);
+      border-radius:28px;
+      background:linear-gradient(180deg,#ffffff,#faf7f2);
+      box-shadow:var(--card-shadow);
+      padding:30px;
+    }
+
+    .about-principle-number{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(18,39,61,.08);
+      color:var(--navy);
+      font-weight:600;
+      margin-bottom:20px;
+    }
+
+    .about-principle-card h3{
+      margin-bottom:12px;
+    }
+
+    .about-principle-card p{
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .about-quote-section{
+      background:var(--navy);
+      color:#fffaf2;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .about-quote-section::before{
+      content:"";
+      position:absolute;
+      inset:auto -120px -220px auto;
+      width:520px;
+      height:520px;
+      border-radius:999px;
+      background:rgba(191,161,104,.12);
+    }
+
+    .about-quote-wrap{
+      position:relative;
+      z-index:1;
+      max-width:940px;
+    }
+
+    .about-quote{
+      font-family:var(--serif);
+      font-size:clamp(2.1rem,4vw,4.15rem);
+      line-height:1.06;
+      letter-spacing:-.035em;
+      margin-bottom:26px;
+    }
+
+    .about-quote-copy{
+      max-width:720px;
+      color:rgba(255,250,242,.78);
+      font-size:1.04rem;
+      line-height:1.85;
+    }
+
+    .about-work-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:52px;
+      align-items:start;
+    }
+
+    .about-work-copy{
+      position:sticky;
+      top:110px;
+    }
+
+    .about-work-copy p{
+      margin-top:16px;
+      color:var(--muted);
+      line-height:1.85;
+    }
+
+    .about-pathways{
+      display:grid;
+      gap:18px;
+    }
+
+    .about-pathway{
+      display:grid;
+      grid-template-columns:72px 1fr;
+      gap:22px;
+      padding:26px;
+      border:1px solid var(--border);
+      border-radius:28px;
+      background:#fff;
+      box-shadow:var(--card-shadow);
+    }
+
+    .about-pathway-icon{
+      width:56px;
+      height:56px;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#f2eadf;
+      color:var(--navy);
+      font-family:var(--serif);
+      font-size:1.35rem;
+      font-weight:700;
+    }
+
+    .about-pathway h3{
+      margin-bottom:8px;
+    }
+
+    .about-pathway p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.72;
+    }
+
+    .about-standard{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .about-standard-panel{
+      border-radius:34px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--card-shadow);
+      background:#f5efe8;
+    }
+
+    .about-standard-panel img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .about-standard-copy p{
+      margin-top:18px;
+      color:var(--muted);
+      line-height:1.85;
+    }
+
+    .about-standard-list{
+      margin-top:28px;
+      display:grid;
+      gap:14px;
+    }
+
+    .about-standard-item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .about-standard-item .dot{
+      margin-top:8px;
+      flex:0 0 auto;
+    }
+
+    .about-cta{
+      border-radius:34px;
+      padding:46px;
+      background:
+        linear-gradient(135deg,rgba(18,39,61,.96),rgba(28,55,82,.94)),
+        url("stone_arch_bridge_over_calm_water.png");
+      background-size:cover;
+      background-position:center;
+      color:#fffaf2;
+      box-shadow:var(--card-shadow);
+      overflow:hidden;
+    }
+
+    .about-cta-grid{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:28px;
+      align-items:center;
+    }
+
+    .about-cta h2{
+      color:#fffaf2;
+      margin-bottom:12px;
+    }
+
+    .about-cta p{
+      max-width:680px;
+      color:rgba(255,250,242,.78);
+      line-height:1.75;
+      margin:0;
+    }
+
+    .about-cta-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .about-cta .btn-secondary{
+      background:rgba(255,250,242,.1);
+      color:#fffaf2;
+      border-color:rgba(255,250,242,.38);
+    }
+
+    @media (max-width:980px){
+      .about-hero-grid,
+      .about-work-grid,
+      .about-standard,
+      .about-cta-grid{
+        grid-template-columns:1fr;
+      }
+
+      .about-principles{
+        grid-template-columns:1fr;
+      }
+
+      .about-work-copy{
+        position:static;
+      }
+
+      .about-cta-actions{
+        justify-content:flex-start;
+      }
+
+      .about-standard-panel img{
+        height:auto;
+      }
+    }
+
+    @media (max-width:640px){
+      .about-visual-note{
+        position:static;
+        margin-top:14px;
+      }
+
+      .about-visual-card img{
+        min-height:260px;
+      }
+
+      .about-pathway{
+        grid-template-columns:1fr;
+      }
+
+      .about-cta{
+        padding:32px 24px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav">
@@ -28,6 +399,7 @@
             <a href="team.html">Team</a>
             <div class="dropdown-menu">
               <a href="team.html">Team Overview</a>
+              <a href="team.html#founder">Founder</a>
               <a href="team.html#psychologists">Psychologists</a>
               <a href="team.html#therapists">Therapists</a>
             </div>
@@ -54,65 +426,195 @@
   </header>
 
   <main>
-    <section class="page-hero-wide">
-      <div class="container page-grid-tight">
-        <div>
-          <div class="eyebrow">About</div>
-          <h1>A practice built on clarity, depth, and thoughtful care.</h1>
-          <p style="max-width:46rem;margin-top:18px;">
-            Stonebridge Psychological Group was designed to feel steady, thoughtful, and clinically grounded.
-            The practice is intentionally structured to support psychotherapy, psychological assessment,
-            and forensic services within a coherent professional identity.
+    <section class="page-hero-wide about-hero">
+      <div class="container about-hero-grid">
+        <div class="about-hero-copy">
+          <div class="eyebrow">About Stonebridge</div>
+          <h1>A steady place for careful psychological work.</h1>
+          <p>
+            Stonebridge Psychological Group was created around a practical clinical idea: people often
+            seek psychological care during crossings — moments of uncertainty, conflict, evaluation,
+            transition, or distress. The work of the practice is to provide a calm, thoughtful structure
+            for moving through those moments with clarity and care.
           </p>
         </div>
 
-        <div class="subtle-panel">
+        <div class="about-visual-card">
           <img src="arch-panel.png" alt="Stonebridge architectural detail">
+          <div class="about-visual-note">
+            <span>Present. Durable. Calm.</span>
+            <p>
+              A bridge does not need to announce itself to be useful. It holds weight, offers passage,
+              and remains steady while people move across difficult terrain.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section section-white">
-      <div class="container content-blocks">
-        <article class="text-block">
-          <h3>A grounded clinical identity</h3>
+      <div class="container">
+        <div class="about-intro-panel">
+          <div class="section-kicker">The idea behind the practice</div>
+          <h2>Clinical depth with practical clarity.</h2>
           <p>
-            Stonebridge emphasizes careful psychological thinking, professional integrity,
-            and a quieter, more deliberate approach to care. The tone of the practice is meant
-            to feel refined without becoming distant, and clinically serious without losing warmth.
+            Stonebridge is not meant to feel cold, corporate, or overly polished. It is meant to feel
+            grounded. The practice brings together psychotherapy, psychological assessment, and forensic
+            services under one consistent clinical identity: careful thinking, professional steadiness,
+            and respect for the complexity of people’s lives.
           </p>
-        </article>
+        </div>
 
-        <article class="text-block">
-          <h3>A structure built for growth</h3>
-          <p>
-            The practice is designed to grow over time while maintaining a cohesive identity.
-            As additional clinicians are added, services can remain clearly organized while still
-            feeling like part of one thoughtful group practice.
-          </p>
-        </article>
+        <div class="about-principles">
+          <article class="about-principle-card">
+            <div class="about-principle-number">01</div>
+            <h3>Steadiness</h3>
+            <p>
+              Good psychological work requires a setting that can hold complexity without rushing to
+              oversimplify it. Stonebridge is designed to feel calm, consistent, and reliable.
+            </p>
+          </article>
+
+          <article class="about-principle-card">
+            <div class="about-principle-number">02</div>
+            <h3>Discernment</h3>
+            <p>
+              Whether in therapy, assessment, or forensic consultation, the work depends on careful
+              judgment, clear language, and attention to what is clinically meaningful.
+            </p>
+          </article>
+
+          <article class="about-principle-card">
+            <div class="about-principle-number">03</div>
+            <h3>Integrity</h3>
+            <p>
+              Psychological care and evaluation should be thoughtful, ethical, and direct. The goal is
+              not performance or persuasion, but clarity, usefulness, and professional responsibility.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-quote-section">
+      <div class="container about-quote-wrap">
+        <div class="about-quote">
+          A bridge is useful because it is steady enough to be trusted.
+        </div>
+        <p class="about-quote-copy">
+          That is the tone Stonebridge aims to bring to psychological work: calm enough to think clearly,
+          structured enough to be useful, and human enough to recognize that people often arrive carrying
+          more than one kind of burden.
+        </p>
       </div>
     </section>
 
     <section class="section section-soft">
-      <div class="container page-grid">
-        <div>
+      <div class="container about-work-grid">
+        <div class="about-work-copy">
           <div class="section-kicker">How Stonebridge works</div>
+          <h2>One practice, several pathways.</h2>
           <p>
-            Psychotherapy remains central to the practice, with assessment and forensic work
-            offered as clearly defined complementary pathways. This allows the site and the practice
-            itself to remain focused, organized, and clinically coherent.
+            Stonebridge is built to support both clinical and forensic work without blurring the
+            boundaries between them. Each service pathway has a distinct purpose, while sharing the same
+            underlying standard of careful psychological thinking.
           </p>
-
-          <div class="icon-list">
-            <div><span class="dot"></span><span>Thoughtful psychotherapy and consultation</span></div>
-            <div><span class="dot"></span><span>Psychological assessment and diagnostic clarification</span></div>
-            <div><span class="dot"></span><span>Forensic services framed with professionalism and care</span></div>
-          </div>
         </div>
 
-        <div class="image-panel soft">
-          <img src="stone-panel.png" alt="Stonebridge stone detail">
+        <div class="about-pathways">
+          <article class="about-pathway">
+            <div class="about-pathway-icon">T</div>
+            <div>
+              <h3>Psychotherapy</h3>
+              <p>
+                Therapy provides space for sustained psychological work, reflection, symptom relief,
+                emotional understanding, and meaningful change over time.
+              </p>
+            </div>
+          </article>
+
+          <article class="about-pathway">
+            <div class="about-pathway-icon">A</div>
+            <div>
+              <h3>Psychological assessment</h3>
+              <p>
+                Assessment is used to clarify questions, organize complex information, and support
+                practical recommendations for care, planning, or decision-making.
+              </p>
+            </div>
+          </article>
+
+          <article class="about-pathway">
+            <div class="about-pathway-icon">F</div>
+            <div>
+              <h3>Forensic services</h3>
+              <p>
+                Forensic work requires disciplined reasoning, careful documentation, and communication
+                that remains professional, objective, and clinically informed.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container about-standard">
+        <div class="about-standard-panel">
+          <img src="stone-panel.png" alt="Stone surface detail">
+        </div>
+
+        <div class="about-standard-copy">
+          <div class="section-kicker">The Stonebridge standard</div>
+          <h2>Quiet professionalism, not noise.</h2>
+          <p>
+            Stonebridge is intended to feel refined without being distant, serious without being severe,
+            and practical without becoming mechanical. The practice is shaped by the belief that strong
+            clinical work does not need to be loud. It needs to be thoughtful, consistent, and trustworthy.
+          </p>
+
+          <div class="about-standard-list">
+            <div class="about-standard-item">
+              <span class="dot"></span>
+              <span>Language that is clear, careful, and clinically grounded.</span>
+            </div>
+
+            <div class="about-standard-item">
+              <span class="dot"></span>
+              <span>Services organized around real psychological questions, not generic categories.</span>
+            </div>
+
+            <div class="about-standard-item">
+              <span class="dot"></span>
+              <span>A practice identity that can grow while remaining steady and coherent.</span>
+            </div>
+
+            <div class="about-standard-item">
+              <span class="dot"></span>
+              <span>A tone that respects both the human and professional seriousness of the work.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="about-cta">
+          <div class="about-cta-grid">
+            <div>
+              <h2>Begin with a thoughtful consultation.</h2>
+              <p>
+                A consultation is a practical first step for determining whether therapy, assessment,
+                forensic services, or another referral pathway is the most appropriate fit.
+              </p>
+            </div>
+
+            <div class="about-cta-actions">
+              <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+              <a class="btn btn-secondary" href="services.html">Explore Services</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
