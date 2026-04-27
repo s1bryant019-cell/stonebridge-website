@@ -22,12 +22,12 @@
     .home-hero::after{
       content:"";
       position:absolute;
-      right:-320px;
-      top:42px;
+      right:-300px;
+      top:44px;
       width:980px;
       height:980px;
       background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
-      opacity:.07;
+      opacity:.055;
       pointer-events:none;
       z-index:0;
     }
@@ -35,20 +35,24 @@
     .hero-shell{
       position:relative;
       z-index:1;
+      width:min(1180px, calc(100% - 48px));
+      margin:0 auto;
       padding:46px 0 0;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.02fr) minmax(560px,.98fr);
-      gap:76px;
+      grid-template-columns:minmax(420px, .96fr) minmax(520px, 1.04fr);
+      gap:72px;
       align-items:center;
       min-height:595px;
     }
 
     .hero-copy{
-      max-width:660px;
+      max-width:620px;
       padding:54px 0 68px;
+      position:relative;
+      z-index:4;
     }
 
     .hero-line{
@@ -60,12 +64,12 @@
 
     .hero-copy h1{
       margin:0;
-      color:var(--navy);
+      color:var(--navy,#24313f);
       font-family:"EB Garamond",serif;
       font-size:clamp(4rem,5vw,5.75rem);
       line-height:.93;
       letter-spacing:-.035em;
-      max-width:11.8ch;
+      max-width:12.4ch;
     }
 
     .hero-copy h1 span{
@@ -75,7 +79,7 @@
     .hero-copy p{
       margin:30px 0 0;
       max-width:35rem;
-      color:var(--muted);
+      color:var(--muted,#667180);
       font-family:"Inter",sans-serif;
       font-size:1.03rem;
       line-height:1.86;
@@ -118,9 +122,8 @@
       overflow:hidden;
       box-shadow:0 26px 80px rgba(26,36,46,.10);
       background:#d8ccbb;
-      width:calc(100% + ((100vw - min(1200px, 92vw)) / 2));
-      max-width:none;
-      justify-self:end;
+      justify-self:stretch;
+      margin-right:calc((100vw - min(1180px, calc(100vw - 48px))) / -2);
     }
 
     .hero-visual img{
@@ -188,6 +191,8 @@
     }
 
     .service-band-grid{
+      width:min(1180px, calc(100% - 48px));
+      margin:0 auto;
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:28px;
@@ -256,7 +261,7 @@
 
     .text-block h3{
       margin:0 0 10px;
-      color:var(--navy);
+      color:var(--navy,#24313f);
       font-family:"EB Garamond",serif;
       font-size:1.65rem;
       line-height:1.06;
@@ -264,7 +269,7 @@
 
     .text-block p{
       margin:0;
-      color:var(--muted);
+      color:var(--muted,#667180);
       font-family:"Inter",sans-serif;
       font-size:.98rem;
       line-height:1.75;
@@ -272,12 +277,12 @@
 
     @media (max-width:1260px){
       .hero-grid{
-        grid-template-columns:minmax(0,1fr) minmax(500px,.95fr);
-        gap:60px;
+        grid-template-columns:minmax(390px,1fr) minmax(480px,.96fr);
+        gap:56px;
       }
 
       .hero-copy{
-        max-width:610px;
+        max-width:590px;
       }
 
       .hero-copy h1{
@@ -310,7 +315,7 @@
       }
 
       .hero-visual{
-        width:100%;
+        margin-right:0;
         min-height:480px;
         border-radius:28px;
       }
@@ -327,6 +332,11 @@
     }
 
     @media (max-width:760px){
+      .hero-shell,
+      .service-band-grid{
+        width:min(1180px, calc(100% - 28px));
+      }
+
       .home-hero::after{
         right:-380px;
         top:120px;
@@ -423,7 +433,7 @@
 
   <main>
     <section class="home-hero">
-      <div class="container hero-shell">
+      <div class="hero-shell">
         <div class="hero-grid">
           <div class="hero-copy">
             <div class="hero-line"></div>
@@ -458,7 +468,7 @@
       </div>
 
       <div class="service-band">
-        <div class="container service-band-grid">
+        <div class="service-band-grid">
           <article class="service-item">
             <div class="service-icon">T</div>
             <div>
