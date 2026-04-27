@@ -22,8 +22,8 @@
     .home-hero::after{
       content:"";
       position:absolute;
-      right:-280px;
-      top:44px;
+      right:-320px;
+      top:42px;
       width:980px;
       height:980px;
       background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
@@ -35,20 +35,20 @@
     .hero-shell{
       position:relative;
       z-index:1;
-      padding:48px 0 0;
+      padding:46px 0 0;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.05fr) minmax(520px,.95fr);
-      gap:88px;
+      grid-template-columns:minmax(0,1.02fr) minmax(560px,.98fr);
+      gap:76px;
       align-items:center;
       min-height:595px;
     }
 
     .hero-copy{
-      max-width:640px;
-      padding:52px 0 70px;
+      max-width:660px;
+      padding:54px 0 68px;
     }
 
     .hero-line{
@@ -63,9 +63,9 @@
       color:var(--navy);
       font-family:"EB Garamond",serif;
       font-size:clamp(4rem,5vw,5.75rem);
-      line-height:.92;
+      line-height:.93;
       letter-spacing:-.035em;
-      max-width:12.2ch;
+      max-width:11.8ch;
     }
 
     .hero-copy h1 span{
@@ -118,6 +118,9 @@
       overflow:hidden;
       box-shadow:0 26px 80px rgba(26,36,46,.10);
       background:#d8ccbb;
+      width:calc(100% + ((100vw - min(1200px, 92vw)) / 2));
+      max-width:none;
+      justify-self:end;
     }
 
     .hero-visual img{
@@ -269,12 +272,12 @@
 
     @media (max-width:1260px){
       .hero-grid{
-        grid-template-columns:minmax(0,1fr) minmax(470px,.92fr);
-        gap:58px;
+        grid-template-columns:minmax(0,1fr) minmax(500px,.95fr);
+        gap:60px;
       }
 
       .hero-copy{
-        max-width:580px;
+        max-width:610px;
       }
 
       .hero-copy h1{
@@ -307,6 +310,7 @@
       }
 
       .hero-visual{
+        width:100%;
         min-height:480px;
         border-radius:28px;
       }
