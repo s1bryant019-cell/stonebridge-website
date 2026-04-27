@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav">
@@ -59,26 +60,27 @@
       <div class="container consultation-grid">
         <section class="consultation-panel">
           <div class="consultation-panel-inner">
-            <div class="consultation-eyebrow">Consultation Request</div>
+            <div class="consultation-eyebrow">Initial Inquiry</div>
             <div class="consultation-gold-rule"></div>
 
             <h1>Request a Consultation</h1>
 
             <p>
-              This form is an initial inquiry for psychotherapy, psychological
-              assessment, or forensic services at Stonebridge Psychological Group.
+              Thank you for your interest in Stonebridge Psychological Group.
+              This form is the first step in submitting an initial inquiry.
             </p>
 
             <p>
-              The information you provide helps us understand the nature of the
-              request, the service being considered, and whether Stonebridge may
-              be an appropriate setting for the work.
+              Stonebridge reviews requests for fit, scope, and clinical appropriateness.
+              Submitting this form does not establish a clinical relationship or guarantee
+              that services can be offered.
             </p>
 
             <p>
-              Submitting this form does not establish a clinical relationship.
-              Each inquiry is reviewed for fit, scope, and appropriateness before
-              consultation or scheduling steps are offered.
+              If the request appears appropriate for the practice, we may offer a brief
+              consultation to clarify your needs, answer practical questions, and determine
+              whether psychotherapy, assessment, forensic services, or another referral
+              direction may be the right next step.
             </p>
           </div>
 
@@ -140,7 +142,7 @@
             <div class="form-row full-row">
               <div class="form-field">
                 <label id="reason-label" for="reason-textarea">Reason for Seeking Psychotherapy <span class="required">*</span></label>
-                <textarea id="reason-textarea" name="reason" class="form-control form-textarea" placeholder="Please share a brief description of what brings you (or your loved one) to seek support."></textarea>
+                <textarea id="reason-textarea" name="reason" class="form-control form-textarea" placeholder="Please share a brief description of what brings you or your loved one to seek support."></textarea>
               </div>
             </div>
 
@@ -152,9 +154,9 @@
               <div class="submit-note-box">
                 <div class="submit-note-icon" aria-hidden="true">🔒</div>
                 <p>
-                  Please do not include emergency information here. If this form is
-                  later connected to an intake process, inquiries should be reviewed
-                  before any clinical relationship is established.
+                  This inquiry form is intended for non-emergency requests. Once connected
+                  to a secure intake process, submitted information will be reviewed before
+                  any consultation or service is scheduled.
                 </p>
               </div>
             </div>
@@ -174,9 +176,9 @@
           <div>
             <h3>If Stonebridge is not the right fit</h3>
             <p>
-              Some concerns, timelines, or service needs may be better served in
-              another setting. When appropriate, Stonebridge may offer referral
-              guidance rather than beginning work that does not fit the request.
+              Not every inquiry will be appropriate for the practice. When Stonebridge
+              is not the right setting, the goal is to be clear and respectful rather
+              than vague or overpromising. Referral guidance may be offered when useful.
             </p>
           </div>
         </article>
@@ -190,9 +192,10 @@
           <div>
             <h3>What happens next</h3>
             <p>
-              Your inquiry will be reviewed for service type, clinical fit, scope,
-              and availability. If the request appears appropriate, we will follow
-              up by email with next steps or consultation options.
+              Inquiries are reviewed with attention to the service requested,
+              the nature of the concern, and whether the question being brought
+              fits the scope of Stonebridge. If appropriate, follow-up will occur
+              by email with possible next steps.
             </p>
           </div>
         </article>
@@ -253,6 +256,7 @@
   </footer>
 
   <script src="script.js"></script>
+
   <script>
     const serviceRequested = document.getElementById('service-requested');
     const secondaryLabel = document.getElementById('secondary-label');
@@ -301,7 +305,7 @@
         ]);
         secondaryHelper.textContent = 'Psychotherapy is currently offered via telehealth.';
         reasonLabel.innerHTML = 'Reason for Seeking Psychotherapy <span class="required">*</span>';
-        reasonTextarea.placeholder = 'Please share a brief description of what brings you (or your loved one) to seek support.';
+        reasonTextarea.placeholder = 'Please share a brief description of what brings you or your loved one to seek support.';
       }
     }
 
