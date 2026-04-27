@@ -10,153 +10,222 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    .home-hero{
+    .home-landing{
       position:relative;
       overflow:hidden;
-      min-height:760px;
-      padding:92px 0 88px;
       background:
-        linear-gradient(90deg, rgba(248,244,238,.98) 0%, rgba(248,244,238,.9) 46%, rgba(248,244,238,.55) 100%),
-        url("stone_arch_bridge_over_calm_water.png");
-      background-size:cover;
-      background-position:center right;
-      border-bottom:1px solid rgba(221,211,199,.65);
+        radial-gradient(circle at 13% 20%, rgba(191,161,104,.13), transparent 24%),
+        linear-gradient(180deg,#fffaf3 0%,#f8f4ef 100%);
+      border-bottom:1px solid rgba(221,211,199,.72);
     }
 
-    .home-hero::before{
+    .home-landing::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 18% 22%, rgba(191,161,104,.18), transparent 28%),
-        linear-gradient(180deg, rgba(255,255,255,.28), rgba(248,244,238,.9));
+        linear-gradient(90deg, rgba(255,250,243,.98) 0%, rgba(255,250,243,.95) 42%, rgba(255,250,243,.3) 100%);
       pointer-events:none;
+      z-index:0;
     }
 
-    .home-hero .container{
+    .home-landing .container{
       position:relative;
       z-index:1;
     }
 
     .home-hero-grid{
       display:grid;
-      grid-template-columns:minmax(0,.88fr) minmax(420px,.86fr);
-      gap:58px;
-      align-items:center;
+      grid-template-columns:minmax(0,.82fr) minmax(560px,1.18fr);
+      min-height:680px;
+      align-items:stretch;
     }
 
     .home-hero-copy{
-      max-width:720px;
+      padding:96px 54px 78px 0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      max-width:650px;
     }
 
     .home-hero-copy h1{
-      max-width:680px;
+      margin-top:34px;
+      max-width:8.2ch;
       line-height:.96;
       letter-spacing:-.045em;
+      font-size:clamp(4.7rem,7.4vw,8.25rem);
+    }
+
+    .home-gold-rule{
+      width:56px;
+      height:2px;
+      background:rgba(191,161,104,.9);
+      margin:24px 0 28px;
     }
 
     .home-hero-copy p{
-      max-width:590px;
-      margin-top:22px;
-      font-size:1.05rem;
-      line-height:1.78;
-    }
-
-    .home-hero-note{
-      margin-top:24px;
-      max-width:590px;
-      padding-left:20px;
-      border-left:2px solid rgba(191,161,104,.72);
-      color:var(--muted);
-      font-size:.96rem;
+      max-width:560px;
+      color:var(--navy);
+      font-size:1.15rem;
       line-height:1.72;
+      margin:0;
     }
 
     .home-hero-actions{
-      margin-top:30px;
+      margin-top:32px;
       display:flex;
-      gap:14px;
+      gap:16px;
       flex-wrap:wrap;
     }
 
-    .home-video-stage{
+    .home-integrity-line{
+      margin-top:34px;
+      display:flex;
+      align-items:center;
+      gap:13px;
+      color:rgba(18,39,61,.66);
+      font-size:.78rem;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+      line-height:1.5;
+    }
+
+    .home-integrity-mark{
+      width:26px;
+      height:30px;
+      border:1.5px solid rgba(191,161,104,.95);
+      border-radius:14px 14px 18px 18px;
       position:relative;
-      min-height:460px;
-      border-radius:38px;
+      flex:0 0 auto;
+    }
+
+    .home-integrity-mark::before{
+      content:"";
+      position:absolute;
+      top:-5px;
+      left:50%;
+      transform:translateX(-50%);
+      width:12px;
+      height:8px;
+      border-left:1.5px solid rgba(191,161,104,.95);
+      border-right:1.5px solid rgba(191,161,104,.95);
+      border-top:1.5px solid rgba(191,161,104,.95);
+      border-radius:8px 8px 0 0;
+      background:#fffaf3;
+    }
+
+    .home-visual{
+      position:relative;
+      min-height:680px;
+      margin-right:calc((100vw - min(1180px, calc(100vw - 40px))) / -2);
+      border-top-left-radius:88px;
       overflow:hidden;
-      box-shadow:0 32px 86px rgba(18,39,61,.18);
-      border:1px solid rgba(221,211,199,.82);
+      box-shadow:-28px 0 80px rgba(18,39,61,.12);
       background:#12273d;
     }
 
-    .home-video-stage::before{
+    .home-visual img{
+      width:100%;
+      height:100%;
+      min-height:680px;
+      object-fit:cover;
+      display:block;
+      transform:scale(1.01);
+    }
+
+    .home-visual::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(18,39,61,.62), rgba(18,39,61,.08) 52%, rgba(18,39,61,.24)),
-        radial-gradient(circle at 84% 18%, rgba(191,161,104,.18), transparent 30%);
+        linear-gradient(90deg,rgba(18,39,61,.72) 0%,rgba(18,39,61,.24) 36%,rgba(18,39,61,.04) 66%),
+        linear-gradient(180deg,rgba(18,39,61,.08),rgba(18,39,61,.24));
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .home-visual-statement{
+      position:absolute;
+      left:72px;
+      bottom:88px;
       z-index:2;
-      pointer-events:none;
-    }
-
-    .home-video-stage::after{
-      content:"";
-      position:absolute;
-      inset:14px;
-      border-radius:28px;
-      border:1px solid rgba(255,250,242,.22);
-      z-index:3;
-      pointer-events:none;
-    }
-
-    .home-video-stage video{
-      width:100%;
-      height:100%;
-      min-height:460px;
-      display:block;
-      object-fit:cover;
-      opacity:.92;
-      transform:scale(1.02);
-      transition:opacity .55s ease;
-    }
-
-    .home-video-stage video.is-fading{
-      opacity:.35;
-    }
-
-    .home-video-overlay{
-      position:absolute;
-      left:28px;
-      right:28px;
-      bottom:28px;
-      z-index:4;
-      border-radius:24px;
-      padding:24px 26px;
-      background:rgba(18,39,61,.86);
-      backdrop-filter:blur(12px);
+      max-width:440px;
       color:#fffaf2;
-      max-width:520px;
     }
 
-    .home-video-overlay span{
-      display:block;
-      font-family:var(--serif);
-      font-size:1.55rem;
-      line-height:1.15;
-      margin-bottom:8px;
+    .home-visual-statement h2{
+      color:#fffaf2;
+      font-size:clamp(2rem,2.8vw,3.35rem);
+      line-height:1.06;
+      letter-spacing:-.035em;
+      margin:0 0 14px;
     }
 
-    .home-video-overlay p{
+    .home-visual-statement p{
+      color:rgba(255,250,242,.85);
+      font-size:1.05rem;
+      line-height:1.62;
       margin:0;
-      color:rgba(255,250,242,.8);
-      line-height:1.58;
-      font-size:.94rem;
+    }
+
+    .home-service-band{
+      background:
+        radial-gradient(circle at 10% 30%, rgba(191,161,104,.1), transparent 24%),
+        linear-gradient(135deg,#102438,#1b3652);
+      color:#fffaf2;
+      padding:38px 0;
+    }
+
+    .home-service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:0;
+    }
+
+    .home-service-item{
+      display:grid;
+      grid-template-columns:86px 1fr;
+      gap:22px;
+      align-items:center;
+      padding:18px 42px;
+      border-right:1px solid rgba(255,250,242,.22);
+    }
+
+    .home-service-item:last-child{
+      border-right:0;
+    }
+
+    .home-service-icon{
+      width:74px;
+      height:74px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,250,242,.08);
+      border:1px solid rgba(255,250,242,.12);
+      color:#d5aa62;
+      font-family:var(--serif);
+      font-weight:700;
+      font-size:1.7rem;
+    }
+
+    .home-service-item h3{
+      color:#fffaf2;
+      margin-bottom:7px;
+      font-size:1.45rem;
+    }
+
+    .home-service-item p{
+      margin:0;
+      color:rgba(255,250,242,.76);
+      line-height:1.62;
     }
 
     .home-intro{
-      padding-top:58px;
-      padding-bottom:58px;
+      padding-top:62px;
+      padding-bottom:62px;
       background:#fff;
     }
 
@@ -197,44 +266,88 @@
       margin:0;
     }
 
-    @media (max-width:980px){
-      .home-hero-grid,
-      .home-intro-grid{
+    @media (max-width:1100px){
+      .home-hero-grid{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+
+      .home-hero-copy{
+        padding:70px 0 48px;
+      }
+
+      .home-hero-copy h1{
+        max-width:10ch;
+      }
+
+      .home-visual{
+        margin-right:0;
+        min-height:520px;
+        border-top-left-radius:56px;
+        border-top-right-radius:56px;
+      }
+
+      .home-visual img{
+        min-height:520px;
+      }
+
+      .home-service-grid{
         grid-template-columns:1fr;
       }
 
-      .home-video-stage,
-      .home-video-stage video{
-        min-height:360px;
+      .home-service-item{
+        border-right:0;
+        border-bottom:1px solid rgba(255,250,242,.18);
+        padding:24px 0;
       }
 
-      .home-intro-cards{
+      .home-service-item:last-child{
+        border-bottom:0;
+      }
+
+      .home-intro-grid{
         grid-template-columns:1fr;
       }
     }
 
-    @media (max-width:640px){
-      .home-hero{
-        padding:56px 0;
+    @media (max-width:760px){
+      .home-hero-copy{
+        padding:54px 0 42px;
       }
 
-      .home-video-stage{
-        border-radius:28px;
+      .home-hero-copy h1{
+        font-size:clamp(4rem,18vw,5.6rem);
       }
 
-      .home-video-stage,
-      .home-video-stage video{
-        min-height:300px;
+      .home-visual{
+        min-height:420px;
+        border-top-left-radius:34px;
+        border-top-right-radius:34px;
       }
 
-      .home-video-overlay{
-        position:static;
-        margin:14px;
+      .home-visual img{
+        min-height:420px;
       }
 
-      .home-intro{
-        padding-top:46px;
-        padding-bottom:46px;
+      .home-visual-statement{
+        left:24px;
+        right:24px;
+        bottom:34px;
+      }
+
+      .home-service-item{
+        grid-template-columns:64px 1fr;
+        gap:18px;
+      }
+
+      .home-service-icon{
+        width:58px;
+        height:58px;
+        font-size:1.3rem;
+      }
+
+      .home-intro-cards{
+        grid-template-columns:1fr;
       }
     }
   </style>
@@ -286,40 +399,67 @@
   </header>
 
   <main>
-    <section class="home-hero">
+    <section class="home-landing">
       <div class="container home-hero-grid">
         <div class="home-hero-copy">
           <div class="eyebrow">Clinical &amp; Forensic Psychological Services</div>
-          <h1>A steadier way through complex psychological questions.</h1>
-          <p>
-            Stonebridge Psychological Group provides therapy, psychological assessment, and forensic services
-            for people and situations that require careful attention, clear judgment, and respect for complexity.
-          </p>
+          <h1>Clarity when it matters most.</h1>
 
-          <div class="home-hero-note">
-            The work is warm without becoming vague, clinically serious without becoming cold,
-            and practical without losing sight of the person behind the question.
-          </div>
+          <div class="home-gold-rule"></div>
+
+          <p>
+            Therapy, assessment, and forensic services for people and situations that require careful
+            attention, clear judgment, and respect for complexity.
+          </p>
 
           <div class="home-hero-actions">
             <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
             <a class="btn btn-secondary" href="services.html">Explore Services</a>
           </div>
+
+          <div class="home-integrity-line">
+            <span class="home-integrity-mark"></span>
+            <span>Rooted in integrity. Guided by clinical thinking.</span>
+          </div>
         </div>
 
-        <div class="home-video-stage">
-          <video id="homeIntroVideo" autoplay muted playsinline preload="auto">
-            <source src="stonebridge-home-intro.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <div class="home-video-overlay">
-            <span>Not volume. Not urgency. Careful work.</span>
+        <div class="home-visual">
+          <img src="home-hero-room.png" alt="Calm therapy office with warm light and a stone bridge artwork">
+          <div class="home-visual-statement">
+            <h2>A quieter kind of psychological practice.</h2>
             <p>
-              Stonebridge is built around fit, depth, and clarity — a quieter frame for clinical and forensic psychological work.
+              Not volume. Not urgency. Careful work.
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="home-service-band">
+      <div class="container home-service-grid">
+        <article class="home-service-item">
+          <div class="home-service-icon">T</div>
+          <div>
+            <h3>Clinical Therapy</h3>
+            <p>Thoughtful, individualized care for meaningful and lasting change.</p>
+          </div>
+        </article>
+
+        <article class="home-service-item">
+          <div class="home-service-icon">A</div>
+          <div>
+            <h3>Psychological Assessment</h3>
+            <p>Clear, comprehensive evaluations to support informed decisions.</p>
+          </div>
+        </article>
+
+        <article class="home-service-item">
+          <div class="home-service-icon">F</div>
+          <div>
+            <h3>Forensic Services</h3>
+            <p>Objective, well-reasoned opinions in service of legal and clinical clarity.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -409,29 +549,5 @@
   </footer>
 
   <script src="script.js"></script>
-
-  <script>
-    const homeVideo = document.getElementById("homeIntroVideo");
-
-    if (homeVideo) {
-      homeVideo.addEventListener("timeupdate", function () {
-        if (homeVideo.duration && homeVideo.duration - homeVideo.currentTime < 0.55) {
-          homeVideo.classList.add("is-fading");
-        }
-      });
-
-      homeVideo.addEventListener("ended", function () {
-        setTimeout(function () {
-          homeVideo.currentTime = 0;
-          homeVideo.play();
-          setTimeout(function () {
-            homeVideo.classList.remove("is-fading");
-          }, 180);
-        }, 260);
-      });
-
-      homeVideo.play().catch(function () {});
-    }
-  </script>
 </body>
 </html>
