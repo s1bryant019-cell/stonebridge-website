@@ -1,49 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stonebridge Psychological Group</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
   <style>
-    :root{
-      --bg:#f7f3ee;
-      --bg-2:#fbf8f4;
-      --panel:#f3eee6;
-      --card:#ffffff;
-      --ink:#24313f;
-      --muted:#667180;
-      --line:rgba(214,201,186,.72);
-      --gold:#c9ad79;
-      --navy:#163a60;
-      --navy-2:#102f4d;
-      --shadow:0 26px 80px rgba(26,36,46,.10);
-    }
-
-    body{
-      background:var(--bg);
-    }
-
-    .site-header{
-      background:rgba(247,243,238,.92);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(214,201,186,.38);
-      position:sticky;
-      top:0;
-      z-index:100;
-    }
-
     .home-hero{
       position:relative;
       overflow:hidden;
       background:
-        radial-gradient(circle at 16% 50%, rgba(201,173,121,.08), transparent 26%),
-        linear-gradient(180deg, #fbf8f4 0%, #f7f3ee 100%);
+        radial-gradient(circle at 16% 48%, rgba(201,173,121,.08), transparent 28%),
+        linear-gradient(180deg,#fbf8f4 0%,#f7f3ee 100%);
       border-bottom:1px solid rgba(214,201,186,.48);
     }
 
@@ -54,7 +26,7 @@
       top:44px;
       width:980px;
       height:980px;
-      background:url('stone_arch_bridge_over_calm_water.png') no-repeat center/contain;
+      background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
       opacity:.07;
       pointer-events:none;
       z-index:0;
@@ -63,37 +35,37 @@
     .hero-shell{
       position:relative;
       z-index:1;
-      padding:50px 0 0;
+      padding:48px 0 0;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:minmax(0, 1.05fr) minmax(520px, .95fr);
-      gap:86px;
+      grid-template-columns:minmax(0,1.05fr) minmax(520px,.95fr);
+      gap:88px;
       align-items:center;
-      min-height:600px;
+      min-height:595px;
     }
 
     .hero-copy{
-      max-width:620px;
-      padding:54px 0 70px;
+      max-width:640px;
+      padding:52px 0 70px;
     }
 
     .hero-line{
       width:42px;
       height:2px;
       background:rgba(201,173,121,.78);
-      margin-bottom:28px;
+      margin-bottom:30px;
     }
 
     .hero-copy h1{
       margin:0;
-      color:var(--ink);
-      font-family:"EB Garamond", serif;
-      font-size:clamp(4rem, 5vw, 5.75rem);
+      color:var(--navy);
+      font-family:"EB Garamond",serif;
+      font-size:clamp(4rem,5vw,5.75rem);
       line-height:.92;
       letter-spacing:-.035em;
-      max-width:11ch;
+      max-width:12.2ch;
     }
 
     .hero-copy h1 span{
@@ -101,10 +73,10 @@
     }
 
     .hero-copy p{
-      margin:28px 0 0;
+      margin:30px 0 0;
       max-width:35rem;
       color:var(--muted);
-      font-family:"Inter", sans-serif;
+      font-family:"Inter",sans-serif;
       font-size:1.03rem;
       line-height:1.86;
     }
@@ -117,7 +89,7 @@
     }
 
     .hero-note{
-      margin-top:18px;
+      margin-top:20px;
       display:flex;
       align-items:center;
       gap:10px;
@@ -125,7 +97,7 @@
       font-size:.72rem;
       letter-spacing:.22em;
       text-transform:uppercase;
-      font-family:"Inter", sans-serif;
+      font-family:"Inter",sans-serif;
       line-height:1.5;
     }
 
@@ -144,19 +116,31 @@
       min-height:560px;
       border-radius:34px 0 0 0;
       overflow:hidden;
-      box-shadow:var(--shadow);
+      box-shadow:0 26px 80px rgba(26,36,46,.10);
       background:#d8ccbb;
     }
 
-    .hero-visual-media{
+    .hero-visual img{
       position:absolute;
       inset:0;
-      background:
-        linear-gradient(180deg, rgba(14,32,52,.34) 0%, rgba(14,32,52,.12) 28%, rgba(17,27,39,.06) 44%, rgba(12,22,35,.30) 100%),
-        url('stonebridge-home-room.png') no-repeat center center / cover;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
     }
 
     .hero-visual::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg,rgba(14,32,52,.34) 0%,rgba(14,32,52,.12) 28%,rgba(17,27,39,.06) 44%,rgba(12,22,35,.30) 100%);
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .hero-visual::after{
       content:"";
       position:absolute;
       inset:0;
@@ -177,30 +161,32 @@
     .hero-overlay h3{
       margin:0 0 6px;
       color:#fff;
-      font-family:"EB Garamond", serif;
+      font-family:"EB Garamond",serif;
       font-size:1.15rem;
       line-height:1.04;
       letter-spacing:-.02em;
+      text-shadow:0 10px 24px rgba(0,0,0,.24);
     }
 
     .hero-overlay p{
       margin:0;
       color:rgba(255,255,255,.88);
-      font-family:"Inter", sans-serif;
+      font-family:"Inter",sans-serif;
       font-size:.84rem;
       line-height:1.52;
+      text-shadow:0 8px 18px rgba(0,0,0,.2);
     }
 
     .service-band{
       position:relative;
       z-index:2;
-      background:linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      background:linear-gradient(135deg,#163a60 0%,#102f4d 100%);
       box-shadow:0 -6px 20px rgba(15,29,48,.05);
     }
 
     .service-band-grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:28px;
       padding:16px 0;
     }
@@ -225,14 +211,14 @@
       justify-content:center;
       font-size:.8rem;
       font-weight:600;
-      font-family:"Inter", sans-serif;
+      font-family:"Inter",sans-serif;
       margin-top:2px;
     }
 
     .service-item h4{
       margin:0 0 4px;
       color:#fff;
-      font-family:"EB Garamond", serif;
+      font-family:"EB Garamond",serif;
       font-size:1.06rem;
       line-height:1.05;
       letter-spacing:-.01em;
@@ -241,18 +227,19 @@
     .service-item p{
       margin:0;
       color:rgba(255,255,255,.82);
-      font-family:"Inter", sans-serif;
+      font-family:"Inter",sans-serif;
       font-size:.79rem;
       line-height:1.45;
     }
 
     .section-intro{
       padding:72px 0 78px;
+      background:#f7f3ee;
     }
 
     .content-blocks{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
+      grid-template-columns:repeat(2,1fr);
       gap:24px;
     }
 
@@ -266,8 +253,8 @@
 
     .text-block h3{
       margin:0 0 10px;
-      color:var(--ink);
-      font-family:"EB Garamond", serif;
+      color:var(--navy);
+      font-family:"EB Garamond",serif;
       font-size:1.65rem;
       line-height:1.06;
     }
@@ -275,14 +262,14 @@
     .text-block p{
       margin:0;
       color:var(--muted);
-      font-family:"Inter", sans-serif;
+      font-family:"Inter",sans-serif;
       font-size:.98rem;
       line-height:1.75;
     }
 
-    @media (max-width: 1260px){
+    @media (max-width:1260px){
       .hero-grid{
-        grid-template-columns:minmax(0, 1fr) minmax(470px, .92fr);
+        grid-template-columns:minmax(0,1fr) minmax(470px,.92fr);
         gap:58px;
       }
 
@@ -291,11 +278,11 @@
       }
 
       .hero-copy h1{
-        font-size:clamp(3.7rem, 4.6vw, 5rem);
+        font-size:clamp(3.7rem,4.6vw,5rem);
       }
     }
 
-    @media (max-width: 1080px){
+    @media (max-width:1080px){
       .hero-shell{
         padding:36px 0 0;
       }
@@ -335,7 +322,7 @@
       }
     }
 
-    @media (max-width: 760px){
+    @media (max-width:760px){
       .home-hero::after{
         right:-380px;
         top:120px;
@@ -348,7 +335,7 @@
       }
 
       .hero-copy h1{
-        font-size:clamp(2.8rem, 11vw, 4rem);
+        font-size:clamp(2.8rem,11vw,4rem);
         line-height:.95;
         max-width:10ch;
       }
@@ -365,6 +352,10 @@
       .hero-actions .btn{
         width:100%;
         justify-content:center;
+      }
+
+      .hero-note{
+        align-items:flex-start;
       }
 
       .hero-visual{
@@ -452,8 +443,8 @@
             <div class="hero-note">Rooted in integrity. Guided by clinical thinking.</div>
           </div>
 
-          <div class="hero-visual" aria-label="Quiet therapy room">
-            <div class="hero-visual-media"></div>
+          <div class="hero-visual">
+            <img src="home-hero-room.png" alt="Quiet therapy room with chair, bookshelf, and framed bridge artwork">
             <div class="hero-overlay">
               <h3>A quieter kind of psychological practice.</h3>
               <p>Not volume. Not urgency. Careful work.</p>
@@ -554,7 +545,7 @@
       </div>
 
       <div class="footer-logo-right">
-        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" />
+        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo">
       </div>
     </div>
 
