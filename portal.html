@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="portal-page-update.css">
 </head>
-
 <body>
   <header class="site-header">
     <div class="container nav">
@@ -58,123 +57,146 @@
 
   <main class="portal-page">
     <section class="portal-hero">
-      <div class="container portal-hero-grid">
-        <div class="portal-left">
-          <div class="eyebrow">Portal</div>
-          <h1>Client portal access.</h1>
-          <div class="portal-rule"></div>
+      <div class="portal-hero-top">
+        <div class="portal-image-panel">
+          <img src="portal-bridge-background.png" alt="Stone bridge over calm water">
+          <div class="portal-image-overlay"></div>
 
-          <p class="portal-lead">
-            This page is for existing clients who need access to scheduling,
-            forms, billing, or secure communication connected to their care.
-          </p>
-
-          <div class="portal-reassurance">
-            <div class="portal-reassurance-icon" aria-hidden="true">⌂</div>
-            <p>
-              Once connected, these links should point directly to Stonebridge’s
-              secure client portal and payment tools.
-            </p>
+          <div class="portal-image-caption">
+            <h2>Existing client access.</h2>
+            <p>Practical tools, kept simple.</p>
+            <div class="portal-image-line"></div>
           </div>
         </div>
 
-        <div class="portal-right-card">
-          <div class="portal-right-top">
-            <div class="portal-top-icon" aria-hidden="true">●</div>
-            <div>
-              <h2>Existing client access</h2>
-              <p>
-                Use the links below to access the portal, review forms, or manage
-                billing when those systems are connected.
-              </p>
+        <div class="portal-hero-inner container">
+          <div class="portal-copy">
+            <div class="portal-copy-line"></div>
+            <div class="eyebrow">Portal</div>
+            <h1>Client portal access.</h1>
+            <p class="portal-lead">
+              For existing clients, this page provides access to portal functions,
+              billing, forms, and routine practice communication connected to care.
+            </p>
+
+            <div class="portal-note">
+              This page is intended for administrative access and routine client needs.
+              It is not a substitute for emergency services or urgent crisis support.
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="portal-action-list">
-            <a class="portal-action-item" href="#" aria-label="Client Portal Login">
-              <div class="portal-action-icon navy">01</div>
-              <div class="portal-action-copy">
-                <h3>Client Portal</h3>
-                <p>Log in to your TherapyNotes client portal.</p>
-              </div>
-              <div class="portal-arrow" aria-hidden="true">›</div>
-            </a>
+      <div class="portal-band">
+        <div class="container portal-band-grid">
+          <article class="portal-band-item">
+            <div class="portal-band-number">01</div>
+            <div>
+              <h3>Client Portal</h3>
+              <p>Log in to your secure client portal for messages, scheduling, and shared information.</p>
+            </div>
+          </article>
 
-            <a class="portal-action-item" href="#" aria-label="Billing and Payments">
-              <div class="portal-action-icon sand">02</div>
-              <div class="portal-action-copy">
-                <h3>Billing &amp; Payments</h3>
-                <p>Review statements or make a payment.</p>
-              </div>
-              <div class="portal-arrow" aria-hidden="true">›</div>
-            </a>
+          <article class="portal-band-item">
+            <div class="portal-band-number">02</div>
+            <div>
+              <h3>Billing &amp; Payments</h3>
+              <p>Review statements, make payments, and access billing-related information in one place.</p>
+            </div>
+          </article>
 
-            <a class="portal-action-item" href="#" aria-label="Forms and Documents">
-              <div class="portal-action-icon mist">03</div>
-              <div class="portal-action-copy">
-                <h3>Forms &amp; Documents</h3>
-                <p>Access intake forms and practice documents.</p>
-              </div>
-              <div class="portal-arrow" aria-hidden="true">›</div>
-            </a>
-          </div>
+          <article class="portal-band-item">
+            <div class="portal-band-number">03</div>
+            <div>
+              <h3>Forms &amp; Documents</h3>
+              <p>Complete intake forms and review practice documents when those tools are connected.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="portal-help">
+    <section class="portal-actions-section">
       <div class="container">
-        <div class="portal-help-card">
-          <div class="portal-help-left">
-            <div class="portal-help-icon" aria-hidden="true">?</div>
-            <div>
-              <h3>Need help accessing the portal?</h3>
-              <p>
-                If you are an existing client and cannot access your account,
-                contact Stonebridge for assistance.
-              </p>
-            </div>
-          </div>
+        <div class="portal-section-intro">
+          <div class="section-kicker">Portal access</div>
+          <p>
+            These links can be connected directly to Stonebridge’s client systems. The structure below is meant to
+            keep access clear, quiet, and easy to navigate.
+          </p>
+        </div>
 
-          <a class="btn btn-primary portal-help-btn" href="contact.html">Contact Stonebridge</a>
+        <div class="portal-actions-grid">
+          <a class="portal-action-card" href="#" aria-label="Client Portal">
+            <div class="portal-action-top">
+              <span class="portal-action-number">01</span>
+              <span class="portal-action-arrow" aria-hidden="true">→</span>
+            </div>
+            <h3>Client Portal</h3>
+            <p>Access your TherapyNotes portal for secure messages, scheduling, and client account information.</p>
+          </a>
+
+          <a class="portal-action-card" href="#" aria-label="Billing and Payments">
+            <div class="portal-action-top">
+              <span class="portal-action-number">02</span>
+              <span class="portal-action-arrow" aria-hidden="true">→</span>
+            </div>
+            <h3>Billing &amp; Payments</h3>
+            <p>Review billing details, view statements, and make a payment when online billing is connected.</p>
+          </a>
+
+          <a class="portal-action-card" href="#" aria-label="Forms and Documents">
+            <div class="portal-action-top">
+              <span class="portal-action-number">03</span>
+              <span class="portal-action-arrow" aria-hidden="true">→</span>
+            </div>
+            <h3>Forms &amp; Documents</h3>
+            <p>Complete practice forms and review documents needed for intake, billing, or ongoing care.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="portal-info">
-      <div class="container portal-info-grid">
-        <article class="portal-info-card">
-          <div class="portal-info-icon">01</div>
-          <div>
-            <h3>Existing client access</h3>
-            <p>
-              The portal is intended for clients already connected with the practice,
-              not for urgent concerns or new clinical emergencies.
-            </p>
-          </div>
-        </article>
+    <section class="portal-routine-band">
+      <div class="container portal-routine-grid">
+        <div>
+          <div class="eyebrow portal-eyebrow-dark">Routine use</div>
+          <h2>For routine client matters only.</h2>
+        </div>
+        <p>
+          Portal communication is intended for scheduling, forms, billing, and other routine administrative matters.
+          If you are experiencing an emergency or are in immediate crisis, use emergency services or local crisis resources
+          rather than this page.
+        </p>
+      </div>
+    </section>
 
-        <article class="portal-info-card">
-          <div class="portal-info-icon">02</div>
-          <div>
-            <h3>Forms and billing</h3>
-            <p>
-              Intake paperwork, billing information, and practice documents can be
-              organized here once the portal links are active.
-            </p>
+    <section class="portal-support-section">
+      <div class="container portal-support-grid">
+        <div class="portal-support-card main">
+          <div class="section-kicker">Need help accessing the portal?</div>
+          <p>
+            If you are having trouble logging in, locating a document, or accessing a billing link,
+            you can contact the practice for routine assistance.
+          </p>
+          <div class="portal-support-actions">
+            <a class="btn btn-primary" href="contact.html">Contact Stonebridge</a>
           </div>
-        </article>
+        </div>
 
-        <article class="portal-info-card">
-          <div class="portal-info-icon">03</div>
-          <div>
-            <h3>Secure communication</h3>
-            <p>
-              Portal communication should be used for routine practice matters.
-              Emergency or crisis concerns require immediate local emergency support.
-            </p>
-          </div>
-        </article>
+        <div class="portal-support-card small">
+          <h3>What this page is for</h3>
+          <p>
+            Existing client access, forms, billing, and connected administrative tools.
+          </p>
+        </div>
+
+        <div class="portal-support-card small">
+          <h3>What this page is not for</h3>
+          <p>
+            Urgent clinical communication, emergency use, or crisis response.
+          </p>
+        </div>
       </div>
     </section>
   </main>
@@ -207,7 +229,6 @@
           <a href="team.html">Team</a>
           <a href="services.html">Services</a>
           <a href="portal.html">Portal</a>
-          <a href="contact.html">Consultation</a>
         </div>
       </div>
 
