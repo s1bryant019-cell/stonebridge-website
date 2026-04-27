@@ -7,20 +7,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
   <style>
     :root{
       --bg:#f8f5f0;
-      --bg-2:#f3eee7;
-      --panel:#efe7db;
-      --border:rgba(209,196,180,.55);
-      --navy:#223142;
-      --navy-2:#163a60;
-      --navy-3:#102f4d;
-      --gold:#c9ad79;
+      --bg-soft:#f5efe7;
+      --navy:#213142;
+      --navy-deep:#183a61;
+      --navy-band:#163a60;
+      --navy-band-2:#102f4d;
+      --gold:#c8ab78;
       --muted:#5f6c78;
+      --line:rgba(212,200,185,.55);
       --white:#ffffff;
     }
 
@@ -28,49 +28,53 @@
       background:var(--bg);
     }
 
-    /* ===== HERO ===== */
+    /* =========================
+       HERO
+    ========================= */
     .home-hero{
       position:relative;
       overflow:hidden;
       background:
-        radial-gradient(circle at 16% 42%, rgba(201,173,121,.08), transparent 26%),
+        radial-gradient(circle at 18% 45%, rgba(200,171,120,.08), transparent 25%),
         linear-gradient(180deg, #fbf8f4 0%, #f6f1ea 100%);
-      border-bottom:1px solid rgba(214,201,186,.45);
+      border-bottom:1px solid rgba(212,200,185,.35);
     }
 
     .home-hero::after{
       content:"";
       position:absolute;
-      right:-310px;
-      bottom:-250px;
+      right:-340px;
+      bottom:-260px;
       width:960px;
       height:760px;
       background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
-      opacity:.055;
+      opacity:.05;
       pointer-events:none;
       z-index:0;
     }
 
     .home-hero-top{
       position:relative;
-      min-height:640px;
+      min-height:610px;
       overflow:hidden;
     }
 
     /* RIGHT IMAGE PANEL */
-    .hero-visual{
+    .hero-room-panel{
       position:absolute;
       top:0;
       right:0;
       bottom:0;
       width:46vw;
-      min-width:620px;
-      z-index:1;
+      min-width:630px;
       overflow:hidden;
-      background:#d9cdbd;
+      z-index:1;
+
+      /* this is the "soft corner" */
+      border-top-left-radius:48px;
     }
 
-    .hero-visual img{
+    .hero-room-panel img{
       width:100%;
       height:100%;
       object-fit:cover;
@@ -78,89 +82,82 @@
       display:block;
     }
 
-    /* dark left fade into image */
-    .hero-visual .image-overlay{
+    .hero-room-overlay{
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(18,39,61,.68) 0%, rgba(18,39,61,.26) 27%, rgba(18,39,61,.05) 57%),
-        linear-gradient(180deg, rgba(18,39,61,.08) 0%, rgba(18,39,61,.05) 56%, rgba(18,39,61,.24) 100%);
+        linear-gradient(90deg,
+          rgba(20,40,62,.68) 0%,
+          rgba(20,40,62,.28) 26%,
+          rgba(20,40,62,.05) 54%,
+          rgba(20,40,62,0) 72%
+        ),
+        linear-gradient(180deg,
+          rgba(10,20,34,.08) 0%,
+          rgba(10,20,34,.03) 58%,
+          rgba(10,20,34,.22) 100%
+        );
+      pointer-events:none;
       z-index:2;
-      pointer-events:none;
     }
 
-    /* THE SWOOP CUT */
-    .hero-visual::before{
-      content:"";
+    .hero-room-caption{
       position:absolute;
-      left:-150px;
-      top:-150px;
-      width:300px;
-      height:300px;
-      background:var(--bg);
-      border-radius:50%;
+      left:24px;
+      bottom:20px;
       z-index:3;
-      pointer-events:none;
-      box-shadow:0 0 0 1px rgba(214,201,186,.15);
-    }
-
-    .hero-visual-caption{
-      position:absolute;
-      left:28px;
-      bottom:26px;
-      z-index:4;
-      max-width:355px;
+      max-width:360px;
       color:#fff8ef;
     }
 
-    .hero-visual-caption h2{
-      margin:0 0 8px;
+    .hero-room-caption h2{
+      margin:0 0 6px;
       color:#fff8ef;
       font-family:"EB Garamond", serif;
-      font-size:clamp(1.45rem, 1.9vw, 2.05rem);
+      font-size:clamp(1.55rem, 1.8vw, 2rem);
       line-height:1.02;
       letter-spacing:-.03em;
-      text-shadow:0 10px 24px rgba(0,0,0,.22);
+      text-shadow:0 10px 24px rgba(0,0,0,.24);
     }
 
-    .hero-visual-caption p{
+    .hero-room-caption p{
       margin:0;
-      color:rgba(255,248,239,.88);
+      color:rgba(255,248,239,.9);
       font-family:"Inter", sans-serif;
-      font-size:.84rem;
+      font-size:.82rem;
       line-height:1.55;
-      text-shadow:0 8px 18px rgba(0,0,0,.18);
+      text-shadow:0 8px 20px rgba(0,0,0,.18);
     }
 
-    .hero-visual-caption .caption-line{
+    .hero-room-caption .caption-line{
+      margin-top:10px;
       width:100%;
       height:1px;
-      margin-top:12px;
-      background:linear-gradient(90deg, rgba(255,248,239,.52), rgba(255,248,239,0));
+      background:linear-gradient(90deg, rgba(255,248,239,.55), rgba(255,248,239,0));
     }
 
     /* LEFT CONTENT */
-    .hero-content{
+    .hero-inner{
       position:relative;
-      z-index:5;
+      z-index:4;
       width:min(1180px, calc(100% - 56px));
       margin:0 auto;
-      min-height:640px;
+      min-height:610px;
       display:flex;
       align-items:center;
-      padding:56px 0 62px;
+      padding:52px 0 40px;
     }
 
     .hero-copy{
       width:50%;
-      max-width:610px;
-      padding-right:54px;
+      max-width:600px;
+      padding-right:86px;
     }
 
     .hero-copy .hero-line{
       width:40px;
       height:2px;
-      background:rgba(201,173,121,.82);
+      background:rgba(200,171,120,.85);
       margin-bottom:28px;
     }
 
@@ -168,10 +165,10 @@
       margin:0;
       color:var(--navy);
       font-family:"EB Garamond", serif;
-      font-size:clamp(3.9rem, 5vw, 5.35rem);
-      line-height:.95;
-      letter-spacing:-.04em;
-      max-width:12.2ch;
+      font-size:clamp(4rem, 5vw, 5.35rem);
+      line-height:.96;
+      letter-spacing:-.045em;
+      max-width:10.8ch;
     }
 
     .hero-copy h1 span{
@@ -199,30 +196,31 @@
       align-items:center;
       gap:10px;
       margin-top:18px;
-      color:#8f7c62;
+      color:#8e7b61;
       font-family:"Inter", sans-serif;
-      font-size:.71rem;
-      letter-spacing:.23em;
+      font-size:.69rem;
+      letter-spacing:.22em;
       text-transform:uppercase;
-      line-height:1.5;
+      line-height:1.45;
     }
 
     .hero-note::before{
       content:"";
-      width:14px;
-      height:14px;
+      width:13px;
+      height:13px;
       border-radius:50%;
-      border:1px solid rgba(201,173,121,.78);
-      flex:0 0 14px;
+      border:1px solid rgba(200,171,120,.8);
+      flex:0 0 13px;
     }
 
-    /* SERVICE BAND */
+    /* =========================
+       SERVICE BAND
+    ========================= */
     .service-band{
       position:relative;
-      z-index:6;
-      background:linear-gradient(135deg, var(--navy-2) 0%, var(--navy-3) 100%);
+      z-index:5;
+      background:linear-gradient(135deg, var(--navy-band) 0%, var(--navy-band-2) 100%);
       border-top:1px solid rgba(255,255,255,.05);
-      box-shadow:0 -4px 18px rgba(12,24,40,.04);
     }
 
     .service-band-grid{
@@ -230,39 +228,38 @@
       margin:0 auto;
       display:grid;
       grid-template-columns:repeat(3, 1fr);
-      gap:26px;
-      padding:16px 0 18px;
+      gap:28px;
+      padding:14px 0 16px;
     }
 
     .service-item{
       display:grid;
-      grid-template-columns:30px 1fr;
+      grid-template-columns:28px 1fr;
       gap:14px;
       align-items:start;
     }
 
     .service-icon{
-      width:28px;
-      height:28px;
+      width:24px;
+      height:24px;
       border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.08);
-      color:#d7b169;
+      background:rgba(255,255,255,.11);
+      color:#d8b56e;
       font-family:"Inter", sans-serif;
       font-weight:600;
-      font-size:.78rem;
+      font-size:.72rem;
       margin-top:2px;
     }
 
     .service-item h4{
-      margin:0 0 3px;
+      margin:0 0 2px;
       color:#ffffff;
       font-family:"EB Garamond", serif;
-      font-size:1.03rem;
-      line-height:1.04;
+      font-size:1rem;
+      line-height:1.05;
       letter-spacing:-.01em;
     }
 
@@ -270,14 +267,16 @@
       margin:0;
       color:rgba(255,255,255,.82);
       font-family:"Inter", sans-serif;
-      font-size:.77rem;
-      line-height:1.42;
+      font-size:.75rem;
+      line-height:1.4;
     }
 
-    /* LOWER INTRO */
+    /* =========================
+       INTRO SECTION
+    ========================= */
     .section-intro{
       background:#f7f2eb;
-      padding:72px 0 78px;
+      padding:74px 0 80px;
     }
 
     .content-blocks{
@@ -287,8 +286,8 @@
     }
 
     .text-block{
-      background:rgba(255,255,255,.76);
-      border:1px solid rgba(214,201,186,.55);
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(212,200,185,.55);
       border-radius:22px;
       padding:28px;
       box-shadow:0 12px 30px rgba(31,42,52,.04);
@@ -299,7 +298,7 @@
       color:var(--navy);
       font-family:"EB Garamond", serif;
       font-size:1.65rem;
-      line-height:1.06;
+      line-height:1.05;
     }
 
     .text-block p{
@@ -310,28 +309,31 @@
       line-height:1.75;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 1260px){
-      .hero-visual{
-        width:44vw;
+    /* =========================
+       RESPONSIVE
+    ========================= */
+    @media (max-width:1260px){
+      .hero-room-panel{
+        width:45vw;
         min-width:560px;
       }
 
       .hero-copy{
         width:52%;
+        padding-right:68px;
       }
 
       .hero-copy h1{
-        font-size:clamp(3.5rem, 4.6vw, 4.8rem);
+        font-size:clamp(3.6rem, 4.8vw, 4.85rem);
       }
     }
 
-    @media (max-width: 1080px){
+    @media (max-width:1080px){
       .home-hero-top{
         min-height:auto;
       }
 
-      .hero-content{
+      .hero-inner{
         min-height:auto;
         display:block;
         padding:50px 0 34px;
@@ -343,23 +345,13 @@
         padding-right:0;
       }
 
-      .hero-copy h1{
-        max-width:12ch;
-      }
-
-      .hero-visual{
+      .hero-room-panel{
         position:relative;
         width:min(1180px, calc(100% - 56px));
         min-width:0;
         height:470px;
         margin:0 auto;
-      }
-
-      .hero-visual::before{
-        width:220px;
-        height:220px;
-        left:-110px;
-        top:-110px;
+        border-top-left-radius:36px;
       }
 
       .service-band-grid{
@@ -373,21 +365,21 @@
       }
     }
 
-    @media (max-width: 760px){
-      .hero-content,
-      .hero-visual,
+    @media (max-width:760px){
+      .hero-inner,
+      .hero-room-panel,
       .service-band-grid{
         width:min(1180px, calc(100% - 30px));
       }
 
       .hero-copy h1{
-        font-size:clamp(2.8rem, 10vw, 4rem);
-        line-height:.96;
+        font-size:clamp(2.9rem, 10vw, 4rem);
+        line-height:.97;
       }
 
       .hero-copy p{
         font-size:.96rem;
-        line-height:1.78;
+        line-height:1.75;
       }
 
       .hero-actions .btn{
@@ -395,15 +387,16 @@
         justify-content:center;
       }
 
-      .hero-visual{
+      .hero-room-panel{
         height:390px;
+        border-top-left-radius:28px;
       }
 
-      .hero-visual-caption{
+      .hero-room-caption{
         left:18px;
         right:18px;
         bottom:18px;
-        max-width:295px;
+        max-width:300px;
       }
     }
   </style>
@@ -457,18 +450,18 @@
   <main>
     <section class="home-hero">
       <div class="home-hero-top">
-        <div class="hero-visual">
+        <div class="hero-room-panel">
           <img src="home-hero-room.png" alt="Quiet therapy room with chair, bookshelf, and framed bridge artwork" />
-          <div class="image-overlay"></div>
+          <div class="hero-room-overlay"></div>
 
-          <div class="hero-visual-caption">
+          <div class="hero-room-caption">
             <h2>A quieter kind of psychological practice.</h2>
             <p>Not volume. Not urgency. Careful work.</p>
             <div class="caption-line"></div>
           </div>
         </div>
 
-        <div class="hero-content">
+        <div class="hero-inner">
           <div class="hero-copy">
             <div class="hero-line"></div>
 
