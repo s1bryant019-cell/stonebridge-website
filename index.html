@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stonebridge Psychological Group</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
+    :root{
+      --bg:#f8f5f0;
+      --bg-2:#f3eee7;
+      --panel:#efe7db;
+      --border:rgba(209,196,180,.55);
+      --navy:#223142;
+      --navy-2:#163a60;
+      --navy-3:#102f4d;
+      --gold:#c9ad79;
+      --muted:#5f6c78;
+      --white:#ffffff;
+    }
+
+    body{
+      background:var(--bg);
+    }
+
+    /* ===== HERO ===== */
     .home-hero{
       position:relative;
       overflow:hidden;
       background:
-        radial-gradient(circle at 17% 48%, rgba(201,173,121,.08), transparent 28%),
-        linear-gradient(180deg,#fbf8f4 0%,#f7f3ee 100%);
-      border-bottom:1px solid rgba(214,201,186,.48);
+        radial-gradient(circle at 16% 42%, rgba(201,173,121,.08), transparent 26%),
+        linear-gradient(180deg, #fbf8f4 0%, #f6f1ea 100%);
+      border-bottom:1px solid rgba(214,201,186,.45);
     }
 
-    .home-hero-top{
-      position:relative;
-      min-height:610px;
-      overflow:hidden;
-    }
-
-    .home-hero-top::after{
+    .home-hero::after{
       content:"";
       position:absolute;
-      right:-340px;
-      bottom:-210px;
-      width:940px;
+      right:-310px;
+      bottom:-250px;
+      width:960px;
       height:760px;
       background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
       opacity:.055;
@@ -38,19 +51,26 @@
       z-index:0;
     }
 
-    .hero-room-panel{
+    .home-hero-top{
+      position:relative;
+      min-height:640px;
+      overflow:hidden;
+    }
+
+    /* RIGHT IMAGE PANEL */
+    .hero-visual{
       position:absolute;
       top:0;
       right:0;
       bottom:0;
-      width:47vw;
-      min-width:650px;
-      overflow:hidden;
-      background:#d8ccbb;
+      width:46vw;
+      min-width:620px;
       z-index:1;
+      overflow:hidden;
+      background:#d9cdbd;
     }
 
-    .hero-room-panel img{
+    .hero-visual img{
       width:100%;
       height:100%;
       object-fit:cover;
@@ -58,96 +78,100 @@
       display:block;
     }
 
-    .hero-room-panel::before{
-      content:"";
+    /* dark left fade into image */
+    .hero-visual .image-overlay{
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg,rgba(18,39,61,.66) 0%,rgba(18,39,61,.25) 28%,rgba(18,39,61,.04) 62%),
-        linear-gradient(180deg,rgba(18,39,61,.08) 0%,rgba(18,39,61,.05) 48%,rgba(18,39,61,.28) 100%);
+        linear-gradient(90deg, rgba(18,39,61,.68) 0%, rgba(18,39,61,.26) 27%, rgba(18,39,61,.05) 57%),
+        linear-gradient(180deg, rgba(18,39,61,.08) 0%, rgba(18,39,61,.05) 56%, rgba(18,39,61,.24) 100%);
       z-index:2;
       pointer-events:none;
     }
 
-    .hero-room-panel::after{
+    /* THE SWOOP CUT */
+    .hero-visual::before{
       content:"";
       position:absolute;
-      left:0;
-      top:0;
-      bottom:0;
-      width:1px;
-      background:rgba(221,211,199,.54);
+      left:-150px;
+      top:-150px;
+      width:300px;
+      height:300px;
+      background:var(--bg);
+      border-radius:50%;
       z-index:3;
       pointer-events:none;
+      box-shadow:0 0 0 1px rgba(214,201,186,.15);
     }
 
-    .hero-room-caption{
+    .hero-visual-caption{
       position:absolute;
-      left:34px;
-      bottom:34px;
-      max-width:370px;
+      left:28px;
+      bottom:26px;
       z-index:4;
-      color:#fffaf2;
+      max-width:355px;
+      color:#fff8ef;
     }
 
-    .hero-room-caption h2{
-      color:#fffaf2;
-      font-family:"EB Garamond",serif;
-      font-size:clamp(1.5rem,1.75vw,2.15rem);
-      line-height:1.04;
-      letter-spacing:-.035em;
+    .hero-visual-caption h2{
       margin:0 0 8px;
-      text-shadow:0 10px 28px rgba(0,0,0,.28);
+      color:#fff8ef;
+      font-family:"EB Garamond", serif;
+      font-size:clamp(1.45rem, 1.9vw, 2.05rem);
+      line-height:1.02;
+      letter-spacing:-.03em;
+      text-shadow:0 10px 24px rgba(0,0,0,.22);
     }
 
-    .hero-room-caption p{
+    .hero-visual-caption p{
       margin:0;
-      color:rgba(255,250,242,.88);
-      font-family:"Inter",sans-serif;
-      font-size:.86rem;
+      color:rgba(255,248,239,.88);
+      font-family:"Inter", sans-serif;
+      font-size:.84rem;
       line-height:1.55;
-      text-shadow:0 8px 22px rgba(0,0,0,.24);
+      text-shadow:0 8px 18px rgba(0,0,0,.18);
     }
 
-    .hero-room-caption-line{
+    .hero-visual-caption .caption-line{
       width:100%;
       height:1px;
-      background:linear-gradient(90deg,rgba(255,250,242,.52),rgba(255,250,242,0));
-      margin-top:14px;
+      margin-top:12px;
+      background:linear-gradient(90deg, rgba(255,248,239,.52), rgba(255,248,239,0));
     }
 
-    .hero-content-wrap{
+    /* LEFT CONTENT */
+    .hero-content{
       position:relative;
       z-index:5;
-      width:min(1180px, calc(100% - 48px));
+      width:min(1180px, calc(100% - 56px));
       margin:0 auto;
-      min-height:610px;
+      min-height:640px;
       display:flex;
       align-items:center;
-      padding:54px 0 64px;
+      padding:56px 0 62px;
     }
 
     .hero-copy{
       width:50%;
-      max-width:620px;
-      padding-right:42px;
+      max-width:610px;
+      padding-right:54px;
     }
 
-    .hero-line{
-      width:42px;
+    .hero-copy .hero-line{
+      width:40px;
       height:2px;
-      background:rgba(201,173,121,.78);
-      margin-bottom:30px;
+      background:rgba(201,173,121,.82);
+      margin-bottom:28px;
     }
 
     .hero-copy h1{
       margin:0;
       color:var(--navy);
-      font-family:"EB Garamond",serif;
-      font-size:clamp(4rem,5vw,5.75rem);
-      line-height:.93;
-      letter-spacing:-.035em;
-      max-width:12.4ch;
+      font-family:"EB Garamond", serif;
+      font-size:clamp(3.9rem, 5vw, 5.35rem);
+      line-height:.95;
+      letter-spacing:-.04em;
+      max-width:12.2ch;
     }
 
     .hero-copy h1 span{
@@ -155,115 +179,116 @@
     }
 
     .hero-copy p{
-      margin:30px 0 0;
+      margin:28px 0 0;
       max-width:35rem;
       color:var(--muted);
-      font-family:"Inter",sans-serif;
-      font-size:1.03rem;
-      line-height:1.86;
+      font-family:"Inter", sans-serif;
+      font-size:1rem;
+      line-height:1.9;
     }
 
     .hero-actions{
       display:flex;
-      gap:14px;
       flex-wrap:wrap;
-      margin-top:30px;
+      gap:14px;
+      margin-top:28px;
     }
 
     .hero-note{
-      margin-top:20px;
       display:flex;
       align-items:center;
       gap:10px;
-      color:#8d7b5f;
-      font-size:.72rem;
-      letter-spacing:.22em;
+      margin-top:18px;
+      color:#8f7c62;
+      font-family:"Inter", sans-serif;
+      font-size:.71rem;
+      letter-spacing:.23em;
       text-transform:uppercase;
-      font-family:"Inter",sans-serif;
       line-height:1.5;
     }
 
     .hero-note::before{
       content:"";
-      width:15px;
-      height:15px;
+      width:14px;
+      height:14px;
       border-radius:50%;
-      border:1px solid rgba(201,173,121,.72);
-      display:inline-block;
-      flex:0 0 15px;
+      border:1px solid rgba(201,173,121,.78);
+      flex:0 0 14px;
     }
 
+    /* SERVICE BAND */
     .service-band{
       position:relative;
-      z-index:8;
-      background:linear-gradient(135deg,#163a60 0%,#102f4d 100%);
-      box-shadow:0 -6px 20px rgba(15,29,48,.05);
+      z-index:6;
+      background:linear-gradient(135deg, var(--navy-2) 0%, var(--navy-3) 100%);
+      border-top:1px solid rgba(255,255,255,.05);
+      box-shadow:0 -4px 18px rgba(12,24,40,.04);
     }
 
     .service-band-grid{
-      width:min(1180px, calc(100% - 48px));
+      width:min(1180px, calc(100% - 56px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:28px;
-      padding:17px 0;
+      grid-template-columns:repeat(3, 1fr);
+      gap:26px;
+      padding:16px 0 18px;
     }
 
     .service-item{
       display:grid;
-      grid-template-columns:32px 1fr;
+      grid-template-columns:30px 1fr;
       gap:14px;
       align-items:start;
-      min-width:0;
     }
 
     .service-icon{
       width:28px;
       height:28px;
       border-radius:50%;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.08);
-      color:#d8b36b;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:.8rem;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.08);
+      color:#d7b169;
+      font-family:"Inter", sans-serif;
       font-weight:600;
-      font-family:"Inter",sans-serif;
+      font-size:.78rem;
       margin-top:2px;
     }
 
     .service-item h4{
-      margin:0 0 4px;
-      color:#fff;
-      font-family:"EB Garamond",serif;
-      font-size:1.06rem;
-      line-height:1.05;
+      margin:0 0 3px;
+      color:#ffffff;
+      font-family:"EB Garamond", serif;
+      font-size:1.03rem;
+      line-height:1.04;
       letter-spacing:-.01em;
     }
 
     .service-item p{
       margin:0;
       color:rgba(255,255,255,.82);
-      font-family:"Inter",sans-serif;
-      font-size:.79rem;
-      line-height:1.45;
+      font-family:"Inter", sans-serif;
+      font-size:.77rem;
+      line-height:1.42;
     }
 
+    /* LOWER INTRO */
     .section-intro{
+      background:#f7f2eb;
       padding:72px 0 78px;
-      background:#f7f3ee;
     }
 
     .content-blocks{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns:repeat(2, 1fr);
       gap:24px;
     }
 
     .text-block{
-      background:rgba(255,255,255,.74);
-      border:1px solid rgba(214,201,186,.58);
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(214,201,186,.55);
       border-radius:22px;
       padding:28px;
       box-shadow:0 12px 30px rgba(31,42,52,.04);
@@ -272,7 +297,7 @@
     .text-block h3{
       margin:0 0 10px;
       color:var(--navy);
-      font-family:"EB Garamond",serif;
+      font-family:"EB Garamond", serif;
       font-size:1.65rem;
       line-height:1.06;
     }
@@ -280,14 +305,15 @@
     .text-block p{
       margin:0;
       color:var(--muted);
-      font-family:"Inter",sans-serif;
+      font-family:"Inter", sans-serif;
       font-size:.98rem;
       line-height:1.75;
     }
 
-    @media (max-width:1260px){
-      .hero-room-panel{
-        width:45vw;
+    /* RESPONSIVE */
+    @media (max-width: 1260px){
+      .hero-visual{
+        width:44vw;
         min-width:560px;
       }
 
@@ -296,19 +322,19 @@
       }
 
       .hero-copy h1{
-        font-size:clamp(3.7rem,4.6vw,5rem);
+        font-size:clamp(3.5rem, 4.6vw, 4.8rem);
       }
     }
 
-    @media (max-width:1080px){
+    @media (max-width: 1080px){
       .home-hero-top{
         min-height:auto;
       }
 
-      .hero-content-wrap{
+      .hero-content{
         min-height:auto;
         display:block;
-        padding:54px 0 34px;
+        padding:50px 0 34px;
       }
 
       .hero-copy{
@@ -321,17 +347,19 @@
         max-width:12ch;
       }
 
-      .hero-copy p{
-        max-width:40rem;
+      .hero-visual{
+        position:relative;
+        width:min(1180px, calc(100% - 56px));
+        min-width:0;
+        height:470px;
+        margin:0 auto;
       }
 
-      .hero-room-panel{
-        position:relative;
-        width:min(1180px, calc(100% - 48px));
-        min-width:0;
-        height:480px;
-        margin:0 auto;
-        border-radius:30px 30px 0 0;
+      .hero-visual::before{
+        width:220px;
+        height:220px;
+        left:-110px;
+        top:-110px;
       }
 
       .service-band-grid{
@@ -345,28 +373,16 @@
       }
     }
 
-    @media (max-width:760px){
-      .hero-content-wrap,
-      .hero-room-panel,
+    @media (max-width: 760px){
+      .hero-content,
+      .hero-visual,
       .service-band-grid{
-        width:min(1180px, calc(100% - 28px));
-      }
-
-      .home-hero-top::after{
-        right:-380px;
-        top:120px;
-        width:860px;
-        height:860px;
-      }
-
-      .hero-content-wrap{
-        padding:42px 0 30px;
+        width:min(1180px, calc(100% - 30px));
       }
 
       .hero-copy h1{
-        font-size:clamp(2.8rem,11vw,4rem);
-        line-height:.95;
-        max-width:10ch;
+        font-size:clamp(2.8rem, 10vw, 4rem);
+        line-height:.96;
       }
 
       .hero-copy p{
@@ -374,29 +390,20 @@
         line-height:1.78;
       }
 
-      .hero-actions{
-        width:100%;
-      }
-
       .hero-actions .btn{
         width:100%;
         justify-content:center;
       }
 
-      .hero-note{
-        align-items:flex-start;
+      .hero-visual{
+        height:390px;
       }
 
-      .hero-room-panel{
-        height:400px;
-        border-radius:24px 24px 0 0;
-      }
-
-      .hero-room-caption{
+      .hero-visual-caption{
         left:18px;
         right:18px;
         bottom:18px;
-        max-width:290px;
+        max-width:295px;
       }
     }
   </style>
@@ -450,16 +457,18 @@
   <main>
     <section class="home-hero">
       <div class="home-hero-top">
-        <div class="hero-room-panel">
-          <img src="home-hero-room.png" alt="Quiet therapy room with chair, bookshelf, and framed bridge artwork">
-          <div class="hero-room-caption">
+        <div class="hero-visual">
+          <img src="home-hero-room.png" alt="Quiet therapy room with chair, bookshelf, and framed bridge artwork" />
+          <div class="image-overlay"></div>
+
+          <div class="hero-visual-caption">
             <h2>A quieter kind of psychological practice.</h2>
             <p>Not volume. Not urgency. Careful work.</p>
-            <div class="hero-room-caption-line"></div>
+            <div class="caption-line"></div>
           </div>
         </div>
 
-        <div class="hero-content-wrap">
+        <div class="hero-content">
           <div class="hero-copy">
             <div class="hero-line"></div>
 
@@ -576,7 +585,7 @@
       </div>
 
       <div class="footer-logo-right">
-        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo">
+        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" />
       </div>
     </div>
 
