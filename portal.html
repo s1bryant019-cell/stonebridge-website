@@ -56,110 +56,117 @@
   </header>
 
   <main class="portal-page">
-    <section class="portal-intro-section">
-      <div class="portal-background-image" aria-hidden="true"></div>
-
+    <section class="portal-intro">
       <div class="container portal-intro-grid">
         <div class="portal-intro-copy">
           <div class="eyebrow">Portal</div>
           <h1>Client access.</h1>
-          <p>
-            For existing clients, this page provides access to scheduling, telehealth,
-            billing, forms, and routine practice communication connected to care.
+          <p class="portal-lead">
+            For existing clients, this page provides access to scheduling-related tools,
+            telehealth, billing, forms, and routine practice communication connected to care.
           </p>
         </div>
 
-        <div class="portal-quiet-note">
+        <aside class="portal-intro-note">
           <div class="portal-note-line"></div>
           <p>
-            These links are placeholders until Stonebridge’s portal, telehealth,
-            payment, and forms systems are connected.
+            These links are placeholders until Stonebridge’s client portal,
+            telehealth, billing, and forms systems are connected.
           </p>
-        </div>
+        </aside>
       </div>
     </section>
 
     <section class="portal-access-section">
-      <div class="container">
-        <div class="portal-access-card">
-          <aside class="portal-access-side">
-            <div class="portal-side-kicker">Existing clients</div>
-            <h2>Routine tools in one place.</h2>
-            <p>
-              Use this page for ordinary access needs: logging in, joining scheduled
-              telehealth appointments, paying bills, or completing forms.
-            </p>
-          </aside>
+      <div class="container portal-access-grid">
+        <article class="portal-anchor-card">
+          <div class="anchor-eyebrow">Existing clients</div>
+          <h2>Routine tools in one place.</h2>
+          <p>
+            Use this page for ordinary access needs: logging in, joining scheduled telehealth
+            appointments, paying bills, or completing forms.
+          </p>
+        </article>
 
-          <div class="portal-link-grid">
-            <!-- Replace href="#" with the final client portal link when ready. -->
-            <a class="portal-link-card" href="#" aria-label="Client Portal">
-              <div class="portal-link-number">01</div>
-              <div>
-                <h3>Client Portal</h3>
-                <p>Log in to TherapyNotes for secure client account access.</p>
-              </div>
-              <span class="portal-link-arrow" aria-hidden="true">→</span>
-            </a>
+        <div class="portal-actions-grid">
+          <!-- Replace # with the live client portal link when ready -->
+          <a class="portal-action-card" href="#" aria-label="Client Portal">
+            <div class="portal-action-top">
+              <span class="portal-action-number">01</span>
+              <span class="portal-action-arrow" aria-hidden="true">→</span>
+            </div>
+            <h3>Client Portal</h3>
+            <p>Log in to TherapyNotes for secure client account access.</p>
+          </a>
 
-            <!-- Replace href="#" with the final telehealth appointment link when ready. -->
-            <a class="portal-link-card" href="#" aria-label="Telehealth Appointment">
-              <div class="portal-link-number">02</div>
-              <div>
-                <h3>Telehealth Appointment</h3>
-                <p>Join a scheduled telehealth session when your appointment is ready.</p>
-              </div>
-              <span class="portal-link-arrow" aria-hidden="true">→</span>
-            </a>
+          <!-- Replace # with the live telehealth link when ready -->
+          <a class="portal-action-card" href="#" aria-label="Telehealth Appointment">
+            <div class="portal-action-top">
+              <span class="portal-action-number">02</span>
+              <span class="portal-action-arrow" aria-hidden="true">→</span>
+            </div>
+            <h3>Telehealth Appointment</h3>
+            <p>Join a scheduled telehealth session when your appointment is ready.</p>
+          </a>
 
-            <!-- Replace href="#" with the final billing or payment link when ready. -->
-            <a class="portal-link-card" href="#" aria-label="Billing and Payments">
-              <div class="portal-link-number">03</div>
-              <div>
-                <h3>Billing &amp; Payments</h3>
-                <p>Review payment information or pay a bill once billing is connected.</p>
-              </div>
-              <span class="portal-link-arrow" aria-hidden="true">→</span>
-            </a>
+          <!-- Replace # with the live billing link when ready -->
+          <a class="portal-action-card" href="#" aria-label="Billing and Payments">
+            <div class="portal-action-top">
+              <span class="portal-action-number">03</span>
+              <span class="portal-action-arrow" aria-hidden="true">→</span>
+            </div>
+            <h3>Billing &amp; Payments</h3>
+            <p>Review payment information or pay a bill once billing is connected.</p>
+          </a>
 
-            <!-- Replace href="#" with the final forms or documents link when ready. -->
-            <a class="portal-link-card" href="#" aria-label="Forms and Documents">
-              <div class="portal-link-number">04</div>
-              <div>
-                <h3>Forms &amp; Documents</h3>
-                <p>Complete intake forms or access practice documents.</p>
-              </div>
-              <span class="portal-link-arrow" aria-hidden="true">→</span>
-            </a>
-          </div>
+          <!-- Replace # with the live forms/documents link when ready -->
+          <a class="portal-action-card" href="#" aria-label="Forms and Documents">
+            <div class="portal-action-top">
+              <span class="portal-action-number">04</span>
+              <span class="portal-action-arrow" aria-hidden="true">→</span>
+            </div>
+            <h3>Forms &amp; Documents</h3>
+            <p>Complete intake forms or access practice documents.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="portal-notice-section">
-      <div class="container portal-notice-card">
+    <section class="portal-routine-band">
+      <div class="container portal-routine-grid">
         <div>
-          <div class="portal-notice-label">Routine use</div>
-          <h2>For administrative access, not emergencies.</h2>
+          <div class="eyebrow portal-eyebrow-dark">Routine use</div>
+          <h2>For routine client matters only.</h2>
         </div>
         <p>
-          Portal tools are intended for scheduling, telehealth access, billing, forms,
-          and routine communication. They should not be used for emergencies, urgent
-          clinical concerns, or crisis situations.
+          Portal tools are intended for scheduling, telehealth access, billing, forms, and other routine administrative needs.
+          They should not be used for emergencies or urgent crisis concerns.
         </p>
       </div>
     </section>
 
-    <section class="portal-help-section">
-      <div class="container portal-help-card">
-        <div>
+    <section class="portal-support-section">
+      <div class="container portal-support-grid">
+        <div class="portal-support-card main">
           <div class="section-kicker">Need help accessing something?</div>
           <p>
-            If a portal link, telehealth appointment, form, or billing tool is not working,
-            contact Stonebridge for routine assistance.
+            If you are having trouble finding the right link or accessing a routine client tool,
+            you can contact the practice for assistance.
           </p>
+          <div class="portal-support-actions">
+            <a class="btn btn-primary" href="contact.html">Contact Stonebridge</a>
+          </div>
         </div>
-        <a class="btn btn-primary" href="contact.html">Contact Stonebridge</a>
+
+        <div class="portal-support-card small">
+          <h3>What this page is for</h3>
+          <p>Existing client access, telehealth, forms, billing, and connected administrative tools.</p>
+        </div>
+
+        <div class="portal-support-card small">
+          <h3>What this page is not for</h3>
+          <p>Urgent clinical communication, emergency use, or crisis response.</p>
+        </div>
       </div>
     </section>
   </main>
