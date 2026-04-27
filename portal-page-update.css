@@ -28,13 +28,13 @@
   width:min(110%,680px);
   height:170px;
   background:url('portal-security-bridge.png') no-repeat left bottom/contain;
-  opacity:.12;
+  opacity:.1;
   pointer-events:none;
 }
 
 .portal-left h1{
-  max-width:8ch;
-  font-size:clamp(4.2rem,6vw,6.15rem);
+  max-width:8.5ch;
+  font-size:clamp(4.1rem,5.8vw,6rem);
   line-height:.92;
   color:var(--deep);
   margin-top:18px;
@@ -50,8 +50,8 @@
 
 .portal-lead{
   max-width:36rem;
-  font-size:1.05rem;
-  line-height:1.7;
+  font-size:1.04rem;
+  line-height:1.72;
   color:var(--muted);
 }
 
@@ -60,7 +60,7 @@
   gap:16px;
   align-items:flex-start;
   margin-top:32px;
-  max-width:28rem;
+  max-width:29rem;
 }
 
 .portal-reassurance-icon,
@@ -76,15 +76,27 @@
   justify-content:center;
   background:linear-gradient(180deg,#fbf8f4,#f6f0e8);
   color:var(--deep);
-  font-size:1.55rem;
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:1rem;
+  font-weight:600;
+  letter-spacing:.08em;
   flex:0 0 56px;
+}
+
+.portal-reassurance-icon,
+.portal-help-icon,
+.portal-top-icon{
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:1.55rem;
+  font-weight:600;
+  letter-spacing:0;
 }
 
 .portal-reassurance p{
   margin:4px 0 0;
   color:var(--muted);
-  font-size:1rem;
-  line-height:1.6;
+  font-size:.98rem;
+  line-height:1.62;
 }
 
 .portal-right-card{
@@ -112,7 +124,7 @@
 
 .portal-right-top p{
   margin:0;
-  max-width:28rem;
+  max-width:29rem;
 }
 
 .portal-action-list{
@@ -146,7 +158,10 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:1.75rem;
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:.85rem;
+  font-weight:600;
+  letter-spacing:.12em;
   border:1px solid rgba(221,211,199,.8);
 }
 
@@ -210,7 +225,7 @@
   width:260px;
   height:120px;
   background:url('portal-security-bridge.png') no-repeat right bottom/contain;
-  opacity:.16;
+  opacity:.12;
   pointer-events:none;
 }
 
@@ -224,14 +239,14 @@
 
 .portal-help-left h3{
   margin:0 0 8px;
-  font-size:2.1rem;
+  font-size:2.05rem;
   line-height:1.04;
 }
 
 .portal-help-left p{
   margin:0;
   color:var(--muted);
-  font-size:1.03rem;
+  font-size:1.01rem;
 }
 
 .portal-help-btn{
@@ -264,7 +279,7 @@
 
 .portal-info-card h3{
   margin:4px 0 8px;
-  font-size:1.95rem;
+  font-size:1.88rem;
   line-height:1.04;
 }
 
@@ -289,7 +304,7 @@
   }
 
   .portal-help-card::after{
-    opacity:.12;
+    opacity:.1;
   }
 }
 
@@ -310,7 +325,7 @@
     left:-10px;
     width:105%;
     height:120px;
-    opacity:.1;
+    opacity:.09;
   }
 
   .portal-right-card{
@@ -330,7 +345,7 @@
   .portal-action-icon{
     width:56px;
     height:56px;
-    font-size:1.55rem;
+    font-size:.78rem;
   }
 
   .portal-action-copy h3{
