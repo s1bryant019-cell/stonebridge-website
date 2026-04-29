@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request a Consultation | Stonebridge Psychological Group</title>
+  <meta name="description" content="Submit an initial non-emergency consultation inquiry to Stonebridge Psychological Group.">
+  <link rel="canonical" href="https://stonebridgepsychgroup.com/contact.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <header class="site-header">
     <div class="container nav">
@@ -29,7 +30,6 @@
             <a href="team.html">Team</a>
             <div class="dropdown-menu">
               <a href="team.html">Team Overview</a>
-              <a href="team.html#founder">Founder</a>
               <a href="team.html#psychologists">Psychologists</a>
               <a href="team.html#therapists">Therapists</a>
             </div>
@@ -60,27 +60,27 @@
       <div class="container consultation-grid">
         <section class="consultation-panel">
           <div class="consultation-panel-inner">
-            <div class="consultation-eyebrow">Initial Inquiry</div>
+            <div class="consultation-eyebrow">Consultation Request</div>
             <div class="consultation-gold-rule"></div>
 
             <h1>Request a Consultation</h1>
 
             <p>
               Thank you for your interest in Stonebridge Psychological Group.
-              This form is the first step in submitting an initial inquiry.
+              Please complete the form to submit an initial inquiry.
             </p>
 
             <p>
-              Stonebridge reviews requests for fit, scope, and clinical appropriateness.
-              Submitting this form does not establish a clinical relationship or guarantee
-              that services can be offered.
+              We offer psychotherapy, clinical assessment, and forensic
+              assessment services. The follow-up questions adjust based on
+              the service you select so we can better understand your needs
+              from the start.
             </p>
 
             <p>
-              If the request appears appropriate for the practice, we may offer a brief
-              consultation to clarify your needs, answer practical questions, and determine
-              whether psychotherapy, assessment, forensic services, or another referral
-              direction may be the right next step.
+              If clinically appropriate, we may offer a free 15-minute
+              consultation to help determine whether our services may be
+              a good fit for your needs.
             </p>
           </div>
 
@@ -142,7 +142,7 @@
             <div class="form-row full-row">
               <div class="form-field">
                 <label id="reason-label" for="reason-textarea">Reason for Seeking Psychotherapy <span class="required">*</span></label>
-                <textarea id="reason-textarea" name="reason" class="form-control form-textarea" placeholder="Please share a brief description of what brings you or your loved one to seek support."></textarea>
+                <textarea id="reason-textarea" name="reason" class="form-control form-textarea" placeholder="Please share a brief description of what brings you (or your loved one) to seek support."></textarea>
               </div>
             </div>
 
@@ -154,9 +154,8 @@
               <div class="submit-note-box">
                 <div class="submit-note-icon" aria-hidden="true">🔒</div>
                 <p>
-                  This inquiry form is intended for non-emergency requests. Once connected
-                  to a secure intake process, submitted information will be reviewed before
-                  any consultation or service is scheduled.
+                  This form is currently in design stage and does not submit data.
+                  It will later connect to an email workflow or secure intake process.
                 </p>
               </div>
             </div>
@@ -174,11 +173,11 @@
             </svg>
           </div>
           <div>
-            <h3>If Stonebridge is not the right fit</h3>
+            <h3>Good fit not determined?</h3>
             <p>
-              Not every inquiry will be appropriate for the practice. When Stonebridge
-              is not the right setting, the goal is to be clear and respectful rather
-              than vague or overpromising. Referral guidance may be offered when useful.
+              If we determine that Stonebridge is not the best fit for your
+              needs, we will provide thoughtful referrals to trusted providers
+              and resources in the community.
             </p>
           </div>
         </article>
@@ -190,12 +189,11 @@
             </svg>
           </div>
           <div>
-            <h3>What happens next</h3>
+            <h3>Next Steps</h3>
             <p>
-              Inquiries are reviewed with attention to the service requested,
-              the nature of the concern, and whether the question being brought
-              fits the scope of Stonebridge. If appropriate, follow-up will occur
-              by email with possible next steps.
+              All inquiries are reviewed by the clinical team. If your request
+              is determined to be clinically appropriate, we will follow up by
+              email with next steps and scheduling information.
             </p>
           </div>
         </article>
@@ -238,9 +236,9 @@
       <div>
         <div class="footer-title">Contact</div>
         <div class="footer-links">
-          <span>Serving Illinois and surrounding areas</span>
-          <span>info@stonebridgepsych.com</span>
-          <span>(555) 555-0198</span>
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <span>Consultation requests by form or email</span>
         </div>
       </div>
 
@@ -251,12 +249,11 @@
 
     <div class="container footer-bottom">
       <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small">Mockup site for continued customization.</div>
+      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a></div>
     </div>
   </footer>
 
   <script src="script.js"></script>
-
   <script>
     const serviceRequested = document.getElementById('service-requested');
     const secondaryLabel = document.getElementById('secondary-label');
@@ -305,7 +302,7 @@
         ]);
         secondaryHelper.textContent = 'Psychotherapy is currently offered via telehealth.';
         reasonLabel.innerHTML = 'Reason for Seeking Psychotherapy <span class="required">*</span>';
-        reasonTextarea.placeholder = 'Please share a brief description of what brings you or your loved one to seek support.';
+        reasonTextarea.placeholder = 'Please share a brief description of what brings you (or your loved one) to seek support.';
       }
     }
 
