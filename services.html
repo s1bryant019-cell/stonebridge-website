@@ -4,12 +4,324 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Stonebridge Psychological Group</title>
-  <meta name="description" content="Stonebridge is currently accepting psychotherapy inquiries. Assessment and forensic services are part of the broader model but are not currently available.">
+  <meta name="description" content="Stonebridge is currently accepting psychotherapy inquiries. Psychological assessment and forensic services remain part of the broader model but are not currently available.">
   <link rel="canonical" href="https://stonebridgepsychgroup.com/services.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .services-premium-hero{
+      position:relative;
+      overflow:hidden;
+      padding:72px 0 54px;
+      background:
+        radial-gradient(circle at 16% 30%, rgba(191,161,104,.12), transparent 28%),
+        linear-gradient(180deg,#fbf8f4 0%,#f5efe8 100%);
+      border-bottom:1px solid rgba(221,211,199,.55);
+    }
+
+    .services-premium-hero::after{
+      content:"";
+      position:absolute;
+      right:-210px;
+      bottom:-210px;
+      width:720px;
+      height:560px;
+      background:url('stone_arch_bridge_over_calm_water.png') no-repeat center/contain;
+      opacity:.055;
+      pointer-events:none;
+    }
+
+    .services-hero-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 360px;
+      gap:44px;
+      align-items:end;
+    }
+
+    .services-hero-copy h1{
+      max-width:12ch;
+      font-size:clamp(3.7rem,5.6vw,5.7rem);
+      line-height:.99;
+      letter-spacing:-.045em;
+    }
+
+    .services-hero-copy p{
+      max-width:44rem;
+      margin-top:22px;
+      color:var(--muted);
+      line-height:1.82;
+    }
+
+    .services-status-card{
+      border-radius:30px;
+      padding:28px;
+      background:linear-gradient(135deg,#17395c,#102f4d);
+      color:#fffaf2;
+      box-shadow:0 22px 56px rgba(18,39,61,.18);
+      border:1px solid rgba(255,250,242,.14);
+    }
+
+    .services-status-card .status-label{
+      display:inline-flex;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,250,242,.18);
+      color:rgba(255,250,242,.78);
+      font-size:.66rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .services-status-card h2{
+      color:#fffaf2;
+      font-size:2.35rem;
+      line-height:1;
+      margin-bottom:12px;
+    }
+
+    .services-status-card p{
+      margin:0;
+      color:rgba(255,250,242,.82);
+      font-size:.96rem;
+      line-height:1.68;
+    }
+
+    .services-current{
+      background:#fffdfa;
+      padding:68px 0;
+    }
+
+    .current-service-card{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:0;
+      border:1px solid rgba(221,211,199,.84);
+      border-radius:34px;
+      overflow:hidden;
+      box-shadow:var(--card-shadow);
+      background:#fff;
+    }
+
+    .current-service-left{
+      padding:38px;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(191,161,104,.14), transparent 28%),
+        linear-gradient(180deg,#fbf8f4,#f4eee6);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .current-service-left h2{
+      max-width:9ch;
+      margin:12px 0 16px;
+      font-size:clamp(2.7rem,4.4vw,4.1rem);
+      line-height:1;
+    }
+
+    .current-service-left p{
+      max-width:34rem;
+      color:var(--muted);
+      line-height:1.76;
+      margin:0;
+    }
+
+    .current-service-actions{
+      margin-top:26px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .current-service-right{
+      padding:34px;
+      background:#fff;
+      display:grid;
+      gap:14px;
+    }
+
+    .service-principle{
+      display:grid;
+      grid-template-columns:46px 1fr;
+      gap:14px;
+      padding:18px;
+      border:1px solid rgba(221,211,199,.75);
+      border-radius:22px;
+      background:linear-gradient(180deg,#fffdfa,#faf6f0);
+    }
+
+    .service-principle-number{
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(18,39,61,.08);
+      color:var(--deep);
+      font-size:.74rem;
+      font-weight:600;
+    }
+
+    .service-principle h3{
+      font-size:1.5rem;
+      margin-bottom:6px;
+    }
+
+    .service-principle p{
+      margin:0;
+      color:var(--muted);
+      font-size:.95rem;
+      line-height:1.62;
+    }
+
+    .future-services{
+      padding:64px 0;
+      background:linear-gradient(180deg,#f6f1ea,#f1e8dd);
+      border-top:1px solid rgba(221,211,199,.55);
+    }
+
+    .future-heading{
+      display:grid;
+      grid-template-columns:.75fr 1.25fr;
+      gap:34px;
+      align-items:end;
+      margin-bottom:28px;
+    }
+
+    .future-heading p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.76;
+      max-width:44rem;
+    }
+
+    .future-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .future-card{
+      position:relative;
+      border-radius:30px;
+      border:1px solid rgba(221,211,199,.82);
+      background:rgba(255,255,255,.72);
+      box-shadow:var(--card-shadow);
+      padding:28px;
+      overflow:hidden;
+    }
+
+    .future-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,.45), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+
+    .future-card > *{ position:relative; z-index:1; }
+
+    .future-card .availability-tag{
+      margin-bottom:14px;
+    }
+
+    .future-card h3{
+      margin-bottom:12px;
+    }
+
+    .future-card p{
+      margin:0 0 20px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .services-process{
+      padding:64px 0 74px;
+      background:#fbf8f4;
+    }
+
+    .process-panel{
+      border-radius:34px;
+      padding:34px 38px;
+      background:
+        radial-gradient(circle at 88% 20%, rgba(191,161,104,.2), transparent 28%),
+        linear-gradient(135deg,#12273d,#1b3652);
+      color:#fffaf2;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
+      box-shadow:var(--card-shadow);
+    }
+
+    .process-panel h2{
+      color:#fffaf2;
+      margin-bottom:10px;
+    }
+
+    .process-panel p{
+      max-width:760px;
+      margin:0;
+      color:rgba(255,250,242,.8);
+      line-height:1.7;
+    }
+
+    .process-panel .btn-secondary{
+      background:rgba(255,250,242,.1);
+      color:#fffaf2;
+      border-color:rgba(255,250,242,.35);
+    }
+
+    @media (max-width:980px){
+      .services-hero-grid,
+      .current-service-card,
+      .future-heading,
+      .future-grid,
+      .process-panel{
+        grid-template-columns:1fr;
+      }
+
+      .services-status-card{
+        max-width:560px;
+      }
+    }
+
+    @media (max-width:640px){
+      .services-premium-hero{
+        padding:52px 0 42px;
+      }
+
+      .services-current,
+      .future-services,
+      .services-process{
+        padding-top:48px;
+        padding-bottom:52px;
+      }
+
+      .current-service-left,
+      .current-service-right,
+      .future-card,
+      .process-panel{
+        padding:24px;
+      }
+
+      .service-principle{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -57,100 +369,123 @@
   </header>
 
   <main>
-    <section class="page-hero-wide">
-      <div class="container">
-        <div class="wide-copy">
+    <section class="services-premium-hero">
+      <div class="container services-hero-grid">
+        <div class="services-hero-copy">
           <div class="eyebrow">Services</div>
-          <h1>Thoughtful services organized with clarity.</h1>
-          <p style="max-width:48rem;margin-top:18px;">
-            Stonebridge is currently accepting psychotherapy inquiries. Psychological assessment
-            and forensic services remain part of the broader practice model, but are not currently
-            available for new requests.
+          <h1>Clear pathways, carefully held.</h1>
+          <p>
+            Stonebridge is currently accepting psychotherapy inquiries. Assessment and forensic services
+            remain part of the broader practice model, but they are not currently available for new requests.
+            The goal is to be clear about what is available now while preserving the structure for future growth.
           </p>
-          <div class="availability-note" style="max-width:52rem;">
-            <strong>Current availability</strong>
-            <p>Psychotherapy is the active service pathway at this stage of the practice. Assessment and forensic pages remain available for orientation and future planning, but new requests for those services are not being accepted right now.</p>
-          </div>
         </div>
+
+        <aside class="services-status-card">
+          <div class="status-label">Current availability</div>
+          <h2>Psychotherapy is active.</h2>
+          <p>
+            Consultation requests are currently open for psychotherapy only. Assessment and forensic pages
+            are included for orientation, but those services are not accepting new requests at this time.
+          </p>
+        </aside>
       </div>
     </section>
 
-    <section class="section section-white">
-      <div class="container cards">
-        <article class="service-card">
-          <div class="availability-tag">Currently available</div>
-          <h3>Psychotherapy</h3>
-          <p>
-            Individual psychotherapy is the current active service, offered with an emphasis
-            on depth, steadiness, reflection, and clinically thoughtful care.
-          </p>
-          <div class="tags">
-            <span class="tag">Individual Therapy</span>
-            <span class="tag">Telehealth</span>
-            <span class="tag">Consultation</span>
+    <section class="services-current">
+      <div class="container">
+        <article class="current-service-card">
+          <div class="current-service-left">
+            <div class="availability-tag">Currently available</div>
+            <h2>Psychotherapy</h2>
+            <p>
+              Individual psychotherapy is the active clinical service at Stonebridge. The work is intended
+              for adults seeking a thoughtful, bounded, and clinically serious setting for sustained psychological care.
+            </p>
+            <div class="current-service-actions">
+              <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+              <a class="btn btn-secondary" href="psychotherapy.html">Learn About Therapy</a>
+            </div>
           </div>
-          <div style="margin-top:22px;">
-            <a class="btn btn-secondary" href="psychotherapy.html">Learn More</a>
+
+          <div class="current-service-right">
+            <article class="service-principle">
+              <div class="service-principle-number">01</div>
+              <div>
+                <h3>Depth without vagueness</h3>
+                <p>Therapy should leave room for complexity while still maintaining a clear frame and purpose.</p>
+              </div>
+            </article>
+
+            <article class="service-principle">
+              <div class="service-principle-number">02</div>
+              <div>
+                <h3>Fit matters</h3>
+                <p>The first step is determining whether Stonebridge is the right setting for the work being requested.</p>
+              </div>
+            </article>
+
+            <article class="service-principle">
+              <div class="service-principle-number">03</div>
+              <div>
+                <h3>Telehealth at this stage</h3>
+                <p>Psychotherapy is currently offered via telehealth while preserving a consistent and professional frame.</p>
+              </div>
+            </article>
           </div>
         </article>
+      </div>
+    </section>
 
-        <article class="service-card unavailable">
-          <div class="availability-tag">Not currently available</div>
-          <h3>Psychological Assessment</h3>
-          <p>
-            Assessment can support diagnostic clarification and clinical understanding, but
-            Stonebridge is not currently accepting new assessment requests. This page remains
-            available to describe the future service direction.
-          </p>
-          <div class="tags">
-            <span class="tag">Future Availability</span>
-            <span class="tag">Clinical Assessment</span>
-            <span class="tag">Evaluation</span>
+    <section class="future-services">
+      <div class="container">
+        <div class="future-heading">
+          <div>
+            <div class="section-kicker">Future service pathways</div>
           </div>
-          <div style="margin-top:22px;">
+          <p>
+            Assessment and forensic services remain part of the Stonebridge model because they reflect the broader direction
+            of the practice. They are presented here for transparency, not as currently open service lines.
+          </p>
+        </div>
+
+        <div class="future-grid">
+          <article class="future-card service-card unavailable">
+            <div class="availability-tag">Not currently available</div>
+            <h3>Psychological Assessment</h3>
+            <p>
+              Assessment may eventually support diagnostic clarification, clinical understanding, and treatment planning.
+              Stonebridge is not currently accepting new assessment requests.
+            </p>
             <a class="btn btn-secondary" href="assessment.html">View Status</a>
-          </div>
-        </article>
+          </article>
 
-        <article class="service-card unavailable">
-          <div class="availability-tag">Not currently available</div>
-          <h3>Forensic Services</h3>
-          <p>
-            Forensic services require a clearly defined evaluative role and careful attention
-            to scope. This area remains part of the broader model, but new forensic requests
-            are not currently being accepted.
-          </p>
-          <div class="tags">
-            <span class="tag">Future Availability</span>
-            <span class="tag">Forensic Assessment</span>
-            <span class="tag">Role Clarity</span>
-          </div>
-          <div style="margin-top:22px;">
+          <article class="future-card service-card unavailable">
+            <div class="availability-tag">Not currently available</div>
+            <h3>Forensic Services</h3>
+            <p>
+              Forensic work requires a clearly defined role, careful scope, and restraint. Stonebridge is not currently
+              accepting new forensic requests.
+            </p>
             <a class="btn btn-secondary" href="forensic.html">View Status</a>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section section-soft">
-      <div class="container page-grid">
-        <div>
-          <div class="section-kicker">A clearer path into care</div>
-          <p>
-            The services page is meant to simplify the first step. Rather than overwhelming
-            visitors with too many options at once, Stonebridge organizes its work into a few
-            clearly defined pathways so people can understand where to begin.
-          </p>
-          <p>
-            If you are seeking psychotherapy and are unsure whether Stonebridge may be an appropriate fit, a consultation request can help clarify whether the practice is the right setting or whether another referral direction may be more appropriate.
-          </p>
-          <div style="margin-top:24px;">
-            <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+    <section class="services-process">
+      <div class="container">
+        <div class="process-panel">
+          <div>
+            <h2>Begin with a consultation request.</h2>
+            <p>
+              A consultation request helps determine whether psychotherapy at Stonebridge is the right fit, whether a consultation
+              should be scheduled, or whether another referral direction would be more appropriate.
+            </p>
           </div>
-        </div>
-
-        <div class="image-panel soft">
-          <img src="arch-panel.png" alt="Stonebridge bridge detail">
+          <div>
+            <a class="btn btn-secondary" href="contact.html">Request a Consultation</a>
+          </div>
         </div>
       </div>
     </section>

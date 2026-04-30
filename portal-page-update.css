@@ -400,3 +400,39 @@
     font-size:1.48rem;
   }
 }
+
+
+/* Live-ready portal placeholder state */
+.portal-status-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(191,161,104,.38);
+  color:#876d43;
+  background:rgba(245,236,220,.8);
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.portal-action-card.portal-action-disabled{
+  cursor:default;
+}
+
+.portal-action-card.portal-action-disabled:hover{
+  background:linear-gradient(180deg,#fffdfa,#f9f5ef);
+  transform:none;
+}
+
+.portal-support-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.portal-support-actions .btn-secondary{
+  min-height:54px;
+}
