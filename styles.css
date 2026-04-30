@@ -66,6 +66,10 @@
 .compact-services .svc2-split-card{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch;padding:30px;border-radius:34px;border:1px solid rgba(221,211,199,.86);background:linear-gradient(180deg,#fcfbf9,#f8f4ef);box-shadow:var(--card-shadow);}
 .compact-services .svc2-split-card h2{font-size:clamp(2.35rem,3.9vw,3.65rem);margin:13px 0 14px;line-height:1;}
 .compact-services .svc2-split-card p{line-height:1.68;margin-bottom:0;}
+.compact-services .svc2-split-card.status-only{grid-template-columns:1fr;max-width:980px;}
+.compact-services .svc2-split-card.status-only h2{max-width:760px;}
+.compact-services .svc2-split-card.status-only p{max-width:820px;}
+
 .compact-services .svc2-condensed-list{display:grid;gap:10px;align-content:center;}
 .compact-services .svc2-condensed-list div{display:grid;grid-template-columns:42px 1fr;gap:13px;padding:14px 15px;border:1px solid rgba(221,211,199,.78);background:rgba(255,255,255,.66);border-radius:20px;}
 .compact-services .svc2-condensed-list span{width:32px;height:32px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:rgba(18,39,61,.08);font-size:.72rem;font-weight:700;color:var(--deep);}
