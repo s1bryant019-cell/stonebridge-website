@@ -22,52 +22,81 @@
       margin-bottom:28px;
     }
 
-    .placeholder-clinician-grid{
+    .coming-soon-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1.05fr .95fr;
       gap:22px;
       margin-top:28px;
+      align-items:stretch;
     }
 
-    .placeholder-clinician-card{
+    .coming-soon-card{
       border-radius:28px;
       border:1px solid var(--border);
       box-shadow:var(--card-shadow);
-      padding:24px;
+      padding:28px;
       background:linear-gradient(180deg,#fcfbf9,#f8f4ef);
+    }
+
+    .coming-soon-card.dark{
+      background:linear-gradient(135deg,#17395c,#102f4d);
+      color:#fffaf2;
+      border-color:rgba(255,250,242,.16);
+    }
+
+    .coming-soon-card.dark h3,
+    .coming-soon-card.dark p{color:#fffaf2;}
+
+    .coming-soon-card.dark p{opacity:.84;}
+
+    .coming-soon-status{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(200,171,120,.55);
+      color:#8a7144;
+      background:rgba(255,255,255,.74);
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:.72rem;
+      font-weight:700;
+    }
+
+    .coming-soon-card.dark .coming-soon-status{
+      background:rgba(255,255,255,.08);
+      color:#e8cf9b;
+      border-color:rgba(232,207,155,.35);
+    }
+
+    .coming-soon-list{
+      margin:18px 0 0;
+      padding:0;
+      list-style:none;
       display:grid;
-      grid-template-columns:180px 1fr;
-      gap:24px;
-      align-items:start;
+      gap:12px;
     }
 
-    .placeholder-clinician-card img{
-      width:180px;
-      height:220px;
-      object-fit:cover;
-      border-radius:22px;
-      border:1px solid rgba(221,211,199,.8);
-      background:#f5efe8;
+    .coming-soon-list li{
+      padding-left:18px;
+      position:relative;
+      font-size:.98rem;
+      line-height:1.55;
     }
 
-    .placeholder-clinician-card h4{
-      margin-top:12px;
+    .coming-soon-list li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.68em;
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#c8ab78;
     }
 
     @media (max-width:900px){
-      .placeholder-clinician-grid{
-        grid-template-columns:1fr;
-      }
-
-      .placeholder-clinician-card{
-        grid-template-columns:1fr;
-      }
-
-      .placeholder-clinician-card img{
-        width:100%;
-        max-width:260px;
-        height:auto;
-      }
+      .coming-soon-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -122,11 +151,9 @@
       <div class="container">
         <div class="wide-copy">
           <div class="eyebrow">Team</div>
-          <h1>Meet the clinicians of Stonebridge Psychological Group.</h1>
+          <h1>Current leadership and future clinical team.</h1>
           <p style="max-width:48rem;margin-top:18px;">
-            Stonebridge is intentionally structured to support both current clinical leadership and future
-            growth. As the practice expands, clinicians may be grouped by role while still remaining part
-            of a cohesive, thoughtful practice identity.
+            Stonebridge is currently led by Dr. Stephen W. Bryant. Additional clinicians will be listed only after they are formally connected to the practice, credentialed as appropriate, and aligned with the clinical standards of the group.
           </p>
         </div>
       </div>
@@ -136,8 +163,7 @@
       <div class="container">
         <div class="section-kicker">Founder</div>
         <p class="team-section-intro">
-          The founder section highlights current clinical leadership and the primary professional identity
-          of Stonebridge Psychological Group.
+          The founder section highlights current clinical leadership and the professional background shaping the Stonebridge model.
         </p>
 
         <div class="team-grid">
@@ -145,16 +171,15 @@
             <img src="founders-photo.png" alt="Stephen W. Bryant, PsyD, LCPC">
             <div>
               <h3>Stephen W. Bryant, PsyD, LCPC</h3>
-              <div class="team-role">Founder Psychologist</div>
+              <div class="team-role">Founder · PsyD, LCPC</div>
               <p>
-                Dr. Bryant is the founder of Stonebridge Psychological Group. His work is grounded in a primarily
-                psychoanalytic orientation, while also encompassing broader clinical and forensic psychological services.
+                Dr. Bryant founded Stonebridge Psychological Group to support careful, bounded, clinically serious psychological work. Stonebridge is currently accepting psychotherapy inquiries, with assessment and forensic services remaining part of the broader professional model for future development.
               </p>
               <ul class="check-list">
-                <li>Individual therapy and clinically thoughtful care</li>
-                <li>Psychological assessment and diagnostic clarification</li>
-                <li>Forensic and consultation-oriented work</li>
-                <li>Practice leadership and future group development</li>
+                <li>Telehealth psychotherapy for adults in Illinois</li>
+                <li>Clinical work informed by trauma, addiction, mood, anxiety, neurodevelopmental, and relational concerns</li>
+                <li>Background in psychological assessment, differential diagnosis, and forensic psychology</li>
+                <li>Practice leadership, consultation, and clinician education</li>
               </ul>
               <div class="tags">
                 <span class="tag">Psychoanalytic</span>
@@ -172,36 +197,26 @@
       <div class="container">
         <div class="section-kicker">Psychologists</div>
         <p class="team-section-intro">
-          Future psychologists may provide psychotherapy, psychological assessment, consultation,
-          forensic-informed services, or other specialty areas depending on their training and role.
+          Additional psychologists are not listed yet. This section is reserved for future clinicians whose training, role, and scope of practice fit the Stonebridge model.
         </p>
 
-        <div class="placeholder-clinician-grid">
-          <article class="placeholder-clinician-card">
-            <img src="therapist-placeholder-1.png" alt="Placeholder psychologist image">
-            <div>
-              <div class="placeholder-badge">Placeholder Psychologist</div>
-              <h4>Future Psychologist One</h4>
-              <div class="team-role">To be announced</div>
-              <p>
-                This section can be updated as additional psychologists join the practice,
-                allowing each profile to describe clinical focus, assessment work, specialties,
-                and populations served.
-              </p>
-            </div>
+        <div class="coming-soon-grid">
+          <article class="coming-soon-card dark">
+            <span class="coming-soon-status">Coming soon</span>
+            <h3 style="margin-top:18px;">Future psychologist profiles</h3>
+            <p>
+              Psychologists will be added only when the practice is ready to support their work clearly and responsibly. Profiles will describe actual services, populations, credentials, and clinical focus rather than placeholder biographies.
+            </p>
           </article>
 
-          <article class="placeholder-clinician-card">
-            <img src="therapist-placeholder-2.png" alt="Placeholder psychologist image">
-            <div>
-              <div class="placeholder-badge">Placeholder Psychologist</div>
-              <h4>Future Psychologist Two</h4>
-              <div class="team-role">To be announced</div>
-              <p>
-                A future psychologist may bring a distinct clinical or assessment specialty
-                while remaining aligned with the broader Stonebridge identity and professional style.
-              </p>
-            </div>
+          <article class="coming-soon-card">
+            <h3>What will appear here</h3>
+            <ul class="coming-soon-list">
+              <li>Clinical role and current availability</li>
+              <li>Areas of focus and populations served</li>
+              <li>Assessment or consultation services, if applicable</li>
+              <li>Licensure, credentials, and professional background</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -211,34 +226,27 @@
       <div class="container">
         <div class="section-kicker">Therapists</div>
         <p class="team-section-intro">
-          Future therapists may join the practice with their own clinical style, populations, and specialties
-          while remaining aligned with the broader Stonebridge identity.
+          Additional therapists are not currently listed. This section is reserved for future clinicians whose work can be supported within Stonebridge’s structure and clinical standards.
         </p>
 
-        <div class="placeholder-clinician-grid">
-          <article class="placeholder-clinician-card">
-            <img src="therapist-placeholder-1.png" alt="Placeholder therapist image">
-            <div>
-              <div class="placeholder-badge">Placeholder Therapist</div>
-              <h4>Future Therapist One</h4>
-              <div class="team-role">To be announced</div>
-              <p>
-                This section can be updated once additional therapists formally join the practice,
-                allowing each profile to describe treatment approach, specialties, and populations served.
-              </p>
-            </div>
+        <div class="coming-soon-grid">
+          <article class="coming-soon-card dark">
+            <span class="coming-soon-status">Coming soon</span>
+            <h3 style="margin-top:18px;">Future therapist profiles</h3>
+            <p>
+              When therapists join the practice, this page will identify who they are, what they offer, and whether they are accepting new clients. Until then, Stonebridge’s active service pathway remains psychotherapy with Dr. Bryant.
+            </p>
           </article>
 
-          <article class="placeholder-clinician-card">
-            <img src="therapist-placeholder-2.png" alt="Placeholder therapist image">
-            <div>
-              <div class="placeholder-badge">Placeholder Therapist</div>
-              <h4>Future Therapist Two</h4>
-              <div class="team-role">To be announced</div>
-              <p>
-                A future team member may bring a different treatment orientation or area of focus while
-                remaining connected to the broader Stonebridge style and structure.
-              </p>
+          <article class="coming-soon-card">
+            <h3>Current access</h3>
+            <p>
+              Consultation requests are currently reviewed for psychotherapy fit and availability. The team page will expand only when additional clinicians are genuinely part of the practice.
+            </p>
+            <div class="tags">
+              <span class="tag">No placeholder clinicians</span>
+              <span class="tag">Coming soon</span>
+              <span class="tag">Fit first</span>
             </div>
           </article>
         </div>
