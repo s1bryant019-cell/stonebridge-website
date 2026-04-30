@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Team | Stonebridge Psychological Group</title>
-  <meta name="description" content="Meet the current leadership and expanding clinical team at Stonebridge Psychological Group.">
+  <meta name="description" content="Meet the current leadership and developing clinical team profiles at Stonebridge Psychological Group.">
   <link rel="canonical" href="https://stonebridgepsychgroup.com/team.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -16,119 +16,71 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .team-hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:38px;align-items:center}
-    .team-hero-copy{max-width:44rem}
-    .team-hero-copy h1{max-width:10.5ch}
-    .team-hero-copy p{max-width:42rem;margin-top:18px}
-    .team-hero-image{min-height:460px}
-    .team-hero-image img{width:100%;height:100%;object-fit:cover}
+    .team-clean-hero{padding:76px 0 54px;border-bottom:1px solid rgba(221,211,199,.58);background:linear-gradient(180deg,#f7f3ee,#f2ebe4);position:relative;overflow:hidden}
+    .team-clean-hero::after{content:"";position:absolute;right:5%;top:48px;width:360px;height:220px;border:1px solid rgba(221,211,199,.72);border-radius:30px;background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.18));box-shadow:var(--card-shadow);opacity:.72}
+    .team-clean-hero::before{content:"";position:absolute;right:9%;top:86px;width:220px;height:96px;border-top:10px double rgba(36,48,59,.12);border-radius:120px 120px 0 0;opacity:.7}
+    .team-clean-copy{max-width:760px;position:relative;z-index:1}
+    .team-clean-copy h1{max-width:12ch}
+    .team-clean-copy p{max-width:49rem;margin-top:18px}
     .team-section-intro{max-width:52rem;margin-bottom:24px}
-    .profile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:24px}
-    .profile-card{
-      border-radius:28px;border:1px solid var(--border);box-shadow:var(--card-shadow);
-      background:linear-gradient(180deg,#fcfbf9,#f8f4ef);overflow:hidden;display:flex;flex-direction:column;height:100%;
-    }
-    .profile-card-media{aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid rgba(221,211,199,.68)}
-    .profile-card-media img{width:100%;height:100%;object-fit:cover}
-    .profile-card-body{padding:24px;display:flex;flex-direction:column;gap:14px;flex:1}
-    .profile-status{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.75);font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;width:max-content}
+    .clinician-card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:24px}
+    .clinician-profile-card{border-radius:28px;border:1px solid var(--border);box-shadow:var(--card-shadow);background:linear-gradient(180deg,#fcfbf9,#f8f4ef);padding:28px;display:flex;flex-direction:column;gap:14px;min-height:320px;position:relative;overflow:hidden}
+    .clinician-profile-card::after{content:"";position:absolute;right:-44px;bottom:-54px;width:180px;height:180px;border:1px solid rgba(200,171,120,.32);border-radius:50%;background:radial-gradient(circle,rgba(200,171,120,.12),transparent 68%)}
+    .clinician-profile-card.featured{background:linear-gradient(135deg,#102f4d,#17395c);color:#fffaf2;border-color:rgba(255,250,242,.16)}
+    .clinician-profile-card.featured h4,.clinician-profile-card.featured p{color:#fffaf2}
+    .profile-status{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(200,171,120,.55);background:rgba(255,255,255,.72);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:#8a7144;font-weight:700;width:max-content;position:relative;z-index:1}
+    .featured .profile-status{background:rgba(255,255,255,.08);color:#e8cf9b;border-color:rgba(232,207,155,.35)}
     .profile-status::before{content:"";width:8px;height:8px;border-radius:50%;background:#c8ab78}
-    .profile-role{font-size:.95rem;color:var(--muted);margin-top:-6px}
-    .profile-card p{margin:0}
-    .profile-card .tags{margin-top:auto}
-    .profile-card .btn{margin-top:4px;width:max-content}
-    .team-note-card{padding:24px;border-radius:24px;border:1px solid var(--border);background:rgba(255,255,255,.58);margin-top:22px}
-    @media (max-width: 980px){
-      .team-hero-grid,.profile-grid{grid-template-columns:1fr}
-      .team-hero-image{min-height:320px}
-    }
+    .profile-role{font-size:.95rem;color:var(--muted);margin-top:-6px;position:relative;z-index:1}
+    .featured .profile-role{color:rgba(255,250,242,.74)}
+    .clinician-profile-card h4,.clinician-profile-card p,.clinician-profile-card .tags,.clinician-profile-card .btn{position:relative;z-index:1}
+    .clinician-profile-card p{margin:0}
+    .clinician-profile-card .btn{margin-top:auto;width:max-content}
+    .team-system-note{margin-top:24px;border-radius:26px;border:1px solid var(--border);padding:24px;background:rgba(255,255,255,.58);box-shadow:var(--card-shadow)}
+    @media(max-width:980px){.clinician-card-grid{grid-template-columns:1fr}.team-clean-hero::before,.team-clean-hero::after{display:none}}
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html">
-        <div class="brand-mark">STONEBRIDGE</div>
-        <div class="brand-sub">Psychological Group</div>
-      </a>
+      <a href="index.html"><div class="brand-mark">STONEBRIDGE</div><div class="brand-sub">Psychological Group</div></a>
       <button class="mobile-toggle" aria-label="Toggle menu">Menu</button>
       <div class="menu-wrap">
         <nav class="menu">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <div class="nav-dropdown">
-            <a href="team.html" class="active">Team</a>
-            <div class="dropdown-menu">
-              <a href="team.html">Team Overview</a>
-              <a href="team.html#founder">Founder</a>
-              <a href="team.html#psychologists">Psychologists</a>
-              <a href="team.html#therapists">Therapists</a>
-            </div>
-          </div>
-          <div class="nav-dropdown">
-            <a href="services.html">Services</a>
-            <div class="dropdown-menu">
-              <a href="services.html">Services Overview</a>
-              <a href="psychotherapy.html">Psychotherapy</a>
-              <a href="assessment.html">Psychological Assessment</a>
-              <a href="forensic.html">Forensic Services</a>
-            </div>
-          </div>
+          <a href="index.html">Home</a><a href="about.html">About</a>
+          <div class="nav-dropdown"><a href="team.html" class="active">Team</a><div class="dropdown-menu"><a href="team.html">Team Overview</a><a href="team.html#founder">Founder</a><a href="team.html#psychologists">Psychologists</a><a href="team.html#therapists">Therapists</a></div></div>
+          <div class="nav-dropdown"><a href="services.html">Services</a><div class="dropdown-menu"><a href="services.html">Services Overview</a><a href="psychotherapy.html">Psychotherapy</a><a href="assessment.html">Psychological Assessment</a><a href="forensic.html">Forensic Services</a></div></div>
           <a href="portal.html">Portal</a>
         </nav>
-        <div class="header-cta">
-          <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
-        </div>
+        <div class="header-cta"><a class="btn btn-primary" href="contact.html">Request a Consultation</a></div>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container team-hero-grid">
-        <div class="team-hero-copy">
-          <div class="eyebrow">Team</div>
-          <h1>Clinical leadership and an expanding practice.</h1>
-          <p>
-            Stonebridge is currently led by Dr. Stephen W. Bryant. As additional clinicians are brought into the practice,
-            their profile pages will be added here. Some team pages are already built as landing pages while full biographies,
-            clinical focus areas, and availability details are being finalized.
-          </p>
-        </div>
-        <div class="image-panel team-hero-image">
-          <img src="team-hero-office.png" alt="Warm office interior representing the Stonebridge team environment">
-        </div>
+    <section class="team-clean-hero">
+      <div class="container team-clean-copy">
+        <div class="eyebrow">Team</div>
+        <h1>Clinical leadership and developing team profiles.</h1>
+        <p>
+          Stonebridge is currently led by Dr. Stephen W. Bryant. Additional clinician profile pages can be built into the site as the practice expands, with each profile describing the clinician’s role, services, fit, and availability once finalized.
+        </p>
       </div>
     </section>
 
     <section class="section section-white" id="founder">
       <div class="container">
         <div class="section-kicker">Founder</div>
-        <p class="team-section-intro">
-          Stonebridge is currently directed by its founder, whose training and clinical background shape the practice model.
-        </p>
+        <p class="team-section-intro">The founder section highlights current clinical leadership and the professional background shaping Stonebridge Psychological Group.</p>
         <div class="team-grid">
           <article class="team-card founder">
             <img src="founders-photo.png" alt="Stephen W. Bryant, PsyD, LCPC">
             <div>
               <h3>Stephen W. Bryant, PsyD, LCPC</h3>
               <div class="team-role">Founder · PsyD, LCPC</div>
-              <p>
-                Dr. Bryant founded Stonebridge Psychological Group to support careful, thoughtful, and clinically grounded psychological work.
-                Stonebridge is currently accepting psychotherapy inquiries, while assessment and forensic services remain part of the broader professional model.
-              </p>
-              <ul class="check-list">
-                <li>Telehealth psychotherapy for adults in Illinois</li>
-                <li>Clinical work informed by trauma, addiction, mood, anxiety, neurodevelopmental, and relational concerns</li>
-                <li>Background in psychological assessment, differential diagnosis, and forensic psychology</li>
-                <li>Practice leadership, consultation, and clinician education</li>
-              </ul>
-              <div class="tags">
-                <span class="tag">Psychoanalytic</span>
-                <span class="tag">Clinical</span>
-                <span class="tag">Assessment</span>
-                <span class="tag">Forensic</span>
-              </div>
+              <p>Dr. Bryant founded Stonebridge Psychological Group to support careful, thoughtful, and clinically grounded psychological work. Stonebridge is currently accepting psychotherapy inquiries, while assessment and forensic services remain part of the broader professional model.</p>
+              <ul class="check-list"><li>Telehealth psychotherapy for adults in Illinois</li><li>Clinical work informed by trauma, addiction, mood, anxiety, neurodevelopmental, and relational concerns</li><li>Background in psychological assessment, differential diagnosis, and forensic psychology</li><li>Practice leadership, consultation, and clinician education</li></ul>
+              <div class="tags"><span class="tag">Psychoanalytic</span><span class="tag">Clinical</span><span class="tag">Assessment</span><span class="tag">Forensic</span></div>
             </div>
           </article>
         </div>
@@ -138,46 +90,23 @@
     <section class="section section-soft" id="psychologists">
       <div class="container">
         <div class="section-kicker">Psychologists</div>
-        <p class="team-section-intro">
-          Additional psychologist profiles will be published as they are onboarded into the practice. Each card below opens to an active landing page while the full clinician profile is being completed.
-        </p>
-        <div class="profile-grid">
-          <article class="profile-card">
-            <div class="profile-card-media">
-              <img src="team-psychologist-card.png" alt="Psychologist team profile visual">
-            </div>
-            <div class="profile-card-body">
-              <span class="profile-status">Profile underway</span>
-              <h4>Staff Psychologist</h4>
-              <div class="profile-role">Stonebridge clinician profile</div>
-              <p>
-                A psychologist has been added to the Stonebridge buildout. The landing page is active now, and the full profile is being finalized with background, specialty areas, and referral fit information.
-              </p>
-              <div class="tags">
-                <span class="tag">Assessment-informed</span>
-                <span class="tag">Profile building</span>
-              </div>
-              <a class="btn btn-secondary" href="team-psychologist-1.html">Open landing page</a>
-            </div>
+        <p class="team-section-intro">Psychologist profile pages can be added here as clinicians are formally incorporated into the practice. Each page is built as a landing page first, then expanded with the clinician’s biography, specialties, services, and availability.</p>
+        <div class="clinician-card-grid">
+          <article class="clinician-profile-card featured">
+            <span class="profile-status">Profile page active</span>
+            <h4>Psychologist Profile</h4>
+            <div class="profile-role">Biography and service details being finalized</div>
+            <p>This landing page is structured for an incoming psychologist profile. It can be updated with the clinician’s name, credentials, populations served, assessment or therapy focus, and referral fit once those details are ready.</p>
+            <div class="tags"><span class="tag">Psychologist</span><span class="tag">Profile build</span><span class="tag">Service details pending</span></div>
+            <a class="btn btn-secondary" href="team-psychologist-1.html">Open profile page</a>
           </article>
-
-          <article class="profile-card">
-            <div class="profile-card-media">
-              <img src="team-profile-office.png" alt="Additional psychologist profile visual">
-            </div>
-            <div class="profile-card-body">
-              <span class="profile-status">Profile underway</span>
-              <h4>Associate Psychologist</h4>
-              <div class="profile-role">Stonebridge clinician profile</div>
-              <p>
-                This landing page is in place while Stonebridge completes the clinician’s written biography, service scope, and availability details.
-              </p>
-              <div class="tags">
-                <span class="tag">Onboarding</span>
-                <span class="tag">Practice growth</span>
-              </div>
-              <a class="btn btn-secondary" href="team-psychologist-2.html">Open landing page</a>
-            </div>
+          <article class="clinician-profile-card">
+            <span class="profile-status">Profile page active</span>
+            <h4>Psychologist Profile</h4>
+            <div class="profile-role">Profile framework prepared</div>
+            <p>A second psychologist landing page is available for future use, without using fake names, fake headshots, or placeholder biographies.</p>
+            <div class="tags"><span class="tag">No fake bio</span><span class="tag">Ready to customize</span></div>
+            <a class="btn btn-secondary" href="team-psychologist-2.html">Open profile page</a>
           </article>
         </div>
       </div>
@@ -186,102 +115,31 @@
     <section class="section section-white" id="therapists">
       <div class="container">
         <div class="section-kicker">Therapists</div>
-        <p class="team-section-intro">
-          Therapy profiles can also go live before every detail is finalized. This keeps the team page functional while still making room for future clinician-specific pages.
-        </p>
-        <div class="profile-grid">
-          <article class="profile-card">
-            <div class="profile-card-media">
-              <img src="team-therapist-card.png" alt="Therapist team profile visual">
-            </div>
-            <div class="profile-card-body">
-              <span class="profile-status">Profile underway</span>
-              <h4>Staff Therapist</h4>
-              <div class="profile-role">Stonebridge clinician profile</div>
-              <p>
-                A therapist profile landing page is live while the full bio is being developed. This page can later be updated with treatment approach, populations served, and availability.
-              </p>
-              <div class="tags">
-                <span class="tag">Psychotherapy</span>
-                <span class="tag">Profile building</span>
-              </div>
-              <a class="btn btn-secondary" href="team-therapist-1.html">Open landing page</a>
-            </div>
+        <p class="team-section-intro">Therapist profiles can follow the same structure: a live landing page first, then a completed profile once the clinician’s role, services, and availability are ready to publish.</p>
+        <div class="clinician-card-grid">
+          <article class="clinician-profile-card">
+            <span class="profile-status">Profile page active</span>
+            <h4>Therapist Profile</h4>
+            <div class="profile-role">Biography and treatment focus being finalized</div>
+            <p>This page is designed for a therapist profile that can later include treatment approach, clinical populations, specialties, and consultation pathway.</p>
+            <div class="tags"><span class="tag">Psychotherapy</span><span class="tag">Profile build</span></div>
+            <a class="btn btn-secondary" href="team-therapist-1.html">Open profile page</a>
           </article>
-
-          <article class="profile-card">
-            <div class="profile-card-media">
-              <img src="team-hero-office.png" alt="Additional therapist profile visual">
-            </div>
-            <div class="profile-card-body">
-              <span class="profile-status">Profile underway</span>
-              <h4>Associate Therapist</h4>
-              <div class="profile-role">Stonebridge clinician profile</div>
-              <p>
-                A second therapist landing page is ready for future use, so the practice can expand the team page without rebuilding the structure each time.
-              </p>
-              <div class="tags">
-                <span class="tag">Growth ready</span>
-                <span class="tag">Client-facing</span>
-              </div>
-              <a class="btn btn-secondary" href="team-therapist-2.html">Open landing page</a>
-            </div>
+          <article class="clinician-profile-card">
+            <span class="profile-status">Profile page active</span>
+            <h4>Therapist Profile</h4>
+            <div class="profile-role">Profile framework prepared</div>
+            <p>A second therapist landing page is ready to customize when the practice needs another clinician-facing profile page.</p>
+            <div class="tags"><span class="tag">Ready to customize</span><span class="tag">No placeholder photo</span></div>
+            <a class="btn btn-secondary" href="team-therapist-2.html">Open profile page</a>
           </article>
         </div>
-
-        <div class="team-note-card">
-          Consultation requests are still reviewed centrally. As additional clinicians become active on the site, their individual profile pages can be expanded with service details and direct fit information without changing the overall team layout.
-        </div>
+        <div class="team-system-note">This structure keeps the site prepared for additional clinicians without inventing people, using stock-looking images, or making the page feel unfinished.</div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">STONEBRIDGE</div>
-        <div class="footer-sub">Psychological Group</div>
-        <p class="footer-copy">
-          Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.
-        </p>
-      </div>
-      <div>
-        <div class="footer-title">Services</div>
-        <div class="footer-links">
-          <a href="psychotherapy.html">Psychotherapy</a>
-          <a href="assessment.html">Psychological Assessment</a>
-          <a href="forensic.html">Forensic Services</a>
-          <a href="contact.html">Consultation</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-title">Quick Links</div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="team.html">Team</a>
-          <a href="services.html">Services</a>
-          <a href="portal.html">Portal</a>
-          <a href="contact.html">Consultation</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
-          <span>Serving Illinois via telehealth</span>
-          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-          <a href="tel:+17734171688">(773) 417-1688</a>
-          <span>Consultation requests by form, email, or phone</span>
-        </div>
-      </div>
-      <div class="footer-logo-right">
-        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo">
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-grid"><div><div class="footer-brand">STONEBRIDGE</div><div class="footer-sub">Psychological Group</div><p class="footer-copy">Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.</p></div><div><div class="footer-title">Services</div><div class="footer-links"><a href="psychotherapy.html">Psychotherapy</a><a href="assessment.html">Psychological Assessment</a><a href="forensic.html">Forensic Services</a><a href="contact.html">Consultation</a></div></div><div><div class="footer-title">Quick Links</div><div class="footer-links"><a href="about.html">About</a><a href="team.html">Team</a><a href="services.html">Services</a><a href="portal.html">Portal</a><a href="contact.html">Consultation</a></div></div><div><div class="footer-title">Contact</div><div class="footer-links"><span>Serving Illinois via telehealth</span><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a><a href="tel:+17734171688">(773) 417-1688</a><span>Consultation requests by form, email, or phone</span></div></div><div class="footer-logo-right"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo"></div></div><div class="container footer-bottom"><div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div><div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
