@@ -204,111 +204,185 @@
 
 
 
-    /* Compact contact layout: keeps the form and key guidance above the fold on desktop. */
-    .contact-compact-page {
+    /* Designed consultation page: one composed intake panel, with the form visible immediately. */
+    .consultation-stage {
       position: relative;
       isolation: isolate;
       overflow: hidden;
-      padding: 44px 0 42px;
+      padding: 38px 0 42px;
       background: var(--cream);
       border-bottom: 1px solid var(--line);
     }
-    .contact-compact-page::before {
+    .consultation-stage::before {
       content: '';
       position: absolute;
       inset: 0;
       z-index: -2;
       background:
-        linear-gradient(90deg, rgba(247,241,231,.98) 0%, rgba(247,241,231,.94) 42%, rgba(247,241,231,.82) 72%, rgba(247,241,231,.72) 100%),
+        linear-gradient(90deg, rgba(247,241,231,.99) 0%, rgba(247,241,231,.96) 42%, rgba(247,241,231,.84) 74%, rgba(247,241,231,.76) 100%),
         url("portal-watermark.jpg");
       background-size: cover;
       background-position: center 48%;
-      filter: saturate(.88) contrast(.96);
+      filter: saturate(.86) contrast(.96);
     }
-    .contact-compact-page::after {
+    .consultation-stage::after {
       content: '';
       position: absolute;
       inset: 0;
       z-index: -1;
       background:
-        radial-gradient(circle at 16% 26%, rgba(255,253,248,.72), transparent 38%),
-        radial-gradient(circle at 76% 84%, rgba(181,148,90,.12), transparent 36%);
+        radial-gradient(circle at 18% 18%, rgba(255,253,248,.74), transparent 36%),
+        radial-gradient(circle at 76% 78%, rgba(181,148,90,.12), transparent 34%),
+        linear-gradient(180deg, rgba(247,241,231,.10), rgba(247,241,231,.42));
       pointer-events: none;
     }
-    .contact-shell {
+    .consultation-panel {
       display: grid;
-      grid-template-columns: minmax(280px, .84fr) minmax(0, 1.16fr);
-      gap: 26px;
-      align-items: stretch;
+      grid-template-columns: minmax(320px, .9fr) minmax(0, 1.1fr);
+      min-height: 650px;
+      border-radius: 42px;
+      border: 1px solid rgba(20,38,61,.13);
+      background: rgba(255,253,248,.70);
+      box-shadow: 0 24px 70px rgba(20,38,61,.11);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
     }
-    .contact-intro-card {
-      padding: 30px;
-      border-radius: 32px;
-      border: 1px solid rgba(20,38,61,.12);
-      background: rgba(255,253,248,.82);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 48px rgba(20,38,61,.08);
+    .consultation-copy {
+      padding: 42px 38px;
       display: flex;
       flex-direction: column;
+      border-right: 1px solid rgba(20,38,61,.12);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(181,148,90,.12), transparent 34%),
+        rgba(255,253,248,.55);
     }
-    .contact-intro-card h1 { font-size: clamp(2.55rem, 5.8vw, 4.65rem); }
-    .contact-intro-card .lead { font-size: 1rem; margin-top: 16px; }
-    .contact-status-grid {
+    .consultation-copy h1 {
+      font-size: clamp(2.8rem, 6vw, 5.1rem);
+      max-width: 660px;
+    }
+    .consultation-copy .lead {
+      font-size: 1.03rem;
+      max-width: 620px;
+      margin-top: 18px;
+    }
+    .availability-line {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 22px;
+      gap: 0;
+      margin-top: 26px;
+      border-top: 1px solid rgba(20,38,61,.13);
+      border-bottom: 1px solid rgba(20,38,61,.13);
     }
-    .status-tile {
-      padding: 13px 14px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,253,248,.74);
+    .availability-item {
+      display: grid;
+      grid-template-columns: 145px minmax(0, 1fr);
+      gap: 18px;
+      padding: 13px 0;
+      border-top: 1px solid rgba(20,38,61,.09);
+      align-items: baseline;
     }
-    .status-tile strong {
-      display: block;
-      color: rgba(20,38,61,.58);
+    .availability-item:first-child { border-top: 0; }
+    .availability-item strong {
+      color: rgba(20,38,61,.56);
       font-size: .68rem;
       font-weight: 800;
-      letter-spacing: .10em;
+      letter-spacing: .11em;
       text-transform: uppercase;
     }
-    .status-tile span {
-      display: block;
-      margin-top: 3px;
+    .availability-item span {
       color: var(--ink);
+      font-size: .94rem;
       font-weight: 750;
       line-height: 1.35;
-      font-size: .92rem;
     }
-    .contact-mini-notes { display: grid; gap: 10px; margin-top: 18px; }
-    .contact-mini-note {
-      padding: 13px 15px;
-      border-radius: 18px;
+    .process-strip {
+      margin-top: auto;
+      padding-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .process-step {
+      padding-top: 14px;
+      border-top: 2px solid rgba(181,148,90,.32);
+    }
+    .process-step strong {
+      display: block;
+      font-family: var(--serif);
+      color: var(--ink);
+      font-size: 1.22rem;
+      line-height: 1.05;
+    }
+    .process-step span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(20,38,61,.68);
+      font-size: .87rem;
+      line-height: 1.45;
+    }
+    .consultation-form-card {
+      margin: 20px;
+      padding: 28px;
+      border-radius: 32px;
       border: 1px solid rgba(20,38,61,.12);
-      background: rgba(247,241,231,.56);
-      color: rgba(20,38,61,.73);
-      font-size: .92rem;
-      line-height: 1.52;
+      background: rgba(255,253,248,.94);
+      box-shadow: 0 18px 48px rgba(20,38,61,.08);
+      align-self: stretch;
     }
-    .contact-mini-note strong { color: var(--ink); }
-    .compact-form { padding: 26px; background: rgba(255,253,248,.92); backdrop-filter: blur(8px); }
-    .compact-form .form-grid { gap: 12px 14px; }
-    .compact-form label span { margin-bottom: 6px; font-size: .72rem; }
-    .compact-form input, .compact-form select, .compact-form textarea { padding: 11px 13px; border-radius: 14px; }
-    .compact-form textarea { min-height: 104px; }
-    .compact-form .form-note { margin-top: 12px; font-size: .86rem; line-height: 1.5; }
+    .form-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(20,38,61,.12);
+    }
+    .form-heading h2 {
+      font-size: clamp(1.95rem, 3vw, 2.65rem);
+    }
+    .form-heading p {
+      max-width: 250px;
+      margin: 0;
+      color: rgba(20,38,61,.66);
+      font-size: .9rem;
+      line-height: 1.48;
+      text-align: right;
+    }
+    .consultation-form-card .form-grid { gap: 13px 14px; }
+    .consultation-form-card label span { margin-bottom: 6px; font-size: .71rem; }
+    .consultation-form-card input,
+    .consultation-form-card select,
+    .consultation-form-card textarea {
+      padding: 11px 13px;
+      border-radius: 15px;
+      background: rgba(255,253,248,.96);
+    }
+    .consultation-form-card textarea { min-height: 118px; }
+    .form-note-inline {
+      margin: 4px 0 0;
+      color: rgba(20,38,61,.62);
+      font-size: .83rem;
+      line-height: 1.45;
+    }
+    .form-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(20,38,61,.12);
+    }
     .emergency-note {
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(181,148,90,.28);
-      background: rgba(181,148,90,.10);
-      color: rgba(20,38,61,.75);
-      font-size: .88rem;
-      line-height: 1.5;
+      margin: 0;
+      max-width: 410px;
+      color: rgba(20,38,61,.70);
+      font-size: .82rem;
+      line-height: 1.45;
     }
+    .emergency-note strong { color: var(--ink); }
     .emergency-note a { font-weight: 800; color: var(--ink); text-decoration: underline; text-decoration-color: rgba(181,148,90,.55); text-underline-offset: 3px; }
+    .service-select option[disabled] { color: rgba(20,38,61,.48); }
 
     .site-footer { background: #102035; color: white; padding: 54px 0 22px; }
     .footer-grid { display: grid; grid-template-columns: minmax(260px, 1.25fr) minmax(150px, .55fr) minmax(150px, .55fr) minmax(260px, .95fr); gap: 42px; align-items: start; }
@@ -329,10 +403,8 @@
       .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; background: rgba(181,148,90,.07); margin-top: 4px; display: none; }
       .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { display: block; }
       .header-cta { display: grid; }
-      .hero-grid, .detail-layout, .section-head, .cta-band, .contact-layout { grid-template-columns: 1fr; }
-
-      .contact-shell { grid-template-columns: 1fr; }
-      .contact-intro-card { padding: 26px; }
+      .hero-grid, .detail-layout, .section-head, .cta-band, .contact-layout, .consultation-panel { grid-template-columns: 1fr; }
+      .consultation-copy { border-right: 0; border-bottom: 1px solid rgba(20,38,61,.12); }
 
       .service-strip-grid, .pathway-grid, .steps, .grounding-grid, .availability-strip, .profile-grid, .card-grid, .tool-grid { grid-template-columns: 1fr; }
       .schedule-card { position: static; }
@@ -346,8 +418,12 @@
       .brand-mark { font-size: 1.16rem; }
       h1 { font-size: clamp(2.55rem, 14vw, 4rem); }
       .hero-panel, .prose-card, .schedule-card, .cta-band, .contact-card { padding: 24px; }
-      .footer-grid, .footer-bottom, .form-grid, .contact-status-grid { grid-template-columns: 1fr; display: grid; }
-      .contact-compact-page { padding: 30px 0 32px; }
+      .footer-grid, .footer-bottom, .form-grid, .contact-status-grid, .process-strip, .form-heading, .form-bottom-row { grid-template-columns: 1fr; display: grid; }
+      .form-heading p { text-align: left; max-width: none; }
+      .consultation-stage { padding: 28px 0 32px; }
+      .consultation-copy, .consultation-form-card { padding: 24px; }
+      .consultation-form-card { margin: 14px; }
+      .availability-item { grid-template-columns: 1fr; gap: 3px; }
     }
 
   </style>
@@ -392,43 +468,58 @@
 
 
 <main>
-  <section class="contact-compact-page">
-    <div class="container contact-shell">
-      <aside class="contact-intro-card">
-        <div class="eyebrow">Initial Inquiry</div>
-        <h1>Request a Consultation</h1>
-        <p class="lead">Use this form to submit an initial psychotherapy inquiry. Stonebridge is currently accepting telehealth psychotherapy inquiries for adults in Illinois.</p>
+  <section class="consultation-stage">
+    <div class="container">
+      <div class="consultation-panel">
+        <aside class="consultation-copy">
+          <div class="eyebrow">Initial Inquiry</div>
+          <h1>Begin with a careful first step.</h1>
+          <p class="lead">Use this form for an initial psychotherapy inquiry. Stonebridge reviews each request for fit, scope, and availability before any ongoing care is scheduled.</p>
 
-        <div class="contact-status-grid" aria-label="Current service status">
-          <div class="status-tile"><strong>Current service</strong><span>Psychotherapy</span></div>
-          <div class="status-tile"><strong>Format</strong><span>Telehealth only</span></div>
-          <div class="status-tile"><strong>Assessment</strong><span>Not currently available</span></div>
-          <div class="status-tile"><strong>Forensic services</strong><span>Not currently available</span></div>
-        </div>
+          <div class="availability-line" aria-label="Current service status">
+            <div class="availability-item"><strong>Available now</strong><span>Telehealth psychotherapy for adults in Illinois</span></div>
+            <div class="availability-item"><strong>Scheduling</strong><span>Coordinated after consultation review</span></div>
+            <div class="availability-item"><strong>Not open</strong><span>Psychological assessment and forensic services are not currently available for new requests</span></div>
+          </div>
 
-        <div class="contact-mini-notes">
-          <div class="contact-mini-note"><strong>What happens next:</strong> inquiries are reviewed for fit, scope, and availability. If appropriate, follow-up will occur by email with possible next steps.</div>
-          <div class="contact-mini-note"><strong>If Stonebridge is not the right fit:</strong> the response will aim to be clear and respectful rather than vague or overpromising.</div>
-          <div class="contact-mini-note"><strong>Privacy note:</strong> please do not include detailed clinical, legal, or highly sensitive information in this initial form.</div>
-        </div>
-      </aside>
+          <div class="process-strip" aria-label="Consultation process">
+            <div class="process-step"><strong>Submit</strong><span>Send a concise initial inquiry.</span></div>
+            <div class="process-step"><strong>Review</strong><span>Fit, scope, and availability are considered.</span></div>
+            <div class="process-step"><strong>Reply</strong><span>Next steps are shared by email when appropriate.</span></div>
+          </div>
+        </aside>
 
-      <form id="consultation-form" class="contact-card compact-form">
-        <div class="form-grid">
-          <label class="honeypot"><span>Website</span><input type="text" name="website" autocomplete="off" tabindex="-1" /></label>
-          <label><span>Service Requested *</span><select id="serviceRequested" name="serviceRequested" required><option value="psychotherapy">Psychotherapy — currently available</option><option value="assessment">Psychological Assessment — not currently available</option><option value="forensic">Forensic Services — not currently available</option></select></label>
-          <label><span>Psychotherapy Format</span><input type="text" name="psychotherapyFormat" value="Telehealth psychotherapy" readonly /></label>
-          <div class="form-row-full form-note">Psychotherapy inquiries may be submitted now. Assessment and forensic options remain listed for future availability but are blocked for new requests.</div>
-          <label><span>Full Name *</span><input type="text" name="fullName" autocomplete="name" required /></label>
-          <label><span>Proposed Patient’s Name</span><input type="text" name="patientName" /></label>
-          <label><span>Email Address *</span><input type="email" name="email" autocomplete="email" required /></label>
-          <label><span>Insurance / Payment Information</span><input type="text" name="insurance" /></label>
-          <label class="form-row-full"><span>Reason for Seeking Psychotherapy *</span><textarea name="reason" required></textarea></label>
-        </div>
-        <div id="form-alert" class="form-alert" role="status" aria-live="polite"></div>
-        <div class="button-row"><button id="submitButton" class="btn btn-primary" type="submit">Send Consultation Request</button></div>
-        <div class="emergency-note">This form is for non-emergency inquiries only and does not establish a clinical relationship. If there is immediate danger or a medical emergency, call <a href="tel:911">911</a> or go to the nearest emergency room. For mental health, suicide/self-harm, or substance-use crisis support in Illinois or Chicago, call or text <a href="tel:988">988</a>.</div>
-      </form>
+        <form id="consultation-form" class="consultation-form-card">
+          <div class="form-heading">
+            <div>
+              <div class="eyebrow">Request a Consultation</div>
+              <h2>Initial request</h2>
+            </div>
+            <p>For non-emergency psychotherapy inquiries only.</p>
+          </div>
+
+          <div class="form-grid">
+            <label class="honeypot"><span>Website</span><input type="text" name="website" autocomplete="off" tabindex="-1" /></label>
+            <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy" />
+
+            <label class="form-row-full"><span>Service Requested *</span><select id="serviceRequested" class="service-select" name="serviceRequested" required><option value="psychotherapy">Psychotherapy — currently available</option><option value="assessment" disabled>Psychological Assessment — not currently available</option><option value="forensic" disabled>Forensic Services — not currently available</option></select></label>
+            <div class="form-row-full form-note-inline">Assessment and forensic services remain part of the broader Stonebridge model, but they are not open for new requests at this time.</div>
+
+            <label><span>Full Name *</span><input type="text" name="fullName" autocomplete="name" required /></label>
+            <label><span>Proposed Patient’s Name</span><input type="text" name="patientName" /></label>
+            <label><span>Email Address *</span><input type="email" name="email" autocomplete="email" required /></label>
+            <label><span>Insurance / Payment Information</span><input type="text" name="insurance" /></label>
+            <label class="form-row-full"><span>Reason for Seeking Psychotherapy *</span><textarea name="reason" required></textarea></label>
+          </div>
+
+          <div id="form-alert" class="form-alert" role="status" aria-live="polite"></div>
+
+          <div class="form-bottom-row">
+            <div class="emergency-note"><strong>Not for emergencies.</strong> If there is immediate danger or a medical emergency, call <a href="tel:911">911</a> or go to the nearest emergency room. For mental health, suicide/self-harm, or substance-use crisis support in Illinois or Chicago, call or text <a href="tel:988">988</a>.</div>
+            <button id="submitButton" class="btn btn-primary" type="submit">Send Request</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 </main>
