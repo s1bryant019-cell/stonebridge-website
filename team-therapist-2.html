@@ -650,8 +650,8 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: minmax(220px, 1.1fr) repeat(3, minmax(150px, .6fr)) 120px;
-      gap: 28px;
+      grid-template-columns: minmax(260px, 1.25fr) minmax(150px, .55fr) minmax(150px, .55fr) minmax(240px, .9fr);
+      gap: 42px;
       align-items: start;
     }
 
@@ -687,10 +687,13 @@
 
     .footer-links a:hover { color: white; }
 
-    .footer-logo-right img {
-      width: 104px;
-      opacity: .80;
-      filter: drop-shadow(0 8px 18px rgba(0,0,0,.20));
+    .footer-links a,
+    .footer-links span {
+      overflow-wrap: anywhere;
+    }
+
+    .footer-logo-right {
+      display: none;
     }
 
     .footer-bottom {
@@ -742,8 +745,10 @@
       .cta-band { grid-template-columns: 1fr; }
       .profile-photo img { min-height: 320px; }
       .schedule-card { position: static; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-logo-right { display: none; }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 34px 46px;
+      }
     }
 
     @media (max-width: 700px) {
