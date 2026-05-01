@@ -202,6 +202,114 @@
     .cta-band p { color: rgba(255,255,255,.78); margin: 14px 0 0; max-width: 720px; }
     .cta-band .btn-primary { background: white; color: var(--ink); box-shadow: none; }
 
+
+
+    /* Compact contact layout: keeps the form and key guidance above the fold on desktop. */
+    .contact-compact-page {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 44px 0 42px;
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+    }
+    .contact-compact-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(247,241,231,.98) 0%, rgba(247,241,231,.94) 42%, rgba(247,241,231,.82) 72%, rgba(247,241,231,.72) 100%),
+        url("portal-watermark.jpg");
+      background-size: cover;
+      background-position: center 48%;
+      filter: saturate(.88) contrast(.96);
+    }
+    .contact-compact-page::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 16% 26%, rgba(255,253,248,.72), transparent 38%),
+        radial-gradient(circle at 76% 84%, rgba(181,148,90,.12), transparent 36%);
+      pointer-events: none;
+    }
+    .contact-shell {
+      display: grid;
+      grid-template-columns: minmax(280px, .84fr) minmax(0, 1.16fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+    .contact-intro-card {
+      padding: 30px;
+      border-radius: 32px;
+      border: 1px solid rgba(20,38,61,.12);
+      background: rgba(255,253,248,.82);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 48px rgba(20,38,61,.08);
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-intro-card h1 { font-size: clamp(2.55rem, 5.8vw, 4.65rem); }
+    .contact-intro-card .lead { font-size: 1rem; margin-top: 16px; }
+    .contact-status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .status-tile {
+      padding: 13px 14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,253,248,.74);
+    }
+    .status-tile strong {
+      display: block;
+      color: rgba(20,38,61,.58);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+    .status-tile span {
+      display: block;
+      margin-top: 3px;
+      color: var(--ink);
+      font-weight: 750;
+      line-height: 1.35;
+      font-size: .92rem;
+    }
+    .contact-mini-notes { display: grid; gap: 10px; margin-top: 18px; }
+    .contact-mini-note {
+      padding: 13px 15px;
+      border-radius: 18px;
+      border: 1px solid rgba(20,38,61,.12);
+      background: rgba(247,241,231,.56);
+      color: rgba(20,38,61,.73);
+      font-size: .92rem;
+      line-height: 1.52;
+    }
+    .contact-mini-note strong { color: var(--ink); }
+    .compact-form { padding: 26px; background: rgba(255,253,248,.92); backdrop-filter: blur(8px); }
+    .compact-form .form-grid { gap: 12px 14px; }
+    .compact-form label span { margin-bottom: 6px; font-size: .72rem; }
+    .compact-form input, .compact-form select, .compact-form textarea { padding: 11px 13px; border-radius: 14px; }
+    .compact-form textarea { min-height: 104px; }
+    .compact-form .form-note { margin-top: 12px; font-size: .86rem; line-height: 1.5; }
+    .emergency-note {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(181,148,90,.28);
+      background: rgba(181,148,90,.10);
+      color: rgba(20,38,61,.75);
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+    .emergency-note a { font-weight: 800; color: var(--ink); text-decoration: underline; text-decoration-color: rgba(181,148,90,.55); text-underline-offset: 3px; }
+
     .site-footer { background: #102035; color: white; padding: 54px 0 22px; }
     .footer-grid { display: grid; grid-template-columns: minmax(260px, 1.25fr) minmax(150px, .55fr) minmax(150px, .55fr) minmax(260px, .95fr); gap: 42px; align-items: start; }
     .footer-brand { font-family: var(--serif); font-size: 1.65rem; letter-spacing: .14em; font-weight: 700; }
@@ -222,6 +330,10 @@
       .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { display: block; }
       .header-cta { display: grid; }
       .hero-grid, .detail-layout, .section-head, .cta-band, .contact-layout { grid-template-columns: 1fr; }
+
+      .contact-shell { grid-template-columns: 1fr; }
+      .contact-intro-card { padding: 26px; }
+
       .service-strip-grid, .pathway-grid, .steps, .grounding-grid, .availability-strip, .profile-grid, .card-grid, .tool-grid { grid-template-columns: 1fr; }
       .schedule-card { position: static; }
       .image-hero { min-height: auto; padding: 70px 0 56px; }
@@ -234,7 +346,8 @@
       .brand-mark { font-size: 1.16rem; }
       h1 { font-size: clamp(2.55rem, 14vw, 4rem); }
       .hero-panel, .prose-card, .schedule-card, .cta-band, .contact-card { padding: 24px; }
-      .footer-grid, .footer-bottom, .form-grid { grid-template-columns: 1fr; display: grid; }
+      .footer-grid, .footer-bottom, .form-grid, .contact-status-grid { grid-template-columns: 1fr; display: grid; }
+      .contact-compact-page { padding: 30px 0 32px; }
     }
 
   </style>
@@ -279,25 +392,45 @@
 
 
 <main>
-  <section class="image-hero contact-bg"><div class="container hero-grid"><div class="hero-panel"><div class="eyebrow">Initial Inquiry</div><h1>Request a Consultation</h1><p class="lead">This form is the first step in submitting an initial psychotherapy inquiry. Assessment and forensic services remain part of the broader practice model, but they are not currently available for new requests.</p></div><div class="quiet-note"><strong>Non-emergency use</strong><br /><br />Please do not include detailed clinical, legal, or highly sensitive information. Submitting this form does not establish a clinical relationship.</div></div></section>
-  <section class="section section-white"><div class="container contact-layout"><aside class="prose-card"><div class="eyebrow">Before you submit</div><h2>Psychotherapy inquiries are reviewed for fit.</h2><p>If your psychotherapy inquiry appears appropriate for the practice, Stonebridge may offer a brief consultation to clarify your needs, answer practical questions, and determine whether this is the right setting for ongoing care.</p><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Current service</span><span class="schedule-value">Telehealth psychotherapy</span></div><div class="schedule-row"><span class="schedule-label">Location</span><span class="schedule-value">Illinois</span></div><div class="schedule-row"><span class="schedule-label">Assessment</span><span class="schedule-value">Not currently available</span></div><div class="schedule-row"><span class="schedule-label">Forensic services</span><span class="schedule-value">Not currently available</span></div></div></aside>
-  <form id="consultation-form" class="contact-card">
-    <div class="form-grid">
-      <label class="honeypot"><span>Website</span><input type="text" name="website" autocomplete="off" tabindex="-1" /></label>
-      <label class="form-row-full"><span>Service Requested *</span><select id="serviceRequested" name="serviceRequested" required><option value="psychotherapy">Psychotherapy — currently available</option><option value="assessment">Psychological Assessment — not currently available</option><option value="forensic">Forensic Services — not currently available</option></select></label>
-      <div class="form-row-full form-note">Psychotherapy inquiries may be submitted now. Assessment and forensic services are listed for future availability.</div>
-      <label class="form-row-full"><span>Psychotherapy Format</span><input type="text" name="psychotherapyFormat" value="Telehealth psychotherapy" readonly /></label>
-      <label><span>Full Name *</span><input type="text" name="fullName" autocomplete="name" required /></label>
-      <label><span>Proposed Patient’s Name</span><input type="text" name="patientName" /></label>
-      <label><span>Email Address *</span><input type="email" name="email" autocomplete="email" required /></label>
-      <label><span>Insurance / Payment Information</span><input type="text" name="insurance" /></label>
-      <label class="form-row-full"><span>Reason for Seeking Psychotherapy *</span><textarea name="reason" required></textarea></label>
+  <section class="contact-compact-page">
+    <div class="container contact-shell">
+      <aside class="contact-intro-card">
+        <div class="eyebrow">Initial Inquiry</div>
+        <h1>Request a Consultation</h1>
+        <p class="lead">Use this form to submit an initial psychotherapy inquiry. Stonebridge is currently accepting telehealth psychotherapy inquiries for adults in Illinois.</p>
+
+        <div class="contact-status-grid" aria-label="Current service status">
+          <div class="status-tile"><strong>Current service</strong><span>Psychotherapy</span></div>
+          <div class="status-tile"><strong>Format</strong><span>Telehealth only</span></div>
+          <div class="status-tile"><strong>Assessment</strong><span>Not currently available</span></div>
+          <div class="status-tile"><strong>Forensic services</strong><span>Not currently available</span></div>
+        </div>
+
+        <div class="contact-mini-notes">
+          <div class="contact-mini-note"><strong>What happens next:</strong> inquiries are reviewed for fit, scope, and availability. If appropriate, follow-up will occur by email with possible next steps.</div>
+          <div class="contact-mini-note"><strong>If Stonebridge is not the right fit:</strong> the response will aim to be clear and respectful rather than vague or overpromising.</div>
+          <div class="contact-mini-note"><strong>Privacy note:</strong> please do not include detailed clinical, legal, or highly sensitive information in this initial form.</div>
+        </div>
+      </aside>
+
+      <form id="consultation-form" class="contact-card compact-form">
+        <div class="form-grid">
+          <label class="honeypot"><span>Website</span><input type="text" name="website" autocomplete="off" tabindex="-1" /></label>
+          <label><span>Service Requested *</span><select id="serviceRequested" name="serviceRequested" required><option value="psychotherapy">Psychotherapy — currently available</option><option value="assessment">Psychological Assessment — not currently available</option><option value="forensic">Forensic Services — not currently available</option></select></label>
+          <label><span>Psychotherapy Format</span><input type="text" name="psychotherapyFormat" value="Telehealth psychotherapy" readonly /></label>
+          <div class="form-row-full form-note">Psychotherapy inquiries may be submitted now. Assessment and forensic options remain listed for future availability but are blocked for new requests.</div>
+          <label><span>Full Name *</span><input type="text" name="fullName" autocomplete="name" required /></label>
+          <label><span>Proposed Patient’s Name</span><input type="text" name="patientName" /></label>
+          <label><span>Email Address *</span><input type="email" name="email" autocomplete="email" required /></label>
+          <label><span>Insurance / Payment Information</span><input type="text" name="insurance" /></label>
+          <label class="form-row-full"><span>Reason for Seeking Psychotherapy *</span><textarea name="reason" required></textarea></label>
+        </div>
+        <div id="form-alert" class="form-alert" role="status" aria-live="polite"></div>
+        <div class="button-row"><button id="submitButton" class="btn btn-primary" type="submit">Send Consultation Request</button></div>
+        <div class="emergency-note">This form is for non-emergency inquiries only and does not establish a clinical relationship. If there is immediate danger or a medical emergency, call <a href="tel:911">911</a> or go to the nearest emergency room. For mental health, suicide/self-harm, or substance-use crisis support in Illinois or Chicago, call or text <a href="tel:988">988</a>.</div>
+      </form>
     </div>
-    <div id="form-alert" class="form-alert" role="status" aria-live="polite"></div>
-    <div class="button-row"><button id="submitButton" class="btn btn-primary" type="submit">Send Consultation Request</button></div>
-    <p class="form-note">This form sends an initial inquiry to Stonebridge. It is not for emergencies or urgent crisis concerns. If you are in immediate danger or crisis, call 911, 988, or go to the nearest emergency department.</p>
-  </form></div></section>
-  <section class="section section-muted"><div class="container card-grid"><article class="info-card"><h3>If Stonebridge is not the right fit</h3><p>Not every inquiry will be appropriate for the practice. When Stonebridge is not the right setting, the goal is to be clear and respectful rather than vague or overpromising. Referral guidance may be offered when useful.</p></article><article class="info-card"><h3>What happens next</h3><p>Psychotherapy inquiries are reviewed with attention to fit, scope, and clinical appropriateness. If the request appears appropriate, follow-up will occur by email with possible next steps.</p></article></div></section>
+  </section>
 </main>
 
 
