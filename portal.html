@@ -212,6 +212,158 @@
     .footer-links a, .footer-links span { overflow-wrap: anywhere; }
     .footer-bottom { margin-top: 34px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.18); display: flex; justify-content: space-between; gap: 20px; color: rgba(255,255,255,.66); font-size: .84rem; }
 
+
+
+    /* Compact Portal Page */
+    .portal-shell {
+      min-height: calc(100vh - 82px);
+      padding: clamp(34px, 5vw, 62px) 0;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(247,241,231,.99) 0%, rgba(247,241,231,.95) 42%, rgba(247,241,231,.84) 72%, rgba(247,241,231,.72) 100%),
+        url("portal-watermark.jpg");
+      background-size: cover;
+      background-position: center 48%;
+      box-shadow: inset 0 -90px 130px rgba(247, 241, 231, .58);
+    }
+    .portal-shell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 50%, rgba(255,253,248,.64), transparent 44%),
+        linear-gradient(180deg, rgba(247,241,231,.10), rgba(247,241,231,.54));
+      pointer-events: none;
+    }
+    .portal-dashboard {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(420px, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .portal-intro,
+    .portal-tools,
+    .portal-boundary {
+      border: 1px solid rgba(20,38,61,.12);
+      background: rgba(255,253,248,.78);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 48px rgba(20,38,61,.08);
+    }
+    .portal-intro {
+      border-radius: 32px;
+      padding: clamp(26px, 4vw, 38px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .portal-intro h1 {
+      font-size: clamp(3rem, 6.4vw, 5rem);
+    }
+    .portal-status-pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(181,148,90,.13);
+      color: rgba(20,38,61,.76);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .portal-status-pill::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+    .portal-tools {
+      border-radius: 32px;
+      padding: 24px;
+    }
+    .portal-tools-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .portal-tools-head h2 {
+      font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+    }
+    .portal-compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+    .portal-tool {
+      min-height: 164px;
+      padding: 18px;
+      border: 1px solid rgba(20,38,61,.12);
+      border-radius: 22px;
+      background: rgba(255,253,248,.78);
+    }
+    .portal-tool-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .portal-tool-number {
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .portal-tool-status {
+      border-radius: 999px;
+      padding: 6px 9px;
+      background: rgba(20,38,61,.06);
+      color: rgba(20,38,61,.68);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .portal-tool h3 {
+      font-size: 1.34rem;
+    }
+    .portal-tool p {
+      margin: 9px 0 0;
+      color: rgba(20,38,61,.72);
+      font-size: .92rem;
+      line-height: 1.5;
+    }
+    .portal-boundary {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 22px;
+      align-items: center;
+      border-radius: 26px;
+      padding: 20px 24px;
+    }
+    .portal-boundary p {
+      margin: 6px 0 0;
+      color: rgba(20,38,61,.72);
+      font-size: .95rem;
+    }
+    .portal-boundary h3 {
+      font-size: 1.42rem;
+    }
+
     @media (max-width: 980px) {
       .mobile-toggle { display: inline-flex; }
       .menu-wrap { position: absolute; left: 20px; right: 20px; top: 74px; display: none; flex-direction: column; align-items: stretch; gap: 10px; padding: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); }
@@ -221,10 +373,12 @@
       .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; background: rgba(181,148,90,.07); margin-top: 4px; display: none; }
       .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { display: block; }
       .header-cta { display: grid; }
-      .hero-grid, .detail-layout, .section-head, .cta-band, .contact-layout { grid-template-columns: 1fr; }
+      .hero-grid, .detail-layout, .section-head, .cta-band, .contact-layout, .portal-dashboard, .portal-boundary { grid-template-columns: 1fr; }
       .service-strip-grid, .pathway-grid, .steps, .grounding-grid, .availability-strip, .profile-grid, .card-grid, .tool-grid { grid-template-columns: 1fr; }
       .schedule-card { position: static; }
       .image-hero { min-height: auto; padding: 70px 0 56px; }
+      .portal-shell { min-height: auto; padding: 56px 0; }
+      .portal-dashboard { gap: 18px; }
       .hero-service-strip { margin-top: 0; padding-top: 24px; background: var(--cream); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -234,7 +388,8 @@
       .brand-mark { font-size: 1.16rem; }
       h1 { font-size: clamp(2.55rem, 14vw, 4rem); }
       .hero-panel, .prose-card, .schedule-card, .cta-band, .contact-card { padding: 24px; }
-      .footer-grid, .footer-bottom, .form-grid { grid-template-columns: 1fr; display: grid; }
+      .footer-grid, .footer-bottom, .form-grid, .portal-compact-grid { grid-template-columns: 1fr; display: grid; }
+      .portal-intro, .portal-tools, .portal-boundary { padding: 22px; }
     }
 
   </style>
@@ -279,10 +434,65 @@
 
 
 <main>
-  <section class="image-hero portal-bg"><div class="container hero-grid"><div class="hero-panel"><div class="eyebrow">Client Access</div><h1>Client access is being prepared.</h1><p class="lead">This page will house secure access links once Stonebridge’s portal, telehealth, billing, and document systems are connected. For now, routine contact should continue through the consultation form, email, or phone.</p><div class="hero-actions"><a class="btn btn-primary" href="contact.html">Contact Stonebridge</a><a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com">Email the Practice</a></div></div><div class="quiet-note"><strong>Portal status</strong><br /><br />The portal system has not been connected yet. This page is reserved for routine client access once secure workflows are active.</div></div></section>
-  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Existing clients</div><h2>Routine tools will appear here.</h2><p>This page is being held for ordinary access needs: logging in, joining scheduled telehealth appointments, paying bills, and completing forms once those systems are connected.</p><div class="steps"><div class="step"><strong>01</strong><span>Client portal access link will be added once active.</span></div><div class="step"><strong>02</strong><span>Appointment access will be provided directly and then linked here when appropriate.</span></div><div class="step"><strong>03</strong><span>Billing, payments, forms, and documents will be added when secure workflows are ready.</span></div></div></article><aside class="schedule-card"><div class="eyebrow">Portal status</div><h2>Reserved for secure access</h2><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Client portal</span><span class="schedule-value">Access link to be added</span></div><div class="schedule-row"><span class="schedule-label">Telehealth</span><span class="schedule-value">Provided directly when scheduled</span></div><div class="schedule-row"><span class="schedule-label">Billing</span><span class="schedule-value">Online link to be added</span></div><div class="schedule-row"><span class="schedule-label">Forms</span><span class="schedule-value">Secure forms to be posted</span></div></div><div class="schedule-note">For routine contact before these tools are live, use the consultation form, email, or phone.</div></aside></div></section>
-  <section class="section section-muted"><div class="container"><div class="section-head"><div><div class="eyebrow">Routine access</div><h2>Administrative tools will appear here.</h2></div><p>Portal tools are intended for scheduling, telehealth access, billing, forms, and other routine administrative needs once connected.</p></div><div class="tool-grid"><article class="tool-card"><div class="tool-number">01</div><div class="tool-status">Access link will be added once active</div><h3>Client Portal</h3><p>Secure client account access will be connected here once the portal system is active.</p></article><article class="tool-card"><div class="tool-number">02</div><div class="tool-status">Provided directly when scheduled</div><h3>Telehealth Appointment</h3><p>Telehealth access will be provided for scheduled appointments and posted here when the portal workflow is ready.</p></article><article class="tool-card"><div class="tool-number">03</div><div class="tool-status">Online link will be added</div><h3>Billing & Payments</h3><p>Payment and billing links will be connected when online billing is ready for use.</p></article><article class="tool-card"><div class="tool-number">04</div><div class="tool-status">Secure forms will be posted</div><h3>Forms & Documents</h3><p>Practice forms and documents will be available here when the secure workflow is connected.</p></article></div></div></section>
-  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Routine use</div><h2>For routine client matters only.</h2><p>Portal tools are intended for scheduling, telehealth access, billing, forms, and other routine administrative needs. They should not be used for emergencies or urgent crisis concerns.</p><div class="button-row"><a class="btn btn-primary" href="contact.html">Contact Stonebridge</a><a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com">Email the Practice</a></div></article><article class="info-card"><div class="eyebrow">Use boundaries</div><h3>What this page is for</h3><p>Existing client access, telehealth, forms, billing, and connected administrative tools once available.</p><h3 style="margin-top:22px;">What this page is not for</h3><p>Urgent clinical communication, emergency use, or crisis response.</p></article></div></section>
+  <section class="portal-shell" aria-label="Client access portal">
+    <div class="container portal-dashboard">
+      <article class="portal-intro">
+        <div>
+          <div class="eyebrow">Client Access</div>
+          <h1>Client access.</h1>
+          <p class="lead">A reserved access hub for secure portal, telehealth, billing, and forms once Stonebridge’s client systems are connected.</p>
+        </div>
+        <div>
+          <div class="portal-status-pill">Portal not connected yet</div>
+          <p>For now, routine contact should continue through the consultation form, email, or phone.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">Contact Stonebridge</a>
+            <a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com">Email the Practice</a>
+          </div>
+        </div>
+      </article>
+
+      <section class="portal-tools" aria-label="Portal tools">
+        <div class="portal-tools-head">
+          <div>
+            <div class="eyebrow">Routine tools</div>
+            <h2>Prepared for secure access.</h2>
+          </div>
+        </div>
+        <div class="portal-compact-grid">
+          <article class="portal-tool">
+            <div class="portal-tool-top"><span class="portal-tool-number">01</span><span class="portal-tool-status">To be added</span></div>
+            <h3>Client Portal</h3>
+            <p>Secure account access will be connected here once the portal system is active.</p>
+          </article>
+          <article class="portal-tool">
+            <div class="portal-tool-top"><span class="portal-tool-number">02</span><span class="portal-tool-status">Provided directly</span></div>
+            <h3>Telehealth</h3>
+            <p>Appointment links will be provided directly and posted here when the workflow is ready.</p>
+          </article>
+          <article class="portal-tool">
+            <div class="portal-tool-top"><span class="portal-tool-number">03</span><span class="portal-tool-status">To be added</span></div>
+            <h3>Billing</h3>
+            <p>Payment and billing links will be connected when online billing is ready.</p>
+          </article>
+          <article class="portal-tool">
+            <div class="portal-tool-top"><span class="portal-tool-number">04</span><span class="portal-tool-status">To be posted</span></div>
+            <h3>Forms</h3>
+            <p>Practice forms and documents will appear here when secure workflows are connected.</p>
+          </article>
+        </div>
+      </section>
+
+      <aside class="portal-boundary" aria-label="Portal use boundaries">
+        <div>
+          <div class="eyebrow">Routine use only</div>
+          <h3>Not for emergencies or urgent crisis concerns.</h3>
+          <p>This page is intended for ordinary administrative access once connected: portal login, telehealth, billing, forms, and documents.</p>
+        </div>
+        <a class="btn btn-secondary" href="contact.html">Routine contact</a>
+      </aside>
+    </div>
+  </section>
 </main>
 
 
