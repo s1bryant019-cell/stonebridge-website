@@ -204,99 +204,98 @@
 
 
 
-    /* Designed consultation page: one composed intake panel, with the form visible immediately. */
+
+    /* Consultation page: form-forward, calm, and image-as-atmosphere only. */
     .consultation-stage {
       position: relative;
       isolation: isolate;
       overflow: hidden;
-      padding: 34px 0 38px;
-      background:
-        radial-gradient(circle at 18% 10%, rgba(255,253,248,.82), transparent 34%),
-        linear-gradient(180deg, var(--cream-2), var(--cream));
+      padding: 34px 0 40px;
+      background: linear-gradient(180deg, var(--cream-2), var(--cream));
       border-bottom: 1px solid var(--line);
     }
     .consultation-stage::before {
       content: '';
       position: absolute;
       inset: 0;
-      z-index: -1;
-      background:
-        radial-gradient(circle at 80% 22%, rgba(181,148,90,.10), transparent 30%),
-        linear-gradient(90deg, rgba(247,241,231,.70), rgba(247,241,231,.94));
+      z-index: -2;
+      background: url("contact-panel.jpg") center 52% / cover no-repeat;
+      opacity: .18;
+      filter: saturate(.86) contrast(.92);
       pointer-events: none;
     }
-    .consultation-stage::after { content: none; }
-    .consultation-panel {
-      display: grid;
-      grid-template-columns: minmax(330px, .88fr) minmax(0, 1.12fr);
-      min-height: 0;
-      border-radius: 42px;
-      border: 1px solid rgba(20,38,61,.13);
-      background: rgba(255,253,248,.82);
-      box-shadow: 0 24px 70px rgba(20,38,61,.11);
-      backdrop-filter: blur(12px);
-      overflow: hidden;
-    }
-    .consultation-copy {
-      position: relative;
-      overflow: hidden;
-      padding: 40px 36px;
-      display: flex;
-      flex-direction: column;
-      border-right: 1px solid rgba(20,38,61,.12);
-      background: url("contact-panel.jpg") center center / cover no-repeat;
-      color: white;
-      min-height: 600px;
-    }
-    .consultation-copy::before {
+    .consultation-stage::after {
       content: '';
       position: absolute;
       inset: 0;
+      z-index: -1;
       background:
-        linear-gradient(90deg, rgba(16,32,53,.80) 0%, rgba(16,32,53,.55) 46%, rgba(16,32,53,.30) 100%),
-        linear-gradient(180deg, rgba(16,32,53,.34), rgba(16,32,53,.64));
+        radial-gradient(circle at 16% 12%, rgba(255,253,248,.90), transparent 34%),
+        linear-gradient(90deg, rgba(247,241,231,.98) 0%, rgba(247,241,231,.92) 46%, rgba(247,241,231,.78) 100%),
+        linear-gradient(180deg, rgba(247,241,231,.42), rgba(247,241,231,.94));
       pointer-events: none;
     }
-    .consultation-copy > * { position: relative; z-index: 1; }
-    .consultation-copy h1 {
-      color: var(--paper);
-      font-size: clamp(2.65rem, 5.5vw, 4.75rem);
-      max-width: 660px;
-      text-shadow: 0 2px 22px rgba(0,0,0,.18);
+    .consultation-panel {
+      display: grid;
+      grid-template-columns: minmax(300px, .78fr) minmax(0, 1.22fr);
+      gap: 22px;
+      align-items: stretch;
+      border-radius: 38px;
+      border: 1px solid rgba(20,38,61,.13);
+      background: rgba(255,253,248,.70);
+      box-shadow: 0 22px 64px rgba(20,38,61,.10);
+      backdrop-filter: blur(10px);
+      padding: 18px;
     }
-    .consultation-copy .lead {
-      color: rgba(255,253,248,.84);
-      font-size: 1rem;
-      max-width: 620px;
+    .consultation-intro,
+    .consultation-form-card {
+      border: 1px solid rgba(20,38,61,.12);
+      border-radius: 30px;
+      background: rgba(255,253,248,.88);
+      box-shadow: 0 14px 42px rgba(20,38,61,.06);
+    }
+    .consultation-intro {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+    .consultation-intro h1 {
+      font-size: clamp(2.35rem, 4.5vw, 4.05rem);
+      line-height: .98;
+      max-width: 560px;
+    }
+    .consultation-intro .lead {
       margin-top: 16px;
+      color: rgba(20,38,61,.74);
+      font-size: .98rem;
+      max-width: 560px;
     }
-    .consultation-copy .eyebrow { color: var(--gold-soft); }
     .availability-line {
       display: grid;
       gap: 0;
       margin-top: 24px;
-      border-top: 1px solid rgba(255,253,248,.24);
-      border-bottom: 1px solid rgba(255,253,248,.24);
+      border-top: 1px solid rgba(20,38,61,.13);
+      border-bottom: 1px solid rgba(20,38,61,.13);
     }
     .availability-item {
       display: grid;
-      grid-template-columns: 145px minmax(0, 1fr);
-      gap: 18px;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 16px;
       padding: 12px 0;
-      border-top: 1px solid rgba(255,253,248,.18);
+      border-top: 1px solid rgba(20,38,61,.11);
       align-items: baseline;
     }
     .availability-item:first-child { border-top: 0; }
     .availability-item strong {
-      color: rgba(255,253,248,.68);
+      color: rgba(20,38,61,.52);
       font-size: .68rem;
       font-weight: 800;
       letter-spacing: .11em;
       text-transform: uppercase;
     }
     .availability-item span {
-      color: var(--paper);
-      font-size: .92rem;
+      color: var(--ink);
+      font-size: .91rem;
       font-weight: 750;
       line-height: 1.35;
     }
@@ -305,33 +304,30 @@
       padding-top: 24px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 12px;
     }
     .process-step {
-      padding-top: 14px;
-      border-top: 2px solid rgba(216,194,142,.52);
+      padding: 14px 14px 13px;
+      border: 1px solid rgba(181,148,90,.22);
+      border-radius: 18px;
+      background: rgba(181,148,90,.08);
     }
     .process-step strong {
       display: block;
       font-family: var(--serif);
-      color: var(--paper);
-      font-size: 1.18rem;
+      color: var(--ink);
+      font-size: 1.08rem;
       line-height: 1.05;
     }
     .process-step span {
       display: block;
-      margin-top: 7px;
-      color: rgba(255,253,248,.76);
-      font-size: .84rem;
-      line-height: 1.45;
+      margin-top: 6px;
+      color: rgba(20,38,61,.64);
+      font-size: .78rem;
+      line-height: 1.4;
     }
     .consultation-form-card {
-      margin: 18px;
       padding: 26px;
-      border-radius: 32px;
-      border: 1px solid rgba(20,38,61,.12);
-      background: rgba(255,253,248,.94);
-      box-shadow: 0 18px 48px rgba(20,38,61,.08);
       align-self: stretch;
     }
     .form-heading {
@@ -339,51 +335,51 @@
       justify-content: space-between;
       gap: 18px;
       align-items: end;
-      margin-bottom: 18px;
-      padding-bottom: 18px;
+      margin-bottom: 17px;
+      padding-bottom: 17px;
       border-bottom: 1px solid rgba(20,38,61,.12);
     }
     .form-heading h2 {
-      font-size: clamp(1.95rem, 3vw, 2.65rem);
+      font-size: clamp(1.95rem, 3vw, 2.55rem);
     }
     .form-heading p {
       max-width: 250px;
       margin: 0;
       color: rgba(20,38,61,.66);
-      font-size: .9rem;
+      font-size: .88rem;
       line-height: 1.48;
       text-align: right;
     }
     .consultation-form-card .form-grid { gap: 12px 14px; }
-    .consultation-form-card label span { margin-bottom: 6px; font-size: .71rem; }
+    .consultation-form-card label span { margin-bottom: 6px; font-size: .70rem; }
     .consultation-form-card input,
     .consultation-form-card select,
     .consultation-form-card textarea {
-      padding: 11px 13px;
+      padding: 10px 13px;
       border-radius: 15px;
       background: rgba(255,253,248,.96);
     }
-    .consultation-form-card textarea { min-height: 108px; }
+    .consultation-form-card textarea { min-height: 96px; }
     .form-note-inline {
-      margin: 4px 0 0;
+      margin: 0;
       color: rgba(20,38,61,.62);
-      font-size: .83rem;
-      line-height: 1.45;
+      font-size: .82rem;
+      line-height: 1.42;
     }
     .form-bottom-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      margin-top: 16px;
-      padding-top: 16px;
+      margin-top: 15px;
+      padding-top: 15px;
       border-top: 1px solid rgba(20,38,61,.12);
     }
     .emergency-note {
       margin: 0;
-      max-width: 410px;
+      max-width: 430px;
       color: rgba(20,38,61,.70);
-      font-size: .82rem;
+      font-size: .80rem;
       line-height: 1.45;
     }
     .emergency-note strong { color: var(--ink); }
@@ -410,7 +406,7 @@
       .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { display: block; }
       .header-cta { display: grid; }
       .hero-grid, .detail-layout, .section-head, .cta-band, .contact-layout, .consultation-panel { grid-template-columns: 1fr; }
-      .consultation-copy { border-right: 0; border-bottom: 1px solid rgba(20,38,61,.12); min-height: 520px; }
+      .consultation-intro { border-right: 0; border-bottom: 1px solid rgba(20,38,61,.12); }
 
       .service-strip-grid, .pathway-grid, .steps, .grounding-grid, .availability-strip, .profile-grid, .card-grid, .tool-grid { grid-template-columns: 1fr; }
       .schedule-card { position: static; }
@@ -427,8 +423,7 @@
       .footer-grid, .footer-bottom, .form-grid, .contact-status-grid, .process-strip, .form-heading, .form-bottom-row { grid-template-columns: 1fr; display: grid; }
       .form-heading p { text-align: left; max-width: none; }
       .consultation-stage { padding: 28px 0 32px; }
-      .consultation-copy, .consultation-form-card { padding: 24px; }
-      .consultation-copy { min-height: 500px; background-position: center 42%; }
+      .consultation-intro, .consultation-form-card { padding: 24px; }
       .consultation-form-card { margin: 14px; }
       .availability-item { grid-template-columns: 1fr; gap: 3px; }
     }
@@ -478,7 +473,7 @@
   <section class="consultation-stage">
     <div class="container">
       <div class="consultation-panel">
-        <aside class="consultation-copy">
+        <aside class="consultation-intro">
           <div class="eyebrow">Initial Inquiry</div>
           <h1>Begin with a careful first step.</h1>
           <p class="lead">Use this form for an initial psychotherapy inquiry. Stonebridge reviews each request for fit, scope, and availability before any ongoing care is scheduled.</p>
