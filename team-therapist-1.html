@@ -238,6 +238,38 @@
       pointer-events: none;
     }
 
+
+
+    .page-hero.image-hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(247,241,231,.97) 0%, rgba(247,241,231,.91) 35%, rgba(247,241,231,.68) 58%, rgba(247,241,231,.32) 100%),
+        var(--hero-image);
+      background-size: cover;
+      background-position: center 52%;
+      box-shadow: inset 0 -90px 110px rgba(247, 241, 231, .32);
+    }
+
+    .page-hero.image-hero::after { display: none; }
+
+    .page-hero.image-hero .quiet-note,
+    .page-hero.image-hero .profile-card {
+      background: rgba(255, 253, 248, .86);
+      backdrop-filter: blur(14px);
+    }
+
+    .page-hero.team-nature-hero {
+      --hero-image: url("team-nature-hero.jpg");
+      background-position: center 53%;
+    }
+
+    .page-hero.profile-nature-hero {
+      --hero-image: url("profile-nature-hero.jpg");
+      background-position: center 55%;
+    }
+
     .hero-grid {
       position: relative;
       z-index: 1;
@@ -770,7 +802,7 @@
 
 
 <main>
-  <section class="page-hero">
+  <section class="page-hero image-hero profile-nature-hero">
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Clinician Profile</div>
