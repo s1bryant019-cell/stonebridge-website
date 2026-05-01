@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal | Stonebridge Psychological Group</title>
-  <meta name="description" content="Stonebridge Psychological Group client portal, telehealth, billing, and routine access information." />
+  <meta name="description" content="Stonebridge client access page and portal status." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -19,13 +19,16 @@
       --paper: #fffdf8;
       --stone: #d8cbb8;
       --gold: #b5945a;
+      --gold-soft: #d8c28e;
       --walnut: #6e543d;
       --line: rgba(20, 38, 61, 0.14);
       --shadow: 0 20px 60px rgba(20, 38, 61, 0.10);
       --serif: 'EB Garamond', Georgia, serif;
       --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
+
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       color: var(--ink);
@@ -67,61 +70,54 @@
     .btn:hover { transform: translateY(-1px); }
     .btn-primary { background: var(--ink); color: white; box-shadow: 0 10px 26px rgba(20, 38, 61, .16); }
     .btn-primary:hover { background: #0d1b2d; }
-    .btn-secondary { background: rgba(255,253,248,.72); border-color: rgba(20, 38, 61, .20); color: var(--ink); }
+    .btn-secondary { background: rgba(255,253,248,.68); border-color: rgba(20, 38, 61, .20); color: var(--ink); backdrop-filter: blur(8px); }
     .btn-text { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; color: var(--ink); }
     .btn-text::after { content: '→'; color: var(--gold); transition: transform .18s ease; }
     .btn-text:hover::after { transform: translateX(3px); }
 
-    .watermark-hero {
+    .image-hero {
       min-height: 520px;
-      padding: 92px 0 70px;
+      padding: 90px 0 70px;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
       border-bottom: 1px solid var(--line);
       background:
-        linear-gradient(90deg, rgba(247,241,231,.985) 0%, rgba(247,241,231,.94) 38%, rgba(247,241,231,.82) 63%, rgba(247,241,231,.70) 100%),
+        linear-gradient(90deg, rgba(247,241,231,.985) 0%, rgba(247,241,231,.95) 38%, rgba(247,241,231,.82) 68%, rgba(247,241,231,.66) 100%),
         var(--hero-image);
       background-size: cover;
       background-position: center;
-      box-shadow: inset 0 -90px 120px rgba(247, 241, 231, .58);
+      box-shadow: inset 0 -95px 130px rgba(247, 241, 231, .60);
     }
-    .watermark-hero::before {
+    .image-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 18% 50%, rgba(255,253,248,.54), transparent 38%);
+      background:
+        radial-gradient(circle at 18% 50%, rgba(255,253,248,.60), transparent 42%),
+        linear-gradient(180deg, rgba(247,241,231,.12), rgba(247,241,231,.58));
       pointer-events: none;
     }
-    .services-bg { --hero-image: url("services-watermark.jpg"); background-position: center 56%; }
-    .portal-bg { --hero-image: url("portal-watermark.jpg"); background-position: center 50%; }
+    .about-bg { --hero-image: url("about-watermark.jpg"); background-position: center; }
+    .team-bg { --hero-image: url("team-nature-hero.jpg"); background-position: center; }
+    .profile-bg { --hero-image: url("profile-nature-hero.jpg"); background-position: center; }
+    .services-bg { --hero-image: url("services-watermark.jpg"); background-position: center 58%; }
+    .portal-bg { --hero-image: url("portal-watermark.jpg"); background-position: center 48%; }
+    .contact-bg { --hero-image: url("portal-watermark.jpg"); background-position: center 48%; }
+
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .78fr); gap: 46px; align-items: center; }
-    .hero-panel {
-      max-width: 720px;
-      padding: 34px;
-      border-radius: 32px;
-      border: 1px solid rgba(20,38,61,.12);
-      background: rgba(255, 253, 248, .78);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 48px rgba(20,38,61,.08);
-    }
+    .hero-panel { max-width: 760px; padding: 34px; border-radius: 32px; border: 1px solid rgba(20,38,61,.12); background: rgba(255,253,248,.78); backdrop-filter: blur(10px); box-shadow: 0 18px 48px rgba(20,38,61,.08); }
     .quiet-note { padding: 22px 24px; border-left: 3px solid var(--gold); background: rgba(255,253,248,.72); color: rgba(20,38,61,.76); border-radius: 0 22px 22px 0; backdrop-filter: blur(10px); box-shadow: 0 14px 38px rgba(20,38,61,.06); }
 
     .eyebrow { margin-bottom: 14px; color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
     h1, h2, h3 { font-family: var(--serif); color: var(--ink); line-height: .98; margin: 0; font-weight: 600; }
-    h1 { max-width: 760px; font-size: clamp(3rem, 7vw, 5.4rem); letter-spacing: -.035em; }
-    h2 { font-size: clamp(2.05rem, 4vw, 3.45rem); letter-spacing: -.025em; }
+    h1 { max-width: 780px; font-size: clamp(3rem, 7vw, 5.25rem); letter-spacing: -.035em; }
+    h2 { font-size: clamp(2.05rem, 4vw, 3.35rem); letter-spacing: -.025em; }
     h3 { font-size: 1.68rem; letter-spacing: -.015em; }
-    .lead { margin: 20px 0 0; max-width: 720px; color: rgba(20,38,61,.75); font-size: 1.08rem; }
+    p { margin-top: 14px; }
+    .lead { margin: 20px 0 0; max-width: 720px; color: rgba(20,38,61,.76); font-size: 1.08rem; }
     .hero-actions, .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-
-    .hero-service-strip { position: relative; z-index: 2; margin-top: -58px; }
-    .service-strip-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .service-tile { position: relative; min-height: 210px; overflow: hidden; border-radius: 28px; border: 1px solid rgba(20,38,61,.14); box-shadow: var(--shadow); background: #d8cbb8; }
-    .service-tile img { width: 100%; height: 100%; min-height: 210px; object-fit: cover; filter: saturate(.92) contrast(.95); }
-    .service-tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 28%, rgba(16,32,53,.70)); }
-    .service-tile span { position: absolute; left: 20px; bottom: 18px; color: white; z-index: 1; font-weight: 800; letter-spacing: .04em; }
 
     .section { padding: 66px 0; }
     .section-white { background: var(--paper); }
@@ -131,9 +127,9 @@
     .anchor-offset { scroll-margin-top: 110px; }
 
     .detail-layout { display: grid; grid-template-columns: minmax(0, 1fr) 370px; gap: 30px; align-items: start; }
-    .prose-card, .info-card, .schedule-card, .pathway-card, .tool-card { background: var(--paper); border: 1px solid var(--line); border-radius: 30px; box-shadow: 0 14px 42px rgba(20,38,61,.07); }
+    .prose-card, .info-card, .schedule-card, .pathway-card, .tool-card, .profile-card, .contact-card { background: var(--paper); border: 1px solid var(--line); border-radius: 30px; box-shadow: 0 14px 42px rgba(20,38,61,.07); }
     .prose-card { padding: 38px; }
-    .prose-card p, .info-card p, .pathway-card p, .tool-card p { color: rgba(20,38,61,.76); margin: 14px 0 0; }
+    .prose-card p, .info-card p, .pathway-card p, .tool-card p, .profile-card p, .contact-card p { color: rgba(20,38,61,.76); margin: 14px 0 0; }
     .prose-card ul { padding-left: 1.15rem; margin: 16px 0 0; color: rgba(20,38,61,.76); }
     .prose-card li { margin: 8px 0; }
     .schedule-card { position: sticky; top: 108px; padding: 28px; }
@@ -144,22 +140,43 @@
     .schedule-value { display: block; margin-top: 4px; color: var(--ink); font-weight: 700; }
     .schedule-note { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); color: rgba(20,38,61,.70); font-size: .92rem; }
 
-    .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
+    .availability-strip, .card-grid, .profile-grid, .steps, .grounding-grid { display: grid; gap: 18px; }
+    .availability-strip { grid-template-columns: repeat(3, minmax(0,1fr)); margin-top: 26px; }
+    .mini-card { padding: 18px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,253,248,.72); }
+    .mini-card strong { display: block; color: var(--ink); font-weight: 800; }
+    .mini-card span { display: block; color: rgba(20,38,61,.68); margin-top: 4px; font-size: .92rem; }
+    .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .profile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grounding-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .info-card { padding: 26px; }
+    .info-card h3 { font-size: 1.35rem; }
+    .profile-card { padding: 26px; display: flex; flex-direction: column; min-height: 100%; transition: transform .18s ease, box-shadow .18s ease; }
+    .profile-card:hover { transform: translateY(-2px); box-shadow: 0 20px 56px rgba(20,38,61,.12); }
+    .profile-card-top { display: flex; justify-content: space-between; gap: 14px; align-items: center; margin-bottom: 20px; }
+    .profile-mark { width: 48px; height: 48px; border: 1px solid rgba(181,148,90,.35); border-radius: 50% 50% 50% 12px; display: grid; place-items: center; font-family: var(--serif); font-weight: 700; font-size: 1.3rem; background: rgba(181,148,90,.11); }
+    .role { margin-top: 8px; color: var(--gold); font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .status, .tag { display: inline-flex; align-items: center; border-radius: 999px; padding: 7px 10px; background: rgba(20,38,61,.06); color: rgba(20,38,61,.72); font-size: .72rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .status::before { content: ''; width: 6px; height: 6px; margin-right: 8px; border-radius: 999px; background: var(--gold); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .profile-card .btn-text { margin-top: auto; padding-top: 28px; }
+
+    .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 26px; }
     .step { padding: 20px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,253,248,.75); }
     .step strong { display: block; font-family: var(--serif); font-size: 1.3rem; margin-bottom: 8px; color: var(--gold); }
     .step span { color: rgba(20,38,61,.72); }
 
+    .hero-service-strip { position: relative; z-index: 2; margin-top: -58px; }
+    .service-strip-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .service-tile { position: relative; min-height: 210px; overflow: hidden; border-radius: 28px; border: 1px solid rgba(20,38,61,.14); box-shadow: var(--shadow); background: #d8cbb8; }
+    .service-tile img { width: 100%; height: 100%; min-height: 210px; object-fit: cover; filter: saturate(.92) contrast(.95); }
+    .service-tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 28%, rgba(16,32,53,.70)); }
+    .service-tile span { position: absolute; left: 20px; bottom: 18px; color: white; z-index: 1; font-weight: 800; letter-spacing: .04em; }
     .pathway-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
     .pathway-card { overflow: hidden; }
     .pathway-card img { width: 100%; height: 220px; object-fit: cover; }
     .pathway-body { padding: 24px; }
-    .status { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 7px 10px; background: rgba(20,38,61,.06); color: rgba(20,38,61,.72); font-size: .72rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
-    .status::before { content: ''; width: 6px; height: 6px; border-radius: 999px; background: var(--gold); }
     .pathway-card h3 { margin-top: 18px; }
     .pathway-card .btn-text { margin-top: 20px; }
-    .grounding-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-    .info-card { padding: 24px; }
-    .info-card h3 { font-size: 1.35rem; }
 
     .tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px; }
     .tool-card { padding: 28px; min-height: 100%; }
@@ -167,17 +184,29 @@
     .tool-card h3 { margin-top: 16px; }
     .tool-status { margin-top: 14px; color: var(--gold); font-weight: 800; letter-spacing: .11em; text-transform: uppercase; font-size: .73rem; }
 
+    .contact-layout { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.15fr); gap: 28px; align-items: start; }
+    .contact-card { padding: 30px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .form-row-full { grid-column: 1 / -1; }
+    label span { display: block; margin-bottom: 7px; color: rgba(20,38,61,.65); font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    input, select, textarea { width: 100%; border: 1px solid rgba(20,38,61,.16); background: rgba(255,253,248,.9); color: var(--ink); border-radius: 16px; padding: 13px 14px; font: inherit; outline: none; }
+    textarea { min-height: 140px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: rgba(181,148,90,.65); box-shadow: 0 0 0 4px rgba(181,148,90,.12); }
+    .form-note { margin: 16px 0 0; color: rgba(20,38,61,.68); font-size: .92rem; }
+    .honeypot { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .form-alert { margin-top: 16px; padding: 14px 16px; border-radius: 16px; border: 1px solid var(--line); background: rgba(181,148,90,.10); display: none; }
+    .form-alert.show { display: block; }
+
     .cta-band { padding: 44px; background: var(--ink); color: white; border-radius: 34px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 26px; align-items: center; box-shadow: var(--shadow); }
     .cta-band h2 { color: white; }
     .cta-band p { color: rgba(255,255,255,.78); margin: 14px 0 0; max-width: 720px; }
     .cta-band .btn-primary { background: white; color: var(--ink); box-shadow: none; }
-    .cta-band .btn-secondary { border-color: rgba(255,255,255,.35); color: white; background: transparent; }
 
     .site-footer { background: #102035; color: white; padding: 54px 0 22px; }
-    .footer-grid { display: grid; grid-template-columns: minmax(260px, 1.25fr) minmax(150px, .55fr) minmax(150px, .55fr) minmax(240px, .9fr); gap: 42px; align-items: start; }
+    .footer-grid { display: grid; grid-template-columns: minmax(260px, 1.25fr) minmax(150px, .55fr) minmax(150px, .55fr) minmax(260px, .95fr); gap: 42px; align-items: start; }
     .footer-brand { font-family: var(--serif); font-size: 1.65rem; letter-spacing: .14em; font-weight: 700; }
     .footer-sub, .footer-title { margin-top: 6px; color: rgba(255,255,255,.76); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-    .footer-copy { color: rgba(255,255,255,.70); max-width: 360px; }
+    .footer-copy { color: rgba(255,255,255,.70); max-width: 370px; }
     .footer-links { display: grid; gap: 8px; margin-top: 14px; color: rgba(255,255,255,.72); font-size: .92rem; }
     .footer-links a:hover { color: white; }
     .footer-links a, .footer-links span { overflow-wrap: anywhere; }
@@ -192,11 +221,10 @@
       .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; background: rgba(181,148,90,.07); margin-top: 4px; display: none; }
       .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { display: block; }
       .header-cta { display: grid; }
-      .hero-grid, .detail-layout, .section-head, .cta-band { grid-template-columns: 1fr; }
-      .service-strip-grid, .pathway-grid, .steps, .grounding-grid { grid-template-columns: 1fr; }
-      .tool-grid { grid-template-columns: 1fr; }
+      .hero-grid, .detail-layout, .section-head, .cta-band, .contact-layout { grid-template-columns: 1fr; }
+      .service-strip-grid, .pathway-grid, .steps, .grounding-grid, .availability-strip, .profile-grid, .card-grid, .tool-grid { grid-template-columns: 1fr; }
       .schedule-card { position: static; }
-      .watermark-hero { min-height: auto; padding: 70px 0 56px; }
+      .image-hero { min-height: auto; padding: 70px 0 56px; }
       .hero-service-strip { margin-top: 0; padding-top: 24px; background: var(--cream); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -205,8 +233,8 @@
       .nav { min-height: 74px; }
       .brand-mark { font-size: 1.16rem; }
       h1 { font-size: clamp(2.55rem, 14vw, 4rem); }
-      .hero-panel, .prose-card, .schedule-card, .cta-band { padding: 24px; }
-      .footer-grid, .footer-bottom { grid-template-columns: 1fr; display: grid; }
+      .hero-panel, .prose-card, .schedule-card, .cta-band, .contact-card { padding: 24px; }
+      .footer-grid, .footer-bottom, .form-grid { grid-template-columns: 1fr; display: grid; }
     }
 
   </style>
@@ -251,89 +279,10 @@
 
 
 <main>
-  <section class="watermark-hero portal-bg">
-    <div class="container hero-grid">
-      <div class="hero-panel">
-        <div class="eyebrow">Portal</div>
-        <h1>Client access.</h1>
-        <p class="lead">This page will provide access to Stonebridge’s client portal, telehealth appointments, billing, and forms. These tools are being prepared and are not yet connected.</p>
-        <p class="lead">Until portal links are active, use the consultation form, email, or phone number for routine practice contact.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="contact.html">Contact Stonebridge</a>
-          <a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com">Email the Practice</a>
-        </div>
-      </div>
-      <div class="quiet-note">
-        <strong>Portal status</strong><br /><br />
-        The portal system has not been connected yet. Routine contact should continue through the consultation form, email, or phone.
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-white">
-    <div class="container detail-layout">
-      <article class="prose-card">
-        <div class="eyebrow">Existing clients</div>
-        <h2>Routine tools, coming online.</h2>
-        <p>This page is being held for ordinary access needs: logging in, joining scheduled telehealth appointments, paying bills, and completing forms once those systems are connected.</p>
-        <div class="steps">
-          <div class="step"><strong>01</strong><span>Client portal access will be connected here once the system is active.</span></div>
-          <div class="step"><strong>02</strong><span>Telehealth access will be placed here after scheduling and portal setup are finalized.</span></div>
-          <div class="step"><strong>03</strong><span>Billing, payments, forms, and documents will be added when secure workflows are ready.</span></div>
-        </div>
-      </article>
-      <aside class="schedule-card" aria-label="Portal status">
-        <div class="eyebrow">Portal status</div>
-        <h2>Not connected yet</h2>
-        <div class="schedule-list">
-          <div class="schedule-row"><span class="schedule-label">Client portal</span><span class="schedule-value">Coming soon</span></div>
-          <div class="schedule-row"><span class="schedule-label">Telehealth link</span><span class="schedule-value">Coming soon</span></div>
-          <div class="schedule-row"><span class="schedule-label">Billing</span><span class="schedule-value">Coming soon</span></div>
-          <div class="schedule-row"><span class="schedule-label">Forms</span><span class="schedule-value">Coming soon</span></div>
-        </div>
-        <div class="schedule-note">For routine contact before these tools are live, use the consultation form, email, or phone.</div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section section-muted">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Routine access</div>
-          <h2>Administrative tools will appear here.</h2>
-        </div>
-        <p>Portal tools are intended for scheduling, telehealth access, billing, forms, and other routine administrative needs once connected.</p>
-      </div>
-      <div class="tool-grid">
-        <article class="tool-card"><div class="tool-number">01</div><div class="tool-status">Coming soon</div><h3>Client Portal</h3><p>Secure client account access will be connected here once the portal system is active.</p></article>
-        <article class="tool-card"><div class="tool-number">02</div><div class="tool-status">Coming soon</div><h3>Telehealth Appointment</h3><p>Telehealth access will be placed here after the scheduling and portal system are finalized.</p></article>
-        <article class="tool-card"><div class="tool-number">03</div><div class="tool-status">Coming soon</div><h3>Billing & Payments</h3><p>Payment and billing links will be connected when online billing is ready for use.</p></article>
-        <article class="tool-card"><div class="tool-number">04</div><div class="tool-status">Coming soon</div><h3>Forms & Documents</h3><p>Practice forms and documents will be available here when the secure workflow is connected.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-white">
-    <div class="container detail-layout">
-      <article class="prose-card">
-        <div class="eyebrow">Routine use</div>
-        <h2>For routine client matters only.</h2>
-        <p>Portal tools are intended for scheduling, telehealth access, billing, forms, and other routine administrative needs. They should not be used for emergencies or urgent crisis concerns.</p>
-        <div class="button-row">
-          <a class="btn btn-primary" href="contact.html">Contact Stonebridge</a>
-          <a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com">Email the Practice</a>
-        </div>
-      </article>
-      <article class="info-card" style="padding:28px;">
-        <div class="eyebrow">Use boundaries</div>
-        <h3>What this page is for</h3>
-        <p>Existing client access, telehealth, forms, billing, and connected administrative tools once available.</p>
-        <h3 style="margin-top:24px;">What this page is not for</h3>
-        <p>Urgent clinical communication, emergency use, or crisis response.</p>
-      </article>
-    </div>
-  </section>
+  <section class="image-hero portal-bg"><div class="container hero-grid"><div class="hero-panel"><div class="eyebrow">Client Access</div><h1>Client access is being prepared.</h1><p class="lead">This page will house secure access links once Stonebridge’s portal, telehealth, billing, and document systems are connected. For now, routine contact should continue through the consultation form, email, or phone.</p><div class="hero-actions"><a class="btn btn-primary" href="contact.html">Contact Stonebridge</a><a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com">Email the Practice</a></div></div><div class="quiet-note"><strong>Portal status</strong><br /><br />The portal system has not been connected yet. This page is reserved for routine client access once secure workflows are active.</div></div></section>
+  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Existing clients</div><h2>Routine tools will appear here.</h2><p>This page is being held for ordinary access needs: logging in, joining scheduled telehealth appointments, paying bills, and completing forms once those systems are connected.</p><div class="steps"><div class="step"><strong>01</strong><span>Client portal access link will be added once active.</span></div><div class="step"><strong>02</strong><span>Appointment access will be provided directly and then linked here when appropriate.</span></div><div class="step"><strong>03</strong><span>Billing, payments, forms, and documents will be added when secure workflows are ready.</span></div></div></article><aside class="schedule-card"><div class="eyebrow">Portal status</div><h2>Reserved for secure access</h2><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Client portal</span><span class="schedule-value">Access link to be added</span></div><div class="schedule-row"><span class="schedule-label">Telehealth</span><span class="schedule-value">Provided directly when scheduled</span></div><div class="schedule-row"><span class="schedule-label">Billing</span><span class="schedule-value">Online link to be added</span></div><div class="schedule-row"><span class="schedule-label">Forms</span><span class="schedule-value">Secure forms to be posted</span></div></div><div class="schedule-note">For routine contact before these tools are live, use the consultation form, email, or phone.</div></aside></div></section>
+  <section class="section section-muted"><div class="container"><div class="section-head"><div><div class="eyebrow">Routine access</div><h2>Administrative tools will appear here.</h2></div><p>Portal tools are intended for scheduling, telehealth access, billing, forms, and other routine administrative needs once connected.</p></div><div class="tool-grid"><article class="tool-card"><div class="tool-number">01</div><div class="tool-status">Access link will be added once active</div><h3>Client Portal</h3><p>Secure client account access will be connected here once the portal system is active.</p></article><article class="tool-card"><div class="tool-number">02</div><div class="tool-status">Provided directly when scheduled</div><h3>Telehealth Appointment</h3><p>Telehealth access will be provided for scheduled appointments and posted here when the portal workflow is ready.</p></article><article class="tool-card"><div class="tool-number">03</div><div class="tool-status">Online link will be added</div><h3>Billing & Payments</h3><p>Payment and billing links will be connected when online billing is ready for use.</p></article><article class="tool-card"><div class="tool-number">04</div><div class="tool-status">Secure forms will be posted</div><h3>Forms & Documents</h3><p>Practice forms and documents will be available here when the secure workflow is connected.</p></article></div></div></section>
+  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Routine use</div><h2>For routine client matters only.</h2><p>Portal tools are intended for scheduling, telehealth access, billing, forms, and other routine administrative needs. They should not be used for emergencies or urgent crisis concerns.</p><div class="button-row"><a class="btn btn-primary" href="contact.html">Contact Stonebridge</a><a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com">Email the Practice</a></div></article><article class="info-card"><div class="eyebrow">Use boundaries</div><h3>What this page is for</h3><p>Existing client access, telehealth, forms, billing, and connected administrative tools once available.</p><h3 style="margin-top:22px;">What this page is not for</h3><p>Urgent clinical communication, emergency use, or crisis response.</p></article></div></section>
 </main>
 
 
@@ -377,6 +326,8 @@
     <div>info@stonebridgepsychgroup.com · (773) 417-1688</div>
   </div>
 </footer>
+
+
 <script>
   (function () {
     var toggle = document.querySelector('.mobile-toggle');
@@ -391,6 +342,7 @@
   })();
 </script>
 <script src="script.js"></script>
+
 
 </body>
 </html>
