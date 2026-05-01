@@ -1,19 +1,909 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Therapist Profile | Stonebridge Psychological Group</title>
-  <meta name="description" content="Therapist Profile profile page at Stonebridge Psychological Group.">
-  <link rel="canonical" href="https://stonebridgepsychgroup.com/team-therapist-1.html">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
-  <style>.profile-simple-hero{padding:76px 0 58px;background:linear-gradient(180deg,#f7f3ee,#f2ebe4);border-bottom:1px solid rgba(221,211,199,.58)}.profile-simple-copy{max-width:760px}.profile-status{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(200,171,120,.55);background:rgba(255,255,255,.72);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:#8a7144;font-weight:700;width:max-content;margin-top:18px}.profile-status::before{content:"";width:8px;height:8px;border-radius:50%;background:#c8ab78}.profile-panel{border-radius:30px;border:1px solid var(--border);box-shadow:var(--card-shadow);background:linear-gradient(180deg,#fcfbf9,#f8f4ef);padding:34px;margin-top:28px}.profile-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.profile-line{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid rgba(221,211,199,.7);padding:14px 0}.profile-line:first-child{padding-top:0}.profile-line:last-child{border-bottom:0}.label{color:var(--muted)}.value{text-align:right;font-weight:500;color:var(--text)}@media(max-width:900px){.profile-detail-grid{grid-template-columns:1fr}}</style>
+  <meta name="description" content="Stonebridge Psychological Group clinician profiles, services, and consultation information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --ink: #14263d;
+      --ink-soft: #2d3f57;
+      --cream: #f7f1e7;
+      --cream-2: #fbf7ef;
+      --paper: #fffdf8;
+      --stone: #d8cbb8;
+      --gold: #b5945a;
+      --gold-soft: #d8c28e;
+      --walnut: #6e543d;
+      --line: rgba(20, 38, 61, 0.14);
+      --shadow: 0 20px 60px rgba(20, 38, 61, 0.10);
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 241, 231, 0.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      letter-spacing: .12em;
+      line-height: 1;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      font-family: var(--serif);
+      font-size: 1.42rem;
+      font-weight: 700;
+    }
+
+    .brand-sub {
+      margin-top: 4px;
+      font-size: .64rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .mobile-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-family: var(--sans);
+      font-weight: 600;
+    }
+
+    .menu-wrap {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .menu > a,
+    .nav-item > a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: rgba(20, 38, 61, .78);
+    }
+
+    .menu a.active,
+    .menu > a:hover,
+    .nav-item > a:hover {
+      color: var(--ink);
+      background: rgba(181, 148, 90, .13);
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .dropdown {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      min-width: 240px;
+      padding: 10px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    }
+
+    .nav-item:hover .dropdown,
+    .nav-item:focus-within .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: .86rem;
+      font-weight: 600;
+      color: rgba(20, 38, 61, .78);
+    }
+
+    .dropdown a:hover {
+      background: rgba(181, 148, 90, .12);
+      color: var(--ink);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-size: .88rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--ink);
+      color: white;
+      box-shadow: 0 10px 26px rgba(20, 38, 61, .16);
+    }
+
+    .btn-primary:hover { background: #0d1b2d; }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: rgba(20, 38, 61, .20);
+      color: var(--ink);
+    }
+
+    .btn-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .btn-text::after {
+      content: '→';
+      color: var(--gold);
+      transition: transform .18s ease;
+    }
+
+    .btn-text:hover::after { transform: translateX(3px); }
+
+    .page-hero {
+      padding: 86px 0 54px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(181,148,90,.20), transparent 34%),
+        linear-gradient(135deg, var(--cream-2), var(--cream));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      right: -9vw;
+      bottom: -150px;
+      width: min(540px, 58vw);
+      height: min(540px, 58vw);
+      border: 1px solid rgba(181, 148, 90, .22);
+      border-radius: 50% 50% 0 0;
+      opacity: .68;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      line-height: 1.02;
+      margin: 0;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      letter-spacing: -.035em;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 4.1vw, 3.5rem);
+      letter-spacing: -.025em;
+    }
+
+    h3 {
+      font-size: 1.72rem;
+      letter-spacing: -.015em;
+    }
+
+    .lead {
+      margin: 20px 0 0;
+      max-width: 720px;
+      color: rgba(20, 38, 61, .75);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions,
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section-white {
+      background: var(--paper);
+    }
+
+    .section-muted {
+      background: linear-gradient(180deg, var(--cream), var(--cream-2));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(280px, .65fr);
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: rgba(20, 38, 61, .70);
+    }
+
+    .anchor-offset { scroll-margin-top: 110px; }
+
+    .profile-feature {
+      display: grid;
+      grid-template-columns: minmax(280px, .55fr) minmax(0, 1fr);
+      gap: 34px;
+      background: linear-gradient(135deg, #fffdf8, #f7efe2);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-photo {
+      min-height: 100%;
+      background: #e9dfcf;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .profile-feature-copy {
+      padding: 42px;
+    }
+
+    .role {
+      margin-top: 10px;
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+
+    .profile-feature-copy p {
+      color: rgba(20, 38, 61, .76);
+      margin: 18px 0 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(181, 148, 90, .34);
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: rgba(181, 148, 90, .09);
+      color: rgba(20, 38, 61, .78);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .profile-grid,
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 100%;
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 14px 38px rgba(20, 38, 61, .07);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    a.profile-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      border-color: rgba(181, 148, 90, .35);
+    }
+
+    .profile-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .profile-mark {
+      width: 56px;
+      height: 56px;
+      border-radius: 50% 50% 50% 6px;
+      display: grid;
+      place-items: center;
+      background: rgba(181, 148, 90, .14);
+      border: 1px solid rgba(181, 148, 90, .28);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: rgba(20, 38, 61, .06);
+      color: rgba(20, 38, 61, .72);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .profile-card p,
+    .info-card p {
+      margin: 0;
+      color: rgba(20, 38, 61, .72);
+    }
+
+    .profile-card .btn-text {
+      margin-top: auto;
+    }
+
+    .quiet-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--gold);
+      background: rgba(181, 148, 90, .10);
+      color: rgba(20, 38, 61, .76);
+      border-radius: 0 18px 18px 0;
+    }
+
+    .detail-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .prose-card,
+    .schedule-card,
+    .info-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: 0 14px 42px rgba(20, 38, 61, .07);
+    }
+
+    .prose-card { padding: 38px; }
+
+    .prose-card h2 + p,
+    .prose-card h3 + p {
+      margin-top: 14px;
+    }
+
+    .prose-card p {
+      color: rgba(20, 38, 61, .76);
+      margin: 0 0 18px;
+    }
+
+    .prose-card ul {
+      padding-left: 1.15rem;
+      margin: 14px 0 0;
+      color: rgba(20, 38, 61, .76);
+    }
+
+    .prose-card li { margin: 8px 0; }
+
+    .schedule-card {
+      position: sticky;
+      top: 108px;
+      padding: 28px;
+    }
+
+    .schedule-card h2,
+    .schedule-card h3 {
+      font-size: 1.85rem;
+      margin-bottom: 8px;
+    }
+
+    .schedule-list {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0 0;
+    }
+
+    .schedule-row {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .schedule-label {
+      display: block;
+      color: rgba(20, 38, 61, .55);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .schedule-value {
+      display: block;
+      margin-top: 4px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .schedule-note {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: rgba(20, 38, 61, .70);
+      font-size: .92rem;
+    }
+
+    .availability-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .mini-card {
+      padding: 18px;
+      background: rgba(255, 253, 248, .75);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .mini-card strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .mini-card span {
+      color: rgba(20, 38, 61, .70);
+      font-size: .92rem;
+    }
+
+    .cta-band {
+      padding: 44px;
+      background: var(--ink);
+      color: white;
+      border-radius: 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 26px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-band h2 { color: white; }
+
+    .cta-band p {
+      color: rgba(255,255,255,.78);
+      margin: 14px 0 0;
+      max-width: 720px;
+    }
+
+    .cta-band .btn-primary {
+      background: white;
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .site-footer {
+      background: #102035;
+      color: white;
+      padding: 54px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.1fr) repeat(3, minmax(150px, .6fr)) 120px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      letter-spacing: .14em;
+      font-weight: 700;
+    }
+
+    .footer-sub,
+    .footer-title {
+      margin-top: 6px;
+      color: rgba(255,255,255,.76);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      color: rgba(255,255,255,.70);
+      max-width: 360px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+      color: rgba(255,255,255,.72);
+      font-size: .92rem;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .footer-logo-right img {
+      width: 104px;
+      opacity: .80;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.20));
+    }
+
+    .footer-bottom {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: rgba(255,255,255,.62);
+      font-size: .85rem;
+    }
+
+    @media (max-width: 940px) {
+      .mobile-toggle { display: inline-flex; }
+      .menu-wrap {
+        display: none;
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 78px;
+        padding: 18px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .menu-wrap.open,
+      .site-header.is-open .menu-wrap { display: flex; }
+      .menu { align-items: stretch; flex-direction: column; }
+      .nav-item > a,
+      .menu > a { justify-content: space-between; border-radius: 14px; }
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border-radius: 16px;
+        margin: 0 0 8px 12px;
+      }
+      .header-cta .btn { width: 100%; }
+      .hero-grid,
+      .section-head,
+      .profile-feature,
+      .detail-layout,
+      .cta-band { grid-template-columns: 1fr; }
+      .profile-photo img { min-height: 320px; }
+      .schedule-card { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-logo-right { display: none; }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .page-hero { padding: 62px 0 38px; }
+      .section { padding: 44px 0; }
+      .profile-grid,
+      .card-grid,
+      .availability-strip { grid-template-columns: 1fr; }
+      .profile-feature-copy,
+      .prose-card,
+      .cta-band { padding: 26px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
+      .status { white-space: normal; }
+    }
+</style>
 </head>
 <body>
-<header class="site-header"><div class="container nav"><a href="index.html"><div class="brand-mark">STONEBRIDGE</div><div class="brand-sub">Psychological Group</div></a><button class="mobile-toggle" aria-label="Toggle menu">Menu</button><div class="menu-wrap"><nav class="menu"><a href="index.html">Home</a><a href="about.html">About</a><div class="nav-dropdown"><a href="team.html" class="active">Team</a><div class="dropdown-menu"><a href="team.html">Team Overview</a><a href="team.html#founder">Founder</a><a href="team.html#psychologists">Psychologists</a><a href="team.html#therapists">Therapists</a></div></div><div class="nav-dropdown"><a href="services.html">Services</a><div class="dropdown-menu"><a href="services.html">Services Overview</a><a href="psychotherapy.html">Psychotherapy</a><a href="assessment.html">Psychological Assessment</a><a href="forensic.html">Forensic Services</a></div></div><a href="portal.html">Portal</a></nav><div class="header-cta"><a class="btn btn-primary" href="contact.html">Request a Consultation</a></div></div></div></header>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Stonebridge Psychological Group home">
+      <span class="brand-mark">STONEBRIDGE</span>
+      <span class="brand-sub">Psychological Group</span>
+    </a>
+    <button class="mobile-toggle" type="button" aria-label="Toggle menu">Menu</button>
+    <div class="menu-wrap">
+      <nav class="menu" aria-label="Primary navigation">
+        <a href="index.html" class="">Home</a>
+        <a href="about.html" class="">About</a>
+        <div class="nav-item">
+          <a href="team.html" class="active">Team</a>
+          <div class="dropdown" aria-label="Team pages">
+            <a href="team.html">Team Overview</a>
+            <a href="team-founder.html">Founder</a>
+            <a href="team.html#psychologists">Psychologists</a>
+            <a href="team.html#therapists">Therapists</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="services.html" class="">Services</a>
+          <div class="dropdown" aria-label="Service pages">
+            <a href="services.html">Services Overview</a>
+            <a href="psychotherapy.html">Psychotherapy</a>
+            <a href="assessment.html">Psychological Assessment</a>
+            <a href="forensic.html">Forensic Services</a>
+          </div>
+        </div>
+        <a href="portal.html" class="">Portal</a>
+      </nav>
+      <div class="header-cta"><a class="btn btn-primary" href="contact.html">Request a Consultation</a></div>
+    </div>
+  </div>
+</header>
+
+
 <main>
-<section class="profile-simple-hero"><div class="container profile-simple-copy"><div class="eyebrow">Team Profile</div><span class="profile-status">Profile being finalized</span><h1>Therapist Profile</h1><p style="max-width:48rem;margin-top:18px;">This therapist profile page is being prepared. Once finalized, it can include treatment approach, clinical focus, populations served, and availability.</p><div class="hero-actions"><a class="btn btn-primary" href="team.html">Back to Team</a><a class="btn btn-secondary" href="contact.html">Request a Consultation</a></div></div></section>
-<section class="section section-white"><div class="container profile-detail-grid"><div class="profile-panel"><div class="section-kicker">Profile status</div><p>This page is intentionally simple until the actual clinician biography, credentials, scope of practice, and availability details are ready to publish.</p><div class="tags"><span class="tag">No fake biography</span><span class="tag">No placeholder photo</span><span class="tag">Ready to complete</span></div></div><div class="profile-panel"><div class="section-kicker">Current details</div><div class="profile-line"><span class="label">Role</span><span class="value">Therapist</span></div><div class="profile-line"><span class="label">Biography</span><span class="value">Being finalized</span></div><div class="profile-line"><span class="label">Availability</span><span class="value">To be listed when confirmed</span></div><div class="profile-line"><span class="label">Consultation pathway</span><span class="value">Reviewed centrally</span></div></div></div></section>
+  <section class="page-hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Team Profile</div>
+        <h1>Therapist Profile</h1>
+        <p class="lead">This therapist profile is being completed with space for treatment approach, clinical focus, and current schedule.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+          <a class="btn btn-secondary" href="team.html">Back to Team</a>
+        </div>
+      </div>
+      <div class="profile-card" aria-label="Profile summary">
+        <div class="profile-card-top">
+          <div class="profile-mark">T</div>
+          <span class="status">Profile being completed</span>
+        </div>
+        <h3>Therapist Profile</h3>
+        <p>Treatment focus, populations served, consultation fit, and availability details are being completed for this therapist profile.</p>
+        <div class="tags">
+          <span class="tag">Clinical profile</span>
+          <span class="tag">Schedule section</span>
+          <span class="tag">Consultation pathway</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container detail-layout">
+      <article class="prose-card">
+        <div class="eyebrow">Profile</div>
+        <h2>Clinical details are being added.</h2>
+        <p>This page is being completed as a polished clinician landing page. Once finalized, it will describe the clinician’s biography, credentials, treatment or evaluation focus, populations served, scope of practice, and fit for new inquiries.</p>
+        <p>The page uses a text-forward profile structure while the clinician’s final biography, scope of practice, and schedule are completed.</p>
+        <div class="availability-strip">
+          <div class="mini-card"><strong>Role</strong><span>Therapist</span></div>
+          <div class="mini-card"><strong>Profile</strong><span>Being completed</span></div>
+          <div class="mini-card"><strong>Schedule</strong><span>Being entered</span></div>
+        </div>
+      </article>
+
+      <aside class="schedule-card" aria-label="Schedule and availability">
+        <div class="eyebrow">Schedule</div>
+        <h2>Availability</h2>
+        <p>Availability will be shown here once the clinician’s schedule is confirmed.</p>
+        <div class="schedule-list">
+          <div class="schedule-row"><span class="schedule-label">Current status</span><span class="schedule-value">Schedule being entered</span></div>
+          <div class="schedule-row"><span class="schedule-label">Consultation path</span><span class="schedule-value">Reviewed through Stonebridge</span></div>
+          <div class="schedule-row"><span class="schedule-label">Service format</span><span class="schedule-value">To be confirmed before scheduling</span></div>
+          <div class="schedule-row"><span class="schedule-label">New inquiries</span><span class="schedule-value">Use central consultation form</span></div>
+        </div>
+        <div class="schedule-note">Until this profile is finalized, new inquiries should continue through the main Stonebridge consultation process.</div>
+        <div class="button-row"><a class="btn btn-primary" href="contact.html">Request a Consultation</a></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container">
+      <div class="card-grid">
+        <article class="info-card" style="padding:28px;">
+          <div class="eyebrow">Clinical focus</div>
+          <h3>To be completed by profile review.</h3>
+          <p>This section will name the clinician’s areas of fit in plain language, without overstating competence or turning the page into a résumé.</p>
+        </article>
+        <article class="info-card" style="padding:28px;">
+          <div class="eyebrow">Scope</div>
+          <h3>Boundaries before marketing.</h3>
+          <p>The final profile should clarify what the clinician does, what they do not provide, and how consultation requests are reviewed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="site-footer"><div class="container footer-grid"><div><div class="footer-brand">STONEBRIDGE</div><div class="footer-sub">Psychological Group</div><p class="footer-copy">Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.</p></div><div><div class="footer-title">Services</div><div class="footer-links"><a href="psychotherapy.html">Psychotherapy</a><a href="assessment.html">Psychological Assessment</a><a href="forensic.html">Forensic Services</a><a href="contact.html">Consultation</a></div></div><div><div class="footer-title">Quick Links</div><div class="footer-links"><a href="about.html">About</a><a href="team.html">Team</a><a href="services.html">Services</a><a href="portal.html">Portal</a><a href="contact.html">Consultation</a></div></div><div><div class="footer-title">Contact</div><div class="footer-links"><span>Serving Illinois via telehealth</span><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a><a href="tel:+17734171688">(773) 417-1688</a><span>Consultation requests by form, email, or phone</span></div></div><div class="footer-logo-right"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo"></div></div><div class="container footer-bottom"><div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div><div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div></div></footer><script src="script.js"></script>
-</body></html>
+
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">STONEBRIDGE</div>
+      <div class="footer-sub">Psychological Group</div>
+      <p class="footer-copy">Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.</p>
+    </div>
+    <div>
+      <div class="footer-title">Services</div>
+      <div class="footer-links">
+        <a href="psychotherapy.html">Psychotherapy</a>
+        <a href="assessment.html">Psychological Assessment</a>
+        <a href="forensic.html">Forensic Services</a>
+        <a href="contact.html">Consultation</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-title">Quick Links</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="team.html">Team</a>
+        <a href="team-founder.html">Founder</a>
+        <a href="portal.html">Portal</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-title">Contact</div>
+      <div class="footer-links">
+        <span>Serving Illinois via telehealth</span>
+        <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+        <a href="tel:+17734171688">(773) 417-1688</a>
+      </div>
+    </div>
+    <div class="footer-logo-right">
+      <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" />
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <div>© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+    <div>info@stonebridgepsychgroup.com · (773) 417-1688</div>
+  </div>
+</footer>
+
+
+    <script>
+      (function () {
+        var toggle = document.querySelector('.mobile-toggle');
+        var menuWrap = document.querySelector('.menu-wrap');
+        var header = document.querySelector('.site-header');
+        if (toggle && menuWrap) {
+          toggle.addEventListener('click', function () {
+            menuWrap.classList.toggle('open');
+            if (header) header.classList.toggle('is-open');
+          });
+        }
+      })();
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
