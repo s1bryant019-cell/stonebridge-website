@@ -467,6 +467,221 @@
       .clinician-topline { align-items: flex-start; flex-direction: column; }
     }
 
+
+
+    /* === STONEBRIDGE HOME HEADER MATCH + TEAM HERO TIGHTEN ===
+       Purpose: keep desktop headers visually aligned with index.html and prevent
+       non-home pages from collapsing into stacked/mobile nav on desktop. */
+    @media (min-width: 901px) {
+      .site-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        background: rgba(247, 241, 231, 0.965) !important;
+        border-bottom: 1px solid rgba(20, 38, 61, 0.12) !important;
+        box-shadow: none !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+      }
+      .site-header .container.nav {
+        width: min(1320px, calc(100% - 48px)) !important;
+        min-height: 94px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 48px !important;
+      }
+      .site-header .brand {
+        display: inline-flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        min-width: max-content !important;
+        line-height: 1 !important;
+        letter-spacing: .12em !important;
+        margin: 0 !important;
+      }
+      .site-header .brand-mark {
+        font-family: var(--serif) !important;
+        font-size: clamp(1.72rem, 1.8vw, 2.05rem) !important;
+        font-weight: 700 !important;
+        letter-spacing: .16em !important;
+        line-height: .95 !important;
+        color: var(--ink) !important;
+        margin: 0 !important;
+      }
+      .site-header .brand-sub {
+        margin: 8px 0 0 !important;
+        font-size: .66rem !important;
+        font-weight: 700 !important;
+        letter-spacing: .22em !important;
+        text-transform: uppercase !important;
+        color: rgba(20, 38, 61, .62) !important;
+      }
+      .site-header .mobile-toggle {
+        display: none !important;
+      }
+      .site-header .menu-wrap {
+        position: static !important;
+        inset: auto !important;
+        width: auto !important;
+        max-width: none !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 26px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .site-header .menu {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .site-header .menu > a,
+      .site-header .nav-item > a {
+        width: auto !important;
+        min-width: 0 !important;
+        min-height: 44px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px 14px !important;
+        border-radius: 999px !important;
+        color: rgba(20, 38, 61, .74) !important;
+        font-size: .92rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0 !important;
+        text-transform: none !important;
+        background: transparent !important;
+        border: 0 !important;
+      }
+      .site-header .menu a.active,
+      .site-header .menu > a:hover,
+      .site-header .nav-item > a:hover,
+      .site-header .nav-item:focus-within > a {
+        color: var(--ink) !important;
+        background: rgba(181, 148, 90, .14) !important;
+      }
+      .site-header .header-cta {
+        display: block !important;
+        margin: 0 !important;
+      }
+      .site-header .header-cta .btn-primary {
+        width: auto !important;
+        min-height: 48px !important;
+        padding: 12px 26px !important;
+        border-radius: 999px !important;
+        background: var(--ink) !important;
+        color: #fff !important;
+        font-size: .90rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0 !important;
+        text-transform: none !important;
+        border: 1px solid transparent !important;
+        box-shadow: 0 10px 26px rgba(20, 38, 61, .18) !important;
+      }
+      .site-header .nav-item {
+        position: relative !important;
+        display: inline-flex !important;
+      }
+      .site-header .dropdown {
+        position: absolute !important;
+        left: 0 !important;
+        top: calc(100% + 4px) !important;
+        min-width: 240px !important;
+        padding: 10px !important;
+        display: block !important;
+        background: var(--paper) !important;
+        border: 1px solid var(--line) !important;
+        border-radius: 18px !important;
+        box-shadow: var(--shadow) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(8px) !important;
+        transition: opacity .18s ease, transform .18s ease, visibility .18s ease !important;
+      }
+      .site-header .nav-item:hover .dropdown,
+      .site-header .nav-item:focus-within .dropdown {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+      }
+      .site-header .dropdown a {
+        display: block !important;
+        width: auto !important;
+        padding: 10px 12px !important;
+        border-radius: 12px !important;
+        color: rgba(20, 38, 61, .78) !important;
+        font-size: .86rem !important;
+        font-weight: 700 !important;
+        background: transparent !important;
+      }
+      .site-header .dropdown a:hover {
+        color: var(--ink) !important;
+        background: rgba(181, 148, 90, .12) !important;
+      }
+    }
+
+    /* Team page: reduce the oversized hero/dead-space while preserving the nature backdrop. */
+    @media (min-width: 901px) {
+      .team-bg.image-hero {
+        min-height: 390px !important;
+        padding: 44px 0 46px !important;
+        align-items: center !important;
+        background-position: center 42% !important;
+      }
+      .team-bg .hero-grid {
+        grid-template-columns: minmax(0, .78fr) minmax(280px, .58fr) !important;
+        gap: 32px !important;
+        align-items: center !important;
+      }
+      .team-bg .hero-panel {
+        max-width: 600px !important;
+        padding: 28px 30px !important;
+        border-radius: 28px !important;
+      }
+      .team-bg .hero-panel h1 {
+        font-size: clamp(2.65rem, 4.6vw, 4.15rem) !important;
+        line-height: .97 !important;
+      }
+      .team-bg .hero-panel .lead {
+        margin-top: 16px !important;
+        font-size: 1rem !important;
+      }
+      .team-bg .quiet-note {
+        max-width: 390px !important;
+        padding: 18px 20px !important;
+        font-size: .92rem !important;
+      }
+      .team-bg .hero-actions {
+        margin-top: 20px !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .team-bg.image-hero {
+        min-height: auto !important;
+        padding: 56px 0 44px !important;
+      }
+    }
+
 </style>
 </head>
 <body>
