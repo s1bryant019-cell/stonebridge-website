@@ -237,6 +237,89 @@
       .footer-grid, .footer-bottom, .form-grid { grid-template-columns: 1fr; display: grid; }
     }
 
+  
+
+    /* Master header: aligned to the Home-page treatment */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 241, 231, 0.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(20, 38, 61, 0.12);
+    }
+    .site-header .container { width: min(1160px, calc(100% - 40px)); }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      letter-spacing: .12em;
+      line-height: 1;
+      min-width: max-content;
+    }
+    .brand-mark {
+      font-family: var(--serif);
+      font-size: 1.42rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .brand-sub {
+      margin-top: 5px;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(20, 38, 61, .66);
+    }
+    .menu-wrap { display: flex; align-items: center; gap: 22px; }
+    .menu { display: flex; align-items: center; gap: 4px; }
+    .menu > a, .nav-item > a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 700;
+      color: rgba(20, 38, 61, .74);
+    }
+    .menu a.active, .menu > a:hover, .nav-item > a:hover {
+      color: var(--ink);
+      background: rgba(181, 148, 90, .14);
+    }
+    .header-cta .btn-primary {
+      min-height: 48px;
+      padding: 12px 22px;
+      box-shadow: 0 10px 26px rgba(20, 38, 61, .17);
+    }
+    @media (max-width: 900px) {
+      .mobile-toggle { display: inline-flex; }
+      .menu-wrap {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: calc(100% + 10px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+      .menu-wrap.open { display: flex; }
+      .menu { flex-direction: column; align-items: stretch; }
+      .nav-item .dropdown { position: static; opacity: 1; visibility: visible; transform: none; margin-top: 4px; box-shadow: none; }
+      .header-cta .btn { width: 100%; }
+    }
+
   </style>
 </head>
 <body>
@@ -283,37 +366,47 @@
     <div class="container hero-grid">
       <div class="hero-panel">
         <div class="eyebrow">Team</div>
-        <h1>Clinical leadership, with additional profiles coming into view.</h1>
-        <p class="lead">Stonebridge is currently led by one active clinician profile. Additional team pages will be completed as clinician biographies, service fit, and scheduling information are finalized.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="team-founder.html">View founder profile</a><a class="btn btn-secondary" href="#psychologists">Browse team pages</a></div>
+        <h1>Current clinical leadership, with room to grow.</h1>
+        <p class="lead">Stonebridge is currently led by one active clinician profile. Additional profiles will be posted when biography, scope, service fit, and availability are ready for publication.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="team-founder.html">View founder profile</a><a class="btn btn-secondary" href="#psychologists">Browse profiles</a></div>
       </div>
-      <div class="quiet-note"><strong>Team pages</strong><br /><br />The team section is designed to grow without using fake headshots, stock-looking profile cards, or unfinished internal notes. Profiles are added when they are ready to read as real clinician pages.</div>
+      <div class="quiet-note"><strong>Team pages</strong><br /><br />Profiles are text-forward and added only when they can read as real clinician pages. No stock headshots, invented biographies, or internal placeholders.</div>
     </div>
   </section>
+
   <section id="founder" class="section section-white anchor-offset">
     <div class="container detail-layout">
       <article class="prose-card">
         <div class="eyebrow">Founder</div>
         <h2>Stephen W. Bryant, PsyD, LCPC</h2>
         <div class="role">Founder · Clinical Psychologist Postdoctoral / LCPC</div>
-        <p>Stonebridge is currently led by Dr. Bryant, whose work centers on telehealth psychotherapy for adults in Illinois. The practice is intentionally small, clinically grounded, and structured around careful fit rather than high-volume intake.</p>
-        <p>His background in trauma, substance use, complex presentations, assessment, and forensic psychology informs the broader direction of the practice, while psychotherapy remains the only active service pathway at this time.</p>
+        <p>Current work centers on telehealth psychotherapy for adults in Illinois. Stonebridge is intentionally small, clinically grounded, and structured around careful fit rather than high-volume intake.</p>
+        <p>Background in trauma, substance use, complex presentations, assessment, and forensic psychology informs the broader direction of the practice while psychotherapy remains the active service pathway.</p>
         <div class="tags"><span class="tag">Telehealth psychotherapy</span><span class="tag">Adults in Illinois</span><span class="tag">Trauma and complexity</span><span class="tag">Assessment-informed</span></div>
         <div class="button-row"><a class="btn btn-primary" href="team-founder.html">See full profile</a></div>
       </article>
-      <aside class="schedule-card"><div class="eyebrow">Current practice status</div><h2>Active service and scheduling</h2><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Psychotherapy</span><span class="schedule-value">Active</span></div><div class="schedule-row"><span class="schedule-label">Format</span><span class="schedule-value">Telehealth only</span></div><div class="schedule-row"><span class="schedule-label">Scheduling</span><span class="schedule-value">Coordinated after consultation review</span></div><div class="schedule-row"><span class="schedule-label">Assessment</span><span class="schedule-value">Not currently open</span></div><div class="schedule-row"><span class="schedule-label">Forensic services</span><span class="schedule-value">Not currently open</span></div></div></aside>
+      <aside class="schedule-card">
+        <div class="eyebrow">Current status</div><h2>Availability</h2>
+        <div class="schedule-list">
+          <div class="schedule-row"><span class="schedule-label">Psychotherapy</span><span class="schedule-value">Accepting inquiries</span></div>
+          <div class="schedule-row"><span class="schedule-label">Format</span><span class="schedule-value">Telehealth only</span></div>
+          <div class="schedule-row"><span class="schedule-label">Scheduling</span><span class="schedule-value">After consultation review</span></div>
+        </div>
+      </aside>
     </div>
   </section>
+
   <section id="psychologists" class="section section-muted anchor-offset">
-    <div class="container"><div class="section-head"><div><div class="eyebrow">Psychologists</div><h2>Psychologist profiles in development.</h2></div><p>These pages are prepared so clinician profiles can be added in a clean, consistent format once a real biography, areas of focus, and scheduling information are ready.</p></div><div class="profile-grid">
-      <a class="profile-card" href="team-psychologist-1.html"><div class="profile-card-top"><div class="profile-mark">P</div><span class="status">Full profile forthcoming</span></div><h3>Psychologist</h3><div class="role">Biography, specialties, and schedule to be posted</div><p>This page is ready for a completed psychologist profile, including clinical orientation, populations served, and current availability.</p><div class="tags"><span class="tag">Psychologist</span><span class="tag">Profile in development</span></div><span class="btn-text">See more</span></a>
-      <a class="profile-card" href="team-psychologist-2.html"><div class="profile-card-top"><div class="profile-mark">P</div><span class="status">Full profile forthcoming</span></div><h3>Psychologist</h3><div class="role">Professional profile and availability coming soon</div><p>This landing page is prepared for another psychologist profile and will expand once the clinician’s role and schedule are ready to publish.</p><div class="tags"><span class="tag">Psychologist</span><span class="tag">Schedule to be posted</span></div><span class="btn-text">See more</span></a>
+    <div class="container"><div class="section-head"><div><div class="eyebrow">Psychologists</div><h2>Psychologist profiles forthcoming.</h2></div><p>These pages are reserved for real clinician profiles as the practice expands.</p></div><div class="profile-grid">
+      <a class="profile-card" href="team-psychologist-1.html"><div class="profile-card-top"><div class="profile-mark">P</div><span class="status">Forthcoming</span></div><h3>Psychologist</h3><div class="role">Biography and availability to be posted</div><p>A full profile will appear here once the clinician’s role, specialties, and schedule are finalized.</p><span class="btn-text">See more</span></a>
+      <a class="profile-card" href="team-psychologist-2.html"><div class="profile-card-top"><div class="profile-mark">P</div><span class="status">Forthcoming</span></div><h3>Psychologist</h3><div class="role">Professional profile coming soon</div><p>This page is prepared for a psychologist profile and will expand when the details are ready to publish.</p><span class="btn-text">See more</span></a>
     </div></div>
   </section>
+
   <section id="therapists" class="section section-white anchor-offset">
-    <div class="container"><div class="section-head"><div><div class="eyebrow">Therapists</div><h2>Therapist pages, ready for fuller profiles.</h2></div><p>Therapist pages follow the same structure: a clear introduction, a concise clinical overview, and a schedule section that becomes visible when the profile is finalized.</p></div><div class="profile-grid">
-      <a class="profile-card" href="team-therapist-1.html"><div class="profile-card-top"><div class="profile-mark">T</div><span class="status">Full profile forthcoming</span></div><h3>Therapist</h3><div class="role">Treatment approach and scheduling details to be added</div><p>This page is ready for a therapist profile, including treatment approach, areas of fit, service format, and availability.</p><div class="tags"><span class="tag">Therapist</span><span class="tag">Profile in development</span></div><span class="btn-text">See more</span></a>
-      <a class="profile-card" href="team-therapist-2.html"><div class="profile-card-top"><div class="profile-mark">T</div><span class="status">Full profile forthcoming</span></div><h3>Therapist</h3><div class="role">Biography and service information coming soon</div><p>This page holds space for another therapist profile so it can be completed in the same editorial format as the rest of the team section.</p><div class="tags"><span class="tag">Therapist</span><span class="tag">Schedule to be posted</span></div><span class="btn-text">See more</span></a>
+    <div class="container"><div class="section-head"><div><div class="eyebrow">Therapists</div><h2>Therapist profiles forthcoming.</h2></div><p>Each profile will include a concise clinical introduction, service format, and availability when finalized.</p></div><div class="profile-grid">
+      <a class="profile-card" href="team-therapist-1.html"><div class="profile-card-top"><div class="profile-mark">T</div><span class="status">Forthcoming</span></div><h3>Therapist</h3><div class="role">Treatment focus to be added</div><p>A full profile will appear here once the therapist’s approach, fit, and schedule are finalized.</p><span class="btn-text">See more</span></a>
+      <a class="profile-card" href="team-therapist-2.html"><div class="profile-card-top"><div class="profile-mark">T</div><span class="status">Forthcoming</span></div><h3>Therapist</h3><div class="role">Biography and service information coming soon</div><p>This page is reserved for another therapist profile in the same editorial format.</p><span class="btn-text">See more</span></a>
     </div></div>
   </section>
 </main>
@@ -324,7 +417,7 @@
     <div>
       <div class="footer-brand">STONEBRIDGE</div>
       <div class="footer-sub">Psychological Group</div>
-      <p class="footer-copy">Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.</p>
+      <p class="footer-copy">Psychotherapy inquiries are currently accepted for adults in Illinois. Assessment and forensic services are informational only at this time.</p>
     </div>
     <div>
       <div class="footer-title">Services</div>

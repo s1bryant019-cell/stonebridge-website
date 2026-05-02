@@ -237,6 +237,89 @@
       .footer-grid, .footer-bottom, .form-grid { grid-template-columns: 1fr; display: grid; }
     }
 
+  
+
+    /* Master header: aligned to the Home-page treatment */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 241, 231, 0.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(20, 38, 61, 0.12);
+    }
+    .site-header .container { width: min(1160px, calc(100% - 40px)); }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      letter-spacing: .12em;
+      line-height: 1;
+      min-width: max-content;
+    }
+    .brand-mark {
+      font-family: var(--serif);
+      font-size: 1.42rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .brand-sub {
+      margin-top: 5px;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(20, 38, 61, .66);
+    }
+    .menu-wrap { display: flex; align-items: center; gap: 22px; }
+    .menu { display: flex; align-items: center; gap: 4px; }
+    .menu > a, .nav-item > a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 700;
+      color: rgba(20, 38, 61, .74);
+    }
+    .menu a.active, .menu > a:hover, .nav-item > a:hover {
+      color: var(--ink);
+      background: rgba(181, 148, 90, .14);
+    }
+    .header-cta .btn-primary {
+      min-height: 48px;
+      padding: 12px 22px;
+      box-shadow: 0 10px 26px rgba(20, 38, 61, .17);
+    }
+    @media (max-width: 900px) {
+      .mobile-toggle { display: inline-flex; }
+      .menu-wrap {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: calc(100% + 10px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+      .menu-wrap.open { display: flex; }
+      .menu { flex-direction: column; align-items: stretch; }
+      .nav-item .dropdown { position: static; opacity: 1; visibility: visible; transform: none; margin-top: 4px; box-shadow: none; }
+      .header-cta .btn { width: 100%; }
+    }
+
   </style>
 </head>
 <body>
@@ -279,10 +362,9 @@
 
 
 <main>
-  <section class="image-hero services-bg"><div class="container hero-grid"><div class="hero-panel"><div class="eyebrow">Forensic Services</div><h1>Forensic work requires restraint.</h1><p class="lead">Forensic services are not currently available for new requests. This page clarifies the intended future stance: assessment-informed, role-conscious, bounded, and clear about limits.</p><div class="hero-actions"><a class="btn btn-secondary" href="services.html">Return to Services</a></div></div><div class="quiet-note"><strong>Current status</strong><br /><br />Forensic services are not currently open for scheduling. This page describes future scope and boundaries without inviting new forensic requests.</div></div></section>
-  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Not currently available</div><h2>Forensic services are not currently available.</h2><p>Stonebridge is not currently accepting new forensic service requests. The consultation form is configured to prevent forensic submissions. If you are seeking psychotherapy, please return to the available psychotherapy pathway.</p></article><aside class="schedule-card"><div class="eyebrow">Availability</div><h2>Status</h2><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Forensic services</span><span class="schedule-value">Not currently available</span></div><div class="schedule-row"><span class="schedule-label">Psychotherapy</span><span class="schedule-value">Current active service</span></div><div class="schedule-row"><span class="schedule-label">Form status</span><span class="schedule-value">Forensic requests blocked</span></div></div></aside></div></section>
-  <section class="section section-muted"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Role clarity</div><h2>Evaluation is not advocacy in disguise.</h2><p>Future forensic work at Stonebridge should distinguish treatment from evaluation, clinical care from legal opinion, and advocacy from disciplined psychological judgment. The evaluator’s task is to answer a defined question with professional integrity.</p><div class="tags"><span class="tag">Defined referral question</span><span class="tag">Role boundaries</span><span class="tag">Records and collateral data</span><span class="tag">Limits of opinion</span><span class="tag">Defensible reasoning</span><span class="tag">Clear scope</span></div></article><article class="info-card"><div class="eyebrow">Future scope</div><h3>Assessment-informed, not courtroom-themed.</h3><p>The future forensic direction should stay psychological: careful evaluation, record review, consultation, referral-question clarification, and reports or opinions grounded in data and limits.</p></article></div></section>
-  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Future practice standard</div><h2>Scope before opinion.</h2><p>Future requests would require screening for role conflict, fit, scope, records, deadlines, and whether the requested opinion can be ethically evaluated.</p><p>Good forensic writing should make reasoning, uncertainty, and limits visible rather than overstating what the data can support.</p></article><article class="info-card"><div class="eyebrow">Current active service</div><h3>Psychotherapy remains the current pathway.</h3><p>If you are seeking psychotherapy, use the consultation form. If you are seeking forensic services specifically, Stonebridge is not currently accepting those requests.</p></article></div></section>
+  <section class="image-hero services-bg"><div class="container hero-grid"><div class="hero-panel"><div class="eyebrow">Forensic Services</div><h1>Forensic work requires restraint.</h1><p class="lead">Forensic services are not currently available for new requests. This page describes the intended future stance: assessment-informed, role-conscious, bounded, and clear about limits.</p><div class="hero-actions"><a class="btn btn-secondary" href="services.html">Return to Services</a></div></div><div class="quiet-note"><strong>Current status</strong><br /><br />Psychotherapy remains the active service pathway. Forensic services are informational at this time.</div></div></section>
+  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Role clarity</div><h2>Evaluation is not advocacy in disguise.</h2><p>Future forensic work at Stonebridge should distinguish treatment from evaluation, clinical care from legal opinion, and advocacy from disciplined psychological judgment. The evaluator’s task is to answer a defined question with professional integrity.</p><div class="tags"><span class="tag">Defined referral question</span><span class="tag">Role boundaries</span><span class="tag">Records and collateral data</span><span class="tag">Limits of opinion</span><span class="tag">Defensible reasoning</span></div></article><aside class="schedule-card"><div class="eyebrow">Availability</div><h2>Status</h2><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Forensic services</span><span class="schedule-value">Not currently available</span></div><div class="schedule-row"><span class="schedule-label">Psychotherapy</span><span class="schedule-value">Current active service</span></div></div></aside></div></section>
+  <section class="section section-muted"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Future practice standard</div><h2>Scope before opinion.</h2><p>Future requests would require screening for role conflict, fit, scope, records, deadlines, and whether the requested opinion can be ethically evaluated.</p><p>Good forensic writing should make reasoning, uncertainty, and limits visible rather than overstating what the data can support.</p></article><article class="info-card"><div class="eyebrow">Future scope</div><h3>Assessment-informed, not courtroom-themed.</h3><p>The future direction should stay psychological: careful evaluation, record review, referral-question clarification, and opinions grounded in data and limits.</p></article></div></section>
 </main>
 
 
@@ -291,7 +373,7 @@
     <div>
       <div class="footer-brand">STONEBRIDGE</div>
       <div class="footer-sub">Psychological Group</div>
-      <p class="footer-copy">Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.</p>
+      <p class="footer-copy">Psychotherapy inquiries are currently accepted for adults in Illinois. Assessment and forensic services are informational only at this time.</p>
     </div>
     <div>
       <div class="footer-title">Services</div>

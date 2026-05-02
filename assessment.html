@@ -237,6 +237,89 @@
       .footer-grid, .footer-bottom, .form-grid { grid-template-columns: 1fr; display: grid; }
     }
 
+  
+
+    /* Master header: aligned to the Home-page treatment */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 241, 231, 0.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(20, 38, 61, 0.12);
+    }
+    .site-header .container { width: min(1160px, calc(100% - 40px)); }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      letter-spacing: .12em;
+      line-height: 1;
+      min-width: max-content;
+    }
+    .brand-mark {
+      font-family: var(--serif);
+      font-size: 1.42rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .brand-sub {
+      margin-top: 5px;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(20, 38, 61, .66);
+    }
+    .menu-wrap { display: flex; align-items: center; gap: 22px; }
+    .menu { display: flex; align-items: center; gap: 4px; }
+    .menu > a, .nav-item > a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 700;
+      color: rgba(20, 38, 61, .74);
+    }
+    .menu a.active, .menu > a:hover, .nav-item > a:hover {
+      color: var(--ink);
+      background: rgba(181, 148, 90, .14);
+    }
+    .header-cta .btn-primary {
+      min-height: 48px;
+      padding: 12px 22px;
+      box-shadow: 0 10px 26px rgba(20, 38, 61, .17);
+    }
+    @media (max-width: 900px) {
+      .mobile-toggle { display: inline-flex; }
+      .menu-wrap {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: calc(100% + 10px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+      .menu-wrap.open { display: flex; }
+      .menu { flex-direction: column; align-items: stretch; }
+      .nav-item .dropdown { position: static; opacity: 1; visibility: visible; transform: none; margin-top: 4px; box-shadow: none; }
+      .header-cta .btn { width: 100%; }
+    }
+
   </style>
 </head>
 <body>
@@ -279,10 +362,9 @@
 
 
 <main>
-  <section class="image-hero services-bg"><div class="container hero-grid"><div class="hero-panel"><div class="eyebrow">Psychological Assessment</div><h1>Assessment should clarify complexity.</h1><p class="lead">Assessment is not currently available for new requests. This page explains the intended direction of future assessment work: referral-driven, parsimonious, clinically useful, and clearly written.</p><div class="hero-actions"><a class="btn btn-secondary" href="services.html">Return to Services</a></div></div><div class="quiet-note"><strong>Current status</strong><br /><br />Future assessment work will require the right systems, scope, referral questions, and scheduling capacity. It is not currently open for new requests.</div></div></section>
-  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Not currently available</div><h2>Assessment is not currently available.</h2><p>Stonebridge is not currently accepting new psychological assessment requests. The consultation form is configured to prevent assessment submissions. If you are seeking psychotherapy, please return to the available psychotherapy pathway.</p><p>Assessment remains visible because it is part of the broader Stonebridge model and informs the practice’s clinical judgment.</p></article><aside class="schedule-card"><div class="eyebrow">Availability</div><h2>Status</h2><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Assessment</span><span class="schedule-value">Not currently available</span></div><div class="schedule-row"><span class="schedule-label">Psychotherapy</span><span class="schedule-value">Current active service</span></div><div class="schedule-row"><span class="schedule-label">Form status</span><span class="schedule-value">Assessment requests blocked</span></div></div></aside></div></section>
-  <section class="section section-muted"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Assessment background</div><h2>Testing should answer a question.</h2><p>Dr. Bryant’s assessment background includes psychodiagnostic, psychological, neuropsychological, personality, projective, trauma, ADHD, autism, substance use, and differential diagnostic assessment across inpatient, PHP, IOP, and outpatient practice settings.</p><div class="tags"><span class="tag">Diagnostic clarification</span><span class="tag">Neuropsychological screening</span><span class="tag">Personality assessment</span><span class="tag">Trauma & dissociation</span><span class="tag">ADHD / executive functioning</span><span class="tag">Autism / adaptive functioning</span></div></article><article class="info-card"><div class="eyebrow">Future approach</div><h3>Parsimonious, hypothesis-driven batteries.</h3><p>Future assessment work should select the minimum clinician-administered testing needed to answer the referral question, while using self-report and informant measures thoughtfully.</p></article></div></section>
-  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Future approach</div><h2>Clear questions. Useful reports.</h2><p>Possible domains include cognitive, executive, memory, learning, mood, anxiety, trauma, dissociation, ADHD, autism, personality, and adaptive functioning.</p><p>Depending on age and referral question, future batteries may draw from measures such as WAIS/WISC/WASI, RBANS, D-KEFS, TOVA, CVLT, WMS, MMPI, PAI, Rorschach/R-PAS, TAT, SRS, Vineland, BASC, Conners, BRIEF, PCL-5, or CAPS-5.</p></article><article class="info-card"><div class="eyebrow">Report standard</div><h3>Findings should be usable.</h3><p>The goal is clear formulation, defensible findings, and recommendations that people can actually use.</p></article></div></section>
+  <section class="image-hero services-bg"><div class="container hero-grid"><div class="hero-panel"><div class="eyebrow">Psychological Assessment</div><h1>Assessment should clarify complexity.</h1><p class="lead">Assessment is not currently available for new requests. This page describes the future direction of assessment work: referral-driven, parsimonious, clinically useful, and clearly written.</p><div class="hero-actions"><a class="btn btn-secondary" href="services.html">Return to Services</a></div></div><div class="quiet-note"><strong>Current status</strong><br /><br />Psychotherapy remains the active service pathway. Assessment is informational at this time.</div></div></section>
+  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Assessment background</div><h2>Testing should answer a question.</h2><p>Assessment background includes psychodiagnostic, psychological, neuropsychological, personality, projective, trauma, ADHD, autism, substance use, and differential diagnostic assessment across multiple levels of care.</p><p>Future assessment work should select the minimum clinician-administered testing needed to answer the referral question, while using self-report and informant measures thoughtfully.</p><div class="tags"><span class="tag">Diagnostic clarification</span><span class="tag">Personality assessment</span><span class="tag">Trauma & dissociation</span><span class="tag">ADHD / executive functioning</span><span class="tag">Autism / adaptive functioning</span></div></article><aside class="schedule-card"><div class="eyebrow">Availability</div><h2>Status</h2><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Assessment</span><span class="schedule-value">Not currently available</span></div><div class="schedule-row"><span class="schedule-label">Psychotherapy</span><span class="schedule-value">Current active service</span></div></div></aside></div></section>
+  <section class="section section-muted"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Future approach</div><h2>Clear questions. Useful reports.</h2><p>Possible domains include cognitive, executive, memory, learning, mood, anxiety, trauma, dissociation, ADHD, autism, personality, and adaptive functioning.</p><p>Depending on age and referral question, future batteries may draw from measures such as WAIS/WISC/WASI, RBANS, D-KEFS, TOVA, CVLT, WMS, MMPI, PAI, Rorschach/R-PAS, TAT, SRS, Vineland, BASC, Conners, BRIEF, PCL-5, or CAPS-5.</p></article><article class="info-card"><div class="eyebrow">Report standard</div><h3>Findings should be usable.</h3><p>The goal is clear formulation, defensible findings, and recommendations that people can actually use.</p></article></div></section>
 </main>
 
 
@@ -291,7 +373,7 @@
     <div>
       <div class="footer-brand">STONEBRIDGE</div>
       <div class="footer-sub">Psychological Group</div>
-      <p class="footer-copy">Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.</p>
+      <p class="footer-copy">Psychotherapy inquiries are currently accepted for adults in Illinois. Assessment and forensic services are informational only at this time.</p>
     </div>
     <div>
       <div class="footer-title">Services</div>

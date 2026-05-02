@@ -397,6 +397,89 @@
       .portal-intro, .portal-tools, .portal-boundary { padding: 22px; }
     }
 
+  
+
+    /* Master header: aligned to the Home-page treatment */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 241, 231, 0.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(20, 38, 61, 0.12);
+    }
+    .site-header .container { width: min(1160px, calc(100% - 40px)); }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      letter-spacing: .12em;
+      line-height: 1;
+      min-width: max-content;
+    }
+    .brand-mark {
+      font-family: var(--serif);
+      font-size: 1.42rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .brand-sub {
+      margin-top: 5px;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(20, 38, 61, .66);
+    }
+    .menu-wrap { display: flex; align-items: center; gap: 22px; }
+    .menu { display: flex; align-items: center; gap: 4px; }
+    .menu > a, .nav-item > a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 700;
+      color: rgba(20, 38, 61, .74);
+    }
+    .menu a.active, .menu > a:hover, .nav-item > a:hover {
+      color: var(--ink);
+      background: rgba(181, 148, 90, .14);
+    }
+    .header-cta .btn-primary {
+      min-height: 48px;
+      padding: 12px 22px;
+      box-shadow: 0 10px 26px rgba(20, 38, 61, .17);
+    }
+    @media (max-width: 900px) {
+      .mobile-toggle { display: inline-flex; }
+      .menu-wrap {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: calc(100% + 10px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+      .menu-wrap.open { display: flex; }
+      .menu { flex-direction: column; align-items: stretch; }
+      .nav-item .dropdown { position: static; opacity: 1; visibility: visible; transform: none; margin-top: 4px; box-shadow: none; }
+      .header-cta .btn { width: 100%; }
+    }
+
   </style>
 </head>
 <body>
@@ -441,61 +524,27 @@
 <main>
   <section class="portal-shell" aria-label="Client access portal">
     <div class="container portal-dashboard">
-      <article class="portal-intro">
-        <div>
-          <div class="eyebrow">Client Access</div>
-          <h1>Client access.</h1>
-          <p class="lead">A reserved access hub for secure portal, telehealth, billing, and forms once Stonebridge’s client systems are connected.</p>
-        </div>
-        <div>
-          <div class="portal-status-pill">Portal not connected yet</div>
-          <p>For now, routine contact should continue through the consultation form, email, or phone.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">Contact Stonebridge</a>
-            <a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com">Email the Practice</a>
-          </div>
-        </div>
-      </article>
-
+      <aside class="portal-intro-card">
+        <div class="eyebrow">Client Access</div>
+        <h1>Client access.</h1>
+        <p class="lead">A reserved hub for secure portal, telehealth, billing, and forms once Stonebridge’s client systems are connected.</p>
+        <div class="portal-status"><span>Portal not connected yet</span><p>Routine contact should continue through the consultation form, email, or phone.</p></div>
+        <div class="button-row"><a class="btn btn-primary" href="contact.html">Contact Stonebridge</a><a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com">Email the Practice</a></div>
+      </aside>
       <section class="portal-tools" aria-label="Portal tools">
-        <div class="portal-tools-head">
-          <div>
-            <div class="eyebrow">Routine tools</div>
-            <h2>Prepared for secure access.</h2>
-          </div>
+        <div class="tools-header"><div><div class="eyebrow">Routine tools</div><h2>Prepared for secure access.</h2></div></div>
+        <div class="tool-grid">
+          <article class="tool-card"><span>01</span><h3>Client Portal</h3><p>Secure account access will be added when active.</p></article>
+          <article class="tool-card"><span>02</span><h3>Telehealth</h3><p>Appointment links will be provided directly.</p></article>
+          <article class="tool-card"><span>03</span><h3>Billing</h3><p>Online payment access will be added when ready.</p></article>
+          <article class="tool-card"><span>04</span><h3>Forms</h3><p>Practice forms and documents will appear here when connected.</p></article>
         </div>
-        <div class="portal-compact-grid">
-          <article class="portal-tool">
-            <div class="portal-tool-top"><span class="portal-tool-number">01</span><span class="portal-tool-status">To be added</span></div>
-            <h3>Client Portal</h3>
-            <p>Secure account access will be connected here once the portal system is active.</p>
-          </article>
-          <article class="portal-tool">
-            <div class="portal-tool-top"><span class="portal-tool-number">02</span><span class="portal-tool-status">Provided directly</span></div>
-            <h3>Telehealth</h3>
-            <p>Appointment links will be provided directly and posted here when the workflow is ready.</p>
-          </article>
-          <article class="portal-tool">
-            <div class="portal-tool-top"><span class="portal-tool-number">03</span><span class="portal-tool-status">To be added</span></div>
-            <h3>Billing</h3>
-            <p>Payment and billing links will be connected when online billing is ready.</p>
-          </article>
-          <article class="portal-tool">
-            <div class="portal-tool-top"><span class="portal-tool-number">04</span><span class="portal-tool-status">To be posted</span></div>
-            <h3>Forms</h3>
-            <p>Practice forms and documents will appear here when secure workflows are connected.</p>
-          </article>
-        </div>
-      </section>
-
-      <aside class="portal-boundary" aria-label="Portal use boundaries">
-        <div>
+        <div class="portal-emergency">
           <div class="eyebrow">Routine use only</div>
           <h3>Not for emergencies or urgent crisis concerns.</h3>
           <p>This page is for routine administrative access only. If there is immediate danger or a medical emergency, call <a href="tel:911">911</a> or go to the nearest emergency room. For mental health, suicide/self-harm, or substance-use crisis support in Illinois or Chicago, call or text <a href="tel:988">988</a>, or use <a href="https://988lifeline.org/" target="_blank" rel="noopener">988lifeline.org</a>.</p>
         </div>
-        <a class="btn btn-secondary" href="contact.html">Routine contact</a>
-      </aside>
+      </section>
     </div>
   </section>
 </main>
@@ -506,7 +555,7 @@
     <div>
       <div class="footer-brand">STONEBRIDGE</div>
       <div class="footer-sub">Psychological Group</div>
-      <p class="footer-copy">Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.</p>
+      <p class="footer-copy">Psychotherapy inquiries are currently accepted for adults in Illinois. Assessment and forensic services are informational only at this time.</p>
     </div>
     <div>
       <div class="footer-title">Services</div>

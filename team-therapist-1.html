@@ -237,6 +237,89 @@
       .footer-grid, .footer-bottom, .form-grid { grid-template-columns: 1fr; display: grid; }
     }
 
+  
+
+    /* Master header: aligned to the Home-page treatment */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 241, 231, 0.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(20, 38, 61, 0.12);
+    }
+    .site-header .container { width: min(1160px, calc(100% - 40px)); }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      letter-spacing: .12em;
+      line-height: 1;
+      min-width: max-content;
+    }
+    .brand-mark {
+      font-family: var(--serif);
+      font-size: 1.42rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .brand-sub {
+      margin-top: 5px;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(20, 38, 61, .66);
+    }
+    .menu-wrap { display: flex; align-items: center; gap: 22px; }
+    .menu { display: flex; align-items: center; gap: 4px; }
+    .menu > a, .nav-item > a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 700;
+      color: rgba(20, 38, 61, .74);
+    }
+    .menu a.active, .menu > a:hover, .nav-item > a:hover {
+      color: var(--ink);
+      background: rgba(181, 148, 90, .14);
+    }
+    .header-cta .btn-primary {
+      min-height: 48px;
+      padding: 12px 22px;
+      box-shadow: 0 10px 26px rgba(20, 38, 61, .17);
+    }
+    @media (max-width: 900px) {
+      .mobile-toggle { display: inline-flex; }
+      .menu-wrap {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: calc(100% + 10px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+      .menu-wrap.open { display: flex; }
+      .menu { flex-direction: column; align-items: stretch; }
+      .nav-item .dropdown { position: static; opacity: 1; visibility: visible; transform: none; margin-top: 4px; box-shadow: none; }
+      .header-cta .btn { width: 100%; }
+    }
+
   </style>
 </head>
 <body>
@@ -279,9 +362,8 @@
 
 
 <main>
-  <section class="image-hero profile-bg"><div class="container hero-grid"><div class="hero-panel"><div class="eyebrow">Clinician Profile</div><h1>Therapist</h1><p class="lead">This page is open as a therapist profile and will be completed with biography, clinical focus, and scheduling information as the profile is finalized.</p><div class="hero-actions"><a class="btn btn-secondary" href="team.html">Back to Team</a></div></div><div class="quiet-note"><strong>Profile status</strong><br /><br />The profile is being finalized in a patient-facing format. A fuller biography, areas of focus, and scheduling details will appear here once publication is complete.</div></div></section>
-  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">About this page</div><h2>A live landing page for an incoming clinician.</h2><p>This page is intentionally live before the full profile is published. It allows Stonebridge to add clinician pages in a clean, consistent way without relying on stock photography, invented biographies, or internal-facing placeholder language.</p><p>Once completed, this page will describe the therapist’s background, treatment style, populations served, service format, and fit for new inquiries.</p><div class="availability-strip"><div class="mini-card"><strong>Role</strong><span>Therapist</span></div><div class="mini-card"><strong>Profile</strong><span>In development</span></div><div class="mini-card"><strong>Schedule</strong><span>Will be posted with the full profile</span></div></div></article><aside class="schedule-card"><div class="eyebrow">Schedule</div><h2>Availability</h2><p>Scheduling details will appear here once the profile is finalized.</p><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Current status</span><span class="schedule-value">Profile in development</span></div><div class="schedule-row"><span class="schedule-label">Scheduling</span><span class="schedule-value">Not yet posted</span></div><div class="schedule-row"><span class="schedule-label">Inquiry path</span><span class="schedule-value">Central Stonebridge consultation process</span></div><div class="schedule-row"><span class="schedule-label">Service format</span><span class="schedule-value">To be listed with final profile</span></div></div></aside></div></section>
-  <section class="section section-muted"><div class="container card-grid"><article class="info-card"><div class="eyebrow">What will appear here</div><h3>Biography, specialties, and clinical fit.</h3><p>The completed page can describe the clinician’s approach, populations served, strengths, and how referrals are reviewed—without sounding promotional or overstated.</p></article><article class="info-card"><div class="eyebrow">How new inquiries are handled</div><h3>Through Stonebridge, not a separate intake system.</h3><p>Until a full profile and schedule are published, new inquiries continue through the main Stonebridge consultation pathway.</p></article></div></section>
+  <section class="image-hero profile-bg"><div class="container hero-grid"><div class="hero-panel"><div class="eyebrow">Clinician Profile</div><h1>Therapist</h1><p class="lead">This page is reserved for a therapist profile and will be completed when biography, treatment approach, and availability are ready to publish.</p><div class="hero-actions"><a class="btn btn-secondary" href="team.html">Back to Team</a></div></div><div class="quiet-note"><strong>Profile forthcoming</strong><br /><br />A completed introduction, treatment focus, and schedule information will appear here once finalized.</div></div></section>
+  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Profile status</div><h2>A landing page for a future clinician.</h2><p>This page keeps the team section prepared without invented biography or stock-looking profile imagery. Once finalized, it will describe the therapist’s background, treatment style, populations served, areas of fit, and service format.</p><div class="availability-strip"><div class="mini-card"><strong>Role</strong><span>Therapist</span></div><div class="mini-card"><strong>Profile</strong><span>Forthcoming</span></div><div class="mini-card"><strong>Schedule</strong><span>To be posted with full profile</span></div></div></article><aside class="schedule-card"><div class="eyebrow">Schedule</div><h2>Availability</h2><p>Scheduling details will appear here once the profile is finalized.</p><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Current status</span><span class="schedule-value">Profile forthcoming</span></div><div class="schedule-row"><span class="schedule-label">Inquiry path</span><span class="schedule-value">Central Stonebridge consultation process</span></div></div></aside></div></section>
 </main>
 
 
@@ -290,7 +372,7 @@
     <div>
       <div class="footer-brand">STONEBRIDGE</div>
       <div class="footer-sub">Psychological Group</div>
-      <p class="footer-copy">Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.</p>
+      <p class="footer-copy">Psychotherapy inquiries are currently accepted for adults in Illinois. Assessment and forensic services are informational only at this time.</p>
     </div>
     <div>
       <div class="footer-title">Services</div>
