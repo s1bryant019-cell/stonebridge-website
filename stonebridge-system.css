@@ -1,0 +1,542 @@
+/* Stonebridge home-system stabilization
+   Corrective pass: keep secondary pages aligned with the Home page, remove oversized hero dead-space,
+   and use nature images as faint atmosphere rather than page-dominating photos. */
+
+:root {
+  --spg-ink: #14263d;
+  --spg-cream: #f7f1e7;
+  --spg-paper: #fffdf8;
+  --spg-gold: #b5945a;
+  --spg-line: rgba(20, 38, 61, .13);
+  --spg-shadow: 0 18px 50px rgba(20,38,61,.10);
+}
+
+html { scroll-padding-top: 100px; }
+body { background: var(--spg-cream); }
+
+/* Header: match the Home page direction and prevent desktop nav collapse. */
+.site-header,
+body .site-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(247, 241, 231, .975) !important;
+  border-bottom: 1px solid rgba(20, 38, 61, .12) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+}
+
+.site-header .container.nav,
+body .site-header .container.nav {
+  width: min(1220px, calc(100% - 44px)) !important;
+  min-height: 88px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 36px !important;
+}
+
+.site-header .brand,
+body .site-header .brand {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  min-width: max-content !important;
+  text-align: left !important;
+  line-height: 1 !important;
+  letter-spacing: .12em !important;
+}
+
+.site-header .brand-mark,
+body .site-header .brand-mark {
+  font-family: var(--serif, 'EB Garamond', Georgia, serif) !important;
+  font-size: clamp(1.78rem, 2vw, 2.08rem) !important;
+  line-height: .95 !important;
+  font-weight: 700 !important;
+  letter-spacing: .16em !important;
+  color: var(--spg-ink) !important;
+}
+
+.site-header .brand-sub,
+body .site-header .brand-sub {
+  margin-top: 8px !important;
+  font-family: var(--sans, Inter, system-ui, sans-serif) !important;
+  font-size: .64rem !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
+  letter-spacing: .22em !important;
+  color: rgba(20, 38, 61, .56) !important;
+  text-transform: uppercase !important;
+}
+
+.site-header .mobile-toggle,
+body .site-header .mobile-toggle { display: none !important; }
+
+.site-header .menu-wrap,
+body .site-header .menu-wrap {
+  position: static !important;
+  inset: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 22px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  overflow: visible !important;
+}
+
+.site-header .menu,
+body .site-header .menu {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 4px !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.site-header .nav-item,
+body .site-header .nav-item {
+  position: relative !important;
+  display: inline-flex !important;
+  width: auto !important;
+}
+
+.site-header .menu > a,
+.site-header .nav-item > a,
+body .site-header .menu > a,
+body .site-header .nav-item > a {
+  width: auto !important;
+  min-height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 13px !important;
+  border-radius: 999px !important;
+  color: rgba(20, 38, 61, .72) !important;
+  font-family: var(--sans, Inter, system-ui, sans-serif) !important;
+  font-size: .88rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+}
+
+.site-header .menu a.active,
+.site-header .menu > a:hover,
+.site-header .nav-item > a:hover,
+.site-header .nav-item:focus-within > a,
+body .site-header .menu a.active,
+body .site-header .menu > a:hover,
+body .site-header .nav-item > a:hover,
+body .site-header .nav-item:focus-within > a {
+  color: var(--spg-ink) !important;
+  background: rgba(181, 148, 90, .14) !important;
+}
+
+.site-header .header-cta,
+body .site-header .header-cta {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+}
+
+.site-header .header-cta .btn,
+.site-header .header-cta .btn-primary,
+body .site-header .header-cta .btn,
+body .site-header .header-cta .btn-primary {
+  min-height: 48px !important;
+  padding: 13px 24px !important;
+  border-radius: 999px !important;
+  background: var(--spg-ink) !important;
+  color: #fff !important;
+  font-size: .88rem !important;
+  font-weight: 800 !important;
+  box-shadow: 0 12px 28px rgba(20, 38, 61, .18) !important;
+  white-space: nowrap !important;
+}
+
+.site-header .dropdown,
+body .site-header .dropdown {
+  position: absolute !important;
+  left: 0 !important;
+  top: calc(100% + 4px) !important;
+  min-width: 238px !important;
+  padding: 10px !important;
+  display: block !important;
+  background: var(--spg-paper) !important;
+  border: 1px solid var(--spg-line) !important;
+  border-radius: 18px !important;
+  box-shadow: var(--spg-shadow) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(8px) !important;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease !important;
+  z-index: 1001 !important;
+}
+
+.site-header .nav-item:hover .dropdown,
+.site-header .nav-item:focus-within .dropdown,
+body .site-header .nav-item:hover .dropdown,
+body .site-header .nav-item:focus-within .dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.site-header .dropdown a,
+body .site-header .dropdown a {
+  display: block !important;
+  width: auto !important;
+  padding: 10px 12px !important;
+  border-radius: 12px !important;
+  color: rgba(20, 38, 61, .78) !important;
+  font-size: .86rem !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+.site-header .dropdown a:hover,
+body .site-header .dropdown a:hover {
+  color: var(--spg-ink) !important;
+  background: rgba(181, 148, 90, .12) !important;
+}
+
+/* Secondary-page heroes: compact, content-first. Background images are atmosphere, not layout. */
+.image-hero,
+body .image-hero {
+  min-height: 0 !important;
+  padding: 40px 0 26px !important;
+  display: flex !important;
+  align-items: center !important;
+  background-size: cover !important;
+  background-position: center !important;
+  box-shadow: inset 0 -24px 60px rgba(247, 241, 231, .42) !important;
+  border-bottom: 1px solid rgba(20,38,61,.08) !important;
+}
+
+.image-hero::before,
+body .image-hero::before {
+  background:
+    linear-gradient(90deg, rgba(247,241,231,.98) 0%, rgba(247,241,231,.94) 42%, rgba(247,241,231,.82) 100%),
+    radial-gradient(circle at 12% 35%, rgba(255,253,248,.70), transparent 40%) !important;
+}
+
+.image-hero .hero-grid,
+body .image-hero .hero-grid {
+  width: min(1220px, calc(100% - 44px)) !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, .88fr) minmax(260px, .52fr) !important;
+  gap: 28px !important;
+  align-items: center !important;
+}
+
+.image-hero .hero-panel,
+body .image-hero .hero-panel {
+  max-width: 610px !important;
+  padding: 28px 30px !important;
+  border-radius: 28px !important;
+  background: rgba(255,253,248,.86) !important;
+  box-shadow: 0 16px 42px rgba(20,38,61,.08) !important;
+}
+
+.image-hero .quiet-note,
+body .image-hero .quiet-note {
+  max-width: 350px !important;
+  justify-self: start !important;
+  padding: 18px 20px !important;
+  border-radius: 0 20px 20px 0 !important;
+  font-size: .9rem !important;
+  line-height: 1.55 !important;
+  background: rgba(255,253,248,.76) !important;
+}
+
+.image-hero h1,
+body .image-hero h1,
+.image-hero .hero-panel h1,
+body .image-hero .hero-panel h1 {
+  max-width: 570px !important;
+  font-size: clamp(2.35rem, 3.75vw, 3.65rem) !important;
+  line-height: .98 !important;
+  letter-spacing: -.035em !important;
+}
+
+.image-hero .lead,
+body .image-hero .lead {
+  margin-top: 14px !important;
+  max-width: 560px !important;
+  font-size: .96rem !important;
+  line-height: 1.58 !important;
+}
+
+.image-hero .hero-actions,
+body .image-hero .hero-actions {
+  margin-top: 18px !important;
+  gap: 10px !important;
+}
+
+.about-bg.image-hero,
+.team-bg.image-hero,
+.services-bg.image-hero,
+.portal-bg.image-hero,
+.profile-bg.image-hero,
+.contact-bg.image-hero {
+  min-height: 0 !important;
+  padding-top: 38px !important;
+  padding-bottom: 28px !important;
+}
+
+.services-bg.image-hero { background-position: center 52% !important; }
+.team-bg.image-hero { background-position: center 46% !important; }
+.about-bg.image-hero { background-position: center 48% !important; }
+
+/* Services: show the service image cards immediately rather than below a giant empty hero. */
+.hero-service-strip,
+body .hero-service-strip {
+  position: relative !important;
+  z-index: 2 !important;
+  margin-top: 0 !important;
+  padding: 22px 0 0 !important;
+  background: linear-gradient(180deg, var(--spg-cream), var(--spg-paper)) !important;
+}
+
+.service-strip-grid,
+body .service-strip-grid {
+  width: min(1220px, calc(100% - 44px)) !important;
+  margin: 0 auto !important;
+  gap: 16px !important;
+}
+
+.service-tile,
+body .service-tile {
+  min-height: 142px !important;
+  height: 142px !important;
+  border-radius: 22px !important;
+}
+
+.service-tile img,
+body .service-tile img { height: 100% !important; object-fit: cover !important; }
+
+/* Team directory: content starts sooner and cards stay usable. */
+#directory.section,
+body #directory.section { padding-top: 44px !important; }
+
+.clinician-directory,
+body .clinician-directory { gap: 18px !important; }
+
+.clinician-card,
+body .clinician-card { border-radius: 26px !important; }
+
+/* General section compression after hero. */
+.section,
+body .section { padding: 52px 0 !important; }
+
+.section-head,
+body .section-head { margin-bottom: 24px !important; }
+
+.detail-layout,
+body .detail-layout { gap: 24px !important; }
+
+.prose-card,
+.info-card,
+.schedule-card,
+.pathway-card,
+.tool-card,
+.profile-card,
+.contact-card,
+body .prose-card,
+body .info-card,
+body .schedule-card,
+body .pathway-card,
+body .tool-card,
+body .profile-card,
+body .contact-card {
+  border-radius: 26px !important;
+}
+
+.prose-card,
+body .prose-card { padding: 32px !important; }
+
+.pathway-card img,
+body .pathway-card img { height: 160px !important; object-fit: cover !important; }
+
+/* Footer: keep the wordmark visible and add a subtle logo mark without creating a cramped extra column. */
+.site-footer .footer-brand::before,
+body .site-footer .footer-brand::before {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 40px;
+  margin-bottom: 14px;
+  background: url('stonebridge-logo.png') left center / contain no-repeat;
+  opacity: .55;
+  filter: brightness(0) invert(1);
+}
+
+.site-footer .footer-grid,
+body .site-footer .footer-grid {
+  grid-template-columns: minmax(260px, 1.25fr) .6fr .6fr .9fr !important;
+  gap: 36px !important;
+}
+
+/* Contact page: form-first, readable, with the image kept faint. */
+.consultation-stage,
+body .consultation-stage {
+  padding: 34px 0 42px !important;
+  min-height: calc(100vh - 88px) !important;
+}
+
+.consultation-stage::before,
+body .consultation-stage::before {
+  opacity: .08 !important;
+  filter: saturate(.82) contrast(.92) !important;
+}
+
+.consultation-shell,
+body .consultation-shell {
+  width: min(1120px, calc(100% - 44px)) !important;
+  padding: 18px !important;
+  margin: 0 auto !important;
+  border-radius: 32px !important;
+}
+
+.consultation-top,
+body .consultation-top {
+  grid-template-columns: minmax(0, 1fr) 330px !important;
+  gap: 18px !important;
+  margin-bottom: 16px !important;
+}
+
+.consultation-copy,
+body .consultation-copy { padding: 24px 28px !important; }
+
+.consultation-copy h1,
+body .consultation-copy h1 {
+  font-size: clamp(2.35rem, 4.2vw, 3.65rem) !important;
+  line-height: .98 !important;
+}
+
+.consultation-copy .lead,
+body .consultation-copy .lead { font-size: .96rem !important; margin-top: 12px !important; }
+
+.quick-status-card,
+body .quick-status-card { padding: 22px !important; }
+
+.consultation-form-card,
+body .consultation-form-card { padding: 24px 28px 28px !important; }
+
+.consultation-form-card textarea,
+body .consultation-form-card textarea { min-height: 108px !important; }
+
+.form-footer,
+body .form-footer { margin-top: 18px !important; }
+
+@media (max-width: 1080px) and (min-width: 901px) {
+  .site-header .container.nav,
+  body .site-header .container.nav { width: min(100% - 36px, 1160px) !important; gap: 22px !important; }
+  .site-header .brand-mark,
+  body .site-header .brand-mark { font-size: 1.64rem !important; }
+  .site-header .menu > a,
+  .site-header .nav-item > a,
+  body .site-header .menu > a,
+  body .site-header .nav-item > a { padding: 9px 9px !important; font-size: .82rem !important; }
+  .site-header .header-cta .btn,
+  .site-header .header-cta .btn-primary,
+  body .site-header .header-cta .btn,
+  body .site-header .header-cta .btn-primary { padding: 12px 18px !important; font-size: .84rem !important; }
+}
+
+@media (max-width: 900px) {
+  .site-header .container.nav,
+  body .site-header .container.nav {
+    min-height: 74px !important;
+    width: min(100% - 34px, 1220px) !important;
+  }
+  .site-header .mobile-toggle,
+  body .site-header .mobile-toggle { display: inline-flex !important; }
+  .site-header .menu-wrap,
+  body .site-header .menu-wrap {
+    position: absolute !important;
+    left: 17px !important;
+    right: 17px !important;
+    top: 74px !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 16px !important;
+    background: var(--spg-paper) !important;
+    border: 1px solid var(--spg-line) !important;
+    border-radius: 22px !important;
+    box-shadow: var(--spg-shadow) !important;
+  }
+  .site-header .menu-wrap.open,
+  body .site-header .menu-wrap.open { display: flex !important; }
+  .site-header .menu,
+  body .site-header .menu { flex-direction: column !important; align-items: stretch !important; }
+  .site-header .nav-item,
+  body .site-header .nav-item { display: block !important; }
+  .site-header .dropdown,
+  body .site-header .dropdown {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    margin-top: 6px !important;
+    display: none !important;
+  }
+  .site-header .nav-item:hover .dropdown,
+  .site-header .nav-item:focus-within .dropdown,
+  body .site-header .nav-item:hover .dropdown,
+  body .site-header .nav-item:focus-within .dropdown { display: block !important; }
+  .image-hero,
+  body .image-hero { padding: 34px 0 28px !important; }
+  .image-hero .hero-grid,
+  body .image-hero .hero-grid { grid-template-columns: 1fr !important; }
+  .image-hero .quiet-note,
+  body .image-hero .quiet-note { max-width: none !important; }
+  .service-strip-grid,
+  body .service-strip-grid { grid-template-columns: 1fr !important; }
+  .service-tile,
+  body .service-tile { height: 170px !important; }
+  .section,
+  body .section { padding: 42px 0 !important; }
+  .consultation-stage,
+  body .consultation-stage { min-height: auto !important; padding: 28px 0 36px !important; }
+  .consultation-top,
+  body .consultation-top,
+  .consultation-form-card .form-grid,
+  body .consultation-form-card .form-grid,
+  .form-heading,
+  body .form-heading { grid-template-columns: 1fr !important; }
+  .form-heading p,
+  body .form-heading p { text-align: left !important; }
+  .site-footer .footer-grid,
+  body .site-footer .footer-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+@media (max-width: 560px) {
+  .site-footer .footer-grid,
+  body .site-footer .footer-grid { grid-template-columns: 1fr !important; }
+  .image-hero h1,
+  body .image-hero h1 { font-size: clamp(2.15rem, 13vw, 3.2rem) !important; }
+}
