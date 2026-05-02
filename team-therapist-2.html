@@ -786,6 +786,431 @@
     .profile-placeholder-card .placeholder-caption { padding: 16px 18px; color: rgba(20,38,61,.72); font-weight: 750; }
 
 </style>
+
+<style id="stonebridge-stabilization-v1">
+/* Stonebridge stabilization v1: keep the Home-page system, reduce dead space, restore footer logo, and make Contact form-forward. */
+@media (min-width: 901px) {
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    background: rgba(247, 241, 231, 0.965) !important;
+    border-bottom: 1px solid rgba(20, 38, 61, .12) !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+  }
+  .site-header .container.nav {
+    width: min(1320px, calc(100% - 48px)) !important;
+    min-height: 88px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 42px !important;
+  }
+  .site-header .brand {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    min-width: max-content !important;
+    line-height: 1 !important;
+    text-align: left !important;
+    letter-spacing: .12em !important;
+    margin: 0 !important;
+  }
+  .site-header .brand-mark {
+    font-family: var(--serif) !important;
+    font-size: clamp(1.72rem, 1.9vw, 2.05rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: .16em !important;
+    line-height: .95 !important;
+    color: var(--ink) !important;
+    margin: 0 !important;
+  }
+  .site-header .brand-sub {
+    margin: 7px 0 0 !important;
+    font-size: .66rem !important;
+    font-weight: 700 !important;
+    letter-spacing: .22em !important;
+    text-transform: uppercase !important;
+    color: rgba(20, 38, 61, .58) !important;
+  }
+  .site-header .mobile-toggle { display: none !important; }
+  .site-header .menu-wrap {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 24px !important;
+    width: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+  .site-header .menu {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 6px !important;
+  }
+  .site-header .nav-item { position: relative !important; display: inline-flex !important; }
+  .site-header .menu > a,
+  .site-header .nav-item > a {
+    width: auto !important;
+    min-height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px 13px !important;
+    border-radius: 999px !important;
+    font-size: .90rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    color: rgba(20, 38, 61, .72) !important;
+    background: transparent !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+  .site-header .menu a.active,
+  .site-header .menu > a:hover,
+  .site-header .nav-item > a:hover,
+  .site-header .nav-item:focus-within > a {
+    color: var(--ink) !important;
+    background: rgba(181, 148, 90, .14) !important;
+  }
+  .site-header .header-cta { display: block !important; width: auto !important; }
+  .site-header .header-cta .btn,
+  .site-header .header-cta .btn-primary {
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    border-radius: 999px !important;
+    background: var(--ink) !important;
+    color: #fff !important;
+    font-size: .90rem !important;
+    font-weight: 800 !important;
+    box-shadow: 0 10px 24px rgba(20, 38, 61, .18) !important;
+    border: 1px solid transparent !important;
+    white-space: nowrap !important;
+  }
+  .site-header .dropdown {
+    position: absolute !important;
+    left: 0 !important;
+    top: calc(100% + 2px) !important;
+    min-width: 240px !important;
+    padding: 10px !important;
+    background: var(--paper) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 18px !important;
+    box-shadow: var(--shadow) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(8px) !important;
+    transition: opacity .18s ease, transform .18s ease, visibility .18s ease !important;
+    display: block !important;
+  }
+  .site-header .nav-item:hover .dropdown,
+  .site-header .nav-item:focus-within .dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+  .site-header .dropdown a {
+    display: block !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+    font-size: .86rem !important;
+    font-weight: 700 !important;
+    color: rgba(20, 38, 61, .78) !important;
+    background: transparent !important;
+  }
+  .site-header .dropdown a:hover {
+    background: rgba(181, 148, 90, .12) !important;
+    color: var(--ink) !important;
+  }
+}
+
+/* Secondary pages: background image remains faint; content comes up instead of floating in dead space. */
+@media (min-width: 901px) {
+  .image-hero {
+    min-height: 370px !important;
+    padding: 34px 0 38px !important;
+    align-items: center !important;
+    background-size: cover !important;
+  }
+  .about-bg.image-hero,
+  .team-bg.image-hero,
+  .services-bg.image-hero,
+  .portal-bg.image-hero,
+  .profile-bg.image-hero {
+    min-height: 360px !important;
+    padding-top: 32px !important;
+    padding-bottom: 36px !important;
+  }
+  .image-hero .hero-grid {
+    width: 100% !important;
+    gap: 28px !important;
+    align-items: center !important;
+  }
+  .image-hero .hero-panel {
+    max-width: 610px !important;
+    padding: 30px 32px !important;
+    border-radius: 30px !important;
+  }
+  .image-hero .hero-panel h1,
+  .image-hero h1 {
+    font-size: clamp(2.65rem, 4.4vw, 4.25rem) !important;
+    line-height: .98 !important;
+  }
+  .image-hero .lead {
+    margin-top: 15px !important;
+    font-size: 1rem !important;
+  }
+  .image-hero .quiet-note {
+    max-width: 380px !important;
+    padding: 18px 20px !important;
+    font-size: .92rem !important;
+  }
+  .team-bg .hero-grid { grid-template-columns: minmax(0, .76fr) minmax(260px, .42fr) !important; }
+  .section { padding: 54px 0 !important; }
+}
+
+/* Footer: restore logo without adding a cramped fifth column. */
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.footer-logo-mark {
+  width: 58px;
+  height: auto;
+  flex: 0 0 auto;
+  opacity: .82;
+  filter: brightness(0) invert(1);
+}
+.site-footer .footer-grid {
+  grid-template-columns: minmax(300px, 1.25fr) minmax(150px, .55fr) minmax(150px, .55fr) minmax(270px, .95fr) !important;
+}
+@media (max-width: 980px) {
+  .site-footer .footer-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 620px) {
+  .site-footer .footer-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Contact stabilization: form-forward, readable, compact, with the image as a faint background only. */
+.contact-stable {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: calc(100vh - 88px);
+  padding: 32px 0 38px;
+  display: flex;
+  align-items: center;
+  background: var(--cream);
+}
+.contact-stable::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(247,241,231,.995) 0%, rgba(247,241,231,.97) 43%, rgba(247,241,231,.90) 72%, rgba(247,241,231,.82) 100%),
+    url("contact-panel.jpg") right center / cover no-repeat;
+}
+.contact-stable::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 22% 48%, rgba(255,253,248,.82), transparent 45%),
+    linear-gradient(180deg, rgba(255,253,248,.28), rgba(247,241,231,.48));
+  pointer-events: none;
+}
+.contact-stable-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(280px, .68fr) minmax(520px, 1.08fr);
+  gap: 28px;
+  align-items: stretch;
+}
+.contact-summary-card,
+.contact-form-card {
+  background: rgba(255,253,248,.88);
+  border: 1px solid rgba(20,38,61,.13);
+  border-radius: 30px;
+  box-shadow: 0 18px 48px rgba(20,38,61,.08);
+  backdrop-filter: blur(10px);
+}
+.contact-summary-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.contact-summary-card h1 {
+  font-size: clamp(2.35rem, 4.2vw, 3.8rem) !important;
+  line-height: .98;
+  letter-spacing: -.035em;
+}
+.contact-summary-card .lead {
+  font-size: .98rem;
+  margin-top: 14px;
+}
+.contact-status-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.contact-status-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 13px 0;
+  border-top: 1px solid rgba(20,38,61,.10);
+}
+.contact-status-row:first-child { border-top: 0; }
+.contact-status-row strong {
+  color: rgba(20,38,61,.56);
+  font-size: .70rem;
+  font-weight: 800;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+}
+.contact-status-row span {
+  color: var(--ink);
+  font-weight: 750;
+  line-height: 1.35;
+}
+.contact-process-mini {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.contact-process-mini div {
+  border-top: 2px solid rgba(181,148,90,.36);
+  padding-top: 10px;
+}
+.contact-process-mini b {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  line-height: 1;
+}
+.contact-process-mini span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(20,38,61,.68);
+  font-size: .82rem;
+  line-height: 1.35;
+}
+.contact-form-card { padding: 26px; }
+.contact-form-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.contact-form-head h2 {
+  font-size: clamp(2rem, 3vw, 2.7rem) !important;
+}
+.contact-form-head p {
+  margin: 0;
+  color: rgba(20,38,61,.62);
+  font-size: .90rem;
+  text-align: right;
+  max-width: 240px;
+}
+.contact-form-card .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+.contact-form-card label span {
+  margin-bottom: 5px;
+  font-size: .70rem;
+}
+.contact-form-card input,
+.contact-form-card select,
+.contact-form-card textarea {
+  min-height: 43px;
+  border-radius: 14px;
+  background: rgba(255,253,248,.92);
+}
+.contact-form-card textarea { min-height: 92px; resize: vertical; }
+.contact-form-card .form-note-inline {
+  margin-top: -4px;
+  color: rgba(20,38,61,.62);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+.contact-form-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.contact-form-card .emergency-note {
+  color: rgba(20,38,61,.68);
+  font-size: .84rem;
+  line-height: 1.45;
+}
+.contact-form-card .emergency-note strong { color: var(--ink); }
+.contact-form-card .emergency-note a { color: var(--ink); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+.contact-form-card #submitButton {
+  min-width: 150px;
+  min-height: 52px;
+}
+.contact-form-card .form-alert {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(181,148,90,.35);
+  background: rgba(181,148,90,.11);
+  color: var(--ink);
+  display: none;
+}
+.contact-form-card .form-alert.show { display: block; }
+#submitButton:disabled { opacity: .72; cursor: not-allowed; transform: none; }
+@media (max-width: 980px) {
+  .contact-stable { min-height: auto; padding: 34px 0 44px; }
+  .contact-stable-grid { grid-template-columns: 1fr; }
+  .contact-form-head { align-items: start; }
+}
+@media (max-width: 620px) {
+  .contact-stable { padding: 24px 0 34px; }
+  .contact-summary-card, .contact-form-card { padding: 22px; border-radius: 24px; }
+  .contact-form-card .form-grid,
+  .contact-form-bottom,
+  .contact-form-head,
+  .contact-status-row,
+  .contact-process-mini { grid-template-columns: 1fr; display: grid; }
+  .contact-form-head p { text-align: left; max-width: none; }
+  .form-row-full { grid-column: auto !important; }
+}
+</style>
+
 </head>
 <body>
 
@@ -835,8 +1260,13 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <div class="footer-brand">STONEBRIDGE</div>
-      <div class="footer-sub">Psychological Group</div>
+      <div class="footer-brand-row">
+        <img class="footer-logo-mark" src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" onerror="this.remove();" />
+        <div>
+          <div class="footer-brand">STONEBRIDGE</div>
+          <div class="footer-sub">Psychological Group</div>
+        </div>
+      </div>
       <p class="footer-copy">Psychotherapy inquiries are currently accepted for adults in Illinois. Assessment and forensic services are informational only at this time.</p>
     </div>
     <div>
