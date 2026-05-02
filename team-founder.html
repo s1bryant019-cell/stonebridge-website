@@ -739,13 +739,14 @@
     .photo-caption strong { display: block; font-family: var(--serif); font-size: 1.25rem; line-height: 1.05; }
     .photo-caption span { display: block; margin-top: 4px; color: rgba(20,38,61,.66); font-size: .86rem; font-weight: 700; }
     .founder-summary { padding: 30px 34px; }
-    .founder-summary h1 { font-size: clamp(2.35rem, 4.2vw, 3.9rem); max-width: none; line-height: .98; }
+    .founder-summary h1 { font-size: clamp(2.05rem, 3.25vw, 3.15rem); max-width: 760px; line-height: 1.04; letter-spacing: -.025em; }
+    .credential-line { margin-top: 8px; color: rgba(20,38,61,.72); font-size: .86rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .profile-line { margin-top: 10px; color: var(--gold); font-family: var(--serif); font-size: clamp(1.12rem, 1.6vw, 1.42rem); font-style: italic; }
     .summary-intro { margin-top: 18px; max-width: 760px; color: rgba(20,38,61,.78); font-size: 1.02rem; }
-    .profile-quick-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
-    .profile-quick-box { border: 1px solid rgba(20,38,61,.12); border-radius: 18px; padding: 14px 15px; background: rgba(247,241,231,.48); }
-    .profile-quick-box b { display: block; color: var(--gold); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
-    .profile-quick-box span { display: block; margin-top: 5px; color: var(--ink); font-weight: 750; line-height: 1.35; }
+    .profile-facts { display: grid; gap: 10px; margin-top: 22px; border-top: 1px solid rgba(20,38,61,.12); border-bottom: 1px solid rgba(20,38,61,.12); padding: 14px 0; }
+    .profile-fact { display: grid; grid-template-columns: 145px minmax(0,1fr); gap: 16px; align-items: baseline; }
+    .profile-fact b { color: var(--gold); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+    .profile-fact span { color: var(--ink); font-weight: 750; line-height: 1.35; }
     .focus-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
     .focus-tags span { display: inline-flex; align-items: center; min-height: 34px; padding: 7px 12px; border: 1px solid rgba(181,148,90,.34); border-radius: 999px; background: rgba(255,253,248,.76); color: var(--ink); font-size: .76rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
     .founder-schedule { align-self: start; }
@@ -759,15 +760,20 @@
     .schedule-line span { color: var(--ink); font-weight: 760; line-height: 1.35; }
     .schedule-small-note { margin: 16px 0 0; padding-top: 16px; border-top: 1px solid rgba(20,38,61,.12); color: rgba(20,38,61,.70); font-size: .9rem; }
     .founder-schedule .btn { width: 100%; margin-top: 18px; }
-    .profile-info-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 22px; }
+    .profile-info-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .75fr); gap: 18px; margin-top: 22px; }
     .profile-info-card { padding: 22px 24px; }
-    .profile-info-card.wide { grid-column: span 2; }
+    .profile-info-card.wide { grid-column: auto; }
     .profile-info-card h2 { font-size: 1.55rem; line-height: 1.05; }
     .profile-info-card p { margin: 10px 0 0; color: rgba(20,38,61,.75); }
     .profile-list { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; color: rgba(20,38,61,.76); }
     .profile-list li { position: relative; padding-left: 20px; }
     .profile-list li::before { content: '•'; position: absolute; left: 3px; top: 0; color: var(--gold); font-weight: 900; }
     .compact-divider { height: 1px; background: rgba(20,38,61,.12); margin: 14px 0; }
+    .detail-list { display: grid; gap: 11px; margin-top: 12px; }
+    .detail-row { display: grid; grid-template-columns: 120px minmax(0,1fr); gap: 14px; padding-top: 11px; border-top: 1px solid rgba(20,38,61,.10); }
+    .detail-row:first-child { border-top: 0; padding-top: 0; }
+    .detail-row b { color: rgba(20,38,61,.58); font-size: .72rem; font-weight: 900; letter-spacing: .10em; text-transform: uppercase; }
+    .detail-row span { color: var(--ink); font-weight: 700; line-height: 1.42; }
     .small-muted { color: rgba(20,38,61,.66); font-size: .92rem; }
     .profile-alert { margin-top: 22px; padding: 16px 18px; border-left: 3px solid var(--gold); border-radius: 0 18px 18px 0; background: rgba(255,253,248,.76); color: rgba(20,38,61,.73); }
     @media (max-width: 1080px) {
@@ -776,11 +782,12 @@
       .schedule-content { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 20px; align-items: end; }
       .schedule-small-note, .founder-schedule .btn { margin-top: 0; }
       .profile-info-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .profile-info-card.wide { grid-column: span 2; }
+      .profile-info-card.wide { grid-column: auto; }
     }
     @media (max-width: 760px) {
       .founder-profile-page { padding: 28px 0 38px; }
-      .founder-top, .profile-quick-grid, .profile-info-grid { grid-template-columns: 1fr; }
+      .founder-top, .profile-info-grid { grid-template-columns: 1fr; }
+      .profile-fact, .detail-row { grid-template-columns: 1fr; gap: 4px; }
       .profile-info-card.wide { grid-column: auto; }
       .photo-frame { min-height: 285px; }
       .schedule-content { display: block; }
@@ -845,20 +852,20 @@
         <article class="founder-summary">
           <div class="eyebrow">Clinician profile</div>
           <h1>Stephen W. Bryant, PsyD, LCPC</h1>
+          <div class="credential-line">Clinical Psychologist Postdoctoral · Licensed Clinical Professional Counselor</div>
           <div class="profile-line">Telehealth psychotherapy for adults in Illinois.</div>
           <p class="summary-intro">I work with adults who want therapy to hold complexity rather than rush toward quick reassurance. My clinical focus includes trauma, substance use and recovery concerns, mood and anxiety symptoms, relational patterns, identity questions, and presentations that benefit from careful psychological thinking.</p>
-          <div class="profile-quick-grid" aria-label="Profile summary">
-            <div class="profile-quick-box"><b>I specialize in</b><span>Trauma, substance use, mood and anxiety, and complex presentations</span></div>
-            <div class="profile-quick-box"><b>Session format</b><span>Individual psychotherapy by telehealth for adults in Illinois</span></div>
-            <div class="profile-quick-box"><b>Style</b><span>Warm, direct, depth-oriented, and clinically grounded</span></div>
-            <div class="profile-quick-box"><b>Good first step</b><span>Submit a consultation request so fit and availability can be reviewed</span></div>
+          <div class="profile-facts" aria-label="Profile summary">
+            <div class="profile-fact"><b>Specialties</b><span>Trauma, substance use, dual diagnosis, mood and anxiety, relational patterns, and complex presentations</span></div>
+            <div class="profile-fact"><b>Client focus</b><span>Adults, 18+, located in Illinois</span></div>
+            <div class="profile-fact"><b>Approach</b><span>Warm, direct, depth-oriented, assessment-informed, and clinically grounded</span></div>
           </div>
           <div class="focus-tags" aria-label="Areas of focus">
             <span>Trauma / PTSD</span>
             <span>Substance use</span>
             <span>Dual diagnosis</span>
             <span>Mood & anxiety</span>
-            <span>Relational patterns</span>
+            <span>Complex presentations</span>
             <span>Telehealth</span>
           </div>
         </article>
@@ -884,51 +891,51 @@
 
       <div class="profile-info-grid">
         <section class="profile-info-card wide">
-          <div class="eyebrow">About</div>
-          <h2>Clinical background</h2>
+          <div class="eyebrow">Bio & approach</div>
+          <h2>Background that informs the work</h2>
           <p>My background includes work across inpatient, partial hospitalization, intensive outpatient, outpatient, and private-practice settings with adolescents and adults. That range shapes how I think about fit, safety, pacing, and the level of care someone may need.</p>
-          <p>I currently provide adult psychotherapy through Stonebridge. Assessment and forensic psychology remain part of my professional background and the broader direction of the practice, but they are not open for new requests at this time.</p>
-        </section>
-
-        <section class="profile-info-card">
-          <div class="eyebrow">Approach</div>
-          <h2>How therapy tends to work</h2>
-          <p>Therapy is structured around careful attention: what is happening now, what repeats, what has protected you, what now causes harm, and what kind of change is realistic.</p>
-          <p>The work is intended to be warm, direct, and bounded, with room for depth without becoming vague or performative.</p>
-        </section>
-
-        <section class="profile-info-card">
-          <div class="eyebrow">Specialties</div>
-          <h2>Issues treated</h2>
+          <p>Therapy is structured around careful attention: what is happening now, what repeats, what has protected you, what now causes harm, and what kind of change is realistic. The work is intended to be warm, direct, and bounded, with room for depth without becoming vague or performative.</p>
+          <div class="compact-divider"></div>
           <ul class="profile-list">
-            <li>Trauma, PTSD, and complex trauma</li>
-            <li>Substance use, addiction, and recovery concerns</li>
-            <li>Dual diagnosis and diagnostic complexity</li>
-            <li>Mood, anxiety, identity, and relational concerns</li>
+            <li>Trauma, PTSD, and complex or developmental trauma</li>
+            <li>Substance use, addiction, recovery concerns, and dual diagnosis</li>
+            <li>Mood, anxiety, identity, relationship patterns, and diagnostic complexity</li>
           </ul>
         </section>
 
         <section class="profile-info-card">
-          <div class="eyebrow">Client focus</div>
+          <div class="eyebrow">Client details</div>
           <h2>Who this may fit</h2>
-          <ul class="profile-list">
-            <li>Adults seeking psychotherapy in Illinois</li>
-            <li>People wanting depth-oriented clinical work</li>
-            <li>Clients who value clarity, boundaries, and thoughtful pacing</li>
-          </ul>
+          <div class="detail-list">
+            <div class="detail-row"><b>Age range</b><span>Adults, 18+</span></div>
+            <div class="detail-row"><b>Location</b><span>Clients located in Illinois</span></div>
+            <div class="detail-row"><b>Format</b><span>Individual psychotherapy by telehealth</span></div>
+            <div class="detail-row"><b>Good fit</b><span>People seeking depth-oriented therapy with clarity, boundaries, and thoughtful pacing</span></div>
+          </div>
           <div class="compact-divider"></div>
           <p class="small-muted">This is not an emergency or crisis service. If there is immediate danger, call 911 or go to the nearest emergency room. For crisis support, call or text 988.</p>
         </section>
 
         <section class="profile-info-card wide">
-          <div class="eyebrow">Practical details</div>
-          <h2>Before requesting a consultation</h2>
-          <div class="profile-quick-grid">
-            <div class="profile-quick-box"><b>Service</b><span>Individual psychotherapy</span></div>
-            <div class="profile-quick-box"><b>Availability</b><span>Reviewed after inquiry</span></div>
-            <div class="profile-quick-box"><b>Assessment</b><span>Not accepting new requests</span></div>
-            <div class="profile-quick-box"><b>Forensic</b><span>Not accepting new requests</span></div>
+          <div class="eyebrow">Education & professional background</div>
+          <h2>Training and clinical experience</h2>
+          <div class="detail-list">
+            <div class="detail-row"><b>Degree</b><span>PsyD in clinical psychology</span></div>
+            <div class="detail-row"><b>License</b><span>Licensed Clinical Professional Counselor</span></div>
+            <div class="detail-row"><b>Forensic</b><span>Graduate training in forensic psychology and experience with court-involved, school, and child-welfare coordination</span></div>
+            <div class="detail-row"><b>Assessment</b><span>Background in psychological, neuropsychological, and psychodiagnostic assessment, including diagnostic formulation and treatment planning</span></div>
           </div>
+        </section>
+
+        <section class="profile-info-card">
+          <div class="eyebrow">Service boundaries</div>
+          <h2>Current availability</h2>
+          <ul class="profile-list">
+            <li>Psychotherapy consultation inquiries are currently accepted</li>
+            <li>Online scheduling link will be added once connected</li>
+            <li>Psychological assessment is not currently available for new requests</li>
+            <li>Forensic services are not currently available for new requests</li>
+          </ul>
           <div class="profile-alert">A consultation request helps determine whether Stonebridge is an appropriate setting, whether another provider would be a better fit, or whether a different level of care is needed.</div>
         </section>
       </div>
