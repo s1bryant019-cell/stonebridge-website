@@ -237,7 +237,363 @@
       .footer-grid, .footer-bottom, .form-grid { grid-template-columns: 1fr; display: grid; }
     }
 
-  </style>
+  
+
+    /* Master header: aligned to the Home-page treatment */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 241, 231, 0.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(20, 38, 61, 0.12);
+    }
+    .site-header .container { width: min(1160px, calc(100% - 40px)); }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      letter-spacing: .12em;
+      line-height: 1;
+      min-width: max-content;
+    }
+    .brand-mark {
+      font-family: var(--serif);
+      font-size: 1.42rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .brand-sub {
+      margin-top: 5px;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(20, 38, 61, .66);
+    }
+    .menu-wrap { display: flex; align-items: center; gap: 22px; }
+    .menu { display: flex; align-items: center; gap: 4px; }
+    .menu > a, .nav-item > a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 700;
+      color: rgba(20, 38, 61, .74);
+    }
+    .menu a.active, .menu > a:hover, .nav-item > a:hover {
+      color: var(--ink);
+      background: rgba(181, 148, 90, .14);
+    }
+    .header-cta .btn-primary {
+      min-height: 48px;
+      padding: 12px 22px;
+      box-shadow: 0 10px 26px rgba(20, 38, 61, .17);
+    }
+    @media (max-width: 900px) {
+      .mobile-toggle { display: inline-flex; }
+      .menu-wrap {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: calc(100% + 10px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+      .menu-wrap.open { display: flex; }
+      .menu { flex-direction: column; align-items: stretch; }
+      .nav-item .dropdown { position: static; opacity: 1; visibility: visible; transform: none; margin-top: 4px; box-shadow: none; }
+      .header-cta .btn { width: 100%; }
+    }
+
+  
+
+    /* Clinician profile template */
+    .clinician-page {
+      position: relative;
+      overflow: hidden;
+      padding: 44px 0 48px;
+      background:
+        linear-gradient(90deg, rgba(247,241,231,.98) 0%, rgba(247,241,231,.92) 55%, rgba(247,241,231,.86) 100%),
+        url("profile-nature-hero.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .clinician-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 12%, rgba(255,253,248,.64), transparent 34%),
+        linear-gradient(180deg, rgba(255,253,248,.62), rgba(247,241,231,.92));
+      pointer-events: none;
+    }
+    .clinician-shell {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr) 340px;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .portrait-card,
+    .bio-card,
+    .availability-card,
+    .compact-card {
+      background: rgba(255,253,248,.88);
+      border: 1px solid rgba(20,38,61,.13);
+      border-radius: 30px;
+      box-shadow: 0 18px 54px rgba(20,38,61,.08);
+      backdrop-filter: blur(10px);
+    }
+    .portrait-card { overflow: hidden; min-height: 100%; display: flex; flex-direction: column; }
+    .portrait-placeholder {
+      min-height: 360px;
+      position: relative;
+      display: grid;
+      place-items: end center;
+      background:
+        radial-gradient(circle at 50% 68%, rgba(181,148,90,.14), transparent 42%),
+        linear-gradient(180deg, rgba(255,253,248,.78), rgba(216,203,184,.52));
+      overflow: hidden;
+    }
+    .portrait-placeholder::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -96px;
+      width: 250px;
+      height: 250px;
+      transform: translateX(-50%);
+      border: 20px solid rgba(181,148,90,.12);
+      border-radius: 50% 50% 0 0;
+    }
+    .portrait-silhouette {
+      position: relative;
+      width: 190px;
+      height: 265px;
+      opacity: .34;
+    }
+    .portrait-silhouette::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      width: 94px;
+      height: 106px;
+      transform: translateX(-50%);
+      border-radius: 48% 48% 42% 42%;
+      background: #14263d;
+    }
+    .portrait-silhouette::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 190px;
+      height: 150px;
+      transform: translateX(-50%);
+      border-radius: 48% 48% 0 0;
+      background: #14263d;
+    }
+    .portrait-caption {
+      padding: 20px 22px;
+      border-top: 1px solid rgba(20,38,61,.12);
+      display: grid;
+      gap: 4px;
+    }
+    .portrait-caption strong {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      line-height: 1.05;
+    }
+    .portrait-caption span {
+      color: rgba(20,38,61,.68);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+    .bio-card { padding: 34px 36px; }
+    .bio-card h1 {
+      font-size: clamp(2.45rem, 4.2vw, 4.1rem);
+      max-width: none;
+      line-height: .98;
+    }
+    .profile-subtitle {
+      margin-top: 12px;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.18rem, 1.8vw, 1.55rem);
+    }
+    .ornament-line {
+      height: 1px;
+      margin: 24px 0 24px;
+      background: linear-gradient(90deg, rgba(181,148,90,.85), rgba(181,148,90,.12));
+      position: relative;
+    }
+    .ornament-line::after {
+      content: '◇';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--gold);
+      background: var(--paper);
+      padding: 0 10px;
+      font-size: .82rem;
+    }
+    .profile-lead {
+      max-width: 720px;
+      color: rgba(20,38,61,.78);
+      font-size: 1.02rem;
+      margin: 0;
+    }
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+    .profile-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 14px;
+      border: 1px solid rgba(181,148,90,.32);
+      border-radius: 999px;
+      background: rgba(255,253,248,.70);
+      color: var(--ink);
+      font-size: .80rem;
+      font-weight: 800;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    .availability-card { overflow: hidden; align-self: start; }
+    .availability-head {
+      background: var(--ink);
+      color: white;
+      padding: 22px 26px;
+      text-align: center;
+    }
+    .availability-head h2 { color: white; font-size: 2rem; }
+    .availability-body { padding: 24px 26px 26px; }
+    .availability-item {
+      display: grid;
+      grid-template-columns: minmax(120px, .85fr) minmax(0, 1fr);
+      gap: 14px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(20,38,61,.12);
+      align-items: start;
+    }
+    .availability-item:first-child { border-top: 0; padding-top: 0; }
+    .availability-label {
+      color: rgba(20,38,61,.60);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .availability-value { font-weight: 700; color: var(--ink); line-height: 1.35; }
+    .profile-note {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(20,38,61,.12);
+      color: rgba(20,38,61,.72);
+      font-size: .92rem;
+    }
+    .availability-card .btn { width: 100%; margin-top: 18px; }
+    .profile-sections {
+      position: relative;
+      z-index: 1;
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .compact-card { padding: 24px 26px; }
+    .compact-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .compact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(181,148,90,.36);
+      background: rgba(181,148,90,.10);
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-family: var(--serif);
+      flex: 0 0 auto;
+    }
+    .compact-card h2 { font-size: 1.65rem; }
+    .compact-card p { margin: 8px 0 0; color: rgba(20,38,61,.74); }
+    .compact-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: grid;
+      gap: 8px;
+      color: rgba(20,38,61,.76);
+    }
+    .compact-list li { position: relative; padding-left: 22px; }
+    .compact-list li::before {
+      content: '•';
+      position: absolute;
+      left: 4px;
+      top: 0;
+      color: var(--gold);
+      font-weight: 900;
+    }
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .fit-title {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    @media (max-width: 1080px) {
+      .clinician-shell { grid-template-columns: 280px minmax(0, 1fr); }
+      .availability-card { grid-column: 1 / -1; }
+      .availability-body { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 20px; align-items: end; }
+      .availability-card .btn, .profile-note { margin-top: 0; }
+    }
+    @media (max-width: 820px) {
+      .clinician-page { padding: 28px 0; }
+      .clinician-shell, .profile-sections, .fit-grid { grid-template-columns: 1fr; }
+      .portrait-placeholder { min-height: 300px; }
+      .availability-body { display: block; }
+      .availability-card .btn { margin-top: 18px; }
+      .bio-card { padding: 28px; }
+    }
+
+</style>
 </head>
 <body>
 
@@ -279,20 +635,111 @@
 
 
 <main>
-  <section class="image-hero profile-bg">
-    <div class="container hero-grid">
-      <div class="hero-panel">
-        <div class="eyebrow">Founder</div>
-        <h1>Stephen W. Bryant, PsyD, LCPC</h1>
-        <p class="lead">Founder of Stonebridge Psychological Group. Current practice focus: telehealth psychotherapy for adults in Illinois, offered in a clinically serious, bounded, and thoughtful setting.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="contact.html">Request a Consultation</a><a class="btn btn-secondary" href="team.html">Back to Team</a></div>
+  <section class="clinician-page">
+    <div class="container">
+      <div class="clinician-shell">
+        <aside class="portrait-card" aria-label="Clinician portrait">
+          <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder for Stephen W. Bryant, PsyD, LCPC">
+            <div class="portrait-silhouette" aria-hidden="true"></div>
+          </div>
+          <div class="portrait-caption">
+            <strong>Clinician portrait</strong>
+            <span>Photo being finalized</span>
+          </div>
+        </aside>
+
+        <article class="bio-card">
+          <div class="eyebrow">Clinician Profile</div>
+          <h1>Stephen W. Bryant, PsyD, LCPC</h1>
+          <div class="profile-subtitle">Telehealth psychotherapy for adults in Illinois.</div>
+          <div class="ornament-line" aria-hidden="true"></div>
+          <p class="profile-lead">Dr. Bryant provides thoughtful psychotherapy for adults navigating trauma, substance use, mood and anxiety concerns, relational patterns, and complex clinical questions. The work is grounded in careful listening, psychological depth, and clear clinical judgment.</p>
+          <div class="tag-cloud" aria-label="Clinical focus areas">
+            <span class="profile-tag">Trauma / PTSD</span>
+            <span class="profile-tag">Substance use</span>
+            <span class="profile-tag">Mood & anxiety</span>
+            <span class="profile-tag">Complex presentations</span>
+            <span class="profile-tag">Telehealth</span>
+          </div>
+        </article>
+
+        <aside class="availability-card" aria-label="Availability and scheduling">
+          <div class="availability-head">
+            <h2>Availability</h2>
+          </div>
+          <div class="availability-body">
+            <div>
+              <div class="availability-item"><span class="availability-label">Current service</span><span class="availability-value">Psychotherapy</span></div>
+              <div class="availability-item"><span class="availability-label">Format</span><span class="availability-value">Telehealth only</span></div>
+              <div class="availability-item"><span class="availability-label">Location</span><span class="availability-value">Illinois</span></div>
+              <div class="availability-item"><span class="availability-label">New inquiries</span><span class="availability-value">Consultation requests accepted</span></div>
+              <div class="availability-item"><span class="availability-label">Online scheduling</span><span class="availability-value">Link will be added when active</span></div>
+              <p class="profile-note">Online scheduling will be added once connected. For now, availability is reviewed after an initial consultation request.</p>
+            </div>
+            <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+          </div>
+        </aside>
       </div>
-      <div class="quiet-note"><strong>Availability & scheduling</strong><br /><br />Psychotherapy inquiries are reviewed through the consultation process rather than a public calendar. Scheduling details are shared after fit, scope, and availability have been reviewed.</div>
+
+      <div class="profile-sections">
+        <section class="compact-card">
+          <div class="compact-head">
+            <div class="compact-icon" aria-hidden="true">A</div>
+            <h2>About</h2>
+          </div>
+          <p>Dr. Bryant is the founder of Stonebridge Psychological Group. His clinical background includes work across inpatient, partial hospitalization, intensive outpatient, outpatient, and private-practice settings with adolescents and adults.</p>
+          <p>His current practice focuses on adult psychotherapy through telehealth, with attention to history, context, symptoms, relationships, and the ways people adapt to difficulty over time.</p>
+        </section>
+
+        <section class="compact-card">
+          <div class="compact-head">
+            <div class="compact-icon" aria-hidden="true">T</div>
+            <h2>Approach</h2>
+          </div>
+          <p>Therapy is not built around quick reassurance or generic advice. The work emphasizes depth, clarity, careful pacing, and a treatment relationship that is warm, direct, and appropriately bounded.</p>
+          <p>Sessions may focus on trauma, substance use, mood and anxiety concerns, identity, relational patterns, and questions that require more nuanced psychological understanding.</p>
+        </section>
+
+        <section class="compact-card">
+          <div class="compact-head">
+            <div class="compact-icon" aria-hidden="true">B</div>
+            <h2>Background</h2>
+          </div>
+          <ul class="compact-list">
+            <li>Experience across inpatient, PHP, IOP, outpatient, and private-practice settings</li>
+            <li>Assessment-informed clinical thinking and diagnostic formulation</li>
+            <li>Graduate training in forensic psychology and court-involved system experience</li>
+          </ul>
+          <p>Assessment and forensic experience inform the clinical thinking behind the practice. Stonebridge is not currently accepting new assessment or forensic requests.</p>
+        </section>
+
+        <section class="compact-card">
+          <div class="compact-head">
+            <div class="compact-icon" aria-hidden="true">F</div>
+            <h2>Fit</h2>
+          </div>
+          <div class="fit-grid">
+            <div>
+              <div class="fit-title">May be a fit for</div>
+              <ul class="compact-list">
+                <li>Adults seeking telehealth psychotherapy in Illinois</li>
+                <li>People wanting depth-oriented clinical work</li>
+                <li>Trauma, substance use, mood, anxiety, or relational concerns</li>
+              </ul>
+            </div>
+            <div>
+              <div class="fit-title">May not be the right fit for</div>
+              <ul class="compact-list">
+                <li>Emergencies or crisis care</li>
+                <li>Court-ordered or forensic evaluations</li>
+                <li>Psychological testing requests at this time</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   </section>
-  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">What he provides</div><h2>Psychotherapy shaped by depth, complexity, and clinical judgment.</h2><p>Dr. Bryant currently provides telehealth psychotherapy for adults in Illinois. The work is intended for people looking for more than reassurance or symptom management alone—people who want treatment that can hold complexity, ambivalence, history, and the realities of psychological conflict.</p><p>His approach is informed by trauma treatment, substance use and dual diagnosis work, personality and self-structure concerns, mood and anxiety presentations, neurodevelopmental questions, and experience with severe psychopathology across levels of care.</p><div class="availability-strip"><div class="mini-card"><strong>Current service</strong><span>Telehealth psychotherapy for adults in Illinois</span></div><div class="mini-card"><strong>Consultation path</strong><span>Initial inquiries are reviewed for fit, timing, and scope</span></div><div class="mini-card"><strong>Current limits</strong><span>Assessment and forensic services are not open for new requests</span></div></div></article><aside class="schedule-card"><div class="eyebrow">Schedule</div><h2>Availability</h2><p>Scheduling is coordinated directly after an initial consultation request is reviewed.</p><div class="schedule-list"><div class="schedule-row"><span class="schedule-label">Psychotherapy</span><span class="schedule-value">Accepting consultation inquiries</span></div><div class="schedule-row"><span class="schedule-label">Format</span><span class="schedule-value">Telehealth only</span></div><div class="schedule-row"><span class="schedule-label">Location</span><span class="schedule-value">Illinois</span></div><div class="schedule-row"><span class="schedule-label">Assessment</span><span class="schedule-value">Not currently available</span></div><div class="schedule-row"><span class="schedule-label">Forensic services</span><span class="schedule-value">Not currently available</span></div></div></aside></div></section>
-  <section class="section section-muted"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Clinical orientation</div><h2>Thoughtful, relational, and assessment-informed.</h2><p>The work is informed by experience across adolescent and adult treatment settings, including inpatient, partial hospitalization, intensive outpatient, outpatient, and private practice environments. That breadth contributes to a style that is warm without being loose, engaged without being performative, and attentive to the difference between support, treatment, assessment, and referral.</p><p>Common areas of focus include trauma and PTSD, complex or developmental trauma, substance use and addiction, dual diagnosis, mood and anxiety concerns, neurodevelopmental questions, and presentations that benefit from careful differential thinking.</p></article><article class="info-card"><div class="eyebrow">Often a fit for</div><h3>People seeking careful psychological treatment.</h3><p>The practice is geared toward adults who want a treatment setting that values complexity, boundaries, and clarity rather than generic wellness language or high-volume care.</p></article></div></section>
-  <section class="section section-white"><div class="container detail-layout"><article class="prose-card"><div class="eyebrow">Professional background</div><h2>Assessment and forensic background remain part of the broader model.</h2><p>Dr. Bryant’s professional background includes psychological, neuropsychological, and psychodiagnostic assessment, including referral clarification, test selection, administration, scoring, interpretation, diagnostic formulation, report writing, feedback, and treatment planning. That background informs the way Stonebridge thinks clinically, even when therapy is the current active service.</p><p>His forensic background includes graduate training in forensic psychology and experience coordinating with court-involved, school, and child-welfare systems. These areas remain visible on the site because they are part of the broader Stonebridge model, but they are not currently available for new requests.</p></article><article class="info-card"><div class="eyebrow">Service boundaries</div><h3>Clear scope protects both the practice and the patient.</h3><p>Stonebridge keeps psychotherapy, assessment, and forensic roles distinct. That helps the site stay honest about what is active now and what remains part of the practice’s longer-term direction.</p></article></div></section>
 </main>
 
 
@@ -301,7 +748,7 @@
     <div>
       <div class="footer-brand">STONEBRIDGE</div>
       <div class="footer-sub">Psychological Group</div>
-      <p class="footer-copy">Currently accepting psychotherapy inquiries. Assessment and forensic services remain part of the broader practice model, but are not currently available for new requests.</p>
+      <p class="footer-copy">Psychotherapy inquiries are currently accepted for adults in Illinois. Assessment and forensic services are informational only at this time.</p>
     </div>
     <div>
       <div class="footer-title">Services</div>
