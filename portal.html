@@ -346,6 +346,36 @@
       font-size: .92rem;
       line-height: 1.5;
     }
+
+    .portal-pay-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 14px;
+      min-height: 42px;
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+      box-shadow: 0 10px 24px rgba(20,38,61,.14);
+    }
+    .portal-pay-action.is-pending {
+      background: rgba(20,38,61,.10);
+      color: rgba(20,38,61,.70);
+      border: 1px solid rgba(20,38,61,.14);
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+    .portal-tool.is-featured {
+      background: rgba(255,253,248,.92);
+      border-color: rgba(181,148,90,.34);
+      box-shadow: inset 0 0 0 1px rgba(181,148,90,.10), 0 14px 30px rgba(20,38,61,.06);
+    }
+
     .portal-boundary {
       grid-column: 1 / -1;
       display: grid;
@@ -798,7 +828,7 @@
         <div>
           <div class="eyebrow">Client Access</div>
           <h1>Client access.</h1>
-          <p class="lead">A reserved access hub for secure portal, telehealth, billing, and forms once Stonebridge’s client systems are connected.</p>
+          <p class="lead">A reserved access hub for secure portal, telehealth, bill payment, and forms once Stonebridge’s client systems are connected.</p>
         </div>
         <div>
           <div class="portal-status-pill">Portal not connected yet</div>
@@ -828,10 +858,11 @@
             <h3>Telehealth</h3>
             <p>Appointment links will be provided directly and posted here when the workflow is ready.</p>
           </article>
-          <article class="portal-tool">
-            <div class="portal-tool-top"><span class="portal-tool-number">03</span><span class="portal-tool-status">To be added</span></div>
-            <h3>Billing</h3>
-            <p>Payment and billing links will be connected when online billing is ready.</p>
+          <article class="portal-tool is-featured">
+            <div class="portal-tool-top"><span class="portal-tool-number">03</span><span class="portal-tool-status">Coming soon</span></div>
+            <h3>Billing & Payments</h3>
+            <p>Clients will be able to pay balances through TherapyNotes once the payment link is connected.</p>
+            <span class="portal-pay-action is-pending" aria-disabled="true">Pay a Bill — link coming soon</span>
           </article>
           <article class="portal-tool">
             <div class="portal-tool-top"><span class="portal-tool-number">04</span><span class="portal-tool-status">To be posted</span></div>
