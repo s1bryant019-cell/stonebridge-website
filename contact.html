@@ -971,6 +971,200 @@
       .image-hero { padding: 58px 0 48px !important; min-height: auto !important; }
     }
 
+
+
+    /* Contact page v2: readable, form-forward, and compact. */
+    .consultation-stage {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: auto;
+      padding: 34px 0 54px;
+      background: linear-gradient(180deg, var(--cream-2), var(--cream));
+      border-bottom: 1px solid var(--line);
+    }
+    .consultation-stage::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: url("contact-panel.jpg") center 50% / cover no-repeat;
+      opacity: .11;
+      filter: saturate(.84) contrast(.94);
+      pointer-events: none;
+    }
+    .consultation-stage::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 16% 10%, rgba(255,253,248,.94), transparent 36%),
+        linear-gradient(90deg, rgba(247,241,231,.99) 0%, rgba(247,241,231,.94) 52%, rgba(247,241,231,.84) 100%);
+      pointer-events: none;
+    }
+    .consultation-shell {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      border: 1px solid rgba(20,38,61,.13);
+      border-radius: 34px;
+      background: rgba(255,253,248,.76);
+      box-shadow: 0 20px 58px rgba(20,38,61,.10);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+    }
+    .consultation-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+    .consultation-copy,
+    .quick-status-card,
+    .consultation-form-card {
+      border: 1px solid rgba(20,38,61,.12);
+      border-radius: 26px;
+      background: rgba(255,253,248,.92);
+      box-shadow: 0 12px 34px rgba(20,38,61,.055);
+    }
+    .consultation-copy { padding: 28px 30px; }
+    .consultation-copy h1 {
+      font-size: clamp(2.55rem, 5vw, 4.45rem);
+      letter-spacing: -.035em;
+      max-width: 760px;
+    }
+    .consultation-copy .lead {
+      max-width: 780px;
+      margin-top: 16px;
+      font-size: 1.03rem;
+      line-height: 1.65;
+    }
+    .quick-status-card { padding: 24px; }
+    .quick-status-card h2 {
+      font-size: 1.65rem;
+      margin-bottom: 8px;
+    }
+    .quick-status-list { display: grid; gap: 0; margin-top: 10px; }
+    .quick-status-row {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 16px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(20,38,61,.12);
+      align-items: start;
+    }
+    .quick-status-row strong {
+      color: rgba(20,38,61,.58);
+      font-size: .70rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .quick-status-row span {
+      color: var(--ink);
+      font-weight: 750;
+      line-height: 1.35;
+    }
+    .consultation-form-card {
+      padding: 28px 30px 30px;
+      display: block;
+    }
+    .form-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, .46fr);
+      gap: 22px;
+      align-items: end;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(20,38,61,.12);
+    }
+    .form-heading h2 {
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+    }
+    .form-heading p {
+      margin: 0;
+      color: rgba(20,38,61,.66);
+      text-align: right;
+      line-height: 1.45;
+    }
+    .consultation-form-card .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 16px 18px;
+    }
+    .consultation-form-card label span {
+      margin-bottom: 7px;
+      font-size: .75rem;
+      letter-spacing: .08em;
+    }
+    .consultation-form-card input,
+    .consultation-form-card select,
+    .consultation-form-card textarea {
+      min-height: 50px;
+      border-radius: 16px;
+      font-size: 1rem;
+      background: rgba(255,253,248,.96);
+    }
+    .consultation-form-card textarea { min-height: 120px; }
+    .form-note-inline {
+      margin: -2px 0 2px;
+      color: rgba(20,38,61,.68);
+      font-size: .92rem;
+      line-height: 1.5;
+    }
+    .form-bottom-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(20,38,61,.12);
+    }
+    .emergency-note {
+      color: rgba(20,38,61,.68);
+      font-size: .93rem;
+      line-height: 1.5;
+    }
+    .emergency-note strong { color: var(--ink); }
+    .emergency-note a { font-weight: 800; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    #submitButton {
+      min-width: 158px;
+      min-height: 52px;
+      font-size: .94rem;
+    }
+    #submitButton:disabled { opacity: .72; cursor: not-allowed; transform: none; }
+    .form-alert {
+      margin-top: 18px;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(181,148,90,.30);
+      background: rgba(181,148,90,.12);
+      color: var(--ink);
+      font-weight: 650;
+      display: none;
+    }
+    .form-alert.show { display: block; }
+
+    @media (max-width: 980px) {
+      .consultation-top,
+      .form-heading,
+      .form-bottom-row { grid-template-columns: 1fr; }
+      .form-heading p { text-align: left; }
+      .consultation-copy h1 { font-size: clamp(2.45rem, 12vw, 3.5rem); }
+    }
+    @media (max-width: 720px) {
+      .consultation-stage { padding: 24px 0 34px; }
+      .consultation-shell { padding: 12px; border-radius: 26px; }
+      .consultation-copy,
+      .quick-status-card,
+      .consultation-form-card { padding: 22px; border-radius: 22px; }
+      .consultation-form-card .form-grid { grid-template-columns: 1fr; }
+      .form-row-full { grid-column: auto; }
+      .quick-status-row { grid-template-columns: 1fr; gap: 4px; }
+      #submitButton { width: 100%; }
+    }
+
 </style>
 </head>
 <body>
@@ -1012,29 +1206,30 @@
 </header>
 
 
+
 <main>
   <section class="consultation-stage">
     <div class="container">
-      <div class="consultation-panel">
-        <aside class="consultation-intro">
-          <div class="eyebrow">Initial Inquiry</div>
-          <h1>Begin with a careful first step.</h1>
-          <p class="lead">Use this form for an initial psychotherapy inquiry. Stonebridge reviews each request for fit, scope, and availability before any ongoing care is scheduled.</p>
+      <div class="consultation-shell">
+        <div class="consultation-top">
+          <section class="consultation-copy" aria-labelledby="consultation-title">
+            <div class="eyebrow">Initial Inquiry</div>
+            <h1 id="consultation-title">Request a consultation.</h1>
+            <p class="lead">Use this form for an initial psychotherapy inquiry. Stonebridge reviews each request for fit, scope, and availability before any ongoing care is scheduled.</p>
+          </section>
 
-          <div class="availability-line" aria-label="Current service status">
-            <div class="availability-item"><strong>Available now</strong><span>Telehealth psychotherapy for adults in Illinois</span></div>
-            <div class="availability-item"><strong>Scheduling</strong><span>Coordinated after consultation review</span></div>
-            <div class="availability-item"><strong>Not open</strong><span>Psychological assessment and forensic services are not currently available for new requests</span></div>
-          </div>
+          <aside class="quick-status-card" aria-label="Current service status">
+            <div class="eyebrow">Current status</div>
+            <h2>Before you submit</h2>
+            <div class="quick-status-list">
+              <div class="quick-status-row"><strong>Available</strong><span>Telehealth psychotherapy for adults in Illinois</span></div>
+              <div class="quick-status-row"><strong>Scheduling</strong><span>Coordinated after consultation review</span></div>
+              <div class="quick-status-row"><strong>Not open</strong><span>Assessment and forensic requests are not currently being accepted</span></div>
+            </div>
+          </aside>
+        </div>
 
-          <div class="process-strip" aria-label="Consultation process">
-            <div class="process-step"><strong>Submit</strong><span>Send a concise initial inquiry.</span></div>
-            <div class="process-step"><strong>Review</strong><span>Fit, scope, and availability are considered.</span></div>
-            <div class="process-step"><strong>Reply</strong><span>Next steps are shared by email when appropriate.</span></div>
-          </div>
-        </aside>
-
-        <form id="consultation-form" class="consultation-form-card">
+        <form id="consultation-form" class="consultation-form-card" novalidate>
           <div class="form-heading">
             <div>
               <div class="eyebrow">Request a Consultation</div>
@@ -1048,7 +1243,7 @@
             <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy" />
 
             <label class="form-row-full"><span>Service Requested *</span><select id="serviceRequested" class="service-select" name="serviceRequested" required><option value="psychotherapy">Psychotherapy — currently available</option><option value="assessment" disabled>Psychological Assessment — not currently available</option><option value="forensic" disabled>Forensic Services — not currently available</option></select></label>
-            <div class="form-row-full form-note-inline">Assessment and forensic services remain part of the broader Stonebridge model, but they are not open for new requests at this time.</div>
+            <div class="form-row-full form-note-inline">Psychological assessment and forensic services remain part of the broader Stonebridge model, but they are not open for new requests at this time.</div>
 
             <label><span>Full Name *</span><input type="text" name="fullName" autocomplete="name" required /></label>
             <label><span>Proposed Patient’s Name</span><input type="text" name="patientName" /></label>
@@ -1068,6 +1263,7 @@
     </div>
   </section>
 </main>
+
 
 
 <footer class="site-footer">
@@ -1128,6 +1324,7 @@
 <script src="script.js"></script>
 
 
+
 <script>
 (function(){
   var form = document.getElementById('consultation-form');
@@ -1135,28 +1332,54 @@
   var service = document.getElementById('serviceRequested');
   var alertBox = document.getElementById('form-alert');
   var submitButton = document.getElementById('submitButton');
+
   function showAlert(message) {
     if (!alertBox) return;
     alertBox.textContent = message;
     alertBox.classList.add('show');
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+
+  function clearAlert() {
+    if (!alertBox) return;
+    alertBox.classList.remove('show');
+    alertBox.textContent = '';
+  }
+
+  async function postJson(url, payload) {
+    return fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  }
+
   if (service) {
     service.addEventListener('change', function(){
       if (service.value === 'assessment' || service.value === 'forensic') {
         showAlert('Stonebridge is not currently accepting assessment or forensic requests. Psychotherapy inquiries may be submitted through this form.');
-      } else if (alertBox) {
-        alertBox.classList.remove('show');
-        alertBox.textContent = '';
+      } else {
+        clearAlert();
       }
     });
   }
+
   form.addEventListener('submit', async function(event){
     event.preventDefault();
+    clearAlert();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     if (service && (service.value === 'assessment' || service.value === 'forensic')) {
       showAlert('Assessment and forensic services are not currently available for new requests. Please select psychotherapy if you are seeking psychotherapy services.');
       return;
     }
+
     if (submitButton) { submitButton.disabled = true; submitButton.textContent = 'Sending...'; }
+
     var data = new FormData(form);
     var payload = {
       website: data.get('website') || '',
@@ -1173,12 +1396,15 @@
       reason: data.get('reason') || '',
       message: data.get('reason') || ''
     };
+
     try {
-      var response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-      if (!response.ok && response.status === 404) {
-        response = await fetch('/api/contact.js', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      var response = await postJson('/api/contact', payload);
+      if (!response.ok) {
+        response = await postJson('/api/contact.js', payload);
       }
-      if (!response.ok) throw new Error('Request failed');
+      if (!response.ok) {
+        throw new Error('Request failed with status ' + response.status);
+      }
       form.reset();
       showAlert('Your consultation request has been sent. Stonebridge will follow up by email if the request appears appropriate for the practice.');
     } catch (error) {
@@ -1189,6 +1415,7 @@
   });
 })();
 </script>
+
 
 </body>
 </html>
