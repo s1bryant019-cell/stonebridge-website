@@ -375,6 +375,98 @@
       }
     }
 
+
+
+    /* === Team directory cards: compact clinician previews === */
+    .team-directory-head { max-width: 760px; margin-bottom: 28px; }
+    .team-directory-head .lead { max-width: 720px; }
+    .clinician-directory { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .clinician-card {
+      background: rgba(255,253,248,.94);
+      border: 1px solid rgba(20,38,61,.13);
+      border-radius: 30px;
+      box-shadow: 0 16px 48px rgba(20,38,61,.08);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 148px minmax(0,1fr);
+      min-height: 260px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .clinician-card:hover { transform: translateY(-2px); box-shadow: 0 22px 58px rgba(20,38,61,.12); }
+    .clinician-card.founder-card { grid-template-columns: 174px minmax(0,1fr); }
+    .clinician-photo {
+      position: relative;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at 50% 66%, rgba(181,148,90,.16), transparent 46%),
+        linear-gradient(180deg, rgba(255,253,248,.78), rgba(216,203,184,.48));
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .clinician-photo::before {
+      content: '';
+      position: absolute;
+      inset: 28px 24px 0;
+      border: 12px solid rgba(181,148,90,.12);
+      border-bottom: 0;
+      border-radius: 999px 999px 0 0;
+    }
+    .clinician-photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 2; }
+    .photo-initials {
+      position: relative;
+      z-index: 1;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: rgba(20,38,61,.62);
+      background: rgba(255,253,248,.58);
+      border: 1px solid rgba(181,148,90,.28);
+    }
+    .clinician-photo.has-image .photo-initials { display: none; }
+    .clinician-photo.no-image .photo-initials { display: grid; }
+    .clinician-body { padding: 24px 26px 25px; display: flex; flex-direction: column; gap: 14px; }
+    .clinician-topline { display:flex; align-items:center; justify-content: space-between; gap: 14px; }
+    .clinician-card h3 { margin: 0; font-size: clamp(1.45rem, 1.8vw, 1.8rem); line-height: 1.04; }
+    .clinician-card .role { margin-top: 4px; }
+    .mini-status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(181,148,90,.12);
+      color: var(--ink);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .clinician-body p { margin: 0; color: rgba(20,38,61,.74); line-height: 1.55; }
+    .clinician-facts { display: grid; gap: 8px; margin-top: 2px; }
+    .clinician-fact { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 12px; padding-top: 8px; border-top: 1px solid rgba(20,38,61,.10); }
+    .clinician-fact:first-child { border-top: 0; padding-top: 0; }
+    .clinician-fact b { color: var(--gold); font-size: .67rem; letter-spacing: .10em; text-transform: uppercase; }
+    .clinician-fact span { color: var(--ink); font-weight: 730; line-height: 1.35; }
+    .clinician-tags { display:flex; flex-wrap:wrap; gap: 7px; }
+    .clinician-tags span { border: 1px solid rgba(181,148,90,.28); background: rgba(255,253,248,.78); border-radius: 999px; padding: 6px 9px; font-size: .68rem; font-weight: 850; color: var(--ink); }
+    .clinician-body .btn-text { margin-top: auto; padding-top: 2px; }
+    .future-card .clinician-photo { background: linear-gradient(180deg, rgba(255,253,248,.86), rgba(216,203,184,.34)); }
+    .future-card .clinician-photo::after { content:''; position:absolute; inset: 0; background: linear-gradient(135deg, transparent, rgba(20,38,61,.04)); }
+    @media (max-width: 980px) { .clinician-directory { grid-template-columns: 1fr; } }
+    @media (max-width: 620px) {
+      .clinician-card, .clinician-card.founder-card { grid-template-columns: 1fr; }
+      .clinician-photo { min-height: 230px; }
+      .clinician-fact { grid-template-columns: 1fr; gap: 2px; }
+      .clinician-topline { align-items: flex-start; flex-direction: column; }
+    }
+
 </style>
 </head>
 <body>
@@ -421,48 +513,130 @@
     <div class="container hero-grid">
       <div class="hero-panel">
         <div class="eyebrow">Team</div>
-        <h1>Current clinical leadership, with room to grow.</h1>
-        <p class="lead">Stonebridge is currently led by one active clinician profile. Additional profiles will be posted when biography, scope, service fit, and availability are ready for publication.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="team-founder.html">View founder profile</a><a class="btn btn-secondary" href="#psychologists">Browse profiles</a></div>
+        <h1>Clinicians and profile pages.</h1>
+        <p class="lead">A concise overview of Stonebridge clinicians, areas of focus, who they work with, and how to learn more. Full profiles include background, approach, practical details, and scheduling information.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="team-founder.html">View founder profile</a><a class="btn btn-secondary" href="#directory">Browse clinicians</a></div>
       </div>
-      <div class="quiet-note"><strong>Team pages</strong><br /><br />Profiles are text-forward and added only when they can read as real clinician pages. No stock headshots, invented biographies, or internal placeholders.</div>
+      <div class="quiet-note"><strong>Profile format</strong><br /><br />Each clinician page is built around what clients need most: who the clinician works with, clinical focus, approach, availability, and next steps.</div>
     </div>
   </section>
 
-  <section id="founder" class="section section-white anchor-offset">
-    <div class="container detail-layout">
-      <article class="prose-card">
-        <div class="eyebrow">Founder</div>
-        <h2>Stephen W. Bryant, PsyD, LCPC</h2>
-        <div class="role">Founder · Clinical Psychologist Postdoctoral / LCPC</div>
-        <p>Current work centers on telehealth psychotherapy for adults in Illinois. Stonebridge is intentionally small, clinically grounded, and structured around careful fit rather than high-volume intake.</p>
-        <p>Background in trauma, substance use, complex presentations, assessment, and forensic psychology informs the broader direction of the practice while psychotherapy remains the active service pathway.</p>
-        <div class="tags"><span class="tag">Telehealth psychotherapy</span><span class="tag">Adults in Illinois</span><span class="tag">Trauma and complexity</span><span class="tag">Assessment-informed</span></div>
-        <div class="button-row"><a class="btn btn-primary" href="team-founder.html">See full profile</a></div>
-      </article>
-      <aside class="schedule-card">
-        <div class="eyebrow">Current status</div><h2>Availability</h2>
-        <div class="schedule-list">
-          <div class="schedule-row"><span class="schedule-label">Psychotherapy</span><span class="schedule-value">Accepting inquiries</span></div>
-          <div class="schedule-row"><span class="schedule-label">Format</span><span class="schedule-value">Telehealth only</span></div>
-          <div class="schedule-row"><span class="schedule-label">Scheduling</span><span class="schedule-value">After consultation review</span></div>
+  <section id="directory" class="section section-white anchor-offset">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Clinician directory</div>
+          <h2>Current and developing profiles.</h2>
         </div>
-      </aside>
+        <p>Stephen’s profile is the current active clinician page. Additional clinician cards are ready to expand as names, photos, schedules, and specialty details are finalized.</p>
+      </div>
+
+      <div class="clinician-directory">
+        <a class="clinician-card founder-card" href="team-founder.html">
+          <div class="clinician-photo has-image" aria-label="Stephen W. Bryant clinician photo">
+            <img src="founders-photo.png" alt="Stephen W. Bryant, PsyD, LCPC" onerror="this.parentElement.classList.remove('has-image'); this.parentElement.classList.add('no-image'); this.remove();" />
+            <span class="photo-initials">SB</span>
+          </div>
+          <div class="clinician-body">
+            <div class="clinician-topline">
+              <div>
+                <h3>Stephen W. Bryant, PsyD, LCPC</h3>
+                <div class="role">Founder · Clinical Psychologist Postdoctoral · LCPC</div>
+              </div>
+              <span class="mini-status">Active</span>
+            </div>
+            <p>Provides integrative, depth-oriented telehealth psychotherapy for adults in Illinois.</p>
+            <div class="clinician-facts">
+              <div class="clinician-fact"><b>Works with</b><span>Adults, 18+, located in Illinois</span></div>
+              <div class="clinician-fact"><b>Focus</b><span>Trauma/PTSD, addiction/substance use, mood and anxiety, dual diagnosis, identity and relationships</span></div>
+              <div class="clinician-fact"><b>Availability</b><span>Accepting psychotherapy consultation inquiries; insurance paneling in progress</span></div>
+            </div>
+            <div class="clinician-tags"><span>Telehealth</span><span>Individual therapy</span><span>Depth-oriented</span></div>
+            <span class="btn-text">Click for more</span>
+          </div>
+        </a>
+
+        <a class="clinician-card future-card" href="team-psychologist-1.html">
+          <div class="clinician-photo no-image" aria-label="Psychologist profile photo pending"><span class="photo-initials">P</span></div>
+          <div class="clinician-body">
+            <div class="clinician-topline">
+              <div>
+                <h3>Psychologist</h3>
+                <div class="role">Full profile forthcoming</div>
+              </div>
+              <span class="mini-status">Forthcoming</span>
+            </div>
+            <p>This profile will include the clinician’s biography, specialties, client focus, and schedule once finalized.</p>
+            <div class="clinician-facts">
+              <div class="clinician-fact"><b>Works with</b><span>To be posted</span></div>
+              <div class="clinician-fact"><b>Focus</b><span>Specialties and services to be posted</span></div>
+              <div class="clinician-fact"><b>Availability</b><span>Schedule details to be posted</span></div>
+            </div>
+            <span class="btn-text">Click for more</span>
+          </div>
+        </a>
+
+        <a class="clinician-card future-card" href="team-psychologist-2.html">
+          <div class="clinician-photo no-image" aria-label="Psychologist profile photo pending"><span class="photo-initials">P</span></div>
+          <div class="clinician-body">
+            <div class="clinician-topline">
+              <div>
+                <h3>Psychologist</h3>
+                <div class="role">Profile being finalized</div>
+              </div>
+              <span class="mini-status">Forthcoming</span>
+            </div>
+            <p>A second psychologist page is prepared for a real profile, photo, client focus, and scheduling information.</p>
+            <div class="clinician-facts">
+              <div class="clinician-fact"><b>Works with</b><span>To be posted</span></div>
+              <div class="clinician-fact"><b>Focus</b><span>Clinical areas to be posted</span></div>
+              <div class="clinician-fact"><b>Availability</b><span>Schedule details to be posted</span></div>
+            </div>
+            <span class="btn-text">Click for more</span>
+          </div>
+        </a>
+
+        <a class="clinician-card future-card" href="team-therapist-1.html">
+          <div class="clinician-photo no-image" aria-label="Therapist profile photo pending"><span class="photo-initials">T</span></div>
+          <div class="clinician-body">
+            <div class="clinician-topline">
+              <div>
+                <h3>Therapist</h3>
+                <div class="role">Full profile forthcoming</div>
+              </div>
+              <span class="mini-status">Forthcoming</span>
+            </div>
+            <p>This page will hold the therapist’s approach, age range, client focus, service format, and availability once finalized.</p>
+            <div class="clinician-facts">
+              <div class="clinician-fact"><b>Works with</b><span>To be posted</span></div>
+              <div class="clinician-fact"><b>Focus</b><span>Treatment focus to be posted</span></div>
+              <div class="clinician-fact"><b>Availability</b><span>Schedule details to be posted</span></div>
+            </div>
+            <span class="btn-text">Click for more</span>
+          </div>
+        </a>
+
+        <a class="clinician-card future-card" href="team-therapist-2.html">
+          <div class="clinician-photo no-image" aria-label="Therapist profile photo pending"><span class="photo-initials">T</span></div>
+          <div class="clinician-body">
+            <div class="clinician-topline">
+              <div>
+                <h3>Therapist</h3>
+                <div class="role">Profile being finalized</div>
+              </div>
+              <span class="mini-status">Forthcoming</span>
+            </div>
+            <p>A second therapist page is ready for a real profile, treatment style, client focus, and availability information.</p>
+            <div class="clinician-facts">
+              <div class="clinician-fact"><b>Works with</b><span>To be posted</span></div>
+              <div class="clinician-fact"><b>Focus</b><span>Clinical areas to be posted</span></div>
+              <div class="clinician-fact"><b>Availability</b><span>Schedule details to be posted</span></div>
+            </div>
+            <span class="btn-text">Click for more</span>
+          </div>
+        </a>
+      </div>
     </div>
-  </section>
-
-  <section id="psychologists" class="section section-muted anchor-offset">
-    <div class="container"><div class="section-head"><div><div class="eyebrow">Psychologists</div><h2>Psychologist profiles forthcoming.</h2></div><p>These pages are reserved for real clinician profiles as the practice expands.</p></div><div class="profile-grid">
-      <a class="profile-card" href="team-psychologist-1.html"><div class="profile-card-top"><div class="profile-mark">P</div><span class="status">Forthcoming</span></div><h3>Psychologist</h3><div class="role">Biography and availability to be posted</div><p>A full profile will appear here once the clinician’s role, specialties, and schedule are finalized.</p><span class="btn-text">See more</span></a>
-      <a class="profile-card" href="team-psychologist-2.html"><div class="profile-card-top"><div class="profile-mark">P</div><span class="status">Forthcoming</span></div><h3>Psychologist</h3><div class="role">Professional profile coming soon</div><p>This page is prepared for a psychologist profile and will expand when the details are ready to publish.</p><span class="btn-text">See more</span></a>
-    </div></div>
-  </section>
-
-  <section id="therapists" class="section section-white anchor-offset">
-    <div class="container"><div class="section-head"><div><div class="eyebrow">Therapists</div><h2>Therapist profiles forthcoming.</h2></div><p>Each profile will include a concise clinical introduction, service format, and availability when finalized.</p></div><div class="profile-grid">
-      <a class="profile-card" href="team-therapist-1.html"><div class="profile-card-top"><div class="profile-mark">T</div><span class="status">Forthcoming</span></div><h3>Therapist</h3><div class="role">Treatment focus to be added</div><p>A full profile will appear here once the therapist’s approach, fit, and schedule are finalized.</p><span class="btn-text">See more</span></a>
-      <a class="profile-card" href="team-therapist-2.html"><div class="profile-card-top"><div class="profile-mark">T</div><span class="status">Forthcoming</span></div><h3>Therapist</h3><div class="role">Biography and service information coming soon</div><p>This page is reserved for another therapist profile in the same editorial format.</p><span class="btn-text">See more</span></a>
-    </div></div>
   </section>
 </main>
 
