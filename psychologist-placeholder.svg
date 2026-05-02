@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="Psychologist profile placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset="1" stop-color="#e4d8c5"/></linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d3f57"/><stop offset="1" stop-color="#14263d"/></linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <path d="M145 760 V390 C145 220 282 82 450 82s305 138 305 308v370" fill="none" stroke="#b5945a" stroke-width="34" opacity=".22"/>
+  <path d="M185 802 V412 C185 264 304 146 450 146s265 118 265 266v390" fill="none" stroke="#14263d" stroke-width="3" opacity=".09"/>
+  <circle cx="450" cy="420" r="118" fill="url(#navy)" opacity=".22"/>
+  <path d="M256 888c18-183 98-274 194-274s176 91 194 274v124H256z" fill="url(#navy)" opacity=".18"/>
+  <rect x="0" y="990" width="900" height="210" fill="#fffdf8" opacity=".88"/>
+  <circle cx="160" cy="1095" r="54" fill="none" stroke="#b5945a" stroke-width="5" opacity=".8"/>
+  <text x="160" y="1114" text-anchor="middle" font-family="Georgia, serif" font-size="58" font-weight="700" fill="#14263d" opacity=".72">P</text>
+  <path d="M285 1082h410" stroke="#b5945a" stroke-width="4" opacity=".35"/>
+</svg>
