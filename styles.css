@@ -1913,3 +1913,35 @@ body{background:var(--home-bg);}
     justify-self:start;
   }
 }
+
+/* =========================================================
+   CLINICIAN PROFILE POLISH — teens/adults + lighter reusable body
+   Makes the template feel less boxed while preserving the Home-led profile header.
+========================================================= */
+.clinician-system-card,
+.clinician-system-before{
+  background:rgba(255,253,248,.66);
+  border-color:rgba(212,200,185,.42);
+  box-shadow:0 10px 24px rgba(31,42,52,.025);
+}
+.clinician-system-card::after,
+.clinician-system-before::after{
+  opacity:.025;
+}
+.clinician-system-feature-card{
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.032), rgba(255,253,248,.76)),
+    rgba(255,253,248,.66);
+}
+.clinician-system-snapshot{
+  background:rgba(255,253,248,.58);
+}
+.clinician-system-before{
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.035), rgba(255,253,248,.78)),
+    rgba(255,253,248,.66);
+}
+.clinician-system-before .btn{
+  border-color:rgba(212,200,185,.76);
+  background:rgba(255,253,248,.72);
+}
