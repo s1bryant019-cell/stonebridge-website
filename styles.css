@@ -1586,3 +1586,330 @@ body{background:var(--home-bg);}
     margin-top:14px;
   }
 }
+
+
+/* =========================================================
+   CLINICIAN PROFILE SYSTEM — reusable clinician template
+   Updated to remove the detached sidebar feel and create one
+   stable profile module that can be reused for future clinicians.
+========================================================= */
+.clinician-system-hero{
+  position:relative;
+  overflow:hidden;
+  padding:38px 0 28px;
+  background:
+    radial-gradient(circle at 17% 30%, rgba(200,171,120,.08), transparent 24%),
+    linear-gradient(180deg, #fbf8f4 0%, #f7f1ea 100%);
+  border-bottom:1px solid rgba(212,200,185,.42);
+}
+.clinician-system-hero::after{
+  content:"";
+  position:absolute;
+  right:-260px;
+  bottom:-260px;
+  width:820px;
+  height:620px;
+  background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
+  opacity:.045;
+  pointer-events:none;
+}
+.clinician-system-shell,
+.clinician-system-content{
+  position:relative;
+  z-index:1;
+  width:min(1130px, calc(100% - 72px));
+  margin:0 auto;
+}
+.clinician-system-profile{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr) 270px;
+  gap:26px;
+  align-items:center;
+  padding:24px;
+  border-radius:30px;
+}
+.clinician-system-photo{
+  margin:0;
+  height:292px;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(212,200,185,.72);
+  background:#e9ded2;
+  box-shadow:0 18px 38px rgba(29,38,46,.07);
+}
+.clinician-system-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 18%;
+  filter:saturate(.92) contrast(.98);
+}
+.clinician-system-summary{
+  min-width:0;
+  align-self:center;
+}
+.clinician-system-summary .stone-page-line{
+  margin-bottom:20px;
+}
+.clinician-system-summary h1{
+  margin:10px 0 10px;
+  max-width:9.15ch;
+  color:var(--home-navy, #213142);
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(3.05rem, 4.05vw, 4.25rem);
+  line-height:.92;
+  letter-spacing:-.052em;
+}
+.clinician-system-summary .profile-subtitle{
+  margin:0 0 14px !important;
+  max-width:43rem;
+  color:#9a835f !important;
+  font-size:.76rem !important;
+  line-height:1.45 !important;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.clinician-system-summary .profile-lead{
+  max-width:42rem;
+  margin:0 0 14px !important;
+  color:#213142 !important;
+  font-size:1rem !important;
+  line-height:1.58 !important;
+}
+.clinician-system-quote{
+  margin:16px 0 0;
+  padding:13px 18px 13px 20px;
+  border-left:3px solid rgba(200,171,120,.92);
+  border-radius:0 18px 18px 0;
+  background:rgba(255,253,248,.62);
+}
+.clinician-system-quote p{
+  margin:0 !important;
+  color:#213142;
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(1.14rem, 1.33vw, 1.34rem) !important;
+  line-height:1.18 !important;
+  letter-spacing:-.012em;
+}
+.clinician-system-start{
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:22px;
+  border-radius:24px;
+  border:1px solid rgba(212,200,185,.72);
+  background:linear-gradient(180deg, rgba(255,253,248,.78), rgba(248,244,239,.74));
+}
+.clinician-system-start h2{
+  margin:18px 0 10px;
+  font-size:2.1rem;
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.clinician-system-start p{
+  margin:0;
+  color:#5f6c78;
+  font-size:.92rem;
+  line-height:1.58;
+}
+.clinician-system-start .btn{
+  width:100%;
+  margin-top:14px;
+  min-height:48px;
+}
+.clinician-system-facts{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0,1fr));
+  gap:10px;
+  margin-top:2px;
+  padding-top:16px;
+  border-top:1px solid rgba(212,200,185,.62);
+}
+.clinician-system-facts div{
+  min-height:64px;
+  padding:12px 14px;
+  border-radius:18px;
+  border:1px solid rgba(212,200,185,.58);
+  background:rgba(255,253,248,.55);
+}
+.clinician-system-facts span{
+  display:block;
+  margin-bottom:4px;
+  color:#9a835f;
+  font-size:.66rem;
+  font-weight:800;
+  letter-spacing:.15em;
+  line-height:1.2;
+  text-transform:uppercase;
+}
+.clinician-system-facts strong{
+  display:block;
+  color:#213142;
+  font-size:.94rem;
+  line-height:1.25;
+}
+.clinician-system-body{
+  padding-top:36px !important;
+  padding-bottom:62px !important;
+}
+.clinician-system-two-up,
+.clinician-system-lower-grid{
+  display:grid;
+  gap:20px;
+  align-items:stretch;
+}
+.clinician-system-two-up{
+  grid-template-columns:1fr 1fr;
+}
+.clinician-system-lower-grid{
+  grid-template-columns:minmax(0, 1.28fr) minmax(300px, .72fr);
+  margin-top:20px;
+}
+.clinician-system-card,
+.clinician-system-before{
+  padding:28px;
+  border-radius:28px;
+}
+.clinician-system-card h2,
+.clinician-system-before h2{
+  margin:0 0 14px;
+  color:var(--home-navy, #213142);
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(2rem, 2.55vw, 2.5rem);
+  line-height:1;
+  letter-spacing:-.025em;
+}
+.clinician-system-card p,
+.clinician-system-before p{
+  margin:0;
+  color:#5f6c78;
+  font-size:.98rem;
+  line-height:1.64;
+}
+.clinician-system-card p + p,
+.clinician-system-before p + p{
+  margin-top:12px;
+}
+.clinician-system-feature-card{
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.045), rgba(255,253,248,.90)),
+    linear-gradient(180deg,#fffdf8,#f8f4ef);
+}
+.clinician-system-snapshot{
+  display:grid;
+  align-content:start;
+  gap:22px;
+}
+.clinician-system-snapshot h2{
+  margin-bottom:0;
+}
+.clinician-system-snapshot-block{
+  padding-top:18px;
+  border-top:1px solid rgba(212,200,185,.62);
+}
+.clinician-system-snapshot-block h3{
+  margin:0 0 12px;
+  color:var(--home-navy, #213142);
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:1.45rem;
+  line-height:1.05;
+}
+.clinician-system-snapshot-block p{
+  font-size:.94rem;
+}
+.clinician-system-before{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:24px;
+  align-items:center;
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.055), rgba(255,253,248,.90)),
+    linear-gradient(180deg,#fffdf8,#f8f4ef);
+}
+.clinician-system-before .btn{
+  white-space:nowrap;
+}
+@media (max-width:1120px){
+  .clinician-system-profile{
+    grid-template-columns:190px minmax(0,1fr);
+  }
+  .clinician-system-start{
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:.5fr 1fr .58fr;
+    gap:18px;
+    align-items:center;
+  }
+  .clinician-system-start h2{
+    margin:0;
+  }
+  .clinician-system-start .btn{
+    margin-top:0;
+  }
+  .clinician-system-start .pt-contact-lines{
+    margin:0;
+    padding:0 0 0 18px;
+    border-top:0;
+    border-left:1px solid rgba(212,200,185,.62);
+  }
+}
+@media (max-width:960px){
+  .clinician-system-two-up,
+  .clinician-system-lower-grid{
+    grid-template-columns:1fr;
+  }
+  .clinician-system-facts{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+}
+@media (max-width:760px){
+  .clinician-system-shell,
+  .clinician-system-content{
+    width:min(1130px, calc(100% - 30px));
+  }
+  .clinician-system-hero{
+    padding:28px 0 24px;
+  }
+  .clinician-system-profile{
+    grid-template-columns:1fr;
+    gap:20px;
+    padding:20px;
+  }
+  .clinician-system-photo{
+    height:340px;
+  }
+  .clinician-system-summary h1{
+    font-size:clamp(2.75rem, 12vw, 4rem);
+  }
+  .clinician-system-start{
+    display:block;
+  }
+  .clinician-system-start h2{
+    margin:16px 0 8px;
+  }
+  .clinician-system-start .btn{
+    margin-top:12px;
+  }
+  .clinician-system-start .pt-contact-lines{
+    margin-top:14px;
+    padding:14px 0 0;
+    border-left:0;
+    border-top:1px solid rgba(212,200,185,.62);
+  }
+  .clinician-system-facts{
+    grid-template-columns:1fr;
+  }
+  .clinician-system-card,
+  .clinician-system-before{
+    padding:22px;
+  }
+  .clinician-system-before{
+    grid-template-columns:1fr;
+  }
+  .clinician-system-before .btn{
+    justify-self:start;
+  }
+}
