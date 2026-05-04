@@ -1,0 +1,37 @@
+Stonebridge Home-Led Correction Package
+
+Upload / replace these files:
+- index.html
+- about.html
+- services.html
+- psychotherapy.html
+- assessment.html
+- forensic.html
+- team.html
+- team-founder.html
+- portal.html
+- contact.html
+- styles.css
+- script.js
+
+Delete these unfinished placeholder clinician pages if present:
+- team-psychologist-1.html
+- team-psychologist-2.html
+- team-therapist-1.html
+- team-therapist-2.html
+
+Do not change:
+- api/contact.js
+- Vercel environment variables
+- Resend settings
+- image assets
+- favicon files
+- site.webmanifest
+
+Intent of this package:
+- Restore the original Home page direction.
+- Make interior pages follow the Home page rather than flattening the Home page.
+- Preserve Home-style header/footer scale, split editorial hero, warm cream background, integrated image panels, navy band, muted gold accents, and faint bridge watermark use.
+- Keep psychotherapy as the only active service pathway.
+- Keep assessment and forensic visible but closed to new requests.
+- Preserve the contact form submission to /api/contact and fallback /api/contact.js.
