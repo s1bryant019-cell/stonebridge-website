@@ -553,3 +553,172 @@ body{background:var(--home-bg);}
   .form-grid,.form-bottom-row,.form-heading{grid-template-columns:1fr;display:grid;}
   .form-bottom-row .btn{width:100%;}
 }
+
+
+/* =========================================================
+   CLIENT-FORWARD CLEANUP PASS
+   Adds substance to Contact, Team, and individual clinician
+   profile pages while preserving the Home-led visual system.
+========================================================= */
+.compact-contact-hero,
+.compact-team-hero,
+.profile-pt-hero{
+  min-height:500px;
+}
+.compact-contact-hero .stone-page-inner,
+.compact-team-hero .stone-page-inner,
+.profile-pt-hero .stone-page-inner{
+  min-height:500px;
+}
+.compact-contact-hero .stone-page-copy p,
+.compact-team-hero .stone-page-copy p,
+.profile-pt-hero .stone-page-copy p{
+  max-width:40rem;
+}
+.useful-panel .stone-panel-caption h2,
+.compact-team-hero .stone-panel-caption h2,
+.profile-pt-hero .stone-panel-caption h2{
+  text-shadow:0 12px 28px rgba(0,0,0,.24);
+}
+.request-band .subpage-band-grid{
+  padding-top:18px;
+  padding-bottom:20px;
+}
+.contact-action-section{
+  padding-top:58px;
+}
+.contact-forward-grid{
+  grid-template-columns:.78fr 1.22fr;
+  align-items:start;
+}
+.consultation-side-stack{
+  display:grid;
+  gap:18px;
+  position:sticky;
+  top:122px;
+}
+.consultation-side-stack .home-led-card h2{
+  font-size:1.82rem;
+}
+.consultation-form-card textarea::placeholder{
+  color:rgba(95,108,120,.7);
+}
+.team-current-shell,
+.profile-client-shell{
+  width:min(1220px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  gap:24px;
+  align-items:stretch;
+}
+.team-current-shell{
+  grid-template-columns:280px 1fr .72fr;
+}
+.team-current-photo{
+  min-height:390px;
+}
+.team-current-card h2,
+.profile-client-main h2{
+  font-size:clamp(2.35rem,3.7vw,3.75rem);
+  line-height:.95;
+  letter-spacing:-.035em;
+  margin-top:12px;
+}
+.team-role-line,
+.profile-subtitle{
+  margin:0 0 18px !important;
+  color:#8e7b61 !important;
+  font-size:.92rem !important;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.profile-client-shell{
+  grid-template-columns:310px 1fr .74fr;
+}
+.profile-client-photo{
+  min-height:520px;
+  border-radius:26px;
+  border:1px solid rgba(212,200,185,.65);
+  overflow:hidden;
+  background:#e8ded2;
+  box-shadow:0 12px 30px rgba(31,42,52,.04);
+}
+.profile-client-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.9) contrast(.98);
+}
+.profile-client-main{
+  padding:34px;
+}
+.profile-client-main p{
+  font-size:1.02rem;
+}
+.profile-availability{
+  padding:30px;
+}
+.profile-availability h3{
+  font-size:2.15rem;
+}
+.profile-client-content{
+  width:min(1120px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.profile-client-content .wide{
+  grid-column:1 / -1;
+}
+.profile-client-content .wide h2{
+  font-size:clamp(2.25rem,3.4vw,3.3rem);
+}
+.profile-next-step{
+  padding:36px;
+  text-align:left;
+}
+.profile-next-step h2{
+  font-size:clamp(2.4rem,3.8vw,3.6rem);
+}
+.profile-next-step p{
+  max-width:690px;
+}
+@media (max-width:1080px){
+  .compact-contact-hero,
+  .compact-team-hero,
+  .profile-pt-hero,
+  .compact-contact-hero .stone-page-inner,
+  .compact-team-hero .stone-page-inner,
+  .profile-pt-hero .stone-page-inner{
+    min-height:auto;
+  }
+  .contact-forward-grid,
+  .team-current-shell,
+  .profile-client-shell,
+  .profile-client-content{
+    grid-template-columns:1fr;
+  }
+  .consultation-side-stack{
+    position:static;
+  }
+  .profile-client-photo,
+  .team-current-photo{
+    min-height:420px;
+  }
+}
+@media (max-width:760px){
+  .team-current-shell,
+  .profile-client-shell,
+  .profile-client-content{
+    width:min(1180px, calc(100% - 30px));
+  }
+  .profile-client-photo,
+  .team-current-photo{
+    min-height:360px;
+  }
+  .profile-client-main,
+  .profile-next-step{
+    padding:26px;
+  }
+}

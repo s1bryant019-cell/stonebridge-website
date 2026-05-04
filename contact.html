@@ -54,14 +54,13 @@
     </div>
   </header>
   <main>
-
-    <section class="stone-page-hero ">
-      <div class="stone-hero-panel watermark">
+<section class="stone-page-hero compact-contact-hero">
+      <div class="stone-hero-panel watermark useful-panel">
         <img src="contact-panel.jpg" alt="" aria-hidden="true">
         <div class="stone-hero-overlay"></div>
         <div class="stone-panel-caption">
-          <h2>Form-forward, not overbuilt</h2>
-          <p>A calm request pathway with clear boundaries is the right conversion point.</p>
+          <h2>A quiet first step</h2>
+          <p>Share the basics. Stonebridge reviews each request for fit before scheduling.</p>
           <div class="stone-caption-line"></div>
         </div>
       </div>
@@ -70,22 +69,44 @@
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Consultation Request</div>
           <h1 class="long-title">Request a psychotherapy consultation.</h1>
-          <p>Use this form for non-emergency psychotherapy inquiries. Assessment and forensic services are not currently open for new requests.</p>
-          
+          <p>Use this form for non-emergency psychotherapy inquiries. Assessment and forensic services are visible as part of the broader practice model, but they are not currently open for new requests.</p>
+          <div class="stone-page-actions"><a class="btn btn-primary" href="#consultation-form">Start request</a><a class="btn btn-secondary" href="psychotherapy.html">View psychotherapy</a></div>
         </div>
       </div>
     </section>
-    <section class="home-led-section">
-      <div class="home-led-grid form-grid">
-        <aside class="home-led-card">
-          <h2>Before you submit</h2>
-          <ul class="home-led-list">
-            <li>Psychotherapy is currently the active service.</li>
-            <li>Services are telehealth only for adults in Illinois.</li>
-            <li>This form is not for emergencies or crisis support.</li>
-            <li>Submitting a request does not establish a clinical relationship.</li>
-          </ul>
-          <div class="compact-notice"><strong>Emergency boundary:</strong> If there is immediate danger or a medical emergency, call 911 or go to the nearest emergency room. For mental health, suicide/self-harm, or substance-use crisis support in Illinois or Chicago, call or text 988.</div>
+
+    <section class="subpage-band request-band"><div class="subpage-band-grid">
+        <article class="subpage-band-item">
+          <div class="subpage-band-icon">01</div>
+          <div><h4>Send a brief request</h4><p>Share basic contact information and a short, non-crisis note.</p></div>
+        </article>
+        <article class="subpage-band-item">
+          <div class="subpage-band-icon">02</div>
+          <div><h4>Reviewed for fit</h4><p>Stonebridge considers whether outpatient telehealth may be appropriate.</p></div>
+        </article>
+        <article class="subpage-band-item">
+          <div class="subpage-band-icon">03</div>
+          <div><h4>Consultation next</h4><p>If it appears appropriate, follow-up is coordinated by email or phone.</p></div>
+        </article>
+      </div></section>
+
+    <section class="home-led-section contact-action-section" id="request">
+      <div class="home-led-grid form-grid contact-forward-grid">
+        <aside class="consultation-side-stack">
+          <article class="home-led-card">
+            <h2>Before you submit</h2>
+            <ul class="home-led-list">
+              <li>Psychotherapy is currently the active service.</li>
+              <li>Services are telehealth only for adults located in Illinois.</li>
+              <li>This form is not monitored for emergencies or crisis support.</li>
+              <li>Submitting a request does not establish a clinical relationship.</li>
+            </ul>
+          </article>
+          <article class="home-led-card">
+            <h2>What to include</h2>
+            <p>A short description is enough. Please do not include detailed trauma history, highly sensitive information, or urgent safety concerns in this form.</p>
+            <div class="compact-notice"><strong>Emergency boundary:</strong> If there is immediate danger or a medical emergency, call 911 or go to the nearest emergency room. For mental health, suicide/self-harm, or substance-use crisis support in Illinois or Chicago, call or text 988.</div>
+          </article>
         </aside>
         <form class="consultation-form-card home-led-card" id="consultation-form" novalidate>
           <div class="form-heading"><div><div class="stone-page-kicker">Request a Consultation</div><h2>Initial request</h2></div><p>For non-emergency psychotherapy inquiries only.</p></div>
@@ -93,12 +114,12 @@
             <label class="honeypot"><span>Website</span><input type="text" name="website" tabindex="-1" autocomplete="off"></label>
             <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy">
             <label class="form-row-full"><span>Service Requested *</span><select id="serviceRequested" name="serviceRequested" required><option value="psychotherapy">Psychotherapy — currently available</option><option value="assessment" disabled>Psychological Assessment — not currently available</option><option value="forensic" disabled>Forensic Services — not currently available</option></select></label>
-            <div class="form-row-full form-note-inline">Psychological assessment and forensic services remain part of the broader Stonebridge model, but they are not open for new requests at this time.</div>
+            <div class="form-row-full form-note-inline">Psychological assessment and forensic services are not open for new requests at this time. Please use this form only for psychotherapy inquiries.</div>
             <label><span>Full Name *</span><input type="text" name="fullName" autocomplete="name" required></label>
             <label><span>Proposed Patient’s Name</span><input type="text" name="patientName"></label>
             <label><span>Email Address *</span><input type="email" name="email" autocomplete="email" required></label>
             <label><span>Insurance / Payment Information</span><input type="text" name="insurance"></label>
-            <label class="form-row-full"><span>Reason for Seeking Psychotherapy *</span><textarea name="reason" required></textarea></label>
+            <label class="form-row-full"><span>Brief Reason for Seeking Psychotherapy *</span><textarea name="reason" required placeholder="A few sentences is enough. Please avoid sensitive details or crisis information here."></textarea></label>
           </div>
           <div class="form-alert" id="form-alert" role="status" aria-live="polite"></div>
           <div class="form-bottom-row"><div class="emergency-note"><strong>Not for emergencies.</strong> If there is immediate danger or a medical emergency, call <a href="tel:911">911</a> or go to the nearest emergency room. For mental health, suicide/self-harm, or substance-use crisis support in Illinois or Chicago, call or text <a href="tel:988">988</a>.</div><button class="btn btn-primary" type="submit" id="submitButton">Send Request</button></div>

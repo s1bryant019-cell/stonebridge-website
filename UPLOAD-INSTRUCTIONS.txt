@@ -1,24 +1,10 @@
-Stonebridge Home-Led Correction Package
+STONEBRIDGE CLIENT-FORWARD CLEANUP PATCH
 
-Upload / replace these files:
-- index.html
-- about.html
-- services.html
-- psychotherapy.html
-- assessment.html
-- forensic.html
+Upload / replace only these files:
+- contact.html
 - team.html
 - team-founder.html
-- portal.html
-- contact.html
 - styles.css
-- script.js
-
-Delete these unfinished placeholder clinician pages if present:
-- team-psychologist-1.html
-- team-psychologist-2.html
-- team-therapist-1.html
-- team-therapist-2.html
 
 Do not change:
 - api/contact.js
@@ -28,10 +14,14 @@ Do not change:
 - favicon files
 - site.webmanifest
 
-Intent of this package:
-- Restore the original Home page direction.
-- Make interior pages follow the Home page rather than flattening the Home page.
-- Preserve Home-style header/footer scale, split editorial hero, warm cream background, integrated image panels, navy band, muted gold accents, and faint bridge watermark use.
-- Keep psychotherapy as the only active service pathway.
-- Keep assessment and forensic visible but closed to new requests.
-- Preserve the contact form submission to /api/contact and fallback /api/contact.js.
+Delete if still present:
+- team-psychologist-1.html
+- team-psychologist-2.html
+- team-therapist-1.html
+- team-therapist-2.html
+
+What changed:
+- Contact page: removes internal/design language, reduces empty feel, adds a clearer 3-step request flow, and keeps the existing /api/contact form submission.
+- Team page: removes remaining build/process tone and makes the current clinician card more useful to prospective clients.
+- Founder page: moves closer to a Psychology Today-style profile while retaining the Stonebridge look: photo, at-a-glance facts, client-forward concerns, therapy style, fit/not-fit, and direct next step.
+- CSS: adds only the styles needed for the richer contact/team/profile sections while preserving the Home-led visual system.
