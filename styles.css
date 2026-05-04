@@ -1275,3 +1275,44 @@ body{background:var(--home-bg);}
     margin:16px 0 8px;
   }
 }
+
+/* =========================================================
+   DR. BRYANT PROFILE CONTENT REFINEMENT
+   Insight-driven, less redundant, warmer client-facing copy.
+========================================================= */
+.profile-quote{
+  margin:16px 0 4px;
+  padding:15px 18px 15px 20px;
+  border-left:3px solid rgba(200,171,120,.92);
+  border-radius:0 18px 18px 0;
+  background:rgba(255,253,248,.58);
+}
+.profile-quote p{
+  margin:0 !important;
+  color:#213142;
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(1.22rem, 1.55vw, 1.55rem) !important;
+  line-height:1.18 !important;
+  letter-spacing:-.015em;
+}
+.compact-tags{
+  gap:7px;
+}
+.compact-tags span{
+  min-height:28px;
+  font-size:.68rem;
+  padding:6px 9px;
+}
+.treatment-card{
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.055), rgba(255,253,248,.86)),
+    linear-gradient(180deg,#fffdf8,#f8f4ef);
+}
+.pt-content-card p + p{
+  margin-top:12px;
+}
+@media (max-width:820px){
+  .profile-quote{
+    margin-top:14px;
+  }
+}
