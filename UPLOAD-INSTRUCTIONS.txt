@@ -1,8 +1,16 @@
-Stonebridge integrated Dr. Bryant profile design correction
+Stonebridge placeholder-language cleanup patch
 
-Upload / replace only:
+Upload / replace these files:
+- index.html
+- about.html
+- services.html
+- psychotherapy.html
+- assessment.html
+- forensic.html
+- team.html
 - team-founder.html
-- styles.css
+- portal.html
+- contact.html
 
 Do not change:
 - api/contact.js
@@ -12,8 +20,13 @@ Do not change:
 - favicon files
 - site.webmanifest
 
-Purpose:
-- Keeps the smaller Psychology Today-style clinician image.
-- Re-integrates the image into the main profile card so the design no longer feels like three disconnected boxes.
-- Reduces top-section visual awkwardness while preserving the Home-led Stonebridge design language.
-- Keeps client-forward Dr. Bryant language and Stonebridge-specific facts.
+Delete if still present:
+- team-psychologist-1.html
+- team-psychologist-2.html
+- team-therapist-1.html
+- team-therapist-2.html
+
+After upload:
+1. Hard refresh the site.
+2. Review Home, Services, Team, Founder, Portal, and Contact.
+3. Submit one test contact form request to confirm /api/contact is still working.
