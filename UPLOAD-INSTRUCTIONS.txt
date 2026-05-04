@@ -1,12 +1,10 @@
-STONEBRIDGE CLIENT-FORWARD CLEANUP PATCH
+Stonebridge Psychological Group — Dr. Bryant Profile Compact Patch
 
-Upload / replace only these files:
-- contact.html
-- team.html
+UPLOAD / REPLACE ONLY:
 - team-founder.html
 - styles.css
 
-Do not change:
+DO NOT CHANGE:
 - api/contact.js
 - Vercel environment variables
 - Resend settings
@@ -14,14 +12,16 @@ Do not change:
 - favicon files
 - site.webmanifest
 
-Delete if still present:
+DELETE IF STILL PRESENT:
 - team-psychologist-1.html
 - team-psychologist-2.html
 - team-therapist-1.html
 - team-therapist-2.html
 
-What changed:
-- Contact page: removes internal/design language, reduces empty feel, adds a clearer 3-step request flow, and keeps the existing /api/contact form submission.
-- Team page: removes remaining build/process tone and makes the current clinician card more useful to prospective clients.
-- Founder page: moves closer to a Psychology Today-style profile while retaining the Stonebridge look: photo, at-a-glance facts, client-forward concerns, therapy style, fit/not-fit, and direct next step.
-- CSS: adds only the styles needed for the richer contact/team/profile sections while preserving the Home-led visual system.
+WHAT THIS PATCH DOES:
+- Makes Dr. Bryant's individual profile more Psychology Today-like and client-forward.
+- Reduces the top photo from a very tall feature image to a compact profile photo.
+- Keeps the photo at the top, but stops it from dominating the first viewport.
+- Adds clearer client-facing sections: start here, at a glance, qualifications, specialties and concerns, treatment approach, good fit, not the right fit, next step.
+- Keeps Stonebridge's current public facts: adults, Illinois, telehealth only, psychotherapy active, assessment/forensic not currently open for new requests.
+- Does not use the Psychology Today phone number, office address, in-person availability, children/teens/couples/groups, assessment availability, or insurance list because those do not match the current Stonebridge launch constraints.

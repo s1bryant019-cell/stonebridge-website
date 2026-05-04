@@ -910,3 +910,261 @@ body{background:var(--home-bg);}
     display:block;
   }
 }
+
+/* =========================================================
+   PSYCHOLOGY TODAY-INSPIRED PROFILE COMPACT PASS
+   Client-forward, smaller photo, less scroll, Home-led visual system.
+========================================================= */
+.pt-profile-hero{
+  padding:38px 0 34px !important;
+}
+.pt-profile-shell{
+  position:relative;
+  z-index:1;
+  width:min(1160px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:235px minmax(0, 1fr) 300px;
+  gap:18px;
+  align-items:stretch;
+}
+.pt-profile-photo{
+  margin:0;
+  min-height:320px;
+  max-height:380px;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(212,200,185,.72);
+  background:#e9ded2;
+  box-shadow:0 18px 44px rgba(31,42,52,.06);
+}
+.pt-profile-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(.92) contrast(.98);
+}
+.pt-profile-main{
+  padding:30px 32px 28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.pt-profile-main h1{
+  margin:12px 0 10px;
+  max-width:none;
+  font-size:clamp(3.15rem, 4.9vw, 4.8rem);
+  line-height:.9;
+  letter-spacing:-.055em;
+}
+.pt-profile-main .profile-subtitle{
+  margin:0 0 14px !important;
+  font-size:.82rem !important;
+  line-height:1.45 !important;
+}
+.pt-profile-main .profile-lead{
+  font-size:1.02rem !important;
+  line-height:1.62 !important;
+  margin-bottom:10px !important;
+}
+.pt-profile-main p{
+  font-size:.98rem;
+  line-height:1.62;
+}
+.pt-profile-main .profile-tags{
+  margin-top:6px;
+  gap:8px;
+}
+.pt-profile-main .home-tag{
+  font-size:.66rem;
+  padding:7px 10px;
+}
+.pt-profile-contact{
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.pt-profile-contact h2{
+  margin:16px 0 8px;
+  font-size:2.25rem;
+  line-height:1;
+}
+.pt-profile-contact p{
+  font-size:.94rem;
+  line-height:1.58;
+}
+.pt-profile-contact .btn{
+  margin-top:8px;
+  width:100%;
+}
+.pt-contact-lines{
+  display:grid;
+  gap:6px;
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid rgba(212,200,185,.62);
+  font-size:.9rem;
+  color:#6b7680;
+}
+.pt-contact-lines a:hover{
+  color:#213142;
+}
+.pt-profile-body{
+  padding-top:34px !important;
+  padding-bottom:54px !important;
+}
+.pt-profile-grid{
+  width:min(1160px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:300px minmax(0, 1fr);
+  gap:20px;
+  align-items:start;
+}
+.pt-sidebar-stack,
+.pt-main-stack{
+  display:grid;
+  gap:18px;
+}
+.pt-side-card,
+.pt-content-card{
+  padding:26px;
+}
+.pt-side-card h3,
+.pt-content-card h3{
+  margin:0 0 12px;
+  font-size:1.7rem;
+  line-height:1.05;
+}
+.pt-side-card p,
+.pt-content-card p{
+  font-size:.98rem;
+  line-height:1.62;
+}
+.pt-content-card.intro-card{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:26px;
+  align-items:center;
+}
+.pt-content-card.intro-card h2{
+  font-size:clamp(2.15rem, 3.2vw, 3.15rem);
+  line-height:.98;
+  letter-spacing:-.035em;
+}
+.pt-two-column{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.mini-tag-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.mini-tag-list span{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  border-radius:999px;
+  border:1px solid rgba(212,200,185,.78);
+  padding:7px 10px;
+  color:#8a765e;
+  background:rgba(255,253,248,.58);
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.pt-final-cta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+}
+.pt-final-cta p{
+  margin:0;
+}
+.pt-final-cta .btn{
+  flex:0 0 auto;
+}
+@media (max-width:1120px){
+  .pt-profile-shell{
+    grid-template-columns:220px minmax(0, 1fr);
+  }
+  .pt-profile-contact{
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:.62fr 1fr .72fr;
+    gap:18px;
+    align-items:center;
+  }
+  .pt-profile-contact h2{
+    margin:0;
+  }
+  .pt-profile-contact .btn{
+    margin:0;
+  }
+  .pt-contact-lines{
+    margin:0;
+    padding:0 0 0 18px;
+    border-top:0;
+    border-left:1px solid rgba(212,200,185,.62);
+  }
+}
+@media (max-width:900px){
+  .pt-profile-shell,
+  .pt-profile-grid,
+  .pt-content-card.intro-card,
+  .pt-two-column{
+    grid-template-columns:1fr;
+  }
+  .pt-profile-photo{
+    max-height:none;
+    min-height:360px;
+  }
+  .pt-profile-contact{
+    display:block;
+  }
+  .pt-profile-contact h2{
+    margin:16px 0 8px;
+  }
+  .pt-profile-contact .btn{
+    margin-top:8px;
+  }
+  .pt-contact-lines{
+    margin-top:14px;
+    padding:14px 0 0;
+    border-left:0;
+    border-top:1px solid rgba(212,200,185,.62);
+  }
+}
+@media (max-width:760px){
+  .pt-profile-hero{
+    padding:24px 0 28px !important;
+  }
+  .pt-profile-shell,
+  .pt-profile-grid{
+    width:min(1180px, calc(100% - 30px));
+  }
+  .pt-profile-main,
+  .pt-profile-contact,
+  .pt-side-card,
+  .pt-content-card{
+    padding:24px;
+  }
+  .pt-profile-main h1{
+    font-size:clamp(2.8rem, 12vw, 4rem);
+  }
+  .pt-profile-photo{
+    min-height:330px;
+  }
+  .pt-final-cta{
+    display:block;
+  }
+  .pt-final-cta .btn{
+    margin-top:12px;
+  }
+}
