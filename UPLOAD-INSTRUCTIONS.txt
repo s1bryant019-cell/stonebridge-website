@@ -1,10 +1,10 @@
-Stonebridge Psychological Group — Dr. Bryant Profile Compact Patch
+Stonebridge integrated Dr. Bryant profile design correction
 
-UPLOAD / REPLACE ONLY:
+Upload / replace only:
 - team-founder.html
 - styles.css
 
-DO NOT CHANGE:
+Do not change:
 - api/contact.js
 - Vercel environment variables
 - Resend settings
@@ -12,16 +12,8 @@ DO NOT CHANGE:
 - favicon files
 - site.webmanifest
 
-DELETE IF STILL PRESENT:
-- team-psychologist-1.html
-- team-psychologist-2.html
-- team-therapist-1.html
-- team-therapist-2.html
-
-WHAT THIS PATCH DOES:
-- Makes Dr. Bryant's individual profile more Psychology Today-like and client-forward.
-- Reduces the top photo from a very tall feature image to a compact profile photo.
-- Keeps the photo at the top, but stops it from dominating the first viewport.
-- Adds clearer client-facing sections: start here, at a glance, qualifications, specialties and concerns, treatment approach, good fit, not the right fit, next step.
-- Keeps Stonebridge's current public facts: adults, Illinois, telehealth only, psychotherapy active, assessment/forensic not currently open for new requests.
-- Does not use the Psychology Today phone number, office address, in-person availability, children/teens/couples/groups, assessment availability, or insurance list because those do not match the current Stonebridge launch constraints.
+Purpose:
+- Keeps the smaller Psychology Today-style clinician image.
+- Re-integrates the image into the main profile card so the design no longer feels like three disconnected boxes.
+- Reduces top-section visual awkwardness while preserving the Home-led Stonebridge design language.
+- Keeps client-forward Dr. Bryant language and Stonebridge-specific facts.

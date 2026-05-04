@@ -1168,3 +1168,110 @@ body{background:var(--home-bg);}
     margin-top:12px;
   }
 }
+
+/* =========================================================
+   PROFILE DESIGN CORRECTION: integrated portrait + profile card
+   Keeps the smaller photo but restores the Home-led composed layout.
+========================================================= */
+.pt-profile-hero{
+  padding:42px 0 38px !important;
+  background:
+    radial-gradient(circle at 16% 28%, rgba(200,171,120,.08), transparent 24%),
+    linear-gradient(180deg, #fbf8f4 0%, #f7f1ea 100%);
+  border-bottom:1px solid rgba(212,200,185,.42);
+}
+.pt-profile-shell.pt-profile-shell-integrated{
+  width:min(1120px, calc(100% - 72px));
+  grid-template-columns:minmax(0, 1fr) 300px;
+  gap:20px;
+  align-items:stretch;
+}
+.pt-profile-main.pt-profile-main-integrated{
+  display:grid;
+  grid-template-columns:250px minmax(0, 1fr);
+  gap:30px;
+  align-items:center;
+  padding:24px 30px 24px 24px;
+  min-height:360px;
+}
+.pt-profile-photo.pt-profile-photo-integrated{
+  width:100%;
+  min-height:0;
+  height:310px;
+  max-height:none;
+  border-radius:24px;
+  box-shadow:none;
+}
+.pt-profile-photo.pt-profile-photo-integrated img{
+  object-position:center 18%;
+}
+.pt-profile-copy{
+  min-width:0;
+}
+.pt-profile-copy .stone-page-line{
+  margin-bottom:22px;
+}
+.pt-profile-main.pt-profile-main-integrated h1{
+  margin:12px 0 10px;
+  font-size:clamp(3.2rem, 4.35vw, 4.35rem);
+  line-height:.92;
+  letter-spacing:-.052em;
+  max-width:9.2ch;
+}
+.pt-profile-main.pt-profile-main-integrated .profile-subtitle{
+  max-width:42rem;
+}
+.pt-profile-main.pt-profile-main-integrated .profile-lead,
+.pt-profile-main.pt-profile-main-integrated p{
+  max-width:43rem;
+}
+.pt-profile-contact.pt-profile-contact-integrated{
+  justify-content:flex-start;
+  align-self:stretch;
+  padding:34px 28px;
+}
+.pt-profile-contact.pt-profile-contact-integrated h2{
+  margin:22px 0 10px;
+}
+.pt-profile-body{
+  padding-top:32px !important;
+}
+@media (max-width:1120px){
+  .pt-profile-shell.pt-profile-shell-integrated{
+    grid-template-columns:1fr;
+  }
+  .pt-profile-contact.pt-profile-contact-integrated{
+    display:grid;
+    grid-template-columns:.5fr 1fr .65fr;
+    gap:18px;
+    align-items:center;
+    min-height:0;
+    padding:24px 26px;
+  }
+  .pt-profile-contact.pt-profile-contact-integrated h2{
+    margin:0;
+  }
+}
+@media (max-width:820px){
+  .pt-profile-shell.pt-profile-shell-integrated{
+    width:min(1120px, calc(100% - 30px));
+  }
+  .pt-profile-main.pt-profile-main-integrated{
+    grid-template-columns:1fr;
+    gap:22px;
+    padding:22px;
+    min-height:0;
+  }
+  .pt-profile-photo.pt-profile-photo-integrated{
+    height:360px;
+  }
+  .pt-profile-main.pt-profile-main-integrated h1{
+    font-size:clamp(2.75rem, 12vw, 4rem);
+  }
+  .pt-profile-contact.pt-profile-contact-integrated{
+    display:block;
+  }
+  .pt-profile-contact.pt-profile-contact-integrated h2{
+    margin:16px 0 8px;
+  }
+}
