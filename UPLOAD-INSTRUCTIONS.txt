@@ -1,32 +1,21 @@
-Stonebridge full subpage design update v2
+Stonebridge polish patch
 
-Upload / replace these files:
-- styles.css
-- about.html
-- team.html
+Upload / replace only these files:
+- index.html
 - services.html
-- psychotherapy.html
-- contact.html
-- portal.html
-- assessment.html
-- forensic.html
-- hero-about-interior.jpg
-- hero-team-consultation.jpg
-- hero-services-room.jpg
-- hero-psychotherapy-room.jpg
-- hero-contact-desk.jpg
-- hero-portal-workspace.jpg
-- hero-assessment-books.jpg
-- hero-forensic-formal.jpg
+- team-founder.html
 
 Do not change:
 - api/contact.js
 - Vercel environment variables
 - Resend settings
+- image assets
 - favicon files
 - site.webmanifest
 
-Notes:
-- This version uses optimized JPG hero images so the package is much smaller and should download/upload more reliably.
-- The hero-image overlay text has been removed.
-- Subpage hero proportions and the navy strip are standardized to follow the Home page as the visual parent.
+Summary:
+- Refines the Home service strip markers from T/A/F to 01/02/03.
+- Makes the Home service-strip copy feel more polished.
+- Refines the Services page heading and reduces repeated unavailable-service language.
+- Adds a compact additional training line to Dr. Bryant's profile.
+- Softens the Founder profile's final care-boundary section.
