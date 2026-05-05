@@ -555,73 +555,1568 @@ body{background:var(--home-bg);}
 }
 
 
-/* --- 2026 premium subpage hero consistency update --- */
+/* =========================================================
+   CLIENT-FORWARD CLEANUP PASS
+   Adds substance to Contact, Team, and individual clinician
+   profile pages while preserving the Home-led visual system.
+========================================================= */
+.compact-contact-hero,
+.compact-team-hero,
+.profile-pt-hero{
+  min-height:500px;
+}
+.compact-contact-hero .stone-page-inner,
+.compact-team-hero .stone-page-inner,
+.profile-pt-hero .stone-page-inner{
+  min-height:500px;
+}
+.compact-contact-hero .stone-page-copy p,
+.compact-team-hero .stone-page-copy p,
+.profile-pt-hero .stone-page-copy p{
+  max-width:40rem;
+}
+.useful-panel .stone-panel-caption h2,
+.compact-team-hero .stone-panel-caption h2,
+.profile-pt-hero .stone-panel-caption h2{
+  text-shadow:0 12px 28px rgba(0,0,0,.24);
+}
+.request-band .subpage-band-grid{
+  padding-top:18px;
+  padding-bottom:20px;
+}
+.contact-action-section{
+  padding-top:58px;
+}
+.contact-forward-grid{
+  grid-template-columns:.78fr 1.22fr;
+  align-items:start;
+}
+.consultation-side-stack{
+  display:grid;
+  gap:18px;
+  position:sticky;
+  top:122px;
+}
+.consultation-side-stack .home-led-card h2{
+  font-size:1.82rem;
+}
+.consultation-form-card textarea::placeholder{
+  color:rgba(95,108,120,.7);
+}
+.team-current-shell,
+.profile-client-shell{
+  width:min(1220px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  gap:24px;
+  align-items:stretch;
+}
+.team-current-shell{
+  grid-template-columns:280px 1fr .72fr;
+}
+.team-current-photo{
+  min-height:390px;
+}
+.team-current-card h2,
+.profile-client-main h2{
+  font-size:clamp(2.35rem,3.7vw,3.75rem);
+  line-height:.95;
+  letter-spacing:-.035em;
+  margin-top:12px;
+}
+.team-role-line,
+.profile-subtitle{
+  margin:0 0 18px !important;
+  color:#8e7b61 !important;
+  font-size:.92rem !important;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.profile-client-shell{
+  grid-template-columns:310px 1fr .74fr;
+}
+.profile-client-photo{
+  min-height:520px;
+  border-radius:26px;
+  border:1px solid rgba(212,200,185,.65);
+  overflow:hidden;
+  background:#e8ded2;
+  box-shadow:0 12px 30px rgba(31,42,52,.04);
+}
+.profile-client-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.9) contrast(.98);
+}
+.profile-client-main{
+  padding:34px;
+}
+.profile-client-main p{
+  font-size:1.02rem;
+}
+.profile-availability{
+  padding:30px;
+}
+.profile-availability h3{
+  font-size:2.15rem;
+}
+.profile-client-content{
+  width:min(1120px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.profile-client-content .wide{
+  grid-column:1 / -1;
+}
+.profile-client-content .wide h2{
+  font-size:clamp(2.25rem,3.4vw,3.3rem);
+}
+.profile-next-step{
+  padding:36px;
+  text-align:left;
+}
+.profile-next-step h2{
+  font-size:clamp(2.4rem,3.8vw,3.6rem);
+}
+.profile-next-step p{
+  max-width:690px;
+}
+@media (max-width:1080px){
+  .compact-contact-hero,
+  .compact-team-hero,
+  .profile-pt-hero,
+  .compact-contact-hero .stone-page-inner,
+  .compact-team-hero .stone-page-inner,
+  .profile-pt-hero .stone-page-inner{
+    min-height:auto;
+  }
+  .contact-forward-grid,
+  .team-current-shell,
+  .profile-client-shell,
+  .profile-client-content{
+    grid-template-columns:1fr;
+  }
+  .consultation-side-stack{
+    position:static;
+  }
+  .profile-client-photo,
+  .team-current-photo{
+    min-height:420px;
+  }
+}
+@media (max-width:760px){
+  .team-current-shell,
+  .profile-client-shell,
+  .profile-client-content{
+    width:min(1180px, calc(100% - 30px));
+  }
+  .profile-client-photo,
+  .team-current-photo{
+    min-height:360px;
+  }
+  .profile-client-main,
+  .profile-next-step{
+    padding:26px;
+  }
+}
+
+
+/* =========================================================
+   DR. BRYANT PROFILE REFINEMENT
+   Compact, client-forward clinician profile with portrait at top.
+========================================================= */
+.clinician-profile-hero{
+  position:relative;
+  overflow:hidden;
+  padding:62px 0 48px;
+  background:
+    radial-gradient(circle at 17% 28%, rgba(200,171,120,.10), transparent 25%),
+    linear-gradient(180deg, #fbf8f4 0%, #f6f1ea 100%);
+  border-bottom:1px solid rgba(212,200,185,.42);
+}
+.clinician-profile-hero::after{
+  content:"";
+  position:absolute;
+  right:-260px;
+  bottom:-250px;
+  width:820px;
+  height:620px;
+  background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
+  opacity:.045;
+  pointer-events:none;
+}
+.clinician-profile-shell{
+  position:relative;
+  z-index:1;
+  width:min(1220px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:320px minmax(0, 1fr) 310px;
+  gap:24px;
+  align-items:stretch;
+}
+.clinician-portrait-card{
+  margin:0;
+  min-height:500px;
+  border-radius:34px;
+  overflow:hidden;
+  border:1px solid rgba(212,200,185,.72);
+  background:#e9ded2;
+  box-shadow:0 18px 44px rgba(31,42,52,.08);
+}
+.clinician-portrait-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(.92) contrast(.98);
+}
+.clinician-summary-card{
+  padding:38px 38px 34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.clinician-summary-card h1{
+  margin:14px 0 12px;
+  max-width:8.5ch;
+  font-size:clamp(4.05rem, 5.6vw, 6rem);
+  line-height:.9;
+  letter-spacing:-.055em;
+}
+.clinician-summary-card .profile-subtitle{
+  margin:0 0 18px !important;
+}
+.profile-lead{
+  color:#31404d !important;
+  font-size:1.08rem !important;
+  line-height:1.72 !important;
+}
+.profile-tags{
+  margin-top:8px;
+}
+.compact-actions{
+  margin-top:24px;
+}
+.clinician-glance-card{
+  padding:30px;
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.clinician-glance-card h3{
+  margin:18px 0 12px;
+  font-size:2.18rem;
+}
+.glance-note{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid rgba(212,200,185,.62);
+  font-size:.92rem !important;
+  line-height:1.62 !important;
+}
+.compact-profile-details{
+  padding-top:46px;
+  padding-bottom:56px;
+}
+.profile-compact-grid{
+  width:min(1120px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:20px;
+}
+.profile-detail-card{
+  padding:28px;
+}
+.profile-detail-card.wide{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:28px;
+  align-items:center;
+}
+.profile-detail-card.wide h2{
+  font-size:clamp(2.35rem, 3.6vw, 3.55rem);
+  line-height:.98;
+  letter-spacing:-.035em;
+}
+.profile-detail-card h3{
+  margin-bottom:12px;
+}
+.next-step-card .btn{
+  margin-top:10px;
+}
+@media (max-width:1120px){
+  .clinician-profile-shell{
+    grid-template-columns:280px 1fr;
+  }
+  .clinician-glance-card{
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:.5fr 1fr .8fr;
+    gap:18px;
+    align-items:center;
+  }
+  .clinician-glance-card h3{
+    margin:0;
+  }
+  .glance-note{
+    margin:0;
+    padding:0 0 0 18px;
+    border-top:0;
+    border-left:1px solid rgba(212,200,185,.62);
+  }
+}
+@media (max-width:820px){
+  .clinician-profile-shell,
+  .profile-compact-grid{
+    width:min(1180px, calc(100% - 30px));
+    grid-template-columns:1fr;
+  }
+  .clinician-profile-hero{
+    padding:34px 0 34px;
+  }
+  .clinician-portrait-card{
+    min-height:420px;
+  }
+  .clinician-summary-card,
+  .clinician-glance-card,
+  .profile-detail-card{
+    padding:26px;
+  }
+  .clinician-summary-card h1{
+    max-width:9ch;
+    font-size:clamp(3.05rem, 11vw, 4.2rem);
+  }
+  .clinician-glance-card{
+    display:block;
+  }
+  .clinician-glance-card h3{
+    margin:18px 0 12px;
+  }
+  .glance-note{
+    margin-top:18px;
+    padding:16px 0 0;
+    border-left:0;
+    border-top:1px solid rgba(212,200,185,.62);
+  }
+  .profile-detail-card.wide{
+    grid-column:auto;
+    display:block;
+  }
+}
+
+/* =========================================================
+   PSYCHOLOGY TODAY-INSPIRED PROFILE COMPACT PASS
+   Client-forward, smaller photo, less scroll, Home-led visual system.
+========================================================= */
+.pt-profile-hero{
+  padding:38px 0 34px !important;
+}
+.pt-profile-shell{
+  position:relative;
+  z-index:1;
+  width:min(1160px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:235px minmax(0, 1fr) 300px;
+  gap:18px;
+  align-items:stretch;
+}
+.pt-profile-photo{
+  margin:0;
+  min-height:320px;
+  max-height:380px;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(212,200,185,.72);
+  background:#e9ded2;
+  box-shadow:0 18px 44px rgba(31,42,52,.06);
+}
+.pt-profile-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(.92) contrast(.98);
+}
+.pt-profile-main{
+  padding:30px 32px 28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.pt-profile-main h1{
+  margin:12px 0 10px;
+  max-width:none;
+  font-size:clamp(3.15rem, 4.9vw, 4.8rem);
+  line-height:.9;
+  letter-spacing:-.055em;
+}
+.pt-profile-main .profile-subtitle{
+  margin:0 0 14px !important;
+  font-size:.82rem !important;
+  line-height:1.45 !important;
+}
+.pt-profile-main .profile-lead{
+  font-size:1.02rem !important;
+  line-height:1.62 !important;
+  margin-bottom:10px !important;
+}
+.pt-profile-main p{
+  font-size:.98rem;
+  line-height:1.62;
+}
+.pt-profile-main .profile-tags{
+  margin-top:6px;
+  gap:8px;
+}
+.pt-profile-main .home-tag{
+  font-size:.66rem;
+  padding:7px 10px;
+}
+.pt-profile-contact{
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.pt-profile-contact h2{
+  margin:16px 0 8px;
+  font-size:2.25rem;
+  line-height:1;
+}
+.pt-profile-contact p{
+  font-size:.94rem;
+  line-height:1.58;
+}
+.pt-profile-contact .btn{
+  margin-top:8px;
+  width:100%;
+}
+.pt-contact-lines{
+  display:grid;
+  gap:6px;
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid rgba(212,200,185,.62);
+  font-size:.9rem;
+  color:#6b7680;
+}
+.pt-contact-lines a:hover{
+  color:#213142;
+}
+.pt-profile-body{
+  padding-top:34px !important;
+  padding-bottom:54px !important;
+}
+.pt-profile-grid{
+  width:min(1160px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:300px minmax(0, 1fr);
+  gap:20px;
+  align-items:start;
+}
+.pt-sidebar-stack,
+.pt-main-stack{
+  display:grid;
+  gap:18px;
+}
+.pt-side-card,
+.pt-content-card{
+  padding:26px;
+}
+.pt-side-card h3,
+.pt-content-card h3{
+  margin:0 0 12px;
+  font-size:1.7rem;
+  line-height:1.05;
+}
+.pt-side-card p,
+.pt-content-card p{
+  font-size:.98rem;
+  line-height:1.62;
+}
+.pt-content-card.intro-card{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:26px;
+  align-items:center;
+}
+.pt-content-card.intro-card h2{
+  font-size:clamp(2.15rem, 3.2vw, 3.15rem);
+  line-height:.98;
+  letter-spacing:-.035em;
+}
+.pt-two-column{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.mini-tag-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.mini-tag-list span{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  border-radius:999px;
+  border:1px solid rgba(212,200,185,.78);
+  padding:7px 10px;
+  color:#8a765e;
+  background:rgba(255,253,248,.58);
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.pt-final-cta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+}
+.pt-final-cta p{
+  margin:0;
+}
+.pt-final-cta .btn{
+  flex:0 0 auto;
+}
+@media (max-width:1120px){
+  .pt-profile-shell{
+    grid-template-columns:220px minmax(0, 1fr);
+  }
+  .pt-profile-contact{
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:.62fr 1fr .72fr;
+    gap:18px;
+    align-items:center;
+  }
+  .pt-profile-contact h2{
+    margin:0;
+  }
+  .pt-profile-contact .btn{
+    margin:0;
+  }
+  .pt-contact-lines{
+    margin:0;
+    padding:0 0 0 18px;
+    border-top:0;
+    border-left:1px solid rgba(212,200,185,.62);
+  }
+}
+@media (max-width:900px){
+  .pt-profile-shell,
+  .pt-profile-grid,
+  .pt-content-card.intro-card,
+  .pt-two-column{
+    grid-template-columns:1fr;
+  }
+  .pt-profile-photo{
+    max-height:none;
+    min-height:360px;
+  }
+  .pt-profile-contact{
+    display:block;
+  }
+  .pt-profile-contact h2{
+    margin:16px 0 8px;
+  }
+  .pt-profile-contact .btn{
+    margin-top:8px;
+  }
+  .pt-contact-lines{
+    margin-top:14px;
+    padding:14px 0 0;
+    border-left:0;
+    border-top:1px solid rgba(212,200,185,.62);
+  }
+}
+@media (max-width:760px){
+  .pt-profile-hero{
+    padding:24px 0 28px !important;
+  }
+  .pt-profile-shell,
+  .pt-profile-grid{
+    width:min(1180px, calc(100% - 30px));
+  }
+  .pt-profile-main,
+  .pt-profile-contact,
+  .pt-side-card,
+  .pt-content-card{
+    padding:24px;
+  }
+  .pt-profile-main h1{
+    font-size:clamp(2.8rem, 12vw, 4rem);
+  }
+  .pt-profile-photo{
+    min-height:330px;
+  }
+  .pt-final-cta{
+    display:block;
+  }
+  .pt-final-cta .btn{
+    margin-top:12px;
+  }
+}
+
+/* =========================================================
+   PROFILE DESIGN CORRECTION: integrated portrait + profile card
+   Keeps the smaller photo but restores the Home-led composed layout.
+========================================================= */
+.pt-profile-hero{
+  padding:42px 0 38px !important;
+  background:
+    radial-gradient(circle at 16% 28%, rgba(200,171,120,.08), transparent 24%),
+    linear-gradient(180deg, #fbf8f4 0%, #f7f1ea 100%);
+  border-bottom:1px solid rgba(212,200,185,.42);
+}
+.pt-profile-shell.pt-profile-shell-integrated{
+  width:min(1120px, calc(100% - 72px));
+  grid-template-columns:minmax(0, 1fr) 300px;
+  gap:20px;
+  align-items:stretch;
+}
+.pt-profile-main.pt-profile-main-integrated{
+  display:grid;
+  grid-template-columns:250px minmax(0, 1fr);
+  gap:30px;
+  align-items:center;
+  padding:24px 30px 24px 24px;
+  min-height:360px;
+}
+.pt-profile-photo.pt-profile-photo-integrated{
+  width:100%;
+  min-height:0;
+  height:310px;
+  max-height:none;
+  border-radius:24px;
+  box-shadow:none;
+}
+.pt-profile-photo.pt-profile-photo-integrated img{
+  object-position:center 18%;
+}
+.pt-profile-copy{
+  min-width:0;
+}
+.pt-profile-copy .stone-page-line{
+  margin-bottom:22px;
+}
+.pt-profile-main.pt-profile-main-integrated h1{
+  margin:12px 0 10px;
+  font-size:clamp(3.2rem, 4.35vw, 4.35rem);
+  line-height:.92;
+  letter-spacing:-.052em;
+  max-width:9.2ch;
+}
+.pt-profile-main.pt-profile-main-integrated .profile-subtitle{
+  max-width:42rem;
+}
+.pt-profile-main.pt-profile-main-integrated .profile-lead,
+.pt-profile-main.pt-profile-main-integrated p{
+  max-width:43rem;
+}
+.pt-profile-contact.pt-profile-contact-integrated{
+  justify-content:flex-start;
+  align-self:stretch;
+  padding:34px 28px;
+}
+.pt-profile-contact.pt-profile-contact-integrated h2{
+  margin:22px 0 10px;
+}
+.pt-profile-body{
+  padding-top:32px !important;
+}
+@media (max-width:1120px){
+  .pt-profile-shell.pt-profile-shell-integrated{
+    grid-template-columns:1fr;
+  }
+  .pt-profile-contact.pt-profile-contact-integrated{
+    display:grid;
+    grid-template-columns:.5fr 1fr .65fr;
+    gap:18px;
+    align-items:center;
+    min-height:0;
+    padding:24px 26px;
+  }
+  .pt-profile-contact.pt-profile-contact-integrated h2{
+    margin:0;
+  }
+}
+@media (max-width:820px){
+  .pt-profile-shell.pt-profile-shell-integrated{
+    width:min(1120px, calc(100% - 30px));
+  }
+  .pt-profile-main.pt-profile-main-integrated{
+    grid-template-columns:1fr;
+    gap:22px;
+    padding:22px;
+    min-height:0;
+  }
+  .pt-profile-photo.pt-profile-photo-integrated{
+    height:360px;
+  }
+  .pt-profile-main.pt-profile-main-integrated h1{
+    font-size:clamp(2.75rem, 12vw, 4rem);
+  }
+  .pt-profile-contact.pt-profile-contact-integrated{
+    display:block;
+  }
+  .pt-profile-contact.pt-profile-contact-integrated h2{
+    margin:16px 0 8px;
+  }
+}
+
+/* =========================================================
+   DR. BRYANT PROFILE CONTENT REFINEMENT
+   Insight-driven, less redundant, warmer client-facing copy.
+========================================================= */
+.profile-quote{
+  margin:16px 0 4px;
+  padding:15px 18px 15px 20px;
+  border-left:3px solid rgba(200,171,120,.92);
+  border-radius:0 18px 18px 0;
+  background:rgba(255,253,248,.58);
+}
+.profile-quote p{
+  margin:0 !important;
+  color:#213142;
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(1.22rem, 1.55vw, 1.55rem) !important;
+  line-height:1.18 !important;
+  letter-spacing:-.015em;
+}
+.compact-tags{
+  gap:7px;
+}
+.compact-tags span{
+  min-height:28px;
+  font-size:.68rem;
+  padding:6px 9px;
+}
+.treatment-card{
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.055), rgba(255,253,248,.86)),
+    linear-gradient(180deg,#fffdf8,#f8f4ef);
+}
+.pt-content-card p + p{
+  margin-top:12px;
+}
+@media (max-width:820px){
+  .profile-quote{
+    margin-top:14px;
+  }
+}
+
+/* =========================================================
+   REUSABLE CLINICIAN PROFILE TEMPLATE
+   Home-led profile system for Dr. Bryant and future clinicians.
+========================================================= */
+.clinician-template-hero{
+  position:relative;
+  overflow:hidden;
+  padding:42px 0 34px;
+  background:
+    radial-gradient(circle at 17% 30%, rgba(200,171,120,.08), transparent 24%),
+    linear-gradient(180deg, #fbf8f4 0%, #f7f1ea 100%);
+  border-bottom:1px solid rgba(212,200,185,.42);
+}
+.clinician-template-hero::after{
+  content:"";
+  position:absolute;
+  right:-260px;
+  bottom:-260px;
+  width:820px;
+  height:620px;
+  background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
+  opacity:.045;
+  pointer-events:none;
+}
+.clinician-template-shell{
+  position:relative;
+  z-index:1;
+  width:min(1120px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 300px;
+  gap:20px;
+  align-items:stretch;
+}
+.clinician-template-overview{
+  display:grid;
+  grid-template-columns:248px minmax(0, 1fr);
+  gap:30px;
+  align-items:center;
+  min-height:360px;
+  padding:24px 30px 24px 24px;
+}
+.clinician-template-photo{
+  margin:0;
+  height:312px;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(212,200,185,.72);
+  background:#e9ded2;
+}
+.clinician-template-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 18%;
+  filter:saturate(.92) contrast(.98);
+}
+.clinician-template-intro{
+  min-width:0;
+}
+.clinician-template-intro .stone-page-line{
+  margin-bottom:22px;
+}
+.clinician-template-intro h1{
+  margin:12px 0 10px;
+  max-width:9.2ch;
+  font-size:clamp(3.15rem, 4.25vw, 4.35rem);
+  line-height:.92;
+  letter-spacing:-.052em;
+}
+.clinician-template-intro .profile-subtitle{
+  margin:0 0 16px !important;
+  max-width:45rem;
+  color:#9a835f !important;
+  font-size:.78rem !important;
+  line-height:1.45 !important;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.clinician-template-intro .profile-lead{
+  max-width:43rem;
+  margin:0 0 14px !important;
+  color:#213142 !important;
+  font-size:1.02rem !important;
+  line-height:1.62 !important;
+}
+.clinician-template-quote{
+  margin:18px 0 0;
+  padding:14px 18px 14px 20px;
+  border-left:3px solid rgba(200,171,120,.92);
+  border-radius:0 18px 18px 0;
+  background:rgba(255,253,248,.62);
+}
+.clinician-template-quote p{
+  margin:0 !important;
+  color:#213142;
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(1.16rem, 1.42vw, 1.42rem) !important;
+  line-height:1.18 !important;
+  letter-spacing:-.012em;
+}
+.clinician-template-start{
+  padding:34px 28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.clinician-template-start h2{
+  margin:22px 0 10px;
+  font-size:2.35rem;
+  line-height:1;
+}
+.clinician-template-start p{
+  font-size:.95rem;
+  line-height:1.62;
+}
+.clinician-template-start .btn{
+  margin-top:8px;
+  width:100%;
+}
+.clinician-template-body{
+  padding-top:34px !important;
+  padding-bottom:58px !important;
+}
+.clinician-template-grid{
+  width:min(1120px, calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 318px;
+  gap:20px;
+  align-items:start;
+}
+.clinician-template-main,
+.clinician-template-rail{
+  display:grid;
+  gap:18px;
+}
+.clinician-template-card,
+.clinician-template-rail-card{
+  padding:28px;
+}
+.clinician-template-card h2,
+.clinician-template-final h2{
+  margin:0 0 14px;
+  font-size:clamp(2rem, 2.55vw, 2.55rem);
+  line-height:1;
+  letter-spacing:-.025em;
+}
+.clinician-template-rail-card h3{
+  margin:0 0 12px;
+  font-size:1.55rem;
+  line-height:1.05;
+}
+.clinician-template-card p,
+.clinician-template-rail-card p{
+  font-size:.98rem;
+  line-height:1.64;
+}
+.clinician-template-card p + p,
+.clinician-template-rail-card p + p{
+  margin-top:12px;
+}
+.clinician-template-card-feature{
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.045), rgba(255,253,248,.90)),
+    linear-gradient(180deg,#fffdf8,#f8f4ef);
+}
+.clinician-template-rail .home-led-list{
+  margin-top:10px;
+}
+.clinician-template-final{
+  width:min(1120px, calc(100% - 72px));
+  margin:20px auto 0;
+  padding:28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.055), rgba(255,253,248,.90)),
+    linear-gradient(180deg,#fffdf8,#f8f4ef);
+}
+.clinician-template-final p{
+  max-width:720px;
+  margin:0;
+  font-size:.98rem;
+  line-height:1.62;
+}
+.clinician-template-final .btn{
+  flex:0 0 auto;
+}
+@media (max-width:1120px){
+  .clinician-template-shell{
+    grid-template-columns:1fr;
+  }
+  .clinician-template-start{
+    display:grid;
+    grid-template-columns:.48fr 1fr .64fr;
+    gap:18px;
+    align-items:center;
+    padding:24px 26px;
+  }
+  .clinician-template-start h2{
+    margin:0;
+  }
+  .clinician-template-start .btn{
+    margin:0;
+  }
+  .clinician-template-start .pt-contact-lines{
+    margin:0;
+    padding:0 0 0 18px;
+    border-top:0;
+    border-left:1px solid rgba(212,200,185,.62);
+  }
+}
+@media (max-width:960px){
+  .clinician-template-grid{
+    grid-template-columns:1fr;
+  }
+  .clinician-template-rail{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width:820px){
+  .clinician-template-shell,
+  .clinician-template-grid,
+  .clinician-template-final{
+    width:min(1120px, calc(100% - 30px));
+  }
+  .clinician-template-hero{
+    padding:28px 0 28px;
+  }
+  .clinician-template-overview{
+    grid-template-columns:1fr;
+    gap:22px;
+    min-height:0;
+    padding:22px;
+  }
+  .clinician-template-photo{
+    height:360px;
+  }
+  .clinician-template-intro h1{
+    font-size:clamp(2.75rem, 12vw, 4rem);
+  }
+  .clinician-template-start{
+    display:block;
+  }
+  .clinician-template-start h2{
+    margin:16px 0 8px;
+  }
+  .clinician-template-start .btn{
+    margin-top:8px;
+  }
+  .clinician-template-start .pt-contact-lines{
+    margin-top:14px;
+    padding:14px 0 0;
+    border-left:0;
+    border-top:1px solid rgba(212,200,185,.62);
+  }
+  .clinician-template-rail{
+    grid-template-columns:1fr;
+  }
+  .clinician-template-final{
+    display:block;
+  }
+  .clinician-template-final .btn{
+    margin-top:14px;
+  }
+}
+
+
+/* =========================================================
+   CLINICIAN PROFILE SYSTEM — reusable clinician template
+   Updated to remove the detached sidebar feel and create one
+   stable profile module that can be reused for future clinicians.
+========================================================= */
+.clinician-system-hero{
+  position:relative;
+  overflow:hidden;
+  padding:38px 0 28px;
+  background:
+    radial-gradient(circle at 17% 30%, rgba(200,171,120,.08), transparent 24%),
+    linear-gradient(180deg, #fbf8f4 0%, #f7f1ea 100%);
+  border-bottom:1px solid rgba(212,200,185,.42);
+}
+.clinician-system-hero::after{
+  content:"";
+  position:absolute;
+  right:-260px;
+  bottom:-260px;
+  width:820px;
+  height:620px;
+  background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
+  opacity:.045;
+  pointer-events:none;
+}
+.clinician-system-shell,
+.clinician-system-content{
+  position:relative;
+  z-index:1;
+  width:min(1130px, calc(100% - 72px));
+  margin:0 auto;
+}
+.clinician-system-profile{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr) 270px;
+  gap:26px;
+  align-items:center;
+  padding:24px;
+  border-radius:30px;
+}
+.clinician-system-photo{
+  margin:0;
+  height:292px;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(212,200,185,.72);
+  background:#e9ded2;
+  box-shadow:0 18px 38px rgba(29,38,46,.07);
+}
+.clinician-system-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 18%;
+  filter:saturate(.92) contrast(.98);
+}
+.clinician-system-summary{
+  min-width:0;
+  align-self:center;
+}
+.clinician-system-summary .stone-page-line{
+  margin-bottom:20px;
+}
+.clinician-system-summary h1{
+  margin:10px 0 10px;
+  max-width:9.15ch;
+  color:var(--home-navy, #213142);
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(3.05rem, 4.05vw, 4.25rem);
+  line-height:.92;
+  letter-spacing:-.052em;
+}
+.clinician-system-summary .profile-subtitle{
+  margin:0 0 14px !important;
+  max-width:43rem;
+  color:#9a835f !important;
+  font-size:.76rem !important;
+  line-height:1.45 !important;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.clinician-system-summary .profile-lead{
+  max-width:42rem;
+  margin:0 0 14px !important;
+  color:#213142 !important;
+  font-size:1rem !important;
+  line-height:1.58 !important;
+}
+.clinician-system-quote{
+  margin:16px 0 0;
+  padding:13px 18px 13px 20px;
+  border-left:3px solid rgba(200,171,120,.92);
+  border-radius:0 18px 18px 0;
+  background:rgba(255,253,248,.62);
+}
+.clinician-system-quote p{
+  margin:0 !important;
+  color:#213142;
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(1.14rem, 1.33vw, 1.34rem) !important;
+  line-height:1.18 !important;
+  letter-spacing:-.012em;
+}
+.clinician-system-start{
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:22px;
+  border-radius:24px;
+  border:1px solid rgba(212,200,185,.72);
+  background:linear-gradient(180deg, rgba(255,253,248,.78), rgba(248,244,239,.74));
+}
+.clinician-system-start h2{
+  margin:18px 0 10px;
+  font-size:2.1rem;
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.clinician-system-start p{
+  margin:0;
+  color:#5f6c78;
+  font-size:.92rem;
+  line-height:1.58;
+}
+.clinician-system-start .btn{
+  width:100%;
+  margin-top:14px;
+  min-height:48px;
+}
+.clinician-system-facts{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0,1fr));
+  gap:10px;
+  margin-top:2px;
+  padding-top:16px;
+  border-top:1px solid rgba(212,200,185,.62);
+}
+.clinician-system-facts div{
+  min-height:64px;
+  padding:12px 14px;
+  border-radius:18px;
+  border:1px solid rgba(212,200,185,.58);
+  background:rgba(255,253,248,.55);
+}
+.clinician-system-facts span{
+  display:block;
+  margin-bottom:4px;
+  color:#9a835f;
+  font-size:.66rem;
+  font-weight:800;
+  letter-spacing:.15em;
+  line-height:1.2;
+  text-transform:uppercase;
+}
+.clinician-system-facts strong{
+  display:block;
+  color:#213142;
+  font-size:.94rem;
+  line-height:1.25;
+}
+.clinician-system-body{
+  padding-top:36px !important;
+  padding-bottom:62px !important;
+}
+.clinician-system-two-up,
+.clinician-system-lower-grid{
+  display:grid;
+  gap:20px;
+  align-items:stretch;
+}
+.clinician-system-two-up{
+  grid-template-columns:1fr 1fr;
+}
+.clinician-system-lower-grid{
+  grid-template-columns:minmax(0, 1.28fr) minmax(300px, .72fr);
+  margin-top:20px;
+}
+.clinician-system-card,
+.clinician-system-before{
+  padding:28px;
+  border-radius:28px;
+}
+.clinician-system-card h2,
+.clinician-system-before h2{
+  margin:0 0 14px;
+  color:var(--home-navy, #213142);
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(2rem, 2.55vw, 2.5rem);
+  line-height:1;
+  letter-spacing:-.025em;
+}
+.clinician-system-card p,
+.clinician-system-before p{
+  margin:0;
+  color:#5f6c78;
+  font-size:.98rem;
+  line-height:1.64;
+}
+.clinician-system-card p + p,
+.clinician-system-before p + p{
+  margin-top:12px;
+}
+.clinician-system-feature-card{
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.045), rgba(255,253,248,.90)),
+    linear-gradient(180deg,#fffdf8,#f8f4ef);
+}
+.clinician-system-snapshot{
+  display:grid;
+  align-content:start;
+  gap:22px;
+}
+.clinician-system-snapshot h2{
+  margin-bottom:0;
+}
+.clinician-system-snapshot-block{
+  padding-top:18px;
+  border-top:1px solid rgba(212,200,185,.62);
+}
+.clinician-system-snapshot-block h3{
+  margin:0 0 12px;
+  color:var(--home-navy, #213142);
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:1.45rem;
+  line-height:1.05;
+}
+.clinician-system-snapshot-block p{
+  font-size:.94rem;
+}
+.clinician-system-before{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:24px;
+  align-items:center;
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.055), rgba(255,253,248,.90)),
+    linear-gradient(180deg,#fffdf8,#f8f4ef);
+}
+.clinician-system-before .btn{
+  white-space:nowrap;
+}
+@media (max-width:1120px){
+  .clinician-system-profile{
+    grid-template-columns:190px minmax(0,1fr);
+  }
+  .clinician-system-start{
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:.5fr 1fr .58fr;
+    gap:18px;
+    align-items:center;
+  }
+  .clinician-system-start h2{
+    margin:0;
+  }
+  .clinician-system-start .btn{
+    margin-top:0;
+  }
+  .clinician-system-start .pt-contact-lines{
+    margin:0;
+    padding:0 0 0 18px;
+    border-top:0;
+    border-left:1px solid rgba(212,200,185,.62);
+  }
+}
+@media (max-width:960px){
+  .clinician-system-two-up,
+  .clinician-system-lower-grid{
+    grid-template-columns:1fr;
+  }
+  .clinician-system-facts{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+}
+@media (max-width:760px){
+  .clinician-system-shell,
+  .clinician-system-content{
+    width:min(1130px, calc(100% - 30px));
+  }
+  .clinician-system-hero{
+    padding:28px 0 24px;
+  }
+  .clinician-system-profile{
+    grid-template-columns:1fr;
+    gap:20px;
+    padding:20px;
+  }
+  .clinician-system-photo{
+    height:340px;
+  }
+  .clinician-system-summary h1{
+    font-size:clamp(2.75rem, 12vw, 4rem);
+  }
+  .clinician-system-start{
+    display:block;
+  }
+  .clinician-system-start h2{
+    margin:16px 0 8px;
+  }
+  .clinician-system-start .btn{
+    margin-top:12px;
+  }
+  .clinician-system-start .pt-contact-lines{
+    margin-top:14px;
+    padding:14px 0 0;
+    border-left:0;
+    border-top:1px solid rgba(212,200,185,.62);
+  }
+  .clinician-system-facts{
+    grid-template-columns:1fr;
+  }
+  .clinician-system-card,
+  .clinician-system-before{
+    padding:22px;
+  }
+  .clinician-system-before{
+    grid-template-columns:1fr;
+  }
+  .clinician-system-before .btn{
+    justify-self:start;
+  }
+}
+
+/* =========================================================
+   CLINICIAN PROFILE POLISH — teens/adults + lighter reusable body
+   Makes the template feel less boxed while preserving the Home-led profile header.
+========================================================= */
+.clinician-system-card,
+.clinician-system-before{
+  background:rgba(255,253,248,.66);
+  border-color:rgba(212,200,185,.42);
+  box-shadow:0 10px 24px rgba(31,42,52,.025);
+}
+.clinician-system-card::after,
+.clinician-system-before::after{
+  opacity:.025;
+}
+.clinician-system-feature-card{
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.032), rgba(255,253,248,.76)),
+    rgba(255,253,248,.66);
+}
+.clinician-system-snapshot{
+  background:rgba(255,253,248,.58);
+}
+.clinician-system-before{
+  background:
+    linear-gradient(135deg, rgba(22,58,96,.035), rgba(255,253,248,.78)),
+    rgba(255,253,248,.66);
+}
+.clinician-system-before .btn{
+  border-color:rgba(212,200,185,.76);
+  background:rgba(255,253,248,.72);
+}
+
+
+/* --- Stonebridge full subpage design system: Home-led hero refresh --- */
 .stone-page-hero{
-  min-height: 520px;
+  position:relative;
+  overflow:hidden;
+  min-height:560px;
+  background:
+    radial-gradient(circle at 18% 45%, rgba(200,171,120,.08), transparent 25%),
+    linear-gradient(180deg, #fbf8f4 0%, #f6f1ea 100%);
+  border-bottom:1px solid rgba(212,200,185,.35);
+}
+
+.stone-page-hero::after{
+  content:"";
+  position:absolute;
+  right:-340px;
+  bottom:-260px;
+  width:960px;
+  height:760px;
+  background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
+  opacity:.045;
+  pointer-events:none;
+  z-index:0;
 }
 
 .stone-page-inner{
-  min-height: 520px;
-  padding: 48px 0 40px;
+  position:relative;
+  z-index:3;
+  width:min(1220px, calc(100% - 72px));
+  margin:0 auto;
+  min-height:560px;
+  display:flex;
+  align-items:center;
+  padding:58px 0 42px;
 }
 
 .stone-page-copy{
-  width: 50%;
-  max-width: 640px;
-  padding-right: 72px;
+  position:relative;
+  z-index:4;
+  width:51%;
+  max-width:640px;
+  padding-right:88px;
+}
+
+.stone-page-line{
+  width:34px;
+  height:2px;
+  border-radius:999px;
+  background:var(--home-gold);
+  margin-bottom:20px;
+}
+
+.stone-page-kicker{
+  color:#9a8668;
+  font-size:.76rem;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-family:"Inter", system-ui, sans-serif;
 }
 
 .stone-page-copy h1{
-  font-size: clamp(3.55rem, 4.5vw, 4.9rem);
-  max-width: 10ch;
+  margin:18px 0 0;
+  color:var(--home-navy);
+  font-family:"EB Garamond", Georgia, serif;
+  font-size:clamp(4rem, 5.2vw, 5.25rem);
+  line-height:.9;
+  letter-spacing:-.045em;
+  max-width:10.8ch;
+}
+
+.stone-page-copy h1.long-title{max-width:13.8ch;}
+.stone-page-copy h1.wide-title{max-width:15.6ch;}
+
+.stone-page-copy p{
+  margin:28px 0 0;
+  max-width:38rem;
+  color:var(--home-muted);
+  font-family:"Inter", system-ui, sans-serif;
+  font-size:1rem;
+  line-height:1.85;
+}
+
+.stone-page-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
 }
 
 .stone-hero-panel{
-  width: 46vw;
-  min-width: 620px;
-  border-top-left-radius: 44px;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  width:47vw;
+  min-width:640px;
+  overflow:hidden;
+  z-index:1;
+  border-top-left-radius:56px;
+  background:#e8ded2;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22), 0 18px 46px rgba(31,42,52,.08);
 }
 
-.stone-hero-panel.watermark img{
-  opacity: .29;
-  filter: saturate(.58) contrast(.95);
+.stone-hero-panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, rgba(248,245,240,.02) 0%, rgba(248,245,240,0) 22%, rgba(20,40,62,.08) 100%);
+  pointer-events:none;
+  z-index:2;
 }
 
-.stone-hero-panel.watermark .stone-hero-overlay{
-  background:
-    linear-gradient(90deg, rgba(248,245,240,.40) 0%, rgba(248,245,240,.22) 36%, rgba(20,40,62,.05) 68%, rgba(20,40,62,.02) 100%);
+.stone-hero-panel img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  opacity:1 !important;
+  filter:saturate(.92) contrast(1.01) !important;
 }
+
+.stone-hero-overlay,
+.stone-panel-caption{display:none !important;}
+
+.hero-about .stone-hero-panel img{object-position:center center;}
+.hero-team .stone-hero-panel img{object-position:center center;}
+.hero-services .stone-hero-panel img{object-position:center center;}
+.hero-psychotherapy .stone-hero-panel img{object-position:center center;}
+.hero-contact .stone-hero-panel img{object-position:center center;}
+.hero-portal .stone-hero-panel img{object-position:center center;}
+.hero-assessment .stone-hero-panel img{object-position:center center;}
+.hero-forensic .stone-hero-panel img{object-position:center center;}
 
 .subpage-band{
-  border-top: 1px solid rgba(255,255,255,.06);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  border-top:1px solid rgba(255,255,255,.06);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
 }
 
 .subpage-band-grid{
-  padding: 14px 0 15px;
-  align-items: start;
+  padding:14px 0 15px;
+  align-items:start;
 }
 
-.subpage-band-item{
-  min-height: 48px;
+.subpage-band-item{min-height:44px;}
+.subpage-band-item h4{font-size:1rem;}
+.subpage-band-item p{font-size:.75rem;line-height:1.35;}
+
+@media (max-width:1260px){
+  .stone-hero-panel{width:45vw;min-width:560px;}
+  .stone-page-copy{width:52%;padding-right:68px;}
+  .stone-page-copy h1{font-size:clamp(3.55rem,4.8vw,4.95rem);}
 }
 
-/* keep team/about hero rhythm aligned */
-.team-page .stone-page-copy h1{
-  max-width: 9.5ch;
+@media (max-width:1080px){
+  .stone-page-hero{min-height:auto;}
+  .stone-page-inner{min-height:auto;display:block;padding:50px 0 34px;}
+  .stone-page-copy{width:100%;max-width:760px;padding-right:0;}
+  .stone-hero-panel{position:relative;width:min(1180px, calc(100% - 56px));min-width:0;height:430px;margin:0 auto 24px;border-top-left-radius:36px;}
+  .subpage-band{min-height:auto;}
+  .subpage-band-grid{grid-template-columns:1fr;gap:16px;padding:18px 0 22px;}
 }
 
-@media (max-width: 1180px){
-  .stone-page-copy{padding-right: 48px;}
-  .stone-page-copy h1{font-size: clamp(3.2rem, 5vw, 4.4rem);}
-  .stone-hero-panel{min-width: 540px;}
-}
-
-@media (max-width: 980px){
-  .stone-page-hero,
-  .stone-page-inner{min-height: auto;}
-  .stone-page-inner{padding: 40px 0 0; display:block;}
-  .stone-page-copy{width:100%; max-width:none; padding-right:0; padding-bottom:34px;}
-  .stone-page-copy h1{max-width: 12ch;}
-  .stone-hero-panel{position:relative; width:100%; min-width:0; height:320px; border-top-left-radius:32px;}
+@media (max-width:760px){
+  .stone-page-inner,.stone-hero-panel,.subpage-band-grid,.home-led-grid{width:min(1180px, calc(100% - 30px));}
+  .stone-page-copy h1{font-size:clamp(2.8rem,10vw,3.95rem);line-height:.97;}
+  .stone-page-copy p{font-size:.96rem;line-height:1.75;}
+  .stone-page-actions .btn{width:100%;justify-content:center;}
+  .stone-hero-panel{height:340px;border-top-left-radius:28px;}
 }

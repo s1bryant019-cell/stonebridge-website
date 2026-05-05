@@ -1,0 +1,8 @@
+about.html -> hero-about-interior.jpg
+team.html -> hero-team-consultation.jpg
+services.html -> hero-services-room.jpg
+psychotherapy.html -> hero-psychotherapy-room.jpg
+contact.html -> hero-contact-desk.jpg
+portal.html -> hero-portal-workspace.jpg
+assessment.html -> hero-assessment-books.jpg
+forensic.html -> hero-forensic-formal.jpg

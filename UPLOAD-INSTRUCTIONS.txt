@@ -1,6 +1,32 @@
+Stonebridge full subpage design update v2
+
 Upload / replace these files:
+- styles.css
 - about.html
 - team.html
-- styles.css
+- services.html
+- psychotherapy.html
+- contact.html
+- portal.html
+- assessment.html
+- forensic.html
+- hero-about-interior.jpg
+- hero-team-consultation.jpg
+- hero-services-room.jpg
+- hero-psychotherapy-room.jpg
+- hero-contact-desk.jpg
+- hero-portal-workspace.jpg
+- hero-assessment-books.jpg
+- hero-forensic-formal.jpg
 
-This patch removes the hero-image overlay text on the About and Team pages and standardizes the hero/band proportions for a more consistent premium feel.
+Do not change:
+- api/contact.js
+- Vercel environment variables
+- Resend settings
+- favicon files
+- site.webmanifest
+
+Notes:
+- This version uses optimized JPG hero images so the package is much smaller and should download/upload more reliably.
+- The hero-image overlay text has been removed.
+- Subpage hero proportions and the navy strip are standardized to follow the Home page as the visual parent.
