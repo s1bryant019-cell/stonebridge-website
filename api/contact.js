@@ -1,164 +1,116 @@
-<script>
-  const consultationForm = document.getElementById('consultation-form');
-  const serviceRequested = document.getElementById('service-requested');
-  const secondaryLabel = document.getElementById('secondary-label');
-  const secondarySelect = document.getElementById('secondary-select');
-  const secondaryHelper = document.getElementById('secondary-helper');
-  const reasonLabel = document.getElementById('reason-label');
-  const reasonTextarea = document.getElementById('reason-textarea');
-  const submitButton = document.getElementById('consultation-submit-btn');
-  const availabilityNote = document.getElementById('service-availability-note');
-  const formStatus = document.getElementById('form-status');
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
 
-  function setOptions(options) {
-    secondarySelect.innerHTML = '';
+  try {
+    const {
+      website,
+      service,
+      serviceRequested,
+      psychotherapyFormat,
+      fullName,
+      name,
+      patientName,
+      proposedPatientName,
+      email,
+      insurance,
+      insurancePayment,
+      reason,
+      message
+    } = req.body || {};
 
-    options.forEach((opt) => {
-      const option = document.createElement('option');
-      option.value = opt.value;
-      option.textContent = opt.label;
-      secondarySelect.appendChild(option);
+    // Honeypot spam protection
+    if (website) {
+      return res.status(200).json({ ok: true });
+    }
+
+    const senderName = fullName || name || "";
+    const senderEmail = email || "";
+    const requestedService = serviceRequested || service || "psychotherapy";
+    const patient = patientName || proposedPatientName || "";
+    const paymentInfo = insurance || insurancePayment || "";
+    const inquiryReason = reason || message || "";
+
+    if (!senderName || !senderEmail || !inquiryReason) {
+      return res.status(400).json({
+        error: "Missing required fields."
+      });
+    }
+
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const toEmail = process.env.CONTACT_TO_EMAIL || "info@stonebridgepsychgroup.com";
+    const fromEmail =
+      process.env.CONTACT_FROM_EMAIL ||
+      "Stonebridge Website <onboarding@resend.dev>";
+
+    if (!resendApiKey) {
+      return res.status(500).json({
+        error: "Missing RESEND_API_KEY environment variable."
+      });
+    }
+
+    const emailBody = `
+New consultation request from the Stonebridge website.
+
+Service requested:
+${requestedService}
+
+Format:
+${psychotherapyFormat || "Not specified"}
+
+Full name:
+${senderName}
+
+Proposed patient name:
+${patient || "Not provided"}
+
+Email:
+${senderEmail}
+
+Insurance / payment information:
+${paymentInfo || "Not provided"}
+
+Reason for seeking psychotherapy:
+${inquiryReason}
+
+---
+This message was submitted through the Stonebridge Psychological Group website.
+`;
+
+    const resendResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendApiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        from: fromEmail,
+        to: [toEmail],
+        reply_to: senderEmail,
+        subject: "Stonebridge consultation request",
+        text: emailBody
+      })
+    });
+
+    const resendResult = await resendResponse.json().catch(() => ({}));
+
+    if (!resendResponse.ok) {
+      console.error("Resend error:", resendResult);
+      return res.status(500).json({
+        error:
+          resendResult?.message ||
+          "The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688."
+      });
+    }
+
+    return res.status(200).json({ ok: true });
+  } catch (error) {
+    console.error("Contact API error:", error);
+
+    return res.status(500).json({
+      error:
+        "The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688."
     });
   }
-
-  function showStatus(message, type) {
-    formStatus.textContent = message;
-    formStatus.className = 'form-status visible ' + type;
-  }
-
-  function clearStatus() {
-    formStatus.textContent = '';
-    formStatus.className = 'form-status';
-  }
-
-  function updateConsultationForm() {
-    const value = serviceRequested.value;
-    clearStatus();
-
-    if (value === 'clinical-assessment') {
-      secondaryLabel.textContent = 'Assessment Availability';
-      setOptions([{ value: 'not-currently-available', label: 'Not currently available' }]);
-      secondarySelect.disabled = true;
-      secondaryHelper.textContent = 'Psychological assessment is not currently available for new requests.';
-      reasonLabel.innerHTML = 'Reason for Seeking Assessment';
-      reasonTextarea.placeholder = 'Assessment requests are not currently being accepted.';
-      availabilityNote.textContent = 'Stonebridge is not currently accepting psychological assessment requests. If you are seeking psychotherapy, please select Psychotherapy above.';
-      availabilityNote.classList.add('visible');
-      submitButton.disabled = true;
-    } else if (value === 'forensic-assessment') {
-      secondaryLabel.textContent = 'Forensic Service Availability';
-      setOptions([{ value: 'not-currently-available', label: 'Not currently available' }]);
-      secondarySelect.disabled = true;
-      secondaryHelper.textContent = 'Forensic services are not currently available for new requests.';
-      reasonLabel.innerHTML = 'Reason for Seeking Forensic Services';
-      reasonTextarea.placeholder = 'Forensic service requests are not currently being accepted.';
-      availabilityNote.textContent = 'Stonebridge is not currently accepting forensic service requests. If you are seeking psychotherapy, please select Psychotherapy above.';
-      availabilityNote.classList.add('visible');
-      submitButton.disabled = true;
-    } else {
-      secondaryLabel.textContent = 'Psychotherapy Format';
-      setOptions([{ value: 'telehealth-only', label: 'Telehealth only' }]);
-      secondarySelect.disabled = false;
-      secondaryHelper.textContent = 'Psychotherapy is currently offered via telehealth.';
-      reasonLabel.innerHTML = 'Reason for Seeking Psychotherapy <span class="required">*</span>';
-      reasonTextarea.placeholder = 'Please share a brief, general description of what brings you or your loved one to seek support. Please avoid detailed clinical, legal, or highly sensitive information.';
-      availabilityNote.textContent = '';
-      availabilityNote.classList.remove('visible');
-      submitButton.disabled = false;
-    }
-  }
-
-  serviceRequested.addEventListener('change', updateConsultationForm);
-
-  consultationForm.addEventListener('submit', async function(event) {
-    event.preventDefault();
-    clearStatus();
-
-    if (serviceRequested.value !== 'psychotherapy') {
-      showStatus('This service is not currently available for new requests.', 'error');
-      return;
-    }
-
-    if (!consultationForm.checkValidity()) {
-      consultationForm.reportValidity();
-      return;
-    }
-
-    const formData = new FormData(consultationForm);
-
-    const fullName = String(formData.get('full_name') || '').trim();
-    const patientName = String(formData.get('patient_name') || '').trim();
-    const email = String(formData.get('email') || '').trim();
-    const service = String(formData.get('service_requested') || 'psychotherapy').trim();
-    const secondaryDetail = String(formData.get('secondary_detail') || '').trim();
-    const insuranceInfo = String(formData.get('insurance_info') || '').trim();
-    const reason = String(formData.get('reason') || '').trim();
-    const website = String(formData.get('website') || '').trim();
-
-    const payload = {
-      // Current Stonebridge contact form fields
-      service_requested: service,
-      secondary_detail: secondaryDetail,
-      full_name: fullName,
-      patient_name: patientName,
-      email: email,
-      insurance_info: insuranceInfo,
-      reason: reason,
-      website: website,
-
-      // Compatibility fields for older /api/contact.js versions
-      name: fullName,
-      service: service,
-      message: reason,
-      phone: '',
-      subject: 'Stonebridge consultation request',
-
-      // Human-readable fallback summary
-      details:
-        'Service requested: ' + service + '\n' +
-        'Format/detail: ' + secondaryDetail + '\n' +
-        'Full name: ' + fullName + '\n' +
-        'Proposed patient name: ' + patientName + '\n' +
-        'Email: ' + email + '\n' +
-        'Insurance/payment: ' + insuranceInfo + '\n\n' +
-        'Reason:\n' + reason
-    };
-
-    submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      const result = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(result.error || result.message || 'The form could not be sent.');
-      }
-
-      consultationForm.reset();
-      updateConsultationForm();
-
-      showStatus(
-        'Thank you. Your inquiry has been received. If your request appears appropriate for Stonebridge, we will follow up by email.',
-        'success'
-      );
-    } catch (error) {
-      console.error('Contact form error:', error);
-
-      showStatus(
-        error.message || 'The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.',
-        'error'
-      );
-    } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = 'Send Consultation Request';
-    }
-  });
-
-  updateConsultationForm();
-</script>
+}
