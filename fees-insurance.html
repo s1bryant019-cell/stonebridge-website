@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fees & Insurance | Stonebridge Psychological Group</title>
+  <meta name="description" content="Review private-pay fees, insurance status, and psychotherapy appointment structure for Stonebridge Psychological Group." />
+  <link rel="canonical" href="https://stonebridgepsychgroup.com/fees-insurance.html">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .fees-page-note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(212,200,185,.65);
+      background: rgba(255,255,255,.62);
+      color: var(--home-muted, #5f6c78);
+      font-size: .94rem;
+      line-height: 1.65;
+    }
+
+    .fees-section-heading {
+      width: min(1220px, calc(100% - 72px));
+      margin: 0 auto 24px;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .fees-section-heading h2 {
+      margin: 0;
+      color: var(--home-navy, #213142);
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(2.55rem, 4.1vw, 3.9rem);
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .fees-section-heading p {
+      margin: 0;
+      max-width: 46rem;
+      color: var(--home-muted, #5f6c78);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .fee-table-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .fee-table-header,
+    .fee-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 160px;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .fee-table-header {
+      padding: 18px 24px;
+      background: linear-gradient(135deg, var(--home-navy-band, #163a60) 0%, var(--home-navy-band-2, #102f4d) 100%);
+      color: #fffaf2;
+    }
+
+    .fee-table-header span {
+      color: rgba(255,250,242,.86);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .fee-row {
+      padding: 18px 24px;
+      border-top: 1px solid rgba(212,200,185,.55);
+      background: rgba(255,255,255,.58);
+    }
+
+    .fee-row:nth-child(even) {
+      background: rgba(255,253,248,.82);
+    }
+
+    .fee-service strong {
+      display: block;
+      color: var(--home-navy, #213142);
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: 1.32rem;
+      line-height: 1.05;
+      letter-spacing: -.015em;
+    }
+
+    .fee-service span {
+      display: block;
+      margin-top: 5px;
+      color: var(--home-muted, #5f6c78);
+      font-size: .86rem;
+      line-height: 1.45;
+    }
+
+    .fee-price {
+      color: var(--home-navy, #213142);
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: 1.58rem;
+      font-weight: 700;
+      line-height: 1;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .fees-callout-card {
+      background: linear-gradient(135deg, var(--home-navy-band, #163a60) 0%, var(--home-navy-band-2, #102f4d) 100%);
+      border-color: rgba(255,255,255,.12);
+    }
+
+    .fees-callout-card h2,
+    .fees-callout-card h3 {
+      color: #fffaf2;
+    }
+
+    .fees-callout-card p,
+    .fees-callout-card li {
+      color: rgba(255,255,255,.86);
+    }
+
+    .fees-callout-card .home-led-list li::before {
+      border-color: #d8b56e;
+    }
+
+    .insurance-status-grid {
+      align-items: stretch;
+    }
+
+    .insurance-status-grid .home-led-card {
+      min-height: 100%;
+    }
+
+    .policy-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .policy-mini-card {
+      border-radius: 20px;
+      border: 1px solid rgba(212,200,185,.58);
+      background: rgba(255,255,255,.58);
+      padding: 20px;
+    }
+
+    .policy-mini-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--home-navy, #213142);
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: 1.35rem;
+      line-height: 1.05;
+    }
+
+    .policy-mini-card span {
+      display: block;
+      color: var(--home-muted, #5f6c78);
+      font-size: .94rem;
+      line-height: 1.58;
+    }
+
+    .fees-final-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(22,58,96,.055), rgba(255,253,248,.90)),
+        linear-gradient(180deg,#fffdf8,#f8f4ef);
+    }
+
+    .fees-final-cta h2 {
+      font-size: clamp(2.35rem, 3.6vw, 3.45rem);
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .fees-final-cta p {
+      max-width: 760px;
+    }
+
+    @media (max-width: 1080px) {
+      .fees-section-heading,
+      .fees-final-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-mini-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .fees-section-heading {
+        width: min(1220px, calc(100% - 30px));
+      }
+
+      .fee-table-header,
+      .fee-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .fee-price {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" aria-label="Stonebridge Psychological Group home">
+        <div class="brand-mark">STONEBRIDGE</div>
+        <div class="brand-sub">Psychological Group</div>
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" type="button">Menu</button>
+      <div class="menu-wrap">
+        <nav class="menu" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="nav-dropdown">
+            <a href="team.html">Team</a>
+            <div class="dropdown-menu">
+              <a href="team.html">Team Overview</a>
+              <a href="team-founder.html">Founder</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <a href="services.html">Services</a>
+            <div class="dropdown-menu">
+              <a href="services.html">Services Overview</a>
+              <a href="psychotherapy.html">Psychotherapy</a>
+              <a href="assessment.html">Psychological Assessment</a>
+              <a href="forensic.html">Forensic Services</a>
+            </div>
+          </div>
+          <a class="active" href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html">Portal</a>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="stone-page-hero hero-contact">
+      <div class="stone-hero-panel">
+        <img src="hero-contact-desk.jpg" alt="" aria-hidden="true">
+      </div>
+      <div class="stone-page-inner">
+        <div class="stone-page-copy">
+          <div class="stone-page-line"></div>
+          <div class="stone-page-kicker">Fees &amp; Insurance</div>
+          <h1 class="wide-title">Clear information before beginning care.</h1>
+          <p>Stonebridge values transparency around fees, insurance status, and the structure of psychotherapy appointments. This page outlines current private-pay fees and coverage information for prospective clients.</p>
+          <div class="stone-page-actions">
+            <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+            <a class="btn btn-secondary" href="#fees">View fees</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="subpage-band request-band">
+      <div class="subpage-band-grid">
+        <article class="subpage-band-item">
+          <div class="subpage-band-icon">01</div>
+          <div>
+            <h4>Appointment structure</h4>
+            <p>Psychotherapy is scheduled in 60-minute appointment blocks.</p>
+          </div>
+        </article>
+        <article class="subpage-band-item">
+          <div class="subpage-band-icon">02</div>
+          <div>
+            <h4>Private-pay fees</h4>
+            <p>Current fees are listed so cost expectations are clear.</p>
+          </div>
+        </article>
+        <article class="subpage-band-item">
+          <div class="subpage-band-icon">03</div>
+          <div>
+            <h4>Insurance status</h4>
+            <p>Insurance participation is being established with select commercial plans.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-led-section" id="structure">
+      <div class="fees-section-heading">
+        <div>
+          <div class="stone-page-kicker">Appointment Model</div>
+          <h2>How psychotherapy time is structured.</h2>
+        </div>
+        <p>Stonebridge uses a structured appointment model designed to support focused clinical care, accurate documentation, and continuity between sessions.</p>
+      </div>
+
+      <div class="home-led-grid">
+        <article class="home-led-card">
+          <h2>60-minute appointment blocks</h2>
+          <p>Psychotherapy appointments are scheduled in 60-minute blocks. The direct clinical portion of a standard session typically lasts 45–50 minutes.</p>
+          <p>The remaining time supports documentation, transition, preparation, and continuity of care.</p>
+        </article>
+
+        <article class="home-led-card fees-callout-card">
+          <h2>Not a shorter-session discount model</h2>
+          <p>This structure is part of the Stonebridge care model. It is not intended as a reduced service or a shorter-session discount.</p>
+          <ul class="home-led-list">
+            <li>Clinical time is protected and focused.</li>
+            <li>Documentation and transition time are built into the appointment structure.</li>
+            <li>Sessions may extend when clinically necessary, such as during safety concerns or other significant clinical circumstances.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-led-section paper" id="fees">
+      <div class="fees-section-heading">
+        <div>
+          <div class="stone-page-kicker">Current Fees</div>
+          <h2>Private-pay fee schedule.</h2>
+        </div>
+        <p>Fees are listed to reduce uncertainty before consultation. Insurance-based costs may differ once participation with a client’s specific plan is active and confirmed.</p>
+      </div>
+
+      <div class="home-led-grid one">
+        <article class="home-led-card fee-table-card" aria-label="Private-pay fee schedule">
+          <div class="fee-table-header">
+            <span>Service</span>
+            <span>Fee</span>
+          </div>
+
+          <div class="fee-row">
+            <div class="fee-service">
+              <strong>Initial diagnostic evaluation / intake</strong>
+              <span>CPT 90791</span>
+            </div>
+            <div class="fee-price">$275</div>
+          </div>
+
+          <div class="fee-row">
+            <div class="fee-service">
+              <strong>Individual psychotherapy, 30 minutes</strong>
+              <span>CPT 90832 — used when clinically appropriate</span>
+            </div>
+            <div class="fee-price">$150</div>
+          </div>
+
+          <div class="fee-row">
+            <div class="fee-service">
+              <strong>Individual psychotherapy, 45 minutes</strong>
+              <span>CPT 90834</span>
+            </div>
+            <div class="fee-price">$200</div>
+          </div>
+
+          <div class="fee-row">
+            <div class="fee-service">
+              <strong>Individual psychotherapy, 60 minutes</strong>
+              <span>CPT 90837 — standard extended psychotherapy session</span>
+            </div>
+            <div class="fee-price">$240</div>
+          </div>
+
+          <div class="fee-row">
+            <div class="fee-service">
+              <strong>Family therapy without client present</strong>
+              <span>CPT 90846</span>
+            </div>
+            <div class="fee-price">$225</div>
+          </div>
+
+          <div class="fee-row">
+            <div class="fee-service">
+              <strong>Family therapy with client present</strong>
+              <span>CPT 90847</span>
+            </div>
+            <div class="fee-price">$240</div>
+          </div>
+
+          <div class="fee-row">
+            <div class="fee-service">
+              <strong>Group therapy</strong>
+              <span>CPT 90853</span>
+            </div>
+            <div class="fee-price">$90</div>
+          </div>
+
+          <div class="fee-row">
+            <div class="fee-service">
+              <strong>Report writing / letters</strong>
+              <span>Non-session professional service</span>
+            </div>
+            <div class="fee-price">$300/hr</div>
+          </div>
+
+          <div class="fee-row">
+            <div class="fee-service">
+              <strong>Peer review / professional consultation</strong>
+              <span>Professional consultation service</span>
+            </div>
+            <div class="fee-price">$200/hr</div>
+          </div>
+        </article>
+
+        <div class="fees-page-note">
+          <strong>Note:</strong> Not every service listed above is necessarily available for every client or circumstance. Service type depends on clinical need, scope, availability, and fit. Standard psychotherapy at Stonebridge remains consultation-first.
+        </div>
+      </div>
+    </section>
+
+    <section class="home-led-section" id="insurance">
+      <div class="fees-section-heading">
+        <div>
+          <div class="stone-page-kicker">Insurance</div>
+          <h2>Current insurance status.</h2>
+        </div>
+        <p>Stonebridge is working toward participation with select commercial insurance plans. Coverage should not be assumed until participation is active and formally confirmed.</p>
+      </div>
+
+      <div class="home-led-grid insurance-status-grid">
+        <article class="home-led-card">
+          <h2>Private pay while credentialing is in progress</h2>
+          <p>Stonebridge Psychological Group currently operates as a private-pay telehealth practice while insurance participation is being established with select commercial plans.</p>
+          <p>Until participation is active and formally confirmed, services are not billed through insurance.</p>
+        </article>
+
+        <article class="home-led-card">
+          <h2>Future insurance use</h2>
+          <p>Once participation is active with a specific plan, client responsibility may depend on the plan’s copay, deductible, coinsurance, coverage rules, and benefit verification.</p>
+          <p>Verification of benefits is not a guarantee of payment. Clients remain responsible for fees, balances, and non-covered services according to Stonebridge’s financial policies.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-led-section paper" id="policies">
+      <div class="fees-section-heading">
+        <div>
+          <div class="stone-page-kicker">Financial Policies</div>
+          <h2>Important payment details.</h2>
+        </div>
+        <p>These policies help protect reserved clinical time and clarify financial expectations before treatment begins.</p>
+      </div>
+
+      <div class="home-led-grid one">
+        <article class="home-led-card">
+          <div class="policy-mini-grid">
+            <div class="policy-mini-card">
+              <strong>Out-of-network benefits</strong>
+              <span>Some clients may be eligible for partial reimbursement through out-of-network benefits, depending on their plan.</span>
+            </div>
+            <div class="policy-mini-card">
+              <strong>Superbills</strong>
+              <span>A superbill may be available upon request when appropriate for private-pay services.</span>
+            </div>
+            <div class="policy-mini-card">
+              <strong>Missed appointments</strong>
+              <span>Late cancellations or no-shows may be charged the applicable session fee. Insurance cannot be billed for missed appointments.</span>
+            </div>
+          </div>
+
+          <div class="fees-page-note">
+            Questions about fees, insurance status, reimbursement, or fit can be discussed during consultation. This page is intended to provide general information and does not replace a signed financial agreement or insurance verification.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-led-section tight">
+      <div class="home-led-grid one">
+        <article class="home-led-card fees-final-cta">
+          <div>
+            <div class="stone-page-kicker">Next Step</div>
+            <h2>Begin with a consultation request.</h2>
+            <p>A consultation is used to determine whether Stonebridge is an appropriate place to begin. If another kind of care would better match the need, referral guidance may be offered when possible.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">
+          Thoughtful telehealth psychotherapy for teens and adults in Illinois.
+        </p>
+      </div>
+      <div>
+        <div class="footer-title">Services</div>
+        <div class="footer-links">
+          <a href="psychotherapy.html">Psychotherapy</a>
+          <a href="assessment.html">Psychological Assessment</a>
+          <a href="forensic.html">Forensic Services</a>
+          <a href="contact.html">Consultation</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html">Portal</a>
+          <a href="contact.html">Consultation</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <a href="tel:+17734171688">(773) 417-1688</a>
+          <span>Consultation requests by form, email, or phone</span>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-logo-right">
+        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo">
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
