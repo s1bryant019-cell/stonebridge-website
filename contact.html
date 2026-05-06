@@ -113,7 +113,9 @@
             <label><span>Full Name *</span><input type="text" name="fullName" autocomplete="name" required></label>
             <label><span>Proposed Patient’s Name</span><input type="text" name="patientName"></label>
             <label><span>Email Address *</span><input type="email" name="email" autocomplete="email" required></label>
-            <label><span>Insurance / Payment Information</span><input type="text" name="insurance"></label>
+            <label><span>Insurance / Payment Preference</span><select name="insurancePreference" id="insurancePreference"><option value="">Select one</option><option value="Private pay">Private pay</option><option value="Planning to use insurance if available">Planning to use insurance if available</option><option value="BCBS / Blue Cross Blue Shield">BCBS / Blue Cross Blue Shield</option><option value="Aetna">Aetna</option><option value="Cigna / Evernorth">Cigna / Evernorth</option><option value="UnitedHealthcare / Optum">UnitedHealthcare / Optum</option><option value="Other commercial insurance">Other commercial insurance</option><option value="Out-of-network benefits / superbill">Out-of-network benefits / superbill</option><option value="Unsure">Unsure</option></select></label>
+            <label><span>Insurance Details (optional)</span><input type="text" name="insuranceDetails" placeholder="Plan name, PPO/HMO, employer plan, or anything helpful"></label>
+            <div class="form-row-full form-note-inline">Insurance participation is currently being established with select commercial plans. Selecting a plan on this form does not confirm coverage or guarantee that services can be billed through insurance.</div>
             <label class="form-row-full"><span>Brief Reason for Seeking Psychotherapy *</span><textarea name="reason" required placeholder="A few sentences is enough. Please avoid sensitive details or crisis information here."></textarea></label>
           </div>
           <div class="form-alert" id="form-alert" role="status" aria-live="polite"></div>
@@ -239,8 +241,8 @@
       patientName: data.get('patientName') || '',
       proposedPatientName: data.get('patientName') || '',
       email: data.get('email') || '',
-      insurance: data.get('insurance') || '',
-      insurancePayment: data.get('insurance') || '',
+      insurance: [data.get('insurancePreference'), data.get('insuranceDetails')].filter(Boolean).join(' — ') || data.get('insurance') || '',
+      insurancePayment: [data.get('insurancePreference'), data.get('insuranceDetails')].filter(Boolean).join(' — ') || data.get('insurance') || '',
       reason: data.get('reason') || '',
       message: data.get('reason') || ''
     };
