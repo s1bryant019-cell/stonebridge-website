@@ -15,6 +15,249 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Stonebridge deliberate narrative update */
+    .founder-deliberate-hero {
+      background: #efe7da;
+      padding: clamp(56px, 7vw, 92px) 24px 40px;
+      border-bottom: 1px solid rgba(37,45,48,0.08);
+    }
+    .founder-hero-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
+      gap: clamp(34px, 7vw, 76px);
+      align-items: center;
+    }
+    .founder-portrait-frame {
+      border: 1px solid rgba(23,54,77,0.18);
+      padding: 14px;
+      background: rgba(255,250,242,0.5);
+    }
+    .founder-portrait-frame img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+    .founder-hero-copy .stone-page-kicker { color: #17364d; }
+    .founder-hero-copy h1 {
+      margin: 10px 0 12px;
+      font-family: "EB Garamond", serif;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.88;
+      letter-spacing: -0.055em;
+      color: #1f2b2f;
+    }
+    .founder-subtitle {
+      margin: 0 0 24px;
+      color: #17364d;
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+    }
+    .founder-hero-copy p {
+      max-width: 760px;
+      color: #3d4648;
+      font-size: 1.08rem;
+      line-height: 1.74;
+    }
+    .founder-quote {
+      margin: 30px 0 0;
+      padding: 24px 0 0 30px;
+      border-left: 4px solid #17364d;
+      font-family: "EB Garamond", serif;
+      font-size: clamp(1.35rem, 2.2vw, 2rem);
+      line-height: 1.24;
+      color: #17364d;
+    }
+    .founder-facts-strip {
+      background: #17364d;
+      color: #fffaf2;
+      padding: 24px;
+    }
+    .founder-facts-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 22px;
+    }
+    .founder-facts-inner span {
+      display: block;
+      font-family: Inter, sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(247,242,234,0.64);
+      margin-bottom: 6px;
+    }
+    .founder-facts-inner strong {
+      font-family: "EB Garamond", serif;
+      font-size: 1.18rem;
+      line-height: 1.06;
+      font-weight: 600;
+    }
+    .founder-story-section {
+      padding: clamp(62px, 7vw, 96px) 24px;
+      background: #f7f2ea;
+    }
+    .founder-story-section.alt {
+      background: #efe7da;
+      border-top: 1px solid rgba(37,45,48,0.08);
+      border-bottom: 1px solid rgba(37,45,48,0.08);
+    }
+    .founder-story-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(190px, 0.31fr) minmax(0, 1fr);
+      gap: clamp(34px, 7vw, 80px);
+      align-items: start;
+    }
+    .founder-section-label {
+      border-top: 2px solid #17364d;
+      padding-top: 18px;
+      color: #17364d;
+      font-family: Inter, sans-serif;
+      font-size: 0.77rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      position: sticky;
+      top: 108px;
+    }
+    .founder-story-content {
+      max-width: 840px;
+    }
+    .founder-story-content h2 {
+      margin: 0 0 22px;
+      font-family: "EB Garamond", serif;
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      line-height: 0.96;
+      color: #1f2b2f;
+      letter-spacing: -0.035em;
+    }
+    .founder-story-content p {
+      margin: 0 0 18px;
+      color: #3d4648;
+      font-size: 1.02rem;
+      line-height: 1.78;
+    }
+    .founder-rail-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 0.36fr);
+      gap: clamp(34px, 5vw, 64px);
+    }
+    .founder-credential-rail {
+      border-left: 1px solid rgba(23,54,77,0.24);
+      padding-left: 28px;
+    }
+    .founder-credential-rail h3 {
+      margin: 0 0 18px;
+      font-family: "EB Garamond", serif;
+      font-size: 1.8rem;
+      color: #1f2b2f;
+      line-height: 1.05;
+    }
+    .credential-item {
+      padding: 16px 0;
+      border-top: 1px solid rgba(23,54,77,0.14);
+    }
+    .credential-item strong {
+      display: block;
+      color: #17364d;
+      font-size: 0.96rem;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+    .credential-item span {
+      color: #5a6262;
+      font-size: 0.91rem;
+      line-height: 1.45;
+    }
+    .founder-path-list {
+      margin-top: 34px;
+      border-top: 1px solid rgba(23,54,77,0.28);
+    }
+    .founder-path-row {
+      display: grid;
+      grid-template-columns: 74px minmax(200px, 0.36fr) minmax(0, 1fr);
+      gap: 24px;
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(23,54,77,0.18);
+      align-items: start;
+    }
+    .founder-path-number {
+      font-family: Inter, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #17364d;
+    }
+    .founder-path-title {
+      font-family: "EB Garamond", serif;
+      font-size: 1.55rem;
+      line-height: 1.05;
+      color: #1f2b2f;
+    }
+    .founder-path-row p {
+      margin: 0;
+      font-size: 0.99rem;
+      line-height: 1.66;
+    }
+    .focus-inline-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+    .focus-inline-list span {
+      border-top: 1px solid rgba(23,54,77,0.24);
+      padding-top: 9px;
+      min-width: 128px;
+      color: #17364d;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .founder-closing {
+      padding: clamp(60px, 7vw, 90px) 24px;
+      background: #17364d;
+      color: #f7f2ea;
+    }
+    .founder-closing-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+    .founder-closing h2 {
+      margin: 0 0 16px;
+      color: #fffaf2;
+      font-family: "EB Garamond", serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+    }
+    .founder-closing p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(247,242,234,0.84);
+      line-height: 1.72;
+      font-size: 1.02rem;
+    }
+    @media (max-width: 920px) {
+      .founder-hero-shell, .founder-story-shell, .founder-rail-layout, .founder-closing-inner { grid-template-columns: 1fr; gap: 28px; }
+      .founder-facts-inner { grid-template-columns: repeat(2, 1fr); }
+      .founder-section-label { position: static; }
+      .founder-path-row { grid-template-columns: 1fr; gap: 8px; }
+      .founder-credential-rail { border-left: 0; border-top: 1px solid rgba(23,54,77,0.24); padding-left: 0; padding-top: 24px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -55,152 +298,124 @@
     </div>
   </header>
 
+  
   <main>
-    <section class="clinician-system-hero">
-      <div class="clinician-system-shell">
-        <article class="home-led-card clinician-system-profile">
-          <figure class="clinician-system-photo">
-            <img src="founders-photo.png" alt="Dr. Stephen W. Bryant, PsyD, LCPC">
-          </figure>
-
-          <div class="clinician-system-summary">
-            <div class="stone-page-line"></div>
-            <div class="stone-page-kicker">Founder Profile</div>
-            <h1>Dr. Stephen W. Bryant</h1>
-            <p class="profile-subtitle">PsyD, LCPC · Founder · Doctoral-level clinician providing insight-oriented psychotherapy in Illinois</p>
-            <p class="profile-lead">Dr. Bryant founded Stonebridge from the belief that psychotherapy needs more than good intentions. It needs a thoughtful clinical frame, careful fit, and a practice structure that protects the attention and judgment the work requires.</p>
-            <blockquote class="clinician-system-quote">
-              <p>“Therapy should be steady, thoughtful, and human. I want clients to feel taken seriously without feeling pathologized, rushed, or reduced to a diagnosis.”</p>
-            </blockquote>
-          </div>
-
-          <aside class="clinician-system-start" aria-label="Consultation information">
-            <span class="status-pill">Accepting psychotherapy inquiries</span>
-            <h2>Start here</h2>
-            <p>Consultation requests are reviewed before therapy is scheduled. This helps clarify clinical fit, scheduling needs, and whether outpatient telehealth is appropriate.</p>
-            <a class="btn btn-primary" href="contact.html">Request consultation</a>
-            <div class="pt-contact-lines">
-              <a href="tel:+17734171688">(773) 417-1688</a>
-              <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-            </div>
-          </aside>
-
-          <div class="clinician-system-facts" aria-label="Profile quick facts">
-            <div><span>Credentials</span><strong>PsyD, LCPC</strong></div>
-            <div><span>Education</span><strong>Doctorate + 2 master’s</strong></div>
-            <div><span>Training</span><strong>Clinical, counseling &amp; forensic</strong></div>
-            <div><span>Clinical path</span><strong>Outpatient, IOP, PHP &amp; inpatient</strong></div>
-            <div><span>Access</span><strong>Consultation first</strong></div>
-          </div>
-        </article>
+    <section class="founder-deliberate-hero">
+      <div class="founder-hero-shell">
+        <figure class="founder-portrait-frame">
+          <img src="founders-photo.png" alt="Dr. Stephen W. Bryant, PsyD, LCPC">
+        </figure>
+        <div class="founder-hero-copy">
+          <div class="stone-page-line"></div>
+          <div class="stone-page-kicker">Founder Profile</div>
+          <h1>Dr. Stephen W. Bryant</h1>
+          <p class="founder-subtitle">PsyD, LCPC · Founder · Insight-oriented psychotherapy</p>
+          <p>Dr. Bryant works with teens and adults who want therapy to move beyond symptom checklists and surface-level reassurance. His clinical work is grounded in depth, diagnostic care, psychological complexity, and respect for the parts of a person that learned to survive before they could feel free.</p>
+          <div class="founder-quote">“Therapy should be steady, thoughtful, and human. I want clients to feel taken seriously without feeling pathologized, rushed, or reduced to a diagnosis.”</div>
+          <div class="stone-page-actions" style="margin-top:28px;"><a class="btn btn-primary" href="contact.html">Request consultation</a><a class="btn btn-secondary" href="services.html">Explore services</a></div>
+        </div>
       </div>
     </section>
 
-    <section class="home-led-section paper clinician-system-body">
-      <div class="clinician-system-content">
-        <div class="clinician-system-two-up">
-          <article class="home-led-card clinician-system-card clinician-system-feature-card">
-            <h2>Why I built Stonebridge</h2>
+    <section class="founder-facts-strip" aria-label="Founder overview">
+      <div class="founder-facts-inner">
+        <div><span>Credentials</span><strong>PsyD, LCPC</strong></div>
+        <div><span>Graduate training</span><strong>Clinical, counseling &amp; forensic</strong></div>
+        <div><span>Degrees</span><strong>Doctorate + 2 master’s</strong></div>
+        <div><span>Clinical path</span><strong>Outpatient, IOP, PHP &amp; inpatient</strong></div>
+        <div><span>Current service</span><strong>Illinois telehealth psychotherapy</strong></div>
+      </div>
+    </section>
+
+    <section class="founder-story-section">
+      <div class="founder-story-shell">
+        <aside class="founder-section-label">Why Stonebridge</aside>
+        <div class="founder-story-content founder-rail-layout">
+          <div>
+            <h2>Why I built Stonebridge.</h2>
             <p>I built Stonebridge because I wanted the structure around therapy to match the seriousness of the work. Psychotherapy asks people to bring painful patterns, complicated histories, private fears, and unresolved questions into a relationship that needs to be steady enough to hold them.</p>
-            <p>My clinical work across outpatient therapy, assessment, intensive outpatient treatment, partial hospitalization, inpatient behavioral health, substance use care, supervision, and interdisciplinary teams shaped that belief. These settings taught me that care is affected not only by the clinician’s skill, but by the system surrounding the clinician.</p>
+            <p>My clinical work across outpatient therapy, psychological assessment, intensive outpatient treatment, partial hospitalization, inpatient behavioral health, substance use care, supervision, and interdisciplinary teams shaped that belief. These settings taught me that care is affected not only by the clinician’s skill, but by the system surrounding the clinician.</p>
             <p>Stonebridge is my attempt to build a practice where the frame itself supports depth, clarity, boundaries, and sustainability. The goal is not to make therapy feel exclusive. The goal is to make the work clinically responsible, human, and durable.</p>
-          </article>
-
-          <article class="home-led-card clinician-system-card">
-            <h2>A clinical path shaped by complexity</h2>
-            <p>Dr. Bryant’s training and clinical experience have included adolescents and adults across outpatient, community mental health, intensive outpatient, partial hospitalization, and inpatient behavioral health settings.</p>
-            <p>His work has involved trauma, substance use, mood and anxiety concerns, neurodevelopmental presentations, family systems, diagnostic clarification, psychological assessment, crisis intervention, and treatment planning with interdisciplinary teams.</p>
-            <p>This range of experience informs his attention to clinical fit, risk level, outpatient appropriateness, diagnostic complexity, and the importance of not rushing a person into a service that may not match the need.</p>
-          </article>
-        </div>
-
-        <div class="clinician-system-lower-grid">
-          <article class="home-led-card clinician-system-card">
-            <h2>How I work</h2>
-            <p>Therapy with Dr. Bryant is primarily insight-oriented. The work looks beneath immediate symptoms to understand recurring emotional patterns, relationship templates, losses, conflicts, defenses, and ways of coping that may have once been protective but now feel limiting.</p>
-            <p>His approach is grounded in psychodynamic, relational, trauma-informed, and self-psychological therapy. Practical tools from CBT, DBT, ACT, motivational interviewing, and mindfulness may be integrated when structure, coping skills, behavior change, or emotional regulation would support the deeper work.</p>
-            <p>The goal is to help clients understand themselves more clearly, feel less controlled by old patterns, and develop more flexible ways of relating to themselves and others.</p>
-          </article>
-
-          <article class="home-led-card clinician-system-card">
-            <h2>What therapy may look like</h2>
-            <p>Sessions are conversational, reflective, and active. A session may begin with anxiety, grief, conflict, substance use concerns, burnout, trauma reminders, or feeling disconnected from oneself.</p>
-            <p>The work often slows down a reaction, conflict, urge, or emotional shift and asks what it means, what it protects, and what feels difficult to say directly.</p>
-            <p>Some sessions may focus on current life. Others may move more deeply into history, identity, shame, loss, attachment, or patterns that have been difficult to understand alone.</p>
-          </article>
-        </div>
-
-        <div class="clinician-system-lower-grid">
-          <article class="home-led-card clinician-system-card">
-            <h2>Training, credentials, and professional formation</h2>
-            <p>Dr. Bryant holds a Doctor of Clinical Psychology and 2 master’s degrees in clinically related fields, including clinical psychology and forensic psychology. He is licensed in Illinois as a Licensed Clinical Professional Counselor.</p>
-            <p>His formal training includes clinical psychology, counseling, forensic psychology, psychological assessment, trauma-focused care, substance use treatment, crisis work, and interdisciplinary treatment planning.</p>
-            <p>His broader professional formation also includes supervision, professional education, peer consultation, continuing education instruction, and research on clinician burnout and sustainable clinical practice.</p>
-          </article>
-
-          <aside class="home-led-card clinician-system-card clinician-system-snapshot">
-            <h2>Selected qualifications</h2>
-            <div class="clinician-system-snapshot-block">
-              <p><strong>Doctor of Clinical Psychology</strong><br>The Chicago School of Professional Psychology</p>
-              <p><strong>Master of Arts in Clinical Psychology</strong><br>The Chicago School of Professional Psychology</p>
-              <p><strong>Master of Arts in Forensic Psychology</strong><br>The Chicago School of Professional Psychology</p>
-              <p><strong>Licensed Clinical Professional Counselor</strong><br>Illinois</p>
-              <p><strong>Trauma-focused certification</strong><br>Certified in Trauma-Focused Cognitive Behavioral Therapy</p>
-              <p><strong>Assessment background</strong><br>Psychological, psychodiagnostic, and treatment-planning evaluations</p>
-            </div>
+          </div>
+          <aside class="founder-credential-rail" aria-label="Selected qualifications">
+            <h3>Selected qualifications</h3>
+            <div class="credential-item"><strong>Doctor of Clinical Psychology</strong><span>The Chicago School of Professional Psychology</span></div>
+            <div class="credential-item"><strong>Master of Arts in Clinical Psychology</strong><span>The Chicago School of Professional Psychology</span></div>
+            <div class="credential-item"><strong>Master of Arts in Forensic Psychology</strong><span>The Chicago School of Professional Psychology</span></div>
+            <div class="credential-item"><strong>Licensed Clinical Professional Counselor</strong><span>Illinois</span></div>
+            <div class="credential-item"><strong>Trauma-focused certification</strong><span>Certified in Trauma-Focused Cognitive Behavioral Therapy</span></div>
           </aside>
         </div>
+      </div>
+    </section>
 
-        <div class="clinician-system-two-up">
-          <article class="home-led-card clinician-system-card">
-            <h2>Research, teaching, and clinician sustainability</h2>
-            <p>Dr. Bryant’s doctoral research examined education, perceived therapy readiness, burnout, and mental health outcomes among substance use disorder counselors. His broader writing and professional education work focuses on burnout, clinician sustainability, secondary trauma, leadership, and the conditions that help mental health professionals remain effective over time.</p>
-            <p>This work is part of the foundation of Stonebridge. The practice treats clinician sustainability as a clinical quality issue, not a wellness slogan. A therapist’s attention, judgment, emotional availability, and consistency are part of the care clients receive.</p>
-            <p>That belief shapes Stonebridge’s consultation-first process, appointment structure, communication boundaries, documentation expectations, and commitment to careful growth.</p>
-          </article>
-
-          <article class="home-led-card clinician-system-card">
-            <h2>Before clinical practice</h2>
-            <p>Before becoming a clinician, Dr. Bryant’s professional path included visual art, independent creative work, operations, training, supervision, and financial-services administration.</p>
-            <p>That earlier background still matters. It shaped his attention to design, systems, clarity, responsibility, and the way small structural decisions affect a person’s experience of an organization.</p>
-            <p>Stonebridge reflects that combination of clinical depth and systems thinking. The practice is meant to feel warm and human, but also organized enough to support serious work.</p>
-          </article>
-        </div>
-
-        <div class="clinician-system-two-up">
-          <article class="home-led-card clinician-system-card clinician-system-snapshot">
-            <h2>Clinical focus</h2>
-            <div class="clinician-system-snapshot-block">
-              <h3>Common concerns</h3>
-              <div class="mini-tag-list compact-tags">
-                <span>Anxiety</span>
-                <span>Trauma</span>
-                <span>Substance use</span>
-                <span>Grief</span>
-                <span>Identity</span>
-                <span>Relationships</span>
-                <span>Burnout</span>
-                <span>Self-esteem</span>
-                <span>Life transitions</span>
-              </div>
+    <section class="founder-story-section alt">
+      <div class="founder-story-shell">
+        <aside class="founder-section-label">Clinical path</aside>
+        <div class="founder-story-content">
+          <h2>A path shaped by complexity.</h2>
+          <p>Dr. Bryant’s training and clinical experience have included adolescents and adults across outpatient, community mental health, intensive outpatient, partial hospitalization, and inpatient behavioral health settings.</p>
+          <p>His work has involved trauma, substance use, mood and anxiety concerns, neurodevelopmental presentations, family systems, diagnostic clarification, psychological assessment, crisis intervention, and treatment planning with interdisciplinary teams.</p>
+          <div class="founder-path-list">
+            <div class="founder-path-row">
+              <div class="founder-path-number">01</div>
+              <div class="founder-path-title">Higher-acuity care</div>
+              <p>Inpatient, partial hospitalization, and intensive outpatient settings shaped his attention to risk level, stabilization, diagnostic complexity, and the limits of outpatient care.</p>
             </div>
-          </article>
-
-          <article class="home-led-card clinician-system-card">
-            <h2>Clinical perspective</h2>
-            <p>Dr. Bryant works with clients who want therapy to move beyond symptom checklists and surface-level reassurance. The work may include coping skills, but it is also concerned with meaning, pattern, attachment, shame, grief, identity, and the parts of a person that have learned to survive quietly.</p>
-            <p>Stonebridge is designed for outpatient psychotherapy. When another level of care or a different service would better fit the client’s needs, referral guidance may be offered when possible.</p>
-          </article>
-        </div>
-
-        <article class="home-led-card clinician-system-before">
-          <div>
-            <h2>Before reaching out</h2>
-            <p>A brief consultation helps determine whether Stonebridge is an appropriate place to begin. Consultation is not emergency care and does not establish a clinical relationship.</p>
-            <p>Psychological testing, forensic evaluation, legal-system services, emergency care, and higher levels of care require different procedures and may not be available through a psychotherapy consultation.</p>
+            <div class="founder-path-row">
+              <div class="founder-path-number">02</div>
+              <div class="founder-path-title">Assessment and diagnosis</div>
+              <p>Psychological assessment and diagnostic clarification strengthened his focus on careful formulation rather than quick labels or one-size-fits-all explanations.</p>
+            </div>
+            <div class="founder-path-row">
+              <div class="founder-path-number">03</div>
+              <div class="founder-path-title">Trauma and substance use</div>
+              <p>Clinical work with trauma, substance use, grief, shame, and identity shaped an approach that respects both symptoms and the histories beneath them.</p>
+            </div>
+            <div class="founder-path-row">
+              <div class="founder-path-number">04</div>
+              <div class="founder-path-title">Supervision and teaching</div>
+              <p>Supervision, professional education, and peer consultation deepened his interest in how clinicians think, grow, and remain effective over time.</p>
+            </div>
           </div>
-          <a class="btn btn-secondary" href="contact.html">Request consultation</a>
-        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder-story-section">
+      <div class="founder-story-shell">
+        <aside class="founder-section-label">Therapy style</aside>
+        <div class="founder-story-content">
+          <h2>How I work.</h2>
+          <p>Therapy with Dr. Bryant is primarily insight-oriented. The work looks beneath immediate symptoms to understand recurring emotional patterns, relationship templates, losses, conflicts, defenses, and ways of coping that may have once been protective but now feel limiting.</p>
+          <p>His approach is grounded in psychodynamic, relational, trauma-informed, and self-psychological therapy. Practical tools from CBT, DBT, ACT, motivational interviewing, and mindfulness may be integrated when structure, coping skills, behavior change, or emotional regulation would support the deeper work.</p>
+          <p>Some sessions may focus on current life. Others may move more deeply into history, identity, shame, loss, attachment, or patterns that have been difficult to understand alone.</p>
+          <div class="focus-inline-list" aria-label="Clinical focus areas">
+            <span>Anxiety</span><span>Trauma</span><span>Substance use</span><span>Grief</span><span>Identity</span><span>Relationships</span><span>Burnout</span><span>Self-worth</span><span>Life transitions</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder-story-section alt">
+      <div class="founder-story-shell">
+        <aside class="founder-section-label">Formation</aside>
+        <div class="founder-story-content">
+          <h2>Clinical depth and systems thinking.</h2>
+          <p>Dr. Bryant’s doctoral research examined education, perceived therapy readiness, burnout, and mental health outcomes among substance use disorder counselors. His broader writing and professional education work focuses on burnout, clinician sustainability, secondary trauma, leadership, and the conditions that help mental health professionals remain effective over time.</p>
+          <p>That work is part of the foundation of Stonebridge. The practice treats clinician sustainability as a clinical quality issue, not a wellness slogan. A therapist’s attention, judgment, emotional availability, and consistency are part of the care clients receive.</p>
+          <p>Before becoming a clinician, Dr. Bryant’s professional path included visual art, independent creative work, operations, training, supervision, and financial-services administration. That earlier background shaped his attention to design, clarity, responsibility, and the way small structural decisions affect a person’s experience of an organization.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder-closing">
+      <div class="founder-closing-inner">
+        <div>
+          <h2>Before reaching out.</h2>
+          <p>A brief consultation helps determine whether Stonebridge is an appropriate place to begin. Consultation is not emergency care and does not establish a clinical relationship. Psychological testing, forensic evaluation, legal-system services, emergency care, and higher levels of care require different procedures and may not be available through a psychotherapy consultation.</p>
+        </div>
+        <a class="btn btn-secondary" href="contact.html">Request consultation</a>
       </div>
     </section>
   </main>
