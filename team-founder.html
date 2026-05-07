@@ -17,251 +17,552 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* Stonebridge deliberate narrative update */
-    .founder-deliberate-hero {
-      background: #efe7da;
-      padding: clamp(56px, 7vw, 92px) 24px 40px;
-      border-bottom: 1px solid rgba(37,45,48,0.08);
+    :root{
+      --sb-bg:#f8f5f0;
+      --sb-bg-deep:#efe7da;
+      --sb-cream:#fffaf2;
+      --sb-navy:#213142;
+      --sb-navy-deep:#143654;
+      --sb-navy-dark:#102f4d;
+      --sb-gold:#c8ab78;
+      --sb-ink:#243037;
+      --sb-muted:#5d6870;
+      --sb-line:rgba(33,49,66,.16);
+      --sb-line-warm:rgba(212,200,185,.58);
     }
-    .founder-hero-shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
-      gap: clamp(34px, 7vw, 76px);
-      align-items: center;
+
+    .architectural-page{
+      background:var(--sb-bg);
+      color:var(--sb-ink);
+      overflow:hidden;
     }
-    .founder-portrait-frame {
-      border: 1px solid rgba(23,54,77,0.18);
-      padding: 14px;
-      background: rgba(255,250,242,0.5);
+
+    .architectural-page p{
+      font-family:"Inter", sans-serif;
     }
-    .founder-portrait-frame img {
-      width: 100%;
-      display: block;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
+
+    .premium-hero{
+      position:relative;
+      background:
+        radial-gradient(circle at 14% 24%, rgba(200,171,120,.13), transparent 27%),
+        linear-gradient(180deg, #fbf8f4 0%, #f2ebe1 100%);
+      border-bottom:1px solid var(--sb-line-warm);
+      overflow:hidden;
     }
-    .founder-hero-copy .stone-page-kicker { color: #17364d; }
-    .founder-hero-copy h1 {
-      margin: 10px 0 12px;
-      font-family: "EB Garamond", serif;
-      font-size: clamp(2.8rem, 7vw, 5.8rem);
-      line-height: 0.88;
-      letter-spacing: -0.055em;
-      color: #1f2b2f;
+
+    .premium-hero::after{
+      content:"";
+      position:absolute;
+      left:-220px;
+      bottom:-280px;
+      width:720px;
+      height:720px;
+      border:1px solid rgba(200,171,120,.18);
+      border-radius:50%;
+      pointer-events:none;
     }
-    .founder-subtitle {
-      margin: 0 0 24px;
-      color: #17364d;
-      font-weight: 700;
-      font-size: 0.98rem;
-      letter-spacing: 0.02em;
+
+    .premium-hero-inner{
+      position:relative;
+      z-index:1;
+      width:min(1220px, calc(100% - 72px));
+      margin:0 auto;
+      min-height:620px;
+      display:grid;
+      grid-template-columns:minmax(0, .55fr) minmax(360px, .45fr);
+      gap:clamp(46px, 6vw, 88px);
+      align-items:center;
+      padding:clamp(58px, 7vw, 86px) 0;
     }
-    .founder-hero-copy p {
-      max-width: 760px;
-      color: #3d4648;
-      font-size: 1.08rem;
-      line-height: 1.74;
+
+    .premium-hero-line{
+      width:44px;
+      height:2px;
+      background:rgba(200,171,120,.92);
+      margin-bottom:26px;
     }
-    .founder-quote {
-      margin: 30px 0 0;
-      padding: 24px 0 0 30px;
-      border-left: 4px solid #17364d;
-      font-family: "EB Garamond", serif;
-      font-size: clamp(1.35rem, 2.2vw, 2rem);
-      line-height: 1.24;
-      color: #17364d;
+
+    .premium-kicker{
+      margin:0 0 16px;
+      color:#8c7551;
+      font-family:"Inter", sans-serif;
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.22em;
+      text-transform:uppercase;
     }
-    .founder-facts-strip {
-      background: #17364d;
-      color: #fffaf2;
-      padding: 24px;
+
+    .premium-hero h1{
+      margin:0;
+      max-width:9.8ch;
+      color:var(--sb-navy);
+      font-family:"EB Garamond", serif;
+      font-size:clamp(4.1rem, 7vw, 6.6rem);
+      line-height:.88;
+      letter-spacing:-.06em;
     }
-    .founder-facts-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 22px;
+
+    .premium-hero .wide-title{
+      max-width:11.6ch;
     }
-    .founder-facts-inner span {
-      display: block;
-      font-family: Inter, sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(247,242,234,0.64);
-      margin-bottom: 6px;
+
+    .premium-hero-copy p{
+      max-width:42rem;
+      margin:28px 0 0;
+      color:var(--sb-muted);
+      font-size:1.02rem;
+      line-height:1.82;
     }
-    .founder-facts-inner strong {
-      font-family: "EB Garamond", serif;
-      font-size: 1.18rem;
-      line-height: 1.06;
-      font-weight: 600;
+
+    .premium-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:32px;
     }
-    .founder-story-section {
-      padding: clamp(62px, 7vw, 96px) 24px;
-      background: #f7f2ea;
+
+    .premium-media{
+      position:relative;
+      height:min(58vw, 545px);
+      min-height:430px;
+      overflow:hidden;
+      border-top-left-radius:64px;
+      box-shadow:0 26px 70px rgba(25,43,58,.11);
+      background:#e7dcca;
     }
-    .founder-story-section.alt {
-      background: #efe7da;
-      border-top: 1px solid rgba(37,45,48,0.08);
-      border-bottom: 1px solid rgba(37,45,48,0.08);
+
+    .premium-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(.95) contrast(.98);
     }
-    .founder-story-shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(190px, 0.31fr) minmax(0, 1fr);
-      gap: clamp(34px, 7vw, 80px);
-      align-items: start;
+
+    .premium-media::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(18,44,70,.22), rgba(18,44,70,.02) 54%),
+        linear-gradient(180deg, rgba(255,250,242,.04), rgba(20,35,50,.18));
+      pointer-events:none;
+      z-index:1;
     }
-    .founder-section-label {
-      border-top: 2px solid #17364d;
-      padding-top: 18px;
-      color: #17364d;
-      font-family: Inter, sans-serif;
-      font-size: 0.77rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      position: sticky;
-      top: 108px;
+
+    .premium-media::after{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:10px;
+      background:linear-gradient(180deg, rgba(200,171,120,.85), rgba(200,171,120,.18));
+      z-index:2;
     }
-    .founder-story-content {
-      max-width: 840px;
+
+    .principle-wall{
+      background:linear-gradient(135deg, var(--sb-navy-deep), var(--sb-navy-dark));
+      color:var(--sb-cream);
+      border-top:1px solid rgba(255,255,255,.05);
+      border-bottom:1px solid rgba(0,0,0,.12);
     }
-    .founder-story-content h2 {
-      margin: 0 0 22px;
-      font-family: "EB Garamond", serif;
-      font-size: clamp(2rem, 4.2vw, 3.6rem);
-      line-height: 0.96;
-      color: #1f2b2f;
-      letter-spacing: -0.035em;
+
+    .principle-wall-inner{
+      width:min(1220px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(180px,.32fr) minmax(0,1fr);
+      gap:clamp(34px, 6vw, 76px);
+      align-items:center;
+      padding:34px 0 38px;
     }
-    .founder-story-content p {
-      margin: 0 0 18px;
-      color: #3d4648;
-      font-size: 1.02rem;
-      line-height: 1.78;
+
+    .principle-wall .label{
+      color:rgba(255,250,242,.62);
+      font-family:"Inter", sans-serif;
+      font-size:.7rem;
+      font-weight:700;
+      letter-spacing:.22em;
+      text-transform:uppercase;
     }
-    .founder-rail-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(250px, 0.36fr);
-      gap: clamp(34px, 5vw, 64px);
+
+    .principle-wall p{
+      margin:0;
+      max-width:900px;
+      color:#fffaf2;
+      font-family:"EB Garamond", serif;
+      font-size:clamp(1.55rem, 2.6vw, 2.35rem);
+      line-height:1.18;
+      letter-spacing:-.02em;
     }
-    .founder-credential-rail {
-      border-left: 1px solid rgba(23,54,77,0.24);
-      padding-left: 28px;
+
+    .editorial-section{
+      padding:clamp(78px, 9vw, 124px) 0;
+      background:var(--sb-bg);
     }
-    .founder-credential-rail h3 {
-      margin: 0 0 18px;
-      font-family: "EB Garamond", serif;
-      font-size: 1.8rem;
-      color: #1f2b2f;
-      line-height: 1.05;
+
+    .editorial-section.warm{
+      background:var(--sb-bg-deep);
+      border-top:1px solid var(--sb-line-warm);
+      border-bottom:1px solid var(--sb-line-warm);
     }
-    .credential-item {
-      padding: 16px 0;
-      border-top: 1px solid rgba(23,54,77,0.14);
+
+    .editorial-inner{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(190px, .28fr) minmax(0, 1fr);
+      gap:clamp(44px, 7vw, 92px);
+      align-items:start;
     }
-    .credential-item strong {
-      display: block;
-      color: #17364d;
-      font-size: 0.96rem;
-      line-height: 1.25;
-      margin-bottom: 4px;
+
+    .editorial-label{
+      position:relative;
+      color:var(--sb-navy-deep);
+      font-family:"Inter", sans-serif;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      padding-top:18px;
     }
-    .credential-item span {
-      color: #5a6262;
-      font-size: 0.91rem;
-      line-height: 1.45;
+
+    .editorial-label::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      max-width:210px;
+      height:2px;
+      background:linear-gradient(90deg, var(--sb-navy-deep), rgba(20,54,84,0));
     }
-    .founder-path-list {
-      margin-top: 34px;
-      border-top: 1px solid rgba(23,54,77,0.28);
+
+    .editorial-copy{
+      max-width:820px;
     }
-    .founder-path-row {
-      display: grid;
-      grid-template-columns: 74px minmax(200px, 0.36fr) minmax(0, 1fr);
-      gap: 24px;
-      padding: 26px 0;
-      border-bottom: 1px solid rgba(23,54,77,0.18);
-      align-items: start;
+
+    .editorial-copy h2{
+      margin:0 0 24px;
+      max-width:720px;
+      color:var(--sb-navy);
+      font-family:"EB Garamond", serif;
+      font-size:clamp(2.65rem, 5vw, 4.7rem);
+      line-height:.9;
+      letter-spacing:-.055em;
     }
-    .founder-path-number {
-      font-family: Inter, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      color: #17364d;
+
+    .editorial-copy .lead{
+      margin:0 0 28px;
+      color:var(--sb-navy-deep);
+      font-family:"EB Garamond", serif;
+      font-size:clamp(1.45rem, 2.4vw, 2.1rem);
+      line-height:1.25;
+      letter-spacing:-.015em;
     }
-    .founder-path-title {
-      font-family: "EB Garamond", serif;
-      font-size: 1.55rem;
-      line-height: 1.05;
-      color: #1f2b2f;
+
+    .editorial-copy p{
+      margin:0 0 20px;
+      color:var(--sb-muted);
+      font-size:1.01rem;
+      line-height:1.86;
     }
-    .founder-path-row p {
-      margin: 0;
-      font-size: 0.99rem;
-      line-height: 1.66;
+
+    .statement-indent{
+      margin:38px 0;
+      padding-left:34px;
+      border-left:3px solid var(--sb-gold);
+      color:var(--sb-navy);
+      font-family:"EB Garamond", serif;
+      font-size:clamp(1.45rem, 2.6vw, 2.28rem);
+      line-height:1.18;
+      letter-spacing:-.02em;
     }
-    .focus-inline-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 26px;
+
+    .seam-grid{
+      width:min(1220px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      border-top:1px solid rgba(255,250,242,.22);
+      border-bottom:1px solid rgba(255,250,242,.22);
     }
-    .focus-inline-list span {
-      border-top: 1px solid rgba(23,54,77,0.24);
-      padding-top: 9px;
-      min-width: 128px;
-      color: #17364d;
-      font-weight: 700;
-      font-size: 0.9rem;
+
+    .seam-item{
+      padding:42px 34px 44px;
+      border-right:1px solid rgba(255,250,242,.18);
     }
-    .founder-closing {
-      padding: clamp(60px, 7vw, 90px) 24px;
-      background: #17364d;
-      color: #f7f2ea;
+
+    .seam-item:last-child{ border-right:0; }
+
+    .seam-number{
+      display:block;
+      margin:0 0 24px;
+      color:var(--sb-gold);
+      font-family:"Inter", sans-serif;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.2em;
+      text-transform:uppercase;
     }
-    .founder-closing-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 48px;
-      align-items: center;
+
+    .seam-item h3{
+      margin:0 0 14px;
+      color:#fffaf2;
+      font-family:"EB Garamond", serif;
+      font-size:clamp(1.65rem, 2.4vw, 2.35rem);
+      line-height:.98;
+      letter-spacing:-.03em;
     }
-    .founder-closing h2 {
-      margin: 0 0 16px;
-      color: #fffaf2;
-      font-family: "EB Garamond", serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 0.98;
-      letter-spacing: -0.03em;
+
+    .seam-item p{
+      margin:0;
+      color:rgba(255,250,242,.78);
+      font-size:.96rem;
+      line-height:1.72;
     }
-    .founder-closing p {
-      margin: 0;
-      max-width: 760px;
-      color: rgba(247,242,234,0.84);
-      line-height: 1.72;
-      font-size: 1.02rem;
+
+    .process-rows{
+      margin-top:42px;
+      border-top:1px solid rgba(33,49,66,.22);
     }
-    @media (max-width: 920px) {
-      .founder-hero-shell, .founder-story-shell, .founder-rail-layout, .founder-closing-inner { grid-template-columns: 1fr; gap: 28px; }
-      .founder-facts-inner { grid-template-columns: repeat(2, 1fr); }
-      .founder-section-label { position: static; }
-      .founder-path-row { grid-template-columns: 1fr; gap: 8px; }
-      .founder-credential-rail { border-left: 0; border-top: 1px solid rgba(23,54,77,0.24); padding-left: 0; padding-top: 24px; }
+
+    .process-row{
+      display:grid;
+      grid-template-columns:76px minmax(200px,.34fr) minmax(0,1fr);
+      gap:26px;
+      padding:28px 0;
+      border-bottom:1px solid rgba(33,49,66,.15);
+      align-items:start;
+    }
+
+    .process-row .num{
+      color:#8c7551;
+      font-family:"Inter", sans-serif;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .process-row h3{
+      margin:0;
+      color:var(--sb-navy);
+      font-family:"EB Garamond", serif;
+      font-size:1.55rem;
+      line-height:1.04;
+      letter-spacing:-.02em;
+    }
+
+    .process-row p{
+      margin:0;
+      color:var(--sb-muted);
+      font-size:.98rem;
+      line-height:1.72;
+    }
+
+    .closing-architectural{
+      position:relative;
+      background:linear-gradient(135deg, var(--sb-navy-deep), var(--sb-navy-dark));
+      color:#fffaf2;
+      padding:clamp(72px, 8vw, 108px) 0;
+      overflow:hidden;
+    }
+
+    .closing-architectural::after{
+      content:"";
+      position:absolute;
+      right:-160px;
+      bottom:-260px;
+      width:620px;
+      height:620px;
+      border-radius:50%;
+      border:1px solid rgba(200,171,120,.18);
+      pointer-events:none;
+    }
+
+    .closing-inner{
+      position:relative;
+      z-index:1;
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:44px;
+      align-items:center;
+    }
+
+    .closing-inner h2{
+      margin:0 0 16px;
+      color:#fffaf2;
+      font-family:"EB Garamond", serif;
+      font-size:clamp(2.5rem, 5vw, 4.8rem);
+      line-height:.9;
+      letter-spacing:-.055em;
+    }
+
+    .closing-inner p{
+      max-width:760px;
+      margin:0;
+      color:rgba(255,250,242,.8);
+      font-size:1rem;
+      line-height:1.78;
+    }
+
+    .credential-run{
+      background:var(--sb-bg-deep);
+      border-top:1px solid var(--sb-line-warm);
+      border-bottom:1px solid var(--sb-line-warm);
+      padding:30px 0;
+    }
+
+    .credential-run-inner{
+      width:min(1220px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:0;
+      border-top:1px solid rgba(33,49,66,.18);
+      border-bottom:1px solid rgba(33,49,66,.18);
+    }
+
+    .credential-run-item{
+      padding:22px 24px;
+      border-right:1px solid rgba(33,49,66,.14);
+    }
+
+    .credential-run-item:last-child{ border-right:0; }
+
+    .credential-run-item span{
+      display:block;
+      margin:0 0 8px;
+      color:#8c7551;
+      font-family:"Inter", sans-serif;
+      font-size:.67rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .credential-run-item strong{
+      display:block;
+      color:var(--sb-navy);
+      font-family:"EB Garamond", serif;
+      font-size:1.2rem;
+      line-height:1.08;
+      font-weight:600;
+      letter-spacing:-.01em;
+    }
+
+    .founder-hero .premium-hero-inner{
+      grid-template-columns:minmax(350px,.42fr) minmax(0,.58fr);
+    }
+
+    .founder-hero .premium-hero h1,
+    .founder-hero h1{
+      max-width:10ch;
+    }
+
+    .portrait-media{
+      height:min(60vw, 610px);
+      min-height:480px;
+      border-top-left-radius:0;
+      border-top-right-radius:64px;
+    }
+
+    .founder-subline{
+      margin:18px 0 0;
+      color:var(--sb-navy-deep);
+      font-family:"Inter", sans-serif;
+      font-size:.86rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      line-height:1.55;
+    }
+
+    .founder-quote-line{
+      margin-top:34px;
+      padding-top:28px;
+      border-top:1px solid rgba(33,49,66,.18);
+      color:var(--sb-navy-deep);
+      font-family:"EB Garamond", serif;
+      font-size:clamp(1.4rem, 2.5vw, 2.2rem);
+      line-height:1.18;
+      letter-spacing:-.02em;
+    }
+
+    .split-quiet{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(260px,.36fr);
+      gap:clamp(42px, 6vw, 78px);
+      align-items:start;
+    }
+
+    .side-note{
+      border-left:1px solid rgba(33,49,66,.22);
+      padding-left:28px;
+      color:var(--sb-muted);
+      font-family:"Inter", sans-serif;
+      font-size:.94rem;
+      line-height:1.72;
+    }
+
+    .side-note h3{
+      margin:0 0 14px;
+      color:var(--sb-navy);
+      font-family:"EB Garamond", serif;
+      font-size:1.65rem;
+      line-height:1.02;
+      letter-spacing:-.02em;
+    }
+
+    @media (max-width:980px){
+      .premium-hero-inner,
+      .founder-hero .premium-hero-inner,
+      .principle-wall-inner,
+      .editorial-inner,
+      .closing-inner,
+      .split-quiet{
+        grid-template-columns:1fr;
+      }
+      .premium-hero h1{ max-width:12ch; }
+      .premium-media,
+      .portrait-media{ height:460px; min-height:0; }
+      .seam-grid,
+      .credential-run-inner{ grid-template-columns:1fr; }
+      .seam-item,
+      .credential-run-item{ border-right:0; border-bottom:1px solid rgba(255,250,242,.16); }
+      .credential-run-item{ border-bottom:1px solid rgba(33,49,66,.14); }
+      .seam-item:last-child,
+      .credential-run-item:last-child{ border-bottom:0; }
+      .process-row{ grid-template-columns:1fr; gap:10px; }
+      .side-note{ border-left:0; border-top:1px solid rgba(33,49,66,.22); padding-left:0; padding-top:24px; }
+    }
+
+    @media (max-width:720px){
+      .premium-hero-inner,
+      .principle-wall-inner,
+      .editorial-inner,
+      .closing-inner,
+      .seam-grid,
+      .credential-run-inner{
+        width:min(100% - 30px, 1220px);
+      }
+      .premium-hero h1{ font-size:clamp(3.15rem, 14vw, 4.3rem); }
+      .editorial-copy h2,
+      .closing-inner h2{ font-size:clamp(2.45rem, 11vw, 3.5rem); }
+      .premium-media,
+      .portrait-media{ height:390px; }
+      .premium-actions .btn,
+      .closing-inner .btn{ width:100%; justify-content:center; text-align:center; }
     }
   </style>
+
 </head>
 <body>
-
-  <header class="site-header">
+<header class="site-header">
     <div class="container nav">
       <a href="index.html" aria-label="Stonebridge Psychological Group home">
         <div class="brand-mark">STONEBRIDGE</div>
@@ -298,129 +599,124 @@
     </div>
   </header>
 
-  
-  <main>
-    <section class="founder-deliberate-hero">
-      <div class="founder-hero-shell">
-        <figure class="founder-portrait-frame">
+  <main class="architectural-page founder-hero">
+    <section class="premium-hero">
+      <div class="premium-hero-inner">
+        <figure class="premium-media portrait-media" aria-label="Portrait of Dr. Stephen Bryant">
           <img src="founders-photo.png" alt="Dr. Stephen W. Bryant, PsyD, LCPC">
         </figure>
-        <div class="founder-hero-copy">
-          <div class="stone-page-line"></div>
-          <div class="stone-page-kicker">Founder Profile</div>
+        <div class="premium-hero-copy">
+          <div class="premium-hero-line"></div>
+          <div class="premium-kicker">Founder Profile</div>
           <h1>Dr. Stephen W. Bryant</h1>
-          <p class="founder-subtitle">PsyD, LCPC · Founder · Insight-oriented psychotherapy</p>
+          <div class="founder-subline">PsyD, LCPC · Founder · Doctoral-level clinician</div>
           <p>Dr. Bryant works with teens and adults who want therapy to move beyond symptom checklists and surface-level reassurance. His clinical work is grounded in depth, diagnostic care, psychological complexity, and respect for the parts of a person that learned to survive before they could feel free.</p>
-          <div class="founder-quote">“Therapy should be steady, thoughtful, and human. I want clients to feel taken seriously without feeling pathologized, rushed, or reduced to a diagnosis.”</div>
-          <div class="stone-page-actions" style="margin-top:28px;"><a class="btn btn-primary" href="contact.html">Request consultation</a><a class="btn btn-secondary" href="services.html">Explore services</a></div>
+          <div class="founder-quote-line">“Therapy should be steady, thoughtful, and human. I want clients to feel taken seriously without feeling pathologized, rushed, or reduced to a diagnosis.”</div>
+          <div class="premium-actions">
+            <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
+            <a class="btn btn-secondary" href="services.html">Explore Services</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="founder-facts-strip" aria-label="Founder overview">
-      <div class="founder-facts-inner">
-        <div><span>Credentials</span><strong>PsyD, LCPC</strong></div>
-        <div><span>Graduate training</span><strong>Clinical, counseling &amp; forensic</strong></div>
-        <div><span>Degrees</span><strong>Doctorate + 2 master’s</strong></div>
-        <div><span>Clinical path</span><strong>Outpatient, IOP, PHP &amp; inpatient</strong></div>
-        <div><span>Current service</span><strong>Illinois telehealth psychotherapy</strong></div>
+    <section class="credential-run" aria-label="Selected credentials and background">
+      <div class="credential-run-inner">
+        <div class="credential-run-item"><span>Credentials</span><strong>PsyD, LCPC</strong></div>
+        <div class="credential-run-item"><span>Graduate training</span><strong>Clinical, counseling &amp; forensic psychology</strong></div>
+        <div class="credential-run-item"><span>Degrees</span><strong>Doctorate + 2 master’s degrees</strong></div>
+        <div class="credential-run-item"><span>Clinical settings</span><strong>Outpatient, IOP, PHP &amp; inpatient</strong></div>
+        <div class="credential-run-item"><span>Current service</span><strong>Illinois telehealth psychotherapy</strong></div>
       </div>
     </section>
 
-    <section class="founder-story-section">
-      <div class="founder-story-shell">
-        <aside class="founder-section-label">Why Stonebridge</aside>
-        <div class="founder-story-content founder-rail-layout">
+    <section class="editorial-section">
+      <div class="editorial-inner">
+        <aside class="editorial-label">Why Stonebridge</aside>
+        <div class="editorial-copy split-quiet">
           <div>
-            <h2>Why I built Stonebridge.</h2>
-            <p>I built Stonebridge because I wanted the structure around therapy to match the seriousness of the work. Psychotherapy asks people to bring painful patterns, complicated histories, private fears, and unresolved questions into a relationship that needs to be steady enough to hold them.</p>
-            <p>My clinical work across outpatient therapy, psychological assessment, intensive outpatient treatment, partial hospitalization, inpatient behavioral health, substance use care, supervision, and interdisciplinary teams shaped that belief. These settings taught me that care is affected not only by the clinician’s skill, but by the system surrounding the clinician.</p>
-            <p>Stonebridge is my attempt to build a practice where the frame itself supports depth, clarity, boundaries, and sustainability. The goal is not to make therapy feel exclusive. The goal is to make the work clinically responsible, human, and durable.</p>
+            <h2>The clinical path behind the practice.</h2>
+            <p class="lead">I did not come to this model through branding. I came to it through clinical work in settings where people carried real complexity and where the surrounding system mattered.</p>
+            <p>My training and experience have included outpatient psychotherapy, community mental health, intensive outpatient treatment, partial hospitalization, inpatient behavioral health, psychological assessment, substance use treatment, trauma-focused care, supervision, professional education, and interdisciplinary treatment planning.</p>
+            <p>Those settings taught me that clinical skill matters, but the frame around the work matters too. When systems are rushed, unclear, or organized only around availability, people can feel processed rather than understood. Clinicians can also become depleted in ways that weaken the work they entered the field to do.</p>
+            <div class="statement-indent">Stonebridge is my effort to build a practice where the frame is designed on purpose: careful enough to protect depth, clear enough to protect boundaries, and human enough to hold complexity.</div>
+            <p>The goal is not to make therapy feel exclusive. The goal is to make the work clinically responsible, sustainable, and real.</p>
           </div>
-          <aside class="founder-credential-rail" aria-label="Selected qualifications">
+          <aside class="side-note">
             <h3>Selected qualifications</h3>
-            <div class="credential-item"><strong>Doctor of Clinical Psychology</strong><span>The Chicago School of Professional Psychology</span></div>
-            <div class="credential-item"><strong>Master of Arts in Clinical Psychology</strong><span>The Chicago School of Professional Psychology</span></div>
-            <div class="credential-item"><strong>Master of Arts in Forensic Psychology</strong><span>The Chicago School of Professional Psychology</span></div>
-            <div class="credential-item"><strong>Licensed Clinical Professional Counselor</strong><span>Illinois</span></div>
-            <div class="credential-item"><strong>Trauma-focused certification</strong><span>Certified in Trauma-Focused Cognitive Behavioral Therapy</span></div>
+            Doctor of Clinical Psychology; Master of Arts in Clinical Psychology; Master of Arts in Forensic Psychology; Licensed Clinical Professional Counselor in Illinois; certified in Trauma-Focused Cognitive Behavioral Therapy; psychological assessment background; supervision, teaching, and burnout research experience.
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="founder-story-section alt">
-      <div class="founder-story-shell">
-        <aside class="founder-section-label">Clinical path</aside>
-        <div class="founder-story-content">
-          <h2>A path shaped by complexity.</h2>
-          <p>Dr. Bryant’s training and clinical experience have included adolescents and adults across outpatient, community mental health, intensive outpatient, partial hospitalization, and inpatient behavioral health settings.</p>
-          <p>His work has involved trauma, substance use, mood and anxiety concerns, neurodevelopmental presentations, family systems, diagnostic clarification, psychological assessment, crisis intervention, and treatment planning with interdisciplinary teams.</p>
-          <div class="founder-path-list">
-            <div class="founder-path-row">
-              <div class="founder-path-number">01</div>
-              <div class="founder-path-title">Higher-acuity care</div>
-              <p>Inpatient, partial hospitalization, and intensive outpatient settings shaped his attention to risk level, stabilization, diagnostic complexity, and the limits of outpatient care.</p>
-            </div>
-            <div class="founder-path-row">
-              <div class="founder-path-number">02</div>
-              <div class="founder-path-title">Assessment and diagnosis</div>
-              <p>Psychological assessment and diagnostic clarification strengthened his focus on careful formulation rather than quick labels or one-size-fits-all explanations.</p>
-            </div>
-            <div class="founder-path-row">
-              <div class="founder-path-number">03</div>
-              <div class="founder-path-title">Trauma and substance use</div>
-              <p>Clinical work with trauma, substance use, grief, shame, and identity shaped an approach that respects both symptoms and the histories beneath them.</p>
-            </div>
-            <div class="founder-path-row">
-              <div class="founder-path-number">04</div>
-              <div class="founder-path-title">Supervision and teaching</div>
-              <p>Supervision, professional education, and peer consultation deepened his interest in how clinicians think, grow, and remain effective over time.</p>
-            </div>
-          </div>
-        </div>
+    <section class="principle-wall" aria-label="Clinical foundation">
+      <div class="principle-wall-inner" style="padding-bottom:18px;">
+        <div class="label">Clinical foundation</div>
+        <p>Authority should not feel loud. It should feel earned, steady, and useful in the room.</p>
+      </div>
+      <div class="seam-grid">
+        <article class="seam-item">
+          <span class="seam-number">01</span>
+          <h3>Higher-acuity experience</h3>
+          <p>Inpatient, PHP, and IOP settings shaped Dr. Bryant’s attention to risk, stabilization, diagnostic complexity, and the limits of outpatient care.</p>
+        </article>
+        <article class="seam-item">
+          <span class="seam-number">02</span>
+          <h3>Assessment and formulation</h3>
+          <p>Psychological assessment and diagnostic clarification strengthened his focus on careful formulation rather than quick labels or one-size-fits-all explanations.</p>
+        </article>
+        <article class="seam-item">
+          <span class="seam-number">03</span>
+          <h3>Burnout and systems</h3>
+          <p>Research and professional education on clinician burnout shaped the belief that care quality is affected by the systems around clinicians.</p>
+        </article>
       </div>
     </section>
 
-    <section class="founder-story-section">
-      <div class="founder-story-shell">
-        <aside class="founder-section-label">Therapy style</aside>
-        <div class="founder-story-content">
-          <h2>How I work.</h2>
-          <p>Therapy with Dr. Bryant is primarily insight-oriented. The work looks beneath immediate symptoms to understand recurring emotional patterns, relationship templates, losses, conflicts, defenses, and ways of coping that may have once been protective but now feel limiting.</p>
+    <section class="editorial-section warm">
+      <div class="editorial-inner">
+        <aside class="editorial-label">Therapy style</aside>
+        <div class="editorial-copy">
+          <h2>How I work clinically.</h2>
+          <p class="lead">Therapy with Dr. Bryant is primarily insight-oriented. The work looks beneath immediate symptoms to understand the patterns and protections that organize a person’s inner life.</p>
+          <p>Sessions may focus on anxiety, trauma responses, grief, substance use concerns, identity, shame, relationship patterns, self-worth, life transitions, and the parts of a person that learned to survive under pressure. The work may also examine defenses, attachment patterns, losses, conflicts, and ways of coping that once helped but now feel limiting.</p>
           <p>His approach is grounded in psychodynamic, relational, trauma-informed, and self-psychological therapy. Practical tools from CBT, DBT, ACT, motivational interviewing, and mindfulness may be integrated when structure, coping skills, behavior change, or emotional regulation would support the deeper work.</p>
-          <p>Some sessions may focus on current life. Others may move more deeply into history, identity, shame, loss, attachment, or patterns that have been difficult to understand alone.</p>
-          <div class="focus-inline-list" aria-label="Clinical focus areas">
-            <span>Anxiety</span><span>Trauma</span><span>Substance use</span><span>Grief</span><span>Identity</span><span>Relationships</span><span>Burnout</span><span>Self-worth</span><span>Life transitions</span>
+          <p>The aim is not to force insight or perform depth. The aim is to create enough steadiness that complexity can be understood without reducing the client to symptoms, habits, or diagnosis alone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial-section">
+      <div class="editorial-inner">
+        <aside class="editorial-label">Formation</aside>
+        <div class="editorial-copy split-quiet">
+          <div>
+            <h2>A broader formation.</h2>
+            <p class="lead">Before clinical practice, Dr. Bryant’s work included visual art, independent creative production, operations, training, supervision, and financial-services administration.</p>
+            <p>That earlier background shaped his attention to design, clarity, responsibility, and the way small structural decisions affect a person’s experience of an organization. It also informs the Stonebridge emphasis on structure that feels calm rather than rigid.</p>
+            <p>Stonebridge brings those threads together: clinical depth, systems thinking, ethical structure, and an insistence that the practice model should support the care it promises.</p>
           </div>
+          <aside class="side-note">
+            <h3>Current frame</h3>
+            Stonebridge currently focuses on outpatient telehealth psychotherapy for teens and adults in Illinois. Consultation helps determine fit before care begins. Psychological testing, forensic evaluation, legal-system services, emergency care, and higher levels of care require different procedures and may not be available through a psychotherapy consultation.
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="founder-story-section alt">
-      <div class="founder-story-shell">
-        <aside class="founder-section-label">Formation</aside>
-        <div class="founder-story-content">
-          <h2>Clinical depth and systems thinking.</h2>
-          <p>Dr. Bryant’s doctoral research examined education, perceived therapy readiness, burnout, and mental health outcomes among substance use disorder counselors. His broader writing and professional education work focuses on burnout, clinician sustainability, secondary trauma, leadership, and the conditions that help mental health professionals remain effective over time.</p>
-          <p>That work is part of the foundation of Stonebridge. The practice treats clinician sustainability as a clinical quality issue, not a wellness slogan. A therapist’s attention, judgment, emotional availability, and consistency are part of the care clients receive.</p>
-          <p>Before becoming a clinician, Dr. Bryant’s professional path included visual art, independent creative work, operations, training, supervision, and financial-services administration. That earlier background shaped his attention to design, clarity, responsibility, and the way small structural decisions affect a person’s experience of an organization.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="founder-closing">
-      <div class="founder-closing-inner">
+    <section class="closing-architectural">
+      <div class="closing-inner">
         <div>
-          <h2>Before reaching out.</h2>
-          <p>A brief consultation helps determine whether Stonebridge is an appropriate place to begin. Consultation is not emergency care and does not establish a clinical relationship. Psychological testing, forensic evaluation, legal-system services, emergency care, and higher levels of care require different procedures and may not be available through a psychotherapy consultation.</p>
+          <h2>Begin with consultation.</h2>
+          <p>A brief consultation helps determine whether Stonebridge is an appropriate place to begin. Consultation is not emergency care and does not establish a clinical relationship.</p>
         </div>
         <a class="btn btn-secondary" href="contact.html">Request consultation</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <div class="footer-brand">STONEBRIDGE</div>
