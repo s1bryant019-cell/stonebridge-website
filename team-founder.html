@@ -39,12 +39,20 @@
 
     .architectural-page p{ font-family:"Inter", sans-serif; }
 
-    /* Restrained page hero: closer to the home page, less magazine spread. */
+    /*
+      Integrated hero panel.
+      This keeps the improved narrative layout but brings About/Founder back into
+      the same visual family as Home and the service pages: copy on the left,
+      image panel locked to the right edge, no floating framed-picture effect.
+    */
     .premium-hero{
       position:relative;
-      background:linear-gradient(180deg, #fbf8f4 0%, #f6f1ea 100%);
-      border-bottom:1px solid rgba(212,200,185,.45);
       overflow:hidden;
+      min-height:560px;
+      background:
+        radial-gradient(circle at 18% 45%, rgba(200,171,120,.07), transparent 27%),
+        linear-gradient(180deg, #fbf8f4 0%, #f6f1ea 100%);
+      border-bottom:1px solid rgba(212,200,185,.38);
     }
 
     .premium-hero::after{
@@ -54,29 +62,36 @@
       bottom:-340px;
       width:700px;
       height:700px;
-      border:1px solid rgba(200,171,120,.14);
+      border:1px solid rgba(200,171,120,.13);
       border-radius:50%;
       pointer-events:none;
+      z-index:0;
     }
 
     .premium-hero-inner{
       position:relative;
-      z-index:1;
-      width:min(1160px, calc(100% - 72px));
+      z-index:2;
+      width:min(1220px, calc(100% - 72px));
       margin:0 auto;
-      min-height:520px;
-      display:grid;
-      grid-template-columns:minmax(0,.52fr) minmax(360px,.48fr);
-      gap:clamp(42px,5vw,72px);
+      min-height:560px;
+      display:flex;
       align-items:center;
-      padding:64px 0;
+      padding:58px 0 50px;
+    }
+
+    .premium-hero-copy{
+      position:relative;
+      z-index:3;
+      width:52%;
+      max-width:620px;
+      padding-right:86px;
     }
 
     .premium-hero-line{
       width:40px;
       height:2px;
       background:rgba(200,171,120,.9);
-      margin-bottom:22px;
+      margin-bottom:24px;
     }
 
     .premium-kicker,
@@ -99,7 +114,7 @@
       max-width:12.5ch;
       color:var(--sb-navy);
       font-family:"EB Garamond", serif;
-      font-size:clamp(3.25rem,4.8vw,4.75rem);
+      font-size:clamp(3.35rem,4.7vw,5.05rem);
       line-height:.98;
       letter-spacing:-.045em;
     }
@@ -117,21 +132,37 @@
     .premium-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
 
     .premium-media{
-      position:relative;
-      height:440px;
+      position:absolute;
+      top:0;
+      right:calc((min(1220px, calc(100vw - 72px)) - 100vw) / 2);
+      bottom:0;
+      width:47vw;
+      min-width:640px;
+      height:auto;
       overflow:hidden;
-      border-top-left-radius:46px;
-      box-shadow:0 22px 54px rgba(25,43,58,.10);
+      z-index:1;
+      border-top-left-radius:56px;
+      border-bottom-left-radius:0;
+      box-shadow:none;
       background:#e7dcca;
     }
 
-    .premium-media img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.96) contrast(.98); }
+    .premium-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      filter:saturate(.96) contrast(.98);
+    }
 
     .premium-media::before{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(90deg, rgba(18,44,70,.16), rgba(18,44,70,.02) 54%);
+      background:
+        linear-gradient(90deg, rgba(20,40,62,.48) 0%, rgba(20,40,62,.19) 30%, rgba(20,40,62,.035) 58%, rgba(20,40,62,0) 78%),
+        linear-gradient(180deg, rgba(10,20,34,.04) 0%, rgba(10,20,34,.02) 60%, rgba(10,20,34,.10) 100%);
       pointer-events:none;
       z-index:1;
     }
@@ -139,10 +170,15 @@
     .premium-media::after{
       content:"";
       position:absolute;
-      left:0; top:0; bottom:0; width:8px;
-      background:linear-gradient(180deg, rgba(200,171,120,.85), rgba(200,171,120,.2));
+      left:0;
+      top:0;
+      bottom:0;
+      width:1px;
+      background:rgba(255,250,242,.28);
       z-index:2;
     }
+
+    .portrait-media img{ object-position:center top; }
 
     .principle-wall{
       background:linear-gradient(135deg, var(--sb-navy-deep), var(--sb-navy-dark));
@@ -303,9 +339,6 @@
     .credential-run-item span{ display:block; margin:0 0 7px; color:#8c7551; font-size:.64rem; }
     .credential-run-item strong{ display:block; color:var(--sb-navy); font-family:"EB Garamond", serif; font-size:1.08rem; line-height:1.12; font-weight:600; }
 
-    .founder-hero .premium-hero-inner{ grid-template-columns:minmax(330px,.42fr) minmax(0,.58fr); }
-    .founder-hero .premium-hero h1, .founder-hero h1{ max-width:11ch; }
-    .portrait-media{ height:500px; border-top-left-radius:0; border-top-right-radius:46px; }
     .founder-subline{ margin:16px 0 0; color:var(--sb-navy-deep); font-family:"Inter", sans-serif; font-size:.82rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; line-height:1.55; }
     .founder-quote-line{ margin-top:28px; padding-top:24px; border-top:1px solid rgba(33,49,66,.18); color:var(--sb-navy-deep); font-family:"EB Garamond", serif; font-size:clamp(1.25rem,2vw,1.7rem); line-height:1.28; letter-spacing:-.015em; }
 
@@ -313,9 +346,32 @@
     .side-note{ border-left:1px solid rgba(33,49,66,.22); padding-left:26px; color:var(--sb-muted); font-family:"Inter", sans-serif; font-size:.94rem; line-height:1.7; }
     .side-note h3{ margin:0 0 14px; color:var(--sb-navy); font-family:"EB Garamond", serif; font-size:1.45rem; line-height:1.08; letter-spacing:-.015em; }
 
+    @media (max-width:1080px){
+      .premium-hero-copy{ width:50%; padding-right:50px; }
+      .premium-media{ min-width:560px; width:49vw; }
+    }
+
     @media (max-width:980px){
-      .premium-hero-inner,.founder-hero .premium-hero-inner,.principle-wall-inner,.editorial-inner,.closing-inner,.split-quiet{ grid-template-columns:1fr; }
-      .premium-media,.portrait-media{ height:430px; min-height:0; }
+      .premium-hero{ min-height:0; }
+      .premium-hero-inner{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:32px;
+        min-height:0;
+        padding:48px 0 54px;
+      }
+      .premium-hero-copy{ width:100%; max-width:720px; padding-right:0; }
+      .premium-media{
+        position:relative;
+        right:auto;
+        top:auto;
+        bottom:auto;
+        width:100%;
+        min-width:0;
+        height:390px;
+        border-top-left-radius:36px;
+      }
+      .principle-wall-inner,.editorial-inner,.closing-inner,.split-quiet{ grid-template-columns:1fr; }
       .seam-grid,.credential-run-inner{ grid-template-columns:1fr; }
       .seam-item,.credential-run-item{ border-right:0; border-bottom:1px solid rgba(255,250,242,.16); }
       .credential-run-item{ border-bottom:1px solid rgba(33,49,66,.14); }
@@ -326,11 +382,11 @@
 
     @media (max-width:720px){
       .premium-hero-inner,.principle-wall-inner,.editorial-inner,.closing-inner,.seam-grid,.credential-run-inner{ width:min(100% - 30px, 1220px); }
-      .premium-hero-inner{ padding:46px 0; min-height:0; }
       .premium-hero h1{ font-size:clamp(2.75rem,12vw,3.75rem); }
+      .premium-hero-copy p{ font-size:.98rem; line-height:1.72; }
       .editorial-section{ padding:58px 0; }
       .editorial-copy h2,.closing-inner h2{ font-size:clamp(2.1rem,10vw,3rem); }
-      .premium-media,.portrait-media{ height:360px; }
+      .premium-media{ height:350px; }
       .premium-actions .btn,.closing-inner .btn{ width:100%; justify-content:center; text-align:center; }
     }
   </style>
@@ -377,9 +433,6 @@
   <main class="architectural-page founder-hero">
     <section class="premium-hero">
       <div class="premium-hero-inner">
-        <figure class="premium-media portrait-media" aria-label="Portrait of Dr. Stephen Bryant">
-          <img src="founders-photo.png" alt="Dr. Stephen W. Bryant, PsyD, LCPC">
-        </figure>
         <div class="premium-hero-copy">
           <div class="premium-hero-line"></div>
           <div class="premium-kicker">Founder Profile</div>
@@ -392,6 +445,9 @@
             <a class="btn btn-secondary" href="about.html">About Stonebridge</a>
           </div>
         </div>
+        <figure class="premium-media portrait-media" aria-label="Portrait of Dr. Stephen Bryant">
+          <img src="founders-photo.png" alt="Dr. Stephen W. Bryant, PsyD, LCPC">
+        </figure>
       </div>
     </section>
 
