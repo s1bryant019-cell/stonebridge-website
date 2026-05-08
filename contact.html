@@ -64,7 +64,7 @@
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Consultation Request</div>
           <h1 class="wide-title">Begin with a consultation request.</h1>
-          <p>Use this form for non-emergency psychotherapy consultation requests. Stonebridge currently provides telehealth psychotherapy for teens and adults located in Illinois.</p>
+          <p>Use this form for psychotherapy consultation requests. Stonebridge currently provides telehealth psychotherapy for teens and adults located in Illinois.</p>
           <div class="stone-page-actions"><a class="btn btn-primary" href="#consultation-form">Start request</a><a class="btn btn-secondary" href="psychotherapy.html">View psychotherapy</a></div>
         </div>
       </div>
@@ -92,7 +92,6 @@
             <ul class="home-led-list">
               <li>Psychotherapy is currently the active service at Stonebridge.</li>
               <li>Services are telehealth only for teens and adults located in Illinois.</li>
-              <li>This form is not monitored for emergencies or crisis support.</li>
               <li>Submitting a request does not establish a clinical relationship.</li>
             </ul>
             <p class="compact-notice">Before submitting a request, you may review current <a href="fees-insurance.html">fees and insurance information</a>.</p>
@@ -100,17 +99,16 @@
           </article>
           <article class="home-led-card">
             <h2>What to include</h2>
-            <p>A short description is enough. Please do not include detailed trauma history, highly sensitive information, or urgent safety concerns in this form.</p>
-            <div class="compact-notice"><strong>Emergency boundary:</strong> If there is immediate danger or a medical emergency, call 911 or go to the nearest emergency room. For mental health, suicide/self-harm, or substance-use crisis support in Illinois or Chicago, call or text 988.</div>
+            <p>A short description is enough. Please do not include detailed trauma history, highly sensitive information, or urgent safety concerns in this form.</p><div class="compact-notice"><strong>Emergency boundary:</strong> This form is not monitored for emergencies. Immediate danger or medical emergencies require 911 or the nearest emergency room. Mental health crisis support is available by calling or texting 988.</div>
           </article>
         </aside>
         <form class="consultation-form-card home-led-card" id="consultation-form" novalidate>
-          <div class="form-heading"><div><div class="stone-page-kicker">Request a Consultation</div><h2>Initial request</h2></div><p>For non-emergency psychotherapy inquiries only.</p></div>
+          <div class="form-heading"><div><div class="stone-page-kicker">Request a Consultation</div><h2>Initial request</h2></div><p>For psychotherapy consultation inquiries only.</p></div>
           <div class="form-grid">
             <label class="honeypot"><span>Website</span><input type="text" name="website" tabindex="-1" autocomplete="off"></label>
             <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy">
-            <label class="form-row-full"><span>Service Requested *</span><select id="serviceRequested" name="serviceRequested" required><option value="psychotherapy">Psychotherapy — currently available</option><option value="assessment" disabled>Psychological Assessment — not currently available</option><option value="forensic" disabled>Forensic Services — not currently available</option></select></label>
-            <div class="form-row-full form-note-inline">Psychological assessment and forensic services are not open for new requests at this time. Please use this form only for psychotherapy inquiries.</div>
+            <input type="hidden" id="serviceRequested" name="serviceRequested" value="psychotherapy">
+            <div class="form-row-full form-note-inline"><strong>Consultation type:</strong> psychotherapy consultation. Psychological assessment, forensic services, legal-system requests, emergency care, and higher levels of care use different pathways and are not requested through this form.</div>
             <label><span>Full Name *</span><input type="text" name="fullName" autocomplete="name" required></label>
             <label><span>Proposed Patient’s Name</span><input type="text" name="patientName"></label>
             <label><span>Email Address *</span><input type="email" name="email" autocomplete="email" required></label>
@@ -120,7 +118,7 @@
             <label class="form-row-full"><span>Brief Reason for Seeking Psychotherapy *</span><textarea name="reason" required placeholder="A few sentences is enough. Please avoid sensitive details or crisis information here."></textarea></label>
           </div>
           <div class="form-alert" id="form-alert" role="status" aria-live="polite"></div>
-          <div class="form-bottom-row"><div class="emergency-note"><strong>Not for emergencies.</strong> If there is immediate danger or a medical emergency, call <a href="tel:911">911</a> or go to the nearest emergency room. For mental health, suicide/self-harm, or substance-use crisis support in Illinois or Chicago, call or text <a href="tel:988">988</a>.</div><button class="btn btn-primary" type="submit" id="submitButton">Send Request</button></div>
+          <div class="form-bottom-row"><div class="emergency-note"><strong>Not for emergencies.</strong> If there is immediate danger, call <a href="tel:911">911</a>. For mental health crisis support, call or text <a href="tel:988">988</a>.</div><button class="btn btn-primary" type="submit" id="submitButton">Send Request</button></div>
         </form>
       </div>
     </section>
@@ -224,10 +222,6 @@
       return;
     }
 
-    if (service && (service.value === 'assessment' || service.value === 'forensic')) {
-      showAlert('Assessment and forensic services are not currently available for new requests. Please select psychotherapy if you are seeking psychotherapy services.');
-      return;
-    }
 
     if (submitButton) { submitButton.disabled = true; submitButton.textContent = 'Sending...'; }
 
