@@ -15,6 +15,75 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style id="stonebridge-page-guide-styles">
+    html{ scroll-behavior:smooth; scroll-padding-top:118px; }
+    .page-guide{
+      position:sticky;
+      top:86px;
+      z-index:30;
+      background:rgba(248,245,240,.92);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-top:1px solid rgba(33,49,66,.08);
+      border-bottom:1px solid rgba(33,49,66,.12);
+    }
+    .page-guide-inner{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:12px 0;
+      overflow-x:auto;
+      scrollbar-width:none;
+    }
+    .page-guide-inner::-webkit-scrollbar{ display:none; }
+    .page-guide-label{
+      flex:0 0 auto;
+      color:#8c7551;
+      font-family:"Inter", sans-serif;
+      font-size:.64rem;
+      font-weight:800;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .page-guide-links{ display:flex; align-items:center; gap:8px; flex-wrap:nowrap; }
+    .page-guide a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:34px;
+      padding:7px 13px;
+      border:1px solid rgba(33,49,66,.16);
+      border-radius:999px;
+      color:#213142;
+      background:rgba(255,250,242,.55);
+      font-family:"Inter", sans-serif;
+      font-size:.78rem;
+      font-weight:700;
+      line-height:1;
+      text-decoration:none;
+      white-space:nowrap;
+      transition:background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .page-guide a:hover,
+    .page-guide a:focus-visible{
+      background:#213142;
+      color:#fffaf2;
+      border-color:#213142;
+      transform:translateY(-1px);
+      outline:none;
+    }
+    @media (max-width:980px){
+      .page-guide{ top:72px; }
+      .page-guide-inner{ width:min(100% - 30px, 1120px); gap:10px; }
+      .page-guide-label{ display:none; }
+      .page-guide a{ font-size:.76rem; padding:7px 11px; }
+    }
+  </style>
+
 </head>
 <body>
 
@@ -86,14 +155,14 @@
         </article>
       </div></section>
 
-    <section class="home-led-section">
+    <section class="home-led-section" id="therapy-fit">
       <div class="home-led-grid">
         <article class="home-led-card"><h2>What therapy is like at Stonebridge</h2><p>Therapy is not organized around performance, quick labels, or one-size-fits-all scripts. The work may explore how a person learned to survive, what now feels limiting, and how old protections show up in current relationships, identity, self-worth, grief, anxiety, trauma responses, or substance use concerns.</p><p>Practical tools may be used when they support the work. The broader aim is to create enough steadiness that complexity can be understood without reducing the client to symptoms or diagnosis alone.</p></article>
         <article class="home-led-card"><h2>Who this may fit</h2><ul class="home-led-list"><li>Teens and adults located in Illinois</li><li>Clients seeking outpatient telehealth psychotherapy</li><li>Concerns involving anxiety, trauma responses, grief, identity, relationships, burnout, substance use, or life transitions</li><li>Clients who want therapy to feel thoughtful, steady, and clinically grounded</li></ul></article>
       </div>
     </section>
 
-    <section class="home-led-section paper tight"><div class="home-led-grid three"><article class="home-led-card"><h3>How the process begins</h3><p>The first step is consultation, not open booking. The consultation helps clarify fit, scope, risk level, and whether care can begin responsibly in this setting.</p></article><article class="home-led-card"><h3>Session structure</h3><p>Therapy appointments are scheduled in 60-minute blocks, with the direct clinical portion generally lasting 45–50 minutes.</p></article><article class="home-led-card"><h3>Care limits</h3><p>Stonebridge is not an emergency, crisis, or higher-level-care service. If another level of care is more appropriate, referral guidance may be offered when possible.</p></article></div></section>
+    <section class="home-led-section paper tight" id="therapy-process"><div class="home-led-grid three"><article class="home-led-card"><h3>How the process begins</h3><p>The first step is consultation, not open booking. The consultation helps clarify fit, scope, risk level, and whether care can begin responsibly in this setting.</p></article><article class="home-led-card"><h3>Session structure</h3><p>Therapy appointments are scheduled in 60-minute blocks, with the direct clinical portion generally lasting 45–50 minutes.</p></article><article class="home-led-card"><h3>Care limits</h3><p>Stonebridge is not an emergency, crisis, or higher-level-care service. If another level of care is more appropriate, referral guidance may be offered when possible.</p></article></div></section>
   </main>
 
   <footer class="site-footer">
@@ -109,9 +178,9 @@
         <div class="footer-title">Services</div>
         <div class="footer-links">
           <a href="psychotherapy.html">Psychotherapy</a>
-          <a href="assessment.html">Psychological Assessment</a>
-          <a href="forensic.html">Forensic Services</a>
+          <a href="services.html">Services Overview</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html">Client Portal</a>
           <a href="contact.html">Consultation</a>
         </div>
       </div>

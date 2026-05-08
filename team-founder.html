@@ -148,7 +148,7 @@
       aspect-ratio:4 / 5;
       border-radius:28px 28px 2px 28px;
       background:#e6ded2;
-      box-shadow:0 18px 44px rgba(33,49,66,.10);
+      box-shadow:0 18px 42px rgba(33,49,66,.10);
       border:1px solid rgba(33,49,66,.08);
     }
 
@@ -164,9 +164,9 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      object-position:center 14%;
+      object-position:center 9%;
       display:block;
-      filter:saturate(.90) contrast(.98);
+      filter:saturate(.92) contrast(.98);
     }
 
     .portrait-caption{
@@ -359,7 +359,7 @@
         gap:34px;
         padding:52px 0 56px;
       }
-      .founder-portrait{ justify-self:start; max-width:300px; }
+      .founder-portrait{ justify-self:start; max-width:330px; }
       .compact-principle-inner,.founder-section-inner,.current-frame{ grid-template-columns:1fr; }
       .foundation-grid{ grid-template-columns:1fr; }
       .foundation-item{ border-right:0; border-bottom:1px solid rgba(33,49,66,.12); }
@@ -374,6 +374,75 @@
       .section-copy h2{ font-size:clamp(2rem,9vw,2.85rem); }
       .degree-row{ grid-template-columns:1fr; gap:8px; }
       .founder-actions .btn,.current-frame .btn{ width:100%; justify-content:center; text-align:center; }
+    }
+  </style>
+
+
+  <style id="stonebridge-page-guide-styles">
+    html{ scroll-behavior:smooth; scroll-padding-top:118px; }
+    .page-guide{
+      position:sticky;
+      top:86px;
+      z-index:30;
+      background:rgba(248,245,240,.92);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-top:1px solid rgba(33,49,66,.08);
+      border-bottom:1px solid rgba(33,49,66,.12);
+    }
+    .page-guide-inner{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:12px 0;
+      overflow-x:auto;
+      scrollbar-width:none;
+    }
+    .page-guide-inner::-webkit-scrollbar{ display:none; }
+    .page-guide-label{
+      flex:0 0 auto;
+      color:#8c7551;
+      font-family:"Inter", sans-serif;
+      font-size:.64rem;
+      font-weight:800;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .page-guide-links{ display:flex; align-items:center; gap:8px; flex-wrap:nowrap; }
+    .page-guide a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:34px;
+      padding:7px 13px;
+      border:1px solid rgba(33,49,66,.16);
+      border-radius:999px;
+      color:#213142;
+      background:rgba(255,250,242,.55);
+      font-family:"Inter", sans-serif;
+      font-size:.78rem;
+      font-weight:700;
+      line-height:1;
+      text-decoration:none;
+      white-space:nowrap;
+      transition:background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .page-guide a:hover,
+    .page-guide a:focus-visible{
+      background:#213142;
+      color:#fffaf2;
+      border-color:#213142;
+      transform:translateY(-1px);
+      outline:none;
+    }
+    @media (max-width:980px){
+      .page-guide{ top:72px; }
+      .page-guide-inner{ width:min(100% - 30px, 1120px); gap:10px; }
+      .page-guide-label{ display:none; }
+      .page-guide a{ font-size:.76rem; padding:7px 11px; }
     }
   </style>
 
@@ -433,7 +502,7 @@
         </div>
         <figure class="founder-portrait" aria-label="Portrait of Dr. Stephen Bryant">
           <div class="portrait-frame">
-            <img src="practitioner-headshot-sbryant.png" alt="Dr. Stephen W. Bryant, PsyD, LCPC" loading="eager" decoding="async">
+            <img src="practitioner-headshot-sbryant.png" alt="Dr. Stephen W. Bryant, PsyD, LCPC">
           </div>
           <figcaption class="portrait-caption">
             <strong>Dr. Stephen W. Bryant, PsyD, LCPC</strong>
@@ -446,11 +515,23 @@
     <section class="compact-principle" aria-label="Clinical principle">
       <div class="compact-principle-inner">
         <div class="section-label">Clinical principle</div>
-        <p>Authority should feel earned, steady, and useful in the room.</p>
+        <p>The frame should feel steady enough to trust, clear enough to protect the work, and human enough to hold complexity.</p>
       </div>
     </section>
 
-    <section class="founder-section">
+    <nav class="page-guide" aria-label="Founder page sections">
+      <div class="page-guide-inner">
+        <div class="page-guide-label">On this page</div>
+        <div class="page-guide-links">
+          <a href="#clinical-path">Clinical path</a>
+          <a href="#education-training">Education</a>
+          <a href="#therapy-style">Therapy style</a>
+          <a href="#consultation-frame">Consultation</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="founder-section" id="clinical-path">
       <div class="founder-section-inner">
         <aside class="section-label">Clinical path</aside>
         <div class="section-copy">
@@ -458,13 +539,13 @@
           <p class="lead">Stonebridge grew out of clinical work in settings where people carried real complexity and where the frame around care mattered.</p>
           <p>Dr. Bryant’s training and experience have included outpatient psychotherapy, community mental health, intensive outpatient treatment, partial hospitalization, inpatient behavioral health, psychological assessment, substance use treatment, trauma-focused care, supervision, professional education, and interdisciplinary treatment planning.</p>
           <p>Those settings made clear that clinical skill is only one part of care. The structure around care also matters: referral fit, pace, risk assessment, documentation, communication, boundaries, and whether outpatient therapy is the right level of support.</p>
-          <div class="quiet-statement">Stonebridge is an effort to build a practice where the frame is designed on purpose: careful enough to protect depth, clear enough to protect boundaries, and human enough to hold complexity.</div>
+          <div class="quiet-statement">Stonebridge was built to hold therapy in a frame that protects depth, preserves autonomy, and helps clients feel understood without being reduced to symptoms alone.</div>
           <p>The goal is to make the work clinically responsible, sustainable, and real.</p>
         </div>
       </div>
     </section>
 
-    <section class="founder-section warm">
+    <section class="founder-section warm" id="education-training">
       <div class="founder-section-inner">
         <aside class="section-label">Credentials</aside>
         <div class="section-copy">
@@ -527,7 +608,7 @@
       </div>
     </section>
 
-    <section class="founder-section">
+    <section class="founder-section" id="therapy-style">
       <div class="founder-section-inner">
         <aside class="section-label">Therapy style</aside>
         <div class="section-copy">
@@ -535,9 +616,9 @@
           <p class="lead">Therapy with Dr. Bryant is primarily insight-oriented. The work looks beneath immediate symptoms to understand the patterns and protections that organize a person’s inner life.</p>
           <p>Sessions may focus on anxiety, trauma responses, grief, substance use concerns, identity, shame, relationship patterns, self-worth, life transitions, and the parts of a person that learned to survive under pressure. The work may also examine defenses, attachment patterns, losses, conflicts, and ways of coping that once helped but now feel limiting.</p>
           <p>His approach is grounded in psychodynamic, relational, trauma-informed, and self-psychological therapy. Practical tools from CBT, DBT, ACT, motivational interviewing, and mindfulness may be integrated when structure, coping skills, behavior change, or emotional regulation would support the deeper work.</p>
-          <p>The aim is not to force insight or perform depth. The aim is to create enough steadiness that complexity can be understood without reducing the client to symptoms, habits, or diagnosis alone.</p>
+          <p>The aim is not to force insight or perform depth. The aim is to create enough steadiness that clients can feel understood while complexity is explored without reducing the person to symptoms, habits, or diagnosis alone.</p>
 
-          <div class="current-frame">
+          <div class="current-frame" id="consultation-frame">
             <p>Stonebridge focuses on outpatient telehealth psychotherapy for teens and adults in Illinois. Consultation helps determine fit before care begins. Psychological testing, forensic evaluation, legal-system services, emergency care, and higher levels of care require separate procedures and may not be available through a psychotherapy consultation.</p>
             <a class="btn btn-primary" href="contact.html">Request a Consultation</a>
           </div>
@@ -559,9 +640,9 @@
         <div class="footer-title">Services</div>
         <div class="footer-links">
           <a href="psychotherapy.html">Psychotherapy</a>
-          <a href="assessment.html">Psychological Assessment</a>
-          <a href="forensic.html">Forensic Services</a>
+          <a href="services.html">Services Overview</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html">Client Portal</a>
           <a href="contact.html">Consultation</a>
         </div>
       </div>
