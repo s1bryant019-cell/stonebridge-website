@@ -178,7 +178,6 @@
 (function(){
   var form = document.getElementById('consultation-form');
   if (!form) return;
-  var service = document.getElementById('serviceRequested');
   var alertBox = document.getElementById('form-alert');
   var submitButton = document.getElementById('submitButton');
 
@@ -203,15 +202,6 @@
     });
   }
 
-  if (service) {
-    service.addEventListener('change', function(){
-      if (service.value === 'assessment' || service.value === 'forensic') {
-        showAlert('Stonebridge is not currently accepting assessment or forensic requests. Psychotherapy inquiries may be submitted through this form.');
-      } else {
-        clearAlert();
-      }
-    });
-  }
 
   form.addEventListener('submit', async function(event){
     event.preventDefault();
