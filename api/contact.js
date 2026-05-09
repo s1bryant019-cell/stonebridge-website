@@ -32,6 +32,10 @@ export default async function handler(req, res) {
     const paymentInfo = insurance || insurancePayment || "";
     const inquiryReason = reason || message || "";
 
+    const isWaitlistInquiry = String(requestedService)
+      .toLowerCase()
+      .includes("waitlist");
+
     if (!senderName || !senderEmail || !inquiryReason) {
       return res.status(400).json({
         error: "Missing required fields."
@@ -51,7 +55,7 @@ export default async function handler(req, res) {
     }
 
     const emailBody = `
-New consultation request from the Stonebridge website.
+${isWaitlistInquiry ? "New waitlist inquiry" : "New consultation request"} from the Stonebridge website.
 
 Service requested:
 ${requestedService}
@@ -88,7 +92,9 @@ This message was submitted through the Stonebridge Psychological Group website.
         from: fromEmail,
         to: [toEmail],
         reply_to: senderEmail,
-        subject: "Stonebridge consultation request",
+        subject: isWaitlistInquiry
+          ? "Stonebridge waitlist inquiry"
+          : "Stonebridge consultation request",
         text: emailBody
       })
     });
