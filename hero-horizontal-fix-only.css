@@ -1,0 +1,54 @@
+/* =========================================================
+   SUBPAGE HERO HORIZONTAL CROPPING FIX
+   Paste at the END of styles.css, after the prior hero-size update.
+
+   Keeps the shorter vertical hero height from the previous update,
+   but restores the wider right-side image proportions so subpage
+   hero images are not narrowed/cut horizontally.
+
+   Homepage/index is not affected because it uses .home-hero and
+   .hero-room-panel, not .stone-page-hero .stone-hero-panel.
+========================================================= */
+.stone-page-hero .stone-hero-panel{
+  right:0;
+  width:47vw;
+  min-width:640px;
+  max-width:none;
+  top:32px;
+  bottom:32px;
+}
+
+@media (max-width:1260px){
+  .stone-page-hero .stone-hero-panel{
+    right:0;
+    width:45vw;
+    min-width:560px;
+    max-width:none;
+  }
+}
+
+@media (max-width:1080px){
+  .stone-page-hero .stone-hero-panel{
+    position:relative;
+    top:auto;
+    right:auto;
+    bottom:auto;
+    width:min(1180px, calc(100% - 56px));
+    min-width:0;
+    max-width:none;
+    height:430px;
+    margin:0 auto 24px;
+    border-top-left-radius:36px;
+    border-bottom-left-radius:0;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+  }
+}
+
+@media (max-width:760px){
+  .stone-page-hero .stone-hero-panel{
+    width:min(1180px, calc(100% - 30px));
+    height:340px;
+    border-top-left-radius:28px;
+  }
+}
