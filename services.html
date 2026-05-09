@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <title>Services | Stonebridge Psychological Group</title>
-  <meta name="description" content="Outpatient telehealth psychotherapy for teens and adults in Illinois, explained clearly for people considering therapy for the first time or returning to care." />
-  <link rel="canonical" href="https://stonebridgepsychgroup.com/services.html">
+  <meta name="description" content="Outpatient telehealth psychotherapy for teens and adults in Illinois. Learn what therapy is, what it may help with, and how Stonebridge screens for fit before care begins." />
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,373 +84,206 @@
     }
   </style>
 
-  <style id="services-combined-page-styles">
-    .services-page .home-led-section,
-    .services-page .home-led-section.paper,
-    .services-page .home-led-section.tight{
-      padding:42px 0;
+  <style id="stonebridge-services-cleanup">
+    .services-page .home-led-section{
+      padding:46px 0;
     }
 
-    .services-page .home-led-section + .home-led-section{
-      border-top:1px solid rgba(212,200,185,.45);
+    .services-page .home-led-section.tight-section{
+      padding:34px 0;
     }
 
-    .services-page .home-led-grid,
-    .services-page .home-led-grid.one,
-    .services-page .home-led-grid.three{
+    .services-band{
+      background:linear-gradient(135deg,#163a60 0%, #102f4d 100%);
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .services-band-grid{
       width:min(1220px, calc(100% - 72px));
-      max-width:none;
-      gap:18px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      padding:22px 0;
     }
 
-    .services-page .home-led-card{
-      padding:24px;
+    .services-band-item{
+      padding:4px 0;
     }
 
-    .services-page .home-led-card::after{
-      display:none;
+    .services-band-item h4{
+      margin:0 0 6px;
+      color:#fffaf2;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.24rem;
+      line-height:1.08;
     }
 
-    .services-page .stone-page-hero.hero-services .stone-hero-panel img{
-      object-position:center;
-    }
-
-    .services-clarity-band .subpage-band-grid{
-      grid-template-columns:repeat(3, minmax(0, 1fr));
-      gap:28px;
-    }
-
-    .services-clarity-band .subpage-band-item{
-      grid-template-columns:1fr;
-      gap:0;
-    }
-
-    .services-clarity-band .subpage-band-icon{
-      display:none;
+    .services-band-item p{
+      margin:0;
+      color:rgba(255,250,242,.82);
+      font-size:.86rem;
+      line-height:1.55;
     }
 
     .services-section-heading{
-      width:min(1220px, calc(100% - 72px));
-      margin:0 auto 18px;
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto 22px;
       display:grid;
-      grid-template-columns:.72fr 1.28fr;
-      gap:24px;
+      grid-template-columns:.85fr 1.15fr;
+      gap:28px;
       align-items:end;
     }
 
     .services-section-heading h2{
       margin:0;
-      color:var(--home-navy, #213142);
+      color:#213142;
       font-family:"EB Garamond", Georgia, serif;
-      font-size:clamp(2.35rem, 3.7vw, 3.35rem);
-      line-height:.98;
+      font-size:clamp(2.4rem, 3.7vw, 3.55rem);
+      line-height:1;
       letter-spacing:-.035em;
     }
 
     .services-section-heading p{
       margin:0;
-      max-width:64rem;
-      color:var(--home-muted, #5f6c78);
+      max-width:47rem;
+      color:#5f6c78;
       font-size:1rem;
-      line-height:1.65;
+      line-height:1.72;
     }
 
-    .services-two-column{
+    .service-copy-card h2,
+    .service-copy-card h3{
+      margin-bottom:12px;
+    }
+
+    .service-copy-card p{
+      margin-top:0;
+    }
+
+    .diagnosis-grid{
       display:grid;
-      grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
-      gap:18px;
-      align-items:stretch;
-    }
-
-    .services-card,
-    .services-step-card,
-    .services-scope-card,
-    .services-use-card{
-      border-radius:22px;
-      border:1px solid rgba(212,200,185,.58);
-      background:rgba(255,255,255,.74);
-      padding:22px;
-      box-shadow:0 12px 30px rgba(31,42,52,.035);
-      min-height:100%;
-    }
-
-    .services-card h3,
-    .services-step-card h3,
-    .services-scope-card h3{
-      margin:0 0 8px;
-      color:var(--home-navy, #213142);
-      font-family:"EB Garamond", Georgia, serif;
-      font-size:1.62rem;
-      line-height:1.04;
-      letter-spacing:-.018em;
-    }
-
-    .services-card p,
-    .services-step-card p,
-    .services-scope-card p{
-      margin:0;
-      color:var(--home-muted, #5f6c78);
-      font-size:.96rem;
-      line-height:1.62;
-    }
-
-    .services-card p + p,
-    .services-step-card p + p,
-    .services-scope-card p + p{
-      margin-top:10px;
-    }
-
-    .services-navy-card{
-      border-radius:28px;
-      background:linear-gradient(135deg, #102f4d 0%, #17395c 62%, #1d466f 100%);
-      border:1px solid rgba(255,255,255,.12);
-      padding:30px;
-      box-shadow:0 18px 48px rgba(16,47,77,.16);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .services-navy-card h2,
-    .services-navy-card h3,
-    .services-navy-card p,
-    .services-navy-card li{
-      color:#fffaf2;
-    }
-
-    .services-navy-card h2{
-      margin:0 0 14px;
-      font-family:"EB Garamond", Georgia, serif;
-      font-size:clamp(2.35rem, 3.6vw, 3.5rem);
-      line-height:.98;
-      letter-spacing:-.035em;
-    }
-
-    .services-navy-card p{
-      margin:0;
-      color:rgba(255,250,242,.86);
-      font-size:1rem;
-      line-height:1.68;
-    }
-
-    .services-use-grid,
-    .services-includes-grid{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
+      grid-template-columns:repeat(2,1fr);
       gap:14px;
     }
 
-    .services-use-card{
-      padding:20px;
+    .diagnosis-item{
+      border:1px solid rgba(212,200,185,.62);
+      border-radius:20px;
+      background:rgba(255,255,255,.62);
+      padding:18px;
     }
 
-    .services-use-card strong{
+    .diagnosis-item strong{
       display:block;
-      margin-bottom:6px;
-      color:var(--home-navy, #213142);
+      margin-bottom:5px;
+      color:#213142;
       font-family:"EB Garamond", Georgia, serif;
-      font-size:1.34rem;
-      line-height:1.05;
-      letter-spacing:-.015em;
+      font-size:1.32rem;
+      line-height:1.08;
     }
 
-    .services-use-card span{
+    .diagnosis-item span{
       display:block;
-      color:var(--home-muted, #5f6c78);
-      font-size:.92rem;
+      color:#5f6c78;
+      font-size:.93rem;
       line-height:1.55;
     }
 
-    .services-step-grid{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
-      gap:16px;
-    }
-
-    .services-step-card{
-      display:grid;
-      gap:10px;
-    }
-
-    .services-step-label{
-      display:inline-flex;
-      width:max-content;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(200,171,120,.44);
-      background:rgba(255,255,255,.72);
-      color:#8c7551;
-      font-size:.64rem;
-      font-weight:800;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-    }
-
-    .services-scope-grid{
-      display:grid;
-      grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
-      gap:18px;
-      align-items:stretch;
-    }
-
-    .services-plain-list{
-      display:grid;
-      gap:10px;
-      margin:0;
-      padding:0;
-      list-style:none;
-    }
-
-    .services-plain-list li{
-      margin:0;
-      padding:13px 14px;
-      border-radius:16px;
-      border:1px solid rgba(212,200,185,.52);
-      background:rgba(255,253,248,.78);
-      color:var(--home-muted, #5f6c78);
-      font-size:.94rem;
-      line-height:1.48;
-    }
-
-    .services-notice{
+    .service-note{
       margin-top:18px;
       padding:16px 18px;
       border-radius:18px;
       border:1px solid rgba(200,171,120,.42);
-      background:rgba(255,255,255,.70);
-      color:var(--home-muted, #5f6c78);
-      font-size:.94rem;
-      line-height:1.6;
+      background:rgba(255,255,255,.68);
+      color:#5f6c78;
+      font-size:.95rem;
+      line-height:1.65;
     }
 
-    .services-fee-strip{
+    .specialty-grid{
       display:grid;
-      grid-template-columns:minmax(0, .78fr) minmax(0, 1.22fr);
-      gap:18px;
-      align-items:stretch;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
     }
 
-    .services-fee-price{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      border-radius:26px;
-      border:1px solid rgba(212,200,185,.58);
-      background:rgba(255,255,255,.78);
-      padding:26px;
-      box-shadow:0 12px 30px rgba(31,42,52,.035);
+    .specialty-card{
+      border-radius:22px;
+      border:1px solid rgba(212,200,185,.62);
+      background:linear-gradient(180deg,#fffdf8,#f8f4ef);
+      padding:20px;
     }
 
-    .services-fee-price span{
-      color:#8c7551;
-      font-size:.66rem;
-      font-weight:800;
-      letter-spacing:.18em;
-      text-transform:uppercase;
+    .specialty-card h3{
+      margin:0 0 8px;
+      font-size:1.55rem;
+      line-height:1.05;
     }
 
-    .services-fee-price strong{
-      display:block;
-      margin-top:8px;
-      color:var(--home-navy, #213142);
-      font-family:"EB Garamond", Georgia, serif;
-      font-size:clamp(3.25rem, 5vw, 4.6rem);
-      line-height:.9;
-      letter-spacing:-.04em;
+    .specialty-card p{
+      margin:0;
+      font-size:.95rem;
+      line-height:1.58;
     }
 
-    .services-fee-price p{
-      margin:12px 0 0;
-      color:var(--home-muted, #5f6c78);
-      font-size:.98rem;
-      line-height:1.55;
+    .services-full-cta{
+      width:100%;
+      background:linear-gradient(135deg,#17395c,#102f4d);
+      margin-top:10px;
     }
 
-    .services-final-band{
-      padding:0;
-      background:linear-gradient(135deg, #102f4d 0%, #17395c 60%, #1d466f 100%);
-      border-top:1px solid rgba(255,255,255,.10);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .services-final-band-inner{
+    .services-full-cta-inner{
       width:min(1220px, calc(100% - 72px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:minmax(0, 1fr) auto;
+      grid-template-columns:minmax(0,1fr) auto;
       gap:28px;
       align-items:center;
-      padding:38px 0;
+      padding:36px 0;
     }
 
-    .services-final-band .status-pill{
-      border-color:rgba(255,255,255,.20);
-      background:rgba(255,255,255,.08);
-      color:rgba(255,250,242,.80);
-    }
-
-    .services-final-band h2{
-      margin:10px 0 10px;
+    .services-full-cta h2{
       color:#fffaf2;
-      font-family:"EB Garamond", Georgia, serif;
-      font-size:clamp(2.35rem, 3.6vw, 3.45rem);
-      line-height:.98;
-      letter-spacing:-.035em;
+      margin:0 0 10px;
+      font-size:clamp(2.25rem,3.4vw,3.35rem);
+      line-height:1;
     }
 
-    .services-final-band p{
-      margin:0;
-      max-width:800px;
+    .services-full-cta p{
       color:rgba(255,250,242,.84);
-      font-size:1rem;
-      line-height:1.62;
+      margin:0;
+      max-width:760px;
+      font-size:.98rem;
+      line-height:1.68;
     }
 
-    .services-final-band .btn-secondary{
-      background:rgba(255,250,242,.10);
-      color:#fffaf2;
-      border-color:rgba(255,250,242,.32);
+    .services-full-cta .btn-secondary{
+      background:rgba(255,250,242,.95);
+      color:#213142;
+      border-color:rgba(255,250,242,.65);
     }
 
-    @media (max-width:1080px){
+    @media (max-width:980px){
+      .services-band-grid,
       .services-section-heading,
-      .services-two-column,
-      .services-scope-grid,
-      .services-fee-strip,
-      .services-final-band-inner{
+      .services-full-cta-inner{
+        width:min(100% - 30px, 1120px);
         grid-template-columns:1fr;
       }
-
-      .services-use-grid,
-      .services-includes-grid,
-      .services-step-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width:760px){
-      .services-page .home-led-section,
-      .services-page .home-led-section.paper,
-      .services-page .home-led-section.tight{
-        padding:34px 0;
-      }
-
-      .services-page .home-led-grid,
-      .services-page .home-led-grid.one,
-      .services-page .home-led-grid.three,
-      .services-section-heading,
-      .services-final-band-inner{
-        width:min(1220px, calc(100% - 30px));
-      }
-
-      .services-clarity-band .subpage-band-grid,
-      .services-use-grid,
-      .services-includes-grid,
-      .services-step-grid{
+      .specialty-grid,
+      .diagnosis-grid{
         grid-template-columns:1fr;
+      }
+      .services-full-cta-inner{
+        gap:18px;
+      }
+      .services-full-cta .btn{
+        width:100%;
       }
     }
   </style>
+
 </head>
 <body class="services-page">
 
@@ -478,51 +310,57 @@
           <a href="portal.html">Portal</a>
         </nav>
         <div class="header-cta">
-          <a class="btn btn-primary" href="contact.html#waitlist">Join the Waitlist</a>
+          <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="stone-page-hero hero-services">
+    <section class="stone-page-hero hero-psychotherapy">
       <div class="stone-hero-panel">
         <img src="hero-psychotherapy-room.jpg" alt="" aria-hidden="true">
       </div>
       <div class="stone-page-inner">
         <div class="stone-page-copy">
           <div class="stone-page-line"></div>
-          <div class="stone-page-kicker">Services</div>
-          <h1 class="wide-title">Outpatient psychotherapy, explained clearly.</h1>
-          <p>Stonebridge’s current service is outpatient telehealth psychotherapy for teens and adults located in Illinois. This page explains what therapy is, what people often use it for, and how the process begins.</p>
-          <div class="stone-page-actions"><a class="btn btn-primary" href="contact.html#waitlist">Join the Waitlist</a><a class="btn btn-secondary" href="#what-therapy-is">What therapy is</a></div>
+          <div class="stone-page-kicker">Psychotherapy Services</div>
+          <h1 class="wide-title">What therapy is, and what it can help with.</h1>
+          <p>Stonebridge’s active service is outpatient telehealth psychotherapy for teens and adults located in Illinois. Therapy begins with a brief request so fit, scope, and next steps can be considered before care begins.</p>
+          <div class="stone-page-actions">
+            <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
+            <a class="btn btn-secondary" href="#common-concerns">Common concerns</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="subpage-band services-clarity-band"><div class="subpage-band-grid">
-        <article class="subpage-band-item">
-          <div><h4>Current service</h4><p>Telehealth psychotherapy for teens and adults in Illinois.</p></div>
+    <section class="services-band" aria-label="Service summary">
+      <div class="services-band-grid">
+        <article class="services-band-item">
+          <h4>Outpatient therapy</h4>
+          <p>Care for emotional, relational, behavioral, and stress-related concerns that fit an outpatient telehealth setting.</p>
         </article>
-        <article class="subpage-band-item">
-          <div><h4>How care begins</h4><p>A brief inquiry is reviewed before consultation or intake.</p></div>
+        <article class="services-band-item">
+          <h4>Teens and adults</h4>
+          <p>Therapy is available for adolescents and adults in Illinois when telehealth is clinically appropriate.</p>
         </article>
-        <article class="subpage-band-item">
-          <div><h4>Clear boundaries</h4><p>Therapy, testing, legal work, and crisis care are different pathways.</p></div>
+        <article class="services-band-item">
+          <h4>Consultation first</h4>
+          <p>A brief request helps clarify whether Stonebridge is the right setting before intake is scheduled.</p>
         </article>
-      </div></section>
+      </div>
+    </section>
 
     <nav class="page-guide" aria-label="Services page sections">
       <div class="page-guide-inner">
         <div class="page-guide-label">On this page</div>
         <div class="page-guide-links">
           <a href="#what-therapy-is">What therapy is</a>
-          <a href="#used-for">What it helps with</a>
-          <a href="#how-it-works">How it works</a>
-          <a href="#what-you-get">What you receive</a>
-          <a href="#scope">Fit &amp; limits</a>
-          <a href="#fees">Fees</a>
-          <a href="#begin">Begin</a>
+          <a href="#common-concerns">Common concerns</a>
+          <a href="#specialties">Specialties</a>
+          <a href="#fit-and-scope">Fit and scope</a>
+          <a href="#begin-services">Start</a>
         </div>
       </div>
     </nav>
@@ -530,153 +368,95 @@
     <section class="home-led-section" id="what-therapy-is">
       <div class="services-section-heading">
         <h2>What psychotherapy is.</h2>
-        <p>Psychotherapy is a structured clinical relationship where you meet regularly with a trained clinician to understand what has been difficult, notice patterns, and work toward change over time. You do not need to know exactly what is wrong before beginning. A brief note is enough.</p>
+        <p>Psychotherapy is a structured clinical relationship where you meet regularly with a trained clinician to understand what is happening, put words to what has been difficult to carry, and develop more workable ways of living, relating, and coping.</p>
+      </div>
+      <div class="home-led-grid">
+        <article class="home-led-card service-copy-card">
+          <h3>It is more than advice.</h3>
+          <p>Therapy is not simply being told what to do. It is a place to slow down with another person who is listening carefully, noticing patterns, asking thoughtful questions, and helping you understand your experience with more clarity.</p>
+          <p>Sometimes therapy includes practical tools. Sometimes it focuses on feelings, relationships, history, identity, or repeated patterns. Often it includes both.</p>
+        </article>
+        <article class="home-led-card service-copy-card">
+          <h3>It is used for symptoms and for life patterns.</h3>
+          <p>People use therapy when anxiety, depression, trauma responses, grief, stress, relationships, substance use concerns, family conflict, school or work pressure, identity questions, or emotional patterns have become hard to manage alone.</p>
+          <p>Therapy should help people feel understood without being reduced to symptoms.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-led-section paper tight-section" id="common-concerns">
+      <div class="services-section-heading">
+        <h2>Common clinical concerns.</h2>
+        <p>These are examples of common DSM-5-TR diagnostic areas that often bring people to therapy. They are not a self-diagnosis checklist. A diagnosis, when needed, is made through clinical evaluation and held in the context of the whole person.</p>
       </div>
       <div class="home-led-grid one">
-        <div class="services-two-column">
-          <article class="services-navy-card">
-            <h2>A steady place to make sense of things.</h2>
-            <p>Good therapy offers a reliable relationship where a person can feel known more fully. The work may include support, reflection, practical tools, and careful attention to symptoms, relationships, history, coping, identity, and meaning.</p>
-          </article>
-          <div class="services-card">
-            <h3>What happens in therapy?</h3>
-            <p>You and your clinician talk about what brings you in, what you want help with, and what tends to get in the way. Over time, therapy may help you name feelings more clearly, understand reactions, practice different responses, and relate to yourself and others with more steadiness.</p>
-            <p>Therapy can feel supportive and clarifying. It can also feel difficult at times, especially when painful experiences, grief, trauma responses, boundaries, or long-standing patterns come into focus.</p>
+        <article class="home-led-card service-copy-card">
+          <div class="diagnosis-grid">
+            <div class="diagnosis-item"><strong>Anxiety disorders</strong><span>Excessive worry, panic, social anxiety, avoidance, fear, or feeling constantly on edge.</span></div>
+            <div class="diagnosis-item"><strong>Major depressive disorder</strong><span>Persistent low mood, loss of interest, changes in sleep or appetite, guilt, fatigue, or hopelessness.</span></div>
+            <div class="diagnosis-item"><strong>Persistent depressive disorder</strong><span>Longer-standing depression or low mood that may feel like part of everyday life.</span></div>
+            <div class="diagnosis-item"><strong>Trauma- and stressor-related disorders</strong><span>Posttraumatic stress, acute stress, adjustment concerns, or reactions to overwhelming events.</span></div>
+            <div class="diagnosis-item"><strong>ADHD</strong><span>Difficulty with attention, organization, follow-through, impulsivity, time management, or school/work functioning.</span></div>
+            <div class="diagnosis-item"><strong>Obsessive-compulsive disorder</strong><span>Intrusive thoughts, compulsive behaviors, checking, reassurance-seeking, or repeated mental loops.</span></div>
+            <div class="diagnosis-item"><strong>Bipolar-related concerns</strong><span>Mood episodes, shifts in energy, sleep changes, irritability, or periods of unusually elevated or activated mood.</span></div>
+            <div class="diagnosis-item"><strong>Substance use disorders</strong><span>Alcohol, cannabis, or other substance use concerns when outpatient telehealth therapy is clinically appropriate.</span></div>
+            <div class="diagnosis-item"><strong>Eating and body-image concerns</strong><span>Distress around eating, body image, control, shame, or related emotional patterns, when outpatient care is a responsible fit.</span></div>
+            <div class="diagnosis-item"><strong>Personality and relational patterns</strong><span>Longstanding patterns with trust, attachment, self-worth, conflict, emotional intensity, or unstable relationships.</span></div>
           </div>
-        </div>
+          <div class="service-note">
+            Some concerns require psychiatric care, emergency support, intensive outpatient treatment, in-person services, medical monitoring, or another specialty setting. Consultation helps determine whether Stonebridge is an appropriate place to begin.
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="home-led-section paper" id="used-for">
+    <section class="home-led-section tight-section" id="specialties">
       <div class="services-section-heading">
-        <h2>What people often use therapy for.</h2>
-        <p>People come to therapy for many reasons. Some are dealing with symptoms. Some are trying to understand relationships, grief, identity, or stress. Some simply know they feel stuck and want a steadier place to think with another person.</p>
+        <h2>Stonebridge areas of focus.</h2>
+        <p>Diagnosis can help organize care, but therapy also attends to the human experience underneath the label: what happened, what adapted, what hurts, and what needs to become clearer.</p>
       </div>
       <div class="home-led-grid one">
-        <div class="services-use-grid">
-          <article class="services-use-card"><strong>Anxiety and worry</strong><span>Racing thoughts, panic, dread, avoidance, or feeling unable to settle.</span></article>
-          <article class="services-use-card"><strong>Low mood or depression</strong><span>Sadness, numbness, loss of interest, shame, self-criticism, or feeling stuck.</span></article>
-          <article class="services-use-card"><strong>Trauma responses</strong><span>Intrusive memories, emotional shutdown, hypervigilance, or reactions that feel bigger than the moment.</span></article>
-          <article class="services-use-card"><strong>Relationships</strong><span>Conflict, distance, repeated patterns, boundary concerns, or wanting to feel more understood.</span></article>
-          <article class="services-use-card"><strong>Grief and loss</strong><span>Death, separation, family rupture, health changes, or losses that others may not fully recognize.</span></article>
-          <article class="services-use-card"><strong>Stress and burnout</strong><span>Feeling depleted, over-responsible, emotionally stretched, or unable to recover between demands.</span></article>
-          <article class="services-use-card"><strong>Teen concerns</strong><span>School stress, family strain, mood changes, identity questions, anxiety, or difficulty coping.</span></article>
-          <article class="services-use-card"><strong>Life transitions</strong><span>Changes in work, school, family, caregiving, independence, identity, or sense of direction.</span></article>
-          <article class="services-use-card"><strong>Substance use concerns</strong><span>Questions about alcohol or drug use patterns when outpatient therapy is clinically appropriate.</span></article>
-          <article class="services-use-card"><strong>Emotion regulation</strong><span>Feeling flooded, reactive, shut down, angry, or unsure how to respond to strong emotion.</span></article>
-          <article class="services-use-card"><strong>Self-understanding</strong><span>Wanting to understand why certain patterns, roles, protections, or feelings keep returning.</span></article>
-          <article class="services-use-card"><strong>Feeling disconnected</strong><span>From yourself, other people, your body, your values, or the life you are trying to build.</span></article>
-        </div>
-        <p class="services-notice">This list is not a diagnosis and it is not a promise that Stonebridge is the right fit for every concern. The inquiry and consultation process helps determine whether outpatient telehealth psychotherapy is clinically appropriate.</p>
+        <article class="home-led-card">
+          <div class="specialty-grid">
+            <div class="specialty-card"><h3>Trauma responses</h3><p>Working with fear, shame, avoidance, numbness, anger, grief, and patterns shaped by overwhelming experience.</p></div>
+            <div class="specialty-card"><h3>Relationships</h3><p>Understanding attachment patterns, conflict, loneliness, boundaries, trust, and the wish to feel known more fully.</p></div>
+            <div class="specialty-card"><h3>Self-worth and identity</h3><p>Making sense of self-criticism, uncertainty, perfectionism, disconnection, identity development, and feeling unseen.</p></div>
+            <div class="specialty-card"><h3>Stress and burnout</h3><p>Addressing overwhelm, depletion, role strain, work pressure, caregiving burden, and difficulty recovering between demands.</p></div>
+            <div class="specialty-card"><h3>Adolescent concerns</h3><p>Support for teens navigating anxiety, mood, identity, school pressure, family stress, relationships, and emotional regulation.</p></div>
+            <div class="specialty-card"><h3>Life transitions</h3><p>Support during loss, change, separation, young adulthood, parenting stress, career shifts, or periods of personal reorganization.</p></div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="home-led-section" id="how-it-works">
+    <section class="home-led-section paper tight-section" id="fit-and-scope">
       <div class="services-section-heading">
-        <h2>How therapy works here.</h2>
-        <p>Stonebridge uses a relational and clinically thoughtful approach. That means the therapy relationship matters, but the work is also structured. The goal is not endless talking without direction. The goal is to help experience become clearer and more manageable over time.</p>
+        <h2>Fit and scope.</h2>
+        <p>Therapy works best when the service, setting, clinician, and client needs fit together. Stonebridge uses consultation to protect that fit before treatment begins.</p>
       </div>
-      <div class="home-led-grid one">
-        <div class="services-step-grid">
-          <article class="services-step-card"><span class="services-step-label">Listen</span><h3>Start with what is happening.</h3><p>Therapy begins by understanding what brings you in and what feels most important now.</p></article>
-          <article class="services-step-card"><span class="services-step-label">Understand</span><h3>Notice patterns.</h3><p>The work may identify emotional, relational, or coping patterns that developed for understandable reasons but now feel limiting.</p></article>
-          <article class="services-step-card"><span class="services-step-label">Practice</span><h3>Build different responses.</h3><p>When useful, therapy may include practical skills, language for difficult moments, and new ways of responding.</p></article>
-          <article class="services-step-card"><span class="services-step-label">Integrate</span><h3>Make change livable.</h3><p>The aim is not to become someone else. It is to feel more coherent, less alone, and more able to live with steadiness.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-led-section paper" id="what-you-get">
-      <div class="services-section-heading">
-        <h2>What the service includes.</h2>
-        <p>Therapy is not only the minutes spent talking on screen. It includes a clinical frame, professional judgment, documentation, treatment planning, and ongoing attention to whether the care remains appropriate.</p>
-      </div>
-      <div class="home-led-grid one">
-        <div class="services-includes-grid">
-          <article class="services-use-card"><strong>Reserved clinical time</strong><span>A scheduled appointment block held for your care, not a drop-in or message-based service.</span></article>
-          <article class="services-use-card"><strong>Direct therapy time</strong><span>Standard sessions include 45–50 minutes of direct clinical time within a 60-minute appointment block.</span></article>
-          <article class="services-use-card"><strong>Treatment focus</strong><span>Attention to goals, symptoms, relationships, history, coping, identity, and patterns that matter to your life.</span></article>
-          <article class="services-use-card"><strong>Clinical judgment</strong><span>Ongoing attention to whether outpatient telehealth remains appropriate, ethical, and clinically useful.</span></article>
-          <article class="services-use-card"><strong>Documentation</strong><span>Professional recordkeeping that supports continuity, care planning, billing, and ethical practice.</span></article>
-          <article class="services-use-card"><strong>Telehealth structure</strong><span>Online care for clients located in Illinois, with privacy, safety, and technology expectations discussed before care begins.</span></article>
-          <article class="services-use-card"><strong>Confidentiality</strong><span>Privacy and its legal/ethical limits are reviewed as part of informed consent before therapy begins.</span></article>
-          <article class="services-use-card"><strong>Referral honesty</strong><span>If another provider, specialty, setting, or level of care is more appropriate, Stonebridge will say so respectfully.</span></article>
-        </div>
+      <div class="home-led-grid three">
+        <article class="home-led-card service-copy-card">
+          <h3>Telehealth only</h3>
+          <p>Stonebridge provides outpatient psychotherapy by telehealth for clients located in Illinois. Clients need a private, safe place to attend sessions.</p>
+        </article>
+        <article class="home-led-card service-copy-card">
+          <h3>Not crisis care</h3>
+          <p>Stonebridge is not an emergency or crisis service. If someone is in immediate danger or cannot stay safe, emergency services, 988, or a local crisis resource should be used.</p>
+        </article>
+        <article class="home-led-card service-copy-card">
+          <h3>Assessment and forensic work</h3>
+          <p>Assessment and forensic services are not part of the psychotherapy waitlist pathway. They require dedicated procedures beyond this request process.</p>
+        </article>
       </div>
     </section>
 
-    <section class="home-led-section" id="scope">
-      <div class="services-section-heading">
-        <h2>Fit, scope, and limits.</h2>
-        <p>Clear boundaries are part of ethical care. Psychotherapy can be meaningful and effective, but it is not the right service for every need. Stonebridge reviews fit before care begins so clients are not placed into an inappropriate service.</p>
-      </div>
-      <div class="home-led-grid one">
-        <div class="services-scope-grid">
-          <article class="services-scope-card">
-            <h3>Psychotherapy is the active service.</h3>
-            <p>Stonebridge is currently focused on outpatient telehealth psychotherapy for teens and adults located in Illinois. Assessment and forensic services are not active request pathways on this page.</p>
-            <p>Assessment and forensic services use dedicated procedures beyond the psychotherapy consultation pathway.</p>
-          </article>
-          <article class="services-scope-card">
-            <h3>This page is not for every need.</h3>
-            <ul class="services-plain-list">
-              <li>Psychotherapy is not an emergency or crisis service. If you are in immediate danger or may harm yourself or someone else, call 911, go to the nearest emergency room, or call/text 988.</li>
-              <li>Psychotherapy is not psychological testing, a court evaluation, a custody opinion, disability documentation, or a legal/forensic report.</li>
-              <li>Outpatient telehealth may not be enough for needs requiring intensive monitoring, detox, residential care, partial hospitalization, intensive outpatient treatment, or in-person care.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-led-section paper" id="fees">
-      <div class="services-section-heading">
-        <h2>Fees and insurance.</h2>
-        <p>Financial information should be clear before care begins. Stonebridge is awaiting confirmation of insurance paneling with select commercial plans. Until insurance participation is active and benefits are verified, the listed fee is the private-pay reference rate.</p>
-      </div>
-      <div class="home-led-grid one">
-        <div class="services-fee-strip">
-          <article class="services-fee-price">
-            <span>Private-pay reference rate</span>
-            <strong>$190</strong>
-            <p>Standard psychotherapy session fee. Clients using insurance may owe less depending on copay, deductible, coinsurance, plan benefits, and payer processing once Stonebridge is active with a plan.</p>
-          </article>
-          <article class="services-card">
-            <h3>What to know before beginning.</h3>
-            <p>Verification of benefits is not a guarantee of payment. Clients remain responsible for copays, deductibles, coinsurance, non-covered services, missed appointment fees, and balances that are their responsibility under the plan or financial agreement.</p>
-            <p>Stonebridge explains fees, payment expectations, cancellation/no-show policies, and insurance limits before therapy begins so clients can make an informed decision about care.</p>
-            <div class="stone-page-actions" style="margin-top:16px;"><a class="btn btn-secondary" href="fees-insurance.html">View fees</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-led-section" id="begin-process">
-      <div class="services-section-heading">
-        <h2>How the process begins.</h2>
-        <p>Stonebridge uses a consultation-first model because good care starts with fit. The goal is not to rush someone into an appointment. The goal is to understand whether outpatient telehealth psychotherapy is the right kind of care.</p>
-      </div>
-      <div class="home-led-grid one">
-        <div class="services-step-grid">
-          <article class="services-step-card"><span class="services-step-label">Step 1</span><h3>Send a brief inquiry.</h3><p>A few sentences are enough. You do not need to explain everything perfectly.</p></article>
-          <article class="services-step-card"><span class="services-step-label">Step 2</span><h3>Stonebridge reviews fit.</h3><p>The request is reviewed for scope, outpatient appropriateness, telehealth fit, insurance/payment needs, and next steps.</p></article>
-          <article class="services-step-card"><span class="services-step-label">Step 3</span><h3>Consultation if appropriate.</h3><p>A brief consultation may clarify whether Stonebridge may be an appropriate setting. It is not therapy and does not establish a treatment relationship.</p></article>
-          <article class="services-step-card"><span class="services-step-label">Step 4</span><h3>Intake comes later.</h3><p>If appropriate and available, intake paperwork, consent forms, and scheduling are coordinated before care begins.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="services-final-band" id="begin">
-      <div class="services-final-band-inner">
+    <section class="services-full-cta" id="begin-services">
+      <div class="services-full-cta-inner">
         <div>
-          <span class="status-pill">Next step</span>
-          <h2>Join the psychotherapy waitlist.</h2>
-          <p>Stonebridge is accepting waitlist inquiries for outpatient telehealth psychotherapy while awaiting confirmation of insurance paneling with select commercial plans. The practice anticipates beginning online psychotherapy appointments around August 2026.</p>
+          <h2>Begin with a brief waitlist inquiry.</h2>
+          <p>Stonebridge is accepting waitlist inquiries while insurance paneling is being confirmed and anticipates beginning online psychotherapy appointments around August 2026. A brief note is enough.</p>
         </div>
-        <div class="stone-page-actions">
-          <a class="btn btn-primary" href="contact.html#waitlist">Join the Waitlist</a>
-          <a class="btn btn-secondary" href="fees-insurance.html">View fees</a>
-        </div>
+        <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
       </div>
     </section>
   </main>
@@ -696,7 +476,7 @@
           <a href="services.html">Psychotherapy Services</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="portal.html">Client Portal</a>
-          <a href="contact.html#waitlist">Waitlist</a>
+          <a href="contact.html">Waitlist</a>
         </div>
       </div>
       <div>
@@ -707,7 +487,7 @@
           <a href="services.html">Services</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="portal.html">Portal</a>
-          <a href="contact.html#waitlist">Waitlist</a>
+          <a href="contact.html">Waitlist</a>
         </div>
       </div>
       <div>
