@@ -555,16 +555,6 @@ body{background:var(--home-bg);}
 }
 
 
-
-/* =========================================================
-   SUBPAGE HERO CONSISTENCY FIX
-
-   This is a source-level correction, not another visual override.
-   The homepage uses its own home-hero system and is untouched.
-   All subpage hero variants, including compact-team-hero, now use
-   the same 560px desktop hero height as the base stone-page-hero.
-========================================================= */
-
 /* =========================================================
    CLIENT-FORWARD CLEANUP PASS
    Adds substance to Contact, Team, and individual clinician
@@ -2129,4 +2119,34 @@ body{background:var(--home-bg);}
   .stone-page-copy p{font-size:.96rem;line-height:1.75;}
   .stone-page-actions .btn{width:100%;justify-content:center;}
   .stone-hero-panel{height:340px;border-top-left-radius:28px;}
+}
+
+/* =========================================================
+   SUBPAGE HERO CONSISTENCY FIX — May 2026
+   Purpose: make all non-home stone-page heroes use the same
+   desktop image height. The homepage uses .home-hero and is
+   intentionally unaffected.
+========================================================= */
+@media (min-width:1081px){
+  .stone-page-hero,
+  .stone-page-hero.compact-contact-hero,
+  .stone-page-hero.compact-team-hero,
+  .stone-page-hero.profile-pt-hero{
+    min-height:560px;
+  }
+
+  .stone-page-hero .stone-page-inner,
+  .stone-page-hero.compact-contact-hero .stone-page-inner,
+  .stone-page-hero.compact-team-hero .stone-page-inner,
+  .stone-page-hero.profile-pt-hero .stone-page-inner{
+    min-height:560px;
+  }
+
+  .stone-page-hero .stone-hero-panel{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    height:auto;
+  }
 }

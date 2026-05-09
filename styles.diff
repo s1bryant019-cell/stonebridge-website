@@ -1,0 +1,52 @@
+--- styles-original.css
++++ styles.css
+@@ -563,12 +563,12 @@
+ .compact-contact-hero,
+ .compact-team-hero,
+ .profile-pt-hero{
+-  min-height:500px;
++  min-height:560px;
+ }
+ .compact-contact-hero .stone-page-inner,
+ .compact-team-hero .stone-page-inner,
+ .profile-pt-hero .stone-page-inner{
+-  min-height:500px;
++  min-height:560px;
+ }
+ .compact-contact-hero .stone-page-copy p,
+ .compact-team-hero .stone-page-copy p,
+@@ -2119,4 +2119,34 @@
+   .stone-page-copy p{font-size:.96rem;line-height:1.75;}
+   .stone-page-actions .btn{width:100%;justify-content:center;}
+   .stone-hero-panel{height:340px;border-top-left-radius:28px;}
+-}+}
++
++/* =========================================================
++   SUBPAGE HERO CONSISTENCY FIX — May 2026
++   Purpose: make all non-home stone-page heroes use the same
++   desktop image height. The homepage uses .home-hero and is
++   intentionally unaffected.
++========================================================= */
++@media (min-width:1081px){
++  .stone-page-hero,
++  .stone-page-hero.compact-contact-hero,
++  .stone-page-hero.compact-team-hero,
++  .stone-page-hero.profile-pt-hero{
++    min-height:560px;
++  }
++
++  .stone-page-hero .stone-page-inner,
++  .stone-page-hero.compact-contact-hero .stone-page-inner,
++  .stone-page-hero.compact-team-hero .stone-page-inner,
++  .stone-page-hero.profile-pt-hero .stone-page-inner{
++    min-height:560px;
++  }
++
++  .stone-page-hero .stone-hero-panel{
++    position:absolute;
++    top:0;
++    right:0;
++    bottom:0;
++    height:auto;
++  }
++}
