@@ -1,0 +1,129 @@
+--- contact.html (current)
++++ contact.html (waitlist update)
+@@ -1,8 +1,8 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+-  <title>Request a Consultation | Stonebridge Psychological Group</title>
+-  <meta name="description" content="Request an initial psychotherapy consultation with Stonebridge Psychological Group." />
++  <title>Join the Waitlist | Stonebridge Psychological Group</title>
++  <meta name="description" content="Join the outpatient telehealth psychotherapy waitlist or request next steps with Stonebridge Psychological Group." />
+ 
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@@ -129,17 +129,17 @@
+       <div class="stone-page-inner">
+         <div class="stone-page-copy">
+           <div class="stone-page-line"></div>
+-          <div class="stone-page-kicker">Consultation Request</div>
+-          <h1 class="wide-title">Begin with a consultation request.</h1>
+-          <p>Use this form to request a psychotherapy consultation. A brief note is enough, and you do not need to explain everything perfectly.</p>
+-          <div class="stone-page-actions"><a class="btn btn-primary" href="#consultation-form">Start request</a><a class="btn btn-secondary" href="psychotherapy.html">View psychotherapy</a></div>
++          <div class="stone-page-kicker">Waitlist &amp; Consultation</div>
++          <h1 class="wide-title">Begin with a waitlist inquiry.</h1>
++          <p>Stonebridge is accepting waitlist inquiries for outpatient telehealth psychotherapy while insurance participation is being established with select commercial plans. A brief note is enough.</p>
++          <div class="stone-page-actions"><a class="btn btn-primary" href="#waitlist">Join the Waitlist</a><a class="btn btn-secondary" href="#consultation-form">Start request</a></div>
+         </div>
+       </div>
+     </section>
+     <section class="subpage-band request-band"><div class="subpage-band-grid">
+         <article class="subpage-band-item">
+           <div class="subpage-band-icon">01</div>
+-          <div><h4>Send a brief request</h4><p>Share basic contact information and a brief note about what you are hoping therapy may help address.</p></div>
++          <div><h4>Send a brief inquiry</h4><p>Share basic contact information and a brief note about what you are hoping therapy may help address.</p></div>
+         </article>
+         <article class="subpage-band-item">
+           <div class="subpage-band-icon">02</div>
+@@ -147,7 +147,7 @@
+         </article>
+         <article class="subpage-band-item">
+           <div class="subpage-band-icon">03</div>
+-          <div><h4>Consultation next</h4><p>If it appears appropriate, next steps are coordinated by email or phone.</p></div>
++          <div><h4>Availability and next steps</h4><p>If it appears appropriate, Stonebridge follows up regarding availability and next steps.</p></div>
+         </article>
+       </div></section>
+ 
+@@ -155,6 +155,7 @@
+       <div class="page-guide-inner">
+         <div class="page-guide-label">On this page</div>
+         <div class="page-guide-links">
++          <a href="#waitlist">Waitlist</a>
+           <a href="#request">Before you submit</a>
+           <a href="#consultation-form">Request form</a>
+           <a href="fees-insurance.html">Fees</a>
+@@ -162,6 +163,18 @@
+         </div>
+       </div>
+     </nav>
++
++    <section class="home-led-section tight contact-waitlist-section" id="waitlist">
++      <div class="home-led-grid one">
++        <article class="home-led-card">
++          <span class="status-pill">Waitlist inquiries</span>
++          <h2>Join the psychotherapy waitlist.</h2>
++          <p>Stonebridge is accepting waitlist inquiries for outpatient telehealth psychotherapy while insurance participation is being established with select commercial plans. A brief note is enough. If the practice appears clinically appropriate, Stonebridge will follow up regarding availability and next steps.</p>
++          <p>Submitting the form does not establish a clinical relationship or guarantee availability. It gives Stonebridge the information needed to review fit, scope, telehealth appropriateness, and payment/insurance preferences.</p>
++          <div class="stone-page-actions"><a class="btn btn-primary" href="#consultation-form">Join the Waitlist</a><a class="btn btn-secondary" href="fees-insurance.html">View fees</a></div>
++        </article>
++      </div>
++    </section>
+ 
+     <section class="home-led-section contact-action-section" id="request">
+       <div class="home-led-grid form-grid contact-forward-grid">
+@@ -169,7 +182,7 @@
+           <article class="home-led-card">
+             <h2>Before you submit</h2>
+             <ul class="home-led-list">
+-              <li>This form is for psychotherapy consultation requests.</li>
++              <li>This form is for outpatient telehealth psychotherapy waitlist inquiries and consultation next steps.</li>
+               <li>Services are telehealth only for teens and adults located in Illinois.</li>
+               <li>A clinical relationship begins only after consultation, consent, and intake are completed.</li>
+             </ul>
+@@ -182,12 +195,12 @@
+           </article>
+         </aside>
+         <form class="consultation-form-card home-led-card" id="consultation-form" novalidate>
+-          <div class="form-heading"><div><div class="stone-page-kicker">Request a Consultation</div><h2>Initial request</h2></div><p>For psychotherapy consultation inquiries only.</p></div>
++          <div class="form-heading"><div><div class="stone-page-kicker">Waitlist Inquiry</div><h2>Join the waitlist</h2></div><p>For outpatient telehealth psychotherapy inquiries only.</p></div>
+           <div class="form-grid">
+             <label class="honeypot"><span>Website</span><input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+             <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy">
+-            <input type="hidden" id="serviceRequested" name="serviceRequested" value="psychotherapy">
+-            <div class="form-row-full form-note-inline"><strong>Consultation type:</strong> psychotherapy consultation. Assessment, forensic, legal-system, emergency, and higher-level-care needs follow dedicated pathways beyond this form.</div>
++            <input type="hidden" id="serviceRequested" name="serviceRequested" value="psychotherapy waitlist inquiry">
++            <div class="form-row-full form-note-inline"><strong>Inquiry type:</strong> outpatient telehealth psychotherapy waitlist inquiry. Assessment, forensic, legal-system, emergency, and higher-level-care needs follow dedicated pathways beyond this form.</div>
+             <label><span>Full Name *</span><input type="text" name="fullName" autocomplete="name" required></label>
+             <label><span>Proposed Patient’s Name</span><input type="text" name="patientName"></label>
+             <label><span>Email Address *</span><input type="email" name="email" autocomplete="email" required></label>
+@@ -197,7 +210,7 @@
+             <label class="form-row-full"><span>Brief Reason for Seeking Psychotherapy *</span><textarea name="reason" required placeholder="A few sentences is enough. You do not need to explain everything here."></textarea></label>
+           </div>
+           <div class="form-alert" id="form-alert" role="status" aria-live="polite"></div>
+-          <div class="form-bottom-row"><button class="btn btn-primary" type="submit" id="submitButton">Send Request</button></div>
++          <div class="form-bottom-row"><button class="btn btn-primary" type="submit" id="submitButton">Join the Waitlist</button></div>
+         </form>
+       </div>
+     </section>
+@@ -239,7 +252,7 @@
+           <span>Serving Illinois via telehealth</span>
+           <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+           <a href="tel:+17734171688">(773) 417-1688</a>
+-          <span>Consultation requests by form, email, or phone</span>
++          <span>Waitlist and consultation requests by form, email, or phone</span>
+           <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
+         </div>
+       </div>
+@@ -320,11 +333,11 @@
+         throw new Error('Request failed with status ' + response.status);
+       }
+       form.reset();
+-      showAlert('Your consultation request has been sent. Stonebridge will follow up by email if the request appears appropriate for the practice.');
++      showAlert('Your waitlist inquiry has been sent. Stonebridge will follow up by email if the request appears clinically appropriate and availability or next steps can be coordinated.');
+     } catch (error) {
+       showAlert('The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.');
+     } finally {
+-      if (submitButton) { submitButton.disabled = false; submitButton.textContent = 'Send Request'; }
++      if (submitButton) { submitButton.disabled = false; submitButton.textContent = 'Join the Waitlist'; }
+     }
+   });
+ })();
