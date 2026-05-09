@@ -2120,3 +2120,100 @@ body{background:var(--home-bg);}
   .stone-page-actions .btn{width:100%;justify-content:center;}
   .stone-hero-panel{height:340px;border-top-left-radius:28px;}
 }
+
+/* =========================================================
+   SUBPAGE HERO IMAGE SIZE STANDARDIZATION
+   Added 2026-05-09
+
+   Purpose:
+   - Make the hero image panel feel consistent across subpages.
+   - Keep the homepage/index hero untouched; it uses .home-hero and
+     .hero-room-panel, not .stone-page-hero/.stone-hero-panel.
+   - Preserve the current restrained Stonebridge design language.
+========================================================= */
+.stone-page-hero{
+  min-height:520px;
+}
+
+.stone-page-inner{
+  min-height:520px;
+  padding-top:54px;
+  padding-bottom:42px;
+}
+
+.stone-page-copy{
+  max-width:660px;
+  padding-right:72px;
+}
+
+.stone-page-hero .stone-hero-panel{
+  top:32px;
+  bottom:32px;
+  right:max(28px, calc((100vw - 1220px) / 2));
+  width:min(42vw, 560px);
+  min-width:min(520px, 42vw);
+  border-top-left-radius:34px;
+  border-bottom-left-radius:34px;
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
+}
+
+.stone-page-hero .stone-hero-panel img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+}
+
+@media (max-width:1260px){
+  .stone-page-hero .stone-hero-panel{
+    right:28px;
+    width:min(42vw, 540px);
+    min-width:min(500px, 42vw);
+  }
+
+  .stone-page-copy{
+    padding-right:60px;
+  }
+}
+
+@media (max-width:1080px){
+  .stone-page-hero{
+    min-height:auto;
+  }
+
+  .stone-page-inner{
+    min-height:auto;
+    display:block;
+    padding:50px 0 34px;
+  }
+
+  .stone-page-copy{
+    width:100%;
+    max-width:760px;
+    padding-right:0;
+  }
+
+  .stone-page-hero .stone-hero-panel{
+    position:relative;
+    top:auto;
+    right:auto;
+    bottom:auto;
+    width:min(1180px, calc(100% - 56px));
+    min-width:0;
+    height:430px;
+    margin:0 auto 24px;
+    border-top-left-radius:36px;
+    border-bottom-left-radius:0;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+  }
+}
+
+@media (max-width:760px){
+  .stone-page-hero .stone-hero-panel{
+    width:min(1180px, calc(100% - 30px));
+    height:340px;
+    border-top-left-radius:28px;
+  }
+}
