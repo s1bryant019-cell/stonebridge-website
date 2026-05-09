@@ -2273,3 +2273,69 @@ body{background:var(--home-bg);}
     border-top-left-radius:28px;
   }
 }
+/* =========================================================
+   SUBPAGE HERO FINAL MATCH — ABOUT-SIZE IMAGE PANEL
+   Paste at the END of styles.css.
+
+   Purpose:
+   - Keeps the homepage/index hero untouched.
+   - Makes all subpage hero images use the same fixed visual box
+     instead of stretching taller on pages with longer hero copy.
+   - Matches the calmer, shorter About-page hero image proportion.
+========================================================= */
+@media (min-width:1081px){
+  .stone-page-hero .stone-hero-panel{
+    top:32px;
+    bottom:auto;
+    right:0;
+    width:47vw;
+    min-width:640px;
+    max-width:none;
+    height:clamp(280px, 28vw, 330px);
+    border-top-left-radius:34px;
+    border-bottom-left-radius:0;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+  }
+
+  .stone-page-hero .stone-hero-panel img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+  }
+}
+
+@media (min-width:1081px) and (max-width:1260px){
+  .stone-page-hero .stone-hero-panel{
+    width:47vw;
+    min-width:560px;
+    height:clamp(280px, 28vw, 320px);
+  }
+}
+
+@media (max-width:1080px){
+  .stone-page-hero .stone-hero-panel{
+    position:relative;
+    top:auto;
+    right:auto;
+    bottom:auto;
+    width:min(1180px, calc(100% - 56px));
+    min-width:0;
+    max-width:none;
+    height:430px;
+    margin:0 auto 24px;
+    border-top-left-radius:36px;
+    border-bottom-left-radius:0;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+  }
+}
+
+@media (max-width:760px){
+  .stone-page-hero .stone-hero-panel{
+    width:min(1180px, calc(100% - 30px));
+    height:340px;
+    border-top-left-radius:28px;
+  }
+}
