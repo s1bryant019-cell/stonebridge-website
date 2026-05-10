@@ -321,6 +321,116 @@
       }
     }
   </style>
+
+  <style id="stonebridge-subpage-hero-system">
+    /* Shared subpage hero proportion pass. Portal is the visual reference: balanced text, controlled image, navy band visible immediately after the hero. */
+    @media (min-width: 981px) {
+      body .stone-page-hero {
+        min-height: 462px;
+      }
+
+      body .stone-page-inner {
+        width: min(1120px, calc(100% - 72px));
+        min-height: 462px;
+        padding: 42px 0 38px;
+        display: flex;
+        align-items: center;
+      }
+
+      body .stone-page-copy {
+        width: 49%;
+        max-width: 600px;
+        padding-right: 54px;
+      }
+
+      body .stone-page-line {
+        margin-bottom: 16px;
+      }
+
+      body .stone-page-kicker {
+        margin-bottom: 12px;
+      }
+
+      body .stone-page-copy h1,
+      body .stone-page-copy h1.long-title,
+      body .stone-page-copy h1.wide-title {
+        max-width: 18.5ch;
+        font-size: clamp(3.05rem, 3.75vw, 4.15rem);
+        line-height: 1.08;
+        letter-spacing: -.038em;
+        text-wrap: balance;
+      }
+
+      body .stone-page-copy p {
+        margin-top: 18px;
+        max-width: 35.5rem;
+        font-size: .98rem;
+        line-height: 1.72;
+      }
+
+      body .stone-page-actions {
+        margin-top: 22px;
+      }
+
+      body .stone-hero-panel {
+        width: 43vw;
+        min-width: 560px;
+        border-top-left-radius: 44px;
+      }
+
+      body .stone-hero-panel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      body .subpage-band-grid,
+      body .portal-purpose-inner,
+      body .services-band-grid,
+      body .team-purpose-inner {
+        padding-top: 22px;
+        padding-bottom: 22px;
+      }
+    }
+
+    @media (min-width: 981px) and (max-width: 1180px) {
+      body .stone-page-copy {
+        width: 51%;
+        padding-right: 42px;
+      }
+      body .stone-hero-panel {
+        width: 41vw;
+        min-width: 500px;
+      }
+      body .stone-page-copy h1,
+      body .stone-page-copy h1.long-title,
+      body .stone-page-copy h1.wide-title {
+        font-size: clamp(2.85rem, 4vw, 3.75rem);
+      }
+    }
+
+    @media (max-width: 980px) {
+      body .stone-page-inner {
+        padding: 46px 0 32px;
+      }
+      body .stone-page-copy h1,
+      body .stone-page-copy h1.long-title,
+      body .stone-page-copy h1.wide-title {
+        line-height: 1.08;
+        text-wrap: balance;
+      }
+      body .stone-hero-panel {
+        height: 380px;
+        margin-bottom: 0;
+      }
+    }
+  </style>
+
+
+  <style id="stonebridge-portal-hero-crop">
+    .hero-portal .stone-hero-panel img { object-position: center center; }
+  </style>
+
 </head>
 <body class="portal-page">
 
