@@ -889,8 +889,8 @@
     .fee-schedule-header,
     .fee-schedule-row{
       display:grid;
-      grid-template-columns:116px minmax(0, 1fr) 130px;
-      gap:18px;
+      grid-template-columns:106px minmax(0, 1fr) 118px;
+      gap:16px;
       align-items:center;
     }
 
@@ -908,7 +908,7 @@
     }
 
     .fee-schedule-row{
-      padding:15px 24px;
+      padding:12px 22px;
       border-top:1px solid rgba(212,200,185,.52);
       background:rgba(255,253,248,.72);
     }
@@ -928,7 +928,7 @@
     .fee-name{
       color:var(--home-navy, #213142);
       font-family:"EB Garamond", Georgia, serif;
-      font-size:1.34rem;
+      font-size:1.24rem;
       line-height:1.1;
       letter-spacing:-.012em;
     }
@@ -947,15 +947,26 @@
     .fee-amount{
       color:var(--home-navy, #213142);
       font-family:"EB Garamond", Georgia, serif;
-      font-size:1.5rem;
+      font-size:1.38rem;
       font-weight:700;
       line-height:1;
       text-align:right;
       white-space:nowrap;
     }
 
+    .fee-category-row{
+      padding:10px 22px 9px;
+      border-top:1px solid rgba(212,200,185,.58);
+      background:rgba(246,241,234,.78);
+      color:#8c7551;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
     .fee-schedule-note{
-      padding:16px 24px 18px;
+      padding:14px 22px 16px;
       border-top:1px solid rgba(212,200,185,.52);
       background:rgba(248,245,240,.72);
       color:var(--home-muted, #5f6c78);
@@ -1157,7 +1168,7 @@
 <div class="stone-page-kicker">Fee Schedule</div>
 <h2>Current listed fees.</h2>
 </div>
-<p>Listed fees are shown before care begins. If insurance is active with your plan and the service is covered, the amount paid out of pocket may differ.</p>
+<p>Listed fees are shared before care begins. Insurance may change out-of-pocket cost when Stonebridge is active with your plan and the service is covered.</p>
 </div>
 <article aria-label="Stonebridge fee schedule" class="fee-schedule-card">
 <div class="fee-schedule-header">
@@ -1165,17 +1176,22 @@
 <span>Service</span>
 <span>Fee</span>
 </div>
+<div class="fee-category-row">Consultation &amp; evaluation</div>
 <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Initial 15-minute consultation</div><div class="fee-amount">Free</div></div>
 <div class="fee-schedule-row"><div class="fee-code">90791</div><div class="fee-name">Initial diagnostic evaluation <span>First full clinical session</span></div><div class="fee-amount">$275</div></div>
+<div class="fee-category-row">Individual psychotherapy</div>
 <div class="fee-schedule-row"><div class="fee-code">90832</div><div class="fee-name">Individual therapy, 30 minutes</div><div class="fee-amount">$150</div></div>
 <div class="fee-schedule-row"><div class="fee-code">90834</div><div class="fee-name">Individual therapy, 45 minutes</div><div class="fee-amount">$200</div></div>
 <div class="fee-schedule-row"><div class="fee-code">90837</div><div class="fee-name">Individual therapy, 60 minutes</div><div class="fee-amount">$240</div></div>
+<div class="fee-category-row">Family &amp; group services</div>
 <div class="fee-schedule-row"><div class="fee-code">90846</div><div class="fee-name">Family therapy without client present</div><div class="fee-amount">$225</div></div>
 <div class="fee-schedule-row"><div class="fee-code">90847</div><div class="fee-name">Family therapy with client present</div><div class="fee-amount">$240</div></div>
 <div class="fee-schedule-row"><div class="fee-code">90853</div><div class="fee-name">Group therapy</div><div class="fee-amount">$90</div></div>
+<div class="fee-category-row">Add-ons &amp; administrative services</div>
 <div class="fee-schedule-row"><div class="fee-code">90785</div><div class="fee-name">Interactive complexity add-on</div><div class="fee-amount">$60</div></div>
 <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Care coordination / clinical admin, 15 minutes</div><div class="fee-amount">$60</div></div>
 <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Report writing / letters, per hour</div><div class="fee-amount">$300</div></div>
+<div class="fee-category-row">Professional services</div>
 <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Peer review / consultation, per hour</div><div class="fee-amount">$200</div></div>
 <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Webinar CE, per event</div><div class="fee-amount">$450</div></div>
 <div class="fee-schedule-note">The free 15-minute consultation is not a psychotherapy session, diagnostic evaluation, or crisis service. Some listed services are used only when clinically appropriate, available, requested, or authorized. The applicable code and fee depend on the service actually provided.</div>
@@ -1189,7 +1205,7 @@
 <div class="stone-page-kicker">Insurance</div>
 <h2>Insurance may change what you pay.</h2>
 </div>
-<p>Stonebridge is awaiting confirmation of insurance paneling with select commercial plans. Insurance billing begins only after participation is active, formally confirmed, and benefits are verified.</p>
+<p>Stonebridge is awaiting confirmation of insurance paneling with select commercial plans. Insurance billing begins only after participation is active and benefits are verified.</p>
 </div>
 <div class="fees-open-grid">
 <article class="fees-open-panel">
@@ -1216,7 +1232,7 @@
 <div class="stone-page-kicker">Appointments</div>
 <h2>Session structure and missed appointments.</h2>
 </div>
-<p>The initial diagnostic evaluation is the first full clinical session. Psychotherapy appointments include direct clinical time, documentation, treatment planning, transition, and preparation as appropriate to the service. Stonebridge requests at least 24 hours’ notice for cancellations.</p>
+<p>The initial diagnostic evaluation is the first full clinical session. Psychotherapy appointments include direct clinical time and the clinical work around the session. Stonebridge requests at least 24 hours’ notice for cancellations.</p>
 </div>
 <div class="fees-open-grid">
 <article class="fees-open-panel">

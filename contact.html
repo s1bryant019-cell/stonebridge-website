@@ -11,10 +11,10 @@
 <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="apple-touch-icon.png" rel="apple-touch-icon"/>
 <link href="site.webmanifest" rel="manifest"/>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link href="styles.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
 <style id="stonebridge-contact-cleanup-styles">
     /* Contact page cleanup: page-only rules. Keeps global stylesheet untouched. */
     .contact-page .stone-page-hero::after,
@@ -150,6 +150,9 @@
         padding:24px;
       }
     }
+  
+    .contact-page .compact-contact-section{ padding-top:36px; }
+    .contact-page .compact-contact-section .contact-referral-note{ display:none; }
   </style>
 <style id="stonebridge-display-line-height-fix">
     /* Sitewide display-type guardrail: prevents EB Garamond descenders/ascenders from colliding on wrapped headings. */
@@ -544,7 +547,7 @@
       .stone-page-copy h1{font-size:clamp(2.6rem,10vw,3.6rem)!important;}
     }
   </style>
-</link></link></link></link></head>
+</head>
 <body class="contact-page">
 <header class="site-header compact-site-header">
 <div class="container nav">
@@ -574,14 +577,14 @@
 </div>
 </div>
 </section>
-
-<section class="home-led-section contact-action-section">
+<section class="home-led-section contact-action-section compact-contact-section">
 <div class="contact-forward-grid">
 <aside aria-label="Before submitting the waitlist form" class="contact-brief-panel">
-<h2>Keep it simple.</h2>
-<p>The waitlist form is only a starting point. You do not need to share your full history here.</p>
-<ul class="contact-note-list"><li><strong>What to include</strong> Your contact information, the proposed client’s name, and a brief reason for seeking therapy.</li><li><strong>What happens next</strong> Stonebridge reviews fit, scope, telehealth appropriateness, availability, and payment or insurance preferences.</li></ul>
-<p class="contact-referral-note">If Stonebridge is not the right fit, the follow-up may include referral direction when possible.</p><div class="contact-safety-note"><strong>Emergency and crisis needs:</strong> This form is not monitored for emergencies. For immediate danger or medical emergencies, call 911 or go to the nearest emergency room. Mental health crisis support is available by calling or texting 988.</div>
+<h2>Keep it simple.</h2><p>The waitlist form is only a starting point. Include your contact information, the proposed client’s name, and a brief reason for seeking therapy.</p>
+
+
+
+<div class="contact-safety-note"><strong>Emergency and crisis needs:</strong> This form is not monitored for emergencies. For immediate danger or medical emergencies, call 911 or go to the nearest emergency room. Mental health crisis support is available by calling or texting 988.</div>
 </aside>
 <form class="consultation-form-card home-led-card" id="consultation-form" novalidate="">
 <div class="form-heading"><div><div class="stone-page-kicker">Waitlist Inquiry</div><h2>Join the waitlist</h2></div><p>For outpatient telehealth psychotherapy in Illinois.</p></div>
