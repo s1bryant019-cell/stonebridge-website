@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Stonebridge Psychological Group</title>
-  <meta name="description" content="Insight-oriented telehealth psychotherapy for teens and adults in Illinois through a consultation-first private practice model.">
+  <meta name="description" content="Telehealth psychotherapy in Illinois for teens and adults feeling overwhelmed, stuck, or disconnected. Consultation-first care shaped by clinical fit, ethical boundaries, and a steadier pace.">
   <link rel="canonical" href="https://stonebridgepsychgroup.com/">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -173,7 +173,7 @@
       font-size:clamp(4.1rem, 5.1vw, 5.4rem);
       line-height:.98;
       letter-spacing:-.045em;
-      max-width:11.2ch;
+      max-width:12.5ch;
     }
 
     .hero-copy h1 span{
@@ -181,7 +181,7 @@
     }
 
     .hero-copy p{
-      margin:30px 0 0;
+      margin:24px 0 0;
       max-width:36rem;
       color:var(--muted);
       font-family:"Inter", sans-serif;
@@ -219,7 +219,7 @@
     }
 
     /* =========================
-       SERVICE BAND
+       POSITIONING BAND
     ========================= */
     .service-band{
       position:relative;
@@ -233,36 +233,27 @@
       margin:0 auto;
       display:grid;
       grid-template-columns:repeat(3, minmax(0, 1fr));
-      gap:28px;
-      padding:20px 0 22px;
+      gap:34px;
+      padding:21px 0 23px;
     }
 
     .service-item{
       display:block;
+      padding-right:18px;
+      border-right:1px solid rgba(255,255,255,.13);
     }
 
-    .service-icon{
-      display:none;
-      width:24px;
-      height:24px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(255,255,255,.11);
-      color:#d8b56e;
-      font-family:"Inter", sans-serif;
-      font-weight:600;
-      font-size:.72rem;
-      margin-top:2px;
+    .service-item:last-child{
+      border-right:none;
+      padding-right:0;
     }
 
     .service-item h4{
-      margin:0 0 2px;
+      margin:0 0 4px;
       color:#ffffff;
       font-family:"EB Garamond", serif;
-      font-size:1.12rem;
-      line-height:1.05;
+      font-size:1.18rem;
+      line-height:1.12;
       letter-spacing:-.01em;
     }
 
@@ -271,45 +262,215 @@
       color:rgba(255,255,255,.82);
       font-family:"Inter", sans-serif;
       font-size:.82rem;
-      line-height:1.5;
+      line-height:1.55;
     }
 
     /* =========================
-       INTRO SECTION
+       EDITORIAL HOME SECTIONS
     ========================= */
-    .section-intro{
+    .home-editorial-section{
       background:#f7f2eb;
-      padding:48px 0 54px;
+      padding:62px 0 58px;
+      border-top:1px solid rgba(212,200,185,.42);
     }
 
-    .content-blocks{
+    .home-editorial-inner{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:24px;
+      grid-template-columns:.92fr 1.08fr;
+      gap:58px;
+      align-items:center;
     }
 
-    .text-block{
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(212,200,185,.55);
-      border-radius:22px;
-      padding:24px;
-      box-shadow:0 12px 30px rgba(31,42,52,.04);
+    .home-kicker{
+      margin:0 0 12px;
+      color:#8c7551;
+      font-family:"Inter", sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.19em;
+      text-transform:uppercase;
     }
 
-    .text-block h3{
-      margin:0 0 10px;
+    .home-editorial-copy h2,
+    .home-for-copy h2,
+    .home-principle-copy h2,
+    .home-begin-copy h2{
+      margin:0;
       color:var(--navy);
       font-family:"EB Garamond", serif;
-      font-size:1.65rem;
-      line-height:1.05;
+      font-size:clamp(2.55rem, 4vw, 3.75rem);
+      line-height:1.08;
+      letter-spacing:-.04em;
+      text-wrap:balance;
     }
 
-    .text-block p{
-      margin:0;
+    .home-editorial-copy p,
+    .home-for-copy p,
+    .home-begin-copy p{
+      margin:18px 0 0;
       color:var(--muted);
       font-family:"Inter", sans-serif;
-      font-size:.98rem;
-      line-height:1.75;
+      font-size:1rem;
+      line-height:1.78;
+      max-width:42rem;
+    }
+
+    .home-pullquote{
+      margin:0;
+      padding-left:32px;
+      border-left:1px solid rgba(200,171,120,.68);
+    }
+
+    .home-pullquote p{
+      margin:0;
+      color:#213142;
+      font-family:"EB Garamond", serif;
+      font-size:clamp(1.95rem, 3vw, 2.75rem);
+      line-height:1.18;
+      letter-spacing:-.032em;
+      text-wrap:balance;
+    }
+
+    .home-pullquote cite{
+      display:block;
+      margin-top:16px;
+      color:#8c7551;
+      font-family:"Inter", sans-serif;
+      font-size:.72rem;
+      font-style:normal;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .home-for-section{
+      background:#fffaf4;
+      padding:58px 0 56px;
+      border-top:1px solid rgba(212,200,185,.42);
+    }
+
+    .home-for-grid{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:56px;
+      align-items:start;
+    }
+
+    .home-reason-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:0 34px;
+      margin-top:4px;
+    }
+
+    .home-reason{
+      padding:15px 0 16px;
+      border-top:1px solid rgba(212,200,185,.64);
+    }
+
+    .home-reason strong{
+      display:block;
+      margin-bottom:5px;
+      color:var(--navy);
+      font-family:"EB Garamond", serif;
+      font-size:1.28rem;
+      line-height:1.12;
+      letter-spacing:-.01em;
+    }
+
+    .home-reason span{
+      display:block;
+      color:var(--muted);
+      font-family:"Inter", sans-serif;
+      font-size:.92rem;
+      line-height:1.58;
+    }
+
+    .home-principle-band{
+      background:linear-gradient(135deg, #17395c 0%, #102f4d 100%);
+      color:#fffaf2;
+      padding:50px 0 48px;
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(0,0,0,.12);
+    }
+
+    .home-principle-inner{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:58px;
+      align-items:start;
+    }
+
+    .home-principle-copy h2{
+      color:#fffaf2;
+      max-width:9.5ch;
+    }
+
+    .home-principle-copy p{
+      color:rgba(255,250,242,.82);
+      margin:16px 0 0;
+      font-family:"Inter", sans-serif;
+      line-height:1.72;
+    }
+
+    .home-principle-list{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:0;
+      border-top:1px solid rgba(255,255,255,.18);
+    }
+
+    .home-principle-row{
+      display:grid;
+      grid-template-columns:190px 1fr;
+      gap:30px;
+      padding:20px 0;
+      border-bottom:1px solid rgba(255,255,255,.16);
+    }
+
+    .home-principle-row strong{
+      color:#fffaf2;
+      font-family:"EB Garamond", serif;
+      font-size:1.4rem;
+      line-height:1.1;
+      letter-spacing:-.012em;
+    }
+
+    .home-principle-row span{
+      color:rgba(255,250,242,.78);
+      font-family:"Inter", sans-serif;
+      font-size:.95rem;
+      line-height:1.65;
+    }
+
+    .home-begin-section{
+      background:#f7f2eb;
+      padding:54px 0 62px;
+    }
+
+    .home-begin-inner{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) auto;
+      gap:34px;
+      align-items:center;
+      padding:34px 0;
+      border-top:1px solid rgba(212,200,185,.68);
+      border-bottom:1px solid rgba(212,200,185,.68);
+    }
+
+    .home-begin-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
     /* =========================
@@ -404,6 +565,62 @@
         right:18px;
         bottom:18px;
         max-width:300px;
+      }
+    }
+
+
+    @media (max-width:1080px){
+      .home-editorial-inner,
+      .home-for-grid,
+      .home-principle-inner,
+      .home-begin-inner{
+        grid-template-columns:1fr;
+        gap:32px;
+      }
+
+      .service-item{
+        border-right:none;
+        padding-right:0;
+      }
+
+      .home-pullquote{
+        padding-left:24px;
+      }
+
+      .home-begin-actions{
+        justify-content:flex-start;
+      }
+    }
+
+    @media (max-width:760px){
+      .home-editorial-inner,
+      .home-for-grid,
+      .home-principle-inner,
+      .home-begin-inner{
+        width:min(1120px, calc(100% - 30px));
+      }
+
+      .home-editorial-section,
+      .home-for-section,
+      .home-principle-band,
+      .home-begin-section{
+        padding-top:44px;
+        padding-bottom:46px;
+      }
+
+      .home-reason-list{
+        grid-template-columns:1fr;
+      }
+
+      .home-principle-row{
+        grid-template-columns:1fr;
+        gap:8px;
+        padding:18px 0;
+      }
+
+      .home-begin-actions .btn{
+        width:100%;
+        justify-content:center;
       }
     }
   </style>
@@ -503,17 +720,19 @@
             <div class="hero-line"></div>
 
             <h1>
-              <span>Clarity when</span>
-              <span>it matters most.</span>
+              <span>Therapy for</span>
+              <span>feeling stuck,</span>
+              <span>overwhelmed, or</span>
+              <span>disconnected.</span>
             </h1>
 
             <p>
-              Insight-oriented telehealth psychotherapy for teens and adults in Illinois. For people feeling overwhelmed, disconnected, stuck in old patterns, or unsure how to carry what life has asked of them.
+              Consultation-first telehealth psychotherapy for teens and adults in Illinois. Stonebridge is built for careful, relational work — not open booking, high volume, or one-size-fits-all care.
             </p>
 
             <div class="hero-actions">
               <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
-              <a class="btn btn-secondary" href="services.html">How Therapy Works</a>
+              <a class="btn btn-secondary" href="services.html">How Therapy Helps</a>
             </div>
 
             <div class="hero-note">A brief waitlist inquiry is enough.</div>
@@ -529,8 +748,8 @@
           </article>
 
           <article class="service-item">
-            <h4>Fit before intake</h4>
-            <p>A brief inquiry helps Stonebridge review scope, telehealth appropriateness, and next steps before care begins.</p>
+            <h4>Fit before scheduling</h4>
+            <p>Stonebridge reviews fit, scope, and telehealth appropriateness before care begins.</p>
           </article>
 
           <article class="service-item">
@@ -541,21 +760,110 @@
       </div>
     </section>
 
-    <section class="section-intro">
-      <div class="container content-blocks">
-        <article class="text-block">
-          <h3>What therapy can help with</h3>
+    <section class="home-editorial-section">
+      <div class="home-editorial-inner">
+        <div class="home-editorial-copy">
+          <p class="home-kicker">Practice identity</p>
+          <h2>A steadier way to begin therapy.</h2>
           <p>
-            Therapy can help people understand symptoms, relationships, stress, grief, trauma responses, identity questions, substance use concerns, and patterns that keep returning.
+            Stonebridge was created for psychotherapy that has room to think, feel, and understand what is happening beneath the surface. The practice is calm by design: clear expectations, thoughtful fit review, and a clinical frame that protects the quality of care.
           </p>
-        </article>
+        </div>
 
-        <article class="text-block">
-          <h3>How to begin</h3>
+        <blockquote class="home-pullquote">
+          <p>The business exists to support people’s lives, not become their lives.</p>
+          <cite>Stonebridge founding principle</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="home-for-section">
+      <div class="home-for-grid">
+        <div class="home-for-copy">
+          <p class="home-kicker">Who this may be for</p>
+          <h2>For people trying to make sense of what they are carrying.</h2>
           <p>
-            A brief note is enough. Stonebridge will review whether outpatient telehealth psychotherapy appears appropriate and follow up about availability and next steps.
+            You do not need to have the perfect words for what is wrong. Therapy can begin with anxiety, sadness, trauma responses, conflict, grief, shame, stress, or a quiet sense that something in life keeps repeating.
           </p>
-        </article>
+        </div>
+
+        <div class="home-reason-list" aria-label="Common reasons people seek therapy">
+          <div class="home-reason">
+            <strong>Anxiety, worry, or panic</strong>
+            <span>When your mind or body feels hard to settle.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Depression or disconnection</strong>
+            <span>When daily life feels heavy, muted, or difficult to engage.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Trauma responses</strong>
+            <span>When the past keeps shaping the present.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Relationships and attachment</strong>
+            <span>When familiar patterns keep showing up with others.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Grief and life transitions</strong>
+            <span>When change, loss, or uncertainty needs space.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Identity, self-worth, and shame</strong>
+            <span>When you are trying to understand who you are and how you relate to yourself.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Stress, burnout, and overwhelm</strong>
+            <span>When you have been functioning for too long without enough support.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Substance use concerns</strong>
+            <span>When outpatient psychotherapy is an appropriate level of care.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-principle-band">
+      <div class="home-principle-inner">
+        <div class="home-principle-copy">
+          <p class="home-kicker">Why the structure matters</p>
+          <h2>Care should feel human and held.</h2>
+          <p>
+            Stonebridge uses structure not to create distance, but to make care more reliable. Boundaries, fit review, and clear communication help protect the therapy relationship.
+          </p>
+        </div>
+
+        <div class="home-principle-list">
+          <div class="home-principle-row">
+            <strong>Fit over volume</strong>
+            <span>Care is not assigned simply because a calendar slot is open. The first step is a brief review of whether Stonebridge appears clinically appropriate.</span>
+          </div>
+          <div class="home-principle-row">
+            <strong>Boundaries as care</strong>
+            <span>Clear expectations around time, communication, scope, and attendance support consistency rather than urgency or confusion.</span>
+          </div>
+          <div class="home-principle-row">
+            <strong>A steadier pace</strong>
+            <span>The practice is built for thoughtful outpatient psychotherapy — careful enough to be personal, structured enough to be sustainable.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-begin-section">
+      <div class="home-begin-inner">
+        <div class="home-begin-copy">
+          <p class="home-kicker">How to begin</p>
+          <h2>Start with a brief waitlist inquiry.</h2>
+          <p>
+            A short note is enough. Stonebridge will review whether outpatient telehealth psychotherapy appears appropriate and follow up about availability, insurance status, and next steps.
+          </p>
+        </div>
+        <div class="home-begin-actions">
+          <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
+          <a class="btn btn-secondary" href="services.html">Explore Services</a>
+        </div>
       </div>
     </section>
   </main>
