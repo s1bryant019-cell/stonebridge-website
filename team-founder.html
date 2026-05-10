@@ -520,6 +520,132 @@
     }
   </style>
 
+  <style id="founder-profile-slick-update">
+    /* Founder page refinement: patient-facing profile, less scaffolding, fewer boxed blocks. */
+    .founder-intro-inner{
+      padding-top:64px;
+      padding-bottom:58px;
+    }
+
+    .glance-grid{
+      border-top:1px solid rgba(33,49,66,.16);
+      border-bottom:1px solid rgba(33,49,66,.12);
+      gap:0;
+      margin-top:26px;
+    }
+
+    .glance-card{
+      border:0;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+      padding:16px 18px 16px 0;
+    }
+
+    .glance-card:nth-child(odd){
+      padding-right:26px;
+      border-right:1px solid rgba(33,49,66,.10);
+    }
+
+    .glance-card:nth-child(even){
+      padding-left:24px;
+    }
+
+    .compact-principle-inner{
+      padding:22px 0;
+    }
+
+    .founder-section{
+      padding:46px 0;
+    }
+
+    .section-copy h2{
+      margin-bottom:12px;
+    }
+
+    .section-copy .lead{
+      margin-bottom:14px;
+    }
+
+    .concern-grid{
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:0 34px;
+      margin-top:18px;
+      border-top:1px solid rgba(33,49,66,.16);
+    }
+
+    .concern-card,
+    .approach-card{
+      border:0;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+      padding:15px 0;
+      border-bottom:1px solid rgba(33,49,66,.12);
+    }
+
+    .concern-card strong,
+    .approach-card strong{
+      font-size:1.22rem;
+      margin-bottom:4px;
+    }
+
+    .concern-card span,
+    .approach-card span{
+      font-size:.9rem;
+      line-height:1.5;
+    }
+
+    .approach-grid{
+      gap:28px;
+      border-top:1px solid rgba(33,49,66,.16);
+      margin-top:18px;
+    }
+
+    .approach-card{
+      border-bottom:0;
+      padding-top:16px;
+    }
+
+    .degree-list{
+      margin-top:18px;
+    }
+
+    .degree-row{
+      padding:15px 0;
+    }
+
+    .scope-panel{
+      margin-top:16px;
+      padding:0;
+      border:0;
+      border-radius:0;
+      background:transparent;
+    }
+
+    .scope-panel p{
+      padding-top:14px;
+      border-top:1px solid rgba(33,49,66,.14);
+    }
+
+    .founder-final-inner{
+      padding:36px 0;
+    }
+
+    @media (max-width:760px){
+      .glance-card:nth-child(odd){
+        border-right:0;
+        padding-right:0;
+      }
+      .glance-card:nth-child(even){
+        padding-left:0;
+      }
+      .concern-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+
   <style id="stonebridge-display-line-height-fix">
     /* Sitewide display-type guardrail: prevents EB Garamond descenders/ascenders from colliding on wrapped headings. */
     body h1,
@@ -603,24 +729,24 @@
           <div class="founder-kicker">Founder Profile</div>
           <h1 class="founder-title">Dr. Stephen W. Bryant</h1>
           <div class="founder-subtitle">PsyD, LCPC · Founder · Doctoral-level clinician</div>
-          <p>Dr. Bryant provides outpatient telehealth psychotherapy for teens and adults in Illinois. His work is relational, insight-oriented, trauma-informed, and grounded in careful attention to clinical fit.</p>
+          <p>Dr. Bryant provides outpatient telehealth psychotherapy for teens and adults in Illinois. His work is relational, insight-oriented, trauma-informed, and attentive to patterns that keep returning.</p>
 
           <div class="glance-grid" aria-label="At a glance">
             <article class="glance-card">
               <span class="glance-label">Works with</span>
-              <p>Teens and adults seeking outpatient psychotherapy in Illinois.</p>
+              <p>Teens and adults in Illinois.</p>
             </article>
             <article class="glance-card">
               <span class="glance-label">Common concerns</span>
-              <p>Anxiety, depression, trauma responses, grief, relationships, shame, life transitions, identity, and emotional regulation.</p>
+              <p>Anxiety, depression, trauma responses, grief, relationships, shame, identity, substance use concerns, and feeling stuck.</p>
             </article>
             <article class="glance-card">
               <span class="glance-label">Clinical style</span>
-              <p>Steady, collaborative, relational, and insight-oriented, with practical tools used when they support the work.</p>
+              <p>Steady, collaborative, relational, and insight-oriented; practical tools when useful.</p>
             </article>
             <article class="glance-card">
               <span class="glance-label">Current format</span>
-              <p>Telehealth psychotherapy only. Waitlist inquiries are currently being accepted.</p>
+              <p>Telehealth psychotherapy. Waitlist inquiries are open.</p>
             </article>
           </div>
 
@@ -648,66 +774,53 @@
       </div>
     </section>
 
-    <nav class="page-guide" aria-label="Founder page sections">
-      <div class="page-guide-inner">
-        <div class="page-guide-label">On this page</div>
-        <div class="page-guide-links">
-          <a href="#overview">Overview</a>
-          <a href="#clinical-focus">Clinical focus</a>
-          <a href="#therapy-style">Therapy style</a>
-          <a href="#background">Background</a>
-          <a href="#fit-scope">Fit</a>
-        </div>
-      </div>
-    </nav>
-
     <section class="founder-section" id="clinical-focus">
       <div class="founder-section-inner">
         <aside class="section-label">Clinical focus</aside>
         <div class="section-copy">
-          <h2>Areas Dr. Bryant commonly works with.</h2>
-          <p class="lead">The concerns below are examples of what may come into therapy. They are not a requirement for care, and the consultation process helps clarify fit.</p>
+          <h2>Clinical focus.</h2>
+          <p class="lead">Many clients arrive after trying to manage things privately for a long time.</p>
 
           <div class="concern-grid">
             <article class="concern-card">
-              <strong>Anxiety and worry</strong>
-              <span>Racing thoughts, overthinking, panic symptoms, avoidance, perfectionism, or feeling unable to settle.</span>
+              <strong>Anxiety, panic, and overthinking</strong>
+              <span>When worry, avoidance, or constant mental noise starts narrowing life.</span>
             </article>
             <article class="concern-card">
-              <strong>Depression and low mood</strong>
-              <span>Sadness, numbness, irritability, low motivation, loss of interest, or feeling disconnected from life.</span>
+              <strong>Depression, numbness, and low motivation</strong>
+              <span>When life feels flat, heavy, irritable, or difficult to re-enter.</span>
             </article>
             <article class="concern-card">
-              <strong>Trauma responses</strong>
-              <span>Hypervigilance, shutdown, emotional flooding, mistrust, shame, or patterns shaped by earlier harm.</span>
+              <strong>Trauma responses and shame</strong>
+              <span>When earlier harm still shapes trust, safety, self-worth, or the body’s sense of threat.</span>
             </article>
             <article class="concern-card">
-              <strong>Grief and loss</strong>
-              <span>Death, separation, family rupture, identity loss, major transitions, or losses that have not had enough room.</span>
+              <strong>Grief, loss, and major transitions</strong>
+              <span>When something has changed and the old way of coping no longer works.</span>
             </article>
             <article class="concern-card">
-              <strong>Relationship patterns</strong>
-              <span>Conflict, distance, people-pleasing, fear of closeness, fear of abandonment, or repeating painful dynamics.</span>
+              <strong>Relationship and attachment patterns</strong>
+              <span>When closeness, conflict, distance, or abandonment fears keep repeating.</span>
             </article>
             <article class="concern-card">
-              <strong>Shame and self-worth</strong>
-              <span>Harsh self-criticism, feeling defective, hiding parts of yourself, or struggling to feel worthy of care.</span>
+              <strong>Identity, self-worth, and perfectionism</strong>
+              <span>When the outside appears functional but the inside feels harsh, uncertain, or hidden.</span>
+            </article>
+            <article class="concern-card">
+              <strong>Stress, burnout, and emotional overload</strong>
+              <span>When carrying too much has begun to affect mood, patience, connection, or recovery.</span>
             </article>
             <article class="concern-card">
               <strong>Substance use concerns</strong>
-              <span>Exploring use, triggers, ambivalence, harm, and change when outpatient psychotherapy is clinically appropriate.</span>
+              <span>When outpatient therapy is an appropriate setting for exploring use, triggers, ambivalence, and change.</span>
             </article>
             <article class="concern-card">
-              <strong>Identity and life transitions</strong>
-              <span>Questions about who you are, what you want, what has changed, and how to move through the next stage of life.</span>
-            </article>
-            <article class="concern-card">
-              <strong>Emotion regulation and stress</strong>
-              <span>Strong reactions, shutdown, anger, burnout, overwhelm, or difficulty understanding what you are feeling.</span>
+              <strong>Emotion regulation and intense reactions</strong>
+              <span>When feelings arrive quickly, shut down, spill over, or become hard to name.</span>
             </article>
             <article class="concern-card">
               <strong>Feeling stuck</strong>
-              <span>Functioning on the outside while privately feeling confused, lonely, burdened, or caught in old patterns.</span>
+              <span>When the same patterns keep returning even with insight, effort, or success in other areas.</span>
             </article>
           </div>
         </div>
@@ -718,9 +831,9 @@
       <div class="founder-section-inner">
         <aside class="section-label">Therapy style</aside>
         <div class="section-copy">
-          <h2>How therapy with Dr. Bryant tends to work.</h2>
-          <p class="lead">The work is not only about reducing symptoms. It is also about understanding what those symptoms may be connected to.</p>
-          <p>Sessions often look at what is happening now and how earlier experiences, relationships, losses, coping strategies, and self-protective patterns may still be shaping life. The pace is collaborative and attentive to readiness, safety, and the client’s goals.</p>
+          <h2>A steady, relational style.</h2>
+          <p class="lead">The work often slows things down enough for patterns to become visible.</p>
+          <p>Sessions may look at what is happening now and how earlier experiences, relationships, losses, coping strategies, and protective patterns still shape life. The pace is collaborative and attentive to readiness, safety, and the client’s goals.</p>
 
           <div class="approach-grid" aria-label="Therapy approach">
             <article class="approach-card">
@@ -744,9 +857,9 @@
       <div class="founder-section-inner">
         <aside class="section-label">Background</aside>
         <div class="section-copy">
-          <h2>Training and clinical foundation.</h2>
-          <p class="lead">Credentials are included here for transparency, but the page stays focused on whether the therapy relationship may be a fit.</p>
-          <p>Dr. Bryant’s training and experience have included outpatient psychotherapy, community mental health, intensive outpatient treatment, partial hospitalization, inpatient behavioral health, psychological assessment, substance use treatment, trauma-focused care, supervision, professional education, and interdisciplinary treatment planning.</p>
+          <h2>Training and background.</h2>
+          <p class="lead">Dr. Bryant’s clinical foundation includes doctoral training in clinical psychology, Illinois LCPC licensure, and experience across multiple levels of behavioral health care.</p>
+          <p>His background includes outpatient psychotherapy, community mental health, intensive outpatient and partial hospitalization settings, inpatient behavioral health, substance use treatment, trauma-focused care, supervision, professional education, and interdisciplinary treatment planning.</p>
 
           <div class="degree-list" aria-label="Education and credentials">
             <div class="degree-row">
@@ -793,11 +906,11 @@
       <div class="founder-section-inner">
         <aside class="section-label">Fit and scope</aside>
         <div class="section-copy">
-          <h2>What this pathway is, and what it is not.</h2>
-          <p class="lead">Stonebridge uses consultation before intake because not every concern is best served by the same setting, level of care, or clinician.</p>
+          <h2>Fit and scope.</h2>
+          <p class="lead">Consultation before intake helps protect the fit of the work.</p>
           <div class="scope-panel">
-            <p>Dr. Bryant currently provides outpatient telehealth psychotherapy for teens and adults in Illinois. The consultation process helps determine whether Stonebridge appears clinically appropriate before care begins.</p>
-            <p>This pathway is not emergency care, crisis response, psychological testing, forensic evaluation, court-related evaluation, or a substitute for a higher level of care when that is clinically needed. Assessment and forensic services use dedicated procedures outside the psychotherapy waitlist pathway.</p>
+            <p>Dr. Bryant currently provides outpatient telehealth psychotherapy for teens and adults in Illinois.</p>
+            <p>This pathway is not emergency care, crisis response, psychological testing, forensic or court-related evaluation, or a substitute for a higher level of care when that is clinically needed.</p>
           </div>
         </div>
       </div>
@@ -807,7 +920,7 @@
       <div class="founder-final-inner">
         <div>
           <h2>Interested in working with Dr. Bryant?</h2>
-          <p>Stonebridge is accepting waitlist inquiries for outpatient telehealth psychotherapy while awaiting confirmation of insurance paneling. Online psychotherapy appointments are anticipated around August 2026.</p>
+          <p>Begin with a brief waitlist inquiry. Stonebridge will follow up about availability and next steps when appropriate.</p>
         </div>
         <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
       </div>
