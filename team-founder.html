@@ -911,6 +911,113 @@
     }
   </style>
 
+  <style id="founder-top-spacing-name-fix">
+    /* Keep founder name on one line and remove the awkward empty space in the top at-a-glance area. */
+    .founder-intro-inner{
+      width:min(1220px, calc(100% - 72px));
+      grid-template-columns:minmax(0, 1fr) 270px;
+      gap:48px;
+      padding-top:50px;
+      padding-bottom:46px;
+    }
+
+    .founder-title{
+      max-width:none !important;
+      white-space:nowrap;
+      font-size:clamp(3.05rem, 3.55vw, 4.15rem);
+      line-height:1.02 !important;
+      letter-spacing:-.04em;
+    }
+
+    .founder-subtitle{
+      margin-top:9px;
+    }
+
+    .founder-intro-copy > p{
+      margin-top:13px;
+      max-width:50rem;
+    }
+
+    .glance-grid{
+      margin-top:18px;
+      max-width:none;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:0;
+      border-top:1px solid rgba(33,49,66,.15);
+      border-bottom:1px solid rgba(33,49,66,.12);
+    }
+
+    .glance-card,
+    .glance-card:nth-child(odd),
+    .glance-card:nth-child(even){
+      display:grid;
+      grid-template-columns:138px minmax(0, 1fr);
+      gap:18px;
+      align-items:baseline;
+      padding:9px 0 !important;
+      border:0 !important;
+      border-top:1px solid rgba(33,49,66,.09) !important;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+    }
+
+    .glance-card:first-child{
+      border-top:0 !important;
+    }
+
+    .glance-label{
+      margin:0;
+      font-size:.58rem;
+      line-height:1.3;
+      letter-spacing:.18em;
+    }
+
+    .glance-card p{
+      font-size:.9rem;
+      line-height:1.42;
+    }
+
+    .founder-actions{
+      margin-top:20px;
+    }
+
+    .founder-portrait{
+      max-width:270px;
+    }
+
+    @media (max-width:980px){
+      .founder-intro-inner{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+      .founder-portrait{
+        justify-self:start;
+        max-width:300px;
+      }
+    }
+
+    @media (max-width:720px){
+      .founder-intro-inner{
+        width:min(100% - 34px, 1220px);
+        padding-top:42px;
+        padding-bottom:40px;
+      }
+      .founder-title{
+        font-size:clamp(1.95rem, 7.6vw, 3.05rem);
+        letter-spacing:-.035em;
+      }
+      .glance-card,
+      .glance-card:nth-child(odd),
+      .glance-card:nth-child(even){
+        grid-template-columns:1fr;
+        gap:4px;
+        padding:10px 0 !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
 <header class="site-header compact-site-header">
