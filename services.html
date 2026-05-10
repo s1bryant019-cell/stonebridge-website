@@ -116,11 +116,11 @@
 
   <style id="stonebridge-services-cleanup">
     .services-page .home-led-section{
-      padding:46px 0;
+      padding:48px 0;
     }
 
     .services-page .home-led-section.tight-section{
-      padding:34px 0;
+      padding:38px 0;
     }
 
     .services-band{
@@ -161,8 +161,8 @@
       width:min(1120px, calc(100% - 72px));
       margin:0 auto 22px;
       display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:28px;
+      grid-template-columns:.78fr 1.22fr;
+      gap:30px;
       align-items:end;
     }
 
@@ -170,55 +170,126 @@
       margin:0;
       color:#213142;
       font-family:"EB Garamond", Georgia, serif;
-      font-size:clamp(2.4rem, 3.7vw, 3.55rem);
-      line-height:1;
+      font-size:clamp(2.35rem, 3.55vw, 3.45rem);
+      line-height:1.02;
       letter-spacing:-.035em;
     }
 
     .services-section-heading p{
       margin:0;
-      max-width:47rem;
+      max-width:50rem;
       color:#5f6c78;
       font-size:1rem;
       line-height:1.72;
     }
 
-    .service-copy-card h2,
-    .service-copy-card h3{
-      margin-bottom:12px;
+    .services-editorial-shell{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
     }
 
-    .service-copy-card p{
-      margin-top:0;
-    }
-
-    .diagnosis-grid{
+    .services-editorial-split{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
+      grid-template-columns:minmax(0, 1.08fr) minmax(320px, .72fr);
+      gap:34px;
+      align-items:start;
+      padding:30px 0 8px;
+      border-top:1px solid rgba(212,200,185,.55);
     }
 
-    .diagnosis-item{
-      border:1px solid rgba(212,200,185,.62);
-      border-radius:20px;
-      background:rgba(255,255,255,.62);
-      padding:18px;
+    .services-lead-copy{
+      color:#5f6c78;
+      font-size:1.04rem;
+      line-height:1.78;
+      max-width:62rem;
     }
 
-    .diagnosis-item strong{
-      display:block;
-      margin-bottom:5px;
+    .services-lead-copy p{
+      margin:0 0 18px;
+    }
+
+    .services-quiet-panel{
+      border-left:1px solid rgba(212,200,185,.72);
+      padding-left:28px;
+    }
+
+    .services-quiet-panel h3,
+    .services-focus-panel h3{
+      margin:0 0 14px;
       color:#213142;
       font-family:"EB Garamond", Georgia, serif;
-      font-size:1.32rem;
-      line-height:1.08;
+      font-size:1.72rem;
+      line-height:1.05;
+      letter-spacing:-.02em;
     }
 
-    .diagnosis-item span{
+    .services-line-list{
+      display:grid;
+      gap:0;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .services-line-list li{
+      padding:12px 0;
+      border-top:1px solid rgba(212,200,185,.52);
+      color:#5f6c78;
+      font-size:.96rem;
+      line-height:1.58;
+    }
+
+    .services-line-list li:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .services-concern-panel{
+      border-radius:28px;
+      border:1px solid rgba(212,200,185,.64);
+      background:linear-gradient(180deg,rgba(255,253,248,.82),rgba(248,244,239,.88));
+      box-shadow:0 14px 34px rgba(31,42,52,.04);
+      overflow:hidden;
+    }
+
+    .concern-row{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) 230px;
+      gap:24px;
+      align-items:center;
+      padding:20px 24px;
+      border-top:1px solid rgba(212,200,185,.58);
+      background:rgba(255,255,255,.36);
+    }
+
+    .concern-row:first-child{ border-top:none; }
+
+    .concern-main strong{
+      display:block;
+      margin-bottom:6px;
+      color:#213142;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.42rem;
+      line-height:1.08;
+      letter-spacing:-.014em;
+    }
+
+    .concern-main span{
       display:block;
       color:#5f6c78;
-      font-size:.93rem;
-      line-height:1.55;
+      font-size:.96rem;
+      line-height:1.58;
+    }
+
+    .concern-label{
+      justify-self:end;
+      text-align:right;
+      color:#8c7551;
+      font-size:.74rem;
+      font-weight:800;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      line-height:1.4;
     }
 
     .service-note{
@@ -232,35 +303,102 @@
       line-height:1.65;
     }
 
-    .specialty-grid{
+    .services-focus-band{
+      background:linear-gradient(180deg,#fbf8f4,#f3ede5);
+      border-top:1px solid rgba(212,200,185,.55);
+      border-bottom:1px solid rgba(212,200,185,.55);
+    }
+
+    .services-focus-panel{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
+      grid-template-columns:.72fr 1.28fr;
+      gap:34px;
+      align-items:start;
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      padding:4px 0;
     }
 
-    .specialty-card{
-      border-radius:22px;
-      border:1px solid rgba(212,200,185,.62);
-      background:linear-gradient(180deg,#fffdf8,#f8f4ef);
-      padding:20px;
+    .services-focus-intro{
+      padding-top:2px;
     }
 
-    .specialty-card h3{
-      margin:0 0 8px;
-      font-size:1.55rem;
+    .services-focus-intro p{
+      margin:0;
+      color:#5f6c78;
+      font-size:1rem;
+      line-height:1.72;
+    }
+
+    .focus-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:0 26px;
+      margin:0;
+      padding:0;
+      list-style:none;
+      border-top:1px solid rgba(212,200,185,.58);
+    }
+
+    .focus-list li{
+      padding:16px 0;
+      border-bottom:1px solid rgba(212,200,185,.58);
+      color:#5f6c78;
+      font-size:.95rem;
+      line-height:1.58;
+    }
+
+    .focus-list strong{
+      display:block;
+      color:#213142;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.32rem;
+      line-height:1.08;
+      margin-bottom:5px;
+      letter-spacing:-.01em;
+    }
+
+    .scope-panel{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:28px;
+      align-items:start;
+      border-top:1px solid rgba(212,200,185,.58);
+      padding-top:26px;
+    }
+
+    .scope-panel h3{
+      margin:0 0 10px;
+      color:#213142;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.72rem;
       line-height:1.05;
     }
 
-    .specialty-card p{
-      margin:0;
-      font-size:.95rem;
-      line-height:1.58;
+    .scope-panel p,
+    .scope-panel li{
+      color:#5f6c78;
+      font-size:.97rem;
+      line-height:1.62;
+    }
+
+    .scope-panel p{ margin:0 0 12px; }
+    .scope-panel ul{ margin:0; padding-left:1.1rem; }
+    .scope-panel li{ margin-bottom:7px; }
+
+    .scope-note{
+      grid-column:1 / -1;
+      border-top:1px solid rgba(212,200,185,.58);
+      padding-top:18px;
+      color:#5f6c78;
+      font-size:.94rem;
+      line-height:1.65;
     }
 
     .services-full-cta{
       width:100%;
       background:linear-gradient(135deg,#17395c,#102f4d);
-      margin-top:10px;
+      margin-top:0;
     }
 
     .services-full-cta-inner{
@@ -270,14 +408,15 @@
       grid-template-columns:minmax(0,1fr) auto;
       gap:28px;
       align-items:center;
-      padding:36px 0;
+      padding:38px 0;
     }
 
     .services-full-cta h2{
       color:#fffaf2;
       margin:0 0 10px;
       font-size:clamp(2.25rem,3.4vw,3.35rem);
-      line-height:1;
+      line-height:1.04;
+      letter-spacing:-.03em;
     }
 
     .services-full-cta p{
@@ -294,48 +433,36 @@
       border-color:rgba(255,250,242,.65);
     }
 
-
-    .diagnosis-item .clinical-label{
-      display:block;
-      margin-top:8px;
-      color:#8c7551;
-      font-size:.78rem;
-      font-weight:800;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      line-height:1.35;
-    }
-
-    .therapy-use-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-      margin-top:18px;
-    }
-
-    .therapy-use-pill{
-      border-radius:18px;
-      border:1px solid rgba(212,200,185,.62);
-      background:rgba(255,255,255,.62);
-      padding:14px 16px;
-      color:#213142;
-      font-size:.92rem;
-      font-weight:700;
-      line-height:1.35;
-    }
-
     @media (max-width:980px){
       .services-band-grid,
       .services-section-heading,
+      .services-editorial-shell,
+      .services-focus-panel,
       .services-full-cta-inner{
         width:min(100% - 30px, 1120px);
         grid-template-columns:1fr;
       }
-      .specialty-grid,
-      .diagnosis-grid,
-      .therapy-use-grid{
+
+      .services-editorial-split,
+      .services-focus-panel,
+      .scope-panel,
+      .focus-list,
+      .concern-row{
         grid-template-columns:1fr;
       }
+
+      .services-quiet-panel{
+        border-left:none;
+        border-top:1px solid rgba(212,200,185,.72);
+        padding-left:0;
+        padding-top:22px;
+      }
+
+      .concern-label{
+        justify-self:start;
+        text-align:left;
+      }
+
       .services-full-cta-inner{
         gap:18px;
       }
@@ -542,7 +669,7 @@
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Psychotherapy Services</div>
           <h1 class="wide-title">Therapy for anxiety, depression, trauma, relationships, and feeling stuck.</h1>
-          <p>Stonebridge provides outpatient telehealth psychotherapy for teens and adults in Illinois. This page is here to help you understand what therapy is, what people often use it for, and when Stonebridge may be the right setting.</p>
+          <p>Stonebridge provides outpatient telehealth psychotherapy for teens and adults in Illinois. This page explains what therapy can help with, how the work may feel, and when Stonebridge may be the right setting.</p>
           <div class="stone-page-actions">
             <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
             <a class="btn btn-secondary" href="#common-concerns">What therapy helps with</a>
@@ -554,16 +681,16 @@
     <section class="services-band" aria-label="Service summary">
       <div class="services-band-grid">
         <article class="services-band-item">
-          <h4>For symptoms</h4>
-          <p>Therapy can help with anxiety, depression, trauma responses, stress, mood, attention, and emotional overwhelm.</p>
+          <h4>Outpatient telehealth</h4>
+          <p>Psychotherapy for teens and adults located in Illinois.</p>
         </article>
         <article class="services-band-item">
-          <h4>For patterns</h4>
-          <p>Therapy can also help with relationships, self-worth, avoidance, shame, identity, grief, and patterns that keep repeating.</p>
+          <h4>Symptoms and patterns</h4>
+          <p>Support for anxiety, mood, trauma responses, relationships, stress, identity, and repeated patterns.</p>
         </article>
         <article class="services-band-item">
-          <h4>For fit</h4>
-          <p>Stonebridge uses a consultation-first process to make sure outpatient telehealth is a responsible place to begin.</p>
+          <h4>Fit before intake</h4>
+          <p>A brief waitlist inquiry helps determine whether this is a responsible place to begin.</p>
         </article>
       </div>
     </section>
@@ -574,7 +701,7 @@
         <div class="page-guide-links">
           <a href="#what-therapy-is">What therapy is</a>
           <a href="#common-concerns">Common reasons</a>
-          <a href="#specialties">Stonebridge focus</a>
+          <a href="#specialties">Clinical focus</a>
           <a href="#fit-and-scope">Fit</a>
           <a href="#begin-services">Start</a>
         </div>
@@ -583,95 +710,92 @@
 
     <section class="home-led-section" id="what-therapy-is">
       <div class="services-section-heading">
-        <h2>What psychotherapy is.</h2>
-        <p>Psychotherapy is a regular, private conversation with a trained clinician. It gives you a place to slow down, understand what is happening, and work toward change with someone who is paying careful attention.</p>
+        <h2>What therapy is.</h2>
+        <p>Therapy is not just advice or a place to talk in circles. It is a regular, private clinical relationship where you can slow down, understand what is happening, and work toward change with someone trained to listen carefully.</p>
       </div>
-      <div class="home-led-grid">
-        <article class="home-led-card service-copy-card">
-          <h3>What happens in therapy?</h3>
-          <p>You talk about what has been difficult, what you have tried, what keeps repeating, and what you want to understand or change. The clinician listens for symptoms, patterns, relationships, history, coping, strengths, risks, and goals.</p>
-          <p>Therapy may include reflection, emotional work, practical coping strategies, new language for your experience, and a clearer understanding of how past and present experiences shape the way you move through life.</p>
-        </article>
-        <article class="home-led-card service-copy-card">
-          <h3>What is therapy used for?</h3>
-          <p>People come to therapy when something feels too heavy, confusing, painful, repetitive, or hard to manage alone. Sometimes the concern has a diagnosis. Sometimes the first words are simply, “I am not doing well,” “I feel stuck,” or “I do not know why I keep doing this.”</p>
-          <div class="therapy-use-grid" aria-label="Examples of what therapy may help with">
-            <div class="therapy-use-pill">Feeling anxious or on edge</div>
-            <div class="therapy-use-pill">Low mood or numbness</div>
-            <div class="therapy-use-pill">Trauma responses</div>
-            <div class="therapy-use-pill">Relationship patterns</div>
-            <div class="therapy-use-pill">Grief or major change</div>
-            <div class="therapy-use-pill">Stress and burnout</div>
-            <div class="therapy-use-pill">Self-worth and shame</div>
-            <div class="therapy-use-pill">Substance use concerns</div>
+      <div class="services-editorial-shell">
+        <div class="services-editorial-split">
+          <div class="services-lead-copy">
+            <p>Some people begin therapy because of a clear symptom: panic, depression, grief, trauma, irritability, low motivation, or substance use concerns. Others begin because life feels off and they cannot fully name why.</p>
+            <p>In therapy, the clinician listens for more than the immediate problem. The work may include symptoms, relationships, history, coping, identity, patterns of avoidance, shame, fear, anger, loss, and the parts of life that have become difficult to carry alone.</p>
           </div>
-        </article>
+          <aside class="services-quiet-panel" aria-label="What therapy may include">
+            <h3>Therapy may include</h3>
+            <ul class="services-line-list">
+              <li>Understanding symptoms and the situations that intensify them.</li>
+              <li>Recognizing patterns in relationships, coping, emotion, and self-worth.</li>
+              <li>Developing practical strategies when coping skills, structure, or safety planning are needed.</li>
+              <li>Making room for grief, trauma, shame, anger, or fear at a pace that can be tolerated.</li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </section>
 
     <section class="home-led-section paper tight-section" id="common-concerns">
       <div class="services-section-heading">
         <h2>Common reasons people come to therapy.</h2>
-        <p>The concerns below are written in plain language first, with related DSM diagnostic language included for clarity. This is not a self-diagnosis checklist. A diagnosis, when clinically appropriate, is made through evaluation and discussed in context.</p>
+        <p>The language below starts with lived experience, then names related clinical areas. It is not a self-diagnosis checklist. A diagnosis, when clinically appropriate, is made through evaluation and discussed in context.</p>
       </div>
-      <div class="home-led-grid one">
-        <article class="home-led-card service-copy-card">
-          <div class="diagnosis-grid">
-            <div class="diagnosis-item"><strong>Worry, panic, avoidance, or feeling constantly on edge</strong><span>Anxiety can show up as racing thoughts, fear of judgment, panic sensations, difficulty relaxing, avoidance, or needing reassurance.</span><span class="clinical-label">Anxiety disorders</span></div>
-            <div class="diagnosis-item"><strong>Low mood, numbness, loss of interest, or hopelessness</strong><span>Depression may affect sleep, appetite, motivation, concentration, guilt, energy, connection, and the ability to feel pleasure.</span><span class="clinical-label">Depressive disorders</span></div>
-            <div class="diagnosis-item"><strong>Trauma responses, overwhelm, or feeling unsafe inside your body</strong><span>Trauma can involve intrusive memories, avoidance, shutdown, anger, shame, numbness, hypervigilance, or reactions that feel bigger than the present moment.</span><span class="clinical-label">Trauma- and stressor-related disorders</span></div>
-            <div class="diagnosis-item"><strong>Attention, organization, impulsivity, or follow-through problems</strong><span>People may seek therapy when school, work, routines, relationships, or self-esteem are affected by attention and executive functioning difficulties.</span><span class="clinical-label">ADHD</span></div>
-            <div class="diagnosis-item"><strong>Intrusive thoughts, checking, rituals, or repeated mental loops</strong><span>Obsessive-compulsive patterns can involve unwanted thoughts, compulsive behaviors, reassurance-seeking, avoidance, or mental rituals that are hard to interrupt.</span><span class="clinical-label">Obsessive-compulsive disorder</span></div>
-            <div class="diagnosis-item"><strong>Periods of intense mood change, activation, or irritability</strong><span>Some people seek therapy around mood episodes, sleep changes, impulsive periods, irritability, or shifts in energy that affect life and relationships.</span><span class="clinical-label">Bipolar-related concerns</span></div>
-            <div class="diagnosis-item"><strong>Alcohol, cannabis, or other substance use concerns</strong><span>Therapy may help when use has become hard to control, creates consequences, functions as coping, or raises concern for the person or family.</span><span class="clinical-label">Substance use disorders</span></div>
-            <div class="diagnosis-item"><strong>Eating, body image, control, or shame around food</strong><span>Support may be appropriate when concerns are clinically safe for outpatient telehealth and do not require medical monitoring or a higher level of care.</span><span class="clinical-label">Eating and feeding-related concerns</span></div>
-            <div class="diagnosis-item"><strong>Longstanding patterns in relationships, trust, conflict, or self-worth</strong><span>Therapy can help with attachment patterns, emotional intensity, fear of abandonment, people-pleasing, withdrawal, anger, shame, or unstable relationships.</span><span class="clinical-label">Personality-related and relational patterns</span></div>
-            <div class="diagnosis-item"><strong>Adjustment, grief, identity stress, or major life transition</strong><span>Sometimes therapy begins because life has changed: loss, separation, school stress, career change, family strain, caregiving, identity questions, or a difficult transition.</span><span class="clinical-label">Adjustment-related concerns</span></div>
-          </div>
-          <div class="service-note">
-            Some concerns require psychiatric care, emergency support, intensive outpatient treatment, in-person services, medical monitoring, or another specialty setting. Consultation helps determine whether Stonebridge is an appropriate place to begin.
-          </div>
+      <div class="services-editorial-shell">
+        <article class="services-concern-panel" aria-label="Common therapy concerns">
+          <div class="concern-row"><div class="concern-main"><strong>Worry, panic, avoidance, or feeling constantly on edge</strong><span>Racing thoughts, fear of judgment, panic sensations, difficulty relaxing, avoidance, or needing reassurance.</span></div><div class="concern-label">Anxiety disorders</div></div>
+          <div class="concern-row"><div class="concern-main"><strong>Low mood, numbness, loss of interest, or hopelessness</strong><span>Changes in sleep, appetite, motivation, concentration, guilt, energy, connection, or the ability to feel pleasure.</span></div><div class="concern-label">Depressive disorders</div></div>
+          <div class="concern-row"><div class="concern-main"><strong>Trauma responses, overwhelm, or feeling unsafe inside your body</strong><span>Intrusive memories, avoidance, shutdown, anger, shame, numbness, hypervigilance, or reactions that feel bigger than the present moment.</span></div><div class="concern-label">Trauma and stressor-related disorders</div></div>
+          <div class="concern-row"><div class="concern-main"><strong>Attention, organization, impulsivity, or follow-through problems</strong><span>School, work, routines, relationships, and self-esteem can be affected by attention and executive functioning difficulties.</span></div><div class="concern-label">ADHD</div></div>
+          <div class="concern-row"><div class="concern-main"><strong>Intrusive thoughts, checking, rituals, or repeated mental loops</strong><span>Unwanted thoughts, compulsive behaviors, reassurance-seeking, avoidance, or mental rituals that are hard to interrupt.</span></div><div class="concern-label">Obsessive-compulsive disorder</div></div>
+          <div class="concern-row"><div class="concern-main"><strong>Periods of intense mood change, activation, or irritability</strong><span>Mood episodes, sleep changes, impulsive periods, irritability, or shifts in energy that affect life and relationships.</span></div><div class="concern-label">Bipolar-related concerns</div></div>
+          <div class="concern-row"><div class="concern-main"><strong>Alcohol, cannabis, or other substance use concerns</strong><span>Use that has become hard to control, creates consequences, functions as coping, or raises concern for the person or family.</span></div><div class="concern-label">Substance use disorders</div></div>
+          <div class="concern-row"><div class="concern-main"><strong>Eating, body image, control, or shame around food</strong><span>Support may be appropriate when concerns are clinically safe for outpatient telehealth and do not require medical monitoring or a higher level of care.</span></div><div class="concern-label">Eating and feeding-related concerns</div></div>
+          <div class="concern-row"><div class="concern-main"><strong>Longstanding patterns in relationships, trust, conflict, or self-worth</strong><span>Attachment patterns, emotional intensity, fear of abandonment, people-pleasing, withdrawal, anger, shame, or unstable relationships.</span></div><div class="concern-label">Personality-related and relational patterns</div></div>
+          <div class="concern-row"><div class="concern-main"><strong>Adjustment, grief, identity stress, or major life transition</strong><span>Loss, separation, school stress, career change, family strain, caregiving, identity questions, or a difficult transition.</span></div><div class="concern-label">Adjustment-related concerns</div></div>
         </article>
+        <div class="service-note">
+          Some concerns require psychiatric care, emergency support, intensive outpatient treatment, in-person services, medical monitoring, or another specialty setting. Consultation helps determine whether Stonebridge is an appropriate place to begin.
+        </div>
       </div>
     </section>
 
-    <section class="home-led-section tight-section" id="specialties">
-      <div class="services-section-heading">
-        <h2>Stonebridge clinical focus.</h2>
-        <p>Stonebridge is especially oriented toward therapy that looks beneath the symptom list: the pattern, the relationship, the adaptation, the loss, the shame, the protection, and the part of the person that has been trying to keep going.</p>
-      </div>
-      <div class="home-led-grid one">
-        <article class="home-led-card">
-          <div class="specialty-grid">
-            <div class="specialty-card"><h3>Trauma and shame</h3><p>Working with fear, numbness, avoidance, anger, grief, self-blame, and patterns shaped by overwhelming experiences.</p></div>
-            <div class="specialty-card"><h3>Relationships and attachment</h3><p>Understanding conflict, loneliness, trust, boundaries, closeness, withdrawal, people-pleasing, and the wish to feel known.</p></div>
-            <div class="specialty-card"><h3>Identity and self-worth</h3><p>Making space for self-criticism, perfectionism, uncertainty, disconnection, identity development, and feeling unseen.</p></div>
-            <div class="specialty-card"><h3>Adolescent therapy</h3><p>Support for teens navigating anxiety, mood, school pressure, family stress, identity, relationships, and emotional regulation.</p></div>
-            <div class="specialty-card"><h3>Substance use concerns</h3><p>Outpatient therapy for substance use concerns when telehealth is appropriate and the person does not need a higher level of care.</p></div>
-            <div class="specialty-card"><h3>Stress, burnout, and transition</h3><p>Therapy for overwhelm, depletion, grief, role strain, caregiving, young adulthood, career change, and periods of personal reorganization.</p></div>
-          </div>
-        </article>
+    <section class="home-led-section services-focus-band" id="specialties">
+      <div class="services-focus-panel">
+        <div class="services-focus-intro">
+          <h3>Stonebridge clinical focus.</h3>
+          <p>Stonebridge is especially oriented toward therapy that looks beneath the symptom list: the pattern, the relationship, the adaptation, the loss, the shame, the protection, and the part of the person that has been trying to keep going.</p>
+        </div>
+        <ul class="focus-list" aria-label="Stonebridge clinical focus areas">
+          <li><strong>Trauma responses and shame</strong> Fear, numbness, avoidance, anger, grief, self-blame, and patterns shaped by overwhelming experiences.</li>
+          <li><strong>Relationships and attachment</strong> Conflict, loneliness, trust, boundaries, closeness, withdrawal, people-pleasing, and the wish to feel known.</li>
+          <li><strong>Identity and self-worth</strong> Self-criticism, perfectionism, uncertainty, disconnection, identity development, and feeling unseen.</li>
+          <li><strong>Adolescent therapy</strong> Teen anxiety, mood, school pressure, family stress, identity, relationships, and emotional regulation.</li>
+          <li><strong>Substance use concerns</strong> Outpatient therapy when telehealth is appropriate and the person does not need a higher level of care.</li>
+          <li><strong>Stress, burnout, grief, and transition</strong> Overwhelm, depletion, role strain, caregiving, young adulthood, career change, and personal reorganization.</li>
+        </ul>
       </div>
     </section>
 
     <section class="home-led-section paper tight-section" id="fit-and-scope">
       <div class="services-section-heading">
         <h2>When Stonebridge may fit.</h2>
-        <p>This is an outpatient psychotherapy practice. The first step is not a commitment to treatment; it is a brief request so the clinical fit, setting, and next step can be considered responsibly.</p>
+        <p>This is an outpatient psychotherapy practice. The first step is not a commitment to treatment; it is a brief request so fit, setting, and next step can be considered responsibly.</p>
       </div>
-      <div class="home-led-grid three">
-        <article class="home-led-card service-copy-card">
-          <h3>Good fit</h3>
-          <p>Teens and adults located in Illinois who can attend telehealth from a private, safe setting and want steady outpatient psychotherapy.</p>
-        </article>
-        <article class="home-led-card service-copy-card">
-          <h3>May need another setting</h3>
-          <p>Immediate safety concerns, medical instability, severe eating disorder symptoms, active crisis needs, or situations requiring intensive or in-person care may need a different level of support.</p>
-        </article>
-        <article class="home-led-card service-copy-card">
-          <h3>Not this pathway</h3>
-          <p>Psychological testing, court/legal evaluations, forensic services, custody-related opinions, disability evaluations, and emergency care are not offered through the psychotherapy waitlist.</p>
-        </article>
+      <div class="services-editorial-shell">
+        <div class="scope-panel">
+          <div>
+            <h3>May fit</h3>
+            <p>Teens and adults located in Illinois who can attend telehealth from a private, safe setting and want steady outpatient psychotherapy.</p>
+          </div>
+          <div>
+            <h3>May need another setting</h3>
+            <ul>
+              <li>Immediate safety concerns or active crisis needs.</li>
+              <li>Medical instability or symptoms requiring close medical monitoring.</li>
+              <li>Needs that require intensive outpatient, partial hospitalization, residential, inpatient, or in-person care.</li>
+            </ul>
+          </div>
+          <div class="scope-note">
+            Psychological testing, legal or court-related evaluations, custody-related opinions, disability evaluations, and emergency care are outside the psychotherapy waitlist pathway.
+          </div>
+        </div>
       </div>
     </section>
 
@@ -679,7 +803,7 @@
       <div class="services-full-cta-inner">
         <div>
           <h2>Not sure where to start?</h2>
-          <p>Send a brief waitlist inquiry. The form is meant to help Stonebridge understand what you are looking for and whether outpatient telehealth psychotherapy may be a responsible fit.</p>
+          <p>Send a brief waitlist inquiry. Stonebridge will review whether outpatient telehealth psychotherapy appears clinically appropriate and whether there is a responsible next step.</p>
         </div>
         <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
       </div>
