@@ -1228,6 +1228,112 @@
     }
   }
 </style>
+
+<style id="stonebridge-fees-balanced-layout-repair">
+  /* Fees page repair: remove floating paragraphs and make information blocks visually balanced. */
+  .fees-page #insurance .fees-editorial-heading,
+  .fees-page #appointments .fees-editorial-heading,
+  .fees-page #insurance .fees-open-grid,
+  .fees-page #appointments .fees-open-grid{
+    display:none !important;
+  }
+  .fees-page .fees-balance-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr 1.15fr;
+    gap:14px;
+    align-items:stretch;
+  }
+  .fees-page .fees-balance-panel{
+    min-height:100%;
+    padding:20px 22px;
+    border-radius:22px;
+    border:1px solid rgba(212,200,185,.62);
+    background:rgba(255,255,255,.68);
+    box-shadow:0 10px 26px rgba(31,42,52,.03);
+  }
+  .fees-page .fees-balance-panel.intro-panel{
+    background:linear-gradient(180deg,rgba(255,253,248,.72),rgba(248,245,240,.78));
+  }
+  .fees-page .fees-balance-panel .stone-page-kicker{
+    margin:0 0 8px;
+  }
+  .fees-page .fees-balance-panel h2{
+    margin:0 0 10px;
+    color:var(--home-navy,#213142);
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:clamp(2rem,2.65vw,2.65rem);
+    line-height:1.06;
+    letter-spacing:-.03em;
+  }
+  .fees-page .fees-balance-panel h3{
+    margin:0 0 8px;
+    color:var(--home-navy,#213142);
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:1.35rem;
+    line-height:1.08;
+    letter-spacing:-.015em;
+  }
+  .fees-page .fees-balance-panel p,
+  .fees-page .fees-balance-panel li{
+    margin:0;
+    color:var(--home-muted,#5f6c78);
+    font-size:.9rem;
+    line-height:1.52;
+  }
+  .fees-page .fees-balance-panel ul{
+    margin:8px 0 0;
+    padding-left:1rem;
+  }
+  .fees-page .fees-balance-panel li + li{
+    margin-top:4px;
+  }
+  .fees-page .fees-policy-line{
+    margin-top:14px !important;
+    max-width:none !important;
+  }
+  .fees-page .fees-section-titleline{
+    margin-bottom:18px;
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:22px;
+    border-bottom:1px solid rgba(212,200,185,.55);
+    padding-bottom:14px;
+  }
+  .fees-page .fees-section-titleline .stone-page-kicker{
+    margin:0;
+  }
+  .fees-page .fees-section-titleline h2{
+    margin:0;
+    color:var(--home-navy,#213142);
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:clamp(2rem,2.8vw,2.75rem);
+    line-height:1.06;
+    letter-spacing:-.03em;
+  }
+  .fees-page .fees-appointment-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+  }
+  .fees-page #insurance,
+  .fees-page #appointments{
+    padding-top:34px !important;
+    padding-bottom:34px !important;
+  }
+  @media (max-width:1080px){
+    .fees-page .fees-balance-grid,
+    .fees-page .fees-appointment-grid{
+      grid-template-columns:1fr;
+    }
+    .fees-page .fees-section-titleline{
+      display:block;
+    }
+    .fees-page .fees-section-titleline .stone-page-kicker{
+      margin-bottom:8px;
+    }
+  }
+</style>
 </head>
 <body>
 <header class="site-header compact-site-header">
@@ -1322,25 +1428,23 @@
 </section>
 <section class="home-led-section" id="insurance">
 <div class="fees-frame-section">
-<div class="fees-editorial-heading">
-<div>
+<div class="fees-balance-grid insurance-balance">
+<article class="fees-balance-panel intro-panel">
 <div class="stone-page-kicker">Insurance</div>
 <h2>Insurance status.</h2>
-</div>
 <p>Stonebridge is awaiting confirmation of insurance paneling with select commercial plans. Insurance billing begins only after participation is active and benefits are verified.</p>
-</div>
-<div class="fees-open-grid">
-<article class="fees-open-panel">
+</article>
+<article class="fees-balance-panel">
 <h3>When insurance is active</h3>
 <p>Eligible services may be billed through an in-network plan when Stonebridge is active with that plan and the service is covered.</p>
 </article>
-<article class="fees-open-panel">
+<article class="fees-balance-panel responsibility-panel">
 <h3>What may remain your responsibility</h3>
 <ul>
 <li>Copays, deductibles, and coinsurance.</li>
 <li>Services your plan does not cover.</li>
-<li>Private-pay services, administrative services, or balances after claim processing.</li>
-<li>Missed appointments or late cancellations, which cannot be billed to insurance.</li>
+<li>Private-pay or administrative services.</li>
+<li>Missed appointments or late cancellations.</li>
 </ul>
 </article>
 </div>
@@ -1349,21 +1453,22 @@
 </section>
 <section class="home-led-section paper" id="appointments">
 <div class="fees-frame-section">
-<div class="fees-editorial-heading">
-<div>
+<div class="fees-section-titleline">
 <div class="stone-page-kicker">Appointments</div>
 <h2>Appointment structure.</h2>
 </div>
-<p>The initial diagnostic evaluation is the first full clinical session. Psychotherapy appointments include direct clinical time and the clinical work around the session. Stonebridge requests at least 24 hours’ notice for cancellations.</p>
-</div>
-<div class="fees-open-grid">
-<article class="fees-open-panel">
-<h3>Clinical time</h3>
-<p>Session length and billing are based on the service provided. Standard therapy appointments are structured to protect both the clinical conversation and the work needed around it.</p>
+<div class="fees-appointment-grid">
+<article class="fees-balance-panel">
+<h3>Free consultation</h3>
+<p>The brief 15-minute consultation may occur before the first full clinical session. It is not psychotherapy, a diagnostic evaluation, or crisis care.</p>
 </article>
-<article class="fees-open-panel">
+<article class="fees-balance-panel">
+<h3>First full session</h3>
+<p>The initial diagnostic evaluation is the first full clinical appointment. Ongoing sessions are billed according to the service provided.</p>
+</article>
+<article class="fees-balance-panel">
 <h3>Late cancellations and no-shows</h3>
-<p>Late cancellations or missed appointments may be charged the applicable fee unless an exception is approved. Insurance cannot be billed for missed appointments because no covered session occurred.</p>
+<p>Stonebridge requests at least 24 hours’ notice. Missed or late-canceled appointments may be charged and cannot be billed to insurance.</p>
 </article>
 </div>
 </div>

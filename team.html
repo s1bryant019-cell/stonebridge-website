@@ -756,6 +756,134 @@
     }
   }
 </style>
+
+<style id="stonebridge-team-design-repair">
+  /* Team page repair: restore the navy strip, reduce repetition, and make the roster feel intentional instead of oversized. */
+  .team-page .stone-page-kicker{ letter-spacing:.22em; }
+  .team-page .stone-page-copy h1.long-title{
+    max-width: 14ch !important;
+    font-size: clamp(3.05rem, 3.6vw, 4.05rem) !important;
+  }
+  .team-page .stone-page-copy p{
+    max-width: 33rem !important;
+    line-height: 1.66 !important;
+  }
+  .team-page .team-purpose-band{
+    display:block !important;
+    background: linear-gradient(135deg,#17395c 0%,#102f4d 100%);
+    color:#fffaf2;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(0,0,0,.16);
+  }
+  .team-page .team-purpose-inner{
+    width:min(1120px, calc(100% - 72px));
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    gap:26px;
+    padding:18px 0 !important;
+  }
+  .team-page .team-purpose-item{
+    padding:0 0 0 18px;
+    border-left:1px solid rgba(255,255,255,.16);
+  }
+  .team-page .team-purpose-item:first-child{
+    padding-left:0;
+    border-left:none;
+  }
+  .team-page .team-purpose-item h2{
+    margin:0 0 5px;
+    color:#fffaf2;
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:1.18rem;
+    line-height:1.08;
+    letter-spacing:-.01em;
+  }
+  .team-page .team-purpose-item p{
+    margin:0;
+    color:rgba(255,250,242,.82);
+    font-size:.82rem;
+    line-height:1.44;
+  }
+  .team-page .team-roster-section{
+    padding:32px 0 34px !important;
+  }
+  .team-page .clinician-profile{
+    grid-template-columns: 204px minmax(0,1fr) !important;
+    gap:0 !important;
+    max-width: 940px !important;
+    border-radius:24px !important;
+    box-shadow:0 12px 32px rgba(31,42,52,.045) !important;
+  }
+  .team-page .clinician-photo img{
+    min-height:260px !important;
+    height:100% !important;
+  }
+  .team-page .clinician-copy{
+    padding:24px 30px !important;
+  }
+  .team-page .clinician-copy h2{
+    font-size:clamp(1.95rem,2.55vw,2.55rem) !important;
+    line-height:1.08 !important;
+    letter-spacing:-.025em !important;
+    margin:0 0 5px !important;
+  }
+  .team-page .clinician-role-line{
+    margin-bottom:10px !important;
+  }
+  .team-page .clinician-copy > p{
+    max-width:44rem !important;
+    font-size:.92rem !important;
+    line-height:1.58 !important;
+  }
+  .team-page .clinician-focus-list{
+    margin-top:14px !important;
+  }
+  .team-page .clinician-focus-list li{
+    grid-template-columns:92px minmax(0,1fr) !important;
+    padding:8px 0 !important;
+    gap:12px !important;
+    font-size:.86rem !important;
+    line-height:1.42 !important;
+  }
+  .team-page .clinician-focus-list strong{
+    font-size:1rem !important;
+  }
+  .team-page .clinician-actions{
+    margin-top:16px !important;
+  }
+  .team-page .team-roster-note{
+    max-width:940px !important;
+    margin-top:12px !important;
+    padding-top:12px !important;
+    font-size:.88rem !important;
+    line-height:1.5 !important;
+  }
+  .team-page .team-final-band .team-shell{
+    padding:28px 0 !important;
+  }
+  @media (max-width:980px){
+    .team-page .team-purpose-inner,
+    .team-page .clinician-profile{
+      grid-template-columns:1fr !important;
+    }
+    .team-page .team-purpose-inner{
+      width:min(1120px, calc(100% - 30px));
+      gap:0;
+      padding:12px 0 !important;
+    }
+    .team-page .team-purpose-item{
+      padding:12px 0 !important;
+      border-left:none;
+      border-top:1px solid rgba(255,255,255,.14);
+    }
+    .team-page .team-purpose-item:first-child{ border-top:none; }
+    .team-page .clinician-photo img{
+      height:300px !important;
+      min-height:0 !important;
+    }
+  }
+</style>
 </head>
 <body class="team-page">
 <header class="site-header compact-site-header">
@@ -779,9 +907,9 @@
 <div class="stone-page-inner">
 <div class="stone-page-copy">
 <div class="stone-page-line"></div>
-<div class="stone-page-kicker">Clinical Team</div>
-<h1 class="long-title">Clinical team.</h1>
-<p>Stonebridge currently provides outpatient telehealth psychotherapy through its founder while the practice grows carefully and intentionally.</p>
+<div class="stone-page-kicker">Team</div>
+<h1 class="long-title">Meet the clinician.</h1>
+<p>Stonebridge currently offers outpatient telehealth psychotherapy through its founder, with care beginning through a fit-based waitlist inquiry.</p>
 <div class="stone-page-actions">
 <a class="btn btn-primary" href="team-founder.html">View profile</a>
 <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
@@ -789,17 +917,24 @@
 </div>
 </div>
 </section>
+<section class="team-purpose-band" aria-label="Stonebridge team overview">
+<div class="team-purpose-inner">
+<article class="team-purpose-item"><h2>Current care</h2><p>Outpatient telehealth psychotherapy for teens and adults in Illinois.</p></article>
+<article class="team-purpose-item"><h2>Fit before intake</h2><p>Stonebridge reviews fit, scope, and appropriateness before care begins.</p></article>
+<article class="team-purpose-item"><h2>Clear next step</h2><p>A brief waitlist inquiry starts the process.</p></article>
+</div>
+</section>
 
 <section class="team-roster-section" id="current-clinician">
 <div class="team-shell">
-<p class="team-section-label">Current clinician</p>
+<p class="team-section-label">Roster</p>
 <article class="clinician-profile">
 <figure class="clinician-photo">
 <img alt="Dr. Stephen W. Bryant, PsyD, LCPC" src="founders-photo.png"/>
 </figure>
 <div class="clinician-copy">
 <span class="status-pill">Founder</span>
-<h2>Stephen W. Bryant, PsyD, LCPC</h2>
+<h2>Dr. Stephen W. Bryant, PsyD, LCPC</h2>
 <p class="clinician-role-line">Founder · Licensed Clinical Professional Counselor, Illinois</p>
 <p>A doctoral-level clinician providing relational, insight-oriented outpatient telehealth psychotherapy for teens and adults in Illinois.</p>
 <ul aria-label="Clinician overview" class="clinician-focus-list">
