@@ -2387,3 +2387,258 @@ body{background:var(--home-bg);}
 .subpage-band.no-icons .subpage-band-icon{display:none !important;}
 .subpage-band.no-icons .subpage-band-grid{align-items:start;}
 .founder-page .subpage-band{margin:0;}
+
+/* Stonebridge design-system cleanup: see page inline styles for order-sensitive overrides. */
+
+
+  /* Final layout-system cleanup: widen text columns, quiet oversized images, and remove accidental-looking float/empty-space patterns. */
+  @media (min-width: 981px) {
+    body .stone-page-hero,
+    body .stone-page-hero.compact-contact-hero,
+    body .stone-page-hero.compact-team-hero,
+    body .stone-page-hero.profile-pt-hero {
+      min-height: 520px !important;
+    }
+
+    body .stone-page-inner,
+    body .stone-page-hero.compact-contact-hero .stone-page-inner,
+    body .stone-page-hero.compact-team-hero .stone-page-inner,
+    body .stone-page-hero.profile-pt-hero .stone-page-inner {
+      width: min(1220px, calc(100% - 72px)) !important;
+      min-height: 520px !important;
+      padding: 48px 0 42px !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    body .stone-page-copy,
+    body .stone-page-hero.compact-contact-hero .stone-page-copy,
+    body .stone-page-hero.compact-team-hero .stone-page-copy,
+    body .stone-page-hero.profile-pt-hero .stone-page-copy {
+      width: 58% !important;
+      max-width: 760px !important;
+      padding-right: 50px !important;
+    }
+
+    body .stone-page-line { margin-bottom: 18px !important; }
+    body .stone-page-kicker { margin-bottom: 12px !important; }
+
+    body .stone-page-copy h1,
+    body .stone-page-copy h1.long-title,
+    body .stone-page-copy h1.wide-title {
+      max-width: 16.5ch !important;
+      font-size: clamp(3.35rem, 4.28vw, 4.85rem) !important;
+      line-height: 1.035 !important;
+      letter-spacing: -.042em !important;
+      text-wrap: balance !important;
+    }
+
+    body .stone-page-copy h1.wide-title { max-width: 18ch !important; }
+    body .hero-contact .stone-page-copy h1 { max-width: 18ch !important; }
+    body .compact-team-hero .stone-page-copy h1 { max-width: 15.6ch !important; }
+
+    body .stone-page-copy p {
+      margin-top: 18px !important;
+      max-width: 43rem !important;
+      font-size: 1rem !important;
+      line-height: 1.7 !important;
+    }
+
+    body .stone-page-actions { margin-top: 24px !important; }
+
+    body .stone-hero-panel,
+    body .stone-page-hero.compact-contact-hero .stone-hero-panel,
+    body .stone-page-hero.compact-team-hero .stone-hero-panel,
+    body .stone-page-hero.profile-pt-hero .stone-hero-panel {
+      width: 39.5vw !important;
+      min-width: 500px !important;
+      border-top-left-radius: 44px !important;
+    }
+
+    body .stone-hero-panel img { object-fit: cover !important; }
+
+    body .subpage-band-grid,
+    body .portal-purpose-inner,
+    body .services-band-grid,
+    body .team-purpose-inner {
+      width: min(1220px, calc(100% - 72px)) !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 0 !important;
+      padding-top: 18px !important;
+      padding-bottom: 18px !important;
+    }
+
+    body .subpage-band-item,
+    body .portal-purpose-item,
+    body .services-band-item,
+    body .team-purpose-item {
+      padding: 0 24px !important;
+      border-left: 1px solid rgba(255,255,255,.16) !important;
+    }
+
+    body .subpage-band-item:first-child,
+    body .portal-purpose-item:first-child,
+    body .services-band-item:first-child,
+    body .team-purpose-item:first-child {
+      padding-left: 0 !important;
+      border-left: none !important;
+    }
+
+    body .subpage-band-item h4,
+    body .portal-purpose-item h4,
+    body .services-band-item h4,
+    body .team-purpose-item h4,
+    body .team-purpose-item h2 {
+      margin: 0 0 4px !important;
+      font-size: 1.08rem !important;
+      line-height: 1.08 !important;
+      letter-spacing: -.01em !important;
+    }
+
+    body .subpage-band-item p,
+    body .portal-purpose-item p,
+    body .services-band-item p,
+    body .team-purpose-item p {
+      font-size: .8rem !important;
+      line-height: 1.45 !important;
+      max-width: 26rem !important;
+    }
+  }
+
+  @media (min-width: 981px) and (max-width: 1180px) {
+    body .stone-page-copy,
+    body .stone-page-hero.compact-contact-hero .stone-page-copy,
+    body .stone-page-hero.compact-team-hero .stone-page-copy,
+    body .stone-page-hero.profile-pt-hero .stone-page-copy {
+      width: 60% !important;
+      padding-right: 36px !important;
+    }
+
+    body .stone-page-copy h1,
+    body .stone-page-copy h1.long-title,
+    body .stone-page-copy h1.wide-title {
+      font-size: clamp(3rem, 4vw, 4.1rem) !important;
+    }
+
+    body .stone-hero-panel,
+    body .stone-page-hero.compact-contact-hero .stone-hero-panel,
+    body .stone-page-hero.compact-team-hero .stone-hero-panel,
+    body .stone-page-hero.profile-pt-hero .stone-hero-panel {
+      width: 38vw !important;
+      min-width: 430px !important;
+    }
+  }
+
+  @media (max-width: 980px) {
+    body .stone-page-copy h1,
+    body .stone-page-copy h1.long-title,
+    body .stone-page-copy h1.wide-title {
+      max-width: 16ch !important;
+      line-height: 1.08 !important;
+      text-wrap: balance !important;
+    }
+    body .subpage-band-grid,
+    body .portal-purpose-inner,
+    body .services-band-grid,
+    body .team-purpose-inner {
+      gap: 16px !important;
+    }
+    body .subpage-band-item,
+    body .portal-purpose-item,
+    body .services-band-item,
+    body .team-purpose-item {
+      padding-left: 0 !important;
+      border-left: none !important;
+      border-top: 1px solid rgba(255,255,255,.14) !important;
+      padding-top: 14px !important;
+    }
+    body .subpage-band-item:first-child,
+    body .portal-purpose-item:first-child,
+    body .services-band-item:first-child,
+    body .team-purpose-item:first-child {
+      border-top: none !important;
+      padding-top: 0 !important;
+    }
+  }
+
+  /* Fees: keep section introductions attached to their section instead of floating across empty space. */
+  .fees-page .fees-editorial-heading {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    align-items: start !important;
+    margin-bottom: 18px !important;
+    max-width: 760px !important;
+  }
+
+  .fees-page .fees-editorial-heading h2,
+  .fees-page .fees-section-titleline h2 {
+    max-width: 12ch !important;
+  }
+
+  .fees-page .fees-editorial-heading p {
+    max-width: 46rem !important;
+    line-height: 1.62 !important;
+  }
+
+  .fees-page .fees-balance-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .fees-page .fees-balance-panel {
+    padding: 22px 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+
+  .fees-page .fees-balance-panel.intro-panel {
+    background: linear-gradient(180deg, rgba(255,253,248,.82), rgba(248,245,240,.88)) !important;
+  }
+
+  .fees-page .fees-section-titleline {
+    justify-content: flex-start !important;
+    gap: 18px !important;
+  }
+
+  .fees-page .fees-policy-line {
+    margin-top: 16px !important;
+    max-width: none !important;
+  }
+
+  @media (max-width: 1080px) {
+    .fees-page .fees-balance-grid,
+    .fees-page .fees-appointment-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  /* Team: make the roster page feel intentional without pretending there is a larger staff. */
+  .team-page .team-roster-section { padding-top: 46px !important; }
+  .team-page .team-shell { width: min(1120px, calc(100% - 72px)) !important; }
+  .team-page .team-section-label { margin-bottom: 12px !important; }
+  .team-page .clinician-profile {
+    grid-template-columns: 245px minmax(0, 1fr) !important;
+    gap: 30px !important;
+    border-radius: 28px !important;
+  }
+  .team-page .clinician-photo img { min-height: 315px !important; }
+  .team-page .clinician-copy { padding: 28px 34px 28px 0 !important; }
+  .team-page .clinician-copy h2 {
+    font-size: clamp(2.2rem, 3.2vw, 3.05rem) !important;
+    line-height: 1.08 !important;
+    max-width: 18ch !important;
+  }
+  .team-page .clinician-focus-list { margin-top: 18px !important; }
+  .team-page .team-roster-note {
+    max-width: 760px !important;
+    margin: 18px 0 0 !important;
+  }
+  @media (max-width: 900px) {
+    .team-page .clinician-profile { grid-template-columns: 1fr !important; }
+    .team-page .clinician-copy { padding: 24px !important; }
+    .team-page .clinician-photo img { min-height: 300px !important; }
+  }
+
+
+/* End Stonebridge design-system cleanup */
