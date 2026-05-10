@@ -646,6 +646,84 @@
     }
   </style>
 
+
+  <style id="founder-publications-update">
+    .publication-intro{
+      max-width:720px;
+    }
+
+    .publication-list{
+      margin-top:20px;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:28px;
+      border-top:1px solid rgba(33,49,66,.16);
+    }
+
+    .publication-card{
+      padding:20px 0 0;
+    }
+
+    .publication-card::before{
+      content:"";
+      display:block;
+      width:42px;
+      height:2px;
+      margin-bottom:13px;
+      background:var(--sb-gold);
+    }
+
+    .publication-card h3{
+      margin:0 0 7px;
+      color:var(--sb-navy);
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:clamp(1.55rem, 2vw, 1.9rem);
+      line-height:1.06;
+      letter-spacing:-.018em;
+      font-weight:650;
+    }
+
+    .publication-card p{
+      margin:0 0 14px;
+      color:var(--sb-muted);
+      font-size:.94rem;
+      line-height:1.6;
+    }
+
+    .publication-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 15px;
+      border-radius:999px;
+      border:1px solid rgba(33,49,66,.22);
+      color:var(--sb-navy);
+      background:rgba(255,255,255,.48);
+      font-family:"Inter", sans-serif;
+      font-size:.82rem;
+      font-weight:700;
+      text-decoration:none;
+      transition:background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+    }
+
+    .publication-link:hover,
+    .publication-link:focus-visible{
+      background:var(--sb-navy);
+      color:#fffaf2;
+      border-color:var(--sb-navy);
+      transform:translateY(-1px);
+      outline:none;
+    }
+
+    @media (max-width:760px){
+      .publication-list{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+    }
+  </style>
+
   <style id="stonebridge-display-line-height-fix">
     /* Sitewide display-type guardrail: prevents EB Garamond descenders/ascenders from colliding on wrapped headings. */
     body h1,
@@ -891,6 +969,29 @@
                 <p>Medical University of South Carolina</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder-section warm" id="publications">
+      <div class="founder-section-inner">
+        <aside class="section-label">Writing</aside>
+        <div class="section-copy">
+          <h2>Writing and publications.</h2>
+          <p class="lead publication-intro">Dr. Bryant’s writing has focused on burnout, clinician wellbeing, and the systems that shape care.</p>
+
+          <div class="publication-list" aria-label="Books by Dr. Stephen W. Bryant">
+            <article class="publication-card">
+              <h3>Beyond Burnt-Out</h3>
+              <p>Exploring the realities of burnout in mental health care.</p>
+              <a class="publication-link" href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" target="_blank" rel="noopener noreferrer">View book</a>
+            </article>
+            <article class="publication-card">
+              <h3>The Scholastic Burnout Spiral</h3>
+              <p>Education, therapy readiness, and burnout among substance use disorder counselors.</p>
+              <a class="publication-link" href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" target="_blank" rel="noopener noreferrer">View book</a>
+            </article>
           </div>
         </div>
       </div>
