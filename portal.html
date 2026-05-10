@@ -408,6 +408,132 @@
     .hero-portal .stone-hero-panel img { object-position: center center; }
   </style>
 
+
+  <style id="stonebridge-sitewide-layout-optimization">
+    /* Sitewide polish pass: remove accidental-looking space and keep compact editorial rhythm. */
+    .site-header.compact-site-header .nav{
+      min-height:64px;
+      padding:5px 0 6px;
+    }
+    .site-header.compact-site-header .brand-mark{
+      font-size:clamp(1.45rem,1.75vw,1.88rem);
+      line-height:.9;
+    }
+    .site-header.compact-site-header .brand-sub{
+      margin-top:3px;
+      font-size:.49rem;
+      letter-spacing:.3em;
+    }
+    .site-header.compact-site-header .menu{gap:22px;font-size:.84rem;}
+    .site-header.compact-site-header .header-cta .btn{min-height:38px;padding:0 17px;border-radius:11px;}
+
+    @media (min-width:1081px){
+      .stone-page-hero,
+      .stone-page-hero.compact-contact-hero,
+      .stone-page-hero.compact-team-hero,
+      .stone-page-hero.profile-pt-hero{
+        min-height:520px!important;
+      }
+      .stone-page-hero .stone-page-inner,
+      .stone-page-hero.compact-contact-hero .stone-page-inner,
+      .stone-page-hero.compact-team-hero .stone-page-inner,
+      .stone-page-hero.profile-pt-hero .stone-page-inner{
+        min-height:520px!important;
+      }
+      .stone-page-copy h1{font-size:clamp(3.05rem,4.15vw,4.55rem)!important;line-height:1.04!important;}
+      .stone-page-copy p{margin-top:14px!important;}
+      .stone-page-actions{margin-top:22px!important;}
+    }
+
+    .subpage-band{min-height:auto!important;}
+    .subpage-band-grid{padding:16px 0!important;gap:22px!important;}
+    .subpage-band-item{padding:0!important;}
+    .subpage-band-item p{font-size:.82rem!important;line-height:1.45!important;}
+
+    .home-led-section,
+    .home-led-section.paper,
+    .home-led-section.tight{
+      padding-top:42px!important;
+      padding-bottom:42px!important;
+    }
+    .home-led-grid{gap:18px!important;}
+    .home-led-card{padding:22px!important;}
+
+    .about-page-editorial .home-led-section,
+    .about-page-editorial .home-led-section.paper,
+    .about-page-editorial .home-led-section.tight{padding:40px 0!important;}
+    .about-experience-band{padding:38px 0!important;}
+    .about-consult-inner{padding:34px 0!important;}
+    .about-frame-grid,
+    .about-editorial-split{gap:28px!important;}
+    .about-frame-row{padding:12px 0!important;}
+
+    .team-purpose-band{padding:16px 0!important;}
+    .team-purpose-inner{gap:20px!important;}
+    .team-purpose-item{padding:0!important;}
+    .team-roster-section{padding:42px 0!important;}
+    .team-fit-section{padding:34px 0!important;}
+    .team-final-band .team-final-inner,
+    .team-final-band .team-roster-shell{padding:34px 0!important;}
+
+    .services-page .home-led-section,
+    .services-page .home-led-section.paper{padding:42px 0!important;}
+    .services-band-grid{padding:16px 0!important;gap:20px!important;}
+    .services-full-cta-inner{padding:34px 0!important;}
+
+    .fees-page .home-led-section,
+    .fees-page .home-led-section.paper,
+    .fees-page .home-led-section.tight{padding:40px 0!important;}
+    .fees-section-heading{margin-bottom:16px!important;}
+    .fee-row{padding:14px 22px!important;}
+    .fee-service strong{font-size:1.2rem!important;}
+    .fee-service span{font-size:.82rem!important;line-height:1.38!important;}
+    .financial-frame-band .subpage-band-grid{padding:16px 0!important;}
+    .fees-consult-inner{padding:34px 0!important;}
+    .policy-mini-grid{gap:12px!important;margin-top:14px!important;}
+    .policy-mini-card{padding:16px!important;}
+
+    .contact-page .request-band .subpage-band-grid{padding:15px 0!important;gap:22px!important;}
+    .contact-page .contact-action-section{padding-top:34px!important;padding-bottom:42px!important;}
+    .consultation-form-card{padding:22px!important;}
+    .consultation-form{gap:14px!important;}
+
+    .portal-purpose-band{padding:16px 0!important;}
+    .portal-editorial-section{padding:40px 0!important;}
+    .portal-safety-band{padding:24px 0!important;}
+    .portal-final-cta{padding:34px 0!important;}
+
+    .founder-intro-inner{padding-top:56px!important;padding-bottom:50px!important;}
+    .compact-principle-inner{padding:20px 0!important;}
+    .founder-section{padding:36px 0!important;}
+    .founder-section#background,
+    .founder-section#publications,
+    .founder-section#fit-scope{padding:34px 0!important;}
+    .founder-section-inner{gap:34px!important;}
+    .concern-grid{gap:10px!important;}
+    .concern-card{padding:14px 0!important;}
+    .approach-grid{gap:12px!important;}
+    .approach-card{padding:16px!important;}
+    .degree-row{padding:14px 0!important;}
+    .publication-layout{gap:20px!important;align-items:center!important;}
+    .publication-visual{margin:0!important;}
+    .publication-card{padding:16px 0!important;}
+    .founder-final-inner{padding:32px 0!important;}
+
+    @media (max-width:1080px){
+      .stone-page-hero .stone-page-inner{padding:42px 0 28px!important;}
+      .stone-hero-panel{height:360px!important;margin-bottom:18px!important;}
+      .footer-grid{gap:20px!important;}
+    }
+    @media (max-width:760px){
+      .site-header.compact-site-header .nav{min-height:62px;}
+      .home-led-section,.home-led-section.paper,.home-led-section.tight,
+      .founder-section,.founder-section#background,.founder-section#publications,.founder-section#fit-scope{padding:34px 0!important;}
+      .stone-hero-panel{height:300px!important;}
+      .stone-page-copy h1{font-size:clamp(2.6rem,10vw,3.6rem)!important;}
+    }
+  </style>
+
 </head>
 <body class="portal-page">
 

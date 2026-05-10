@@ -2263,3 +2263,14 @@ body{background:var(--home-bg);}
   .footer-grid{grid-template-columns:1fr;}
   .footer-logo-right img{width:min(100%,210px);}
 }
+
+
+/* =========================================================
+   SITEWIDE SPACING / STRUCTURE OPTIMIZATION — May 2026
+   Purpose: make header, footer, heroes, and content pauses feel intentional.
+========================================================= */
+.site-header.compact-site-header .nav{min-height:64px;padding:5px 0 6px;}
+.site-header.compact-site-header .brand-mark{font-size:clamp(1.45rem,1.75vw,1.88rem);line-height:.9;}
+.site-header.compact-site-header .brand-sub{margin-top:3px;font-size:.49rem;letter-spacing:.3em;}
+.site-header.compact-site-header .menu{gap:22px;font-size:.84rem;}
+.site-header.compact-site-header .header-cta .btn{min-height:38px;padding:0 17px;border-radius:11px;}
