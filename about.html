@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>About | Stonebridge Psychological Group</title>
-  <meta name="description" content="Learn how Stonebridge Psychological Group structures outpatient telehealth psychotherapy around clinical fit, ethical care, and a steady therapy frame." />
+  <meta name="description" content="Learn why Stonebridge Psychological Group was built as a telehealth psychotherapy practice centered on clinical fit, sustainable care, ethical boundaries, and a steady therapy frame." />
   <link rel="canonical" href="https://stonebridgepsychgroup.com/about.html">
 
   <meta charset="UTF-8" />
@@ -393,6 +393,169 @@
     }
   </style>
 
+
+
+  <style id="about-manifesto-integration">
+    .about-page .manifesto-statement {
+      display:grid;
+      grid-template-columns:minmax(0, .95fr) minmax(0, 1.05fr);
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .about-page .manifesto-quote-card {
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      background:linear-gradient(135deg, #102f4d 0%, #17395c 62%, #1d466f 100%);
+      border:1px solid rgba(255,255,255,.12);
+      padding:30px;
+      box-shadow:0 18px 48px rgba(16,47,77,.16);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height:100%;
+    }
+
+    .about-page .manifesto-quote-card::after{
+      content:"";
+      position:absolute;
+      right:-120px;
+      bottom:-120px;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      border:1px solid rgba(216,181,110,.16);
+      pointer-events:none;
+    }
+
+    .about-page .manifesto-quote-card h2,
+    .about-page .manifesto-quote-card p{
+      position:relative;
+      z-index:1;
+      color:#fffaf2;
+    }
+
+    .about-page .manifesto-quote-card h2{
+      margin:0 0 14px;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:clamp(2.25rem, 3.55vw, 3.45rem);
+      line-height:1.08;
+      letter-spacing:-.035em;
+    }
+
+    .about-page .manifesto-quote-card p{
+      margin:0;
+      color:rgba(255,250,242,.86);
+      font-size:.98rem;
+      line-height:1.68;
+    }
+
+    .about-page .about-principle-stack{
+      display:grid;
+      gap:12px;
+    }
+
+    .about-page .about-principle-row{
+      display:grid;
+      grid-template-columns:170px minmax(0, 1fr);
+      gap:16px;
+      padding:18px;
+      border-radius:20px;
+      border:1px solid rgba(212,200,185,.58);
+      background:rgba(255,255,255,.74);
+    }
+
+    .about-page .about-principle-row strong{
+      color:var(--home-navy, #213142);
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.28rem;
+      line-height:1.05;
+    }
+
+    .about-page .about-principle-row span{
+      color:var(--home-muted, #5f6c78);
+      font-size:.95rem;
+      line-height:1.62;
+    }
+
+    .about-page .about-identity-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:16px;
+    }
+
+    .about-page .about-identity-card{
+      border-radius:22px;
+      border:1px solid rgba(212,200,185,.58);
+      background:rgba(255,255,255,.72);
+      padding:22px;
+      box-shadow:0 12px 30px rgba(31,42,52,.035);
+      min-height:100%;
+    }
+
+    .about-page .about-identity-card h3{
+      margin:0 0 8px;
+      color:var(--home-navy, #213142);
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.58rem;
+      line-height:1.08;
+      letter-spacing:-.018em;
+    }
+
+    .about-page .about-identity-card p{
+      margin:0;
+      color:var(--home-muted, #5f6c78);
+      font-size:.95rem;
+      line-height:1.62;
+    }
+
+    .about-page .about-client-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:16px;
+    }
+
+    .about-page .about-client-card{
+      border-radius:22px;
+      border:1px solid rgba(212,200,185,.58);
+      background:linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,250,242,.62));
+      padding:24px;
+      box-shadow:0 12px 30px rgba(31,42,52,.035);
+    }
+
+    .about-page .about-client-card h3{
+      margin:0 0 8px;
+      color:var(--home-navy, #213142);
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.7rem;
+      line-height:1.05;
+      letter-spacing:-.018em;
+    }
+
+    .about-page .about-client-card p{
+      margin:0;
+      color:var(--home-muted, #5f6c78);
+      font-size:.97rem;
+      line-height:1.66;
+    }
+
+    @media (max-width:1080px){
+      .about-page .manifesto-statement,
+      .about-page .about-identity-grid,
+      .about-page .about-client-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:760px){
+      .about-page .about-principle-row{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+    }
+  </style>
+
   <style id="stonebridge-display-line-height-fix">
     /* Sitewide display-type guardrail: prevents EB Garamond descenders/ascenders from colliding on wrapped headings. */
     body h1,
@@ -478,8 +641,8 @@
         <div class="stone-page-copy">
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">About Stonebridge</div>
-          <h1 class="wide-title">Built for careful work.</h1>
-          <p>Stonebridge Psychological Group was created from a simple clinical premise: therapy works best when the structure around it is steady, ethical, and clear enough for people to feel known without being reduced to symptoms.</p>
+          <h1 class="wide-title">A practice built to hold the work.</h1>
+          <p>Stonebridge Psychological Group was created around a simple idea: therapy needs a structure steady enough to support real human work. The practice is intentionally not built around rushing people into openings, filling every slot, or treating care as a transaction.</p>
           <div class="stone-page-actions">
             <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
             <a class="btn btn-secondary" href="team-founder.html">Meet the Founder</a>
@@ -492,20 +655,20 @@
       <div class="subpage-band-grid">
         <article class="subpage-band-item">
           <div>
-            <h4>Fit before scheduling</h4>
-            <p>A consultation-first pathway helps clarify whether Stonebridge is the right outpatient telehealth setting.</p>
+            <h4>Fit over volume</h4>
+            <p>Stonebridge does not accept every inquiry simply because someone is ready to schedule.</p>
           </div>
         </article>
         <article class="subpage-band-item">
           <div>
-            <h4>Structure that protects care</h4>
-            <p>Clear boundaries, consent, confidentiality, fees, and communication expectations are part of the clinical frame.</p>
+            <h4>Boundaries as care</h4>
+            <p>Clear structure around time, communication, privacy, and scope protects the therapy relationship.</p>
           </div>
         </article>
         <article class="subpage-band-item">
           <div>
-            <h4>Steady relational work</h4>
-            <p>Therapy should help people feel understood without being reduced to symptoms or rushed through a system.</p>
+            <h4>Sustainable clinical presence</h4>
+            <p>Therapists do better work when the practice protects attention, reflection, and emotional availability.</p>
           </div>
         </article>
       </div>
@@ -515,103 +678,115 @@
       <div class="page-guide-inner">
         <div class="page-guide-label">On this page</div>
         <div class="page-guide-links">
-          <a href="#expect">What clients get</a>
-          <a href="#process">How it works</a>
-          <a href="#ethics">Ethical care</a>
-          <a href="#scope">Scope</a>
+          <a href="#why">Why it exists</a>
+          <a href="#values">How values show up</a>
+          <a href="#clients">What clients can expect</a>
+          <a href="#scope">Current scope</a>
           <a href="#begin">Begin</a>
         </div>
       </div>
     </nav>
 
-    <section class="home-led-section paper" id="expect">
+    <section class="home-led-section paper" id="why">
+      <div class="about-section-heading">
+        <div>
+          <div class="stone-page-kicker">Practice Identity</div>
+          <h2>Why Stonebridge exists.</h2>
+        </div>
+        <p>Stonebridge was built in response to a common problem in mental health care: systems can say they value ethics, balance, and care while quietly rewarding overextension, urgency, poor fit, and vague boundaries.</p>
+      </div>
+
+      <div class="home-led-grid one">
+        <div class="manifesto-statement">
+          <article class="manifesto-quote-card">
+            <h2>The business exists to support people’s lives, not become their lives.</h2>
+            <p>That principle shapes the practice from both sides: clients should receive thoughtful, appropriate care, and clinicians should be able to provide that care without being organized around chronic overwork.</p>
+          </article>
+
+          <div class="about-principle-stack" aria-label="Stonebridge practice commitments">
+            <div class="about-principle-row">
+              <strong>Not high-volume</strong>
+              <span>The goal is not to fill every available slot. The goal is to make careful decisions about whether Stonebridge is the right setting for the person seeking care.</span>
+            </div>
+            <div class="about-principle-row">
+              <strong>Not open booking</strong>
+              <span>Therapy begins with a fit-based pathway rather than automatic scheduling. That protects clients from being placed in care that may not match their needs.</span>
+            </div>
+            <div class="about-principle-row">
+              <strong>Not a slogan</strong>
+              <span>Values only matter when they become real in scheduling, communication, consent, documentation, referral decisions, and clinical limits.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-led-section" id="values">
+      <div class="about-section-heading">
+        <div>
+          <div class="stone-page-kicker">How Values Show Up</div>
+          <h2>Care is shaped by the system around it.</h2>
+        </div>
+        <p>Stonebridge treats the structure of a practice as part of clinical care. The frame around therapy should reduce confusion, protect attention, support good judgment, and make it easier to be honest about fit.</p>
+      </div>
+
+      <div class="home-led-grid one">
+        <div class="about-identity-grid">
+          <article class="about-identity-card">
+            <h3>Clinical fit over fill</h3>
+            <p>The practice reviews whether the concern, age range, risk level, telehealth format, and available clinician match before care begins.</p>
+          </article>
+          <article class="about-identity-card">
+            <h3>Ethical care by design</h3>
+            <p>Confidentiality, informed consent, appropriate scope, referral decisions, and clear communication are treated as part of the care model, not paperwork afterthoughts.</p>
+          </article>
+          <article class="about-identity-card">
+            <h3>Boundaried access</h3>
+            <p>More access is not always better care. Stonebridge is designed for reliable, appropriate, outpatient psychotherapy rather than constant availability or crisis response.</p>
+          </article>
+          <article class="about-identity-card">
+            <h3>Clinician sustainability</h3>
+            <p>Therapy requires attention, emotional presence, and judgment. A sustainable clinician is more likely to provide steady, thoughtful, consistent care.</p>
+          </article>
+          <article class="about-identity-card">
+            <h3>Clear systems</h3>
+            <p>Clients should know how to begin, what the portal is for, how communication works, and what belongs in the therapy frame.</p>
+          </article>
+          <article class="about-identity-card">
+            <h3>Room for growth without drift</h3>
+            <p>As Stonebridge grows, the practice should remain aligned with fit, scope, boundaries, and responsible care rather than growth for its own sake.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-led-section paper" id="clients">
       <div class="about-section-heading">
         <div>
           <div class="stone-page-kicker">Client Experience</div>
-          <h2>What clients should feel here.</h2>
+          <h2>What clients can expect from the practice.</h2>
         </div>
-        <p>Stonebridge is designed to feel calm, serious, and human. The goal is not to make therapy feel formal for its own sake. The goal is to give clients a reliable place where the work can become clearer over time.</p>
+        <p>The About page should not explain every policy or duplicate the Services page. It should help clients understand the character of the practice: steady, careful, human, and honest about what it can and cannot provide.</p>
       </div>
 
       <div class="home-led-grid one">
-        <div class="about-card-grid">
-          <article class="about-card">
-            <h3>A careful first step</h3>
-            <p>A brief note is enough. You do not need to explain everything perfectly before Stonebridge reviews fit, scope, telehealth appropriateness, and next steps.</p>
+        <div class="about-client-grid">
+          <article class="about-client-card">
+            <h3>A thoughtful beginning</h3>
+            <p>You do not need to tell your whole story in a website form. A brief inquiry gives Stonebridge enough to begin considering fit, scope, availability, and next steps.</p>
           </article>
-          <article class="about-card">
-            <h3>A steady therapy frame</h3>
-            <p>Clients can expect clear appointment structure, privacy expectations, payment information, consent forms, and communication boundaries before treatment begins.</p>
-          </article>
-          <article class="about-card">
+          <article class="about-client-card">
             <h3>A whole-person view</h3>
-            <p>Symptoms matter, but they are not the whole story. Therapy should make room for history, relationships, identity, coping, grief, trauma, self-worth, and meaning.</p>
+            <p>Symptoms matter, but they are not the whole person. Therapy may include patterns, relationships, identity, coping, grief, trauma, shame, self-worth, and meaning.</p>
           </article>
-          <article class="about-card">
+          <article class="about-client-card">
+            <h3>A clear frame</h3>
+            <p>Clients should understand the basic structure of care before beginning: time, privacy, telehealth expectations, communication limits, fees, and emergency boundaries.</p>
+          </article>
+          <article class="about-client-card">
             <h3>Honest direction</h3>
-            <p>If another provider, specialty, crisis resource, or level of care is a better fit, Stonebridge may offer referral guidance when possible.</p>
+            <p>If Stonebridge is not the right setting, that should be named clearly. A referral elsewhere can be the more responsible clinical decision.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-led-section" id="process">
-      <div class="about-section-heading">
-        <div>
-          <div class="stone-page-kicker">How It Works</div>
-          <h2>The model in ordinary steps.</h2>
-        </div>
-        <p>The care model is intentionally simple from the client side. The structure behind the scenes exists so the beginning of therapy is thoughtful rather than rushed or improvised.</p>
-      </div>
-
-      <div class="home-led-grid one">
-        <div class="about-step-grid">
-          <article class="about-step-card">
-            <span class="about-step-label">Step 01</span>
-            <h3>Submit a brief inquiry</h3>
-            <p>Share basic contact information and a short note about what you are hoping therapy may help address.</p>
-          </article>
-          <article class="about-step-card">
-            <span class="about-step-label">Step 02</span>
-            <h3>Fit is reviewed</h3>
-            <p>Stonebridge considers whether outpatient telehealth psychotherapy may be clinically appropriate and within the practice’s scope.</p>
-          </article>
-          <article class="about-step-card">
-            <span class="about-step-label">Step 03</span>
-            <h3>Next steps are clarified</h3>
-            <p>If the practice appears appropriate, Stonebridge follows up about availability, insurance status, consultation, and possible intake paperwork.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-led-section paper" id="ethics">
-      <div class="home-led-grid one">
-        <div class="about-two-column">
-          <article class="about-navy-card">
-            <div class="stone-page-kicker">Why Structure Matters</div>
-            <h2>Warmth and clarity belong together.</h2>
-            <p>Good therapy offers a steady relationship where a person can feel known more fully. That steadiness depends on more than kindness. It also depends on clear consent, confidentiality, scope, payment expectations, communication boundaries, and responsible referral decisions.</p>
-          </article>
-
-          <div class="about-ethics-list" aria-label="Ethical care elements">
-            <div class="about-ethics-row">
-              <strong>Consent</strong>
-              <span>Clients should understand the nature of therapy, the limits of the setting, and the practical frame before ongoing care begins.</span>
-            </div>
-            <div class="about-ethics-row">
-              <strong>Confidentiality</strong>
-              <span>Privacy matters. The limits of confidentiality are explained so clients know how information is protected and when disclosure may be required.</span>
-            </div>
-            <div class="about-ethics-row">
-              <strong>Competence</strong>
-              <span>Stonebridge considers whether the concern fits the practice’s scope instead of accepting every inquiry simply because someone is ready to schedule.</span>
-            </div>
-            <div class="about-ethics-row">
-              <strong>Fees</strong>
-              <span>Fees, insurance status, billing limits, and client responsibility should be stated clearly enough for informed decisions.</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -619,30 +794,30 @@
     <section class="home-led-section" id="scope">
       <div class="about-section-heading">
         <div>
-          <div class="stone-page-kicker">Scope</div>
-          <h2>What Stonebridge is for.</h2>
+          <div class="stone-page-kicker">Current Scope</div>
+          <h2>What Stonebridge is currently for.</h2>
         </div>
-        <p>Stonebridge’s active care pathway is outpatient telehealth psychotherapy for teens and adults located in Illinois. The practice is designed for clients seeking careful, relational, clinically responsible therapy rather than open booking or high-volume access.</p>
+        <p>Stonebridge’s current active care pathway is outpatient telehealth psychotherapy for teens and adults located in Illinois. More detailed treatment concerns belong on the Services page; this section stays focused on the practice frame.</p>
       </div>
 
       <div class="home-led-grid one">
         <div class="about-scope-grid">
           <article class="about-scope-card">
-            <h3>Appropriate for the current pathway</h3>
+            <h3>Within the current pathway</h3>
             <ul>
-              <li>Outpatient telehealth psychotherapy for teens and adults in Illinois.</li>
-              <li>Clients seeking depth, steadiness, and a thoughtful relationship with a clinician.</li>
-              <li>Concerns that can be responsibly addressed through outpatient psychotherapy.</li>
-              <li>People who value clear expectations around time, communication, privacy, and fees.</li>
+              <li>Telehealth psychotherapy for teens and adults in Illinois.</li>
+              <li>Clients seeking careful, relational, clinically responsible outpatient care.</li>
+              <li>Concerns that can be appropriately addressed through outpatient psychotherapy.</li>
+              <li>A consultation-first process when Stonebridge may be a possible fit.</li>
             </ul>
           </article>
           <article class="about-scope-card">
-            <h3>Better served elsewhere</h3>
+            <h3>Outside this pathway</h3>
             <ul>
-              <li>Immediate crisis or emergency needs requiring urgent response.</li>
-              <li>Needs requiring in-person care, intensive services, or a higher level of care.</li>
-              <li>Requests outside Stonebridge’s active psychotherapy consultation pathway.</li>
-              <li>Assessment and forensic services use dedicated procedures beyond this pathway.</li>
+              <li>Immediate crisis or emergency support.</li>
+              <li>Needs requiring in-person care, intensive treatment, or a higher level of care.</li>
+              <li>Open booking without fit review.</li>
+              <li>Assessment and forensic services use dedicated procedures beyond the psychotherapy consultation pathway.</li>
             </ul>
           </article>
         </div>
@@ -654,7 +829,7 @@
         <div>
           <div class="stone-page-kicker">Begin</div>
           <h2>A brief note is enough.</h2>
-          <p>Stonebridge is accepting waitlist inquiries for outpatient telehealth psychotherapy while insurance paneling is being confirmed. If the practice appears clinically appropriate, Stonebridge will follow up regarding availability, insurance status, and next steps.</p>
+          <p>Stonebridge is accepting waitlist inquiries for outpatient telehealth psychotherapy. If the practice appears clinically appropriate, Stonebridge will follow up regarding availability, insurance status, and next steps.</p>
         </div>
         <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
       </div>
@@ -677,7 +852,7 @@
           <a href="services.html">Services Overview</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="portal.html">Client Portal</a>
-          <a href="contact.html">Consultation</a>
+          <a href="contact.html">Join the Waitlist</a>
         </div>
       </div>
       <div>
@@ -688,7 +863,7 @@
           <a href="services.html">Services</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="portal.html">Portal</a>
-          <a href="contact.html">Consultation</a>
+          <a href="contact.html">Join the Waitlist</a>
         </div>
       </div>
       <div>
@@ -697,7 +872,7 @@
           <span>Serving Illinois via telehealth</span>
           <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
           <a href="tel:+17734171688">(773) 417-1688</a>
-          <span>Consultation requests by form, email, or phone</span>
+          <span>Waitlist inquiries by form, email, or phone</span>
           <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
         </div>
       </div>
