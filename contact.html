@@ -222,6 +222,51 @@
     }
   </style>
 
+
+  <style id="stonebridge-display-line-height-fix">
+    /* Sitewide display-type guardrail: prevents EB Garamond descenders/ascenders from colliding on wrapped headings. */
+    body h1,
+    body h2,
+    body .stone-page-copy h1,
+    body .stone-page-copy .long-title,
+    body .stone-page-copy .wide-title,
+    body .home-hero h1,
+    body .hero-copy h1,
+    body .founder-title,
+    body .home-led-heading h2,
+    body .about-section-heading h2,
+    body .services-section-heading h2,
+    body .fees-section-heading h2,
+    body .team-section-heading h2,
+    body .clinician-roster-copy h2,
+    body .contact-waitlist-card h2,
+    body .team-final-band h2,
+    body .fees-final-cta h2 {
+      line-height: 1.10 !important;
+    }
+
+    body .stone-page-copy h1,
+    body .home-hero h1,
+    body .founder-title,
+    body .home-led-heading h2,
+    body .about-section-heading h2,
+    body .services-section-heading h2,
+    body .fees-section-heading h2,
+    body .team-section-heading h2 {
+      text-wrap: balance;
+    }
+
+    @media (max-width: 760px) {
+      body h1,
+      body h2,
+      body .stone-page-copy h1,
+      body .home-hero h1,
+      body .founder-title {
+        line-height: 1.13 !important;
+      }
+    }
+  </style>
+
 </head>
 <body class="contact-page">
 
