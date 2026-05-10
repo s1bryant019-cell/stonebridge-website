@@ -818,6 +818,289 @@
     .hero-fees .stone-hero-panel img { object-position: center center; }
   </style>
 
+
+
+  <style id="fees-page-slick-financial-frame">
+    /* Fees page only: premium financial frame, concise copy, accurate fee schedule. */
+    .fees-page .page-guide{
+      display:none;
+    }
+
+    .fees-page .stone-page-copy h1{
+      max-width:15.5ch !important;
+    }
+
+    .fees-page .stone-page-copy p{
+      max-width:37rem !important;
+    }
+
+    .fees-page .home-led-section,
+    .fees-page .home-led-section.paper,
+    .fees-page .home-led-section.tight{
+      padding:42px 0;
+    }
+
+    .fees-page .home-led-section + .home-led-section{
+      border-top:1px solid rgba(212,200,185,.45);
+    }
+
+    .fees-page .home-led-card::after{
+      display:none;
+    }
+
+    .fees-page .financial-frame-band .subpage-band-grid{
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:30px;
+      padding-top:20px;
+      padding-bottom:20px;
+    }
+
+    .fees-page .financial-frame-band .subpage-band-item{
+      grid-template-columns:1fr;
+      gap:0;
+    }
+
+    .fees-page .financial-frame-band .subpage-band-icon{
+      display:none;
+    }
+
+    .fees-frame-section{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+    }
+
+    .fees-editorial-heading{
+      display:grid;
+      grid-template-columns:.72fr 1.28fr;
+      gap:28px;
+      align-items:end;
+      margin-bottom:24px;
+    }
+
+    .fees-editorial-heading h2{
+      margin:0;
+      color:var(--home-navy, #213142);
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:clamp(2.4rem, 3.8vw, 3.55rem);
+      line-height:1.08;
+      letter-spacing:-.035em;
+    }
+
+    .fees-editorial-heading p{
+      margin:0;
+      max-width:58rem;
+      color:var(--home-muted, #5f6c78);
+      font-size:1rem;
+      line-height:1.68;
+    }
+
+    .fee-schedule-card{
+      overflow:hidden;
+      border-radius:28px;
+      border:1px solid rgba(212,200,185,.65);
+      background:rgba(255,255,255,.74);
+      box-shadow:0 14px 34px rgba(31,42,52,.045);
+    }
+
+    .fee-schedule-header,
+    .fee-schedule-row{
+      display:grid;
+      grid-template-columns:116px minmax(0, 1fr) 130px;
+      gap:18px;
+      align-items:center;
+    }
+
+    .fee-schedule-header{
+      padding:16px 24px;
+      background:linear-gradient(135deg, #163a60 0%, #102f4d 100%);
+    }
+
+    .fee-schedule-header span{
+      color:rgba(255,250,242,.82);
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .fee-schedule-row{
+      padding:15px 24px;
+      border-top:1px solid rgba(212,200,185,.52);
+      background:rgba(255,253,248,.72);
+    }
+
+    .fee-schedule-row:nth-child(even){
+      background:rgba(255,255,255,.58);
+    }
+
+    .fee-code{
+      color:#8c7551;
+      font-size:.84rem;
+      font-weight:800;
+      letter-spacing:.04em;
+      white-space:nowrap;
+    }
+
+    .fee-name{
+      color:var(--home-navy, #213142);
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.34rem;
+      line-height:1.1;
+      letter-spacing:-.012em;
+    }
+
+    .fee-amount{
+      color:var(--home-navy, #213142);
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.5rem;
+      font-weight:700;
+      line-height:1;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    .fee-schedule-note{
+      padding:16px 24px 18px;
+      border-top:1px solid rgba(212,200,185,.52);
+      background:rgba(248,245,240,.72);
+      color:var(--home-muted, #5f6c78);
+      font-size:.92rem;
+      line-height:1.62;
+    }
+
+    .fees-open-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:34px;
+      align-items:start;
+    }
+
+    .fees-open-panel{
+      border-top:1px solid rgba(33,49,66,.18);
+      padding-top:18px;
+    }
+
+    .fees-open-panel h3{
+      margin:0 0 8px;
+      color:var(--home-navy, #213142);
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.72rem;
+      line-height:1.06;
+      letter-spacing:-.018em;
+    }
+
+    .fees-open-panel p,
+    .fees-open-panel li{
+      color:var(--home-muted, #5f6c78);
+      font-size:.96rem;
+      line-height:1.64;
+    }
+
+    .fees-open-panel p{
+      margin:0;
+    }
+
+    .fees-open-panel ul{
+      margin:10px 0 0;
+      padding-left:1.05rem;
+    }
+
+    .fees-open-panel li + li{
+      margin-top:5px;
+    }
+
+    .fees-policy-line{
+      margin-top:22px;
+      padding:18px 20px;
+      border-radius:22px;
+      border:1px solid rgba(212,200,185,.62);
+      background:rgba(255,255,255,.64);
+      color:var(--home-muted, #5f6c78);
+      font-size:.95rem;
+      line-height:1.65;
+    }
+
+    .fees-consult-band{
+      width:100%;
+      background:linear-gradient(135deg, #102f4d 0%, #17395c 62%, #1d466f 100%);
+      border-top:1px solid rgba(255,255,255,.12);
+      border-bottom:1px solid rgba(16,47,77,.35);
+      padding:0;
+    }
+
+    .fees-consult-inner{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) auto;
+      gap:30px;
+      align-items:center;
+      padding:38px 0;
+    }
+
+    .fees-consult-inner .stone-page-kicker{
+      color:#d8b56e;
+      margin-bottom:10px;
+    }
+
+    .fees-consult-inner h2{
+      color:#fffaf2;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:clamp(2.25rem, 3.4vw, 3.35rem);
+      line-height:1.08;
+      letter-spacing:-.035em;
+      margin:0;
+    }
+
+    .fees-consult-inner p{
+      color:rgba(255,250,242,.84);
+      max-width:720px;
+      margin:10px 0 0;
+      font-size:.96rem;
+      line-height:1.62;
+    }
+
+    .fees-consult-inner .btn{
+      background:#fffaf2;
+      color:#102f4d;
+      border-color:rgba(255,250,242,.35);
+      box-shadow:0 18px 45px rgba(0,0,0,.16);
+      white-space:nowrap;
+    }
+
+    @media (max-width:1080px){
+      .fees-editorial-heading,
+      .fees-open-grid,
+      .fees-consult-inner{
+        grid-template-columns:1fr;
+      }
+      .fees-consult-inner .btn{
+        width:max-content;
+      }
+    }
+
+    @media (max-width:760px){
+      .fees-frame-section,
+      .fees-consult-inner{
+        width:min(1120px, calc(100% - 30px));
+      }
+      .fee-schedule-header,
+      .fee-schedule-row{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+      .fee-amount{
+        text-align:left;
+      }
+      .fees-page .financial-frame-band .subpage-band-grid{
+        grid-template-columns:1fr;
+      }
+      .fees-consult-inner .btn{
+        width:100%;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
@@ -859,8 +1142,8 @@
         <div class="stone-page-copy">
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Fees &amp; Insurance</div>
-          <h1 class="wide-title">Clear information before beginning care.</h1>
-          <p>Stonebridge gives prospective clients a clear financial frame before therapy begins. This page explains listed fees, how insurance may apply once participation is active, and what the appointment structure is designed to provide.</p>
+          <h1 class="wide-title">Fees and insurance, stated clearly.</h1>
+          <p>Stonebridge lists fees before care begins so clients can understand the financial frame. Insurance may change out-of-pocket costs once participation is active and benefits are verified.</p>
           <div class="stone-page-actions">
             <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
             <a class="btn btn-secondary" href="#fees">View fees</a>
@@ -869,237 +1152,112 @@
       </div>
     </section>
 
-    <section class="subpage-band request-band fees-clarity-band">
+    <section class="subpage-band financial-frame-band">
       <div class="subpage-band-grid">
         <article class="subpage-band-item">
           <div>
-            <h4>Know the frame</h4>
-            <p>Fees, insurance, session length, and payment responsibilities should be understandable before care begins.</p>
+            <h4>Listed fees</h4>
+            <p>Private-pay fees are shown plainly below.</p>
           </div>
         </article>
         <article class="subpage-band-item">
           <div>
-            <h4>Use insurance when active</h4>
-            <p>Eligible services may be billed through insurance once Stonebridge is active with a plan and benefits are verified.</p>
+            <h4>Insurance may apply</h4>
+            <p>Eligible services may be billed through an active in-network plan once benefits are verified.</p>
           </div>
         </article>
         <article class="subpage-band-item">
           <div>
-            <h4>Private pay remains available</h4>
-            <p>Listed fees give a private-pay reference for clients not using insurance or for services not covered by a plan.</p>
+            <h4>Client responsibility</h4>
+            <p>Copays, deductibles, coinsurance, non-covered services, and missed-appointment fees may still apply.</p>
           </div>
         </article>
       </div>
     </section>
-
-    <nav class="page-guide" aria-label="Fees and insurance page sections">
-      <div class="page-guide-inner">
-        <div class="page-guide-label">On this page</div>
-        <div class="page-guide-links">
-          <a href="#fees">Fees</a>
-          <a href="#included">What you receive</a>
-          <a href="#insurance">Insurance</a>
-          <a href="#policies">Policies</a>
-          <a href="#consultation">Consultation</a>
-        </div>
-      </div>
-    </nav>
 
     <section class="home-led-section paper" id="fees">
-      <div class="fees-section-heading">
-        <div>
-          <div class="stone-page-kicker">Fees</div>
-          <h2>Fees.</h2>
-        </div>
-        <p>The amounts below are private-pay rates. When insurance participation is active and benefits are verified, eligible psychotherapy services may be billed through the applicable plan. In that case, the amount a client pays may depend on copay, deductible, coinsurance, coverage rules, and whether the service is covered.</p>
-      </div>
-
-      <div class="home-led-grid one">
-        <div class="fee-table-layout">
-          <article class="home-led-card fee-table-card" aria-label="Stonebridge fee schedule">
-            <div class="fee-table-header">
-              <span>Service</span>
-              <span>Fee</span>
-            </div>
-
-            <div class="fee-row">
-              <div class="fee-service">
-                <strong>Initial diagnostic evaluation / intake</strong>
-                <span>Initial clinical evaluation and treatment planning</span>
-              </div>
-              <div class="fee-price">$275</div>
-            </div>
-
-            <div class="fee-row">
-              <div class="fee-service">
-                <strong>Brief individual psychotherapy session</strong>
-                <span>Used when clinically appropriate</span>
-              </div>
-              <div class="fee-price">$150</div>
-            </div>
-
-            <div class="fee-row">
-              <div class="fee-service">
-                <strong>Standard individual psychotherapy session</strong>
-                <span>Ongoing psychotherapy visit</span>
-              </div>
-              <div class="fee-price">$200</div>
-            </div>
-
-            <div class="fee-row">
-              <div class="fee-service">
-                <strong>Extended individual psychotherapy session</strong>
-                <span>Standard extended psychotherapy visit</span>
-              </div>
-              <div class="fee-price">$240</div>
-            </div>
-
-            <div class="fee-row">
-              <div class="fee-service">
-                <strong>Family or caregiver session without client present</strong>
-                <span>When clinically appropriate</span>
-              </div>
-              <div class="fee-price">$225</div>
-            </div>
-
-            <div class="fee-row">
-              <div class="fee-service">
-                <strong>Family or caregiver session with client present</strong>
-                <span>When clinically appropriate</span>
-              </div>
-              <div class="fee-price">$240</div>
-            </div>
-
-            <div class="fee-row">
-              <div class="fee-service">
-                <strong>Group therapy</strong>
-                <span>When available and clinically appropriate</span>
-              </div>
-              <div class="fee-price">$90</div>
-            </div>
-
-            <div class="fee-row">
-              <div class="fee-service">
-                <strong>Report writing / letters</strong>
-                <span>Non-session professional service</span>
-              </div>
-              <div class="fee-price">$300/hr</div>
-            </div>
-
-            <div class="fee-row">
-              <div class="fee-service">
-                <strong>Peer review / professional consultation</strong>
-                <span>Professional consultation service</span>
-              </div>
-              <div class="fee-price">$200/hr</div>
-            </div>
-          </article>
-
-          <aside class="fees-side-stack" aria-label="How fees and insurance work">
-            <article class="fees-info-panel navy">
-              <h3>How to read this table</h3>
-              <p>These are private-pay reference rates. They help clients understand the cost of services when insurance is not being used, when a service is not covered, or while insurance participation is still being confirmed.</p>
-            </article>
-            <article class="fees-info-panel">
-              <h3>When insurance applies</h3>
-              <p>Once Stonebridge is active with a plan, eligible psychotherapy services may be billed through insurance. Your out-of-pocket cost may be lower than the private-pay rate, depending on your plan.</p>
-            </article>
-            <article class="fees-info-panel ethical-note">
-              <h3>Why this is stated clearly</h3>
-              <p>Clear financial information is part of ethical care. Fees, billing arrangements, limits of insurance, and client responsibilities should be discussed early enough that people can make informed decisions.</p>
-            </article>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-led-section" id="included">
-      <div class="fees-section-heading">
-        <div>
-          <div class="stone-page-kicker">What You Receive</div>
-          <h2>What the appointment includes.</h2>
-        </div>
-        <p>The fee is for a structured psychotherapy appointment, not only the minutes spent speaking on video. The structure is intended to give clients a steady, reliable frame for care.</p>
-      </div>
-
-      <div class="home-led-grid one">
-        <div class="fees-compact-grid">
-          <article class="fees-compact-card">
-            <h3>Reserved clinical time</h3>
-            <p>Psychotherapy appointments are scheduled in 60-minute blocks. The direct clinical portion of a standard session typically lasts 45–50 minutes.</p>
-          </article>
-          <article class="fees-compact-card">
-            <h3>Care between the lines</h3>
-            <p>The remaining time supports documentation, treatment planning, transition, and preparation so the work can stay organized and clinically responsible.</p>
-          </article>
-          <article class="fees-compact-card">
-            <h3>A steady therapy frame</h3>
-            <p>Clear appointment length, payment expectations, consent, confidentiality limits, and attendance policies help therapy feel predictable rather than improvised.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-led-section paper" id="insurance">
-      <div class="fees-section-heading">
-        <div>
-          <div class="stone-page-kicker">Insurance</div>
-          <h2>Insurance and payment.</h2>
-        </div>
-        <p>Stonebridge is awaiting confirmation of insurance paneling with select commercial plans. Insurance billing begins only after participation is active, formally confirmed, and benefits are verified.</p>
-      </div>
-
-      <div class="home-led-grid one">
-        <div class="fees-compact-grid">
-          <article class="fees-compact-card">
-            <h3>During paneling</h3>
-            <p>The listed fees provide the clearest private-pay reference while insurance participation is being confirmed.</p>
-          </article>
-          <article class="fees-compact-card">
-            <h3>When active</h3>
-            <p>If Stonebridge is in network with your plan and the service is eligible, claims may be submitted on your behalf.</p>
-          </article>
-          <article class="fees-compact-card">
-            <h3>Your responsibility</h3>
-            <p>Clients may still be responsible for copays, deductibles, coinsurance, private-pay services, non-covered services, missed appointment fees, or balances after insurance processing.</p>
-          </article>
-        </div>
-        <div class="fees-page-note">
-          Verification of benefits can help estimate coverage, but it is not a guarantee of payment. Final responsibility depends on the plan, claim processing, signed financial agreements, and applicable law or contract requirements.
-        </div>
-      </div>
-    </section>
-
-    <section class="home-led-section" id="policies">
-      <div class="fees-section-heading">
-        <div>
-          <div class="stone-page-kicker">Policies</div>
-          <h2>Payment details.</h2>
-        </div>
-        <p>These policies are stated plainly so clients know what to expect before treatment begins.</p>
-      </div>
-
-      <div class="home-led-grid one">
-        <article class="home-led-card">
-          <div class="policy-mini-grid">
-            <div class="policy-mini-card">
-              <strong>Out-of-network benefits</strong>
-              <span>Some clients may be eligible for partial reimbursement depending on their plan.</span>
-            </div>
-            <div class="policy-mini-card">
-              <strong>Superbills</strong>
-              <span>A superbill may be available upon request when appropriate for private-pay services.</span>
-            </div>
-            <div class="policy-mini-card">
-              <strong>Missed appointments</strong>
-              <span>Insurance cannot be billed for missed appointments or late cancellations because no covered session occurred.</span>
-            </div>
-            <div class="policy-mini-card">
-              <strong>24-hour notice</strong>
-              <span>Late cancellations or no-shows may be charged the applicable session fee unless an exception is approved.</span>
-            </div>
+      <div class="fees-frame-section">
+        <div class="fees-editorial-heading">
+          <div>
+            <div class="stone-page-kicker">Fee Schedule</div>
+            <h2>Current listed fees.</h2>
           </div>
+          <p>These are Stonebridge’s listed fees for current services. If insurance is active with a client’s plan and the service is covered, the amount paid out of pocket may differ from the listed fee.</p>
+        </div>
+
+        <article class="fee-schedule-card" aria-label="Stonebridge fee schedule">
+          <div class="fee-schedule-header">
+            <span>Code</span>
+            <span>Service</span>
+            <span>Fee</span>
+          </div>
+          <div class="fee-schedule-row"><div class="fee-code">90791</div><div class="fee-name">Initial diagnostic evaluation</div><div class="fee-amount">$275</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">90832</div><div class="fee-name">Individual therapy, 30 minutes</div><div class="fee-amount">$150</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">90834</div><div class="fee-name">Individual therapy, 45 minutes</div><div class="fee-amount">$200</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">90837</div><div class="fee-name">Individual therapy, 60 minutes</div><div class="fee-amount">$240</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">90846</div><div class="fee-name">Family therapy without client present</div><div class="fee-amount">$225</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">90847</div><div class="fee-name">Family therapy with client present</div><div class="fee-amount">$240</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">90853</div><div class="fee-name">Group therapy</div><div class="fee-amount">$90</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">90785</div><div class="fee-name">Interactive complexity add-on</div><div class="fee-amount">$60</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Care coordination / clinical admin, 15 minutes</div><div class="fee-amount">$60</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Report writing / letters, per hour</div><div class="fee-amount">$300</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Peer review / consultation, per hour</div><div class="fee-amount">$200</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Webinar CE, per event</div><div class="fee-amount">$450</div></div>
+          <div class="fee-schedule-note">Some services are used only when clinically appropriate, available, requested, or authorized. The applicable code and fee depend on the service actually provided.</div>
         </article>
+      </div>
+    </section>
+
+    <section class="home-led-section" id="insurance">
+      <div class="fees-frame-section">
+        <div class="fees-editorial-heading">
+          <div>
+            <div class="stone-page-kicker">Insurance</div>
+            <h2>Insurance may change what you pay.</h2>
+          </div>
+          <p>Stonebridge is awaiting confirmation of insurance paneling with select commercial plans. Insurance billing begins only after participation is active, formally confirmed, and benefits are verified.</p>
+        </div>
+
+        <div class="fees-open-grid">
+          <article class="fees-open-panel">
+            <h3>When insurance is active</h3>
+            <p>Eligible services may be billed through an in-network plan when Stonebridge is active with that plan and the service is covered.</p>
+          </article>
+          <article class="fees-open-panel">
+            <h3>What may remain your responsibility</h3>
+            <ul>
+              <li>Copays, deductibles, and coinsurance.</li>
+              <li>Services your plan does not cover.</li>
+              <li>Private-pay services, administrative services, or balances after claim processing.</li>
+              <li>Missed appointments or late cancellations, which cannot be billed to insurance.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="fees-policy-line">Verification of benefits can help estimate coverage, but it is not a guarantee of payment. Final responsibility depends on the plan, claim processing, signed financial agreements, and applicable law or contract requirements.</div>
+      </div>
+    </section>
+
+    <section class="home-led-section paper" id="appointments">
+      <div class="fees-frame-section">
+        <div class="fees-editorial-heading">
+          <div>
+            <div class="stone-page-kicker">Appointments</div>
+            <h2>Session structure and missed appointments.</h2>
+          </div>
+          <p>A psychotherapy appointment includes direct clinical time, documentation, treatment planning, transition, and preparation as appropriate to the service. Stonebridge requests at least 24 hours’ notice for cancellations.</p>
+        </div>
+
+        <div class="fees-open-grid">
+          <article class="fees-open-panel">
+            <h3>Clinical time</h3>
+            <p>Session length and billing are based on the service provided. Standard therapy appointments are structured to protect both the clinical conversation and the work needed around it.</p>
+          </article>
+          <article class="fees-open-panel">
+            <h3>Late cancellations and no-shows</h3>
+            <p>Late cancellations or missed appointments may be charged the applicable fee unless an exception is approved. Insurance cannot be billed for missed appointments because no covered session occurred.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1107,8 +1265,8 @@
       <div class="fees-consult-inner">
         <div>
           <div class="stone-page-kicker">Next Step</div>
-          <h2>Begin with a consultation request.</h2>
-          <p>A brief request is enough. Consultation helps clarify fit, telehealth appropriateness, availability, insurance status, and next steps before intake is scheduled.</p>
+          <h2>Begin with a waitlist inquiry.</h2>
+          <p>A brief inquiry is enough. Stonebridge will follow up as availability, fit, and insurance status become clearer.</p>
         </div>
         <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
       </div>
