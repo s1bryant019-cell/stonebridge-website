@@ -667,7 +667,96 @@
       .stone-page-copy h1{font-size:clamp(2.6rem,10vw,3.6rem)!important;}
     }
   </style>
-</link></link></link></link></head>
+</link></link></link></link>
+<style id="stonebridge-team-cleaner-profile-pass">
+  /* Team page refinement: shorter hero language, less name repetition, tighter roster proportions. */
+  .team-page .stone-page-copy h1.long-title{
+    max-width: 12ch !important;
+  }
+  .team-page .stone-page-copy p{
+    max-width: 34rem !important;
+  }
+  .team-page .team-roster-section{
+    padding: 34px 0 34px !important;
+  }
+  .team-page .team-section-label{
+    margin-bottom: 10px !important;
+  }
+  .team-page .clinician-profile{
+    grid-template-columns: 218px minmax(0,1fr) !important;
+    gap: 26px !important;
+    max-width: 980px;
+    border-radius: 26px !important;
+  }
+  .team-page .clinician-photo img{
+    min-height: 286px !important;
+    object-position: center top;
+  }
+  .team-page .clinician-copy{
+    padding: 24px 30px 24px 0 !important;
+  }
+  .team-page .status-pill{
+    display:none !important;
+  }
+  .team-page .clinician-copy h2{
+    margin:0 0 7px !important;
+    font-size:clamp(2.15rem,3.05vw,2.95rem) !important;
+    line-height:1.06 !important;
+  }
+  .team-page .clinician-role-line{
+    margin:0 0 12px !important;
+    font-size:.76rem !important;
+    letter-spacing:.085em !important;
+  }
+  .team-page .clinician-copy p{
+    font-size:.95rem !important;
+    line-height:1.62 !important;
+    max-width:48rem !important;
+  }
+  .team-page .clinician-focus-list{
+    margin-top:16px !important;
+  }
+  .team-page .clinician-focus-list li{
+    grid-template-columns: 106px minmax(0,1fr) !important;
+    gap:14px !important;
+    padding:9px 0 !important;
+    font-size:.9rem !important;
+    line-height:1.48 !important;
+  }
+  .team-page .clinician-focus-list strong{
+    font-size:1.05rem !important;
+  }
+  .team-page .clinician-actions{
+    margin-top:18px !important;
+  }
+  .team-page .team-roster-note{
+    max-width:980px !important;
+    margin-top:14px !important;
+    padding-top:12px !important;
+    font-size:.9rem !important;
+    line-height:1.56 !important;
+  }
+  .team-page .team-final-band .team-shell{
+    padding:30px 0 !important;
+  }
+  .team-page .team-final-band h2{
+    font-size:clamp(2rem,3vw,2.8rem) !important;
+  }
+  @media (max-width:980px){
+    .team-page .clinician-profile{
+      grid-template-columns:1fr !important;
+      max-width:none;
+    }
+    .team-page .clinician-copy{
+      padding:24px !important;
+    }
+    .team-page .clinician-photo img{
+      height:320px !important;
+      min-height:0 !important;
+    }
+  }
+</style>
+</head>
 <body class="team-page">
 <header class="site-header compact-site-header">
 <div class="container nav">
@@ -691,11 +780,11 @@
 <div class="stone-page-copy">
 <div class="stone-page-line"></div>
 <div class="stone-page-kicker">Clinical Team</div>
-<h1 class="long-title">Meet the clinician currently providing care.</h1>
-<p>Stonebridge currently offers outpatient telehealth psychotherapy through Dr. Stephen W. Bryant, PsyD, LCPC, Founder.</p>
+<h1 class="long-title">Clinical team.</h1>
+<p>Stonebridge currently provides outpatient telehealth psychotherapy through its founder while the practice grows carefully and intentionally.</p>
 <div class="stone-page-actions">
-<a class="btn btn-primary" href="#current-clinician">View clinician</a>
-<a class="btn btn-secondary" href="team-founder.html">Read full profile</a>
+<a class="btn btn-primary" href="team-founder.html">View profile</a>
+<a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
 </div>
 </div>
 </div>
@@ -710,13 +799,13 @@
 </figure>
 <div class="clinician-copy">
 <span class="status-pill">Founder</span>
-<h2>Dr. Stephen W. Bryant, PsyD, LCPC</h2>
-<p class="clinician-role-line">Founder · Doctoral-level clinician · Licensed Clinical Professional Counselor, Illinois</p>
-<p>Dr. Bryant provides outpatient telehealth psychotherapy for teens and adults located in Illinois. His work is relational, insight-oriented, and steady, with attention to emotional complexity, life history, current stressors, and patterns that can become difficult to change alone.</p>
+<h2>Stephen W. Bryant, PsyD, LCPC</h2>
+<p class="clinician-role-line">Founder · Licensed Clinical Professional Counselor, Illinois</p>
+<p>A doctoral-level clinician providing relational, insight-oriented outpatient telehealth psychotherapy for teens and adults in Illinois.</p>
 <ul aria-label="Clinician overview" class="clinician-focus-list">
-<li><strong>Works with</strong><span>Teens and adults located in Illinois.</span></li>
-<li><strong>Format</strong><span>Outpatient telehealth psychotherapy through a consultation-first process.</span></li>
-<li><strong>Clinical focus</strong><span>Anxiety, depression, trauma responses, grief, relationship patterns, identity and self-worth, stress and burnout, substance use concerns when outpatient care fits, and feeling stuck.</span></li>
+<li><strong>Works with</strong><span>Teens and adults in Illinois.</span></li>
+<li><strong>Focus</strong><span>Anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, substance use concerns when outpatient care fits, and feeling stuck.</span></li>
+<li><strong>Format</strong><span>Outpatient telehealth psychotherapy, beginning with a fit-based consultation.</span></li>
 </ul>
 <div class="clinician-actions">
 <a class="btn btn-primary" href="team-founder.html">Read full profile</a>
@@ -724,7 +813,7 @@
 </div>
 </div>
 </article>
-<p class="team-roster-note">Before intake, Stonebridge reviews whether the concern, telehealth format, urgency, and clinical scope appear appropriate for outpatient psychotherapy. If another setting appears better suited, referral direction may be discussed when possible.</p>
+<p class="team-roster-note">Before intake, Stonebridge reviews whether outpatient telehealth psychotherapy appears clinically appropriate. If another setting seems better suited, referral direction may be discussed when possible.</p>
 </div>
 </section>
 <section class="team-final-band" id="begin">
