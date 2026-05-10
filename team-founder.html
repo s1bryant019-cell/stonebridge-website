@@ -648,20 +648,45 @@
 
 
   <style id="founder-publications-update">
+    .publication-copy-block{
+      max-width:920px;
+    }
+
     .publication-intro{
-      max-width:720px;
+      max-width:650px;
+    }
+
+    .publication-layout{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:minmax(260px, .78fr) minmax(0, 1fr);
+      gap:30px;
+      align-items:center;
+    }
+
+    .publication-visual{
+      margin:0;
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid rgba(33,49,66,.14);
+      background:#efe8dd;
+      box-shadow:0 22px 46px rgba(33,49,66,.08);
+    }
+
+    .publication-visual img{
+      width:100%;
+      display:block;
+      height:auto;
     }
 
     .publication-list{
-      margin-top:20px;
       display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:28px;
+      gap:18px;
       border-top:1px solid rgba(33,49,66,.16);
     }
 
     .publication-card{
-      padding:20px 0 0;
+      padding:18px 0 0;
     }
 
     .publication-card::before{
@@ -716,10 +741,14 @@
       outline:none;
     }
 
-    @media (max-width:760px){
-      .publication-list{
+    @media (max-width:900px){
+      .publication-layout{
         grid-template-columns:1fr;
-        gap:10px;
+        gap:22px;
+      }
+
+      .publication-visual{
+        max-width:520px;
       }
     }
   </style>
@@ -969,6 +998,13 @@
                 <p>Medical University of South Carolina</p>
               </div>
             </div>
+            <div class="degree-row">
+              <div class="degree-label">Certification</div>
+              <div>
+                <h3>Certified Clinical Trauma Professional</h3>
+                <p>Evergreen Certifications</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -977,21 +1013,26 @@
     <section class="founder-section warm" id="publications">
       <div class="founder-section-inner">
         <aside class="section-label">Writing</aside>
-        <div class="section-copy">
+        <div class="section-copy publication-copy-block">
           <h2>Writing and publications.</h2>
           <p class="lead publication-intro">Dr. Bryant’s writing has focused on burnout, clinician wellbeing, and the systems that shape care.</p>
 
-          <div class="publication-list" aria-label="Books by Dr. Stephen W. Bryant">
-            <article class="publication-card">
-              <h3>Beyond Burnt-Out</h3>
-              <p>Exploring the realities of burnout in mental health care.</p>
-              <a class="publication-link" href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" target="_blank" rel="noopener noreferrer">View book</a>
-            </article>
-            <article class="publication-card">
-              <h3>The Scholastic Burnout Spiral</h3>
-              <p>Education, therapy readiness, and burnout among substance use disorder counselors.</p>
-              <a class="publication-link" href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" target="_blank" rel="noopener noreferrer">View book</a>
-            </article>
+          <div class="publication-layout">
+            <figure class="publication-visual">
+              <img src="founder-publications-books.png" alt="Book covers for Beyond Burnt-Out and The Scholastic Burnout Spiral by Dr. Stephen W. Bryant">
+            </figure>
+            <div class="publication-list" aria-label="Books by Dr. Stephen W. Bryant">
+              <article class="publication-card">
+                <h3>Beyond Burnt-Out</h3>
+                <p>Exploring the realities of burnout in mental health care.</p>
+                <a class="publication-link" href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" target="_blank" rel="noopener noreferrer">View book</a>
+              </article>
+              <article class="publication-card">
+                <h3>The Scholastic Burnout Spiral</h3>
+                <p>Education, therapy readiness, and burnout among substance use disorder counselors.</p>
+                <a class="publication-link" href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" target="_blank" rel="noopener noreferrer">View book</a>
+              </article>
+            </div>
           </div>
         </div>
       </div>
