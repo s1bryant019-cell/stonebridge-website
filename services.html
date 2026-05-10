@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Services | Stonebridge Psychological Group</title>
-  <meta name="description" content="Outpatient telehealth psychotherapy for teens and adults in Illinois. Learn what therapy is, what it may help with, and how Stonebridge screens for fit before care begins." />
+  <meta name="description" content="Outpatient telehealth psychotherapy for teens and adults in Illinois, including care for anxiety, depression, trauma responses, relationships, identity, stress, and feeling stuck." />
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -76,6 +76,36 @@
       transform:translateY(-1px);
       outline:none;
     }
+
+    .diagnosis-item .clinical-label{
+      display:block;
+      margin-top:8px;
+      color:#8c7551;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      line-height:1.35;
+    }
+
+    .therapy-use-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .therapy-use-pill{
+      border-radius:18px;
+      border:1px solid rgba(212,200,185,.62);
+      background:rgba(255,255,255,.62);
+      padding:14px 16px;
+      color:#213142;
+      font-size:.92rem;
+      font-weight:700;
+      line-height:1.35;
+    }
+
     @media (max-width:980px){
       .page-guide{ top:72px; }
       .page-guide-inner{ width:min(100% - 30px, 1120px); gap:10px; }
@@ -264,6 +294,36 @@
       border-color:rgba(255,250,242,.65);
     }
 
+
+    .diagnosis-item .clinical-label{
+      display:block;
+      margin-top:8px;
+      color:#8c7551;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      line-height:1.35;
+    }
+
+    .therapy-use-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .therapy-use-pill{
+      border-radius:18px;
+      border:1px solid rgba(212,200,185,.62);
+      background:rgba(255,255,255,.62);
+      padding:14px 16px;
+      color:#213142;
+      font-size:.92rem;
+      font-weight:700;
+      line-height:1.35;
+    }
+
     @media (max-width:980px){
       .services-band-grid,
       .services-section-heading,
@@ -272,7 +332,8 @@
         grid-template-columns:1fr;
       }
       .specialty-grid,
-      .diagnosis-grid{
+      .diagnosis-grid,
+      .therapy-use-grid{
         grid-template-columns:1fr;
       }
       .services-full-cta-inner{
@@ -370,11 +431,11 @@
         <div class="stone-page-copy">
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Psychotherapy Services</div>
-          <h1 class="wide-title">What therapy is, and what it can help with.</h1>
-          <p>Stonebridge’s active service is outpatient telehealth psychotherapy for teens and adults located in Illinois. Therapy begins with a brief request so fit, scope, and next steps can be considered before care begins.</p>
+          <h1 class="wide-title">Therapy for anxiety, depression, trauma, relationships, and feeling stuck.</h1>
+          <p>Stonebridge provides outpatient telehealth psychotherapy for teens and adults in Illinois. This page is here to help you understand what therapy is, what people often use it for, and when Stonebridge may be the right setting.</p>
           <div class="stone-page-actions">
             <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
-            <a class="btn btn-secondary" href="#common-concerns">Common concerns</a>
+            <a class="btn btn-secondary" href="#common-concerns">What therapy helps with</a>
           </div>
         </div>
       </div>
@@ -383,16 +444,16 @@
     <section class="services-band" aria-label="Service summary">
       <div class="services-band-grid">
         <article class="services-band-item">
-          <h4>Outpatient therapy</h4>
-          <p>Care for emotional, relational, behavioral, and stress-related concerns that fit an outpatient telehealth setting.</p>
+          <h4>For symptoms</h4>
+          <p>Therapy can help with anxiety, depression, trauma responses, stress, mood, attention, and emotional overwhelm.</p>
         </article>
         <article class="services-band-item">
-          <h4>Teens and adults</h4>
-          <p>Therapy is available for adolescents and adults in Illinois when telehealth is clinically appropriate.</p>
+          <h4>For patterns</h4>
+          <p>Therapy can also help with relationships, self-worth, avoidance, shame, identity, grief, and patterns that keep repeating.</p>
         </article>
         <article class="services-band-item">
-          <h4>Consultation first</h4>
-          <p>A brief request helps clarify whether Stonebridge is the right setting before intake is scheduled.</p>
+          <h4>For fit</h4>
+          <p>Stonebridge uses a consultation-first process to make sure outpatient telehealth is a responsible place to begin.</p>
         </article>
       </div>
     </section>
@@ -402,9 +463,9 @@
         <div class="page-guide-label">On this page</div>
         <div class="page-guide-links">
           <a href="#what-therapy-is">What therapy is</a>
-          <a href="#common-concerns">Common concerns</a>
-          <a href="#specialties">Specialties</a>
-          <a href="#fit-and-scope">Fit and scope</a>
+          <a href="#common-concerns">Common reasons</a>
+          <a href="#specialties">Stonebridge focus</a>
+          <a href="#fit-and-scope">Fit</a>
           <a href="#begin-services">Start</a>
         </div>
       </div>
@@ -413,40 +474,49 @@
     <section class="home-led-section" id="what-therapy-is">
       <div class="services-section-heading">
         <h2>What psychotherapy is.</h2>
-        <p>Psychotherapy is a structured clinical relationship where you meet regularly with a trained clinician to understand what is happening, put words to what has been difficult to carry, and develop more workable ways of living, relating, and coping.</p>
+        <p>Psychotherapy is a regular, private conversation with a trained clinician. It gives you a place to slow down, understand what is happening, and work toward change with someone who is paying careful attention.</p>
       </div>
       <div class="home-led-grid">
         <article class="home-led-card service-copy-card">
-          <h3>It is more than advice.</h3>
-          <p>Therapy is not simply being told what to do. It is a place to slow down with another person who is listening carefully, noticing patterns, asking thoughtful questions, and helping you understand your experience with more clarity.</p>
-          <p>Sometimes therapy includes practical tools. Sometimes it focuses on feelings, relationships, history, identity, or repeated patterns. Often it includes both.</p>
+          <h3>What happens in therapy?</h3>
+          <p>You talk about what has been difficult, what you have tried, what keeps repeating, and what you want to understand or change. The clinician listens for symptoms, patterns, relationships, history, coping, strengths, risks, and goals.</p>
+          <p>Therapy may include reflection, emotional work, practical coping strategies, new language for your experience, and a clearer understanding of how past and present experiences shape the way you move through life.</p>
         </article>
         <article class="home-led-card service-copy-card">
-          <h3>It is used for symptoms and for life patterns.</h3>
-          <p>People use therapy when anxiety, depression, trauma responses, grief, stress, relationships, substance use concerns, family conflict, school or work pressure, identity questions, or emotional patterns have become hard to manage alone.</p>
-          <p>Therapy should help people feel understood without being reduced to symptoms.</p>
+          <h3>What is therapy used for?</h3>
+          <p>People come to therapy when something feels too heavy, confusing, painful, repetitive, or hard to manage alone. Sometimes the concern has a diagnosis. Sometimes the first words are simply, “I am not doing well,” “I feel stuck,” or “I do not know why I keep doing this.”</p>
+          <div class="therapy-use-grid" aria-label="Examples of what therapy may help with">
+            <div class="therapy-use-pill">Feeling anxious or on edge</div>
+            <div class="therapy-use-pill">Low mood or numbness</div>
+            <div class="therapy-use-pill">Trauma responses</div>
+            <div class="therapy-use-pill">Relationship patterns</div>
+            <div class="therapy-use-pill">Grief or major change</div>
+            <div class="therapy-use-pill">Stress and burnout</div>
+            <div class="therapy-use-pill">Self-worth and shame</div>
+            <div class="therapy-use-pill">Substance use concerns</div>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="home-led-section paper tight-section" id="common-concerns">
       <div class="services-section-heading">
-        <h2>Common clinical concerns.</h2>
-        <p>These are examples of common DSM-5-TR diagnostic areas that often bring people to therapy. They are not a self-diagnosis checklist. A diagnosis, when needed, is made through clinical evaluation and held in the context of the whole person.</p>
+        <h2>Common reasons people come to therapy.</h2>
+        <p>The concerns below are written in plain language first, with related DSM diagnostic language included for clarity. This is not a self-diagnosis checklist. A diagnosis, when clinically appropriate, is made through evaluation and discussed in context.</p>
       </div>
       <div class="home-led-grid one">
         <article class="home-led-card service-copy-card">
           <div class="diagnosis-grid">
-            <div class="diagnosis-item"><strong>Anxiety disorders</strong><span>Excessive worry, panic, social anxiety, avoidance, fear, or feeling constantly on edge.</span></div>
-            <div class="diagnosis-item"><strong>Major depressive disorder</strong><span>Persistent low mood, loss of interest, changes in sleep or appetite, guilt, fatigue, or hopelessness.</span></div>
-            <div class="diagnosis-item"><strong>Persistent depressive disorder</strong><span>Longer-standing depression or low mood that may feel like part of everyday life.</span></div>
-            <div class="diagnosis-item"><strong>Trauma- and stressor-related disorders</strong><span>Posttraumatic stress, acute stress, adjustment concerns, or reactions to overwhelming events.</span></div>
-            <div class="diagnosis-item"><strong>ADHD</strong><span>Difficulty with attention, organization, follow-through, impulsivity, time management, or school/work functioning.</span></div>
-            <div class="diagnosis-item"><strong>Obsessive-compulsive disorder</strong><span>Intrusive thoughts, compulsive behaviors, checking, reassurance-seeking, or repeated mental loops.</span></div>
-            <div class="diagnosis-item"><strong>Bipolar-related concerns</strong><span>Mood episodes, shifts in energy, sleep changes, irritability, or periods of unusually elevated or activated mood.</span></div>
-            <div class="diagnosis-item"><strong>Substance use disorders</strong><span>Alcohol, cannabis, or other substance use concerns when outpatient telehealth therapy is clinically appropriate.</span></div>
-            <div class="diagnosis-item"><strong>Eating and body-image concerns</strong><span>Distress around eating, body image, control, shame, or related emotional patterns, when outpatient care is a responsible fit.</span></div>
-            <div class="diagnosis-item"><strong>Personality and relational patterns</strong><span>Longstanding patterns with trust, attachment, self-worth, conflict, emotional intensity, or unstable relationships.</span></div>
+            <div class="diagnosis-item"><strong>Worry, panic, avoidance, or feeling constantly on edge</strong><span>Anxiety can show up as racing thoughts, fear of judgment, panic sensations, difficulty relaxing, avoidance, or needing reassurance.</span><span class="clinical-label">Anxiety disorders</span></div>
+            <div class="diagnosis-item"><strong>Low mood, numbness, loss of interest, or hopelessness</strong><span>Depression may affect sleep, appetite, motivation, concentration, guilt, energy, connection, and the ability to feel pleasure.</span><span class="clinical-label">Depressive disorders</span></div>
+            <div class="diagnosis-item"><strong>Trauma responses, overwhelm, or feeling unsafe inside your body</strong><span>Trauma can involve intrusive memories, avoidance, shutdown, anger, shame, numbness, hypervigilance, or reactions that feel bigger than the present moment.</span><span class="clinical-label">Trauma- and stressor-related disorders</span></div>
+            <div class="diagnosis-item"><strong>Attention, organization, impulsivity, or follow-through problems</strong><span>People may seek therapy when school, work, routines, relationships, or self-esteem are affected by attention and executive functioning difficulties.</span><span class="clinical-label">ADHD</span></div>
+            <div class="diagnosis-item"><strong>Intrusive thoughts, checking, rituals, or repeated mental loops</strong><span>Obsessive-compulsive patterns can involve unwanted thoughts, compulsive behaviors, reassurance-seeking, avoidance, or mental rituals that are hard to interrupt.</span><span class="clinical-label">Obsessive-compulsive disorder</span></div>
+            <div class="diagnosis-item"><strong>Periods of intense mood change, activation, or irritability</strong><span>Some people seek therapy around mood episodes, sleep changes, impulsive periods, irritability, or shifts in energy that affect life and relationships.</span><span class="clinical-label">Bipolar-related concerns</span></div>
+            <div class="diagnosis-item"><strong>Alcohol, cannabis, or other substance use concerns</strong><span>Therapy may help when use has become hard to control, creates consequences, functions as coping, or raises concern for the person or family.</span><span class="clinical-label">Substance use disorders</span></div>
+            <div class="diagnosis-item"><strong>Eating, body image, control, or shame around food</strong><span>Support may be appropriate when concerns are clinically safe for outpatient telehealth and do not require medical monitoring or a higher level of care.</span><span class="clinical-label">Eating and feeding-related concerns</span></div>
+            <div class="diagnosis-item"><strong>Longstanding patterns in relationships, trust, conflict, or self-worth</strong><span>Therapy can help with attachment patterns, emotional intensity, fear of abandonment, people-pleasing, withdrawal, anger, shame, or unstable relationships.</span><span class="clinical-label">Personality-related and relational patterns</span></div>
+            <div class="diagnosis-item"><strong>Adjustment, grief, identity stress, or major life transition</strong><span>Sometimes therapy begins because life has changed: loss, separation, school stress, career change, family strain, caregiving, identity questions, or a difficult transition.</span><span class="clinical-label">Adjustment-related concerns</span></div>
           </div>
           <div class="service-note">
             Some concerns require psychiatric care, emergency support, intensive outpatient treatment, in-person services, medical monitoring, or another specialty setting. Consultation helps determine whether Stonebridge is an appropriate place to begin.
@@ -457,18 +527,18 @@
 
     <section class="home-led-section tight-section" id="specialties">
       <div class="services-section-heading">
-        <h2>Stonebridge areas of focus.</h2>
-        <p>Diagnosis can help organize care, but therapy also attends to the human experience underneath the label: what happened, what adapted, what hurts, and what needs to become clearer.</p>
+        <h2>Stonebridge clinical focus.</h2>
+        <p>Stonebridge is especially oriented toward therapy that looks beneath the symptom list: the pattern, the relationship, the adaptation, the loss, the shame, the protection, and the part of the person that has been trying to keep going.</p>
       </div>
       <div class="home-led-grid one">
         <article class="home-led-card">
           <div class="specialty-grid">
-            <div class="specialty-card"><h3>Trauma responses</h3><p>Working with fear, shame, avoidance, numbness, anger, grief, and patterns shaped by overwhelming experience.</p></div>
-            <div class="specialty-card"><h3>Relationships</h3><p>Understanding attachment patterns, conflict, loneliness, boundaries, trust, and the wish to feel known more fully.</p></div>
-            <div class="specialty-card"><h3>Self-worth and identity</h3><p>Making sense of self-criticism, uncertainty, perfectionism, disconnection, identity development, and feeling unseen.</p></div>
-            <div class="specialty-card"><h3>Stress and burnout</h3><p>Addressing overwhelm, depletion, role strain, work pressure, caregiving burden, and difficulty recovering between demands.</p></div>
-            <div class="specialty-card"><h3>Adolescent concerns</h3><p>Support for teens navigating anxiety, mood, identity, school pressure, family stress, relationships, and emotional regulation.</p></div>
-            <div class="specialty-card"><h3>Life transitions</h3><p>Support during loss, change, separation, young adulthood, parenting stress, career shifts, or periods of personal reorganization.</p></div>
+            <div class="specialty-card"><h3>Trauma and shame</h3><p>Working with fear, numbness, avoidance, anger, grief, self-blame, and patterns shaped by overwhelming experiences.</p></div>
+            <div class="specialty-card"><h3>Relationships and attachment</h3><p>Understanding conflict, loneliness, trust, boundaries, closeness, withdrawal, people-pleasing, and the wish to feel known.</p></div>
+            <div class="specialty-card"><h3>Identity and self-worth</h3><p>Making space for self-criticism, perfectionism, uncertainty, disconnection, identity development, and feeling unseen.</p></div>
+            <div class="specialty-card"><h3>Adolescent therapy</h3><p>Support for teens navigating anxiety, mood, school pressure, family stress, identity, relationships, and emotional regulation.</p></div>
+            <div class="specialty-card"><h3>Substance use concerns</h3><p>Outpatient therapy for substance use concerns when telehealth is appropriate and the person does not need a higher level of care.</p></div>
+            <div class="specialty-card"><h3>Stress, burnout, and transition</h3><p>Therapy for overwhelm, depletion, grief, role strain, caregiving, young adulthood, career change, and periods of personal reorganization.</p></div>
           </div>
         </article>
       </div>
@@ -476,21 +546,21 @@
 
     <section class="home-led-section paper tight-section" id="fit-and-scope">
       <div class="services-section-heading">
-        <h2>Fit and scope.</h2>
-        <p>Therapy works best when the service, setting, clinician, and client needs fit together. Stonebridge uses consultation to protect that fit before treatment begins.</p>
+        <h2>When Stonebridge may fit.</h2>
+        <p>This is an outpatient psychotherapy practice. The first step is not a commitment to treatment; it is a brief request so the clinical fit, setting, and next step can be considered responsibly.</p>
       </div>
       <div class="home-led-grid three">
         <article class="home-led-card service-copy-card">
-          <h3>Telehealth only</h3>
-          <p>Stonebridge provides outpatient psychotherapy by telehealth for clients located in Illinois. Clients need a private, safe place to attend sessions.</p>
+          <h3>Good fit</h3>
+          <p>Teens and adults located in Illinois who can attend telehealth from a private, safe setting and want steady outpatient psychotherapy.</p>
         </article>
         <article class="home-led-card service-copy-card">
-          <h3>Not crisis care</h3>
-          <p>Stonebridge is not an emergency or crisis service. If someone is in immediate danger or cannot stay safe, emergency services, 988, or a local crisis resource should be used.</p>
+          <h3>May need another setting</h3>
+          <p>Immediate safety concerns, medical instability, severe eating disorder symptoms, active crisis needs, or situations requiring intensive or in-person care may need a different level of support.</p>
         </article>
         <article class="home-led-card service-copy-card">
-          <h3>Assessment and forensic work</h3>
-          <p>Assessment and forensic services are not part of the psychotherapy waitlist pathway. They require dedicated procedures beyond this request process.</p>
+          <h3>Not this pathway</h3>
+          <p>Psychological testing, court/legal evaluations, forensic services, custody-related opinions, disability evaluations, and emergency care are not offered through the psychotherapy waitlist.</p>
         </article>
       </div>
     </section>
@@ -498,8 +568,8 @@
     <section class="services-full-cta" id="begin-services">
       <div class="services-full-cta-inner">
         <div>
-          <h2>Begin with a brief waitlist inquiry.</h2>
-          <p>Stonebridge is accepting waitlist inquiries while insurance paneling is being confirmed and anticipates beginning online psychotherapy appointments around August 2026. A brief note is enough.</p>
+          <h2>Not sure where to start?</h2>
+          <p>Send a brief waitlist inquiry. The form is meant to help Stonebridge understand what you are looking for and whether outpatient telehealth psychotherapy may be a responsible fit.</p>
         </div>
         <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
       </div>
