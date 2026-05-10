@@ -949,6 +949,17 @@
       letter-spacing:-.012em;
     }
 
+    .fee-name span{
+      display:block;
+      margin-top:4px;
+      color:var(--home-muted, #5f6c78);
+      font-family:"Inter", sans-serif;
+      font-size:.78rem;
+      font-weight:600;
+      letter-spacing:.02em;
+      line-height:1.35;
+    }
+
     .fee-amount{
       color:var(--home-navy, #213142);
       font-family:"EB Garamond", Georgia, serif;
@@ -1104,9 +1115,9 @@
 </head>
 <body>
 
-  <header class="site-header compact-site-header">
+  <header class="site-header">
     <div class="container nav">
-      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
+      <a href="index.html" aria-label="Stonebridge Psychological Group home">
         <div class="brand-mark">STONEBRIDGE</div>
         <div class="brand-sub">Psychological Group</div>
       </a>
@@ -1115,7 +1126,13 @@
         <nav class="menu" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="team.html">Team</a>
+          <div class="nav-dropdown">
+            <a href="team.html">Team</a>
+            <div class="dropdown-menu">
+              <a href="team.html">Team Overview</a>
+              <a href="team-founder.html">Founder</a>
+            </div>
+          </div>
           <a href="services.html">Services</a>
           <a class="active" href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="portal.html">Portal</a>
@@ -1137,7 +1154,7 @@
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Fees &amp; Insurance</div>
           <h1 class="wide-title">Fees and insurance, stated clearly.</h1>
-          <p>Stonebridge lists fees before care begins so clients can understand the financial frame. Insurance may change out-of-pocket costs once participation is active and benefits are verified.</p>
+          <p>Stonebridge lists consultation, intake, therapy, and administrative fees before care begins so clients can understand the financial frame. Insurance may change out-of-pocket costs once participation is active and benefits are verified.</p>
           <div class="stone-page-actions">
             <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
             <a class="btn btn-secondary" href="#fees">View fees</a>
@@ -1150,8 +1167,8 @@
       <div class="subpage-band-grid">
         <article class="subpage-band-item">
           <div>
-            <h4>Listed fees</h4>
-            <p>Private-pay fees are shown plainly below.</p>
+            <h4>Free consultation</h4>
+            <p>A brief 15-minute consultation may occur before the first full clinical session.</p>
           </div>
         </article>
         <article class="subpage-band-item">
@@ -1176,7 +1193,7 @@
             <div class="stone-page-kicker">Fee Schedule</div>
             <h2>Current listed fees.</h2>
           </div>
-          <p>These are Stonebridge’s listed fees for current services. If insurance is active with a client’s plan and the service is covered, the amount paid out of pocket may differ from the listed fee.</p>
+          <p>A free 15-minute consultation may happen before care begins. The initial diagnostic evaluation is the first full clinical session. If insurance is active with a client’s plan and the service is covered, the amount paid out of pocket may differ from the listed fee.</p>
         </div>
 
         <article class="fee-schedule-card" aria-label="Stonebridge fee schedule">
@@ -1185,7 +1202,8 @@
             <span>Service</span>
             <span>Fee</span>
           </div>
-          <div class="fee-schedule-row"><div class="fee-code">90791</div><div class="fee-name">Initial diagnostic evaluation</div><div class="fee-amount">$275</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Initial 15-minute consultation</div><div class="fee-amount">Free</div></div>
+          <div class="fee-schedule-row"><div class="fee-code">90791</div><div class="fee-name">Initial diagnostic evaluation <span>First full clinical session</span></div><div class="fee-amount">$275</div></div>
           <div class="fee-schedule-row"><div class="fee-code">90832</div><div class="fee-name">Individual therapy, 30 minutes</div><div class="fee-amount">$150</div></div>
           <div class="fee-schedule-row"><div class="fee-code">90834</div><div class="fee-name">Individual therapy, 45 minutes</div><div class="fee-amount">$200</div></div>
           <div class="fee-schedule-row"><div class="fee-code">90837</div><div class="fee-name">Individual therapy, 60 minutes</div><div class="fee-amount">$240</div></div>
@@ -1197,7 +1215,7 @@
           <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Report writing / letters, per hour</div><div class="fee-amount">$300</div></div>
           <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Peer review / consultation, per hour</div><div class="fee-amount">$200</div></div>
           <div class="fee-schedule-row"><div class="fee-code">—</div><div class="fee-name">Webinar CE, per event</div><div class="fee-amount">$450</div></div>
-          <div class="fee-schedule-note">Some services are used only when clinically appropriate, available, requested, or authorized. The applicable code and fee depend on the service actually provided.</div>
+          <div class="fee-schedule-note">The free 15-minute consultation is not a psychotherapy session, diagnostic evaluation, or crisis service. Some listed services are used only when clinically appropriate, available, requested, or authorized. The applicable code and fee depend on the service actually provided.</div>
         </article>
       </div>
     </section>
@@ -1239,7 +1257,7 @@
             <div class="stone-page-kicker">Appointments</div>
             <h2>Session structure and missed appointments.</h2>
           </div>
-          <p>A psychotherapy appointment includes direct clinical time, documentation, treatment planning, transition, and preparation as appropriate to the service. Stonebridge requests at least 24 hours’ notice for cancellations.</p>
+          <p>The initial diagnostic evaluation is the first full clinical session. Psychotherapy appointments include direct clinical time, documentation, treatment planning, transition, and preparation as appropriate to the service. Stonebridge requests at least 24 hours’ notice for cancellations.</p>
         </div>
 
         <div class="fees-open-grid">
@@ -1278,21 +1296,24 @@
       </div>
 
       <div>
-        <div class="footer-title">Care</div>
+        <div class="footer-title">Services</div>
         <div class="footer-links">
           <a href="services.html">Services</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html">Client Portal</a>
           <a href="contact.html">Join the Waitlist</a>
         </div>
       </div>
 
       <div>
-        <div class="footer-title">Practice</div>
+        <div class="footer-title">Quick Links</div>
         <div class="footer-links">
           <a href="about.html">About</a>
           <a href="team.html">Team</a>
-          <a href="team-founder.html">Founder</a>
-          <a href="portal.html">Client Portal</a>
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html">Portal</a>
+          <a href="contact.html">Join the Waitlist</a>
         </div>
       </div>
 
@@ -1302,6 +1323,7 @@
           <span>Serving Illinois via telehealth</span>
           <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
           <a href="tel:+17734171688">(773) 417-1688</a>
+          <span>Waitlist inquiries by form, email, or phone</span>
           <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
         </div>
       </div>
