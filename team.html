@@ -1,1395 +1,452 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<title>Team | Stonebridge Psychological Group</title>
-<meta content="Meet Dr. Stephen W. Bryant, PsyD, LCPC, the current clinician providing outpatient telehealth psychotherapy through Stonebridge Psychological Group in Illinois." name="description"/>
-<link href="https://stonebridgepsychgroup.com/team.html" rel="canonical"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="favicon.ico" rel="icon" sizes="any"/>
-<link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="apple-touch-icon.png" rel="apple-touch-icon"/>
-<link href="site.webmanifest" rel="manifest"/>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link href="styles.css" rel="stylesheet">
-<style id="stonebridge-team-editorial-styles">
-    .team-page .stone-page-copy p{
-      max-width: 42rem;
-    }
-
+  <title>Team | Stonebridge Psychological Group</title>
+  <meta name="description" content="See the clinician currently providing outpatient telehealth psychotherapy through Stonebridge Psychological Group in Illinois." />
+  <link rel="canonical" href="https://stonebridgepsychgroup.com/team.html" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style id="stonebridge-team-clean-direct-roster">
+    /* Team page: direct roster design, reduced repetition, and a stronger visual purpose. */
     .team-page .stone-page-hero::after,
-    .team-page .home-led-card::after{
-      display: none;
+    .team-page .stone-hero-panel::before{
+      opacity:.42;
     }
 
-    .team-shell{
-      width: min(1120px, calc(100% - 72px));
-      margin: 0 auto;
-    }
-
-    .team-positioning{
-      padding: 34px 0;
-      border-bottom: 1px solid rgba(212,200,185,.5);
-      background: rgba(255,250,242,.34);
-    }
-
-    .team-positioning-inner{
-      display: grid;
-      grid-template-columns: .72fr 1.28fr;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .team-positioning h2{
-      margin: 0;
-      color: #213142;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(2.1rem, 3.4vw, 3.2rem);
-      line-height: 1.08;
-      letter-spacing: -.035em;
-    }
-
-    .team-positioning p{
-      margin: 0;
-      color: #5f6c78;
-      font-size: 1rem;
-      line-height: 1.76;
-      max-width: 58rem;
-    }
-
-    .team-roster-section{
-      padding: 42px 0 38px;
-      background: #f8f5f0;
-    }
-
-    .team-section-label{
-      margin: 0 0 14px;
-      color: #8c7551;
-      font-family: "Inter", sans-serif;
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    .clinician-profile{
-      display: grid;
-      grid-template-columns: 285px minmax(0, 1fr);
-      gap: 34px;
-      align-items: stretch;
-      border-radius: 30px;
-      border: 1px solid rgba(212,200,185,.65);
-      background: linear-gradient(180deg, rgba(255,253,248,.9), rgba(248,244,239,.82));
-      box-shadow: 0 16px 44px rgba(31,42,52,.055);
-      overflow: hidden;
-    }
-
-    .clinician-photo{
-      margin: 0;
-      background: #efe6db;
-      min-height: 100%;
-    }
-
-    .clinician-photo img{
-      width: 100%;
-      height: 100%;
-      min-height: 352px;
-      object-fit: cover;
-      object-position: center top;
-      filter: saturate(.96) contrast(.98);
-    }
-
-    .clinician-copy{
-      padding: 30px 36px 30px 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .clinician-copy h2{
-      margin: 8px 0 8px;
-      color: #213142;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(2.45rem, 3.65vw, 3.5rem);
-      line-height: 1.08;
-      letter-spacing: -.038em;
-    }
-
-    .clinician-role-line{
-      margin: 0 0 18px;
-      color: #8c7551;
-      font-size: .82rem;
-      font-weight: 800;
-      letter-spacing: .09em;
-      line-height: 1.55;
-      text-transform: uppercase;
-    }
-
-    .clinician-copy p{
-      margin: 0;
-      max-width: 48rem;
-      color: #5f6c78;
-      font-size: 1rem;
-      line-height: 1.74;
-    }
-
-    .clinician-focus-list{
-      margin: 22px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 0;
-      border-top: 1px solid rgba(212,200,185,.65);
-      border-bottom: 1px solid rgba(212,200,185,.65);
-    }
-
-    .clinician-focus-list li{
-      display: grid;
-      grid-template-columns: 138px minmax(0, 1fr);
-      gap: 18px;
-      padding: 12px 0;
-      border-top: 1px solid rgba(212,200,185,.45);
-      color: #5f6c78;
-      font-size: .96rem;
-      line-height: 1.55;
-    }
-
-    .clinician-focus-list li:first-child{
-      border-top: none;
-    }
-
-    .clinician-focus-list strong{
-      color: #213142;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: 1.16rem;
-      line-height: 1.1;
-      letter-spacing: -.01em;
-    }
-
-    .clinician-actions{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .team-roster-note{
-      margin-top:20px;
-      padding-top:18px;
-      border-top:1px solid rgba(212,200,185,.62);
-      color:#5f6c78;
-      font-size:.95rem;
-      line-height:1.62;
-      max-width:62rem;
-    }
-
-    .team-fit-section{
-      padding: 38px 0 40px;
-      background: linear-gradient(180deg, rgba(255,253,248,.62), rgba(246,241,234,.75));
-      border-top: 1px solid rgba(212,200,185,.45);
-      border-bottom: 1px solid rgba(212,200,185,.45);
-    }
-
-    .team-fit-editorial{
-      display: grid;
-      grid-template-columns: .78fr 1.22fr;
-      gap: 42px;
-      align-items: start;
-    }
-
-    .team-fit-editorial h2{
-      margin: 0;
-      color: #213142;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(2.25rem, 3.8vw, 3.45rem);
-      line-height: 1.08;
-      letter-spacing: -.035em;
-    }
-
-    .team-fit-copy p{
-      margin: 0;
-      color: #5f6c78;
-      font-size: 1rem;
-      line-height: 1.76;
-      max-width: 55rem;
-    }
-
-    .team-fit-copy p + p{
-      margin-top: 14px;
-    }
-
-    .team-fit-lines{
-      margin: 22px 0 0;
-      display: grid;
-      gap: 0;
-      border-top: 1px solid rgba(212,200,185,.65);
-    }
-
-    .team-fit-line{
-      display: grid;
-      grid-template-columns: 160px minmax(0, 1fr);
-      gap: 18px;
-      padding: 13px 0;
-      border-bottom: 1px solid rgba(212,200,185,.55);
-    }
-
-    .team-fit-line strong{
-      color: #213142;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: 1.2rem;
-      line-height: 1.1;
-    }
-
-    .team-fit-line span{
-      color: #5f6c78;
-      font-size: .96rem;
-      line-height: 1.58;
-    }
-
-    .team-final-band{
-      background: linear-gradient(135deg, #17395c 0%, #102f4d 100%);
-      color: #fffaf2;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-
-    .team-final-band .team-shell{
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 28px;
-      align-items: center;
-      padding: 42px 0;
-    }
-
-    .team-final-band h2{
-      margin: 0 0 8px;
-      color: #fffaf2;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(2.25rem, 3.4vw, 3.25rem);
-      line-height: 1.08;
-      letter-spacing: -.03em;
-    }
-
-    .team-final-band p{
-      margin: 0;
-      color: rgba(255,250,242,.84);
-      max-width: 760px;
-    }
-
-    .team-final-band .btn-secondary{
-      background: rgba(255,255,255,.1);
-      color: #fffaf2;
-      border-color: rgba(255,255,255,.25);
-    }
-
-    @media (max-width: 980px){
-      .team-positioning-inner,
-      .clinician-profile,
-      .team-fit-editorial,
-      .team-final-band .team-shell{
-        grid-template-columns: 1fr;
-      }
-
-      .clinician-copy{
-        padding: 30px;
-      }
-
-      .clinician-photo img{
-        min-height: 0;
-        height: 360px;
-      }
-    }
-
-    @media (max-width: 760px){
-      .team-shell{
-        width: min(1120px, calc(100% - 30px));
-      }
-
-      .team-positioning{
-        padding: 28px 0;
-      }
-
-      .team-roster-section,
-      .team-fit-section{
-        padding: 38px 0;
-      }
-
-      .clinician-copy{
-        padding: 24px;
-      }
-
-      .clinician-photo img{
-        height: 320px;
-      }
-
-      .clinician-focus-list li,
-      .team-fit-line{
-        grid-template-columns: 1fr;
-        gap: 6px;
-      }
-    }
-  </style>
-<style id="stonebridge-display-line-height-fix">
-    /* Sitewide display-type guardrail: prevents EB Garamond descenders/ascenders from colliding on wrapped headings. */
-    body h1,
-    body h2,
-    body .stone-page-copy h1,
-    body .stone-page-copy .long-title,
-    body .stone-page-copy .wide-title,
-    body .home-hero h1,
-    body .hero-copy h1,
-    body .founder-title,
-    body .home-led-heading h2,
-    body .about-section-heading h2,
-    body .services-section-heading h2,
-    body .fees-section-heading h2,
-    body .team-section-heading h2,
-    body .clinician-copy h2,
-    body .contact-waitlist-card h2,
-    body .team-final-band h2,
-    body .fees-final-cta h2 {
-      line-height: 1.10 !important;
-    }
-
-    body .stone-page-copy h1,
-    body .home-hero h1,
-    body .founder-title,
-    body .home-led-heading h2,
-    body .about-section-heading h2,
-    body .services-section-heading h2,
-    body .fees-section-heading h2,
-    body .team-section-heading h2 {
+    .team-page .stone-page-copy h1{
+      max-width: 18ch !important;
       text-wrap: balance;
     }
 
-    @media (max-width: 760px) {
-      body h1,
-      body h2,
-      body .stone-page-copy h1,
-      body .home-hero h1,
-      body .founder-title {
-        line-height: 1.13 !important;
-      }
-    }
-  </style>
-<style id="stonebridge-subpage-hero-system">
-    /* Shared subpage hero proportion pass. Portal is the visual reference: balanced text, controlled image, navy band visible immediately after the hero. */
-    @media (min-width: 981px) {
-      body .stone-page-hero {
-        min-height: 462px;
-      }
-
-      body .stone-page-inner {
-        width: min(1120px, calc(100% - 72px));
-        min-height: 462px;
-        padding: 42px 0 38px;
-        display: flex;
-        align-items: center;
-      }
-
-      body .stone-page-copy {
-        width: 49%;
-        max-width: 600px;
-        padding-right: 54px;
-      }
-
-      body .stone-page-line {
-        margin-bottom: 16px;
-      }
-
-      body .stone-page-kicker {
-        margin-bottom: 12px;
-      }
-
-      body .stone-page-copy h1,
-      body .stone-page-copy h1.long-title,
-      body .stone-page-copy h1.wide-title {
-        max-width: 18.5ch;
-        font-size: clamp(3.05rem, 3.75vw, 4.15rem);
-        line-height: 1.08;
-        letter-spacing: -.038em;
-        text-wrap: balance;
-      }
-
-      body .stone-page-copy p {
-        margin-top: 18px;
-        max-width: 35.5rem;
-        font-size: .98rem;
-        line-height: 1.72;
-      }
-
-      body .stone-page-actions {
-        margin-top: 22px;
-      }
-
-      body .stone-hero-panel {
-        width: 43vw;
-        min-width: 560px;
-        border-top-left-radius: 44px;
-      }
-
-      body .stone-hero-panel img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      body .subpage-band-grid,
-      body .portal-purpose-inner,
-      body .services-band-grid,
-      body .team-purpose-inner {
-        padding-top: 22px;
-        padding-bottom: 22px;
-      }
+    .team-page .stone-page-copy p{
+      max-width: 39rem !important;
     }
 
-    @media (min-width: 981px) and (max-width: 1180px) {
-      body .stone-page-copy {
-        width: 51%;
-        padding-right: 42px;
-      }
-      body .stone-hero-panel {
-        width: 41vw;
-        min-width: 500px;
-      }
-      body .stone-page-copy h1,
-      body .stone-page-copy h1.long-title,
-      body .stone-page-copy h1.wide-title {
-        font-size: clamp(2.85rem, 4vw, 3.75rem);
-      }
+    .team-page .stone-hero-panel img{
+      object-position:center center !important;
     }
 
-    @media (max-width: 980px) {
-      body .stone-page-inner {
-        padding: 46px 0 32px;
-      }
-      body .stone-page-copy h1,
-      body .stone-page-copy h1.long-title,
-      body .stone-page-copy h1.wide-title {
-        line-height: 1.08;
-        text-wrap: balance;
-      }
-      body .stone-hero-panel {
-        height: 380px;
-        margin-bottom: 0;
-      }
-    }
-  </style>
-<style id="stonebridge-team-purpose-band-style">
-    .team-purpose-band {
-      background: linear-gradient(135deg, #17395c 0%, #102f4d 100%);
-      color: #fffaf2;
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(0,0,0,.1);
+    .team-strip{
+      background:linear-gradient(135deg,#17395c 0%,#102f4d 100%);
+      color:#fffaf2;
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(0,0,0,.16);
     }
 
-    .team-purpose-inner {
-      width: min(1120px, calc(100% - 72px));
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 32px;
-      padding: 24px 0;
-    }
-
-    .team-purpose-item {
-      padding-left: 22px;
-      border-left: 1px solid rgba(255,255,255,.16);
-    }
-
-    .team-purpose-item:first-child {
-      padding-left: 0;
-      border-left: none;
-    }
-
-    .team-purpose-item h2 {
-      margin: 0 0 6px;
-      color: #fffaf2;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: 1.36rem;
-      line-height: 1.08;
-      letter-spacing: -.01em;
-    }
-
-    .team-purpose-item p {
-      margin: 0;
-      color: rgba(255,250,242,.82);
-      font-size: .88rem;
-      line-height: 1.56;
-    }
-
-    @media (max-width: 900px) {
-      .team-purpose-inner {
-        width: min(100% - 36px, 1120px);
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-      .team-purpose-item,
-      .team-purpose-item:first-child {
-        padding-left: 0;
-        border-left: none;
-        padding-top: 16px;
-        border-top: 1px solid rgba(255,255,255,.14);
-      }
-      .team-purpose-item:first-child {
-        border-top: none;
-        padding-top: 0;
-      }
-    }
-  </style>
-<style id="stonebridge-team-hero-crop">
-    .compact-team-hero .stone-hero-panel img { object-position: center center; }
-  </style>
-<style id="stonebridge-sitewide-layout-optimization">
-    /* Sitewide polish pass: remove accidental-looking space and keep compact editorial rhythm. */
-    .site-header.compact-site-header .nav{
-      min-height:64px;
-      padding:5px 0 6px;
-    }
-    .site-header.compact-site-header .brand-mark{
-      font-size:clamp(1.45rem,1.75vw,1.88rem);
-      line-height:.9;
-    }
-    .site-header.compact-site-header .brand-sub{
-      margin-top:3px;
-      font-size:.49rem;
-      letter-spacing:.3em;
-    }
-    .site-header.compact-site-header .menu{gap:22px;font-size:.84rem;}
-    .site-header.compact-site-header .header-cta .btn{min-height:38px;padding:0 17px;border-radius:11px;}
-
-    @media (min-width:1081px){
-      .stone-page-hero,
-      .stone-page-hero.compact-contact-hero,
-      .stone-page-hero.compact-team-hero,
-      .stone-page-hero.profile-pt-hero{
-        min-height:520px!important;
-      }
-      .stone-page-hero .stone-page-inner,
-      .stone-page-hero.compact-contact-hero .stone-page-inner,
-      .stone-page-hero.compact-team-hero .stone-page-inner,
-      .stone-page-hero.profile-pt-hero .stone-page-inner{
-        min-height:520px!important;
-      }
-      .stone-page-copy h1{font-size:clamp(3.05rem,4.15vw,4.55rem)!important;line-height:1.04!important;}
-      .stone-page-copy p{margin-top:14px!important;}
-      .stone-page-actions{margin-top:22px!important;}
-    }
-
-    .subpage-band{min-height:auto!important;}
-    .subpage-band-grid{padding:16px 0!important;gap:22px!important;}
-    .subpage-band-item{padding:0!important;}
-    .subpage-band-item p{font-size:.82rem!important;line-height:1.45!important;}
-
-    .home-led-section,
-    .home-led-section.paper,
-    .home-led-section.tight{
-      padding-top:42px!important;
-      padding-bottom:42px!important;
-    }
-    .home-led-grid{gap:18px!important;}
-    .home-led-card{padding:22px!important;}
-
-    .about-page-editorial .home-led-section,
-    .about-page-editorial .home-led-section.paper,
-    .about-page-editorial .home-led-section.tight{padding:40px 0!important;}
-    .about-experience-band{padding:38px 0!important;}
-    .about-consult-inner{padding:34px 0!important;}
-    .about-frame-grid,
-    .about-editorial-split{gap:28px!important;}
-    .about-frame-row{padding:12px 0!important;}
-
-    .team-purpose-band{padding:16px 0!important;}
-    .team-purpose-inner{gap:20px!important;}
-    .team-purpose-item{padding:0!important;}
-    .team-roster-section{padding:42px 0!important;}
-    .team-fit-section{padding:34px 0!important;}
-    .team-final-band .team-final-inner,
-    .team-final-band .team-roster-shell{padding:34px 0!important;}
-
-    .services-page .home-led-section,
-    .services-page .home-led-section.paper{padding:42px 0!important;}
-    .services-band-grid{padding:16px 0!important;gap:20px!important;}
-    .services-full-cta-inner{padding:34px 0!important;}
-
-    .fees-page .home-led-section,
-    .fees-page .home-led-section.paper,
-    .fees-page .home-led-section.tight{padding:40px 0!important;}
-    .fees-section-heading{margin-bottom:16px!important;}
-    .fee-row{padding:14px 22px!important;}
-    .fee-service strong{font-size:1.2rem!important;}
-    .fee-service span{font-size:.82rem!important;line-height:1.38!important;}
-    .financial-frame-band .subpage-band-grid{padding:16px 0!important;}
-    .fees-consult-inner{padding:34px 0!important;}
-    .policy-mini-grid{gap:12px!important;margin-top:14px!important;}
-    .policy-mini-card{padding:16px!important;}
-
-    .contact-page .request-band .subpage-band-grid{padding:15px 0!important;gap:22px!important;}
-    .contact-page .contact-action-section{padding-top:34px!important;padding-bottom:42px!important;}
-    .consultation-form-card{padding:22px!important;}
-    .consultation-form{gap:14px!important;}
-
-    .portal-purpose-band{padding:16px 0!important;}
-    .portal-editorial-section{padding:40px 0!important;}
-    .portal-safety-band{padding:24px 0!important;}
-    .portal-final-cta{padding:34px 0!important;}
-
-    .founder-intro-inner{padding-top:56px!important;padding-bottom:50px!important;}
-    .compact-principle-inner{padding:20px 0!important;}
-    .founder-section{padding:36px 0!important;}
-    .founder-section#background,
-    .founder-section#publications,
-    .founder-section#fit-scope{padding:34px 0!important;}
-    .founder-section-inner{gap:34px!important;}
-    .concern-grid{gap:10px!important;}
-    .concern-card{padding:14px 0!important;}
-    .approach-grid{gap:12px!important;}
-    .approach-card{padding:16px!important;}
-    .degree-row{padding:14px 0!important;}
-    .publication-layout{gap:20px!important;align-items:center!important;}
-    .publication-visual{margin:0!important;}
-    .publication-card{padding:16px 0!important;}
-    .founder-final-inner{padding:32px 0!important;}
-
-    @media (max-width:1080px){
-      .stone-page-hero .stone-page-inner{padding:42px 0 28px!important;}
-      .stone-hero-panel{height:360px!important;margin-bottom:18px!important;}
-      .footer-grid{gap:20px!important;}
-    }
-    @media (max-width:760px){
-      .site-header.compact-site-header .nav{min-height:62px;}
-      .home-led-section,.home-led-section.paper,.home-led-section.tight,
-      .founder-section,.founder-section#background,.founder-section#publications,.founder-section#fit-scope{padding:34px 0!important;}
-      .stone-hero-panel{height:300px!important;}
-      .stone-page-copy h1{font-size:clamp(2.6rem,10vw,3.6rem)!important;}
-    }
-  </style>
-</link></link></link></link>
-<style id="stonebridge-team-cleaner-profile-pass">
-  /* Team page refinement: shorter hero language, less name repetition, tighter roster proportions. */
-  .team-page .stone-page-copy h1.long-title{
-    max-width: 12ch !important;
-  }
-  .team-page .stone-page-copy p{
-    max-width: 34rem !important;
-  }
-  .team-page .team-roster-section{
-    padding: 34px 0 34px !important;
-  }
-  .team-page .team-section-label{
-    margin-bottom: 10px !important;
-  }
-  .team-page .clinician-profile{
-    grid-template-columns: 218px minmax(0,1fr) !important;
-    gap: 26px !important;
-    max-width: 980px;
-    border-radius: 26px !important;
-  }
-  .team-page .clinician-photo img{
-    min-height: 286px !important;
-    object-position: center top;
-  }
-  .team-page .clinician-copy{
-    padding: 24px 30px 24px 0 !important;
-  }
-  .team-page .status-pill{
-    display:none !important;
-  }
-  .team-page .clinician-copy h2{
-    margin:0 0 7px !important;
-    font-size:clamp(2.15rem,3.05vw,2.95rem) !important;
-    line-height:1.06 !important;
-  }
-  .team-page .clinician-role-line{
-    margin:0 0 12px !important;
-    font-size:.76rem !important;
-    letter-spacing:.085em !important;
-  }
-  .team-page .clinician-copy p{
-    font-size:.95rem !important;
-    line-height:1.62 !important;
-    max-width:48rem !important;
-  }
-  .team-page .clinician-focus-list{
-    margin-top:16px !important;
-  }
-  .team-page .clinician-focus-list li{
-    grid-template-columns: 106px minmax(0,1fr) !important;
-    gap:14px !important;
-    padding:9px 0 !important;
-    font-size:.9rem !important;
-    line-height:1.48 !important;
-  }
-  .team-page .clinician-focus-list strong{
-    font-size:1.05rem !important;
-  }
-  .team-page .clinician-actions{
-    margin-top:18px !important;
-  }
-  .team-page .team-roster-note{
-    max-width:980px !important;
-    margin-top:14px !important;
-    padding-top:12px !important;
-    font-size:.9rem !important;
-    line-height:1.56 !important;
-  }
-  .team-page .team-final-band .team-shell{
-    padding:30px 0 !important;
-  }
-  .team-page .team-final-band h2{
-    font-size:clamp(2rem,3vw,2.8rem) !important;
-  }
-  @media (max-width:980px){
-    .team-page .clinician-profile{
-      grid-template-columns:1fr !important;
-      max-width:none;
-    }
-    .team-page .clinician-copy{
-      padding:24px !important;
-    }
-    .team-page .clinician-photo img{
-      height:320px !important;
-      min-height:0 !important;
-    }
-  }
-</style>
-
-<style id="stonebridge-team-design-repair">
-  /* Team page repair: restore the navy strip, reduce repetition, and make the roster feel intentional instead of oversized. */
-  .team-page .stone-page-kicker{ letter-spacing:.22em; }
-  .team-page .stone-page-copy h1.long-title{
-    max-width: 14ch !important;
-    font-size: clamp(3.05rem, 3.6vw, 4.05rem) !important;
-  }
-  .team-page .stone-page-copy p{
-    max-width: 33rem !important;
-    line-height: 1.66 !important;
-  }
-  .team-page .team-purpose-band{
-    display:block !important;
-    background: linear-gradient(135deg,#17395c 0%,#102f4d 100%);
-    color:#fffaf2;
-    border-top:1px solid rgba(255,255,255,.08);
-    border-bottom:1px solid rgba(0,0,0,.16);
-  }
-  .team-page .team-purpose-inner{
-    width:min(1120px, calc(100% - 72px));
-    margin:0 auto;
-    display:grid;
-    grid-template-columns:repeat(3, minmax(0,1fr));
-    gap:26px;
-    padding:18px 0 !important;
-  }
-  .team-page .team-purpose-item{
-    padding:0 0 0 18px;
-    border-left:1px solid rgba(255,255,255,.16);
-  }
-  .team-page .team-purpose-item:first-child{
-    padding-left:0;
-    border-left:none;
-  }
-  .team-page .team-purpose-item h2{
-    margin:0 0 5px;
-    color:#fffaf2;
-    font-family:"EB Garamond", Georgia, serif;
-    font-size:1.18rem;
-    line-height:1.08;
-    letter-spacing:-.01em;
-  }
-  .team-page .team-purpose-item p{
-    margin:0;
-    color:rgba(255,250,242,.82);
-    font-size:.82rem;
-    line-height:1.44;
-  }
-  .team-page .team-roster-section{
-    padding:32px 0 34px !important;
-  }
-  .team-page .clinician-profile{
-    grid-template-columns: 204px minmax(0,1fr) !important;
-    gap:0 !important;
-    max-width: 940px !important;
-    border-radius:24px !important;
-    box-shadow:0 12px 32px rgba(31,42,52,.045) !important;
-  }
-  .team-page .clinician-photo img{
-    min-height:260px !important;
-    height:100% !important;
-  }
-  .team-page .clinician-copy{
-    padding:24px 30px !important;
-  }
-  .team-page .clinician-copy h2{
-    font-size:clamp(1.95rem,2.55vw,2.55rem) !important;
-    line-height:1.08 !important;
-    letter-spacing:-.025em !important;
-    margin:0 0 5px !important;
-  }
-  .team-page .clinician-role-line{
-    margin-bottom:10px !important;
-  }
-  .team-page .clinician-copy > p{
-    max-width:44rem !important;
-    font-size:.92rem !important;
-    line-height:1.58 !important;
-  }
-  .team-page .clinician-focus-list{
-    margin-top:14px !important;
-  }
-  .team-page .clinician-focus-list li{
-    grid-template-columns:92px minmax(0,1fr) !important;
-    padding:8px 0 !important;
-    gap:12px !important;
-    font-size:.86rem !important;
-    line-height:1.42 !important;
-  }
-  .team-page .clinician-focus-list strong{
-    font-size:1rem !important;
-  }
-  .team-page .clinician-actions{
-    margin-top:16px !important;
-  }
-  .team-page .team-roster-note{
-    max-width:940px !important;
-    margin-top:12px !important;
-    padding-top:12px !important;
-    font-size:.88rem !important;
-    line-height:1.5 !important;
-  }
-  .team-page .team-final-band .team-shell{
-    padding:28px 0 !important;
-  }
-  @media (max-width:980px){
-    .team-page .team-purpose-inner,
-    .team-page .clinician-profile{
-      grid-template-columns:1fr !important;
-    }
-    .team-page .team-purpose-inner{
-      width:min(1120px, calc(100% - 30px));
+    .team-strip-grid{
+      width:min(1220px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
       gap:0;
-      padding:12px 0 !important;
+      padding:22px 0;
     }
-    .team-page .team-purpose-item{
-      padding:12px 0 !important;
+
+    .team-strip-item{
+      padding:0 30px;
+      border-left:1px solid rgba(255,255,255,.16);
+    }
+
+    .team-strip-item:first-child{
+      padding-left:0;
       border-left:none;
-      border-top:1px solid rgba(255,255,255,.14);
-    }
-    .team-page .team-purpose-item:first-child{ border-top:none; }
-    .team-page .clinician-photo img{
-      height:300px !important;
-      min-height:0 !important;
-    }
-  }
-</style>
-
-<style id="stonebridge-team-final-roster-design">
-  /* Final Team page direction: a clean roster landing page, not a thin duplicate of Founder. */
-  .team-page .stone-page-copy h1.long-title{
-    max-width: 16ch !important;
-    font-size: clamp(3.05rem, 3.7vw, 4.12rem) !important;
-    line-height: 1.06 !important;
-  }
-  .team-page .stone-page-copy p{
-    max-width: 35rem !important;
-    font-size: .98rem !important;
-    line-height: 1.68 !important;
-  }
-  .team-page .team-purpose-band{
-    display:block !important;
-    padding:0 !important;
-    background: linear-gradient(135deg,#17395c 0%,#102f4d 100%) !important;
-  }
-  .team-page .team-purpose-inner{
-    width:min(1120px, calc(100% - 72px)) !important;
-    grid-template-columns: repeat(3, minmax(0,1fr)) !important;
-    gap:0 !important;
-    padding:20px 0 !important;
-  }
-  .team-page .team-purpose-item{
-    padding:0 26px !important;
-    border-left:1px solid rgba(255,255,255,.15) !important;
-  }
-  .team-page .team-purpose-item:first-child{
-    padding-left:0 !important;
-    border-left:none !important;
-  }
-  .team-page .team-purpose-item h2{
-    font-size:1.22rem !important;
-    margin:0 0 6px !important;
-  }
-  .team-page .team-purpose-item p{
-    font-size:.84rem !important;
-    line-height:1.48 !important;
-  }
-  .team-page .team-roster-section{
-    padding:42px 0 38px !important;
-  }
-  .team-page .team-section-label{
-    margin-bottom:12px !important;
-  }
-  .team-page .clinician-profile{
-    max-width:1040px !important;
-    grid-template-columns:235px minmax(0,1fr) !important;
-    gap:0 !important;
-    border-radius:28px !important;
-    background:linear-gradient(180deg,rgba(255,253,248,.92),rgba(248,244,239,.86)) !important;
-    box-shadow:0 14px 38px rgba(31,42,52,.052) !important;
-  }
-  .team-page .clinician-photo{
-    background:#ede4d8 !important;
-  }
-  .team-page .clinician-photo img{
-    min-height:315px !important;
-    height:100% !important;
-    object-position:center top !important;
-  }
-  .team-page .clinician-copy{
-    padding:30px 36px !important;
-  }
-  .team-page .status-pill{
-    display:none !important;
-  }
-  .team-page .clinician-copy h2{
-    margin:0 0 6px !important;
-    font-size:clamp(2.25rem,3.1vw,3.05rem) !important;
-    line-height:1.07 !important;
-    letter-spacing:-.03em !important;
-  }
-  .team-page .clinician-role-line{
-    margin:0 0 12px !important;
-    font-size:.77rem !important;
-    letter-spacing:.095em !important;
-  }
-  .team-page .clinician-copy > p{
-    max-width:44rem !important;
-    font-size:.96rem !important;
-    line-height:1.62 !important;
-  }
-  .team-page .clinician-focus-list{
-    margin-top:18px !important;
-  }
-  .team-page .clinician-focus-list li{
-    grid-template-columns:105px minmax(0,1fr) !important;
-    gap:16px !important;
-    padding:10px 0 !important;
-    font-size:.9rem !important;
-    line-height:1.48 !important;
-  }
-  .team-page .clinician-focus-list strong{
-    font-size:1.06rem !important;
-  }
-  .team-page .clinician-actions{
-    margin-top:20px !important;
-  }
-  .team-page .team-roster-note{
-    max-width:1040px !important;
-    margin-top:14px !important;
-    padding:14px 0 0 !important;
-    font-size:.9rem !important;
-    line-height:1.56 !important;
-  }
-  .team-page .team-final-band .team-shell{
-    padding:32px 0 !important;
-  }
-  .team-page .team-final-band h2{
-    font-size:clamp(2.05rem,3.1vw,2.85rem) !important;
-  }
-  @media (max-width:980px){
-    .team-page .team-purpose-inner,
-    .team-page .clinician-profile{
-      grid-template-columns:1fr !important;
-    }
-    .team-page .team-purpose-inner{width:min(1120px, calc(100% - 30px)) !important;}
-    .team-page .team-purpose-item,
-    .team-page .team-purpose-item:first-child{
-      padding:12px 0 !important;
-      border-left:none !important;
-      border-top:1px solid rgba(255,255,255,.14) !important;
-    }
-    .team-page .team-purpose-item:first-child{border-top:none !important;}
-    .team-page .clinician-copy{padding:26px !important;}
-    .team-page .clinician-photo img{height:320px !important;min-height:0 !important;}
-  }
-</style>
-
-
-<style id="stonebridge-design-system-cleanup">
-  /* Final layout-system cleanup: widen text columns, quiet oversized images, and remove accidental-looking float/empty-space patterns. */
-  @media (min-width: 981px) {
-    body .stone-page-hero,
-    body .stone-page-hero.compact-contact-hero,
-    body .stone-page-hero.compact-team-hero,
-    body .stone-page-hero.profile-pt-hero {
-      min-height: 520px !important;
     }
 
-    body .stone-page-inner,
-    body .stone-page-hero.compact-contact-hero .stone-page-inner,
-    body .stone-page-hero.compact-team-hero .stone-page-inner,
-    body .stone-page-hero.profile-pt-hero .stone-page-inner {
-      width: min(1220px, calc(100% - 72px)) !important;
-      min-height: 520px !important;
-      padding: 48px 0 42px !important;
-      display: flex !important;
-      align-items: center !important;
+    .team-strip-item h2{
+      margin:0 0 6px;
+      color:#fffaf2;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.28rem;
+      line-height:1.08;
+      letter-spacing:-.015em;
     }
 
-    body .stone-page-copy,
-    body .stone-page-hero.compact-contact-hero .stone-page-copy,
-    body .stone-page-hero.compact-team-hero .stone-page-copy,
-    body .stone-page-hero.profile-pt-hero .stone-page-copy {
-      width: 58% !important;
-      max-width: 760px !important;
-      padding-right: 50px !important;
+    .team-strip-item p{
+      margin:0;
+      color:rgba(255,250,242,.82);
+      font-size:.85rem;
+      line-height:1.5;
     }
 
-    body .stone-page-line { margin-bottom: 18px !important; }
-    body .stone-page-kicker { margin-bottom: 12px !important; }
-
-    body .stone-page-copy h1,
-    body .stone-page-copy h1.long-title,
-    body .stone-page-copy h1.wide-title {
-      max-width: 16.5ch !important;
-      font-size: clamp(3.35rem, 4.28vw, 4.85rem) !important;
-      line-height: 1.035 !important;
-      letter-spacing: -.042em !important;
-      text-wrap: balance !important;
+    .team-roster-clean{
+      background:#f8f5f0;
+      padding:52px 0 50px;
+      border-bottom:1px solid rgba(212,200,185,.48);
     }
 
-    body .stone-page-copy h1.wide-title { max-width: 18ch !important; }
-    body .hero-contact .stone-page-copy h1 { max-width: 18ch !important; }
-    body .compact-team-hero .stone-page-copy h1 { max-width: 15.6ch !important; }
-
-    body .stone-page-copy p {
-      margin-top: 18px !important;
-      max-width: 43rem !important;
-      font-size: 1rem !important;
-      line-height: 1.7 !important;
+    .team-roster-wrap{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(240px,.52fr) minmax(0,1fr);
+      gap:42px;
+      align-items:center;
     }
 
-    body .stone-page-actions { margin-top: 24px !important; }
-
-    body .stone-hero-panel,
-    body .stone-page-hero.compact-contact-hero .stone-hero-panel,
-    body .stone-page-hero.compact-team-hero .stone-hero-panel,
-    body .stone-page-hero.profile-pt-hero .stone-hero-panel {
-      width: 39.5vw !important;
-      min-width: 500px !important;
-      border-top-left-radius: 44px !important;
+    .team-roster-intro{
+      max-width:360px;
     }
 
-    body .stone-hero-panel img { object-fit: cover !important; }
-
-    body .subpage-band-grid,
-    body .portal-purpose-inner,
-    body .services-band-grid,
-    body .team-purpose-inner {
-      width: min(1220px, calc(100% - 72px)) !important;
-      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-      gap: 0 !important;
-      padding-top: 18px !important;
-      padding-bottom: 18px !important;
+    .team-eyebrow{
+      margin:0 0 12px;
+      color:#8c7551;
+      font-family:"Inter", sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.22em;
+      text-transform:uppercase;
     }
 
-    body .subpage-band-item,
-    body .portal-purpose-item,
-    body .services-band-item,
-    body .team-purpose-item {
-      padding: 0 24px !important;
-      border-left: 1px solid rgba(255,255,255,.16) !important;
+    .team-roster-intro h2{
+      margin:0;
+      color:#213142;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:clamp(2.45rem, 4vw, 3.75rem);
+      line-height:1.05;
+      letter-spacing:-.04em;
+      text-wrap:balance;
     }
 
-    body .subpage-band-item:first-child,
-    body .portal-purpose-item:first-child,
-    body .services-band-item:first-child,
-    body .team-purpose-item:first-child {
-      padding-left: 0 !important;
-      border-left: none !important;
+    .team-roster-intro p{
+      margin:16px 0 0;
+      color:#5f6c78;
+      font-size:.98rem;
+      line-height:1.72;
     }
 
-    body .subpage-band-item h4,
-    body .portal-purpose-item h4,
-    body .services-band-item h4,
-    body .team-purpose-item h4,
-    body .team-purpose-item h2 {
-      margin: 0 0 4px !important;
-      font-size: 1.08rem !important;
-      line-height: 1.08 !important;
-      letter-spacing: -.01em !important;
+    .team-card{
+      display:grid;
+      grid-template-columns:224px minmax(0,1fr);
+      overflow:hidden;
+      border:1px solid rgba(212,200,185,.72);
+      border-radius:30px;
+      background:linear-gradient(180deg,rgba(255,253,248,.94),rgba(248,244,239,.88));
+      box-shadow:0 18px 44px rgba(31,42,52,.055);
     }
 
-    body .subpage-band-item p,
-    body .portal-purpose-item p,
-    body .services-band-item p,
-    body .team-purpose-item p {
-      font-size: .8rem !important;
-      line-height: 1.45 !important;
-      max-width: 26rem !important;
-    }
-  }
-
-  @media (min-width: 981px) and (max-width: 1180px) {
-    body .stone-page-copy,
-    body .stone-page-hero.compact-contact-hero .stone-page-copy,
-    body .stone-page-hero.compact-team-hero .stone-page-copy,
-    body .stone-page-hero.profile-pt-hero .stone-page-copy {
-      width: 60% !important;
-      padding-right: 36px !important;
+    .team-card-photo{
+      margin:0;
+      background:#ede4d8;
+      min-height:100%;
     }
 
-    body .stone-page-copy h1,
-    body .stone-page-copy h1.long-title,
-    body .stone-page-copy h1.wide-title {
-      font-size: clamp(3rem, 4vw, 4.1rem) !important;
+    .team-card-photo img{
+      display:block;
+      width:100%;
+      height:100%;
+      min-height:330px;
+      object-fit:cover;
+      object-position:center top;
+      filter:saturate(.96) contrast(.98);
     }
 
-    body .stone-hero-panel,
-    body .stone-page-hero.compact-contact-hero .stone-hero-panel,
-    body .stone-page-hero.compact-team-hero .stone-hero-panel,
-    body .stone-page-hero.profile-pt-hero .stone-hero-panel {
-      width: 38vw !important;
-      min-width: 430px !important;
+    .team-card-copy{
+      padding:32px 38px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
-  }
 
-  @media (max-width: 980px) {
-    body .stone-page-copy h1,
-    body .stone-page-copy h1.long-title,
-    body .stone-page-copy h1.wide-title {
-      max-width: 16ch !important;
-      line-height: 1.08 !important;
-      text-wrap: balance !important;
+    .team-card-copy h3{
+      margin:0 0 6px;
+      color:#213142;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:clamp(2.2rem, 3vw, 3rem);
+      line-height:1.06;
+      letter-spacing:-.032em;
     }
-    body .subpage-band-grid,
-    body .portal-purpose-inner,
-    body .services-band-grid,
-    body .team-purpose-inner {
-      gap: 16px !important;
+
+    .team-role{
+      margin:0 0 14px;
+      color:#8c7551;
+      font-size:.78rem;
+      font-weight:800;
+      line-height:1.5;
+      letter-spacing:.095em;
+      text-transform:uppercase;
     }
-    body .subpage-band-item,
-    body .portal-purpose-item,
-    body .services-band-item,
-    body .team-purpose-item {
-      padding-left: 0 !important;
-      border-left: none !important;
-      border-top: 1px solid rgba(255,255,255,.14) !important;
-      padding-top: 14px !important;
+
+    .team-card-copy p{
+      margin:0;
+      color:#5f6c78;
+      font-size:.96rem;
+      line-height:1.64;
+      max-width:46rem;
     }
-    body .subpage-band-item:first-child,
-    body .portal-purpose-item:first-child,
-    body .services-band-item:first-child,
-    body .team-purpose-item:first-child {
-      border-top: none !important;
-      padding-top: 0 !important;
+
+    .team-facts{
+      margin:20px 0 0;
+      padding:0;
+      list-style:none;
+      border-top:1px solid rgba(212,200,185,.68);
+      border-bottom:1px solid rgba(212,200,185,.68);
     }
-  }
 
-  /* Fees: keep section introductions attached to their section instead of floating across empty space. */
-  .fees-page .fees-editorial-heading {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    align-items: start !important;
-    margin-bottom: 18px !important;
-    max-width: 760px !important;
-  }
-
-  .fees-page .fees-editorial-heading h2,
-  .fees-page .fees-section-titleline h2 {
-    max-width: 12ch !important;
-  }
-
-  .fees-page .fees-editorial-heading p {
-    max-width: 46rem !important;
-    line-height: 1.62 !important;
-  }
-
-  .fees-page .fees-balance-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 16px !important;
-  }
-
-  .fees-page .fees-balance-panel {
-    padding: 22px 24px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-  }
-
-  .fees-page .fees-balance-panel.intro-panel {
-    background: linear-gradient(180deg, rgba(255,253,248,.82), rgba(248,245,240,.88)) !important;
-  }
-
-  .fees-page .fees-section-titleline {
-    justify-content: flex-start !important;
-    gap: 18px !important;
-  }
-
-  .fees-page .fees-policy-line {
-    margin-top: 16px !important;
-    max-width: none !important;
-  }
-
-  @media (max-width: 1080px) {
-    .fees-page .fees-balance-grid,
-    .fees-page .fees-appointment-grid {
-      grid-template-columns: 1fr !important;
+    .team-facts li{
+      display:grid;
+      grid-template-columns:112px minmax(0,1fr);
+      gap:16px;
+      padding:11px 0;
+      border-top:1px solid rgba(212,200,185,.45);
+      color:#5f6c78;
+      font-size:.9rem;
+      line-height:1.52;
     }
-  }
 
-  /* Team: make the roster page feel intentional without pretending there is a larger staff. */
-  .team-page .team-roster-section { padding-top: 46px !important; }
-  .team-page .team-shell { width: min(1120px, calc(100% - 72px)) !important; }
-  .team-page .team-section-label { margin-bottom: 12px !important; }
-  .team-page .clinician-profile {
-    grid-template-columns: 245px minmax(0, 1fr) !important;
-    gap: 30px !important;
-    border-radius: 28px !important;
-  }
-  .team-page .clinician-photo img { min-height: 315px !important; }
-  .team-page .clinician-copy { padding: 28px 34px 28px 0 !important; }
-  .team-page .clinician-copy h2 {
-    font-size: clamp(2.2rem, 3.2vw, 3.05rem) !important;
-    line-height: 1.08 !important;
-    max-width: 18ch !important;
-  }
-  .team-page .clinician-focus-list { margin-top: 18px !important; }
-  .team-page .team-roster-note {
-    max-width: 760px !important;
-    margin: 18px 0 0 !important;
-  }
-  @media (max-width: 900px) {
-    .team-page .clinician-profile { grid-template-columns: 1fr !important; }
-    .team-page .clinician-copy { padding: 24px !important; }
-    .team-page .clinician-photo img { min-height: 300px !important; }
-  }
-</style>
+    .team-facts li:first-child{
+      border-top:none;
+    }
 
+    .team-facts strong{
+      color:#213142;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:1.08rem;
+      line-height:1.12;
+      letter-spacing:-.01em;
+    }
+
+    .team-card-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .team-bottom-note{
+      background:linear-gradient(180deg,rgba(255,253,248,.7),rgba(246,241,234,.82));
+      border-top:1px solid rgba(212,200,185,.5);
+    }
+
+    .team-bottom-inner{
+      width:min(1120px, calc(100% - 72px));
+      margin:0 auto;
+      padding:34px 0;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:28px;
+      align-items:center;
+    }
+
+    .team-bottom-inner h2{
+      margin:0 0 8px;
+      color:#213142;
+      font-family:"EB Garamond", Georgia, serif;
+      font-size:clamp(2.1rem, 3.2vw, 3rem);
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
+
+    .team-bottom-inner p{
+      margin:0;
+      max-width:760px;
+      color:#5f6c78;
+      font-size:.97rem;
+      line-height:1.65;
+    }
+
+    @media (max-width:980px){
+      .team-strip-grid,
+      .team-roster-wrap,
+      .team-card,
+      .team-bottom-inner{
+        grid-template-columns:1fr;
+      }
+
+      .team-strip-grid,
+      .team-roster-wrap,
+      .team-bottom-inner{
+        width:min(1120px, calc(100% - 30px));
+      }
+
+      .team-strip-grid{
+        gap:0;
+        padding:12px 0;
+      }
+
+      .team-strip-item,
+      .team-strip-item:first-child{
+        padding:14px 0;
+        border-left:none;
+        border-top:1px solid rgba(255,255,255,.14);
+      }
+
+      .team-strip-item:first-child{
+        border-top:none;
+      }
+
+      .team-roster-clean{
+        padding:42px 0;
+      }
+
+      .team-roster-intro{
+        max-width:720px;
+      }
+
+      .team-card-photo img{
+        height:320px;
+        min-height:0;
+      }
+
+      .team-card-copy{
+        padding:28px;
+      }
+    }
+
+    @media (max-width:640px){
+      .team-facts li{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+      .team-card-copy{
+        padding:24px;
+      }
+    }
+  </style>
 </head>
 <body class="team-page">
-<header class="site-header compact-site-header">
-<div class="container nav">
-<a aria-label="Stonebridge Psychological Group home" class="brand-link" href="index.html">
-<div class="brand-mark">STONEBRIDGE</div>
-<div class="brand-sub">Psychological Group</div>
-</a>
-<button aria-label="Toggle menu" class="mobile-toggle" type="button">Menu</button>
-<div class="menu-wrap">
-<nav aria-label="Primary navigation" class="menu"><a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="team.html">Team</a><a href="services.html">Services</a><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="portal.html">Portal</a></nav>
-<div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
-</div>
-</div>
-</header>
-<main>
-<section class="stone-page-hero compact-team-hero">
-<div class="stone-hero-panel">
-<img alt="" aria-hidden="true" src="team-consultation-room.png"/>
-</div>
-<div class="stone-page-inner">
-<div class="stone-page-copy">
-<div class="stone-page-line"></div>
-<div class="stone-page-kicker">Team</div>
-<h1 class="long-title">Care is currently founder-led.</h1>
-<p>Stonebridge currently offers outpatient telehealth psychotherapy through one clinician, with care beginning through a fit-based waitlist inquiry.</p>
-<div class="stone-page-actions">
-<a class="btn btn-primary" href="team-founder.html">View profile</a>
-<a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
-</div>
-</div>
-</div>
-</section>
-<section class="subpage-band no-icons team-summary-band" aria-label="Stonebridge team overview">
-<div class="subpage-band-grid">
-<article class="subpage-band-item"><div><h4>Current clinician</h4><p>Founder-led outpatient psychotherapy.</p></div></article>
-<article class="subpage-band-item"><div><h4>Format</h4><p>Telehealth for teens and adults in Illinois.</p></div></article>
-<article class="subpage-band-item"><div><h4>Care frame</h4><p>Consultation-first and fit-based.</p></div></article>
-</div>
-</section>
+  <header class="site-header compact-site-header">
+    <div class="container nav">
+      <a aria-label="Stonebridge Psychological Group home" class="brand-link" href="index.html">
+        <div class="brand-mark">STONEBRIDGE</div>
+        <div class="brand-sub">Psychological Group</div>
+      </a>
+      <button aria-label="Toggle menu" class="mobile-toggle" type="button">Menu</button>
+      <div class="menu-wrap">
+        <nav aria-label="Primary navigation" class="menu"><a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="team.html">Team</a><a href="services.html">Services</a><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="portal.html">Portal</a></nav>
+        <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="stone-page-hero compact-team-hero team-clean-hero">
+      <div class="stone-hero-panel">
+        <img src="team-consultation-room.png" alt="" aria-hidden="true" />
+      </div>
+      <div class="stone-page-inner">
+        <div class="stone-page-copy">
+          <div class="stone-page-line"></div>
+          <div class="stone-page-kicker">Team</div>
+          <h1>Who provides care.</h1>
+          <p>Stonebridge currently provides outpatient telehealth psychotherapy through Dr. Stephen W. Bryant, PsyD, LCPC.</p>
+          <div class="stone-page-actions">
+            <a class="btn btn-primary" href="team-founder.html">View profile</a>
+            <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="team-roster-section" id="current-clinician">
-<div class="team-shell">
-<p class="team-section-label">Current clinician</p>
-<article class="clinician-profile">
-<figure class="clinician-photo">
-<img alt="Dr. Stephen W. Bryant, PsyD, LCPC" src="founders-photo.png"/>
-</figure>
-<div class="clinician-copy">
-<span class="status-pill">Founder</span>
-<h2>Dr. Stephen W. Bryant, PsyD, LCPC</h2>
-<p class="clinician-role-line">Founder · Licensed Clinical Professional Counselor, Illinois</p>
-<p>Relational, insight-oriented outpatient telehealth psychotherapy for teens and adults in Illinois.</p>
-<ul aria-label="Clinician overview" class="clinician-focus-list">
-<li><strong>Works with</strong><span>Teens and adults in Illinois.</span></li>
-<li><strong>Focus</strong><span>Anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, substance use concerns when outpatient care fits, and feeling stuck.</span></li>
-<li><strong>Format</strong><span>Outpatient telehealth psychotherapy.</span></li>
-</ul>
-<div class="clinician-actions">
-<a class="btn btn-primary" href="team-founder.html">Read full profile</a>
-<a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
-</div>
-</div>
-</article>
-<p class="team-roster-note">Before intake, Stonebridge reviews whether outpatient telehealth psychotherapy appears clinically appropriate. Referral direction may be discussed when another setting seems better suited.</p>
-</div>
-</section>
-<section class="team-final-band" id="begin">
-<div class="team-shell">
-<div>
-<div class="stone-page-kicker">Begin</div>
-<h2>Begin with a brief note.</h2>
-<p>A short waitlist inquiry is enough to start. Stonebridge will review fit, scope, and next steps.</p>
-</div>
-<div class="stone-page-actions">
-<a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
-<a class="btn btn-secondary" href="services.html">View Services</a>
-</div>
-</div>
-</section>
-</main>
-<footer class="site-footer">
-<div class="container footer-grid">
-<div>
-<div class="footer-brand">STONEBRIDGE</div>
-<div class="footer-sub">Psychological Group</div>
-<p class="footer-copy">Thoughtful telehealth psychotherapy for teens and adults in Illinois.</p>
-</div>
-<div>
-<div class="footer-title">Care</div>
-<div class="footer-links">
-<a href="services.html">Services</a>
-<a href="fees-insurance.html">Fees &amp; Insurance</a>
-<a href="contact.html">Join the Waitlist</a>
-</div>
-</div>
-<div>
-<div class="footer-title">Practice</div>
-<div class="footer-links">
-<a href="about.html">About</a>
-<a href="team.html">Team</a>
-<a href="team-founder.html">Founder</a>
-<a href="portal.html">Client Portal</a>
-</div>
-</div>
-<div>
-<div class="footer-title">Contact</div>
-<div class="footer-links">
-<span>Serving Illinois via telehealth</span>
-<a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-<a href="tel:+17734171688">(773) 417-1688</a>
-<a aria-label="Stonebridge Psychological Group on LinkedIn" href="https://www.linkedin.com/company/stonebridge-psychological-group/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-</div>
-</div>
-<div class="footer-logo-right">
-<img alt="Stonebridge Psychological Group logo" src="stonebridge-logo.png"/>
-</div>
-</div>
-<div class="container footer-bottom">
-<div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-<div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-</div>
-</footer>
-<script src="script.js"></script>
+    <section class="team-strip" aria-label="Team overview">
+      <div class="team-strip-grid">
+        <article class="team-strip-item">
+          <h2>Licensed in Illinois</h2>
+          <p>Telehealth psychotherapy for Illinois clients.</p>
+        </article>
+        <article class="team-strip-item">
+          <h2>Works with</h2>
+          <p>Teens and adults.</p>
+        </article>
+        <article class="team-strip-item">
+          <h2>Care begins with fit</h2>
+          <p>A brief inquiry helps determine next steps.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="team-roster-clean" id="provider">
+      <div class="team-roster-wrap">
+        <div class="team-roster-intro">
+          <p class="team-eyebrow">Current provider</p>
+          <h2>One clear point of contact.</h2>
+          <p>Stonebridge is intentionally small. Care begins through a waitlist inquiry and, when appropriate, continues within a steady outpatient therapy frame.</p>
+        </div>
+
+        <article class="team-card" aria-label="Clinician profile summary">
+          <figure class="team-card-photo">
+            <img src="founders-photo.png" alt="Stephen W. Bryant, PsyD, LCPC" />
+          </figure>
+          <div class="team-card-copy">
+            <h3>Stephen W. Bryant, PsyD, LCPC</h3>
+            <p class="team-role">Founder · Licensed Clinical Professional Counselor, Illinois</p>
+            <p>A doctoral-level clinician providing relational, insight-oriented outpatient telehealth psychotherapy for teens and adults in Illinois.</p>
+            <ul class="team-facts" aria-label="Clinician summary">
+              <li><strong>Clinical focus</strong><span>Anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, and patterns that feel hard to change.</span></li>
+              <li><strong>Format</strong><span>Outpatient telehealth psychotherapy.</span></li>
+              <li><strong>Next step</strong><span>A brief waitlist inquiry before intake.</span></li>
+            </ul>
+            <div class="team-card-actions">
+              <a class="btn btn-primary" href="team-founder.html">Read full profile</a>
+              <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="team-bottom-note" id="begin">
+      <div class="team-bottom-inner">
+        <div>
+          <p class="team-eyebrow">Begin</p>
+          <h2>Start with a brief inquiry.</h2>
+          <p>Stonebridge reviews fit, scope, and availability before beginning care. Referral direction may be discussed when another setting appears better suited.</p>
+        </div>
+        <div class="stone-page-actions">
+          <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">Thoughtful telehealth psychotherapy for teens and adults in Illinois.</p>
+      </div>
+      <div>
+        <div class="footer-title">Care</div>
+        <div class="footer-links">
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="contact.html">Join the Waitlist</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Practice</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="team-founder.html">Founder</a>
+          <a href="portal.html">Client Portal</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <a href="tel:+17734171688">(773) 417-1688</a>
+          <a aria-label="Stonebridge Psychological Group on LinkedIn" href="https://www.linkedin.com/company/stonebridge-psychological-group/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-logo-right">
+        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" />
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
