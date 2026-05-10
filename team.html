@@ -884,6 +884,137 @@
     }
   }
 </style>
+
+<style id="stonebridge-team-final-roster-design">
+  /* Final Team page direction: a clean roster landing page, not a thin duplicate of Founder. */
+  .team-page .stone-page-copy h1.long-title{
+    max-width: 16ch !important;
+    font-size: clamp(3.05rem, 3.7vw, 4.12rem) !important;
+    line-height: 1.06 !important;
+  }
+  .team-page .stone-page-copy p{
+    max-width: 35rem !important;
+    font-size: .98rem !important;
+    line-height: 1.68 !important;
+  }
+  .team-page .team-purpose-band{
+    display:block !important;
+    padding:0 !important;
+    background: linear-gradient(135deg,#17395c 0%,#102f4d 100%) !important;
+  }
+  .team-page .team-purpose-inner{
+    width:min(1120px, calc(100% - 72px)) !important;
+    grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+    gap:0 !important;
+    padding:20px 0 !important;
+  }
+  .team-page .team-purpose-item{
+    padding:0 26px !important;
+    border-left:1px solid rgba(255,255,255,.15) !important;
+  }
+  .team-page .team-purpose-item:first-child{
+    padding-left:0 !important;
+    border-left:none !important;
+  }
+  .team-page .team-purpose-item h2{
+    font-size:1.22rem !important;
+    margin:0 0 6px !important;
+  }
+  .team-page .team-purpose-item p{
+    font-size:.84rem !important;
+    line-height:1.48 !important;
+  }
+  .team-page .team-roster-section{
+    padding:42px 0 38px !important;
+  }
+  .team-page .team-section-label{
+    margin-bottom:12px !important;
+  }
+  .team-page .clinician-profile{
+    max-width:1040px !important;
+    grid-template-columns:235px minmax(0,1fr) !important;
+    gap:0 !important;
+    border-radius:28px !important;
+    background:linear-gradient(180deg,rgba(255,253,248,.92),rgba(248,244,239,.86)) !important;
+    box-shadow:0 14px 38px rgba(31,42,52,.052) !important;
+  }
+  .team-page .clinician-photo{
+    background:#ede4d8 !important;
+  }
+  .team-page .clinician-photo img{
+    min-height:315px !important;
+    height:100% !important;
+    object-position:center top !important;
+  }
+  .team-page .clinician-copy{
+    padding:30px 36px !important;
+  }
+  .team-page .status-pill{
+    display:none !important;
+  }
+  .team-page .clinician-copy h2{
+    margin:0 0 6px !important;
+    font-size:clamp(2.25rem,3.1vw,3.05rem) !important;
+    line-height:1.07 !important;
+    letter-spacing:-.03em !important;
+  }
+  .team-page .clinician-role-line{
+    margin:0 0 12px !important;
+    font-size:.77rem !important;
+    letter-spacing:.095em !important;
+  }
+  .team-page .clinician-copy > p{
+    max-width:44rem !important;
+    font-size:.96rem !important;
+    line-height:1.62 !important;
+  }
+  .team-page .clinician-focus-list{
+    margin-top:18px !important;
+  }
+  .team-page .clinician-focus-list li{
+    grid-template-columns:105px minmax(0,1fr) !important;
+    gap:16px !important;
+    padding:10px 0 !important;
+    font-size:.9rem !important;
+    line-height:1.48 !important;
+  }
+  .team-page .clinician-focus-list strong{
+    font-size:1.06rem !important;
+  }
+  .team-page .clinician-actions{
+    margin-top:20px !important;
+  }
+  .team-page .team-roster-note{
+    max-width:1040px !important;
+    margin-top:14px !important;
+    padding:14px 0 0 !important;
+    font-size:.9rem !important;
+    line-height:1.56 !important;
+  }
+  .team-page .team-final-band .team-shell{
+    padding:32px 0 !important;
+  }
+  .team-page .team-final-band h2{
+    font-size:clamp(2.05rem,3.1vw,2.85rem) !important;
+  }
+  @media (max-width:980px){
+    .team-page .team-purpose-inner,
+    .team-page .clinician-profile{
+      grid-template-columns:1fr !important;
+    }
+    .team-page .team-purpose-inner{width:min(1120px, calc(100% - 30px)) !important;}
+    .team-page .team-purpose-item,
+    .team-page .team-purpose-item:first-child{
+      padding:12px 0 !important;
+      border-left:none !important;
+      border-top:1px solid rgba(255,255,255,.14) !important;
+    }
+    .team-page .team-purpose-item:first-child{border-top:none !important;}
+    .team-page .clinician-copy{padding:26px !important;}
+    .team-page .clinician-photo img{height:320px !important;min-height:0 !important;}
+  }
+</style>
+
 </head>
 <body class="team-page">
 <header class="site-header compact-site-header">
@@ -908,8 +1039,8 @@
 <div class="stone-page-copy">
 <div class="stone-page-line"></div>
 <div class="stone-page-kicker">Team</div>
-<h1 class="long-title">Meet the clinician.</h1>
-<p>Stonebridge currently offers outpatient telehealth psychotherapy through its founder, with care beginning through a fit-based waitlist inquiry.</p>
+<h1 class="long-title">Clinical care at Stonebridge.</h1>
+<p>Outpatient telehealth psychotherapy is currently provided through the practice founder, with care beginning through a fit-based waitlist inquiry.</p>
 <div class="stone-page-actions">
 <a class="btn btn-primary" href="team-founder.html">View profile</a>
 <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
@@ -919,15 +1050,15 @@
 </section>
 <section class="team-purpose-band" aria-label="Stonebridge team overview">
 <div class="team-purpose-inner">
-<article class="team-purpose-item"><h2>Current care</h2><p>Outpatient telehealth psychotherapy for teens and adults in Illinois.</p></article>
-<article class="team-purpose-item"><h2>Fit before intake</h2><p>Stonebridge reviews fit, scope, and appropriateness before care begins.</p></article>
-<article class="team-purpose-item"><h2>Clear next step</h2><p>A brief waitlist inquiry starts the process.</p></article>
+<article class="team-purpose-item"><h2>Current clinician</h2><p>Founder-led outpatient psychotherapy.</p></article>
+<article class="team-purpose-item"><h2>Format</h2><p>Telehealth for teens and adults in Illinois.</p></article>
+<article class="team-purpose-item"><h2>Care frame</h2><p>Consultation-first and fit-based.</p></article>
 </div>
 </section>
 
 <section class="team-roster-section" id="current-clinician">
 <div class="team-shell">
-<p class="team-section-label">Roster</p>
+<p class="team-section-label">Current clinician</p>
 <article class="clinician-profile">
 <figure class="clinician-photo">
 <img alt="Dr. Stephen W. Bryant, PsyD, LCPC" src="founders-photo.png"/>
@@ -936,11 +1067,11 @@
 <span class="status-pill">Founder</span>
 <h2>Dr. Stephen W. Bryant, PsyD, LCPC</h2>
 <p class="clinician-role-line">Founder · Licensed Clinical Professional Counselor, Illinois</p>
-<p>A doctoral-level clinician providing relational, insight-oriented outpatient telehealth psychotherapy for teens and adults in Illinois.</p>
+<p>Relational, insight-oriented outpatient telehealth psychotherapy for teens and adults in Illinois.</p>
 <ul aria-label="Clinician overview" class="clinician-focus-list">
 <li><strong>Works with</strong><span>Teens and adults in Illinois.</span></li>
 <li><strong>Focus</strong><span>Anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, substance use concerns when outpatient care fits, and feeling stuck.</span></li>
-<li><strong>Format</strong><span>Outpatient telehealth psychotherapy, beginning with a fit-based consultation.</span></li>
+<li><strong>Format</strong><span>Outpatient telehealth psychotherapy.</span></li>
 </ul>
 <div class="clinician-actions">
 <a class="btn btn-primary" href="team-founder.html">Read full profile</a>
@@ -948,15 +1079,15 @@
 </div>
 </div>
 </article>
-<p class="team-roster-note">Before intake, Stonebridge reviews whether outpatient telehealth psychotherapy appears clinically appropriate. If another setting seems better suited, referral direction may be discussed when possible.</p>
+<p class="team-roster-note">Before intake, Stonebridge reviews whether outpatient telehealth psychotherapy appears clinically appropriate. Referral direction may be discussed when another setting seems better suited.</p>
 </div>
 </section>
 <section class="team-final-band" id="begin">
 <div class="team-shell">
 <div>
 <div class="stone-page-kicker">Begin</div>
-<h2>Start with a brief waitlist inquiry.</h2>
-<p>A short note is enough. Stonebridge will review whether outpatient telehealth psychotherapy may be an appropriate next step.</p>
+<h2>Begin with a brief note.</h2>
+<p>A short waitlist inquiry is enough to start. Stonebridge will review fit, scope, and next steps.</p>
 </div>
 <div class="stone-page-actions">
 <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
