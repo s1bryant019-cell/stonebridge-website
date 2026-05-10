@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <title>Team | Stonebridge Psychological Group</title>
-  <meta name="description" content="Meet the current clinician at Stonebridge Psychological Group, a telehealth psychotherapy practice for teens and adults in Illinois." />
+  <meta name="description" content="Meet Dr. Stephen W. Bryant, PsyD, LCPC, the current clinician providing outpatient telehealth psychotherapy through Stonebridge Psychological Group in Illinois." />
+  <link rel="canonical" href="https://stonebridgepsychgroup.com/team.html">
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,199 +17,309 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
-  <style>
-    .team-page-cleanup .subpage-band-icon,
-    .team-page-cleanup .home-led-list li::before{
-      display:none;
+  <style id="stonebridge-team-editorial-styles">
+    .team-page .stone-page-copy p{
+      max-width: 42rem;
     }
 
-    .team-page-cleanup .subpage-band-item{
-      grid-template-columns:1fr;
-      gap:0;
+    .team-page .stone-page-hero::after,
+    .team-page .home-led-card::after{
+      display: none;
     }
 
-    .team-page-cleanup .home-led-section{
-      padding-top:54px;
-      padding-bottom:54px;
+    .team-shell{
+      width: min(1120px, calc(100% - 72px));
+      margin: 0 auto;
     }
 
-    .team-page-cleanup .home-led-section.tight-team-section{
-      padding-top:38px;
-      padding-bottom:48px;
+    .team-positioning{
+      padding: 34px 0;
+      border-bottom: 1px solid rgba(212,200,185,.5);
+      background: rgba(255,250,242,.34);
     }
 
-    .team-roster-shell{
-      width:min(1120px, calc(100% - 72px));
-      margin:0 auto;
+    .team-positioning-inner{
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 34px;
+      align-items: center;
     }
 
-    .team-section-heading{
-      display:grid;
-      grid-template-columns:.75fr 1.25fr;
-      gap:28px;
-      align-items:end;
-      margin-bottom:22px;
+    .team-positioning h2{
+      margin: 0;
+      color: #213142;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(2.1rem, 3.4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
     }
 
-    .team-section-heading h2{
-      margin:0;
-      color:#213142;
-      font-family:"EB Garamond", Georgia, serif;
-      font-size:clamp(2.35rem, 4vw, 3.55rem);
-      line-height:1;
-      letter-spacing:-.035em;
+    .team-positioning p{
+      margin: 0;
+      color: #5f6c78;
+      font-size: 1rem;
+      line-height: 1.76;
+      max-width: 58rem;
     }
 
-    .team-section-heading p{
-      margin:0;
-      max-width:48rem;
-      color:#5f6c78;
-      font-size:1rem;
-      line-height:1.7;
+    .team-roster-section{
+      padding: 50px 0 46px;
+      background: #f8f5f0;
     }
 
-    .clinician-roster-card{
-      display:grid;
-      grid-template-columns:260px minmax(0, 1fr);
-      gap:30px;
-      align-items:stretch;
-      padding:0;
-      overflow:hidden;
+    .team-section-label{
+      margin: 0 0 14px;
+      color: #8c7551;
+      font-family: "Inter", sans-serif;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
     }
 
-    .clinician-roster-photo{
-      margin:0;
-      min-height:100%;
-      background:#efe7dd;
+    .clinician-profile{
+      display: grid;
+      grid-template-columns: 285px minmax(0, 1fr);
+      gap: 34px;
+      align-items: stretch;
+      border-radius: 30px;
+      border: 1px solid rgba(212,200,185,.65);
+      background: linear-gradient(180deg, rgba(255,253,248,.9), rgba(248,244,239,.82));
+      box-shadow: 0 16px 44px rgba(31,42,52,.055);
+      overflow: hidden;
     }
 
-    .clinician-roster-photo img{
-      width:100%;
-      height:100%;
-      min-height:330px;
-      object-fit:cover;
-      object-position:center top;
+    .clinician-photo{
+      margin: 0;
+      background: #efe6db;
+      min-height: 100%;
     }
 
-    .clinician-roster-copy{
-      padding:30px 32px 30px 0;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+    .clinician-photo img{
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      object-position: center top;
+      filter: saturate(.96) contrast(.98);
     }
 
-    .clinician-roster-copy h2{
-      margin:8px 0 8px;
-      font-family:"EB Garamond", Georgia, serif;
-      font-size:clamp(2.25rem, 3.3vw, 3.15rem);
-      line-height:1;
-      letter-spacing:-.03em;
-      color:#213142;
+    .clinician-copy{
+      padding: 34px 38px 34px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .clinician-copy h2{
+      margin: 8px 0 8px;
+      color: #213142;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(2.45rem, 3.65vw, 3.5rem);
+      line-height: 1.08;
+      letter-spacing: -.038em;
     }
 
     .clinician-role-line{
-      margin:0 0 16px;
-      color:#8c7551;
-      font-weight:700;
-      font-size:.82rem;
-      letter-spacing:.09em;
-      text-transform:uppercase;
-      line-height:1.55;
+      margin: 0 0 18px;
+      color: #8c7551;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      line-height: 1.55;
+      text-transform: uppercase;
     }
 
-    .clinician-roster-copy p{
-      max-width:46rem;
+    .clinician-copy p{
+      margin: 0;
+      max-width: 48rem;
+      color: #5f6c78;
+      font-size: 1rem;
+      line-height: 1.74;
     }
 
-    .team-fit-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:18px;
+    .clinician-focus-list{
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0;
+      border-top: 1px solid rgba(212,200,185,.65);
+      border-bottom: 1px solid rgba(212,200,185,.65);
     }
 
-    .team-fit-card{
-      padding:24px;
-      min-height:100%;
+    .clinician-focus-list li{
+      display: grid;
+      grid-template-columns: 138px minmax(0, 1fr);
+      gap: 18px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(212,200,185,.45);
+      color: #5f6c78;
+      font-size: .96rem;
+      line-height: 1.55;
     }
 
-    .team-fit-card h3{
-      margin-bottom:8px;
-      font-size:1.75rem;
+    .clinician-focus-list li:first-child{
+      border-top: none;
     }
 
-    .team-fit-card p{
-      margin:0;
-      font-size:.97rem;
-      line-height:1.64;
+    .clinician-focus-list strong{
+      color: #213142;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: 1.16rem;
+      line-height: 1.1;
+      letter-spacing: -.01em;
+    }
+
+    .clinician-actions{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .team-fit-section{
+      padding: 46px 0 48px;
+      background: linear-gradient(180deg, rgba(255,253,248,.62), rgba(246,241,234,.75));
+      border-top: 1px solid rgba(212,200,185,.45);
+      border-bottom: 1px solid rgba(212,200,185,.45);
+    }
+
+    .team-fit-editorial{
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .team-fit-editorial h2{
+      margin: 0;
+      color: #213142;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(2.25rem, 3.8vw, 3.45rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .team-fit-copy p{
+      margin: 0;
+      color: #5f6c78;
+      font-size: 1rem;
+      line-height: 1.76;
+      max-width: 55rem;
+    }
+
+    .team-fit-copy p + p{
+      margin-top: 14px;
+    }
+
+    .team-fit-lines{
+      margin: 22px 0 0;
+      display: grid;
+      gap: 0;
+      border-top: 1px solid rgba(212,200,185,.65);
+    }
+
+    .team-fit-line{
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 18px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(212,200,185,.55);
+    }
+
+    .team-fit-line strong{
+      color: #213142;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: 1.2rem;
+      line-height: 1.1;
+    }
+
+    .team-fit-line span{
+      color: #5f6c78;
+      font-size: .96rem;
+      line-height: 1.58;
     }
 
     .team-final-band{
-      background:linear-gradient(135deg, #17395c 0%, #102f4d 100%);
-      color:#fffaf2;
-      border-top:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(135deg, #17395c 0%, #102f4d 100%);
+      color: #fffaf2;
+      border-top: 1px solid rgba(255,255,255,.08);
     }
 
-    .team-final-band .team-roster-shell{
-      display:grid;
-      grid-template-columns:minmax(0, 1fr) auto;
-      gap:28px;
-      align-items:center;
-      padding:42px 0;
+    .team-final-band .team-shell{
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      padding: 42px 0;
     }
 
     .team-final-band h2{
-      color:#fffaf2;
-      margin:0 0 8px;
-      font-size:clamp(2.25rem, 3.4vw, 3.25rem);
-      letter-spacing:-.03em;
+      margin: 0 0 8px;
+      color: #fffaf2;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(2.25rem, 3.4vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -.03em;
     }
 
     .team-final-band p{
-      color:rgba(255,250,242,.84);
-      margin:0;
-      max-width:760px;
+      margin: 0;
+      color: rgba(255,250,242,.84);
+      max-width: 760px;
     }
 
     .team-final-band .btn-secondary{
-      background:rgba(255,255,255,.1);
-      color:#fffaf2;
-      border-color:rgba(255,255,255,.25);
+      background: rgba(255,255,255,.1);
+      color: #fffaf2;
+      border-color: rgba(255,255,255,.25);
     }
 
-    @media (max-width:980px){
-      .team-section-heading,
-      .clinician-roster-card,
-      .team-fit-grid,
-      .team-final-band .team-roster-shell{
-        grid-template-columns:1fr;
+    @media (max-width: 980px){
+      .team-positioning-inner,
+      .clinician-profile,
+      .team-fit-editorial,
+      .team-final-band .team-shell{
+        grid-template-columns: 1fr;
       }
 
-      .clinician-roster-copy{
-        padding:28px;
+      .clinician-copy{
+        padding: 30px;
       }
 
-      .clinician-roster-photo img{
-        height:360px;
-        min-height:0;
+      .clinician-photo img{
+        min-height: 0;
+        height: 360px;
       }
     }
 
-    @media (max-width:760px){
-      .team-roster-shell{
-        width:min(1120px, calc(100% - 30px));
+    @media (max-width: 760px){
+      .team-shell{
+        width: min(1120px, calc(100% - 30px));
       }
 
-      .team-page-cleanup .home-led-section{
-        padding-top:40px;
-        padding-bottom:40px;
+      .team-positioning{
+        padding: 28px 0;
       }
 
-      .clinician-roster-copy{
-        padding:24px;
+      .team-roster-section,
+      .team-fit-section{
+        padding: 38px 0;
       }
 
-      .clinician-roster-photo img{
-        height:320px;
+      .clinician-copy{
+        padding: 24px;
+      }
+
+      .clinician-photo img{
+        height: 320px;
+      }
+
+      .clinician-focus-list li,
+      .team-fit-line{
+        grid-template-columns: 1fr;
+        gap: 6px;
       }
     }
   </style>
@@ -228,7 +339,7 @@
     body .services-section-heading h2,
     body .fees-section-heading h2,
     body .team-section-heading h2,
-    body .clinician-roster-copy h2,
+    body .clinician-copy h2,
     body .contact-waitlist-card h2,
     body .team-final-band h2,
     body .fees-final-cta h2 {
@@ -256,9 +367,8 @@
       }
     }
   </style>
-
 </head>
-<body class="team-page-cleanup">
+<body class="team-page">
 
   <header class="site-header">
     <div class="container nav">
@@ -296,7 +406,7 @@
         <div class="stone-hero-overlay"></div>
         <div class="stone-panel-caption">
           <h2>Care begins with fit</h2>
-          <p>Prospective clients can review the current clinician profile before submitting a waitlist inquiry.</p>
+          <p>Stonebridge uses a consultation-first model so care begins with thoughtful review, not automatic scheduling.</p>
           <div class="stone-caption-line"></div>
         </div>
       </div>
@@ -304,56 +414,43 @@
         <div class="stone-page-copy">
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Clinical Team</div>
-          <h1 class="long-title">A small team page with a clear starting point.</h1>
-          <p>Stonebridge is currently beginning with Dr. Stephen W. Bryant, PsyD, LCPC, Founder. This page gives prospective clients a simple way to see who is currently named, pictured, and connected to the psychotherapy pathway.</p>
+          <h1 class="long-title">Meet the clinician currently providing care.</h1>
+          <p>Stonebridge currently offers outpatient telehealth psychotherapy through Dr. Stephen W. Bryant, PsyD, LCPC, Founder. This page is meant to make the clinician relationship clear before someone takes the next step.</p>
           <div class="stone-page-actions">
-            <a class="btn btn-primary" href="#current-clinician">View current clinician</a>
-            <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
+            <a class="btn btn-primary" href="#current-clinician">View clinician</a>
+            <a class="btn btn-secondary" href="team-founder.html">Read full profile</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="subpage-band">
-      <div class="subpage-band-grid">
-        <article class="subpage-band-item">
-          <div class="subpage-band-icon">01</div>
-          <div><h4>Named clinician</h4><p>The current clinician is identified clearly before a request is submitted.</p></div>
-        </article>
-        <article class="subpage-band-item">
-          <div class="subpage-band-icon">02</div>
-          <div><h4>Illinois telehealth</h4><p>Outpatient psychotherapy is provided online for clients located in Illinois.</p></div>
-        </article>
-        <article class="subpage-band-item">
-          <div class="subpage-band-icon">03</div>
-          <div><h4>Fit first</h4><p>Waitlist inquiries are reviewed for fit, scope, and appropriateness before care begins.</p></div>
-        </article>
+    <section class="team-positioning" aria-label="Current Stonebridge team">
+      <div class="team-shell team-positioning-inner">
+        <h2>One current clinician. A clear profile. A fit-based next step.</h2>
+        <p>The Team page should make it easy to understand who is connected to care at Stonebridge. At this stage, prospective clients are reviewing one named clinician, his role, his clinical focus, and whether outpatient telehealth psychotherapy may be an appropriate place to begin.</p>
       </div>
     </section>
 
-    <section class="home-led-section" id="current-clinician">
-      <div class="team-roster-shell">
-        <div class="team-section-heading">
-          <h2>Current clinician.</h2>
-          <p>The team page is meant to be simple: a face, a name, credentials, role, and a clear path to the fuller profile.</p>
-        </div>
-
-        <article class="home-led-card clinician-roster-card">
-          <figure class="clinician-roster-photo">
+    <section class="team-roster-section" id="current-clinician">
+      <div class="team-shell">
+        <p class="team-section-label">Current clinician</p>
+        <article class="clinician-profile">
+          <figure class="clinician-photo">
             <img src="founders-photo.png" alt="Dr. Stephen W. Bryant, PsyD, LCPC">
           </figure>
-          <div class="clinician-roster-copy">
+          <div class="clinician-copy">
             <span class="status-pill">Founder</span>
             <h2>Dr. Stephen W. Bryant, PsyD, LCPC</h2>
             <p class="clinician-role-line">Founder · Doctoral-level clinician · Licensed Clinical Professional Counselor, Illinois</p>
-            <p>Dr. Bryant provides outpatient telehealth psychotherapy for teens and adults located in Illinois. His work is steady, thoughtful, and relationally attentive, with attention to emotional complexity, stress, trauma history, relationships, identity, substance use concerns, and life transitions.</p>
-            <div class="home-tags">
-              <span class="home-tag">Teens &amp; adults</span>
-              <span class="home-tag">Illinois telehealth</span>
-              <span class="home-tag">Psychotherapy</span>
-              <span class="home-tag">Consultation first</span>
-            </div>
-            <div class="stone-page-actions">
+            <p>Dr. Bryant provides outpatient telehealth psychotherapy for teens and adults located in Illinois. His work is relational, insight-oriented, and steady, with attention to emotional complexity, life history, current stressors, and patterns that can become difficult to change alone.</p>
+
+            <ul class="clinician-focus-list" aria-label="Clinician overview">
+              <li><strong>Works with</strong><span>Teens and adults located in Illinois.</span></li>
+              <li><strong>Format</strong><span>Outpatient telehealth psychotherapy through a consultation-first process.</span></li>
+              <li><strong>Clinical focus</strong><span>Anxiety, depression, trauma responses, grief, relationship patterns, identity and self-worth, stress and burnout, substance use concerns when outpatient care fits, and feeling stuck.</span></li>
+            </ul>
+
+            <div class="clinician-actions">
               <a class="btn btn-primary" href="team-founder.html">Read full profile</a>
               <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
             </div>
@@ -362,35 +459,31 @@
       </div>
     </section>
 
-    <section class="home-led-section paper tight-team-section">
-      <div class="team-roster-shell">
-        <div class="team-section-heading">
-          <h2>How matching begins.</h2>
-          <p>Submitting a waitlist inquiry does not establish a clinical relationship or guarantee treatment. It gives Stonebridge enough information to review whether outpatient telehealth psychotherapy may be an appropriate starting point.</p>
+    <section class="team-fit-section" aria-label="How clinician fit is reviewed">
+      <div class="team-shell team-fit-editorial">
+        <div>
+          <p class="team-section-label">Fit and scope</p>
+          <h2>Matching is part of the care model.</h2>
         </div>
-        <div class="team-fit-grid">
-          <article class="home-led-card team-fit-card">
-            <h3>Fit</h3>
-            <p>Stonebridge reviews the presenting concern, age, Illinois location, telehealth appropriateness, urgency, and whether outpatient therapy appears clinically appropriate.</p>
-          </article>
-          <article class="home-led-card team-fit-card">
-            <h3>Scope</h3>
-            <p>If a different specialty, in-person service, crisis support, or higher level of care is needed, another setting may be recommended.</p>
-          </article>
-          <article class="home-led-card team-fit-card">
-            <h3>Next step</h3>
-            <p>If the practice appears clinically appropriate, Stonebridge will follow up regarding availability, insurance status, and possible consultation.</p>
-          </article>
+        <div class="team-fit-copy">
+          <p>Before a first appointment, Stonebridge reviews whether the presenting concern, age, Illinois location, telehealth format, urgency, and clinical scope appear appropriate for outpatient psychotherapy.</p>
+          <p>If another setting would be more responsible — such as crisis care, in-person treatment, psychological testing, court-related evaluation, or a higher level of care — that will be named as clearly as possible.</p>
+
+          <div class="team-fit-lines">
+            <div class="team-fit-line"><strong>Not open booking</strong><span>Prospective clients begin with a waitlist inquiry rather than immediate self-scheduling.</span></div>
+            <div class="team-fit-line"><strong>Not one-size-fits-all</strong><span>Clinical fit, scope, urgency, and telehealth appropriateness are reviewed before care begins.</span></div>
+            <div class="team-fit-line"><strong>Not a crisis pathway</strong><span>Stonebridge is structured for outpatient psychotherapy, not emergency or immediate crisis response.</span></div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="team-final-band" id="begin">
-      <div class="team-roster-shell">
+      <div class="team-shell">
         <div>
           <div class="stone-page-kicker">Begin</div>
-          <h2>A brief note is enough.</h2>
-          <p>Stonebridge is accepting waitlist inquiries for outpatient telehealth psychotherapy while awaiting confirmation of insurance paneling with select commercial plans.</p>
+          <h2>Start with a brief waitlist inquiry.</h2>
+          <p>A short note is enough. Stonebridge will review whether outpatient telehealth psychotherapy may be an appropriate next step.</p>
         </div>
         <div class="stone-page-actions">
           <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
@@ -410,7 +503,7 @@
       <div>
         <div class="footer-title">Services</div>
         <div class="footer-links">
-          <a href="services.html">Psychotherapy</a>
+          <a href="services.html">Services</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="portal.html">Client Portal</a>
           <a href="contact.html">Waitlist</a>
