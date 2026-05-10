@@ -2150,3 +2150,116 @@ body{background:var(--home-bg);}
     height:auto;
   }
 }
+
+/* =========================================================
+   SITEWIDE PREMIUM HEADER / FOOTER POLISH — May 2026
+   Purpose: tighter header, no dropdown dependency, cleaner footer.
+========================================================= */
+.site-header{
+  background:rgba(248,245,240,.94);
+  border-bottom:1px solid rgba(212,200,185,.52);
+}
+.site-header.compact-site-header .nav{
+  min-height:70px;
+  padding:7px 0 8px;
+  gap:22px;
+}
+.brand-link{display:block;flex:0 0 auto;}
+.site-header.compact-site-header .brand-mark{
+  font-size:clamp(1.55rem,1.95vw,2.05rem);
+  letter-spacing:.18em;
+  line-height:.9;
+}
+.site-header.compact-site-header .brand-sub{
+  margin-top:4px;
+  font-size:.52rem;
+  letter-spacing:.32em;
+  line-height:1.1;
+}
+.site-header.compact-site-header .menu-wrap{gap:24px;}
+.site-header.compact-site-header .menu{
+  gap:24px;
+  font-size:.86rem;
+  line-height:1;
+}
+.site-header.compact-site-header .menu a{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+}
+.site-header.compact-site-header .header-cta .btn{
+  min-height:40px;
+  padding:0 18px;
+  border-radius:12px;
+  font-size:.86rem;
+  box-shadow:0 12px 28px rgba(29,38,46,.08);
+}
+.site-header.compact-site-header .nav-dropdown,
+.site-header.compact-site-header .dropdown-menu{display:none!important;}
+
+.site-footer{
+  padding:32px 0 18px;
+  border-top:1px solid rgba(212,200,185,.58);
+}
+.footer-grid{
+  grid-template-columns:1.28fr .7fr .72fr 1.08fr .9fr;
+  gap:24px;
+  padding-bottom:24px;
+}
+.footer-brand{
+  font-size:1.58rem;
+  letter-spacing:.18em;
+}
+.footer-sub{
+  margin-top:5px;
+  font-size:.58rem;
+  letter-spacing:.32em;
+}
+.footer-title{
+  font-size:.8rem;
+  letter-spacing:.14em;
+  margin-bottom:10px;
+}
+.footer-links{gap:7px;}
+.footer-copy,
+.footer-links a,
+.footer-links span,
+.footer-small{
+  font-size:.88rem;
+  line-height:1.48;
+}
+.footer-copy{max-width:260px;}
+.footer-logo-right{
+  min-height:112px;
+  justify-content:flex-end;
+  padding-left:18px;
+}
+.footer-logo-right img{
+  width:min(100%,250px);
+  max-height:116px;
+  object-fit:contain;
+  opacity:.86;
+}
+.footer-bottom{
+  padding-top:14px;
+}
+
+@media (max-width:1180px){
+  .site-header.compact-site-header .menu{gap:17px;font-size:.82rem;}
+  .site-header.compact-site-header .header-cta .btn{padding:0 15px;}
+}
+
+@media (max-width:1000px){
+  .site-header.compact-site-header .nav{min-height:66px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .footer-logo-right{justify-content:flex-start;border-left:none;padding-left:0;}
+}
+
+@media (max-width:760px){
+  .site-header.compact-site-header .nav{min-height:64px;}
+  .site-header.compact-site-header .brand-mark{font-size:1.45rem;}
+  .site-header.compact-site-header .brand-sub{font-size:.5rem;letter-spacing:.26em;}
+  .site-header.compact-site-header .menu{top:70px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-logo-right img{width:min(100%,210px);}
+}
