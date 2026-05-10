@@ -753,6 +753,120 @@
     }
   </style>
 
+  <style id="founder-spacing-credential-compression">
+    /* Compress lower Founder profile sections so spacing feels intentional rather than empty. */
+    .founder-section{
+      padding-top:38px;
+      padding-bottom:38px;
+    }
+
+    .founder-section#background,
+    .founder-section#publications,
+    .founder-section#fit-scope{
+      padding-top:32px;
+      padding-bottom:32px;
+    }
+
+    .founder-section-inner{
+      gap:36px;
+    }
+
+    .section-copy h2{
+      margin-bottom:10px;
+    }
+
+    .section-copy .lead{
+      margin-bottom:12px;
+    }
+
+    .section-copy p{
+      margin-bottom:12px;
+    }
+
+    .compact-credential-list{
+      margin-top:14px;
+    }
+
+    .degree-row{
+      grid-template-columns:minmax(150px,.26fr) minmax(0,1fr);
+      gap:20px;
+      padding:13px 0;
+    }
+
+    .credential-stack{
+      display:grid;
+      gap:10px;
+    }
+
+    .credential-item + .credential-item{
+      padding-top:10px;
+      border-top:1px solid rgba(33,49,66,.10);
+    }
+
+    .degree-row h3{
+      font-size:1.26rem;
+    }
+
+    .publication-layout{
+      margin-top:16px;
+      grid-template-columns:minmax(230px,.58fr) minmax(0,1fr);
+      gap:24px;
+      align-items:center;
+    }
+
+    .publication-visual{
+      border-radius:20px;
+      box-shadow:0 16px 34px rgba(33,49,66,.065);
+    }
+
+    .publication-list{
+      gap:14px;
+    }
+
+    .publication-card{
+      padding-top:14px;
+    }
+
+    .publication-card h3{
+      font-size:clamp(1.42rem,1.8vw,1.72rem);
+    }
+
+    .publication-card p{
+      margin-bottom:10px;
+      font-size:.91rem;
+      line-height:1.52;
+    }
+
+    .scope-panel p{
+      padding-top:11px;
+    }
+
+    .scope-panel p + p{
+      margin-top:10px;
+    }
+
+    .founder-final-inner{
+      padding:30px 0;
+    }
+
+    @media (max-width:720px){
+      .founder-section,
+      .founder-section#background,
+      .founder-section#publications,
+      .founder-section#fit-scope{
+        padding-top:34px;
+        padding-bottom:34px;
+      }
+      .degree-row{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+      .publication-layout{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+
   <style id="stonebridge-display-line-height-fix">
     /* Sitewide display-type guardrail: prevents EB Garamond descenders/ascenders from colliding on wrapped headings. */
     body h1,
@@ -962,7 +1076,7 @@
           <p class="lead">Dr. Bryant’s clinical foundation includes doctoral training in clinical psychology, Illinois LCPC licensure, and experience across multiple levels of behavioral health care.</p>
           <p>His background includes outpatient psychotherapy, community mental health, intensive outpatient and partial hospitalization settings, inpatient behavioral health, substance use treatment, trauma-focused care, supervision, professional education, and interdisciplinary treatment planning.</p>
 
-          <div class="degree-list" aria-label="Education and credentials">
+          <div class="degree-list compact-credential-list" aria-label="Education and credentials">
             <div class="degree-row">
               <div class="degree-label">Doctoral degree</div>
               <div>
@@ -971,17 +1085,16 @@
               </div>
             </div>
             <div class="degree-row">
-              <div class="degree-label">Graduate degree</div>
-              <div>
-                <h3>Master of Arts in Clinical Psychology</h3>
-                <p>The Chicago School of Professional Psychology</p>
-              </div>
-            </div>
-            <div class="degree-row">
-              <div class="degree-label">Graduate degree</div>
-              <div>
-                <h3>Master of Arts in Forensic Psychology</h3>
-                <p>The Chicago School of Professional Psychology</p>
+              <div class="degree-label">Graduate education</div>
+              <div class="credential-stack">
+                <div class="credential-item">
+                  <h3>Master of Arts in Clinical Psychology</h3>
+                  <p>The Chicago School of Professional Psychology</p>
+                </div>
+                <div class="credential-item">
+                  <h3>Master of Arts in Forensic Psychology</h3>
+                  <p>The Chicago School of Professional Psychology</p>
+                </div>
               </div>
             </div>
             <div class="degree-row">
@@ -992,17 +1105,16 @@
               </div>
             </div>
             <div class="degree-row">
-              <div class="degree-label">Certification</div>
-              <div>
-                <h3>Trauma-Focused Cognitive Behavioral Therapy Certification</h3>
-                <p>Medical University of South Carolina</p>
-              </div>
-            </div>
-            <div class="degree-row">
-              <div class="degree-label">Certification</div>
-              <div>
-                <h3>Certified Clinical Trauma Professional</h3>
-                <p>Evergreen Certifications</p>
+              <div class="degree-label">Certifications</div>
+              <div class="credential-stack">
+                <div class="credential-item">
+                  <h3>Trauma-Focused Cognitive Behavioral Therapy Certification</h3>
+                  <p>Medical University of South Carolina</p>
+                </div>
+                <div class="credential-item">
+                  <h3>Certified Clinical Trauma Professional</h3>
+                  <p>Evergreen Certifications</p>
+                </div>
               </div>
             </div>
           </div>
