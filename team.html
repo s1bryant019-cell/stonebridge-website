@@ -16,224 +16,208 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body.team-structural-roster .team-shell {
-      width: min(1060px, calc(100% - 40px));
+    body.team-compact-roster .team-shell {
+      width: min(1120px, calc(100% - 72px));
       margin: 0 auto;
     }
 
-    body.team-structural-roster .team-roster-hero {
+    body.team-compact-roster .team-hero {
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 12% 12%, rgba(200, 178, 138, 0.14), transparent 34%),
-        linear-gradient(135deg, #f8f2e8 0%, #f2e8db 56%, #eadccb 100%);
-      padding: clamp(58px, 6vw, 88px) 0 clamp(44px, 5vw, 66px);
-      min-height: 0 !important;
-      height: auto !important;
-      display: block !important;
+        radial-gradient(circle at 14% 18%, rgba(200, 171, 120, 0.13), transparent 30%),
+        linear-gradient(180deg, #fbf8f4 0%, #f2ebe3 100%);
+      border-bottom: 1px solid rgba(221, 211, 199, 0.62);
+      padding: clamp(36px, 4.2vw, 54px) 0 clamp(30px, 3.5vw, 42px);
     }
 
-    body.team-structural-roster .team-roster-hero::after {
-      content: "";
-      position: absolute;
-      right: -16%;
-      bottom: -56%;
-      width: min(620px, 44vw);
-      height: 260px;
-      border-radius: 999px;
-      background: rgba(17, 43, 67, 0.052);
-      transform: rotate(-8deg);
-      pointer-events: none;
-    }
-
-    body.team-structural-roster .team-roster-copy {
+    body.team-compact-roster .team-hero-copy {
+      max-width: 820px;
       position: relative;
       z-index: 1;
-      max-width: 740px;
     }
 
-    body.team-structural-roster .team-roster-copy .stone-page-line {
-      margin-bottom: 18px;
+    body.team-compact-roster .team-hero .stone-page-line {
+      margin-bottom: 14px;
     }
 
-    body.team-structural-roster .team-roster-title {
-      margin: 28px 0 18px;
-      max-width: 760px;
+    body.team-compact-roster .team-title {
+      margin: 12px 0 14px;
+      max-width: 12.5ch;
       font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(3.25rem, 5.8vw, 5.75rem);
-      line-height: 0.92;
-      letter-spacing: -0.055em;
+      font-size: clamp(3rem, 4.8vw, 4.65rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
       color: #132432;
+      text-wrap: balance;
     }
 
-    body.team-structural-roster .team-roster-copy p {
+    body.team-compact-roster .team-hero-copy p {
       margin: 0;
-      max-width: 660px;
-      color: rgba(19, 36, 50, 0.78);
-      font-size: 1.03rem;
-      line-height: 1.72;
+      max-width: 640px;
+      color: rgba(19, 36, 50, 0.76);
+      font-size: 1rem;
+      line-height: 1.68;
     }
 
-    body.team-structural-roster .team-roster-actions {
+    body.team-compact-roster .team-hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 12px;
       align-items: center;
-      margin-top: 28px;
+      margin-top: 22px;
     }
 
-    body.team-structural-roster .team-roster-section {
-      padding: clamp(40px, 5vw, 66px) 0 clamp(50px, 6vw, 82px);
-      background: linear-gradient(180deg, rgba(248, 242, 232, 0.72), rgba(255, 252, 247, 0.96));
+    body.team-compact-roster .team-hero-actions .btn,
+    body.team-compact-roster .team-card-actions .btn {
+      min-height: 48px;
+      border-radius: 15px;
     }
 
-    body.team-structural-roster .team-card {
+    body.team-compact-roster .team-roster-section {
+      padding: clamp(32px, 4vw, 48px) 0 clamp(42px, 5vw, 60px);
+      background: linear-gradient(180deg, rgba(248, 242, 232, 0.72), rgba(255, 252, 247, 0.97));
+    }
+
+    body.team-compact-roster .team-card {
       border: 1px solid rgba(36, 71, 96, 0.14);
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.76);
-      box-shadow: 0 24px 70px rgba(17, 43, 67, 0.08);
-      padding: clamp(30px, 5vw, 56px);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 18px 46px rgba(17, 43, 67, 0.07);
+      padding: clamp(28px, 4vw, 40px);
     }
 
-    body.team-structural-roster .team-card-grid {
+    body.team-compact-roster .team-card-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr);
-      gap: clamp(28px, 5vw, 58px);
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.12fr);
+      gap: clamp(26px, 4vw, 44px);
       align-items: start;
     }
 
-    body.team-structural-roster .team-card h2 {
-      margin: 16px 0 10px;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(2.35rem, 4vw, 4.45rem);
-      line-height: 0.96;
-      letter-spacing: -0.045em;
-      color: #132432;
+    body.team-compact-roster .team-label {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      min-height: 30px;
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(212, 200, 185, 0.72);
+      color: #8e7b61;
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    body.team-structural-roster .team-role-line {
+    body.team-compact-roster .team-card h2 {
+      margin: 14px 0 10px;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(2.3rem, 3.4vw, 3.45rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: #132432;
+      text-wrap: balance;
+    }
+
+    body.team-compact-roster .team-role-line {
       margin: 0;
-      color: rgba(19, 36, 50, 0.76);
+      color: rgba(19, 36, 50, 0.74);
       font-weight: 650;
       line-height: 1.55;
     }
 
-    body.team-structural-roster .team-card-copy {
+    body.team-compact-roster .team-card-copy {
       color: rgba(19, 36, 50, 0.78);
-      font-size: 1.02rem;
-      line-height: 1.78;
+      font-size: 1rem;
+      line-height: 1.72;
     }
 
-    body.team-structural-roster .team-card-copy p {
+    body.team-compact-roster .team-card-copy p {
       margin: 0;
     }
 
-    body.team-structural-roster .team-detail-list {
+    body.team-compact-roster .team-detail-list {
       display: grid;
       gap: 0;
-      margin: 28px 0 30px;
-      border-top: 1px solid rgba(36, 71, 96, 0.13);
-      border-bottom: 1px solid rgba(36, 71, 96, 0.13);
+      margin: 22px 0 24px;
+      border-top: 1px solid rgba(36, 71, 96, 0.12);
+      border-bottom: 1px solid rgba(36, 71, 96, 0.12);
     }
 
-    body.team-structural-roster .team-detail-row {
+    body.team-compact-roster .team-detail-row {
       display: grid;
-      grid-template-columns: 150px minmax(0, 1fr);
-      gap: 22px;
-      padding: 18px 0;
-      border-top: 1px solid rgba(36, 71, 96, 0.1);
+      grid-template-columns: 136px minmax(0, 1fr);
+      gap: 18px;
+      padding: 13px 0;
+      border-top: 1px solid rgba(36, 71, 96, 0.09);
     }
 
-    body.team-structural-roster .team-detail-row:first-child {
+    body.team-compact-roster .team-detail-row:first-child {
       border-top: 0;
     }
 
-    body.team-structural-roster .team-detail-row h3 {
+    body.team-compact-roster .team-detail-row h3 {
       margin: 0;
-      font-size: 0.76rem;
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.13em;
-      color: rgba(17, 43, 67, 0.7);
+      color: rgba(17, 43, 67, 0.68);
+      line-height: 1.35;
     }
 
-    body.team-structural-roster .team-detail-row p {
+    body.team-compact-roster .team-detail-row p {
       margin: 0;
-      color: rgba(19, 36, 50, 0.76);
-      line-height: 1.6;
-      font-size: 0.96rem;
+      color: rgba(19, 36, 50, 0.74);
+      line-height: 1.55;
+      font-size: 0.95rem;
     }
 
-    body.team-structural-roster .team-card-actions {
+    body.team-compact-roster .team-card-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       align-items: center;
     }
 
-    body.team-structural-roster .team-note {
-      margin-top: 34px;
-      padding-top: 26px;
-      border-top: 1px solid rgba(36, 71, 96, 0.12);
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
-      align-items: center;
-    }
-
-    body.team-structural-roster .team-note h2 {
-      margin: 0 0 6px;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(1.55rem, 2.2vw, 2.25rem);
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-      color: #132432;
-    }
-
-    body.team-structural-roster .team-note p {
-      margin: 0;
-      max-width: 640px;
-      color: rgba(19, 36, 50, 0.72);
-      line-height: 1.65;
-    }
-
     @media (max-width: 860px) {
-      body.team-structural-roster .team-card-grid,
-      body.team-structural-roster .team-note {
-        grid-template-columns: 1fr;
+      body.team-compact-roster .team-shell {
+        width: min(100% - 34px, 1120px);
       }
 
-      body.team-structural-roster .team-note {
-        gap: 18px;
+      body.team-compact-roster .team-card-grid {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 620px) {
-      body.team-structural-roster .team-shell {
-        width: min(100% - 28px, 1060px);
+      body.team-compact-roster .team-hero {
+        padding: 34px 0 30px;
       }
 
-      body.team-structural-roster .team-roster-hero {
-        padding: 48px 0 38px;
+      body.team-compact-roster .team-title {
+        font-size: clamp(2.85rem, 13vw, 4rem);
       }
 
-      body.team-structural-roster .team-roster-title {
-        margin-top: 22px;
-        font-size: clamp(3rem, 15vw, 4.6rem);
+      body.team-compact-roster .team-hero-actions .btn,
+      body.team-compact-roster .team-card-actions .btn {
+        width: 100%;
       }
 
-      body.team-structural-roster .team-card {
-        padding: 26px 22px 28px;
+      body.team-compact-roster .team-card {
+        padding: 24px 20px 26px;
         border-radius: 24px;
       }
 
-      body.team-structural-roster .team-detail-row {
+      body.team-compact-roster .team-detail-row {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 7px;
       }
     }
   </style>
 </head>
-<body class="team-structural-roster">
+<body class="team-compact-roster">
 
   <header class="site-header">
     <div class="container nav">
@@ -270,14 +254,14 @@
   </header>
 
   <main>
-    <section class="team-roster-hero" aria-labelledby="team-page-heading">
+    <section class="team-hero" aria-labelledby="team-page-heading">
       <div class="team-shell">
-        <div class="team-roster-copy">
+        <div class="team-hero-copy">
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Team</div>
-          <h1 class="team-roster-title" id="team-page-heading">Who provides care.</h1>
+          <h1 class="team-title" id="team-page-heading">Who provides care.</h1>
           <p>Stonebridge provides outpatient telehealth psychotherapy for teens and adults in Illinois through Dr. Stephen W. Bryant, PsyD, LCPC.</p>
-          <div class="team-roster-actions">
+          <div class="team-hero-actions">
             <a class="btn btn-primary" href="#clinician">Meet Dr. Bryant</a>
             <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
           </div>
@@ -307,7 +291,7 @@
         <article class="team-card" aria-labelledby="dr-bryant-card-heading">
           <div class="team-card-grid">
             <div>
-              <span class="status-pill">Outpatient telehealth psychotherapy</span>
+              <span class="team-label">Outpatient telehealth psychotherapy</span>
               <h2 id="dr-bryant-card-heading">Stephen W. Bryant, PsyD, LCPC</h2>
               <p class="team-role-line">Founder · Licensed Clinical Professional Counselor, Illinois</p>
             </div>
@@ -333,16 +317,6 @@
                 <a class="btn btn-primary" href="team-founder.html">Read full profile</a>
                 <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
               </div>
-            </div>
-          </div>
-
-          <div class="team-note">
-            <div>
-              <h2>Begin with a brief inquiry.</h2>
-              <p>A few sentences are enough. Stonebridge reviews waitlist inquiries for fit, scope, telehealth appropriateness, and possible next steps before care begins.</p>
-            </div>
-            <div class="team-card-actions">
-              <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
             </div>
           </div>
         </article>
