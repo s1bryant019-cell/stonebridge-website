@@ -15,173 +15,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Team page reset: use the existing Stonebridge page system with only compact roster-specific adjustments. */
-    body.team-roster-page .team-family-hero.stone-page-hero {
-      min-height: auto;
-    }
-
-    body.team-roster-page .team-family-hero.stone-page-hero::after {
-      right: -420px;
-      bottom: -370px;
-      width: 900px;
-      height: 680px;
-      opacity: 0.045;
-    }
-
-    body.team-roster-page .team-family-hero .stone-page-inner {
-      min-height: auto;
-      align-items: flex-start;
-      padding: 58px 0 42px;
-    }
-
-    body.team-roster-page .team-family-hero .stone-page-copy {
-      width: 100%;
-      max-width: 760px;
-      padding-right: 0;
-    }
-
-    body.team-roster-page .team-family-hero .stone-page-line {
-      margin-bottom: 20px;
-    }
-
-    body.team-roster-page .team-family-hero .stone-page-kicker {
-      margin-bottom: 14px;
-    }
-
-    body.team-roster-page .team-family-hero .stone-page-copy h1 {
-      max-width: 12ch;
-      font-size: clamp(3.35rem, 4.7vw, 5.05rem);
-    }
-
-    body.team-roster-page .team-family-hero .stone-page-copy p {
-      margin-top: 22px;
-      max-width: 41rem;
-      line-height: 1.78;
-    }
-
-    body.team-roster-page .team-roster-section {
-      padding: 48px 0 62px;
-    }
-
-    body.team-roster-page .home-led-grid.one.team-roster-grid {
-      max-width: 980px;
-    }
-
-    body.team-roster-page .team-roster-card {
-      padding: clamp(28px, 4vw, 38px);
-    }
-
-    body.team-roster-page .team-card-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.18fr);
-      gap: clamp(24px, 4vw, 38px);
-      align-items: start;
-    }
-
-    body.team-roster-page .team-roster-card h2 {
-      margin: 14px 0 10px;
-      font-size: clamp(2.05rem, 3.1vw, 2.85rem);
-      line-height: 1.03;
-      letter-spacing: -0.03em;
-    }
-
-    body.team-roster-page .team-role-line {
-      margin: 0;
-      color: var(--home-muted, #5f6c78);
-      font-size: 0.98rem;
-      line-height: 1.55;
-      font-weight: 600;
-    }
-
-    body.team-roster-page .team-card-copy p {
-      margin: 0;
-      color: var(--home-muted, #5f6c78);
-      font-size: 0.98rem;
-      line-height: 1.72;
-    }
-
-    body.team-roster-page .team-facts {
-      display: grid;
-      margin: 22px 0 24px;
-      border-top: 1px solid rgba(212, 200, 185, 0.72);
-      border-bottom: 1px solid rgba(212, 200, 185, 0.72);
-    }
-
-    body.team-roster-page .team-fact {
-      display: grid;
-      grid-template-columns: 126px minmax(0, 1fr);
-      gap: 18px;
-      padding: 13px 0;
-      border-top: 1px solid rgba(212, 200, 185, 0.52);
-    }
-
-    body.team-roster-page .team-fact:first-child {
-      border-top: 0;
-    }
-
-    body.team-roster-page .team-fact h3 {
-      margin: 0;
-      color: rgba(33, 49, 66, 0.74);
-      font-family: "Inter", system-ui, sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      line-height: 1.35;
-      text-transform: uppercase;
-    }
-
-    body.team-roster-page .team-fact p {
-      margin: 0;
-      font-size: 0.95rem;
-      line-height: 1.55;
-    }
-
-    body.team-roster-page .team-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    body.team-roster-page .team-actions .btn {
-      min-height: 48px;
-      border-radius: 15px;
-    }
-
-    @media (max-width: 860px) {
-      body.team-roster-page .team-card-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 760px) {
-      body.team-roster-page .team-family-hero .stone-page-inner {
-        padding: 44px 0 34px;
-      }
-
-      body.team-roster-page .team-family-hero .stone-page-copy h1 {
-        font-size: clamp(2.85rem, 10vw, 3.95rem);
-      }
-
-      body.team-roster-page .team-roster-section {
-        padding: 38px 0 52px;
-      }
-    }
-
-    @media (max-width: 620px) {
-      body.team-roster-page .team-fact {
-        grid-template-columns: 1fr;
-        gap: 7px;
-      }
-
-      body.team-roster-page .team-actions .btn {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
-<body class="team-roster-page">
+<body>
   <header class="site-header">
     <div class="container nav">
       <a href="index.html" aria-label="Stonebridge Psychological Group home">
@@ -216,15 +51,27 @@
     </div>
   </header>
 
-
   <main>
-    <section class="stone-page-hero team-family-hero" aria-labelledby="team-page-heading">
+    <section class="stone-page-hero" aria-labelledby="team-page-heading">
+      <div class="stone-hero-panel watermark" aria-hidden="true">
+        <img src="stone_arch_bridge_over_calm_water.png" alt="" />
+        <div class="stone-hero-overlay"></div>
+        <div class="stone-panel-caption">
+          <h2>Care begins with fit.</h2>
+          <p>Requests are reviewed before therapy begins.</p>
+          <div class="stone-caption-line"></div>
+        </div>
+      </div>
       <div class="stone-page-inner">
         <div class="stone-page-copy">
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Team</div>
-          <h1 id="team-page-heading">Who provides care.</h1>
+          <h1 class="long-title" id="team-page-heading">Who provides care.</h1>
           <p>Stonebridge provides outpatient telehealth psychotherapy for teens and adults in Illinois through Dr. Stephen W. Bryant, PsyD, LCPC.</p>
+          <div class="stone-page-actions">
+            <a class="btn btn-primary" href="#clinician">Meet Dr. Bryant</a>
+            <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
+          </div>
         </div>
       </div>
     </section>
@@ -241,43 +88,31 @@
         </article>
         <article class="subpage-band-item">
           <div class="subpage-band-icon">03</div>
-          <div><h4>Care begins with fit</h4><p>Requests are reviewed before therapy begins.</p></div>
+          <div><h4>Care begins with fit</h4><p>A brief inquiry comes before intake.</p></div>
         </article>
       </div>
     </section>
 
-    <section class="home-led-section paper team-roster-section" id="clinician">
-      <div class="home-led-grid one team-roster-grid">
-        <article class="home-led-card team-roster-card" aria-labelledby="dr-bryant-card-heading">
-          <div class="team-card-layout">
-            <div>
-              <span class="status-pill">Outpatient telehealth psychotherapy</span>
-              <h2 id="dr-bryant-card-heading">Stephen W. Bryant, PsyD, LCPC</h2>
-              <p class="team-role-line">Founder · Licensed Clinical Professional Counselor, Illinois</p>
-            </div>
-            <div class="team-card-copy">
-              <p>Dr. Bryant provides careful relational psychotherapy for teens and adults located in Illinois. His work is steady, thoughtful, and attentive to emotional complexity, stress, relationships, trauma responses, grief, identity, self-worth, substance use concerns when outpatient care fits, and patterns that feel hard to change.</p>
-
-              <div class="team-facts" aria-label="Clinician overview">
-                <div class="team-fact">
-                  <h3>Works with</h3>
-                  <p>Teens and adults located in Illinois.</p>
-                </div>
-                <div class="team-fact">
-                  <h3>Clinical focus</h3>
-                  <p>Anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, substance use concerns when outpatient care fits, and feeling stuck.</p>
-                </div>
-                <div class="team-fact">
-                  <h3>Format</h3>
-                  <p>Outpatient telehealth psychotherapy.</p>
-                </div>
-              </div>
-
-              <div class="team-actions">
-                <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
-                <a class="btn btn-secondary" href="team-founder.html">Read full profile</a>
-              </div>
-            </div>
+    <section class="home-led-section paper" id="clinician">
+      <div class="home-led-grid one">
+        <article class="home-led-card" aria-labelledby="dr-bryant-card-heading">
+          <span class="status-pill">Outpatient telehealth psychotherapy</span>
+          <h2 id="dr-bryant-card-heading">Stephen W. Bryant, PsyD, LCPC</h2>
+          <p class="team-role">Founder · Licensed Clinical Professional Counselor, Illinois</p>
+          <p>Dr. Bryant provides careful relational psychotherapy for teens and adults located in Illinois. His work is steady, thoughtful, and attentive to emotional complexity, stress, relationships, trauma responses, grief, identity, self-worth, substance use concerns when outpatient care fits, and patterns that feel hard to change.</p>
+          <ul class="home-led-list">
+            <li>Works with teens and adults located in Illinois.</li>
+            <li>Clinical focus includes anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, substance use concerns when outpatient care fits, and feeling stuck.</li>
+            <li>Care is provided through outpatient telehealth psychotherapy.</li>
+          </ul>
+          <div class="home-tags">
+            <span class="home-tag">Licensed in Illinois</span>
+            <span class="home-tag">Teens and adults</span>
+            <span class="home-tag">Consultation-first</span>
+          </div>
+          <div class="stone-page-actions">
+            <a class="btn btn-primary" href="team-founder.html">Read full profile</a>
+            <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
           </div>
         </article>
       </div>
