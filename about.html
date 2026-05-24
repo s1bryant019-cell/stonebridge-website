@@ -1351,6 +1351,107 @@
   }
 </style>
 
+
+<style id="stonebridge-clinician-consultation-section">
+  .about-page .clinician-consultation-section{
+    background:linear-gradient(180deg, rgba(251,248,244,.98), rgba(246,241,234,.94));
+  }
+
+  .about-page .clinician-consultation-panel{
+    width:min(1120px, calc(100% - 72px));
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:minmax(0, 1.08fr) minmax(300px, .72fr);
+    gap:28px;
+    align-items:stretch;
+    padding:30px;
+    border-radius:32px;
+    border:1px solid rgba(212,200,185,.58);
+    background:rgba(255,253,248,.72);
+    box-shadow:0 16px 42px rgba(31,42,52,.045);
+  }
+
+  .about-page .clinician-consultation-copy h2{
+    margin:8px 0 14px;
+    color:var(--home-navy, #213142);
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:clamp(2.35rem, 3.7vw, 3.45rem);
+    line-height:1.06;
+    letter-spacing:-.038em;
+    text-wrap:balance;
+  }
+
+  .about-page .clinician-consultation-copy p{
+    margin:0;
+    max-width:58rem;
+    color:var(--home-muted, #5f6c78);
+    font-size:1rem;
+    line-height:1.72;
+  }
+
+  .about-page .clinician-consultation-copy p + p{
+    margin-top:12px;
+  }
+
+  .about-page .clinician-consultation-meta{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:20px;
+    padding:24px;
+    border-radius:26px;
+    background:linear-gradient(135deg, #102f4d 0%, #17395c 68%, #1d466f 100%);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 18px 46px rgba(16,47,77,.13);
+  }
+
+  .about-page .clinician-consultation-meta .stone-page-kicker{
+    color:#d8b56e;
+    margin-bottom:10px;
+  }
+
+  .about-page .consultation-date-label{
+    margin:0 0 6px;
+    color:rgba(255,250,242,.72);
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  .about-page .consultation-date{
+    display:block;
+    color:#fffaf2;
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:1.65rem;
+    line-height:1.08;
+    letter-spacing:-.02em;
+  }
+
+  .about-page .consultation-recurrence{
+    margin:14px 0 0;
+    color:rgba(255,250,242,.78);
+    font-size:.92rem;
+    line-height:1.58;
+  }
+
+  .about-page .clinician-consultation-meta .btn{
+    width:100%;
+    background:#fffaf2;
+    color:#102f4d;
+    border-color:rgba(255,250,242,.42);
+    box-shadow:0 16px 38px rgba(0,0,0,.14);
+  }
+
+  @media (max-width:980px){
+    .about-page .clinician-consultation-panel{
+      width:min(1120px, calc(100% - 30px));
+      grid-template-columns:1fr;
+      padding:24px;
+    }
+  }
+</style>
+
 </head>
 <body>
 <header class="site-header compact-site-header">
@@ -1505,6 +1606,27 @@
 </div>
 </div>
 </section>
+
+<section class="home-led-section clinician-consultation-section" id="for-clinicians">
+<div class="clinician-consultation-panel">
+<div class="clinician-consultation-copy">
+<div class="stone-page-kicker">For clinicians</div>
+<h2>Monthly consultation for thoughtful outpatient work.</h2>
+<p>Stonebridge hosts a monthly consultation space for mental health clinicians interested in careful, relational, ethically grounded outpatient work.</p>
+<p>The group is open to clinicians outside Stonebridge. Participation is reviewed for fit, scope, and group composition before joining.</p>
+</div>
+<aside aria-label="Monthly clinician consultation meeting information" class="clinician-consultation-meta">
+<div>
+<div class="stone-page-kicker">Monthly group</div>
+<p class="consultation-date-label">Next meeting</p>
+<time class="consultation-date" datetime="2026-06-19T16:00:00-05:00" id="clinician-consultation-next">Friday, June 19, 2026 at 4:00 PM Central Time</time>
+<p class="consultation-recurrence">Meets on the third Friday of each month at 4:00 PM Central Time (Illinois). The Zoom link is shared after participation is reviewed.</p>
+</div>
+<a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Clinician%20Consultation%20Inquiry">Inquire about consultation</a>
+</aside>
+</div>
+</section>
+
 <section class="about-consult-band" id="begin">
 <div class="about-consult-inner">
 <div>
@@ -1559,5 +1681,83 @@
 </div>
 </footer>
 <script src="script.js"></script>
+
+<script id="stonebridge-clinician-consultation-date">
+(function(){
+  var el = document.getElementById('clinician-consultation-next');
+  if (!el || !window.Intl) return;
+
+  function secondSundayInMarch(year){
+    var d = new Date(Date.UTC(year, 2, 1));
+    var firstSunday = 1 + ((7 - d.getUTCDay()) % 7);
+    return firstSunday + 7;
+  }
+
+  function firstSundayInNovember(year){
+    var d = new Date(Date.UTC(year, 10, 1));
+    return 1 + ((7 - d.getUTCDay()) % 7);
+  }
+
+  function chicagoOffsetHours(year, monthIndex, day){
+    var dateNumber = (monthIndex + 1) * 100 + day;
+    var dstStart = 3 * 100 + secondSundayInMarch(year);
+    var dstEnd = 11 * 100 + firstSundayInNovember(year);
+    return (dateNumber >= dstStart && dateNumber < dstEnd) ? -5 : -6;
+  }
+
+  function thirdFriday(year, monthIndex){
+    var first = new Date(Date.UTC(year, monthIndex, 1));
+    var offset = (5 - first.getUTCDay() + 7) % 7;
+    return 1 + offset + 14;
+  }
+
+  function meetingDateUtc(year, monthIndex){
+    var day = thirdFriday(year, monthIndex);
+    var offset = chicagoOffsetHours(year, monthIndex, day);
+    return new Date(Date.UTC(year, monthIndex, day, 16 - offset, 0, 0));
+  }
+
+  var now = new Date();
+  var parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Chicago',
+    year: 'numeric',
+    month: 'numeric'
+  }).formatToParts(now).reduce(function(acc, part){
+    acc[part.type] = part.value;
+    return acc;
+  }, {});
+
+  var year = parseInt(parts.year, 10);
+  var monthIndex = parseInt(parts.month, 10) - 1;
+  var next = null;
+
+  for (var i = 0; i < 18; i++) {
+    var candidate = meetingDateUtc(year, monthIndex);
+    if (candidate >= now) {
+      next = candidate;
+      break;
+    }
+    monthIndex += 1;
+    if (monthIndex > 11) { monthIndex = 0; year += 1; }
+  }
+
+  if (!next) return;
+
+  var label = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Chicago',
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZoneName: 'short'
+  }).format(next);
+
+  el.textContent = label;
+  el.setAttribute('datetime', next.toISOString());
+})();
+</script>
+
 </body>
 </html>
