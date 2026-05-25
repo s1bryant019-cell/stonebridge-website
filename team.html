@@ -16,106 +16,228 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .team-page .team-roster-section{
-      padding-top:42px!important;
-      padding-bottom:44px!important;
-      background:#fbf8f4;
+    body.team-structural-roster .team-shell {
+      width: min(1060px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .team-page .team-roster-grid{
-      max-width:1040px;
+    body.team-structural-roster .team-roster-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(200, 178, 138, 0.14), transparent 34%),
+        linear-gradient(135deg, #f8f2e8 0%, #f2e8db 56%, #eadccb 100%);
+      padding: clamp(58px, 6vw, 88px) 0 clamp(44px, 5vw, 66px);
+      min-height: 0 !important;
+      height: auto !important;
+      display: block !important;
     }
 
-    .team-page .team-roster-card{
-      padding:30px;
+    body.team-structural-roster .team-roster-hero::after {
+      content: "";
+      position: absolute;
+      right: -16%;
+      bottom: -56%;
+      width: min(620px, 44vw);
+      height: 260px;
+      border-radius: 999px;
+      background: rgba(17, 43, 67, 0.052);
+      transform: rotate(-8deg);
+      pointer-events: none;
     }
 
-    .team-page .team-roster-card::after{
-      opacity:.018;
+    body.team-structural-roster .team-roster-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 740px;
     }
 
-    .team-page .team-card-layout{
-      display:grid;
-      grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);
-      gap:32px;
-      align-items:start;
+    body.team-structural-roster .team-roster-copy .stone-page-line {
+      margin-bottom: 18px;
     }
 
-    .team-page .team-card-layout h2{
-      margin-top:14px;
-      margin-bottom:8px;
+    body.team-structural-roster .team-roster-title {
+      margin: 28px 0 18px;
+      max-width: 760px;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(3.25rem, 5.8vw, 5.75rem);
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+      color: #132432;
     }
 
-    .team-page .team-role-line{
-      margin:0;
-      color:var(--home-muted, #67737d);
-      font-size:.96rem;
-      line-height:1.55;
-      font-weight:600;
+    body.team-structural-roster .team-roster-copy p {
+      margin: 0;
+      max-width: 660px;
+      color: rgba(19, 36, 50, 0.78);
+      font-size: 1.03rem;
+      line-height: 1.72;
     }
 
-    .team-page .team-card-copy p{
-      margin:0;
+    body.team-structural-roster .team-roster-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 28px;
     }
 
-    .team-page .team-detail-list{
-      display:grid;
-      gap:10px;
-      margin:20px 0 22px;
-      padding:0;
-      list-style:none;
+    body.team-structural-roster .team-roster-section {
+      padding: clamp(40px, 5vw, 66px) 0 clamp(50px, 6vw, 82px);
+      background: linear-gradient(180deg, rgba(248, 242, 232, 0.72), rgba(255, 252, 247, 0.96));
     }
 
-    .team-page .team-detail-list li{
-      display:grid;
-      grid-template-columns:118px 1fr;
-      gap:16px;
-      padding-top:10px;
-      border-top:1px solid rgba(212,200,185,.55);
-      color:var(--home-muted, #67737d);
-      font-size:.96rem;
-      line-height:1.55;
+    body.team-structural-roster .team-card {
+      border: 1px solid rgba(36, 71, 96, 0.14);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: 0 24px 70px rgba(17, 43, 67, 0.08);
+      padding: clamp(30px, 5vw, 56px);
     }
 
-    .team-page .team-detail-list strong{
-      color:var(--home-navy, #24303b);
-      font-size:.72rem;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-      line-height:1.5;
+    body.team-structural-roster .team-card-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr);
+      gap: clamp(28px, 5vw, 58px);
+      align-items: start;
     }
 
-    .team-page .team-card-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:2px;
+    body.team-structural-roster .team-card h2 {
+      margin: 16px 0 10px;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(2.35rem, 4vw, 4.45rem);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+      color: #132432;
     }
 
-    @media (max-width:860px){
-      .team-page .team-card-layout{
-        grid-template-columns:1fr;
-        gap:22px;
+    body.team-structural-roster .team-role-line {
+      margin: 0;
+      color: rgba(19, 36, 50, 0.76);
+      font-weight: 650;
+      line-height: 1.55;
+    }
+
+    body.team-structural-roster .team-card-copy {
+      color: rgba(19, 36, 50, 0.78);
+      font-size: 1.02rem;
+      line-height: 1.78;
+    }
+
+    body.team-structural-roster .team-card-copy p {
+      margin: 0;
+    }
+
+    body.team-structural-roster .team-detail-list {
+      display: grid;
+      gap: 0;
+      margin: 28px 0 30px;
+      border-top: 1px solid rgba(36, 71, 96, 0.13);
+      border-bottom: 1px solid rgba(36, 71, 96, 0.13);
+    }
+
+    body.team-structural-roster .team-detail-row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 22px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(36, 71, 96, 0.1);
+    }
+
+    body.team-structural-roster .team-detail-row:first-child {
+      border-top: 0;
+    }
+
+    body.team-structural-roster .team-detail-row h3 {
+      margin: 0;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: rgba(17, 43, 67, 0.7);
+    }
+
+    body.team-structural-roster .team-detail-row p {
+      margin: 0;
+      color: rgba(19, 36, 50, 0.76);
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+
+    body.team-structural-roster .team-card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    body.team-structural-roster .team-note {
+      margin-top: 34px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(36, 71, 96, 0.12);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    body.team-structural-roster .team-note h2 {
+      margin: 0 0 6px;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(1.55rem, 2.2vw, 2.25rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      color: #132432;
+    }
+
+    body.team-structural-roster .team-note p {
+      margin: 0;
+      max-width: 640px;
+      color: rgba(19, 36, 50, 0.72);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 860px) {
+      body.team-structural-roster .team-card-grid,
+      body.team-structural-roster .team-note {
+        grid-template-columns: 1fr;
+      }
+
+      body.team-structural-roster .team-note {
+        gap: 18px;
       }
     }
 
-    @media (max-width:620px){
-      .team-page .team-roster-card{
-        padding:24px;
+    @media (max-width: 620px) {
+      body.team-structural-roster .team-shell {
+        width: min(100% - 28px, 1060px);
       }
 
-      .team-page .team-detail-list li{
-        grid-template-columns:1fr;
-        gap:4px;
+      body.team-structural-roster .team-roster-hero {
+        padding: 48px 0 38px;
+      }
+
+      body.team-structural-roster .team-roster-title {
+        margin-top: 22px;
+        font-size: clamp(3rem, 15vw, 4.6rem);
+      }
+
+      body.team-structural-roster .team-card {
+        padding: 26px 22px 28px;
+        border-radius: 24px;
+      }
+
+      body.team-structural-roster .team-detail-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
     }
   </style>
 </head>
-<body class="team-page">
+<body class="team-structural-roster">
 
-  <header class="site-header compact-site-header">
+  <header class="site-header">
     <div class="container nav">
-      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
+      <a href="index.html" aria-label="Stonebridge Psychological Group home">
         <div class="brand-mark">STONEBRIDGE</div>
         <div class="brand-sub">Psychological Group</div>
       </a>
@@ -124,8 +246,19 @@
         <nav class="menu" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a class="active" href="team.html">Team</a>
-          <a href="services.html">Services</a>
+          <div class="nav-dropdown">
+            <a class="active" href="team.html">Team</a>
+            <div class="dropdown-menu">
+              <a href="team.html">Team Overview</a>
+              <a href="team-founder.html">Founder</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <a href="services.html">Services</a>
+            <div class="dropdown-menu">
+              <a href="services.html">Services Overview</a>
+            </div>
+          </div>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="portal.html">Portal</a>
         </nav>
@@ -137,18 +270,15 @@
   </header>
 
   <main>
-    <section class="stone-page-hero hero-team compact-team-hero" aria-labelledby="team-page-heading">
-      <div class="stone-hero-panel" aria-hidden="true">
-        <img src="hero-team-consultation.jpg" alt="" />
-      </div>
-      <div class="stone-page-inner">
-        <div class="stone-page-copy">
+    <section class="team-roster-hero" aria-labelledby="team-page-heading">
+      <div class="team-shell">
+        <div class="team-roster-copy">
           <div class="stone-page-line"></div>
           <div class="stone-page-kicker">Team</div>
-          <h1 class="long-title" id="team-page-heading">Who provides care.</h1>
+          <h1 class="team-roster-title" id="team-page-heading">Who provides care.</h1>
           <p>Stonebridge provides outpatient telehealth psychotherapy for teens and adults in Illinois through Dr. Stephen W. Bryant, PsyD, LCPC.</p>
-          <div class="stone-page-actions">
-            <a class="btn btn-primary" href="#clinician">View clinician</a>
+          <div class="team-roster-actions">
+            <a class="btn btn-primary" href="#clinician">Meet Dr. Bryant</a>
             <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
           </div>
         </div>
@@ -167,36 +297,52 @@
         </article>
         <article class="subpage-band-item">
           <div class="subpage-band-icon">03</div>
-          <div><h4>Care begins with fit</h4><p>A brief inquiry comes before intake.</p></div>
+          <div><h4>Care begins with fit</h4><p>Requests are reviewed before therapy begins.</p></div>
         </article>
       </div>
     </section>
 
-    <section class="home-led-section paper team-roster-section" id="clinician">
-      <div class="home-led-grid one team-roster-grid">
-        <article class="home-led-card team-roster-card" aria-labelledby="dr-bryant-card-heading">
-          <div class="team-card-layout">
+    <section class="team-roster-section" id="clinician">
+      <div class="team-shell">
+        <article class="team-card" aria-labelledby="dr-bryant-card-heading">
+          <div class="team-card-grid">
             <div>
               <span class="status-pill">Outpatient telehealth psychotherapy</span>
               <h2 id="dr-bryant-card-heading">Stephen W. Bryant, PsyD, LCPC</h2>
               <p class="team-role-line">Founder · Licensed Clinical Professional Counselor, Illinois</p>
-              <div class="home-tags" aria-label="Clinician summary">
-                <span class="home-tag">Teens and adults</span>
-                <span class="home-tag">Illinois telehealth</span>
-                <span class="home-tag">Consultation first</span>
-              </div>
             </div>
             <div class="team-card-copy">
               <p>Dr. Bryant provides careful relational psychotherapy for teens and adults located in Illinois. His work is steady, thoughtful, and attentive to emotional complexity, stress, relationships, trauma responses, grief, identity, self-worth, substance use concerns when outpatient care fits, and patterns that feel hard to change.</p>
-              <ul class="team-detail-list">
-                <li><strong>Works with</strong><span>Teens and adults located in Illinois.</span></li>
-                <li><strong>Clinical focus</strong><span>Anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, substance use concerns when outpatient care fits, and feeling stuck.</span></li>
-                <li><strong>Format</strong><span>Outpatient telehealth psychotherapy.</span></li>
-              </ul>
+
+              <div class="team-detail-list" aria-label="Clinician overview">
+                <div class="team-detail-row">
+                  <h3>Works with</h3>
+                  <p>Teens and adults located in Illinois.</p>
+                </div>
+                <div class="team-detail-row">
+                  <h3>Clinical focus</h3>
+                  <p>Anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, substance use concerns when outpatient care fits, and feeling stuck.</p>
+                </div>
+                <div class="team-detail-row">
+                  <h3>Format</h3>
+                  <p>Outpatient telehealth psychotherapy.</p>
+                </div>
+              </div>
+
               <div class="team-card-actions">
                 <a class="btn btn-primary" href="team-founder.html">Read full profile</a>
                 <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
               </div>
+            </div>
+          </div>
+
+          <div class="team-note">
+            <div>
+              <h2>Begin with a brief inquiry.</h2>
+              <p>A few sentences are enough. Stonebridge reviews waitlist inquiries for fit, scope, telehealth appropriateness, and possible next steps before care begins.</p>
+            </div>
+            <div class="team-card-actions">
+              <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
             </div>
           </div>
         </article>
@@ -235,6 +381,7 @@
           <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
           <a href="tel:+17734171688">(773) 417-1688</a>
           <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
+<a aria-label="Stonebridge Psychological Group on Facebook" href="https://www.facebook.com/profile.php?id=61590354182651" rel="noopener noreferrer" target="_blank">Facebook</a>
         </div>
       </div>
       <div class="footer-logo-right">
