@@ -1589,23 +1589,111 @@
 
 <style id="stonebridge-payment-options-first-update">
   /* Fees page update: lead with payment options before standard private-pay rates. */
-  .fees-page .payment-options-first{
-    grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
+  .fees-page .insurance-options-grid{
+    grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+    gap:16px !important;
   }
-  .fees-page .payment-options-first .intro-panel h2{
-    max-width:11ch !important;
+  .fees-page .payment-options-heading{
+    margin-bottom:16px !important;
+    display:grid !important;
+    grid-template-columns:minmax(260px, .58fr) minmax(0, 1fr) !important;
+    gap:22px !important;
+    align-items:end !important;
+    border-bottom:1px solid rgba(212,200,185,.58) !important;
+    padding-bottom:14px !important;
+  }
+  .fees-page .payment-options-heading .stone-page-kicker{
+    margin:0 0 7px !important;
+  }
+  .fees-page .payment-options-heading h2{
+    margin:0 !important;
+    max-width:none !important;
+    color:var(--home-navy,#213142) !important;
+    font-family:"EB Garamond", Georgia, serif !important;
+    font-size:clamp(2rem,2.65vw,2.65rem) !important;
+    line-height:1.06 !important;
+    letter-spacing:-.03em !important;
+  }
+  .fees-page .payment-options-heading p{
+    margin:0 !important;
+    max-width:48rem !important;
+    color:var(--home-muted,#5f6c78) !important;
+    font-size:.92rem !important;
+    line-height:1.58 !important;
   }
   .fees-page .reduced-fee-panel{
     border-color:rgba(200,171,120,.72) !important;
     background:linear-gradient(180deg, rgba(255,253,248,.84), rgba(248,245,240,.86)) !important;
   }
-  @media (max-width:1180px){
-    .fees-page .payment-options-first{
-      grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-    }
+  .fees-page #insurance{
+    padding-top:30px !important;
+    padding-bottom:32px !important;
   }
-  @media (max-width:760px){
-    .fees-page .payment-options-first{
+  .fees-page #fees{
+    padding-top:34px !important;
+    padding-bottom:30px !important;
+  }
+  .fees-page #appointments{
+    padding-top:26px !important;
+    padding-bottom:30px !important;
+    background:linear-gradient(180deg, rgba(248,245,240,.94), rgba(255,250,244,.78)) !important;
+  }
+  .fees-page .appointments-line-title{
+    display:grid !important;
+    grid-template-columns:minmax(220px,.42fr) minmax(0,1fr) !important;
+    gap:20px !important;
+    align-items:center !important;
+    margin-bottom:14px !important;
+    padding:14px 0 13px !important;
+    border-top:1px solid rgba(212,200,185,.58) !important;
+    border-bottom:1px solid rgba(212,200,185,.58) !important;
+  }
+  .fees-page .appointments-line-title .stone-page-kicker{
+    margin:0 0 5px !important;
+  }
+  .fees-page .appointments-line-title h2{
+    margin:0 !important;
+    max-width:none !important;
+    color:var(--home-navy,#213142) !important;
+    font-family:"EB Garamond", Georgia, serif !important;
+    font-size:clamp(1.85rem,2.45vw,2.35rem) !important;
+    line-height:1.05 !important;
+    letter-spacing:-.03em !important;
+  }
+  .fees-page .appointments-line-title p{
+    margin:0 !important;
+    color:var(--home-muted,#5f6c78) !important;
+    font-size:.92rem !important;
+    line-height:1.55 !important;
+    max-width:54rem !important;
+  }
+  .fees-page .fees-appointment-grid{
+    gap:12px !important;
+  }
+  .fees-page .fees-appointment-grid .fees-balance-panel{
+    padding:18px 20px !important;
+    border-radius:18px !important;
+    background:rgba(255,255,255,.62) !important;
+  }
+  .fees-page .fees-appointment-grid .fees-balance-panel h3{
+    font-size:1.24rem !important;
+    margin-bottom:6px !important;
+  }
+  .fees-page .fees-appointment-grid .fees-balance-panel p{
+    font-size:.86rem !important;
+    line-height:1.48 !important;
+  }
+  .fees-page .fees-consult-inner{
+    padding:30px 0 !important;
+  }
+  @media (max-width:1080px){
+    .fees-page .payment-options-heading,
+    .fees-page .appointments-line-title{
+      grid-template-columns:1fr !important;
+      gap:8px !important;
+      align-items:start !important;
+    }
+    .fees-page .insurance-options-grid{
       grid-template-columns:1fr !important;
     }
   }
@@ -1636,7 +1724,7 @@
 <div class="stone-page-line"></div>
 <div class="stone-page-kicker">Fees &amp; Insurance</div>
 <h1 class="wide-title">Fees and insurance.</h1>
-<p>Stonebridge reviews insurance, private-pay fees, and possible reduced-fee options before care begins, so the financial frame is clear before care starts.</p>
+<p>Stonebridge reviews insurance, private-pay fees, and possible reduced-fee options early, so the financial frame is clear before care starts.</p>
 <div class="stone-page-actions">
 <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
 <a class="btn btn-secondary" href="#insurance">Insurance &amp; payment options</a>
@@ -1668,12 +1756,14 @@
 </section>
 <section class="home-led-section" id="insurance">
 <div class="fees-frame-section">
-<div class="fees-balance-grid insurance-balance payment-options-first">
-<article class="fees-balance-panel intro-panel">
+<div class="payment-options-heading">
+<div>
 <div class="stone-page-kicker">Payment Options</div>
 <h2>Insurance and payment options.</h2>
-<p>Stonebridge accepts BCBS Illinois commercial plans and is actively credentialing with additional insurance networks. If your plan is not active yet, you are still welcome to reach out.</p>
-</article>
+</div>
+<p>Stonebridge accepts BCBS Illinois commercial plans and is actively credentialing with additional insurance networks. If your plan is not active yet, you are still welcome to reach out to discuss timing, private pay, out-of-network benefits, or limited reduced-fee options.</p>
+</div>
+<div class="fees-balance-grid insurance-options-grid">
 <article class="fees-balance-panel">
 <h3>Accepted now</h3>
 <ul>
@@ -1737,9 +1827,12 @@
 </section>
 <section class="home-led-section paper" id="appointments">
 <div class="fees-frame-section">
-<div class="fees-section-titleline">
+<div class="appointments-line-title">
+<div>
 <div class="stone-page-kicker">Appointments</div>
 <h2>Appointment structure.</h2>
+</div>
+<p>A brief consultation comes first. Full sessions, billing, and cancellation expectations are clarified before care begins.</p>
 </div>
 <div class="fees-appointment-grid">
 <article class="fees-balance-panel">
