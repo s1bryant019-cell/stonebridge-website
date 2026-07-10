@@ -1000,6 +1000,165 @@
   }
 </style>
 
+
+<style id="stonebridge-services-second-premium-pass">
+  /* Second services design pass: fewer equal-weight lists, more editorial hierarchy, less directory feeling. */
+  .services-page .services-editorial-concerns{
+    background:linear-gradient(180deg,#fbf8f4 0%,#f4eee6 100%) !important;
+  }
+  .services-page .services-editorial-heading{
+    display:grid !important;
+    grid-template-columns:minmax(250px,.55fr) minmax(0,1fr) !important;
+    gap:38px !important;
+    align-items:end !important;
+    margin-bottom:24px !important;
+    padding-bottom:18px !important;
+    border-bottom:1px solid rgba(33,49,66,.14) !important;
+  }
+  .services-page .services-editorial-heading h2{
+    max-width:10.5ch !important;
+    font-size:clamp(2.25rem,3.35vw,3.25rem) !important;
+  }
+  .services-page .services-editorial-heading p{
+    max-width:56rem !important;
+    font-size:1rem !important;
+    line-height:1.68 !important;
+  }
+  .services-page .concern-editorial-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:0 52px;
+    border-bottom:1px solid rgba(33,49,66,.12);
+  }
+  .services-page .concern-editorial-item{
+    padding:22px 0 24px;
+    border-top:1px solid rgba(33,49,66,.14);
+  }
+  .services-page .concern-eyebrow{
+    display:block;
+    margin-bottom:8px;
+    color:#8c7551;
+    font-family:"Inter", sans-serif;
+    font-size:.64rem;
+    font-weight:800;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .services-page .concern-editorial-item h3{
+    margin:0 0 8px;
+    color:#213142;
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:clamp(1.45rem,2vw,1.82rem);
+    line-height:1.08;
+    letter-spacing:-.018em;
+  }
+  .services-page .concern-editorial-item p{
+    margin:0;
+    color:#5f6c78;
+    font-size:.96rem;
+    line-height:1.62;
+    max-width:34rem;
+  }
+  .services-page .parent-feature-section{
+    background:
+      radial-gradient(circle at 12% 32%, rgba(200,171,120,.09), transparent 28%),
+      linear-gradient(180deg,#fffaf4 0%,#f7f2eb 100%) !important;
+    border-top:1px solid rgba(212,200,185,.55) !important;
+    border-bottom:1px solid rgba(212,200,185,.55) !important;
+  }
+  .services-page .parent-feature-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.08fr) minmax(300px,.72fr);
+    gap:54px;
+    align-items:start;
+  }
+  .services-page .parent-feature-copy h2{
+    margin:8px 0 16px;
+    max-width:13ch;
+    color:#213142;
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:clamp(2.35rem,3.65vw,3.55rem);
+    line-height:1.06;
+    letter-spacing:-.038em;
+  }
+  .services-page .parent-feature-copy p{
+    margin:0;
+    max-width:45rem;
+    color:#5f6c78;
+    font-size:1rem;
+    line-height:1.74;
+  }
+  .services-page .parent-feature-copy p + p{
+    margin-top:14px;
+  }
+  .services-page .parent-feature-detail{
+    padding:22px 0 0 28px;
+    border-left:1px solid rgba(200,171,120,.68);
+  }
+  .services-page .parent-feature-detail h3{
+    margin:0 0 12px;
+    color:#213142;
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:1.55rem;
+    line-height:1.1;
+  }
+  .services-page .parent-feature-detail ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:0;
+    border-top:1px solid rgba(33,49,66,.12);
+  }
+  .services-page .parent-feature-detail li{
+    padding:10px 0;
+    border-bottom:1px solid rgba(33,49,66,.10);
+    color:#5f6c78;
+    font-size:.93rem;
+    line-height:1.5;
+  }
+  .services-page .parent-feature-bottom{
+    margin-top:26px;
+    padding-top:18px;
+    border-top:1px solid rgba(212,200,185,.68);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:34px;
+  }
+  .services-page .parent-feature-bottom p{
+    margin:0;
+    color:#5f6c78;
+    font-size:.92rem;
+    line-height:1.6;
+  }
+  .services-page .parent-feature-bottom strong{
+    color:#213142;
+  }
+  .services-page #clinical-style .style-panel{
+    border-top:0 !important;
+    padding-top:0 !important;
+  }
+  .services-page #fit-and-scope .fit-grid{
+    gap:46px !important;
+  }
+  @media (max-width:980px){
+    .services-page .services-editorial-heading,
+    .services-page .concern-editorial-grid,
+    .services-page .parent-feature-layout,
+    .services-page .parent-feature-bottom{
+      grid-template-columns:1fr !important;
+    }
+    .services-page .parent-feature-copy h2{
+      max-width:none;
+    }
+    .services-page .parent-feature-detail{
+      padding:20px 0 0;
+      border-left:0;
+      border-top:1px solid rgba(200,171,120,.68);
+    }
+  }
+</style>
+
 </head>
 <body class="services-page">
 <header class="site-header compact-site-header">
@@ -1064,46 +1223,61 @@
 </div>
 </div>
 </section>
-<section class="home-led-section paper" id="common-concerns">
+<section class="home-led-section paper services-editorial-concerns" id="common-concerns">
 <div class="services-shell">
-<div class="services-heading refined-services-heading">
-<h2>Concerns often overlap.</h2>
-<p>People often begin with symptoms, but the work usually includes patterns, relationships, stress, loss, and the ways people have learned to protect themselves.</p>
+<div class="services-heading services-editorial-heading">
+<h2>Concerns often arrive together.</h2>
+<p>People rarely come to therapy with one isolated problem. Anxiety, shutdown, grief, family stress, relationships, coping patterns, and old protections often overlap. Stonebridge looks for the pattern beneath the list.</p>
 </div>
-<div aria-label="Common concerns addressed in psychotherapy" class="concern-list refined-concern-list">
-<div class="concern-item"><strong>Anxiety, panic, and avoidance</strong><span>Worry, fear, shutdown, or a life that has started to narrow around what feels unsafe.</span></div>
-<div class="concern-item"><strong>Depression and disconnection</strong><span>Low mood, numbness, irritability, hopelessness, or difficulty feeling present in daily life.</span></div>
-<div class="concern-item"><strong>Trauma responses and shame</strong><span>Earlier harm shaping safety, trust, self-worth, relationships, or the body’s sense of threat.</span></div>
-<div class="concern-item"><strong>Attention, intrusive thoughts, and mood intensity</strong><span>Executive functioning concerns, mental loops, activation, irritability, or emotional shifts that feel hard to manage.</span></div>
-<div class="concern-item"><strong>Relationships, identity, and self-worth</strong><span>Patterns of conflict, distance, people-pleasing, uncertainty, or difficulty naming what you need.</span></div>
-<div class="concern-item"><strong>Grief, transitions, and family stress</strong><span>Loss, adjustment, parenting stress, school pressure, or changes that affect the whole system.</span></div>
-<div class="concern-item"><strong>Substance use, body image, and coping</strong><span>Exploring habits, ambivalence, control, shame, and change when outpatient therapy is the right fit.</span></div>
-<div class="concern-item"><strong>Feeling stuck</strong><span>Patterns that keep returning even with insight, effort, or success elsewhere.</span></div>
+<div aria-label="Common concern areas addressed in psychotherapy" class="concern-editorial-grid">
+<article class="concern-editorial-item">
+<span class="concern-eyebrow">Emotional distress</span>
+<h3>Anxiety, depression, panic, or shutdown.</h3>
+<p>For clients feeling overwhelmed, numb, irritable, avoidant, disconnected, or caught in worry that keeps narrowing daily life.</p>
+</article>
+<article class="concern-editorial-item">
+<span class="concern-eyebrow">Trauma and shame</span>
+<h3>When earlier experiences still shape safety.</h3>
+<p>Therapy may focus on threat responses, self-worth, body-based distress, trust, grief, and the protective strategies that once made sense.</p>
+</article>
+<article class="concern-editorial-item">
+<span class="concern-eyebrow">Relationships and identity</span>
+<h3>Patterns that repeat with self and others.</h3>
+<p>Work may include attachment patterns, conflict, distance, people-pleasing, identity questions, communication, and difficulty naming needs.</p>
+</article>
+<article class="concern-editorial-item">
+<span class="concern-eyebrow">Coping and stuckness</span>
+<h3>When effort alone has not changed the cycle.</h3>
+<p>Stonebridge may help with stress, burnout, substance use concerns when outpatient care fits, body image or control concerns, and the feeling of being stuck despite insight.</p>
+</article>
 </div>
 </div>
 </section>
-<section class="home-led-section parent-support-section" id="parent-consultation">
+<section class="home-led-section parent-support-section parent-feature-section" id="parent-consultation">
 <div class="services-shell">
-<div class="parent-support-panel">
-<div class="parent-support-copy">
+<div class="parent-feature-layout">
+<div class="parent-feature-copy">
 <div class="stone-page-kicker">Parent Consultation &amp; Parenting Support</div>
 <h2>Support for parents trying to respond with more steadiness.</h2>
 <p><strong>Parent Consultation &amp; Parenting Support</strong> is not about becoming a perfect parent. It is about helping parents slow down, understand patterns, strengthen connection, and respond in ways that support the child, the parent, and the family system.</p>
+<p>This work may be useful when a child or teen is struggling with anxiety, emotional intensity, avoidance, shutdown, irritability, behavioral concerns, school stress, family transitions, or communication patterns that keep escalating at home.</p>
 </div>
-<div class="parent-support-list" aria-label="Parent consultation focus areas">
-<div class="parent-support-item"><strong>Understand the needs beneath behavior</strong><span>Look beyond the surface reaction to what may be driving distress, avoidance, shutdown, irritability, or conflict.</span></div>
-<div class="parent-support-item"><strong>Improve communication and regulation</strong><span>Strengthen ways of responding when emotions are high and words are hard to find.</span></div>
-<div class="parent-support-item"><strong>Set limits without escalating conflict</strong><span>Build clearer boundaries while protecting connection and reducing reactive family patterns.</span></div>
-<div class="parent-support-item"><strong>Support transitions and stress</strong><span>Help children or teens move through school stress, family changes, anxiety, grief, or developmental pressure with more support.</span></div>
+<aside class="parent-feature-detail" aria-label="Parent consultation focus and formats">
+<h3>This work may include</h3>
+<ul>
+<li>Understanding the needs beneath behavior.</li>
+<li>Improving communication and emotional regulation.</li>
+<li>Setting limits without escalating conflict.</li>
+<li>Reducing reactive family patterns.</li>
+<li>Strengthening parent-child connection.</li>
+<li>Helping parents stay grounded when things feel intense.</li>
+</ul>
+</aside>
 </div>
+<div class="parent-feature-bottom">
+<p><strong>How services may be offered:</strong> individual parent consultation, family-based sessions, parent-child sessions, and small parent consultation groups when available.</p>
+<p><strong>Insurance and fees:</strong> some parent and family services may be billable to insurance when clinically appropriate and connected to an identified treatment need. Educational workshops or groups may be private-pay. Fees and coverage are reviewed before services begin.</p>
 </div>
-<div class="parent-format-grid" aria-label="Parent consultation formats">
-<article class="parent-format-card"><h3>Individual parent consultation</h3><p>Meet with a parent or caregiver to clarify patterns, responses, limits, and next steps.</p></article>
-<article class="parent-format-card"><h3>Family-based sessions</h3><p>Work may include family members when clinically appropriate and connected to treatment goals.</p></article>
-<article class="parent-format-card"><h3>Parent-child sessions</h3><p>Sessions may include the child or teen when direct relational work would support the treatment frame.</p></article>
-<article class="parent-format-card"><h3>Small parent groups</h3><p>Parent consultation groups may be offered when available and clinically appropriate.</p></article>
-</div>
-<p class="parent-billing-note">Some parent and family services may be billable to insurance when clinically appropriate and connected to an identified treatment need. Educational workshops or groups may be private-pay. Fees and coverage are reviewed before services begin.</p>
 </div>
 </section>
 <section class="home-led-section" id="clinical-style">

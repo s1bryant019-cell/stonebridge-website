@@ -1340,6 +1340,91 @@
   }
 </style>
 
+
+<style id="stonebridge-founder-second-premium-pass">
+  /* Second founder design pass: profile essay rhythm, fewer equal-weight cards, more premium hierarchy. */
+  .founder-page .founder-focus-section{
+    background:linear-gradient(180deg,#f8f5f0 0%,#fbf8f4 100%) !important;
+  }
+  .founder-page .founder-focus-copy{
+    max-width:900px !important;
+  }
+  .founder-page .founder-focus-copy h2{
+    margin-bottom:10px !important;
+  }
+  .founder-page .founder-focus-copy > p:not(.lead){
+    max-width:54rem !important;
+    margin-bottom:20px !important;
+  }
+  .founder-page .founder-focus-editorial{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:0 52px;
+    border-top:1px solid rgba(33,49,66,.16);
+    border-bottom:1px solid rgba(33,49,66,.12);
+  }
+  .founder-page .founder-focus-editorial article{
+    padding:20px 0 22px;
+    border-top:1px solid rgba(33,49,66,.10);
+  }
+  .founder-page .founder-focus-editorial article:nth-child(-n+2){
+    border-top:0;
+  }
+  .founder-page .founder-focus-editorial span{
+    display:block;
+    margin-bottom:8px;
+    color:#8c7551;
+    font-family:"Inter", sans-serif;
+    font-size:.62rem;
+    font-weight:800;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .founder-page .founder-focus-editorial h3{
+    margin:0 0 8px;
+    color:var(--sb-navy,#213142);
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:clamp(1.38rem,1.9vw,1.75rem);
+    line-height:1.08;
+    letter-spacing:-.018em;
+  }
+  .founder-page .founder-focus-editorial p{
+    margin:0;
+    color:var(--sb-muted,#5d6870);
+    font-size:.93rem;
+    line-height:1.6;
+  }
+  .founder-page #therapy-style .section-copy > p:not(.lead){
+    max-width:54rem !important;
+  }
+  .founder-page #therapy-style .approach-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    border-top:1px solid rgba(33,49,66,.14) !important;
+  }
+  .founder-page #therapy-style .approach-card{
+    padding:18px 0 0 !important;
+    border:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+  }
+  .founder-page #background .degree-list{
+    border-top-color:rgba(33,49,66,.14) !important;
+  }
+  .founder-page #fit-scope .scope-panel{
+    max-width:760px !important;
+  }
+  @media (max-width:900px){
+    .founder-page .founder-focus-editorial,
+    .founder-page #therapy-style .approach-grid{
+      grid-template-columns:1fr !important;
+    }
+    .founder-page .founder-focus-editorial article:nth-child(2){
+      border-top:1px solid rgba(33,49,66,.10);
+    }
+  }
+</style>
+
 </head>
 <body>
 <header class="site-header compact-site-header">
@@ -1363,7 +1448,7 @@
 <div class="founder-kicker">Founder Profile</div>
 <h1 class="founder-title">Dr. Stephen W. Bryant</h1>
 <div class="founder-subtitle">PsyD, LCPC · Founder · Doctoral-level clinician</div>
-<p>Dr. Bryant provides outpatient telehealth psychotherapy for teens and adults in Illinois. His work is relational, insight-oriented, trauma-informed, and attentive to patterns that keep returning.</p>
+<p>Dr. Bryant provides outpatient telehealth psychotherapy and parent consultation for Illinois clients. His work is relational, insight-oriented, trauma-informed, and attentive to patterns that keep returning.</p>
 <div class="founder-actions">
 <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
 <a class="btn btn-secondary" href="services.html">View Services</a>
@@ -1382,41 +1467,38 @@
 </section>
 <section class="subpage-band no-icons founder-summary-band" aria-label="Founder profile overview">
 <div class="subpage-band-grid">
-<article class="subpage-band-item"><div><h4>Works with</h4><p>Teens and adults in Illinois.</p></div></article>
+<article class="subpage-band-item"><div><h4>Works with</h4><p>Teens, adults, and caregivers in Illinois.</p></div></article>
 <article class="subpage-band-item"><div><h4>Clinical style</h4><p>Relational, insight-oriented, trauma-informed, and collaborative.</p></div></article>
-<article class="subpage-band-item"><div><h4>Current format</h4><p>Outpatient telehealth psychotherapy with waitlist inquiries open.</p></div></article>
+<article class="subpage-band-item"><div><h4>Current format</h4><p>Outpatient telehealth psychotherapy and parent consultation, beginning with fit review.</p></div></article>
 </div>
 </section>
-<section class="founder-section" id="clinical-focus">
+<section class="founder-section founder-focus-section" id="clinical-focus">
 <div class="founder-section-inner">
-<aside class="section-label">Clinical focus</aside>
-<div class="section-copy">
-<h2>Clinical focus.</h2>
-<p class="lead">Many clients arrive after carrying things privately for a long time.</p>
-<div class="concern-grid refined-founder-focus-grid">
-<article class="concern-card">
-<strong>Anxiety, panic, and avoidance</strong>
-<span>Worry, overthinking, shutdown, or a life that has started to narrow around fear.</span>
+<aside class="section-label">Areas of focus</aside>
+<div class="section-copy founder-focus-copy">
+<h2>Areas of focus.</h2>
+<p class="lead">Dr. Bryant works with concerns that are often layered rather than cleanly separate.</p>
+<p>Therapy may begin with anxiety, depression, trauma responses, family stress, substance use concerns, or the feeling of being stuck. The work often looks at how symptoms, relationships, earlier experiences, and coping patterns connect.</p>
+<div class="founder-focus-editorial" aria-label="Areas of clinical focus">
+<article>
+<span>Emotional distress</span>
+<h3>Anxiety, panic, depression, and shutdown</h3>
+<p>For worry, overthinking, avoidance, numbness, irritability, hopelessness, or the sense that daily life has become difficult to enter fully.</p>
 </article>
-<article class="concern-card">
-<strong>Depression and disconnection</strong>
-<span>Low mood, numbness, irritability, hopelessness, or difficulty re-entering life.</span>
+<article>
+<span>Trauma and self-worth</span>
+<h3>Shame, safety, identity, and old protections</h3>
+<p>For clients whose earlier experiences still shape trust, self-worth, threat responses, body-based distress, or the ways they relate to themselves.</p>
 </article>
-<article class="concern-card">
-<strong>Trauma responses and shame</strong>
-<span>Earlier harm shaping safety, trust, self-worth, relationships, or the body’s sense of threat.</span>
+<article>
+<span>Relationships and coping</span>
+<h3>Repeated patterns, stress, and substance use concerns</h3>
+<p>For conflict, distance, people-pleasing, burnout, ambivalence about coping patterns, or cycles that are hard to shift when outpatient therapy fits.</p>
 </article>
-<article class="concern-card">
-<strong>Relationships, identity, and self-worth</strong>
-<span>Conflict, distance, people-pleasing, uncertainty, or questions about what you need and how you relate to yourself.</span>
-</article>
-<article class="concern-card">
-<strong>Stress, substance use, and feeling stuck</strong>
-<span>Burnout, overload, ambivalence about coping patterns, or repeated cycles that are hard to shift when outpatient therapy fits.</span>
-</article>
-<article class="concern-card">
-<strong>Parent consultation and family stress</strong>
-<span>Support for caregivers navigating child or adolescent anxiety, emotional intensity, communication difficulties, behavioral concerns, and reactive family patterns.</span>
+<article>
+<span>Parent consultation</span>
+<h3>Child, adolescent, and family stress</h3>
+<p>Support for caregivers navigating anxiety, emotional intensity, behavioral concerns, communication difficulties, school stress, and reactive family patterns.</p>
 </article>
 </div>
 </div>
