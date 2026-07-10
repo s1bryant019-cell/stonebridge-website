@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Team | Stonebridge Psychological Group</title>
-  <meta name="description" content="Who provides outpatient telehealth psychotherapy at Stonebridge Psychological Group." />
+  <meta name="description" content="Who provides outpatient telehealth psychotherapy and parent consultation at Stonebridge Psychological Group." />
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,237 +16,39 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .team-page .team-roster-section{
-      padding-top:42px!important;
-      padding-bottom:44px!important;
-      background:#fbf8f4;
-    }
-
-    .team-page .team-roster-grid{
-      max-width:1040px;
-    }
-
-    .team-page .team-roster-card{
-      padding:30px;
-    }
-
-    .team-page .team-roster-card::after{
-      opacity:.018;
-    }
-
-    .team-page .team-card-layout{
-      display:grid;
-      grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);
-      gap:32px;
-      align-items:start;
-    }
-
-    .team-page .team-card-layout h2{
-      margin-top:14px;
-      margin-bottom:8px;
-    }
-
-    .team-page .team-role-line{
-      margin:0;
-      color:var(--home-muted, #67737d);
-      font-size:.96rem;
-      line-height:1.55;
-      font-weight:600;
-    }
-
-    .team-page .team-card-copy p{
-      margin:0;
-    }
-
-    .team-page .team-detail-list{
-      display:grid;
-      gap:10px;
-      margin:20px 0 22px;
-      padding:0;
-      list-style:none;
-    }
-
-    .team-page .team-detail-list li{
-      display:grid;
-      grid-template-columns:118px 1fr;
-      gap:16px;
-      padding-top:10px;
-      border-top:1px solid rgba(212,200,185,.55);
-      color:var(--home-muted, #67737d);
-      font-size:.96rem;
-      line-height:1.55;
-    }
-
-    .team-page .team-detail-list strong{
-      color:var(--home-navy, #24303b);
-      font-size:.72rem;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-      line-height:1.5;
-    }
-
-    .team-page .team-card-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:2px;
-    }
-
-    @media (max-width:860px){
-      .team-page .team-card-layout{
-        grid-template-columns:1fr;
-        gap:22px;
-      }
-    }
-
-    @media (max-width:620px){
-      .team-page .team-roster-card{
-        padding:24px;
-      }
-
-      .team-page .team-detail-list li{
-        grid-template-columns:1fr;
-        gap:4px;
-      }
-    }
+    .team-page .team-roster-section{padding-top:42px!important;padding-bottom:44px!important;background:#fbf8f4;}
+    .team-page .team-roster-grid{max-width:1040px;}
+    .team-page .team-roster-card{padding:30px;}
+    .team-page .team-roster-card::after{opacity:.018;}
+    .team-page .team-card-layout{display:grid;grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);gap:32px;align-items:start;}
+    .team-page .team-card-layout h2{margin-top:14px;margin-bottom:8px;}
+    .team-page .team-role-line{margin:0;color:var(--home-muted,#67737d);font-size:.96rem;line-height:1.55;font-weight:600;}
+    .team-page .team-card-copy p{margin:0;}
+    .team-page .team-detail-list{display:grid;gap:10px;margin:20px 0 22px;padding:0;list-style:none;}
+    .team-page .team-detail-list li{display:grid;grid-template-columns:118px 1fr;gap:16px;padding-top:10px;border-top:1px solid rgba(212,200,185,.55);color:var(--home-muted,#67737d);font-size:.96rem;line-height:1.55;}
+    .team-page .team-detail-list strong{color:var(--home-navy,#24303b);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;line-height:1.5;}
+    .team-page .team-card-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:2px;}
+    @media (max-width:860px){.team-page .team-card-layout{grid-template-columns:1fr;gap:22px;}}
+    @media (max-width:620px){.team-page .team-roster-card{padding:24px;}.team-page .team-detail-list li{grid-template-columns:1fr;gap:4px;}}
   </style>
 </head>
 <body class="team-page">
-
   <header class="site-header compact-site-header">
     <div class="container nav">
-      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
-        <div class="brand-mark">STONEBRIDGE</div>
-        <div class="brand-sub">Psychological Group</div>
-      </a>
+      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home"><div class="brand-mark">STONEBRIDGE</div><div class="brand-sub">Psychological Group</div></a>
       <button class="mobile-toggle" aria-label="Toggle menu" type="button">Menu</button>
-      <div class="menu-wrap">
-        <nav class="menu" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a class="active" href="team.html">Team</a>
-          <a href="services.html">Services</a>
-          <a href="fees-insurance.html">Fees &amp; Insurance</a>
-          <a href="portal.html">Portal</a>
-        </nav>
-        <div class="header-cta">
-          <a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
-        </div>
-      </div>
+      <div class="menu-wrap"><nav class="menu" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="team.html">Team</a><a href="services.html">Services</a><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="portal.html">Portal</a></nav><div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div></div>
     </div>
   </header>
-
   <main>
     <section class="stone-page-hero hero-team compact-team-hero" aria-labelledby="team-page-heading">
-      <div class="stone-hero-panel" aria-hidden="true">
-        <img src="hero-team-consultation.jpg" alt="" />
-      </div>
-      <div class="stone-page-inner">
-        <div class="stone-page-copy">
-          <div class="stone-page-line"></div>
-          <div class="stone-page-kicker">Team</div>
-          <h1 class="long-title" id="team-page-heading">Who provides care.</h1>
-          <p>Stonebridge provides outpatient telehealth psychotherapy for teens and adults in Illinois through Dr. Stephen W. Bryant, PsyD, LCPC.</p>
-          <div class="stone-page-actions">
-            <a class="btn btn-primary" href="#clinician">View clinician</a>
-            <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
-          </div>
-        </div>
-      </div>
+      <div class="stone-hero-panel" aria-hidden="true"><img src="hero-team-consultation.jpg" alt="" /></div>
+      <div class="stone-page-inner"><div class="stone-page-copy"><div class="stone-page-line"></div><div class="stone-page-kicker">Team</div><h1 class="long-title" id="team-page-heading">Who provides care.</h1><p>Stonebridge provides outpatient telehealth psychotherapy and parent consultation for Illinois clients through Dr. Stephen W. Bryant, PsyD, LCPC.</p><div class="stone-page-actions"><a class="btn btn-primary" href="#clinician">View clinician</a><a class="btn btn-secondary" href="contact.html">Join the Waitlist</a></div></div></div>
     </section>
-
-    <section class="subpage-band">
-      <div class="subpage-band-grid">
-        <article class="subpage-band-item">
-          <div class="subpage-band-icon">01</div>
-          <div><h4>Licensed in Illinois</h4><p>Telehealth psychotherapy for clients located in Illinois.</p></div>
-        </article>
-        <article class="subpage-band-item">
-          <div class="subpage-band-icon">02</div>
-          <div><h4>Works with teens and adults</h4><p>Outpatient therapy for adolescents and adults.</p></div>
-        </article>
-        <article class="subpage-band-item">
-          <div class="subpage-band-icon">03</div>
-          <div><h4>Care begins with fit</h4><p>A brief inquiry comes before intake.</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="home-led-section paper team-roster-section" id="clinician">
-      <div class="home-led-grid one team-roster-grid">
-        <article class="home-led-card team-roster-card" aria-labelledby="dr-bryant-card-heading">
-          <div class="team-card-layout">
-            <div>
-              <span class="status-pill">Outpatient telehealth psychotherapy</span>
-              <h2 id="dr-bryant-card-heading">Stephen W. Bryant, PsyD, LCPC</h2>
-              <p class="team-role-line">Founder · Licensed Clinical Professional Counselor, Illinois</p>
-              <div class="home-tags" aria-label="Clinician summary">
-                <span class="home-tag">Teens and adults</span>
-                <span class="home-tag">Illinois telehealth</span>
-                <span class="home-tag">Consultation first</span>
-              </div>
-            </div>
-            <div class="team-card-copy">
-              <p>Dr. Bryant provides careful relational psychotherapy for teens and adults located in Illinois. His work is steady, thoughtful, and attentive to emotional complexity, stress, relationships, trauma responses, grief, identity, self-worth, substance use concerns when outpatient care fits, and patterns that feel hard to change.</p>
-              <ul class="team-detail-list">
-                <li><strong>Works with</strong><span>Teens and adults located in Illinois.</span></li>
-                <li><strong>Clinical focus</strong><span>Anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, substance use concerns when outpatient care fits, and feeling stuck.</span></li>
-                <li><strong>Format</strong><span>Outpatient telehealth psychotherapy.</span></li>
-              </ul>
-              <div class="team-card-actions">
-                <a class="btn btn-primary" href="team-founder.html">Read full profile</a>
-                <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
+    <section class="subpage-band"><div class="subpage-band-grid"><article class="subpage-band-item"><div class="subpage-band-icon">01</div><div><h4>Licensed in Illinois</h4><p>Telehealth psychotherapy for clients located in Illinois.</p></div></article><article class="subpage-band-item"><div class="subpage-band-icon">02</div><div><h4>Works with teens, adults, and parents</h4><p>Outpatient therapy and parent consultation when clinically appropriate.</p></div></article><article class="subpage-band-item"><div class="subpage-band-icon">03</div><div><h4>Care begins with fit</h4><p>A brief inquiry comes before intake.</p></div></article></div></section>
+    <section class="home-led-section paper team-roster-section" id="clinician"><div class="home-led-grid one team-roster-grid"><article class="home-led-card team-roster-card" aria-labelledby="dr-bryant-card-heading"><div class="team-card-layout"><div><span class="status-pill">Outpatient telehealth psychotherapy</span><h2 id="dr-bryant-card-heading">Stephen W. Bryant, PsyD, LCPC</h2><p class="team-role-line">Founder · Licensed Clinical Professional Counselor, Illinois</p><div class="home-tags" aria-label="Clinician summary"><span class="home-tag">Teens and adults</span><span class="home-tag">Illinois telehealth</span><span class="home-tag">Parent consultation</span><span class="home-tag">Consultation first</span></div></div><div class="team-card-copy"><p>Dr. Bryant provides careful relational psychotherapy for teens and adults located in Illinois. His work is steady, thoughtful, and attentive to emotional complexity, stress, relationships, trauma responses, grief, identity, self-worth, substance use concerns when outpatient care fits, parent and family stress, and patterns that feel hard to change.</p><ul class="team-detail-list"><li><strong>Works with</strong><span>Teens, adults, and caregivers located in Illinois.</span></li><li><strong>Clinical focus</strong><span>Anxiety, depression, trauma responses, grief, relationships, identity, self-worth, stress, substance use concerns when outpatient care fits, parent consultation, family stress, and feeling stuck.</span></li><li><strong>Parent support</strong><span>Parent Consultation &amp; Parenting Support for caregivers navigating child or adolescent anxiety, emotional intensity, behavioral concerns, communication difficulties, and family stress.</span></li><li><strong>Format</strong><span>Outpatient telehealth psychotherapy, parent consultation, and family-based support when clinically appropriate.</span></li></ul><div class="team-card-actions"><a class="btn btn-primary" href="team-founder.html">Read full profile</a><a class="btn btn-secondary" href="contact.html">Join the Waitlist</a></div></div></div></article></div></section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">STONEBRIDGE</div>
-        <div class="footer-sub">Psychological Group</div>
-        <p class="footer-copy">Thoughtful telehealth psychotherapy for teens and adults in Illinois.</p>
-      </div>
-      <div>
-        <div class="footer-title">Care</div>
-        <div class="footer-links">
-          <a href="services.html">Services</a>
-          <a href="fees-insurance.html">Fees &amp; Insurance</a>
-          <a href="contact.html">Join the Waitlist</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-title">Practice</div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="team.html">Team</a>
-          <a href="team-founder.html">Founder</a>
-          <a href="portal.html">Client Portal</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
-          <span>Serving Illinois via telehealth</span>
-          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-          <a href="tel:+17734171688">(773) 417-1688</a>
-          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
-          <a aria-label="Stonebridge Psychological Group on Facebook" href="https://www.facebook.com/profile.php?id=61590354182651" rel="noopener noreferrer" target="_blank">Facebook</a>
-        </div>
-      </div>
-      <div class="footer-logo-right">
-        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo">
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-grid"><div><div class="footer-brand">STONEBRIDGE</div><div class="footer-sub">Psychological Group</div><p class="footer-copy">Thoughtful telehealth psychotherapy for teens and adults in Illinois.</p></div><div><div class="footer-title">Care</div><div class="footer-links"><a href="services.html">Services</a><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="contact.html">Join the Waitlist</a></div></div><div><div class="footer-title">Practice</div><div class="footer-links"><a href="about.html">About</a><a href="team.html">Team</a><a href="team-founder.html">Founder</a><a href="portal.html">Client Portal</a></div></div><div><div class="footer-title">Contact</div><div class="footer-links"><span>Serving Illinois via telehealth</span><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a><a href="tel:+17734171688">(773) 417-1688</a><a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a><a aria-label="Stonebridge Psychological Group on Facebook" href="https://www.facebook.com/profile.php?id=61590354182651" rel="noopener noreferrer" target="_blank">Facebook</a></div></div><div class="footer-logo-right"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo"></div></div><div class="container footer-bottom"><div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div><div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div></div></footer>
   <script src="script.js"></script>
 </body>
 </html>

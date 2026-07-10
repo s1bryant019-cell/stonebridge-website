@@ -824,7 +824,7 @@
 <div class="stone-page-line"></div>
 <div class="stone-page-kicker">Waitlist &amp; Consultation</div>
 <h1 class="wide-title">Begin with a brief note.</h1>
-<p>Stonebridge is accepting waitlist inquiries for outpatient telehealth psychotherapy for teens and adults in Illinois. A few sentences are enough to begin.</p>
+<p>Stonebridge is accepting waitlist inquiries for outpatient telehealth psychotherapy and parent consultation in Illinois. A few sentences are enough to begin.</p>
 <div class="stone-page-actions"><a class="btn btn-primary" href="#consultation-form">Join the Waitlist</a><a class="btn btn-secondary" href="fees-insurance.html">View fees &amp; insurance</a></div>
 </div>
 </div>
@@ -839,26 +839,26 @@
 <section class="home-led-section contact-action-section compact-contact-section">
 <div class="contact-forward-grid">
 <aside aria-label="Before submitting the waitlist form" class="contact-brief-panel">
-<h2>Keep it simple.</h2><p>The waitlist form is only a starting point. Include your contact information, the proposed client’s name, and a brief reason for seeking therapy.</p>
+<h2>Keep it simple.</h2><p>The waitlist form is only a starting point. Include your contact information, the proposed client’s name, what you are reaching out about, and a brief reason for the inquiry.</p>
 
 
 
 <div class="contact-safety-note"><strong>Emergency and crisis needs:</strong> This form is not monitored for emergencies. For immediate danger or medical emergencies, call 911 or go to the nearest emergency room. Mental health crisis support is available by calling or texting 988.</div>
 </aside>
 <form class="consultation-form-card home-led-card" id="consultation-form" novalidate="">
-<div class="form-heading"><div><div class="stone-page-kicker">Waitlist Inquiry</div><h2>Join the waitlist</h2></div><p>For outpatient telehealth psychotherapy in Illinois.</p></div>
+<div class="form-heading"><div><div class="stone-page-kicker">Waitlist Inquiry</div><h2>Join the waitlist</h2></div><p>For outpatient telehealth psychotherapy and parent consultation in Illinois.</p></div>
 <div class="form-grid">
 <label class="honeypot"><span>Website</span><input autocomplete="off" name="website" tabindex="-1" type="text"/></label>
 <input name="psychotherapyFormat" type="hidden" value="Telehealth psychotherapy"/>
-<input id="serviceRequested" name="serviceRequested" type="hidden" value="psychotherapy waitlist inquiry"/>
-<div class="form-row-full form-note-inline"><strong>Inquiry type:</strong> outpatient telehealth psychotherapy waitlist inquiry.</div>
+
 <label><span>Full Name *</span><input autocomplete="name" name="fullName" required="" type="text"/></label>
-<label><span>Proposed Patient’s Name</span><input name="patientName" type="text"/></label>
+<label><span>Proposed Patient / Client Name</span><input name="patientName" type="text"/></label>
+<label><span>What are you reaching out about? *</span><select id="serviceRequested" name="serviceRequested" required=""><option value="">Select one</option><option value="Individual psychotherapy">Individual psychotherapy</option><option value="Parent Consultation / Parenting Support">Parent Consultation / Parenting Support</option><option value="Family-Based Support">Family-Based Support</option><option value="Parent-child session / family support">Parent-child session / family support</option><option value="Small parent consultation group interest">Small parent consultation group interest</option><option value="Unsure / fit review">Unsure / fit review</option></select></label>
 <label><span>Email Address *</span><input autocomplete="email" name="email" required="" type="email"/></label>
 <label><span>Insurance / Payment Preference</span><select id="insurancePreference" name="insurancePreference"><option value="">Select one</option><option value="Private pay">Private pay</option><option value="Private pay / possible reduced-fee options">Private pay / possible reduced-fee options</option><option value="Planning to use insurance if available">Planning to use insurance if available</option><option value="BCBS Illinois commercial plan">BCBS Illinois commercial plan (accepted)</option><option value="Aetna">Aetna (credentialing in progress)</option><option value="Illinois Medicaid / IMPACT">Illinois Medicaid / IMPACT (enrollment in progress)</option><option value="Blue Cross Community Health Plans / BCCHP">Blue Cross Community / BCCHP (in progress)</option><option value="Cigna / Evernorth">Cigna / Evernorth (planned / pending)</option><option value="Other commercial insurance">Other commercial insurance</option><option value="Out-of-network benefits / superbill">Out-of-network benefits / superbill</option><option value="Unsure">Unsure</option></select></label>
 <label><span>Insurance Details (optional)</span><input name="insuranceDetails" placeholder="Plan name, PPO/HMO, employer plan, or anything helpful" type="text"/></label>
-<div class="form-row-full form-note-inline">BCBS Illinois commercial plans are currently active. Other listed plans are in credentialing or enrollment and are not yet active for billing. Selecting a plan here only helps Stonebridge understand your preference; benefits are verified separately before billing.</div>
-<label class="form-row-full"><span>Brief Reason for Seeking Psychotherapy *</span><textarea name="reason" placeholder="A few sentences is enough. You do not need to explain everything here." required=""></textarea></label>
+<div class="form-row-full form-note-inline">BCBS Illinois commercial plans are currently active. Other listed plans are in credentialing or enrollment and are not yet active for billing. Parent and family services may be billed differently depending on clinical purpose, participants, and coverage. Benefits are verified separately before billing.</div>
+<label class="form-row-full"><span>Brief Reason for Reaching Out *</span><textarea name="reason" placeholder="A few sentences is enough. You do not need to explain everything here." required=""></textarea></label>
 </div>
 <div aria-live="polite" class="form-alert" id="form-alert" role="status"></div>
 <div class="form-bottom-row"><button class="btn btn-primary" id="submitButton" type="submit">Join the Waitlist</button></div>
