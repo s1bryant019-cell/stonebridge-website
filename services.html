@@ -888,6 +888,118 @@
   }
 </style>
 
+
+<style id="stonebridge-services-premium-refinement">
+  /* Services refinement: fewer boxed blocks, stronger editorial hierarchy, quieter premium rhythm. */
+  .services-page .refined-services-heading{
+    grid-template-columns:.66fr 1.34fr !important;
+    gap:30px !important;
+    align-items:end !important;
+    margin-bottom:20px !important;
+  }
+  .services-page .refined-services-heading h2{
+    max-width:12ch !important;
+  }
+  .services-page .refined-services-heading p{
+    max-width:58rem !important;
+  }
+  .services-page .refined-concern-list{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:0 42px !important;
+    border-top:1px solid rgba(33,49,66,.16) !important;
+  }
+  .services-page .refined-concern-list .concern-item{
+    padding:16px 0 !important;
+    border-bottom:1px solid rgba(33,49,66,.12) !important;
+  }
+  .services-page .refined-concern-list .concern-item strong{
+    font-size:1.22rem !important;
+    line-height:1.1 !important;
+  }
+  .services-page .refined-concern-list .concern-item span{
+    color:#5f6c78 !important;
+    font-size:.92rem !important;
+    font-weight:500 !important;
+    letter-spacing:0 !important;
+    text-transform:none !important;
+    line-height:1.55 !important;
+  }
+  .services-page .parent-support-section{
+    background:linear-gradient(180deg,#fffaf4 0%,#f7f2eb 100%) !important;
+    border-top:1px solid rgba(212,200,185,.52) !important;
+    border-bottom:1px solid rgba(212,200,185,.52) !important;
+  }
+  .services-page .parent-support-panel{
+    gap:48px !important;
+    padding-top:0 !important;
+  }
+  .services-page .parent-support-copy{
+    padding-top:4px !important;
+  }
+  .services-page .parent-support-copy h2{
+    max-width:13ch !important;
+    font-size:clamp(2.25rem,3.25vw,3.25rem) !important;
+  }
+  .services-page .parent-support-copy p{
+    max-width:39rem !important;
+  }
+  .services-page .parent-support-list{
+    grid-template-columns:1fr !important;
+    gap:0 !important;
+    border-top:1px solid rgba(33,49,66,.16) !important;
+  }
+  .services-page .parent-support-item{
+    padding:14px 0 !important;
+    border-bottom:1px solid rgba(33,49,66,.12) !important;
+  }
+  .services-page .parent-format-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    gap:24px !important;
+    margin-top:28px !important;
+    padding-top:18px !important;
+    border-top:1px solid rgba(212,200,185,.62) !important;
+  }
+  .services-page .parent-format-card{
+    border:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    padding:0 !important;
+    box-shadow:none !important;
+  }
+  .services-page .parent-format-card h3{
+    font-size:1.22rem !important;
+    margin-bottom:6px !important;
+  }
+  .services-page .parent-billing-note{
+    margin-top:22px !important;
+    padding:0 0 0 16px !important;
+    border:0 !important;
+    border-left:2px solid rgba(200,171,120,.72) !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    max-width:62rem !important;
+  }
+  .services-page .style-panel{
+    gap:54px !important;
+  }
+  .services-page .style-lines{
+    gap:28px !important;
+  }
+  .services-page .style-lines li{
+    border-top-color:rgba(33,49,66,.14) !important;
+  }
+  @media (max-width:980px){
+    .services-page .refined-services-heading,
+    .services-page .parent-support-panel,
+    .services-page .parent-format-grid{
+      grid-template-columns:1fr !important;
+    }
+    .services-page .parent-support-copy h2{
+      max-width:none !important;
+    }
+  }
+</style>
+
 </head>
 <body class="services-page">
 <header class="site-header compact-site-header">
@@ -954,22 +1066,19 @@
 </section>
 <section class="home-led-section paper" id="common-concerns">
 <div class="services-shell">
-<div class="services-heading">
-<h2>Common concerns.</h2>
-<p>People often begin with one or more of these experiences.</p>
+<div class="services-heading refined-services-heading">
+<h2>Concerns often overlap.</h2>
+<p>People often begin with symptoms, but the work usually includes patterns, relationships, stress, loss, and the ways people have learned to protect themselves.</p>
 </div>
-<div aria-label="Common concerns addressed in psychotherapy" class="concern-list">
-<div class="concern-item"><strong>Anxiety, panic, and avoidance</strong><span>Anxiety disorders</span></div>
-<div class="concern-item"><strong>Depression, numbness, and hopelessness</strong><span>Depressive disorders</span></div>
-<div class="concern-item"><strong>Trauma responses and shame</strong><span>Trauma and stressor-related disorders</span></div>
-<div class="concern-item"><strong>Attention, organization, and follow-through</strong><span>ADHD / executive functioning concerns</span></div>
-<div class="concern-item"><strong>Intrusive thoughts, rituals, and mental loops</strong><span>Obsessive-compulsive concerns</span></div>
-<div class="concern-item"><strong>Mood shifts, activation, or intense irritability</strong><span>Bipolar-related concerns</span></div>
-<div class="concern-item"><strong>Alcohol, cannabis, or other substance use</strong><span>Substance use concerns</span></div>
-<div class="concern-item"><strong>Eating, body image, control, or food-related shame</strong><span>Eating and body image concerns</span></div>
-<div class="concern-item"><strong>Relationship patterns, trust, and self-worth</strong><span>Relational and personality-related patterns</span></div>
-<div class="concern-item"><strong>Grief, adjustment, identity, and life transition</strong><span>Adjustment-related concerns</span></div>
-<div class="concern-item"><strong>Parent stress, communication, and family conflict</strong><span>Parent consultation and family-based support</span></div>
+<div aria-label="Common concerns addressed in psychotherapy" class="concern-list refined-concern-list">
+<div class="concern-item"><strong>Anxiety, panic, and avoidance</strong><span>Worry, fear, shutdown, or a life that has started to narrow around what feels unsafe.</span></div>
+<div class="concern-item"><strong>Depression and disconnection</strong><span>Low mood, numbness, irritability, hopelessness, or difficulty feeling present in daily life.</span></div>
+<div class="concern-item"><strong>Trauma responses and shame</strong><span>Earlier harm shaping safety, trust, self-worth, relationships, or the body’s sense of threat.</span></div>
+<div class="concern-item"><strong>Attention, intrusive thoughts, and mood intensity</strong><span>Executive functioning concerns, mental loops, activation, irritability, or emotional shifts that feel hard to manage.</span></div>
+<div class="concern-item"><strong>Relationships, identity, and self-worth</strong><span>Patterns of conflict, distance, people-pleasing, uncertainty, or difficulty naming what you need.</span></div>
+<div class="concern-item"><strong>Grief, transitions, and family stress</strong><span>Loss, adjustment, parenting stress, school pressure, or changes that affect the whole system.</span></div>
+<div class="concern-item"><strong>Substance use, body image, and coping</strong><span>Exploring habits, ambivalence, control, shame, and change when outpatient therapy is the right fit.</span></div>
+<div class="concern-item"><strong>Feeling stuck</strong><span>Patterns that keep returning even with insight, effort, or success elsewhere.</span></div>
 </div>
 </div>
 </section>
