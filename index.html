@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home | Stonebridge Psychological Group</title>
-  <meta name="description" content="Online psychotherapy in Illinois for clients seeking steady, thoughtful care. Stonebridge begins with consultation, clear scope, ethical boundaries, and relational depth.">
+  <meta name="description" content="Thoughtful online psychotherapy for Illinois clients. Stonebridge offers consultation-first, relational care within a clear and steady clinical frame.">
   <link rel="canonical" href="https://stonebridgepsychgroup.com/">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <style id="stonebridge-home-editorial">
+  <style id="stonebridge-home-human-center">
     :root{
       --home-bg:#f8f5f0;
       --home-paper:#f1ebe3;
@@ -27,13 +27,14 @@
       --home-blue:#163b61;
       --home-blue-deep:#102f4d;
       --home-gold:#78613f;
-      --home-gold-light:#b89661;
+      --home-gold-soft:#b89661;
       --home-line:rgba(33,49,66,.14);
-      --home-warm-line:rgba(212,200,185,.72);
+      --home-warm-line:rgba(212,200,185,.74);
       --home-white:#fffaf2;
     }
 
     body.home-page{
+      margin:0;
       background:var(--home-bg);
       color:var(--home-ink);
     }
@@ -41,7 +42,7 @@
     .home-page .skip-link{
       position:absolute;
       left:12px;
-      top:-80px;
+      top:-90px;
       z-index:1000;
       padding:10px 14px;
       border-radius:8px;
@@ -58,8 +59,7 @@
     }
 
     .home-kicker,
-    .home-label,
-    .home-step-label{
+    .home-label{
       color:var(--home-gold);
       font-family:"Inter",sans-serif;
       font-size:.68rem;
@@ -70,54 +70,52 @@
     }
 
     /* =========================
-       HERO
+       1. HERO
     ========================= */
     .home-hero{
       position:relative;
       min-height:640px;
       overflow:hidden;
       background:
-        radial-gradient(circle at 13% 48%,rgba(184,150,97,.10),transparent 29%),
-        linear-gradient(180deg,#fbf8f4 0%,#f4eee6 100%);
+        radial-gradient(circle at 13% 46%,rgba(184,150,97,.10),transparent 30%),
+        linear-gradient(180deg,#fcfaf7 0%,#f5efe8 100%);
       border-bottom:1px solid var(--home-warm-line);
-    }
-
-    .home-hero::before{
-      content:"";
-      position:absolute;
-      left:max(36px,calc((100vw - 1220px)/2));
-      top:54px;
-      width:1px;
-      height:76px;
-      background:linear-gradient(180deg,rgba(184,150,97,.9),rgba(184,150,97,0));
-      z-index:3;
     }
 
     .home-hero-inner{
       position:relative;
-      z-index:3;
+      z-index:2;
       width:min(1220px,calc(100% - 72px));
       min-height:640px;
       margin:0 auto;
       display:flex;
       align-items:center;
-      padding:70px 0 58px;
+      padding:64px 0 58px;
     }
 
     .home-hero-copy{
-      width:48%;
-      max-width:640px;
-      padding-right:70px;
+      width:49%;
+      max-width:650px;
+      padding-right:76px;
+    }
+
+    .home-hero-copy::before{
+      content:"";
+      display:block;
+      width:44px;
+      height:2px;
+      margin-bottom:22px;
+      background:var(--home-gold-soft);
     }
 
     .home-hero h1{
       margin:12px 0 0;
-      max-width:11.2ch;
+      max-width:11.5ch;
       color:var(--home-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(4rem,5.6vw,5.9rem);
+      font-size:clamp(4rem,5.5vw,5.8rem);
       font-weight:700;
-      line-height:.98;
+      line-height:.99;
       letter-spacing:-.055em;
       text-wrap:balance;
     }
@@ -149,13 +147,31 @@
       text-underline-offset:4px;
     }
 
-    .home-hero-note{
+    .home-hero-trust{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 14px;
+      margin-top:18px;
       max-width:42rem;
-      margin:16px 0 0;
-      color:#75654e;
+      color:#76674f;
       font-family:"Inter",sans-serif;
-      font-size:.78rem;
-      line-height:1.55;
+      font-size:.76rem;
+      line-height:1.5;
+    }
+
+    .home-hero-trust span{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+    }
+
+    .home-hero-trust span + span::before{
+      content:"";
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background:var(--home-gold-soft);
+      flex:0 0 4px;
     }
 
     .home-hero-image{
@@ -182,82 +198,43 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg,rgba(16,47,77,.46) 0%,rgba(16,47,77,.14) 28%,rgba(16,47,77,0) 56%),
-        linear-gradient(180deg,rgba(10,20,34,0) 54%,rgba(10,20,34,.20) 100%);
+        linear-gradient(90deg,rgba(16,47,77,.48) 0%,rgba(16,47,77,.15) 29%,rgba(16,47,77,0) 58%),
+        linear-gradient(180deg,rgba(10,20,34,0) 55%,rgba(10,20,34,.16) 100%);
       pointer-events:none;
     }
 
     /* =========================
-       TRUST LINE
-    ========================= */
-    .home-trust{
-      background:linear-gradient(135deg,var(--home-blue),var(--home-blue-deep));
-      color:var(--home-white);
-    }
-
-    .home-trust-inner{
-      width:min(1120px,calc(100% - 72px));
-      margin:0 auto;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:11px 18px;
-      padding:18px 0;
-      text-align:center;
-    }
-
-    .home-trust span{
-      color:rgba(255,250,242,.90);
-      font-family:"Inter",sans-serif;
-      font-size:.82rem;
-      line-height:1.45;
-    }
-
-    .home-trust i{
-      width:4px;
-      height:4px;
-      border-radius:50%;
-      background:#d6be94;
-      flex:0 0 4px;
-    }
-
-    /* =========================
-       RECOGNITION
+       2. RECOGNITION
     ========================= */
     .home-recognition{
-      padding:76px 0 78px;
+      padding:78px 0 82px;
       background:var(--home-bg);
     }
 
-    .home-recognition-head{
-      display:grid;
-      grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
-      gap:70px;
-      align-items:end;
-      margin-bottom:37px;
+    .home-recognition-intro{
+      max-width:850px;
+      margin-bottom:38px;
     }
 
     .home-recognition h2,
-    .home-philosophy h2,
-    .home-team h2,
-    .home-final h2{
+    .home-human h2,
+    .home-begin h2{
       margin:12px 0 0;
       color:var(--home-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.7rem,4.4vw,4rem);
+      font-size:clamp(2.8rem,4.5vw,4.15rem);
       line-height:1.04;
       letter-spacing:-.045em;
       text-wrap:balance;
     }
 
     .home-recognition h2{
-      max-width:13ch;
+      max-width:18ch;
     }
 
-    .home-recognition-head > p{
-      max-width:42rem;
-      margin:0;
+    .home-recognition-intro p{
+      max-width:44rem;
+      margin:18px 0 0;
       color:var(--home-muted);
       font-family:"Inter",sans-serif;
       font-size:.98rem;
@@ -266,198 +243,228 @@
 
     .home-recognition-list{
       display:grid;
-      gap:0;
       border-top:1px solid var(--home-line);
     }
 
     .home-recognition-row{
       display:grid;
-      grid-template-columns:52px minmax(0,1fr);
-      gap:20px;
-      align-items:baseline;
-      padding:20px 0 19px;
+      grid-template-columns:48px minmax(0,1fr) minmax(220px,.58fr);
+      gap:24px;
+      align-items:center;
+      padding:20px 0;
       border-bottom:1px solid var(--home-line);
     }
 
     .home-recognition-row:nth-child(even){
-      padding-left:8.5%;
+      padding-left:6%;
     }
 
-    .home-recognition-row:nth-child(3){
-      padding-left:3.5%;
-    }
-
-    .home-recognition-row .index{
+    .home-recognition-row .number{
       color:var(--home-gold);
       font-family:"Inter",sans-serif;
-      font-size:.69rem;
+      font-size:.68rem;
       font-weight:800;
-      letter-spacing:.15em;
+      letter-spacing:.14em;
     }
 
     .home-recognition-row strong{
       color:var(--home-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(1.65rem,2.5vw,2.35rem);
+      font-size:clamp(1.55rem,2.2vw,2.15rem);
       font-weight:600;
       line-height:1.12;
       letter-spacing:-.025em;
     }
 
-    /* =========================
-       PHILOSOPHY
-    ========================= */
-    .home-philosophy{
-      padding:72px 0 70px;
-      background:linear-gradient(135deg,var(--home-blue),var(--home-blue-deep));
-      color:var(--home-white);
-    }
-
-    .home-philosophy-quote{
-      max-width:900px;
-    }
-
-    .home-philosophy .home-label{
-      color:#d6be94;
-    }
-
-    .home-philosophy h2{
-      max-width:18ch;
-      color:var(--home-white);
-      font-size:clamp(3.1rem,5vw,4.8rem);
-      line-height:1.02;
-    }
-
-    .home-philosophy-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      margin-top:40px;
-      border-top:1px solid rgba(255,255,255,.20);
-    }
-
-    .home-principle{
-      padding:22px 28px 0 0;
-    }
-
-    .home-principle + .home-principle{
-      padding-left:28px;
-      border-left:1px solid rgba(255,255,255,.16);
-    }
-
-    .home-principle h3{
-      margin:0 0 7px;
-      color:var(--home-white);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.55rem;
-      line-height:1.1;
-      letter-spacing:-.02em;
-    }
-
-    .home-principle p{
-      margin:0;
-      color:rgba(255,250,242,.78);
+    .home-recognition-row span:last-child{
+      color:var(--home-muted);
       font-family:"Inter",sans-serif;
-      font-size:.91rem;
-      line-height:1.62;
+      font-size:.87rem;
+      line-height:1.55;
+    }
+
+    .home-recognition-close{
+      margin:28px 0 0;
+      color:var(--home-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.65rem;
+      line-height:1.2;
     }
 
     /* =========================
-       HUMAN ANCHOR
+       3. HUMAN CENTER
     ========================= */
-    .home-team{
-      padding:66px 0 68px;
+    .home-human{
+      position:relative;
+      overflow:hidden;
+      padding:72px 0 74px;
       background:var(--home-paper);
       border-top:1px solid var(--home-warm-line);
       border-bottom:1px solid var(--home-warm-line);
     }
 
-    .home-team-grid{
+    .home-human::after{
+      content:"";
+      position:absolute;
+      right:-180px;
+      bottom:-260px;
+      width:620px;
+      height:620px;
+      border:1px solid rgba(184,150,97,.18);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .home-human-grid{
+      position:relative;
+      z-index:1;
       display:grid;
-      grid-template-columns:minmax(0,1.1fr) minmax(310px,.7fr);
+      grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);
       gap:78px;
       align-items:center;
     }
 
-    .home-team h2{
+    .home-founder-portrait{
+      margin:0;
+    }
+
+    .home-founder-frame{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(33,49,66,.12);
+      border-radius:26px 26px 4px 26px;
+      box-shadow:0 18px 42px rgba(33,49,66,.10);
+      background:#d8d0c6;
+    }
+
+    .home-founder-frame::before{
+      content:"";
+      position:absolute;
+      left:18px;
+      top:18px;
+      width:42px;
+      height:2px;
+      background:rgba(255,250,242,.85);
+      z-index:2;
+    }
+
+    .home-founder-frame img{
+      width:100%;
+      aspect-ratio:4 / 5;
+      display:block;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    .home-founder-portrait figcaption{
+      margin-top:13px;
+      color:var(--home-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.78rem;
+      line-height:1.5;
+    }
+
+    .home-founder-portrait figcaption strong{
+      color:var(--home-ink);
+      font-weight:700;
+    }
+
+    .home-human h2{
       max-width:14ch;
     }
 
-    .home-team-copy > p{
-      max-width:43rem;
+    .home-human-copy > p{
+      max-width:45rem;
       margin:18px 0 0;
       color:var(--home-muted);
       font-family:"Inter",sans-serif;
-      font-size:.97rem;
-      line-height:1.73;
+      font-size:.98rem;
+      line-height:1.74;
     }
 
-    .home-team-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:24px;
+    .home-human-quote{
+      max-width:42rem;
+      margin:26px 0 0;
+      padding-left:25px;
+      border-left:2px solid var(--home-gold-soft);
     }
 
-    .home-team-aside{
-      padding:8px 0 8px 30px;
-      border-left:2px solid var(--home-gold-light);
-    }
-
-    .home-team-aside strong{
-      display:block;
+    .home-human-quote p{
+      margin:0;
       color:var(--home-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(1.9rem,2.8vw,2.65rem);
-      font-weight:600;
-      line-height:1.08;
-      letter-spacing:-.03em;
+      font-size:clamp(1.75rem,2.5vw,2.35rem);
+      line-height:1.15;
+      letter-spacing:-.025em;
     }
 
-    .home-team-aside span{
-      display:block;
-      margin-top:14px;
-      color:var(--home-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.88rem;
-      line-height:1.6;
+    .home-human-actions{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:16px;
+      margin-top:27px;
     }
 
     /* =========================
-       FINAL ACTION
+       4. BEGIN
     ========================= */
-    .home-final{
-      padding:58px 0 64px;
-      background:var(--home-bg);
+    .home-begin{
+      padding:70px 0 74px;
+      background:linear-gradient(135deg,var(--home-blue),var(--home-blue-deep));
+      color:var(--home-white);
     }
 
-    .home-final-inner{
+    .home-begin-inner{
       display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      gap:38px;
-      align-items:center;
-      padding:34px 0;
-      border-top:1px solid var(--home-warm-line);
-      border-bottom:1px solid var(--home-warm-line);
+      grid-template-columns:minmax(0,1fr) minmax(300px,.64fr);
+      gap:72px;
+      align-items:end;
     }
 
-    .home-final h2{
+    .home-begin .home-label{
+      color:#d6be94;
+    }
+
+    .home-begin h2{
       max-width:15ch;
+      color:var(--home-white);
+      font-size:clamp(3rem,4.8vw,4.5rem);
     }
 
-    .home-final p{
+    .home-begin-copy > p{
       max-width:44rem;
-      margin:15px 0 0;
-      color:var(--home-muted);
+      margin:18px 0 0;
+      color:rgba(255,250,242,.82);
       font-family:"Inter",sans-serif;
-      font-size:.95rem;
-      line-height:1.66;
+      font-size:.97rem;
+      line-height:1.7;
     }
 
-    .home-final-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      justify-content:flex-end;
+    .home-begin-actions{
+      display:grid;
+      gap:12px;
+    }
+
+    .home-begin-actions .btn{
+      width:100%;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .home-begin-actions .btn-secondary{
+      color:var(--home-white);
+      border-color:rgba(255,255,255,.50);
+      background:transparent;
+    }
+
+    .home-begin-note{
+      margin:12px 0 0;
+      color:rgba(255,250,242,.68);
+      font-family:"Inter",sans-serif;
+      font-size:.76rem;
+      line-height:1.5;
+      text-align:center;
     }
 
     .home-page a:focus-visible,
@@ -475,21 +482,17 @@
 
       .home-hero-copy{
         width:51%;
-        padding-right:54px;
+        padding-right:56px;
       }
 
       .home-hero h1{
-        font-size:clamp(3.65rem,5.2vw,5.2rem);
+        font-size:clamp(3.7rem,5.1vw,5.25rem);
       }
     }
 
     @media(max-width:1080px){
       .home-hero{
         min-height:auto;
-      }
-
-      .home-hero::before{
-        display:none;
       }
 
       .home-hero-inner{
@@ -513,50 +516,39 @@
         border-radius:0 0 0 40px;
       }
 
-      .home-recognition-head,
-      .home-team-grid,
-      .home-final-inner{
+      .home-human-grid,
+      .home-begin-inner{
         grid-template-columns:1fr;
       }
 
-      .home-recognition-head,
-      .home-team-grid,
-      .home-final-inner{
-        gap:30px;
+      .home-human-grid,
+      .home-begin-inner{
+        gap:34px;
       }
 
-      .home-philosophy-grid{
-        grid-template-columns:1fr;
+      .home-founder-portrait{
+        max-width:480px;
       }
 
-      .home-principle,
-      .home-principle + .home-principle{
-        padding:19px 0;
-        border-left:0;
-        border-bottom:1px solid rgba(255,255,255,.16);
-      }
-
-      .home-final-actions{
-        justify-content:flex-start;
+      .home-begin-actions{
+        max-width:430px;
       }
     }
 
-    @media(max-width:720px){
+    @media(max-width:760px){
+      .home-shell,
       .home-hero-inner,
-      .home-hero-image,
-      .home-trust-inner,
-      .home-shell{
+      .home-hero-image{
         width:min(100% - 34px,1120px);
       }
 
       .home-hero h1{
-        font-size:clamp(3rem,13vw,4.2rem);
+        font-size:clamp(3rem,13vw,4.15rem);
         max-width:10.8ch;
       }
 
       .home-hero-actions .btn,
-      .home-team-actions .btn,
-      .home-final-actions .btn{
+      .home-human-actions .btn{
         width:100%;
         justify-content:center;
         text-align:center;
@@ -567,39 +559,40 @@
         text-align:center;
       }
 
+      .home-hero-trust{
+        display:grid;
+        gap:5px;
+      }
+
+      .home-hero-trust span + span::before{
+        display:none;
+      }
+
       .home-hero-image{
         height:380px;
         border-bottom-left-radius:28px;
       }
 
-      .home-trust-inner{
-        display:grid;
-        gap:7px;
-        text-align:left;
-      }
-
-      .home-trust i{
-        display:none;
-      }
-
       .home-recognition,
-      .home-philosophy,
-      .home-team,
-      .home-final{
-        padding-top:46px;
-        padding-bottom:48px;
+      .home-human,
+      .home-begin{
+        padding-top:48px;
+        padding-bottom:50px;
       }
 
       .home-recognition-row,
-      .home-recognition-row:nth-child(even),
-      .home-recognition-row:nth-child(3){
-        grid-template-columns:38px minmax(0,1fr);
-        gap:12px;
+      .home-recognition-row:nth-child(even){
+        grid-template-columns:34px minmax(0,1fr);
+        gap:11px;
         padding-left:0;
       }
 
-      .home-team-aside{
-        padding-left:22px;
+      .home-recognition-row span:last-child{
+        grid-column:2;
+      }
+
+      .home-founder-portrait{
+        max-width:none;
       }
     }
   </style>
@@ -637,14 +630,18 @@
         <div class="home-hero-copy">
           <div class="home-kicker">Online psychotherapy in Illinois</div>
           <h1>A steadier place to begin therapy.</h1>
-          <p>Thoughtful outpatient care for people navigating anxiety, depression, trauma responses, relationship patterns, substance-use concerns, family stress, or the sense that something keeps returning.</p>
+          <p>Thoughtful outpatient care for people who feel overwhelmed, disconnected, or caught in patterns that keep returning.</p>
 
           <div class="home-hero-actions">
             <a class="btn btn-primary" href="contact.html">Begin Here</a>
             <a class="home-text-link" href="services.html">Explore services</a>
           </div>
 
-          <p class="home-hero-note">Free 10–15 minute consultation requests and written waitlist inquiries are reviewed before care is confirmed.</p>
+          <div class="home-hero-trust" aria-label="Practice details">
+            <span>Illinois telehealth</span>
+            <span>Free 10–15 minute consultation</span>
+            <span>BCBS Illinois commercial plans accepted</span>
+          </div>
         </div>
       </div>
 
@@ -653,106 +650,91 @@
       </figure>
     </section>
 
-    <section class="home-trust" aria-label="Practice information">
-      <div class="home-trust-inner">
-        <span>Illinois telehealth</span>
-        <i aria-hidden="true"></i>
-        <span>Consultation before intake</span>
-        <i aria-hidden="true"></i>
-        <span>BCBS Illinois commercial plans accepted</span>
-      </div>
-    </section>
-
     <section class="home-recognition">
       <div class="home-shell">
-        <div class="home-recognition-head">
-          <div>
-            <div class="home-label">You may be here because</div>
-            <h2>Something keeps returning.</h2>
-          </div>
-          <p>You do not need perfect language for what is wrong. Therapy can begin with symptoms, stress, relationships, grief, shame, coping, or simply the sense that familiar patterns are becoming harder to carry alone.</p>
+        <div class="home-recognition-intro">
+          <div class="home-label">When therapy may help</div>
+          <h2>You may be here because you have been holding things together for a long time.</h2>
+          <p>You do not need a diagnosis, a polished explanation, or perfect language before reaching out.</p>
         </div>
 
         <div class="home-recognition-list" aria-label="Common reasons people seek therapy">
           <div class="home-recognition-row">
-            <span class="index">01</span>
-            <strong>Anxiety that never fully settles.</strong>
+            <span class="number">01</span>
+            <strong>Your mind or body does not fully settle.</strong>
+            <span>Anxiety, panic, hypervigilance, or constant internal pressure.</span>
           </div>
+
           <div class="home-recognition-row">
-            <span class="index">02</span>
-            <strong>Relationships that repeat familiar patterns.</strong>
+            <span class="number">02</span>
+            <strong>You feel disconnected from yourself or other people.</strong>
+            <span>Depression, numbness, shame, loneliness, or difficulty feeling present.</span>
           </div>
+
           <div class="home-recognition-row">
-            <span class="index">03</span>
-            <strong>Trauma that still shapes safety, trust, or self-worth.</strong>
+            <span class="number">03</span>
+            <strong>Past experiences still shape safety, trust, or self-worth.</strong>
+            <span>Trauma responses, grief, attachment injuries, or patterns that began as protection.</span>
           </div>
+
           <div class="home-recognition-row">
-            <span class="index">04</span>
-            <strong>Coping that has started creating other problems.</strong>
+            <span class="number">04</span>
+            <strong>The way you have been coping is no longer working.</strong>
+            <span>Substance use, avoidance, overwork, conflict, withdrawal, or other survival strategies.</span>
           </div>
+
           <div class="home-recognition-row">
-            <span class="index">05</span>
-            <strong>Grief, disconnection, or a life that no longer feels like yours.</strong>
+            <span class="number">05</span>
+            <strong>Something keeps returning, even when you understand it.</strong>
+            <span>Therapy can help turn insight into a different way of relating, responding, and living.</span>
           </div>
         </div>
+
+        <p class="home-recognition-close">We can begin there.</p>
       </div>
     </section>
 
-    <section class="home-philosophy">
-      <div class="home-shell">
-        <div class="home-philosophy-quote">
-          <div class="home-label">The Stonebridge approach</div>
-          <h2>Good therapy needs enough structure to feel safe—and enough room to remain human.</h2>
-        </div>
+    <section class="home-human">
+      <div class="home-shell home-human-grid">
+        <figure class="home-founder-portrait">
+          <div class="home-founder-frame">
+            <img src="practitioner-headshot-sbryant.png" alt="Dr. Stephen W. Bryant, founder of Stonebridge Psychological Group" loading="lazy">
+          </div>
+          <figcaption><strong>Stephen W. Bryant, PsyD, LCPC</strong> · Founder</figcaption>
+        </figure>
 
-        <div class="home-philosophy-grid">
-          <article class="home-principle">
-            <h3>Fit over volume</h3>
-            <p>Care is not assigned simply because a calendar slot is open. The first step is a brief review of scope, timing, and appropriateness.</p>
-          </article>
-          <article class="home-principle">
-            <h3>Boundaries as care</h3>
-            <p>Clear expectations around time, communication, scope, and attendance help protect consistency and trust.</p>
-          </article>
-          <article class="home-principle">
-            <h3>Thoughtful relational work</h3>
-            <p>Therapy makes room for symptoms, relationships, identity, coping, grief, shame, and meaning—not only a checklist of problems.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <div class="home-human-copy">
+          <div class="home-label">The human center of the practice</div>
+          <h2>A small practice built around thoughtful clinical relationships.</h2>
+          <p>Stonebridge was founded by Dr. Stephen W. Bryant to make room for careful, relational psychotherapy within a clear and steady frame. The practice is growing deliberately, with clinicians selected for judgment, warmth, and the ability to work thoughtfully with complex human concerns.</p>
+          <p>That means fit is considered before assignment, boundaries are treated as part of care, and clients are not reduced to a diagnosis, a calendar opening, or a checklist of symptoms.</p>
 
-    <section class="home-team">
-      <div class="home-shell home-team-grid">
-        <div class="home-team-copy">
-          <div class="home-label">The people behind the practice</div>
-          <h2>A small practice, growing carefully.</h2>
-          <p>Stonebridge is building a thoughtful clinical team rather than a high-volume directory. Clinician profiles are designed to make role, experience, style, and fit easier to understand before you reach out.</p>
+          <blockquote class="home-human-quote">
+            <p>Enough structure to feel safe. Enough room to remain human.</p>
+          </blockquote>
 
-          <div class="home-team-actions">
+          <div class="home-human-actions">
             <a class="btn btn-primary" href="team.html">Meet the Team</a>
             <a class="home-text-link" href="team-founder.html">Read Dr. Bryant’s profile</a>
           </div>
         </div>
-
-        <aside class="home-team-aside">
-          <strong>Consultation before commitment.</strong>
-          <span>A free 10–15 minute consultation or brief written inquiry can help clarify whether Stonebridge may be an appropriate setting.</span>
-        </aside>
       </div>
     </section>
 
-    <section class="home-final">
-      <div class="home-shell home-final-inner">
-        <div>
-          <div class="home-label">Ready to begin</div>
-          <h2>A brief consultation or written inquiry is enough.</h2>
-          <p>Choose a consultation time or write first. Stonebridge will review fit, scope, availability, and next steps before care is confirmed.</p>
+    <section class="home-begin">
+      <div class="home-shell home-begin-inner">
+        <div class="home-begin-copy">
+          <div class="home-label">Consultation before commitment</div>
+          <h2>A brief conversation or written note is enough to begin.</h2>
+          <p>Choose the first step that feels easier. Stonebridge will review fit, scope, availability, and next steps before care is confirmed.</p>
         </div>
 
-        <div class="home-final-actions">
-          <a class="btn btn-primary" href="contact.html">Begin Here</a>
-          <a class="home-text-link" href="team.html">Meet the Team</a>
+        <div>
+          <div class="home-begin-actions">
+            <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noopener noreferrer">Request a Consultation Time</a>
+            <a class="btn btn-secondary" href="contact.html">Write First</a>
+          </div>
+          <p class="home-begin-note">Consultation requests are reviewed before confirmation and do not establish a therapy relationship.</p>
         </div>
       </div>
     </section>
