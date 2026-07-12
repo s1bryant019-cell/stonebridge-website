@@ -53,7 +53,7 @@
     /* Full-width photographic hero with a softer orientation band beneath it. */
     .services-hero{
       position:relative;
-      min-height:480px;
+      min-height:440px;
       overflow:hidden;
       isolation:isolate;
       background:var(--services-navy-deep);
@@ -87,7 +87,7 @@
       position:relative;
       z-index:2;
       width:min(1220px,calc(100% - 72px));
-      min-height:480px;
+      min-height:440px;
       margin:0 auto;
       display:flex;
       flex-direction:column;
@@ -123,10 +123,10 @@
 
     .services-hero h1{
       margin:10px 0 0;
-      max-width:12ch;
+      max-width:15ch;
       color:var(--services-white);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.3rem,4.45vw,4.7rem);
+      font-size:clamp(3.05rem,4vw,4.25rem);
       line-height:1.01;
       letter-spacing:-.05em;
       text-wrap:balance;
@@ -537,14 +537,15 @@
       }
 
       .services-hero h1{
-        font-size:clamp(3.15rem,4.15vw,4.25rem);
+        max-width:15ch;
+        font-size:clamp(3rem,3.8vw,4rem);
       }
     }
 
     @media(max-width:1080px){
       .services-hero,
       .services-hero-copy{
-        min-height:500px;
+        min-height:460px;
       }
 
       .services-hero-copy{
@@ -608,7 +609,7 @@
 
       .services-hero,
       .services-hero-copy{
-        min-height:580px;
+        min-height:540px;
       }
 
       .services-hero-copy{
@@ -652,8 +653,8 @@
       }
 
       .services-hero h1{
-        max-width:12ch;
-        font-size:clamp(2.65rem,11.5vw,3.7rem);
+        max-width:14ch;
+        font-size:clamp(2.5rem,10.5vw,3.45rem);
       }
 
       .services-hero-actions .btn,
