@@ -1952,6 +1952,414 @@
   }
 </style>
 
+
+<style id="stonebridge-founder-horizontal-compression">
+  .founder-page .founder-intro-inner{
+    width:min(1180px,calc(100% - 72px)) !important;
+    grid-template-columns:minmax(0,1fr) 250px !important;
+    gap:46px !important;
+    align-items:center !important;
+    padding-top:34px !important;
+    padding-bottom:32px !important;
+  }
+  .founder-page .founder-intro-copy{max-width:760px !important;}
+  .founder-page .founder-rule{margin-bottom:16px !important;}
+  .founder-page .founder-kicker{margin-bottom:8px !important;}
+  .founder-page .founder-title{
+    font-size:clamp(3rem,3.75vw,4.25rem) !important;
+    line-height:1.01 !important;
+  }
+  .founder-page .founder-subtitle{margin-top:7px !important;}
+  .founder-page .founder-intro-copy > p{
+    margin-top:11px !important;
+    max-width:43rem !important;
+    font-size:.97rem !important;
+    line-height:1.58 !important;
+  }
+  .founder-page .founder-actions{margin-top:18px !important;}
+  .founder-page .founder-schedule-note{
+    margin-top:8px !important;
+    max-width:38rem !important;
+    font-size:.84rem !important;
+    line-height:1.45 !important;
+  }
+  .founder-portrait-integrated{max-width:250px !important;}
+  .founder-portrait-integrated .portrait-frame{
+    position:relative;
+    aspect-ratio:4/4.85 !important;
+    border:7px solid rgba(255,255,255,.84) !important;
+    outline:1px solid rgba(200,171,120,.58);
+    outline-offset:4px;
+    border-radius:24px !important;
+    box-shadow:0 18px 38px rgba(33,49,66,.11) !important;
+  }
+  .founder-portrait-integrated .portrait-frame::after{
+    background:linear-gradient(180deg,transparent 58%,rgba(13,35,57,.82) 100%) !important;
+    z-index:1;
+  }
+  .founder-portrait-integrated .portrait-frame img{object-position:center 8% !important;}
+  .portrait-caption-overlay{
+    position:absolute;
+    left:15px;
+    right:15px;
+    bottom:12px;
+    z-index:2;
+    display:grid;
+    gap:1px;
+    color:#fffaf2;
+  }
+  .portrait-caption-overlay strong{
+    font-family:"EB Garamond",serif;
+    font-size:1rem;
+    font-weight:600;
+    line-height:1.08;
+  }
+  .portrait-caption-overlay span{
+    font-family:"Inter",sans-serif;
+    font-size:.68rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    opacity:.78;
+  }
+  .founder-page .founder-summary-band .subpage-band-grid{
+    padding-top:14px !important;
+    padding-bottom:14px !important;
+  }
+  .founder-page .founder-summary-band .subpage-band-item h4{font-size:1rem !important;}
+  .founder-page .founder-summary-band .subpage-band-item p{font-size:.78rem !important;}
+
+  .founder-wide-shell{
+    width:min(1180px,calc(100% - 72px));
+    margin:0 auto;
+  }
+  .founder-focus-compact{
+    padding:46px 0 42px;
+    background:#f8f5f0;
+    border-bottom:1px solid rgba(212,200,185,.52);
+  }
+  .focus-compact-layout{
+    display:grid;
+    grid-template-columns:minmax(230px,.72fr) minmax(0,2fr);
+    gap:46px;
+    align-items:start;
+  }
+  .compact-section-intro h2,
+  .therapy-combined-copy h2,
+  .credibility-heading h2{
+    margin:14px 0 0;
+    color:var(--sb-navy);
+    font-family:"EB Garamond",serif;
+    font-size:clamp(2.2rem,3vw,3.15rem);
+    line-height:1.02 !important;
+    letter-spacing:-.04em;
+    text-wrap:balance;
+  }
+  .compact-section-intro p{
+    margin:13px 0 0;
+    color:var(--sb-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.93rem;
+    line-height:1.65;
+  }
+  .focus-compact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    border-top:1px solid rgba(33,49,66,.17);
+    border-bottom:1px solid rgba(33,49,66,.12);
+  }
+  .focus-compact-grid article{
+    min-width:0;
+    padding:18px 20px 19px;
+    border-left:1px solid rgba(33,49,66,.11);
+  }
+  .focus-compact-grid article:first-child{border-left:0;padding-left:0;}
+  .focus-compact-grid article:last-child{padding-right:0;}
+  .focus-compact-grid span{
+    color:#9a8058;
+    font-family:"Inter",sans-serif;
+    font-size:.62rem;
+    font-weight:800;
+    letter-spacing:.18em;
+  }
+  .focus-compact-grid h3{
+    margin:15px 0 8px;
+    color:var(--sb-navy);
+    font-family:"EB Garamond",serif;
+    font-size:1.38rem;
+    line-height:1.08;
+    letter-spacing:-.018em;
+  }
+  .focus-compact-grid p,
+  .broader-care-compact p{
+    margin:0;
+    color:var(--sb-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.84rem;
+    line-height:1.58;
+  }
+  .broader-care-compact{
+    display:grid;
+    grid-template-columns:170px minmax(0,1fr);
+    gap:20px;
+    padding-top:15px;
+  }
+  .broader-care-compact strong{
+    color:#8c7551;
+    font-family:"Inter",sans-serif;
+    font-size:.62rem;
+    font-weight:800;
+    letter-spacing:.16em;
+    line-height:1.45;
+    text-transform:uppercase;
+  }
+
+  .founder-therapy-combined{
+    padding:46px 0;
+    background:#f3ede5;
+    border-bottom:1px solid rgba(212,200,185,.58);
+  }
+  .therapy-combined-layout{
+    display:grid;
+    grid-template-columns:minmax(300px,.82fr) minmax(0,1.5fr);
+    gap:42px;
+    align-items:stretch;
+  }
+  .therapy-quote-card{
+    min-height:100%;
+    padding:28px 30px;
+    border-radius:28px 4px 28px 28px;
+    background:linear-gradient(145deg,#17395c,#102f4d);
+    color:#fffaf2;
+    box-shadow:0 18px 38px rgba(33,49,66,.10);
+  }
+  .therapy-quote-card .quote-mark{
+    color:#c8ab78;
+    font-family:"EB Garamond",serif;
+    font-size:4.6rem;
+    line-height:.62;
+  }
+  .therapy-quote-card blockquote{
+    margin:12px 0 20px;
+    font-family:"EB Garamond",serif;
+    font-size:clamp(1.45rem,2vw,1.9rem);
+    line-height:1.18;
+    letter-spacing:-.02em;
+  }
+  .therapy-quote-card .quote-attribution{
+    color:rgba(255,250,242,.66);
+    font-family:"Inter",sans-serif;
+    font-size:.65rem;
+    font-weight:700;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+  }
+  .therapy-combined-copy > p{
+    margin:11px 0 0;
+    max-width:47rem;
+    color:var(--sb-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.92rem;
+    line-height:1.62;
+  }
+  .therapy-combined-copy .lead{
+    color:var(--sb-navy-deep);
+    font-family:"EB Garamond",serif;
+    font-size:1.25rem;
+    line-height:1.35;
+  }
+  .therapy-principles-compact{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    border-top:1px solid rgba(33,49,66,.16);
+  }
+  .therapy-principles-compact article{
+    padding:16px 18px 0;
+    border-left:1px solid rgba(33,49,66,.11);
+  }
+  .therapy-principles-compact article:first-child{padding-left:0;border-left:0;}
+  .therapy-principles-compact article:last-child{padding-right:0;}
+  .therapy-principles-compact strong{
+    display:block;
+    margin-bottom:6px;
+    color:var(--sb-navy);
+    font-family:"EB Garamond",serif;
+    font-size:1.2rem;
+    line-height:1.08;
+  }
+  .therapy-principles-compact span{
+    color:var(--sb-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.82rem;
+    line-height:1.52;
+  }
+
+  .founder-credibility-combined{
+    padding:46px 0 44px;
+    background:#f8f5f0;
+    border-bottom:1px solid rgba(212,200,185,.5);
+  }
+  .credibility-heading{
+    display:grid;
+    grid-template-columns:230px minmax(0,1fr);
+    gap:46px;
+    align-items:end;
+    margin-bottom:24px;
+  }
+  .credibility-heading h2{margin:0;max-width:18ch;}
+  .credibility-grid{
+    display:grid;
+    grid-template-columns:1.05fr 1.1fr .95fr;
+    border-top:1px solid rgba(33,49,66,.17);
+    border-bottom:1px solid rgba(33,49,66,.12);
+  }
+  .credibility-column{
+    padding:22px 25px 22px;
+    border-left:1px solid rgba(33,49,66,.11);
+  }
+  .credibility-column:first-child{border-left:0;padding-left:0;}
+  .credibility-column:last-child{padding-right:0;}
+  .credibility-column h3{
+    margin:0 0 10px;
+    color:var(--sb-navy);
+    font-family:"EB Garamond",serif;
+    font-size:1.45rem;
+    line-height:1.08;
+  }
+  .credibility-column p{
+    margin:0;
+    color:var(--sb-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.86rem;
+    line-height:1.58;
+  }
+  .credibility-column .small-note{
+    margin-top:13px;
+    padding-top:12px;
+    border-top:1px solid rgba(33,49,66,.10);
+    font-size:.79rem;
+  }
+  .selected-credentials-column ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .selected-credentials-column li{
+    padding:9px 0;
+    border-top:1px solid rgba(33,49,66,.09);
+  }
+  .selected-credentials-column li:first-child{border-top:0;padding-top:0;}
+  .selected-credentials-column strong{
+    display:block;
+    color:var(--sb-navy);
+    font-family:"EB Garamond",serif;
+    font-size:1.06rem;
+    line-height:1.12;
+  }
+  .selected-credentials-column span{
+    display:block;
+    margin-top:2px;
+    color:var(--sb-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.74rem;
+    line-height:1.4;
+  }
+  .writing-mini-head{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 98px;
+    gap:14px;
+    align-items:start;
+  }
+  .writing-mini-head img{
+    width:98px;
+    height:76px;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid rgba(33,49,66,.12);
+  }
+  .writing-mini-links{
+    display:grid;
+    gap:7px;
+    margin-top:15px;
+    padding-top:13px;
+    border-top:1px solid rgba(33,49,66,.10);
+  }
+  .writing-mini-links a{
+    color:var(--sb-navy);
+    font-family:"Inter",sans-serif;
+    font-size:.8rem;
+    font-weight:700;
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+  }
+
+  .founder-scope-strip{
+    padding:20px 0;
+    background:#f3ede5;
+    border-bottom:1px solid rgba(212,200,185,.52);
+  }
+  .scope-strip-inner{
+    display:grid;
+    grid-template-columns:170px minmax(0,1fr);
+    gap:38px;
+    align-items:center;
+  }
+  .scope-strip-inner p{
+    margin:0;
+    max-width:920px;
+    color:var(--sb-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.82rem;
+    line-height:1.55;
+  }
+  .founder-final-band .founder-final-inner{
+    width:min(1180px,calc(100% - 72px)) !important;
+    padding:28px 0 !important;
+  }
+  .founder-final-band h2{
+    white-space:nowrap;
+    font-size:clamp(1.9rem,2.65vw,2.65rem) !important;
+  }
+  .founder-final-band p{font-size:.92rem !important;}
+
+  @media(max-width:980px){
+    .founder-page .founder-intro-inner,
+    .focus-compact-layout,
+    .therapy-combined-layout,
+    .credibility-heading,
+    .scope-strip-inner{
+      grid-template-columns:1fr !important;
+      gap:26px !important;
+    }
+    .founder-portrait-integrated{justify-self:start !important;max-width:270px !important;}
+    .focus-compact-grid,
+    .therapy-principles-compact,
+    .credibility-grid{grid-template-columns:1fr !important;}
+    .focus-compact-grid article,
+    .therapy-principles-compact article,
+    .credibility-column{
+      padding:17px 0 !important;
+      border-left:0 !important;
+      border-top:1px solid rgba(33,49,66,.10);
+    }
+    .focus-compact-grid article:first-child,
+    .therapy-principles-compact article:first-child,
+    .credibility-column:first-child{border-top:0;}
+    .broader-care-compact{grid-template-columns:1fr;gap:6px;}
+    .writing-mini-head{grid-template-columns:1fr 110px;}
+  }
+  @media(max-width:720px){
+    .founder-wide-shell,
+    .founder-final-band .founder-final-inner{width:min(100% - 34px,1180px) !important;}
+    .founder-focus-compact,
+    .founder-therapy-combined,
+    .founder-credibility-combined{padding:38px 0;}
+    .founder-page .founder-intro-inner{padding-top:32px !important;padding-bottom:30px !important;}
+    .founder-final-band h2{white-space:normal;}
+  }
+</style>
+
 </head>
 <body>
 <header class="site-header compact-site-header">
@@ -1975,21 +2383,20 @@
 <div class="founder-kicker">Founder Profile</div>
 <h1 class="founder-title">Dr. Stephen W. Bryant</h1>
 <div class="founder-subtitle">PsyD, LCPC · Founder · Doctoral-level clinician</div>
-<p>Dr. Bryant provides thoughtful, relational psychotherapy for teens and adults in Illinois. He has particular experience with addiction, trauma, mood and anxiety concerns, and complex co-occurring patterns.</p>
+<p>Dr. Bryant provides thoughtful, relational psychotherapy for teens and adults in Illinois, with particular experience in addiction, trauma, mood and anxiety concerns, and complex co-occurring patterns.</p>
 <div class="founder-actions">
 <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noopener noreferrer" target="_blank">Request a Consultation Time</a>
 </div>
-<p class="founder-schedule-note">View available consultation times in the secure portal. Requests are reviewed before confirmation.</p>
+<p class="founder-schedule-note">View consultation availability through the secure client portal.</p>
 </div>
-<figure aria-label="Portrait of Dr. Stephen Bryant" class="founder-portrait">
+<figure aria-label="Portrait of Dr. Stephen Bryant" class="founder-portrait founder-portrait-integrated">
 <div class="portrait-frame">
 <img alt="Dr. Stephen W. Bryant, PsyD, LCPC" src="practitioner-headshot-sbryant.png"/>
+<figcaption class="portrait-caption-overlay">
+<strong>Stephen W. Bryant, PsyD, LCPC</strong>
+<span>Founder</span>
+</figcaption>
 </div>
-<figcaption class="portrait-caption">
-<strong>Dr. Stephen W. Bryant, PsyD, LCPC</strong>
-            Founder, Stonebridge Psychological Group
-          </figcaption>
-
 </figure>
 </div>
 </section>
@@ -2001,137 +2408,102 @@
 </div>
 </section>
 
-<section class="founder-focus-redesign" id="clinical-focus">
-<div class="founder-redesign-shell">
-<div class="founder-redesign-heading">
+<section class="founder-focus-compact" id="clinical-focus">
+<div class="founder-wide-shell focus-compact-layout">
+<div class="compact-section-intro">
 <div class="section-label">Clinical focus</div>
-<div>
-<h2>Particular depth, with room for the full picture.</h2>
-<p class="lead">Dr. Bryant has particular experience with addiction and co-occurring concerns, trauma and complex stress, and mood and anxiety conditions. His practice is broader than these areas, and other outpatient concerns may also be considered.</p>
+<h2>Areas of clinical depth.</h2>
+<p>Dr. Bryant has particular experience in three areas while maintaining a broader outpatient practice.</p>
 </div>
-</div>
-<div class="focus-feature-grid" aria-label="Areas of particular clinical experience">
-<article class="focus-feature">
-<div class="focus-number">01</div>
+<div class="focus-compact-content">
+<div class="focus-compact-grid" aria-label="Areas of particular clinical experience">
+<article>
+<span>01</span>
 <h3>Addiction and co-occurring concerns</h3>
-<p>Substance use, relapse and recovery patterns, ambivalence, process addictions, shame, coping cycles, and dual-diagnosis concerns when outpatient therapy is appropriate.</p>
+<p>Substance use, relapse and recovery patterns, ambivalence, process addictions, shame, coping cycles, and dual-diagnosis concerns.</p>
 </article>
-<article class="focus-feature">
-<div class="focus-number">02</div>
+<article>
+<span>02</span>
 <h3>Trauma, PTSD, and complex stress</h3>
-<p>Threat responses, dissociation, safety, emotional regulation, body-based distress, self-worth, and protective patterns shaped by earlier experiences.</p>
+<p>Threat responses, dissociation, safety, emotional regulation, body-based distress, self-worth, and protective patterns.</p>
 </article>
-<article class="focus-feature">
-<div class="focus-number">03</div>
+<article>
+<span>03</span>
 <h3>Mood, anxiety, and emotional regulation</h3>
-<p>Depression, panic, overthinking, irritability, shutdown, mood instability, avoidance, and difficulty feeling steady in daily life.</p>
+<p>Depression, panic, overthinking, irritability, shutdown, mood instability, avoidance, and difficulty feeling steady.</p>
 </article>
 </div>
-<div class="broader-care-line">
-<span>Broader care may include</span>
+<div class="broader-care-compact">
+<strong>Broader care may include</strong>
 <p>Relationship patterns, identity and self-worth, grief, life transitions, neurodevelopmental concerns, family stress, and parent consultation.</p>
 </div>
 </div>
+</div>
 </section>
 
-<section class="founder-quote-band" aria-label="Dr. Bryant's approach to therapy">
-<div class="founder-quote-inner">
+<section class="founder-therapy-combined" id="therapy-style">
+<div class="founder-wide-shell therapy-combined-layout">
+<aside class="therapy-quote-card" aria-label="Dr. Bryant's approach to therapy">
 <div class="quote-mark" aria-hidden="true">“</div>
 <blockquote>Good therapy needs a steady frame: enough structure to feel safe, and enough room to be fully human.</blockquote>
 <div class="quote-attribution">Dr. Stephen W. Bryant</div>
-</div>
-</section>
-
-<section class="founder-experience-section" id="therapy-style">
-<div class="founder-redesign-shell therapy-experience-grid">
-<div class="therapy-experience-copy">
+</aside>
+<div class="therapy-combined-copy">
 <div class="section-label">The experience</div>
 <h2>What therapy with Dr. Bryant is like.</h2>
 <p class="lead">Thoughtful, direct, and collaborative.</p>
-<p>Therapy may involve understanding where patterns came from, noticing how they continue in the present, and developing more effective ways to respond. Insight matters, but the work is also intended to help clients function differently outside the therapy room.</p>
-</div>
-<div class="therapy-principles" aria-label="Therapy principles">
-<article>
-<span>Understand the pattern</span>
-<p>Clarify what keeps repeating and what the pattern has been trying to protect.</p>
-</article>
-<article>
-<span>Slow down the reaction</span>
-<p>Create enough space to notice emotion, meaning, and choice before the usual response takes over.</p>
-</article>
-<article>
-<span>Practice a different response</span>
-<p>Build skills, language, and new ways of relating that can hold up beyond the session.</p>
-</article>
-</div>
-</div>
-</section>
-
-<section class="founder-training-section" id="background">
-<div class="founder-redesign-shell training-layout">
-<div class="training-copy">
-<div class="section-label">Experience and training</div>
-<h2>Grounded across multiple levels of care.</h2>
-<p class="lead">Dr. Bryant holds a Doctor of Psychology in Clinical Psychology and is a Licensed Clinical Professional Counselor in Illinois.</p>
-<p>His experience includes outpatient psychotherapy, community mental health, hospital-based behavioral health, trauma treatment, substance-use treatment, supervision, professional education, and interdisciplinary care.</p>
-<p class="training-additional">Additional graduate education includes clinical psychology and forensic psychology.</p>
-</div>
-<div class="credential-panel" aria-label="Selected credentials">
-<div class="credential-panel-item">
-<span>Doctoral training</span>
-<strong>PsyD, Clinical Psychology</strong>
-<small>The Chicago School of Professional Psychology</small>
-</div>
-<div class="credential-panel-item">
-<span>Illinois licensure</span>
-<strong>Licensed Clinical Professional Counselor</strong>
-</div>
-<div class="credential-panel-item">
-<span>Trauma training</span>
-<strong>Trauma-Focused CBT Certification</strong>
-<small>Medical University of South Carolina</small>
-</div>
-<div class="credential-panel-item">
-<span>Professional certification</span>
-<strong>Certified Clinical Trauma Professional</strong>
-<small>Evergreen Certifications</small>
+<p>Therapy may involve understanding where patterns came from, noticing how they continue in the present, and developing more effective ways to respond.</p>
+<div class="therapy-principles-compact" aria-label="Therapy principles">
+<article><strong>Understand the pattern</strong><span>Clarify what keeps repeating and what it has been trying to protect.</span></article>
+<article><strong>Slow down the reaction</strong><span>Create enough space to notice emotion, meaning, and choice.</span></article>
+<article><strong>Practice a different response</strong><span>Build skills and new ways of relating that hold up beyond the session.</span></article>
 </div>
 </div>
 </div>
 </section>
 
-<section class="founder-writing-section" id="publications">
-<div class="founder-redesign-shell writing-layout">
-<div class="writing-copy">
-<div class="section-label">Writing and professional education</div>
-<h2>Work beyond the therapy room.</h2>
-<p>Dr. Bryant’s writing has explored burnout, clinician wellbeing, education, and the systems that shape care.</p>
+<section class="founder-credibility-combined" id="background">
+<div class="founder-wide-shell">
+<div class="credibility-heading">
+<div class="section-label">Experience beyond the consultation room</div>
+<h2>Training, clinical experience, and professional writing.</h2>
 </div>
-<figure class="writing-visual">
-<img alt="Book covers for Beyond Burnt-Out and The Scholastic Burnout Spiral by Dr. Stephen W. Bryant" src="founder-publications-books.png"/>
-</figure>
-<div class="writing-books" aria-label="Books by Dr. Stephen W. Bryant">
-<article>
-<h3>Beyond Burnt-Out</h3>
-<p>Exploring the realities of burnout in mental health care.</p>
-<a class="publication-link" href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank">View book</a>
+<div class="credibility-grid">
+<article class="credibility-column clinical-experience-column">
+<h3>Clinical experience</h3>
+<p>Dr. Bryant’s background includes outpatient psychotherapy, community mental health, hospital-based behavioral health, trauma treatment, substance-use treatment, supervision, professional education, and interdisciplinary care.</p>
+<p class="small-note">Additional graduate education includes clinical psychology and forensic psychology.</p>
 </article>
-<article>
-<h3>The Scholastic Burnout Spiral</h3>
-<p>Education, therapy readiness, and burnout among substance use disorder counselors.</p>
-<a class="publication-link" href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank">View book</a>
+<article class="credibility-column selected-credentials-column" aria-label="Selected credentials">
+<h3>Selected credentials</h3>
+<ul>
+<li><strong>PsyD, Clinical Psychology</strong><span>The Chicago School of Professional Psychology</span></li>
+<li><strong>Licensed Clinical Professional Counselor</strong><span>Illinois</span></li>
+<li><strong>Trauma-Focused CBT Certification</strong><span>Medical University of South Carolina</span></li>
+<li><strong>Certified Clinical Trauma Professional</strong><span>Evergreen Certifications</span></li>
+</ul>
 </article>
-</div>
-</div>
-</section>
-
-<section class="founder-scope-note" id="fit-scope">
-<div class="founder-redesign-shell scope-note-inner">
-<div class="section-label">Scope of care</div>
+<article class="credibility-column writing-column" id="publications">
+<div class="writing-mini-head">
 <div>
-<p>Dr. Bryant currently provides outpatient telehealth psychotherapy and parent consultation for clients and caregivers in Illinois.</p>
-<p>Stonebridge is not an emergency, crisis, psychological testing, or forensic service. When another level or type of care is more appropriate, referral direction may be discussed when possible.</p>
+<h3>Writing and education</h3>
+<p>Work on burnout, clinician wellbeing, education, and the systems that shape care.</p>
 </div>
+<img alt="Book covers by Dr. Stephen W. Bryant" src="founder-publications-books.png"/>
+</div>
+<div class="writing-mini-links">
+<a href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank">Beyond Burnt-Out</a>
+<a href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank">The Scholastic Burnout Spiral</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="founder-scope-strip" id="fit-scope">
+<div class="founder-wide-shell scope-strip-inner">
+<div class="section-label">Scope of care</div>
+<p>Dr. Bryant provides outpatient telehealth psychotherapy and parent consultation for Illinois clients. Stonebridge is not an emergency, crisis, psychological-testing, or forensic service. When another type or level of care is more appropriate, referral direction may be discussed when possible.</p>
 </div>
 </section>
 
