@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <title>Dr. Stephen W. Bryant, PsyD, LCPC | Stonebridge Psychological Group</title>
-<meta content="Meet Dr. Stephen W. Bryant, PsyD, LCPC, Founder of Stonebridge Psychological Group. Learn about Dr. Bryant’s focus in addiction, trauma, mood and anxiety concerns, co-occurring patterns, parent consultation, current availability, training, and scope of care." name="description"/>
+<meta content="Meet Dr. Stephen W. Bryant, PsyD, LCPC, Founder of Stonebridge Psychological Group. Learn about Dr. Bryant’s focus in addiction, trauma, mood and anxiety concerns, co-occurring patterns, parent consultation, training, and scope of care." name="description"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -1428,133 +1428,47 @@
 
 
 <style id="stonebridge-founder-availability-refine">
-  /* Keep the founder hero compact. Availability lives in its own horizontal section below. */
+  /* Founder profile: compact introduction with one clear scheduling action. */
   .founder-page .founder-intro-inner{
-    grid-template-columns:minmax(0,1fr) minmax(290px,340px) !important;
+    grid-template-columns:minmax(0,1fr) 285px !important;
     align-items:center !important;
-    gap:52px !important;
-    padding-top:54px !important;
-    padding-bottom:50px !important;
+    gap:46px !important;
+    padding-top:38px !important;
+    padding-bottom:34px !important;
   }
   .founder-page .founder-intro-copy{max-width:780px;}
-  .founder-page .founder-portrait{max-width:340px !important;}
-  .founder-page .portrait-frame{border-radius:30px 30px 6px 30px;}
+  .founder-page .founder-portrait{max-width:285px !important;}
+  .founder-page .portrait-frame{
+    aspect-ratio:4 / 4.7 !important;
+    border-radius:28px 28px 5px 28px;
+  }
+  .founder-page .portrait-caption{padding-top:10px;}
+  .founder-page .founder-rule{margin-bottom:17px;}
+  .founder-page .founder-intro-copy > p{margin-top:12px;}
+  .founder-page .founder-actions{margin-top:20px;}
+  .founder-schedule-note{
+    margin:12px 0 0;
+    max-width:620px;
+    color:var(--sb-muted,#5d6870);
+    font-family:"Inter",sans-serif;
+    font-size:.82rem;
+    line-height:1.55;
+  }
   .founder-page .founder-focus-editorial article:nth-child(5){
     grid-column:1 / -1;
     max-width:760px;
   }
-
-  .founder-availability-section{
-    background:linear-gradient(180deg,#f5efe7 0%,#f8f5f0 100%);
-    border-bottom:1px solid rgba(212,200,185,.62);
-  }
-  .founder-availability-inner{
-    width:min(1080px,calc(100% - 72px));
-    margin:0 auto;
-    display:grid;
-    grid-template-columns:minmax(250px,.72fr) minmax(0,1.5fr);
-    gap:42px;
-    align-items:start;
-    padding:34px 0 32px;
-  }
-  .founder-availability-heading h2{
-    margin:8px 0 9px;
-    color:var(--sb-navy,#213142);
-    font-family:"EB Garamond",Georgia,serif;
-    font-size:clamp(1.9rem,2.6vw,2.55rem);
-    line-height:1.04;
-    letter-spacing:-.025em;
-    text-wrap:balance;
-  }
-  .founder-availability-heading p{
-    margin:0;
-    color:var(--sb-muted,#5d6870);
-    font-size:.92rem;
-    line-height:1.6;
-  }
-  .founder-availability-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    border-top:1px solid rgba(33,49,66,.16);
-    border-bottom:1px solid rgba(33,49,66,.12);
-  }
-  .founder-availability-item{
-    padding:17px 20px 16px;
-    border-left:1px solid rgba(33,49,66,.11);
-  }
-  .founder-availability-item:first-child{
-    border-left:0;
-    padding-left:0;
-  }
-  .founder-availability-item:last-child{padding-right:0;}
-  .founder-availability-item span{
-    display:block;
-    margin-bottom:7px;
-    color:#8c7551;
-    font-family:"Inter",sans-serif;
-    font-size:.61rem;
-    font-weight:800;
-    letter-spacing:.17em;
-    text-transform:uppercase;
-  }
-  .founder-availability-item strong{
-    display:block;
-    margin-bottom:6px;
-    color:var(--sb-navy,#213142);
-    font-family:"EB Garamond",Georgia,serif;
-    font-size:1.25rem;
-    line-height:1.08;
-    font-weight:650;
-  }
-  .founder-availability-item p{
-    margin:0;
-    color:var(--sb-muted,#5d6870);
-    font-size:.85rem;
-    line-height:1.55;
-  }
-  .founder-availability-note{
-    grid-column:2;
-    display:flex;
-    justify-content:space-between;
-    gap:18px;
-    align-items:center;
-    margin-top:-16px;
-  }
-  .founder-availability-note p{
-    margin:0;
-    max-width:560px;
-    color:var(--sb-muted,#5d6870);
-    font-size:.78rem;
-    line-height:1.5;
-  }
-  .founder-availability-note a{
-    flex:0 0 auto;
-    color:var(--sb-navy,#213142);
-    font-family:"Inter",sans-serif;
-    font-size:.82rem;
-    font-weight:800;
-    text-decoration:underline;
-    text-underline-offset:4px;
-  }
   @media(max-width:980px){
-    .founder-page .founder-intro-inner{grid-template-columns:1fr !important;gap:28px !important;}
-    .founder-page .founder-portrait{max-width:360px !important;justify-self:start;}
-    .founder-availability-inner{grid-template-columns:1fr;gap:22px;}
-    .founder-availability-note{grid-column:1;margin-top:0;}
-  }
-  @media(max-width:720px){
-    .founder-availability-inner{width:min(100% - 30px,1080px);padding:30px 0;}
-    .founder-availability-grid{grid-template-columns:1fr;}
-    .founder-availability-item,
-    .founder-availability-item:first-child,
-    .founder-availability-item:last-child{
-      border-left:0;
-      border-top:1px solid rgba(33,49,66,.10);
-      padding:14px 0;
+    .founder-page .founder-intro-inner{
+      grid-template-columns:1fr !important;
+      gap:26px !important;
+      padding-top:40px !important;
+      padding-bottom:38px !important;
     }
-    .founder-availability-item:first-child{border-top:0;}
-    .founder-availability-note{display:block;}
-    .founder-availability-note a{display:inline-block;margin-top:10px;}
+    .founder-page .founder-portrait{
+      max-width:320px !important;
+      justify-self:start;
+    }
   }
 </style>
 
@@ -1603,6 +1517,7 @@
 <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noopener noreferrer" target="_blank">Request a Consultation Time</a>
 <a class="btn btn-secondary" href="contact.html">Send Waitlist Inquiry</a>
 </div>
+<p class="founder-schedule-note">View available consultation times in the secure client portal. Requests are reviewed before confirmation.</p>
 </div>
 <figure aria-label="Portrait of Dr. Stephen Bryant" class="founder-portrait">
 <div class="portrait-frame">
@@ -1623,36 +1538,7 @@
 <article class="subpage-band-item"><div><h4>Current format</h4><p>Online psychotherapy and parent consultation, beginning with a brief review of scope and next steps.</p></div></article>
 </div>
 </section>
-<section class="founder-availability-section" id="availability" aria-labelledby="founder-availability-heading">
-<div class="founder-availability-inner">
-<div class="founder-availability-heading">
-<div class="founder-kicker">Current availability</div>
-<h2 id="founder-availability-heading">Limited openings now. Expanded weekday availability begins August 17.</h2>
-<p>Availability is reviewed alongside clinical fit, telehealth appropriateness, and the type of support being requested.</p>
-</div>
-<div class="founder-availability-grid" aria-label="Dr. Bryant availability summary">
-<article class="founder-availability-item">
-<span>Through August 14</span>
-<strong>Temporary openings</strong>
-<p>Select weekday morning, evening, and Sunday times.</p>
-</article>
-<article class="founder-availability-item">
-<span>July 27–31</span>
-<strong>Unavailable</strong>
-<p>Dr. Bryant will not be available during this period.</p>
-</article>
-<article class="founder-availability-item">
-<span>Beginning August 17</span>
-<strong>Expanded schedule</strong>
-<p>Regular weekday daytime and select evening availability.</p>
-</article>
-</div>
-<div class="founder-availability-note">
-<p>Consultation requests are reviewed before confirmation and are not therapy, a diagnostic evaluation, or a guarantee of ongoing care.</p>
-<a href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noopener noreferrer" target="_blank">Request a consultation time</a>
-</div>
-</div>
-</section>
+
 <section class="founder-section founder-focus-section" id="clinical-focus">
 <div class="founder-section-inner">
 <aside class="section-label">Areas of focus</aside>
@@ -1831,7 +1717,7 @@
 <div class="footer-links">
 <a href="services.html">Services</a>
 <a href="fees-insurance.html">Fees &amp; Insurance</a>
-<a href="team-founder.html#availability">Dr. Bryant Availability</a>
+<a href="team-founder.html">Founder Profile</a>
 <a href="contact.html">Join the Waitlist</a>
 </div>
 </div>
