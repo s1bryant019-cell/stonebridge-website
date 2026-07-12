@@ -1,95 +1,600 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Client Portal | Stonebridge Psychological Group</title>
-      <meta name="description" content="Secure TherapyPortal access for active Stonebridge clients completing forms, attending telehealth sessions, and reviewing routine account items.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client Portal | Stonebridge Psychological Group</title>
+  <meta name="description" content="Secure TherapyPortal access for active Stonebridge clients completing forms, attending telehealth sessions, and reviewing routine account items.">
 
-      <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="stonebridge-interior.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-    </head>
-    <body class="interior-page">
-      <a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="site-header compact-site-header">
-  <div class="container nav">
-    <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
-      <div class="brand-mark">STONEBRIDGE</div>
-      <div class="brand-sub">Psychological Group</div>
-    </a>
-    <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-    <div class="menu-wrap">
-      <nav class="menu" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="team.html">Team</a><a href="services.html">Services</a><a href="fees-insurance.html">Fees & Insurance</a><a href="portal.html" class="active" aria-current="page">Portal</a></nav>
-      <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
-    </div>
-  </div>
-</header>
-      <main id="main-content"><section class="interior-hero interior-hero--photo">
-  <div class="interior-hero-copy">
-    <div class="hero-rule"></div>
-    <div class="hero-kicker">Client Portal</div>
-    <h1>Secure access for active clients.</h1>
-    <p>Active Stonebridge clients may use TherapyPortal for assigned forms, scheduled telehealth sessions, appointment details, and billing-related items when available.</p>
-    <div class="hero-actions"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Access Client Portal</a></div>
-  </div>
-  <figure class="interior-hero-media">
-    <img src="hero-portal-workspace.jpg" alt="Secure workspace prepared for active-client portal use" fetchpriority="high">
-  </figure>
-</section><section class="orientation-band" aria-label="Page overview"><div class="orientation-grid"><article><h2>Assigned forms</h2><p>Complete paperwork and questionnaires assigned by the practice.</p></article><article><h2>Scheduled sessions</h2><p>Access telehealth appointments when portal access is active.</p></article><article><h2>Account items</h2><p>Review appointment or billing information when available.</p></article></div></section>
-<section class="section"><div class="shell portal-layout"><div><div class="section-label">Routine use</div><h2>Use the portal for tasks connected to active care.</h2><div class="prose"><p>TherapyPortal is the secure location for assigned forms, scheduled telehealth sessions, and routine account items. Use it instead of the public website for sensitive details connected to ongoing care.</p></div><p><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Access Client Portal</a></p></div><aside class="privacy-panel"><h3>Privacy and access</h3><ul class="bullet-list"><li>Use your own secure login.</li><li>Complete only items assigned to your account.</li><li>Keep telehealth links and documents private.</li><li>Contact Stonebridge if you cannot access an assigned item.</li></ul></aside></div></section>
-<section class="note-strip"><div class="note-strip-inner"><strong>Not for emergencies</strong><p>The portal is not monitored as an emergency service. For immediate danger or a medical emergency, call 911 or go to the nearest emergency room. For mental-health, suicide, self-harm, or substance-use crisis support, call or text 988.</p></div></section>
-<section class="cta-band"><div class="cta-inner"><div><h2>New to Stonebridge?</h2><p>Begin with a waitlist inquiry rather than creating or using an active-client portal account.</p></div><a class="btn btn-secondary" href="contact.html">Join the Waitlist</a></div></section>
-</main>
-      <footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <div class="footer-brand">STONEBRIDGE</div>
-      <div class="footer-sub">Psychological Group</div>
-      <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
-    </div>
-    <div>
-      <div class="footer-title">Care</div>
-      <div class="footer-links">
-        <a href="services.html">Services</a>
-        <a href="fees-insurance.html">Fees &amp; Insurance</a>
-        <a href="contact.html">Join the Waitlist</a>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style id="stonebridge-portal-page-only">
+    :root{
+      --portal-bg:#f8f5f0;
+      --portal-paper:#f2ece4;
+      --portal-navy:#163b61;
+      --portal-navy-deep:#102f4d;
+      --portal-ink:#213142;
+      --portal-muted:#5d6870;
+      --portal-gold:#78613f;
+      --portal-line:rgba(33,49,66,.14);
+      --portal-warm-line:rgba(212,200,185,.72);
+      --portal-white:#fffaf2;
+    }
+
+    body.portal-page{
+      background:var(--portal-bg);
+      color:var(--portal-ink);
+    }
+
+    .portal-page .skip-link{
+      position:absolute;
+      left:12px;
+      top:-80px;
+      z-index:1000;
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--portal-navy-deep);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .portal-page .skip-link:focus{top:12px;}
+
+    .portal-hero{
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(620px,55%) minmax(0,45%);
+      min-height:500px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 14% 55%,rgba(200,171,120,.07),transparent 30%),
+        linear-gradient(180deg,#fbf8f4 0%,#f6f1ea 100%);
+      border-bottom:1px solid var(--portal-warm-line);
+    }
+
+    .portal-hero-copy{
+      width:100%;
+      max-width:none;
+      padding:
+        58px
+        56px
+        52px
+        max(36px,calc((100vw - 1240px)/2));
+      align-self:center;
+    }
+
+    .portal-hero-rule{
+      width:40px;
+      height:2px;
+      margin-bottom:20px;
+      background:#b89661;
+    }
+
+    .portal-kicker,
+    .portal-label,
+    .portal-item-label{
+      color:var(--portal-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      line-height:1.35;
+      text-transform:uppercase;
+    }
+
+    .portal-hero h1{
+      margin:10px 0 0;
+      max-width:620px;
+      color:var(--portal-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(3.2rem,4.1vw,4.45rem);
+      line-height:1.01;
+      letter-spacing:-.045em;
+      text-wrap:balance;
+    }
+
+    .portal-hero-copy > p{
+      max-width:37rem;
+      margin:18px 0 0;
+      color:var(--portal-muted);
+      font-family:"Inter",sans-serif;
+      font-size:1rem;
+      line-height:1.72;
+    }
+
+    .portal-hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:13px;
+      margin-top:27px;
+    }
+
+    .portal-hero-media{
+      min-height:500px;
+      margin:0;
+      overflow:hidden;
+      border-top-left-radius:42px;
+    }
+
+    .portal-hero-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .portal-overview{
+      background:linear-gradient(135deg,var(--portal-navy),var(--portal-navy-deep));
+      color:var(--portal-white);
+    }
+
+    .portal-overview-grid{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      padding:20px 0;
+    }
+
+    .portal-overview article{
+      padding:0 24px;
+      border-left:1px solid rgba(255,255,255,.16);
+    }
+
+    .portal-overview article:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .portal-overview h2{
+      margin:0 0 4px;
+      color:#fffaf2;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.08rem;
+      line-height:1.1;
+      letter-spacing:-.01em;
+    }
+
+    .portal-overview p{
+      margin:0;
+      color:rgba(255,250,242,.86);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.48;
+    }
+
+    .portal-section{
+      padding:58px 0 64px;
+      background:var(--portal-bg);
+    }
+
+    .portal-shell{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+    }
+
+    .portal-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(300px,.72fr);
+      gap:62px;
+      align-items:start;
+    }
+
+    .portal-label{
+      position:relative;
+      padding-top:14px;
+    }
+
+    .portal-label::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      max-width:150px;
+      height:1px;
+      background:linear-gradient(90deg,var(--portal-navy),rgba(22,59,97,0));
+    }
+
+    .portal-main h2{
+      margin:12px 0 0;
+      max-width:14ch;
+      color:var(--portal-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.25rem,3.1vw,3.15rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
+      text-wrap:balance;
+    }
+
+    .portal-main > p{
+      max-width:43rem;
+      margin:17px 0 0;
+      color:var(--portal-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.96rem;
+      line-height:1.72;
+    }
+
+    .portal-main .btn{
+      margin-top:24px;
+    }
+
+    .portal-privacy{
+      padding:27px 28px;
+      border:1px solid var(--portal-warm-line);
+      border-radius:20px;
+      background:#fffdf9;
+    }
+
+    .portal-privacy h3{
+      margin:9px 0 0;
+      color:var(--portal-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.85rem;
+      line-height:1.08;
+      letter-spacing:-.025em;
+    }
+
+    .portal-privacy ul{
+      margin:18px 0 0;
+      padding:0;
+      list-style:none;
+      border-top:1px solid var(--portal-line);
+    }
+
+    .portal-privacy li{
+      position:relative;
+      padding:12px 0 12px 18px;
+      border-bottom:1px solid var(--portal-line);
+      color:var(--portal-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.88rem;
+      line-height:1.5;
+    }
+
+    .portal-privacy li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:1.08rem;
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:#b89661;
+    }
+
+    .portal-crisis{
+      background:#ece5db;
+      border-top:1px solid var(--portal-warm-line);
+      border-bottom:1px solid var(--portal-warm-line);
+    }
+
+    .portal-crisis-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:175px minmax(0,1fr);
+      gap:42px;
+      align-items:start;
+      padding:25px 0;
+    }
+
+    .portal-crisis strong{
+      color:var(--portal-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.25rem;
+      line-height:1.15;
+    }
+
+    .portal-crisis p{
+      max-width:49rem;
+      margin:0;
+      color:var(--portal-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.89rem;
+      line-height:1.6;
+    }
+
+    .portal-new{
+      background:linear-gradient(135deg,var(--portal-navy),var(--portal-navy-deep));
+      color:var(--portal-white);
+    }
+
+    .portal-new-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:30px;
+      align-items:center;
+      padding:33px 0;
+    }
+
+    .portal-new h2{
+      margin:0 0 5px;
+      color:#fffaf2;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2rem,3vw,2.75rem);
+      line-height:1.05;
+      letter-spacing:-.025em;
+    }
+
+    .portal-new p{
+      max-width:46rem;
+      margin:0;
+      color:rgba(255,250,242,.84);
+      font-family:"Inter",sans-serif;
+      font-size:.94rem;
+      line-height:1.6;
+    }
+
+    .portal-new .btn-secondary{
+      color:#fffaf2;
+      border-color:rgba(255,255,255,.30);
+      background:rgba(255,255,255,.08);
+    }
+
+    .portal-page a:focus-visible,
+    .portal-page button:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:2px;
+      box-shadow:0 0 0 5px var(--portal-navy-deep);
+    }
+
+    @media(min-width:1081px) and (max-width:1260px){
+      .portal-hero{
+        grid-template-columns:minmax(570px,57%) minmax(0,43%);
+      }
+
+      .portal-hero-copy{
+        padding-left:42px;
+        padding-right:42px;
+      }
+
+      .portal-hero h1{
+        max-width:590px;
+        font-size:clamp(3.05rem,4.15vw,4rem);
+      }
+    }
+
+    @media(max-width:1080px){
+      .portal-hero{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+
+      .portal-hero-copy{
+        width:min(100% - 36px,760px);
+        margin:0 auto;
+        padding:48px 0 42px;
+      }
+
+      .portal-hero-media{
+        min-height:340px;
+        border-radius:0;
+      }
+
+      .portal-overview-grid,
+      .portal-layout,
+      .portal-crisis-inner,
+      .portal-new-inner{
+        grid-template-columns:1fr;
+      }
+
+      .portal-overview article{
+        padding:14px 0;
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.14);
+      }
+
+      .portal-overview article:first-child{
+        padding-top:0;
+        border-top:0;
+      }
+
+      .portal-layout{gap:32px;}
+
+      .portal-crisis-inner,
+      .portal-new-inner{
+        gap:14px;
+      }
+    }
+
+    @media(max-width:720px){
+      .portal-shell,
+      .portal-overview-grid,
+      .portal-crisis-inner,
+      .portal-new-inner{
+        width:min(100% - 34px,1080px);
+      }
+
+      .portal-hero h1{
+        font-size:clamp(2.65rem,11.5vw,3.7rem);
+      }
+
+      .portal-hero-actions .btn,
+      .portal-main .btn,
+      .portal-new .btn{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+      }
+
+      .portal-section{
+        padding:44px 0 48px;
+      }
+
+      .portal-privacy{
+        padding:23px 20px;
+        border-radius:16px;
+      }
+    }
+  </style>
+</head>
+
+<body class="portal-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header compact-site-header">
+    <div class="container nav">
+      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
+        <div class="brand-mark">STONEBRIDGE</div>
+        <div class="brand-sub">Psychological Group</div>
+      </a>
+
+      <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+
+      <div class="menu-wrap">
+        <nav class="menu" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html" class="active" aria-current="page">Portal</a>
+        </nav>
+        <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
       </div>
     </div>
-    <div>
-      <div class="footer-title">Practice</div>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="team.html">Team</a>
-        <a href="team-founder.html">Founder</a>
-        <a href="for-clinicians.html">For Clinicians</a>
-        <a href="portal.html">Client Portal</a>
+  </header>
+
+  <main id="main-content">
+    <section class="portal-hero">
+      <div class="portal-hero-copy">
+        <div class="portal-hero-rule"></div>
+        <div class="portal-kicker">Client Portal</div>
+        <h1>Secure access for active clients.</h1>
+        <p>Use TherapyPortal for assigned forms, scheduled telehealth sessions, appointment details, and billing-related items when available.</p>
+
+        <div class="portal-hero-actions">
+          <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Access Client Portal</a>
+        </div>
+      </div>
+
+      <figure class="portal-hero-media">
+        <img src="hero-portal-workspace.jpg" alt="Secure workspace prepared for active-client portal use" fetchpriority="high">
+      </figure>
+    </section>
+
+    <section class="portal-overview" aria-label="Portal overview">
+      <div class="portal-overview-grid">
+        <article>
+          <h2>Assigned forms</h2>
+          <p>Complete paperwork and questionnaires assigned by the practice.</p>
+        </article>
+        <article>
+          <h2>Scheduled sessions</h2>
+          <p>Access telehealth appointments when portal access is active.</p>
+        </article>
+        <article>
+          <h2>Account items</h2>
+          <p>Review appointment or billing information when available.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="portal-section">
+      <div class="portal-shell portal-layout">
+        <div class="portal-main">
+          <div class="portal-label">For active clients</div>
+          <h2>Use the portal for tasks connected to ongoing care.</h2>
+          <p>TherapyPortal is the secure location for assigned forms, scheduled telehealth sessions, and routine account items. Use it instead of the public website for sensitive information related to active care.</p>
+          <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Open TherapyPortal</a>
+        </div>
+
+        <aside class="portal-privacy">
+          <div class="portal-item-label">Privacy and access</div>
+          <h3>Before you sign in.</h3>
+          <ul>
+            <li>Use your own secure login.</li>
+            <li>Complete only items assigned to your account.</li>
+            <li>Keep telehealth links and documents private.</li>
+            <li>Contact Stonebridge if you cannot access an assigned item.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="portal-crisis" aria-label="Emergency information">
+      <div class="portal-crisis-inner">
+        <strong>Not for emergencies</strong>
+        <p>The portal is not monitored as an emergency service. For immediate danger or a medical emergency, call 911 or go to the nearest emergency room. For mental-health, suicide, self-harm, or substance-use crisis support, call or text 988.</p>
+      </div>
+    </section>
+
+    <section class="portal-new">
+      <div class="portal-new-inner">
+        <div>
+          <h2>New to Stonebridge?</h2>
+          <p>Begin with a consultation request or written waitlist inquiry rather than using an active-client portal account.</p>
+        </div>
+        <a class="btn btn-secondary" href="contact.html">Begin Here</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Care</div>
+        <div class="footer-links">
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="contact.html">Join the Waitlist</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Practice</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="team-founder.html">Founder</a>
+          <a href="for-clinicians.html">For Clinicians</a>
+          <a href="portal.html">Client Portal</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <a href="tel:+17734171688">(773) 417-1688</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-logo-right">
+        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" loading="lazy">
       </div>
     </div>
-    <div>
-      <div class="footer-title">Contact</div>
-      <div class="footer-links">
-        <span>Serving Illinois via telehealth</span>
-        <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-        <a href="tel:+17734171688">(773) 417-1688</a>
-        <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
-      </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
     </div>
-    <div class="footer-logo-right"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" loading="lazy"></div>
-  </div>
-  <div class="container footer-bottom">
-    <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-    <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-  </div>
-</footer>
-      <script src="script.js"></script>
-    </body>
-    </html>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
