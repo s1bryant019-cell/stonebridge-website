@@ -192,14 +192,6 @@
       margin:0 auto;
     }
 
-    .services-section-heading{
-      display:grid;
-      grid-template-columns:175px minmax(0,1fr);
-      gap:42px;
-      align-items:start;
-      margin-bottom:28px;
-    }
-
     .services-label{
       position:relative;
       padding-top:14px;
@@ -216,8 +208,14 @@
       background:linear-gradient(90deg,var(--services-navy),rgba(22,59,97,0));
     }
 
-    .services-section-heading h2{
-      margin:0;
+    .services-intro-block{
+      max-width:760px;
+      margin-bottom:24px;
+    }
+
+    .services-intro-block h2,
+    .services-balanced-copy h2{
+      margin:11px 0 0;
       max-width:18ch;
       color:var(--services-ink);
       font-family:"EB Garamond",Georgia,serif;
@@ -227,8 +225,9 @@
       text-wrap:balance;
     }
 
-    .services-section-heading p{
-      max-width:47rem;
+    .services-intro-block p,
+    .services-balanced-copy p{
+      max-width:42rem;
       margin:12px 0 0;
       color:var(--services-muted);
       font-family:"Inter",sans-serif;
@@ -236,9 +235,15 @@
       line-height:1.68;
     }
 
+    .services-balanced-layout{
+      display:grid;
+      grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+      gap:56px;
+      align-items:start;
+    }
+
     /* Two primary services: structured editorial blocks rather than duplicate cards. */
     .services-primary-grid{
-      margin-left:217px;
       display:grid;
       grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
       gap:0 46px;
@@ -350,31 +355,37 @@
     }
 
     .services-principles{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:34px;
       border-top:1px solid var(--services-line);
     }
 
     .services-principle{
-      padding-top:20px;
+      display:grid;
+      grid-template-columns:145px minmax(0,1fr);
+      gap:22px;
+      align-items:start;
+      padding:16px 0;
+      border-bottom:1px solid var(--services-line);
     }
 
     .services-principle h3{
-      margin:8px 0 7px;
+      margin:6px 0 0;
       color:var(--services-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:1.5rem;
+      font-size:1.42rem;
       line-height:1.1;
       letter-spacing:-.02em;
     }
 
     .services-principle p{
-      margin:0;
+      margin:6px 0 0;
       color:var(--services-muted);
       font-family:"Inter",sans-serif;
       font-size:.9rem;
-      line-height:1.62;
+      line-height:1.6;
+    }
+
+    .services-principle-copy{
+      min-width:0;
     }
 
     .services-scope{
@@ -489,8 +500,7 @@
       }
 
       .services-overview-grid,
-      .services-section-heading,
-      .services-principles,
+      .services-balanced-layout,
       .services-scope-inner,
       .services-cta-inner{
         grid-template-columns:1fr;
@@ -507,7 +517,7 @@
         border-top:0;
       }
 
-      .services-section-heading{gap:14px;}
+      .services-balanced-layout{gap:24px;}
 
       .services-primary-grid{
         margin-left:0;
@@ -560,6 +570,11 @@
       .services-concern:nth-child(even){
         padding:20px 0;
         border-left:0;
+      }
+
+      .services-principle{
+        grid-template-columns:1fr;
+        gap:4px;
       }
     }
   </style>
@@ -629,11 +644,9 @@
 
     <section class="services-section" id="services-offered">
       <div class="services-shell">
-        <div class="services-section-heading">
+        <div class="services-intro-block">
           <div class="services-label">Services offered</div>
-          <div>
-            <h2>Two primary ways Stonebridge supports clients and families.</h2>
-          </div>
+          <h2>Two primary ways Stonebridge supports clients and families.</h2>
         </div>
 
         <div class="services-primary-grid">
@@ -668,13 +681,11 @@
     </section>
 
     <section class="services-section paper">
-      <div class="services-shell">
-        <div class="services-section-heading">
+      <div class="services-shell services-balanced-layout">
+        <div class="services-balanced-copy">
           <div class="services-label">Concerns often addressed</div>
-          <div>
-            <h2>Problems rarely arrive one at a time.</h2>
-            <p>Stonebridge looks for the pattern beneath the list rather than forcing experience into a single isolated category.</p>
-          </div>
+          <h2>Problems rarely arrive one at a time.</h2>
+          <p>Stonebridge looks for the pattern beneath the list rather than forcing experience into a single isolated category.</p>
         </div>
 
         <div class="services-concern-grid">
@@ -702,31 +713,36 @@
     </section>
 
     <section class="services-section">
-      <div class="services-shell">
-        <div class="services-section-heading">
+      <div class="services-shell services-balanced-layout">
+        <div class="services-balanced-copy">
           <div class="services-label">How Stonebridge works</div>
-          <div>
-            <h2>Thoughtful care with enough structure to be useful.</h2>
-          </div>
+          <h2>Thoughtful care with enough structure to be useful.</h2>
+          <p>The frame around therapy supports the work without reducing it to a formula.</p>
         </div>
 
         <div class="services-principles">
           <article class="services-principle">
             <div class="services-principle-label">Relationship</div>
-            <h3>The relationship matters.</h3>
-            <p>Therapy is not reduced to a checklist. The therapeutic relationship is part of the work.</p>
+            <div class="services-principle-copy">
+              <h3>The relationship matters.</h3>
+              <p>Therapy is not reduced to a checklist. The therapeutic relationship is part of the work.</p>
+            </div>
           </article>
 
           <article class="services-principle">
             <div class="services-principle-label">Readiness</div>
-            <h3>Pace and readiness matter.</h3>
-            <p>Safety, consent, timing, and the client’s capacity shape how the work proceeds.</p>
+            <div class="services-principle-copy">
+              <h3>Pace and readiness matter.</h3>
+              <p>Safety, consent, timing, and the client’s capacity shape how the work proceeds.</p>
+            </div>
           </article>
 
           <article class="services-principle">
             <div class="services-principle-label">Application</div>
-            <h3>Insight can lead to action.</h3>
-            <p>Skills, structure, and planning may be integrated when they support meaningful change.</p>
+            <div class="services-principle-copy">
+              <h3>Insight can lead to action.</h3>
+              <p>Skills, structure, and planning may be integrated when they support meaningful change.</p>
+            </div>
           </article>
         </div>
       </div>
