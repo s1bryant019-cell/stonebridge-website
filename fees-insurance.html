@@ -49,35 +49,58 @@
     }
     .fees-page .skip-link:focus{top:12px;}
 
-    /* Hero: same image, integrated to the right edge. */
+    /* Full-width photographic hero with a restrained, practical treatment for fees. */
     .fees-hero{
       position:relative;
-      display:grid;
-      grid-template-columns:minmax(620px,55%) minmax(0,45%);
-      min-height:520px;
+      min-height:470px;
       overflow:hidden;
+      isolation:isolate;
+      background:var(--fees-navy-deep);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+
+    .fees-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
       background:
-        radial-gradient(circle at 14% 55%, rgba(200,171,120,.07), transparent 30%),
-        linear-gradient(180deg,#fbf8f4 0%,#f6f1ea 100%);
-      border-bottom:1px solid var(--fees-warm-line);
+        linear-gradient(
+          90deg,
+          rgba(12,31,49,.95) 0%,
+          rgba(12,31,49,.90) 30%,
+          rgba(12,31,49,.68) 49%,
+          rgba(12,31,49,.28) 72%,
+          rgba(12,31,49,.10) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(10,24,38,.18) 0%,
+          rgba(10,24,38,.04) 55%,
+          rgba(10,24,38,.26) 100%
+        );
     }
 
     .fees-hero-copy{
-      width:100%;
-      max-width:none;
-      padding:
-        58px
-        56px
-        52px
-        max(36px,calc((100vw - 1240px)/2));
-      align-self:center;
+      position:relative;
+      z-index:2;
+      width:min(1220px,calc(100% - 72px));
+      min-height:470px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      padding:40px 0 38px;
+      color:var(--fees-white);
     }
 
     .fees-hero-rule{
       width:40px;
       height:2px;
       margin-bottom:20px;
-      background:#b89661;
+      background:#d3b57f;
     }
 
     .fees-kicker,
@@ -92,51 +115,81 @@
       text-transform:uppercase;
     }
 
+    .fees-hero .fees-kicker{
+      color:#e1c79c;
+    }
+
     .fees-hero h1{
       margin:10px 0 0;
-      max-width:640px;
-      color:var(--fees-ink);
+      max-width:11.5ch;
+      color:var(--fees-white);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.3rem,4.25vw,4.55rem);
+      font-size:clamp(3.2rem,4.35vw,4.6rem);
       line-height:1.01;
-      letter-spacing:-.045em;
+      letter-spacing:-.05em;
       text-wrap:balance;
+      text-shadow:0 10px 30px rgba(0,0,0,.18);
     }
 
     .fees-hero-copy > p{
-      max-width:34rem;
+      max-width:35rem;
       margin:18px 0 0;
-      color:var(--fees-muted);
+      color:rgba(255,250,242,.89);
       font-family:"Inter",sans-serif;
       font-size:1rem;
-      line-height:1.72;
+      line-height:1.7;
     }
 
     .fees-hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:13px;
-      margin-top:27px;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .fees-hero-actions .btn-primary{
+      background:#f4eee4;
+      border-color:#f4eee4;
+      color:var(--fees-navy-deep);
+    }
+
+    .fees-hero-actions .btn-primary:hover{
+      background:#fffaf2;
+      border-color:#fffaf2;
+    }
+
+    .fees-hero-actions .btn-secondary{
+      color:#fffaf2;
+      border-color:rgba(255,255,255,.42);
+      background:rgba(255,255,255,.08);
+    }
+
+    .fees-hero-actions .btn-secondary:hover{
+      border-color:rgba(255,255,255,.72);
+      background:rgba(255,255,255,.14);
     }
 
     .fees-hero-media{
-      min-height:520px;
+      position:absolute;
+      inset:0;
+      z-index:0;
       margin:0;
       overflow:hidden;
-      border-top-left-radius:42px;
     }
 
     .fees-hero-media img{
       width:100%;
       height:100%;
+      display:block;
       object-fit:cover;
       object-position:52% center;
     }
 
-    /* The overview band is concise and not repeated later. */
+    /* The overview band is concise and visually quiet beneath the photographic hero. */
     .fees-overview{
-      background:linear-gradient(135deg,var(--fees-navy),var(--fees-navy-deep));
-      color:var(--fees-white);
+      background:#eee7de;
+      color:var(--fees-ink);
+      border-bottom:1px solid var(--fees-warm-line);
     }
 
     .fees-overview-grid{
@@ -144,12 +197,12 @@
       margin:0 auto;
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
-      padding:20px 0;
+      padding:17px 0;
     }
 
     .fees-overview article{
       padding:0 24px;
-      border-left:1px solid rgba(255,255,255,.16);
+      border-left:1px solid rgba(33,49,66,.14);
     }
 
     .fees-overview article:first-child{
@@ -159,7 +212,7 @@
 
     .fees-overview h2{
       margin:0 0 4px;
-      color:#fffaf2;
+      color:var(--fees-navy-deep);
       font-family:"EB Garamond",Georgia,serif;
       font-size:1.08rem;
       line-height:1.1;
@@ -168,7 +221,7 @@
 
     .fees-overview p{
       margin:0;
-      color:rgba(255,250,242,.86);
+      color:var(--fees-muted);
       font-family:"Inter",sans-serif;
       font-size:.82rem;
       line-height:1.48;
@@ -431,50 +484,44 @@
 
 
     @media(min-width:1081px) and (max-width:1260px){
-      .fees-hero{
-        grid-template-columns:minmax(570px,57%) minmax(0,43%);
-      }
       .fees-hero-copy{
-        padding-left:42px;
-        padding-right:42px;
+        width:min(100% - 72px,1120px);
       }
       .fees-hero h1{
-        font-size:clamp(3.2rem,4.4vw,4.15rem);
-        max-width:590px;
+        font-size:clamp(3.1rem,4.15vw,4.2rem);
       }
     }
 
     @media(max-width:1080px){
-      .fees-hero{
-        grid-template-columns:1fr;
-        min-height:auto;
+      .fees-hero,
+      .fees-hero-copy{
+        min-height:500px;
       }
       .fees-hero-copy{
-        width:min(100% - 36px,760px);
-        margin:0 auto;
-        padding:48px 0 42px;
+        width:min(100% - 44px,860px);
+        padding:46px 0 42px;
       }
-      .fees-hero-media{
-        min-height:340px;
-        border-radius:0;
-      }
-      .fees-hero-media img{
-        object-position:center;
+      .fees-hero::before{
+        background:
+          linear-gradient(
+            90deg,
+            rgba(12,31,49,.95) 0%,
+            rgba(12,31,49,.88) 40%,
+            rgba(12,31,49,.60) 74%,
+            rgba(12,31,49,.30) 100%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(10,24,38,.16) 0%,
+            rgba(10,24,38,.04) 56%,
+            rgba(10,24,38,.30) 100%
+          );
       }
       .fees-overview-grid,
       .fees-relational-layout,
       .fees-policy,
       .fees-cta-inner{
         grid-template-columns:1fr;
-      }
-      .fees-overview article{
-        padding:14px 0;
-        border-left:0;
-        border-top:1px solid rgba(255,255,255,.14);
-      }
-      .fees-overview article:first-child{
-        padding-top:0;
-        border-top:0;
       }
       .fees-relational-layout{gap:26px;}
       .fees-policy{gap:14px;}
@@ -487,7 +534,46 @@
       .fees-cta-inner{
         width:min(100% - 34px,1080px);
       }
+      .fees-hero,
+      .fees-hero-copy{
+        min-height:560px;
+      }
+      .fees-hero-copy{
+        width:min(100% - 34px,1080px);
+        padding:40px 0 36px;
+      }
+      .fees-hero-media img{
+        object-position:58% center;
+      }
+      .fees-hero::before{
+        background:
+          linear-gradient(
+            180deg,
+            rgba(10,27,43,.90) 0%,
+            rgba(10,27,43,.75) 56%,
+            rgba(10,27,43,.90) 100%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(10,27,43,.54) 0%,
+            rgba(10,27,43,.22) 100%
+          );
+      }
+      .fees-overview-grid{
+        grid-template-columns:1fr;
+        padding:14px 0;
+      }
+      .fees-overview article{
+        padding:13px 0;
+        border-left:0;
+        border-top:1px solid rgba(33,49,66,.13);
+      }
+      .fees-overview article:first-child{
+        padding-top:0;
+        border-top:0;
+      }
       .fees-hero h1{
+        max-width:12ch;
         font-size:clamp(2.75rem,12vw,3.8rem);
       }
       .fees-section{padding:44px 0;}
