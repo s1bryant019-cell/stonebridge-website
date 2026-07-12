@@ -1,91 +1,601 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Psychological Assessment Scope | Stonebridge Psychological Group</title>
-      <meta name="description" content="Psychological assessment uses a separate referral, testing, interpretation, documentation, and feedback pathway.">
-      <meta name="robots" content="noindex,follow">
-      <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="stonebridge-interior.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Psychological Assessment Scope | Stonebridge Psychological Group</title>
+  <meta name="description" content="Psychological assessment uses a separate referral, testing, interpretation, documentation, and feedback pathway.">
+  <meta name="robots" content="noindex,follow">
 
-    </head>
-    <body class="interior-page">
-      <a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="site-header compact-site-header">
-  <div class="container nav">
-    <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
-      <div class="brand-mark">STONEBRIDGE</div>
-      <div class="brand-sub">Psychological Group</div>
-    </a>
-    <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-    <div class="menu-wrap">
-      <nav class="menu" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="team.html">Team</a><a href="for-clinicians.html">For Clinicians</a><a href="services.html" class="active" aria-current="page">Services</a><a href="fees-insurance.html">Fees & Insurance</a><a href="portal.html">Portal</a></nav>
-      <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
-    </div>
-  </div>
-</header>
-      <main id="main-content"><section class="interior-hero interior-hero--photo">
-  <div class="interior-hero-copy">
-    <div class="hero-rule"></div>
-    <div class="hero-kicker">Psychological Assessment</div>
-    <h1>Assessment uses a separate clinical pathway.</h1>
-    <p>Psychological assessment differs from psychotherapy and requires its own referral review, testing procedures, interpretation, documentation, consent, and feedback process.</p>
-    <div class="hero-actions"><a class="btn btn-primary" href="services.html">Return to Services</a></div>
-  </div>
-  <figure class="interior-hero-media">
-    <img src="hero-assessment-books.jpg" alt="Books and materials used in psychological assessment" fetchpriority="high">
-  </figure>
-</section><section class="section"><div class="shell scope-page-grid"><article class="info-card"><h3>Separate review</h3><p>Assessment begins with referral clarification rather than the psychotherapy waitlist.</p></article><article class="info-card"><h3>Dedicated procedures</h3><p>Testing, interpretation, written work, and feedback require a distinct service frame.</p></article></div></section><section class="note-strip"><div class="note-strip-inner"><strong>Current availability</strong><p>This is not part of the standard public psychotherapy pathway. Specific professional inquiries may be directed to <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>.</p></div></section></main>
-      <footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <div class="footer-brand">STONEBRIDGE</div>
-      <div class="footer-sub">Psychological Group</div>
-      <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
-    </div>
-    <div>
-      <div class="footer-title">Care</div>
-      <div class="footer-links">
-        <a href="services.html">Services</a>
-        <a href="fees-insurance.html">Fees &amp; Insurance</a>
-        <a href="contact.html">Join the Waitlist</a>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style id="stonebridge-assessment-page-only">
+    :root{
+      --assessment-bg:#f8f5f0;
+      --assessment-paper:#f2ece4;
+      --assessment-navy:#163b61;
+      --assessment-navy-deep:#102f4d;
+      --assessment-ink:#213142;
+      --assessment-muted:#5d6870;
+      --assessment-gold:#78613f;
+      --assessment-line:rgba(33,49,66,.14);
+      --assessment-warm-line:rgba(212,200,185,.72);
+      --assessment-white:#fffaf2;
+    }
+
+    body.assessment-page{
+      background:var(--assessment-bg);
+      color:var(--assessment-ink);
+    }
+
+    .assessment-page .skip-link{
+      position:absolute;
+      left:12px;
+      top:-80px;
+      z-index:1000;
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--assessment-navy-deep);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .assessment-page .skip-link:focus{top:12px;}
+
+    .assessment-hero{
+      position:relative;
+      min-height:430px;
+      overflow:hidden;
+      isolation:isolate;
+      background:var(--assessment-navy-deep);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+
+    .assessment-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(12,31,49,.95) 0%,
+          rgba(12,31,49,.90) 31%,
+          rgba(12,31,49,.67) 50%,
+          rgba(12,31,49,.28) 73%,
+          rgba(12,31,49,.10) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(10,24,38,.16) 0%,
+          rgba(10,24,38,.03) 55%,
+          rgba(10,24,38,.25) 100%
+        );
+    }
+
+    .assessment-hero-copy{
+      position:relative;
+      z-index:2;
+      width:min(1220px,calc(100% - 72px));
+      min-height:430px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      padding:38px 0 36px;
+      color:var(--assessment-white);
+    }
+
+    .assessment-hero-rule{
+      width:40px;
+      height:2px;
+      margin-bottom:20px;
+      background:#d3b57f;
+    }
+
+    .assessment-kicker,
+    .assessment-label,
+    .assessment-row-label{
+      color:var(--assessment-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      line-height:1.35;
+      text-transform:uppercase;
+    }
+
+    .assessment-hero .assessment-kicker{
+      color:#e1c79c;
+    }
+
+    .assessment-hero h1{
+      margin:10px 0 0;
+      max-width:13ch;
+      color:var(--assessment-white);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(3rem,4vw,4.2rem);
+      line-height:1.01;
+      letter-spacing:-.05em;
+      text-wrap:balance;
+      text-shadow:0 10px 30px rgba(0,0,0,.18);
+    }
+
+    .assessment-hero-copy > p{
+      max-width:39rem;
+      margin:18px 0 0;
+      color:rgba(255,250,242,.89);
+      font-family:"Inter",sans-serif;
+      font-size:1rem;
+      line-height:1.7;
+    }
+
+    .assessment-hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:25px;
+    }
+
+    .assessment-hero-actions .btn-primary{
+      background:#f4eee4;
+      border-color:#f4eee4;
+      color:var(--assessment-navy-deep);
+    }
+
+    .assessment-hero-actions .btn-primary:hover{
+      background:#fffaf2;
+      border-color:#fffaf2;
+    }
+
+    .assessment-hero-media{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      margin:0;
+      overflow:hidden;
+    }
+
+    .assessment-hero-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .assessment-overview{
+      background:#eee7de;
+      border-bottom:1px solid var(--assessment-warm-line);
+    }
+
+    .assessment-overview-grid{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      padding:17px 0;
+    }
+
+    .assessment-overview article{
+      padding:0 30px;
+      border-left:1px solid rgba(33,49,66,.14);
+    }
+
+    .assessment-overview article:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .assessment-overview h2{
+      margin:0 0 4px;
+      color:var(--assessment-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.08rem;
+      line-height:1.1;
+    }
+
+    .assessment-overview p{
+      margin:0;
+      color:var(--assessment-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.48;
+    }
+
+    .assessment-section{
+      padding:56px 0 60px;
+      background:var(--assessment-bg);
+    }
+
+    .assessment-shell{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+    }
+
+    .assessment-layout{
+      display:grid;
+      grid-template-columns:minmax(250px,.76fr) minmax(0,1.24fr);
+      gap:56px;
+      align-items:start;
+    }
+
+    .assessment-label{
+      position:relative;
+      padding-top:14px;
+    }
+
+    .assessment-label::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      max-width:150px;
+      height:1px;
+      background:linear-gradient(90deg,var(--assessment-navy),rgba(22,59,97,0));
+    }
+
+    .assessment-intro h2{
+      margin:11px 0 0;
+      max-width:13ch;
+      color:var(--assessment-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.15rem,2.9vw,2.9rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
+      text-wrap:balance;
+    }
+
+    .assessment-intro p{
+      max-width:31rem;
+      margin:13px 0 0;
+      color:var(--assessment-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.94rem;
+      line-height:1.66;
+    }
+
+    .assessment-list{
+      border-top:1px solid var(--assessment-line);
+    }
+
+    .assessment-row{
+      display:grid;
+      grid-template-columns:180px minmax(0,1fr);
+      gap:22px;
+      padding:16px 0;
+      border-bottom:1px solid var(--assessment-line);
+    }
+
+    .assessment-row h3{
+      margin:0 0 6px;
+      color:var(--assessment-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.42rem;
+      line-height:1.1;
+      letter-spacing:-.02em;
+    }
+
+    .assessment-row p{
+      margin:0;
+      color:var(--assessment-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.89rem;
+      line-height:1.6;
+    }
+
+    .assessment-cta{
+      background:linear-gradient(135deg,var(--assessment-navy),var(--assessment-navy-deep));
+      color:var(--assessment-white);
+    }
+
+    .assessment-cta-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:30px;
+      align-items:center;
+      padding:33px 0;
+    }
+
+    .assessment-cta h2{
+      margin:0 0 5px;
+      color:#fffaf2;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2rem,3vw,2.65rem);
+      line-height:1.05;
+      letter-spacing:-.025em;
+    }
+
+    .assessment-cta p{
+      max-width:46rem;
+      margin:0;
+      color:rgba(255,250,242,.84);
+      font-family:"Inter",sans-serif;
+      font-size:.94rem;
+      line-height:1.6;
+    }
+
+    .assessment-cta .btn-secondary{
+      color:#fffaf2;
+      border-color:rgba(255,255,255,.30);
+      background:rgba(255,255,255,.08);
+    }
+
+    .assessment-page a:focus-visible,
+    .assessment-page button:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:2px;
+      box-shadow:0 0 0 5px var(--assessment-navy-deep);
+    }
+
+    @media(max-width:1080px){
+      .assessment-hero,
+      .assessment-hero-copy{
+        min-height:450px;
+      }
+
+      .assessment-hero-copy{
+        width:min(100% - 44px,860px);
+        padding:42px 0 38px;
+      }
+
+      .assessment-layout,
+      .assessment-cta-inner{
+        grid-template-columns:1fr;
+      }
+
+      .assessment-layout,
+      .assessment-cta-inner{
+        gap:24px;
+      }
+    }
+
+    @media(max-width:720px){
+      .assessment-shell,
+      .assessment-overview-grid,
+      .assessment-cta-inner{
+        width:min(100% - 34px,1080px);
+      }
+
+      .assessment-hero,
+      .assessment-hero-copy{
+        min-height:520px;
+      }
+
+      .assessment-hero-copy{
+        width:min(100% - 34px,1080px);
+        padding:38px 0 34px;
+      }
+
+      .assessment-hero-media img{
+        object-position:58% center;
+      }
+
+      .assessment-hero::before{
+        background:
+          linear-gradient(
+            180deg,
+            rgba(10,27,43,.90) 0%,
+            rgba(10,27,43,.74) 56%,
+            rgba(10,27,43,.90) 100%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(10,27,43,.54) 0%,
+            rgba(10,27,43,.22) 100%
+          );
+      }
+
+      .assessment-overview-grid{
+        grid-template-columns:1fr;
+        padding:14px 0;
+      }
+
+      .assessment-overview article,
+      .assessment-overview article:first-child{
+        padding:13px 0;
+        border-left:0;
+        border-top:1px solid rgba(33,49,66,.13);
+      }
+
+      .assessment-overview article:first-child{
+        padding-top:0;
+        border-top:0;
+      }
+
+      .assessment-hero h1{
+        max-width:13ch;
+        font-size:clamp(2.5rem,10.5vw,3.45rem);
+      }
+
+      .assessment-row{
+        grid-template-columns:1fr;
+        gap:7px;
+      }
+
+      .assessment-hero-actions .btn,
+      .assessment-cta .btn{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+      }
+
+      .assessment-section{
+        padding:44px 0 48px;
+      }
+    }
+  </style>
+</head>
+
+<body class="assessment-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header compact-site-header">
+    <div class="container nav">
+      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
+        <div class="brand-mark">STONEBRIDGE</div>
+        <div class="brand-sub">Psychological Group</div>
+      </a>
+
+      <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+
+      <div class="menu-wrap">
+        <nav class="menu" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="for-clinicians.html">For Clinicians</a>
+          <a href="services.html" class="active" aria-current="page">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html">Portal</a>
+        </nav>
+        <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
       </div>
     </div>
-    <div>
-      <div class="footer-title">Practice</div>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="team.html">Team</a>
-        <a href="team-founder.html">Founder</a>
-        <a href="for-clinicians.html">For Clinicians</a>
-        <a href="portal.html">Client Portal</a>
+  </header>
+
+  <main id="main-content">
+    <section class="assessment-hero">
+      <div class="assessment-hero-copy">
+        <div class="assessment-hero-rule"></div>
+        <div class="assessment-kicker">Psychological Assessment</div>
+        <h1>Assessment uses a separate clinical pathway.</h1>
+        <p>Psychological assessment differs from psychotherapy and requires its own referral review, testing procedures, interpretation, documentation, consent, and feedback process.</p>
+
+        <div class="assessment-hero-actions">
+          <a class="btn btn-primary" href="services.html">Return to Services</a>
+        </div>
+      </div>
+
+      <figure class="assessment-hero-media">
+        <img src="hero-assessment-books.jpg" alt="Books and materials used in psychological assessment" fetchpriority="high">
+      </figure>
+    </section>
+
+    <section class="assessment-overview" aria-label="Assessment pathway overview">
+      <div class="assessment-overview-grid">
+        <article>
+          <h2>Separate review</h2>
+          <p>Assessment begins with referral clarification rather than the psychotherapy waitlist.</p>
+        </article>
+        <article>
+          <h2>Dedicated procedures</h2>
+          <p>Testing, interpretation, written work, and feedback require a distinct service frame.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="assessment-section">
+      <div class="assessment-shell assessment-layout">
+        <div class="assessment-intro">
+          <div class="assessment-label">Assessment scope</div>
+          <h2>A defined process before any testing begins.</h2>
+          <p>The referral question, purpose, role, records, consent, and practical requirements must be clear before assessment services can be considered.</p>
+        </div>
+
+        <div class="assessment-list">
+          <article class="assessment-row">
+            <div class="assessment-row-label">01 · Referral</div>
+            <div>
+              <h3>Clarify the question first.</h3>
+              <p>Assessment starts by identifying what is being asked, who will use the findings, and whether the request fits the available professional role.</p>
+            </div>
+          </article>
+
+          <article class="assessment-row">
+            <div class="assessment-row-label">02 · Procedures</div>
+            <div>
+              <h3>Testing requires a dedicated frame.</h3>
+              <p>Measures, interviews, records, interpretation, documentation, and fees are determined by the referral question rather than by the psychotherapy process.</p>
+            </div>
+          </article>
+
+          <article class="assessment-row">
+            <div class="assessment-row-label">03 · Feedback</div>
+            <div>
+              <h3>Findings require careful communication.</h3>
+              <p>Feedback and written work are handled according to the agreed purpose, consent, audience, and documentation boundaries.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="assessment-cta">
+      <div class="assessment-cta-inner">
+        <div>
+          <h2>Current availability is reviewed separately.</h2>
+          <p>This is not part of the standard public psychotherapy pathway. Specific professional inquiries may be directed to Stonebridge by email.</p>
+        </div>
+        <a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com?subject=Psychological%20Assessment%20Inquiry">Email Stonebridge</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Care</div>
+        <div class="footer-links">
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="contact.html">Join the Waitlist</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Practice</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="team-founder.html">Founder</a>
+          <a href="for-clinicians.html">For Clinicians</a>
+          <a href="portal.html">Client Portal</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <a href="tel:+17734171688">(773) 417-1688</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-logo-right">
+        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" loading="lazy">
       </div>
     </div>
-    <div>
-      <div class="footer-title">Contact</div>
-      <div class="footer-links">
-        <span>Serving Illinois via telehealth</span>
-        <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-        <a href="tel:+17734171688">(773) 417-1688</a>
-        <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
-      </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
     </div>
-    <div class="footer-logo-right"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" loading="lazy"></div>
-  </div>
-  <div class="container footer-bottom">
-    <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-    <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-  </div>
-</footer>
-      <script src="script.js"></script>
-    </body>
-    </html>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
