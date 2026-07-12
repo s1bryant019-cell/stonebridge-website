@@ -2360,6 +2360,157 @@
   }
 </style>
 
+
+<style id="stonebridge-founder-final-spacing-refine">
+  /* Hero: use the right side more fully without increasing height. */
+  .founder-page .founder-intro-inner{
+    grid-template-columns:minmax(0,1fr) 270px !important;
+    gap:34px !important;
+    padding-top:30px !important;
+    padding-bottom:29px !important;
+  }
+  .founder-portrait-integrated{
+    max-width:270px !important;
+  }
+  .founder-portrait-integrated .portrait-frame{
+    border-radius:20px !important;
+    outline-offset:3px !important;
+  }
+
+  /* Quote panel: quieter geometry and slightly tighter section rhythm. */
+  .founder-therapy-combined{
+    padding-top:40px !important;
+    padding-bottom:40px !important;
+  }
+  .therapy-quote-card{
+    border-radius:20px !important;
+    padding:26px 28px !important;
+  }
+
+  /* Credibility section: remove the left-heading rail and use the full width. */
+  .founder-credibility-combined{
+    padding-top:32px !important;
+    padding-bottom:32px !important;
+  }
+  .credibility-heading{
+    display:block !important;
+    margin:0 0 16px !important;
+    max-width:none !important;
+  }
+  .credibility-heading .section-label{
+    display:block;
+    margin:0 0 10px;
+    padding-top:12px;
+    max-width:360px;
+  }
+  .credibility-heading h2{
+    margin:0 !important;
+    max-width:none !important;
+    font-size:clamp(2.15rem,2.8vw,3rem) !important;
+    line-height:1.02 !important;
+    white-space:normal;
+  }
+  .credibility-grid{
+    grid-template-columns:1fr 1.12fr 1.05fr !important;
+  }
+  .credibility-column{
+    padding-top:18px !important;
+    padding-bottom:18px !important;
+  }
+  .credibility-column h3{
+    margin-bottom:8px !important;
+  }
+
+  /* Writing column: fill the column deliberately instead of ending early. */
+  .writing-mini-head{
+    grid-template-columns:minmax(0,1fr) 126px !important;
+    gap:16px !important;
+    align-items:start !important;
+  }
+  .writing-mini-head img{
+    width:126px !important;
+    height:98px !important;
+    border-radius:14px !important;
+  }
+  .writing-mini-links{
+    gap:0 !important;
+    margin-top:13px !important;
+    padding-top:0 !important;
+    border-top:0 !important;
+  }
+  .writing-mini-item{
+    padding:12px 0;
+    border-top:1px solid rgba(33,49,66,.10);
+  }
+  .writing-mini-item a{
+    display:inline-block;
+    margin-bottom:4px;
+  }
+  .writing-mini-item span{
+    display:block;
+    color:var(--sb-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.75rem;
+    line-height:1.45;
+  }
+
+  /* Scope: one compact clarification strip, not another destination. */
+  .founder-scope-strip{
+    padding:13px 0 !important;
+  }
+  .scope-strip-inner{
+    grid-template-columns:130px minmax(0,1fr) !important;
+    gap:24px !important;
+  }
+  .scope-strip-inner .section-label{
+    padding-top:0 !important;
+  }
+  .scope-strip-inner .section-label::before{
+    display:none !important;
+  }
+  .scope-strip-inner p{
+    font-size:.79rem !important;
+    line-height:1.48 !important;
+  }
+
+  /* Closing band: keep the alternate inquiry path compact. */
+  .founder-final-band .founder-final-inner{
+    padding-top:24px !important;
+    padding-bottom:24px !important;
+  }
+
+  @media(max-width:980px){
+    .founder-page .founder-intro-inner{
+      grid-template-columns:1fr !important;
+      gap:24px !important;
+    }
+    .credibility-grid{
+      grid-template-columns:1fr !important;
+    }
+    .writing-mini-head{
+      grid-template-columns:minmax(0,1fr) 130px !important;
+    }
+    .scope-strip-inner{
+      grid-template-columns:1fr !important;
+      gap:7px !important;
+    }
+  }
+
+  @media(max-width:720px){
+    .founder-page .founder-intro-inner{
+      padding-top:29px !important;
+      padding-bottom:28px !important;
+    }
+    .writing-mini-head{
+      grid-template-columns:1fr !important;
+    }
+    .writing-mini-head img{
+      width:150px !important;
+      height:auto !important;
+    }
+  }
+</style>
+
 </head>
 <body>
 <header class="site-header compact-site-header">
@@ -2466,12 +2617,12 @@
 <div class="founder-wide-shell">
 <div class="credibility-heading">
 <div class="section-label">Experience beyond the consultation room</div>
-<h2>Training, clinical experience, and professional writing.</h2>
+<h2>Experience, credentials, and writing.</h2>
 </div>
 <div class="credibility-grid">
 <article class="credibility-column clinical-experience-column">
 <h3>Clinical experience</h3>
-<p>Dr. Bryant’s background includes outpatient psychotherapy, community mental health, hospital-based behavioral health, trauma treatment, substance-use treatment, supervision, professional education, and interdisciplinary care.</p>
+<p>Dr. Bryant’s background spans outpatient psychotherapy, community mental health, hospital-based behavioral health, trauma and substance-use treatment, supervision, and interdisciplinary care.</p>
 <p class="small-note">Additional graduate education includes clinical psychology and forensic psychology.</p>
 </article>
 <article class="credibility-column selected-credentials-column" aria-label="Selected credentials">
@@ -2492,8 +2643,14 @@
 <img alt="Book covers by Dr. Stephen W. Bryant" src="founder-publications-books.png"/>
 </div>
 <div class="writing-mini-links">
+<div class="writing-mini-item">
 <a href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank">Beyond Burnt-Out</a>
+<span>Burnout and wellbeing in mental health care.</span>
+</div>
+<div class="writing-mini-item">
 <a href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank">The Scholastic Burnout Spiral</a>
+<span>Education, therapy readiness, and counselor burnout.</span>
+</div>
 </div>
 </article>
 </div>
