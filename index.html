@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <style id="stonebridge-home-full-bleed-refined">
+  <style id="stonebridge-home-spacing-refinement">
     :root{
       --home-bg:#f8f5f0;
       --home-paper:#f2ece4;
@@ -69,11 +69,11 @@
     }
 
     /* =========================
-       FULL-BLEED HERO
+       HERO
     ========================= */
     .home-hero{
       position:relative;
-      min-height:620px;
+      min-height:555px;
       overflow:hidden;
       background:#1c2d3f;
       isolation:isolate;
@@ -101,55 +101,42 @@
       background:
         linear-gradient(
           90deg,
-          rgba(12,31,49,.92) 0%,
-          rgba(12,31,49,.84) 24%,
-          rgba(12,31,49,.58) 43%,
-          rgba(12,31,49,.18) 63%,
-          rgba(12,31,49,.03) 100%
+          rgba(12,31,49,.94) 0%,
+          rgba(12,31,49,.84) 25%,
+          rgba(12,31,49,.55) 43%,
+          rgba(12,31,49,.16) 64%,
+          rgba(12,31,49,.02) 100%
         ),
         linear-gradient(
           180deg,
-          rgba(10,24,38,.18) 0%,
-          rgba(10,24,38,.04) 52%,
-          rgba(10,24,38,.24) 100%
+          rgba(10,24,38,.14) 0%,
+          rgba(10,24,38,.02) 54%,
+          rgba(10,24,38,.20) 100%
         );
-    }
-
-    .home-hero::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      height:1px;
-      background:rgba(255,255,255,.16);
-      z-index:1;
     }
 
     .home-hero-inner{
       width:min(1220px,calc(100% - 72px));
-      min-height:620px;
+      min-height:555px;
       margin:0 auto;
       display:flex;
       align-items:center;
-      padding:66px 0 58px;
+      padding:46px 0 42px;
     }
 
     .home-hero-copy{
-      width:min(610px,52%);
+      width:min(600px,51%);
       color:var(--home-white);
     }
 
-    .home-hero .home-label{
-      color:#e1c79c;
-    }
+    .home-hero .home-label{color:#e1c79c;}
 
     .home-hero h1{
-      margin:13px 0 0;
+      margin:12px 0 0;
       max-width:11.6ch;
       color:var(--home-white);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.65rem,5vw,5.15rem);
+      font-size:clamp(3.5rem,4.75vw,4.9rem);
       font-weight:700;
       line-height:1.01;
       letter-spacing:-.052em;
@@ -158,19 +145,19 @@
     }
 
     .home-hero-copy > p{
-      max-width:36rem;
-      margin:20px 0 0;
-      color:rgba(255,250,242,.88);
+      max-width:35rem;
+      margin:18px 0 0;
+      color:rgba(255,250,242,.89);
       font-family:"Inter",sans-serif;
-      font-size:1.03rem;
-      line-height:1.72;
+      font-size:1rem;
+      line-height:1.68;
     }
 
     .home-hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:13px;
-      margin-top:28px;
+      gap:12px;
+      margin-top:25px;
     }
 
     .home-hero-actions .btn-primary{
@@ -186,30 +173,30 @@
 
     .home-hero-actions .btn-secondary{
       background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.56);
+      border-color:rgba(255,255,255,.58);
       color:#fff;
       backdrop-filter:blur(4px);
     }
 
     .home-hero-actions .btn-secondary:hover{
       background:rgba(255,255,255,.14);
-      border-color:rgba(255,255,255,.78);
+      border-color:rgba(255,255,255,.80);
     }
 
     .home-hero-note{
-      max-width:41rem;
-      margin:15px 0 0;
-      color:rgba(255,250,242,.74);
+      max-width:40rem;
+      margin:13px 0 0;
+      color:rgba(255,250,242,.76);
       font-family:"Inter",sans-serif;
-      font-size:.78rem;
-      line-height:1.55;
+      font-size:.77rem;
+      line-height:1.5;
     }
 
     /* =========================
        TRUST STRIP
     ========================= */
     .home-trust{
-      background:#f2ece4;
+      background:var(--home-paper);
       border-bottom:1px solid var(--home-warm-line);
     }
 
@@ -220,17 +207,17 @@
       justify-content:center;
       align-items:center;
       flex-wrap:wrap;
-      gap:10px 18px;
-      padding:18px 0;
+      gap:9px 17px;
+      padding:14px 0;
       text-align:center;
     }
 
     .home-trust span{
-      color:#5c6570;
+      color:#545f6b;
       font-family:"Inter",sans-serif;
-      font-size:.86rem;
+      font-size:.84rem;
       font-weight:600;
-      line-height:1.45;
+      line-height:1.42;
     }
 
     .home-trust i{
@@ -243,43 +230,41 @@
 
     /* =========================
        RECOGNITION
+       Heading and concerns now share one relational grid.
     ========================= */
     .home-recognition{
-      padding:68px 0 72px;
+      padding:50px 0 54px;
       background:var(--home-bg);
     }
 
-    .home-recognition-head{
+    .home-recognition-layout{
       display:grid;
-      grid-template-columns:minmax(290px,.72fr) minmax(0,1.28fr);
-      gap:68px;
-      align-items:end;
-      margin-bottom:30px;
+      grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
+      gap:58px;
+      align-items:start;
     }
 
     .home-recognition h2,
     .home-philosophy h2,
     .home-begin h2{
-      margin:12px 0 0;
+      margin:11px 0 0;
       color:var(--home-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.45rem,3.6vw,3.45rem);
+      font-size:clamp(2.4rem,3.4vw,3.25rem);
       line-height:1.06;
       letter-spacing:-.04em;
       text-wrap:balance;
     }
 
-    .home-recognition h2{
-      max-width:14ch;
-    }
+    .home-recognition h2{max-width:14ch;}
 
-    .home-recognition-head > p{
-      max-width:39rem;
-      margin:0;
+    .home-recognition-copy > p{
+      max-width:31rem;
+      margin:15px 0 0;
       color:var(--home-muted);
       font-family:"Inter",sans-serif;
-      font-size:.97rem;
-      line-height:1.72;
+      font-size:.94rem;
+      line-height:1.66;
     }
 
     .home-recognition-grid{
@@ -290,7 +275,8 @@
     }
 
     .home-recognition-item{
-      padding:23px 26px 22px;
+      min-height:142px;
+      padding:18px 21px 17px;
       border-right:1px solid var(--home-line);
       border-bottom:1px solid var(--home-line);
     }
@@ -299,114 +285,115 @@
       margin:0;
       color:var(--home-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:1.45rem;
+      font-size:1.34rem;
       font-weight:600;
       line-height:1.14;
-      letter-spacing:-.018em;
+      letter-spacing:-.016em;
     }
 
     .home-recognition-item p{
-      margin:8px 0 0;
+      margin:7px 0 0;
       color:var(--home-muted);
       font-family:"Inter",sans-serif;
-      font-size:.9rem;
-      line-height:1.58;
+      font-size:.87rem;
+      line-height:1.54;
     }
 
     /* =========================
        PHILOSOPHY
+       Uses width rather than excess vertical space.
     ========================= */
     .home-philosophy{
-      padding:66px 0 64px;
+      padding:50px 0 52px;
       background:linear-gradient(135deg,var(--home-blue),var(--home-blue-deep));
       color:var(--home-white);
     }
 
-    .home-philosophy .home-label{
-      color:#d8c095;
+    .home-philosophy-layout{
+      display:grid;
+      grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);
+      gap:60px;
+      align-items:start;
     }
 
+    .home-philosophy .home-label{color:#d8c095;}
+
     .home-philosophy h2{
-      max-width:16ch;
+      max-width:14ch;
       color:var(--home-white);
-      font-size:clamp(2.9rem,4.5vw,4.2rem);
+      font-size:clamp(2.75rem,4.1vw,3.9rem);
       line-height:1.03;
     }
 
     .home-philosophy-sub{
-      max-width:42rem;
-      margin:17px 0 0;
+      max-width:34rem;
+      margin:15px 0 0;
       color:rgba(255,250,242,.82);
       font-family:"Inter",sans-serif;
-      font-size:.96rem;
-      line-height:1.68;
+      font-size:.94rem;
+      line-height:1.64;
     }
 
     .home-principles{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      margin-top:34px;
       border-top:1px solid rgba(255,255,255,.20);
     }
 
     .home-principle{
-      padding:20px 28px 0 0;
-    }
-
-    .home-principle + .home-principle{
-      padding-left:28px;
-      border-left:1px solid rgba(255,255,255,.16);
+      display:grid;
+      grid-template-columns:165px minmax(0,1fr);
+      gap:22px;
+      align-items:start;
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,.16);
     }
 
     .home-principle h3{
-      margin:0 0 7px;
+      margin:0;
       color:var(--home-white);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:1.42rem;
+      font-size:1.34rem;
       line-height:1.1;
-      letter-spacing:-.018em;
+      letter-spacing:-.016em;
     }
 
     .home-principle p{
       margin:0;
-      color:rgba(255,250,242,.78);
+      color:rgba(255,250,242,.79);
       font-family:"Inter",sans-serif;
-      font-size:.89rem;
-      line-height:1.6;
+      font-size:.87rem;
+      line-height:1.55;
     }
 
     /* =========================
        FINAL INVITATION
     ========================= */
     .home-begin{
-      padding:60px 0 64px;
+      padding:48px 0 52px;
       background:var(--home-paper);
       border-bottom:1px solid var(--home-warm-line);
     }
 
     .home-begin-inner{
       display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(310px,.62fr);
-      gap:70px;
+      grid-template-columns:minmax(0,1fr) minmax(310px,.60fr);
+      gap:60px;
       align-items:center;
     }
 
-    .home-begin h2{
-      max-width:13ch;
-    }
+    .home-begin h2{max-width:13ch;}
 
     .home-begin-copy > p{
-      max-width:42rem;
-      margin:16px 0 0;
+      max-width:40rem;
+      margin:14px 0 0;
       color:var(--home-muted);
       font-family:"Inter",sans-serif;
-      font-size:.96rem;
-      line-height:1.68;
+      font-size:.94rem;
+      line-height:1.64;
     }
 
     .home-begin-actions{
       display:grid;
-      gap:12px;
+      gap:11px;
     }
 
     .home-begin-actions .btn{
@@ -416,11 +403,11 @@
     }
 
     .home-begin-note{
-      margin:12px 0 0;
+      margin:10px 0 0;
       color:var(--home-muted);
       font-family:"Inter",sans-serif;
-      font-size:.75rem;
-      line-height:1.5;
+      font-size:.74rem;
+      line-height:1.46;
       text-align:center;
     }
 
@@ -432,44 +419,28 @@
     }
 
     @media(max-width:1080px){
-      .home-hero{
-        min-height:580px;
-      }
+      .home-hero{min-height:540px;}
+      .home-hero-inner{min-height:540px;}
+      .home-hero-copy{width:min(620px,64%);}
 
       .home-hero::before{
         background:
-          linear-gradient(90deg,rgba(12,31,49,.92) 0%,rgba(12,31,49,.80) 45%,rgba(12,31,49,.30) 74%,rgba(12,31,49,.08) 100%),
-          linear-gradient(180deg,rgba(10,24,38,.18),rgba(10,24,38,.22));
+          linear-gradient(90deg,rgba(12,31,49,.93) 0%,rgba(12,31,49,.81) 46%,rgba(12,31,49,.28) 76%,rgba(12,31,49,.06) 100%),
+          linear-gradient(180deg,rgba(10,24,38,.16),rgba(10,24,38,.20));
       }
 
-      .home-hero-inner{
-        min-height:580px;
-      }
-
-      .home-hero-copy{
-        width:min(620px,62%);
-      }
-
-      .home-recognition-head,
+      .home-recognition-layout,
+      .home-philosophy-layout,
       .home-begin-inner{
         grid-template-columns:1fr;
-        gap:30px;
+        gap:28px;
       }
 
-      .home-principles{
-        grid-template-columns:1fr;
+      .home-principle{
+        grid-template-columns:180px minmax(0,1fr);
       }
 
-      .home-principle,
-      .home-principle + .home-principle{
-        padding:18px 0;
-        border-left:0;
-        border-bottom:1px solid rgba(255,255,255,.16);
-      }
-
-      .home-begin-actions{
-        max-width:430px;
-      }
+      .home-begin-actions{max-width:430px;}
     }
 
     @media(max-width:760px){
@@ -479,32 +450,26 @@
         width:min(100% - 34px,1120px);
       }
 
-      .home-hero{
-        min-height:620px;
-      }
+      .home-hero{min-height:600px;}
 
-      .home-hero-media img{
-        object-position:62% center;
-      }
+      .home-hero-media img{object-position:62% center;}
 
       .home-hero::before{
         background:
-          linear-gradient(180deg,rgba(12,31,49,.78) 0%,rgba(12,31,49,.72) 52%,rgba(12,31,49,.58) 100%),
-          linear-gradient(90deg,rgba(12,31,49,.46),rgba(12,31,49,.08));
+          linear-gradient(180deg,rgba(12,31,49,.76) 0%,rgba(12,31,49,.70) 54%,rgba(12,31,49,.58) 100%),
+          linear-gradient(90deg,rgba(12,31,49,.48),rgba(12,31,49,.10));
       }
 
       .home-hero-inner{
-        min-height:620px;
+        min-height:600px;
         align-items:flex-end;
-        padding:54px 0 46px;
+        padding:48px 0 42px;
       }
 
-      .home-hero-copy{
-        width:100%;
-      }
+      .home-hero-copy{width:100%;}
 
       .home-hero h1{
-        font-size:clamp(3rem,12.5vw,4rem);
+        font-size:clamp(2.9rem,12.5vw,3.95rem);
         max-width:10.8ch;
       }
 
@@ -516,23 +481,28 @@
 
       .home-trust-inner{
         display:grid;
-        gap:6px;
+        gap:5px;
         text-align:left;
       }
 
-      .home-trust i{
-        display:none;
-      }
+      .home-trust i{display:none;}
 
       .home-recognition,
       .home-philosophy,
       .home-begin{
-        padding-top:46px;
-        padding-bottom:48px;
+        padding-top:40px;
+        padding-bottom:42px;
       }
 
-      .home-recognition-grid{
+      .home-recognition-grid{grid-template-columns:1fr;}
+
+      .home-recognition-item{
+        min-height:0;
+      }
+
+      .home-principle{
         grid-template-columns:1fr;
+        gap:6px;
       }
     }
   </style>
@@ -597,12 +567,10 @@
     </section>
 
     <section class="home-recognition">
-      <div class="home-shell">
-        <div class="home-recognition-head">
-          <div>
-            <div class="home-label">When therapy may help</div>
-            <h2>You may be here because something keeps repeating.</h2>
-          </div>
+      <div class="home-shell home-recognition-layout">
+        <div class="home-recognition-copy">
+          <div class="home-label">When therapy may help</div>
+          <h2>You may be here because something keeps repeating.</h2>
           <p>You do not need a diagnosis, a polished explanation, or perfect language before reaching out. Therapy can begin with what you notice now.</p>
         </div>
 
@@ -631,10 +599,12 @@
     </section>
 
     <section class="home-philosophy">
-      <div class="home-shell">
-        <div class="home-label">The Stonebridge approach</div>
-        <h2>Care can be clear without becoming cold.</h2>
-        <p class="home-philosophy-sub">Stonebridge pairs relational depth with a steady clinical frame so therapy can feel personal, thoughtful, and dependable.</p>
+      <div class="home-shell home-philosophy-layout">
+        <div>
+          <div class="home-label">The Stonebridge approach</div>
+          <h2>Care can be clear without becoming cold.</h2>
+          <p class="home-philosophy-sub">Stonebridge pairs relational depth with a steady clinical frame so therapy can feel personal, thoughtful, and dependable.</p>
+        </div>
 
         <div class="home-principles">
           <article class="home-principle">
