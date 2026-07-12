@@ -1428,21 +1428,54 @@
 
 
 <style id="stonebridge-founder-availability-refine">
-  /* Founder profile: compact introduction with one clear scheduling action. */
+  /* Founder profile: one clear scheduling action, balanced portrait framing, and a tighter hero. */
   .founder-page .founder-intro-inner{
-    grid-template-columns:minmax(0,1fr) 285px !important;
-    align-items:center !important;
-    gap:46px !important;
-    padding-top:38px !important;
+    width:min(1160px, calc(100% - 72px)) !important;
+    grid-template-columns:minmax(0,1fr) 320px !important;
+    align-items:start !important;
+    gap:38px !important;
+    padding-top:40px !important;
     padding-bottom:34px !important;
   }
-  .founder-page .founder-intro-copy{max-width:780px;}
-  .founder-page .founder-portrait{max-width:285px !important;}
-  .founder-page .portrait-frame{
-    aspect-ratio:4 / 4.7 !important;
-    border-radius:28px 28px 5px 28px;
+  .founder-page .founder-intro-copy{
+    max-width:760px;
+    padding-top:4px;
   }
-  .founder-page .portrait-caption{padding-top:10px;}
+  .founder-page .founder-portrait{
+    position:relative;
+    justify-self:end;
+    max-width:320px !important;
+    margin:0 !important;
+    padding:10px 10px 12px;
+    border:1px solid rgba(33,49,66,.12);
+    border-radius:30px 30px 8px 30px;
+    background:rgba(255,255,255,.62);
+    box-shadow:0 20px 44px rgba(33,49,66,.09);
+  }
+  .founder-page .founder-portrait::before{
+    content:"";
+    position:absolute;
+    top:-9px;
+    right:-9px;
+    width:44%;
+    height:34%;
+    border-top:2px solid rgba(200,171,120,.85);
+    border-right:2px solid rgba(200,171,120,.85);
+    border-radius:0 28px 0 0;
+    pointer-events:none;
+  }
+  .founder-page .portrait-frame{
+    aspect-ratio:4 / 4.55 !important;
+    border:0 !important;
+    border-radius:22px 22px 5px 22px !important;
+    box-shadow:none !important;
+  }
+  .founder-page .portrait-caption{
+    padding:11px 4px 0;
+  }
+  .founder-page .portrait-caption strong{
+    font-size:1.02rem;
+  }
   .founder-page .founder-rule{margin-bottom:17px;}
   .founder-page .founder-intro-copy > p{margin-top:12px;}
   .founder-page .founder-actions{margin-top:20px;}
@@ -1458,16 +1491,34 @@
     grid-column:1 / -1;
     max-width:760px;
   }
+  .founder-page .founder-final-inner{
+    width:min(1080px, calc(100% - 72px));
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:32px;
+    padding:34px 0;
+  }
+  .founder-page .founder-final-band h2{
+    max-width:18ch;
+    margin-bottom:6px;
+  }
+  .founder-page .founder-final-band p{
+    max-width:650px;
+  }
   @media(max-width:980px){
     .founder-page .founder-intro-inner{
+      width:min(100% - 34px, 1160px) !important;
       grid-template-columns:1fr !important;
-      gap:26px !important;
-      padding-top:40px !important;
-      padding-bottom:38px !important;
+      gap:24px !important;
+      padding-top:38px !important;
+      padding-bottom:36px !important;
     }
     .founder-page .founder-portrait{
       max-width:320px !important;
       justify-self:start;
+    }
+    .founder-page .founder-final-inner{
+      width:min(100% - 34px,1080px);
+      grid-template-columns:1fr;
     }
   }
 </style>
@@ -1688,6 +1739,15 @@
 <p>This pathway is not emergency care, crisis response, psychological testing, forensic or court-related evaluation, or a substitute for a higher level of care when that is clinically needed.</p>
 <p>When Stonebridge is not the right level or type of care, referral direction may be discussed when possible.</p></div>
 </div>
+</div>
+</section>
+<section aria-label="Begin with a brief inquiry" class="founder-final-band">
+<div class="founder-final-inner">
+<div>
+<h2>A brief note is enough to begin.</h2>
+<p>Share what you are looking for, and Stonebridge will review fit, scope, and next steps before intake.</p>
+</div>
+<a class="btn btn-secondary" href="contact.html">Send a Waitlist Inquiry</a>
 </div>
 </section>
 
