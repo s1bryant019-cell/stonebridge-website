@@ -52,7 +52,7 @@
     /* Full-width photographic hero with a restrained, practical treatment for fees. */
     .fees-hero{
       position:relative;
-      min-height:470px;
+      min-height:440px;
       overflow:hidden;
       isolation:isolate;
       background:var(--fees-navy-deep);
@@ -86,7 +86,7 @@
       position:relative;
       z-index:2;
       width:min(1220px,calc(100% - 72px));
-      min-height:470px;
+      min-height:440px;
       margin:0 auto;
       display:flex;
       flex-direction:column;
@@ -121,10 +121,10 @@
 
     .fees-hero h1{
       margin:10px 0 0;
-      max-width:11.5ch;
+      max-width:14ch;
       color:var(--fees-white);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.2rem,4.35vw,4.6rem);
+      font-size:clamp(3.05rem,4vw,4.25rem);
       line-height:1.01;
       letter-spacing:-.05em;
       text-wrap:balance;
@@ -286,55 +286,39 @@
       line-height:1.66;
     }
 
-    /* Payment options stay directly related to the section introduction. */
-    .fees-payment-grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:0 34px;
+    /* A single, predictable list keeps insurance information easy to scan. */
+    .fees-payment-list{
       border-top:1px solid var(--fees-line);
     }
 
-    .fees-payment-item{
-      padding:20px 0 18px;
+    .fees-payment-row{
+      display:grid;
+      grid-template-columns:190px minmax(0,1fr);
+      gap:24px;
+      padding:17px 0;
       border-bottom:1px solid var(--fees-line);
     }
 
-    .fees-payment-item h3,
+    .fees-payment-row h3,
     .fees-policy h3{
-      margin:7px 0 8px;
+      margin:0;
       color:var(--fees-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:1.55rem;
+      font-size:1.42rem;
       line-height:1.1;
       letter-spacing:-.02em;
     }
 
-    .fees-payment-item p,
+    .fees-payment-row p,
     .fees-policy p,
     .fees-policy li{
       color:var(--fees-muted);
       font-family:"Inter",sans-serif;
-      font-size:.92rem;
+      font-size:.91rem;
       line-height:1.62;
     }
 
-    .fees-responsibility{
-      grid-column:1 / -1;
-      display:grid;
-      grid-template-columns:180px minmax(0,1fr);
-      gap:24px;
-      padding:18px 0;
-      border-bottom:1px solid var(--fees-line);
-    }
-
-    .fees-responsibility strong{
-      color:var(--fees-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.25rem;
-      line-height:1.15;
-    }
-
-    .fees-responsibility p{margin:0;}
+    .fees-payment-row p{margin:0;}
 
     .fee-table-wrap{
       overflow-x:auto;
@@ -402,6 +386,30 @@
       color:#75654e;
       font-size:.74rem;
       font-weight:600;
+    }
+
+    .fees-professional-note{
+      display:grid;
+      grid-template-columns:180px minmax(0,1fr) auto;
+      gap:24px;
+      align-items:center;
+      padding:18px 0 0;
+    }
+
+    .fees-professional-note strong{
+      color:var(--fees-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.25rem;
+      line-height:1.15;
+    }
+
+    .fees-professional-note p{
+      max-width:43rem;
+      margin:0;
+      color:var(--fees-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.86rem;
+      line-height:1.58;
     }
 
     .fees-policy-list{
@@ -495,7 +503,7 @@
     @media(max-width:1080px){
       .fees-hero,
       .fees-hero-copy{
-        min-height:500px;
+        min-height:460px;
       }
       .fees-hero-copy{
         width:min(100% - 44px,860px);
@@ -524,6 +532,14 @@
         grid-template-columns:1fr;
       }
       .fees-relational-layout{gap:26px;}
+      .fees-payment-row,
+      .fees-professional-note{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+      .fees-professional-note .btn{
+        justify-self:start;
+      }
       .fees-policy{gap:14px;}
       .fees-cta-inner{gap:18px;}
     }
@@ -536,7 +552,7 @@
       }
       .fees-hero,
       .fees-hero-copy{
-        min-height:560px;
+        min-height:520px;
       }
       .fees-hero-copy{
         width:min(100% - 34px,1080px);
@@ -573,16 +589,20 @@
         border-top:0;
       }
       .fees-hero h1{
-        max-width:12ch;
-        font-size:clamp(2.75rem,12vw,3.8rem);
+        max-width:14ch;
+        font-size:clamp(2.5rem,10.5vw,3.45rem);
       }
       .fees-section{padding:44px 0;}
-      .fees-payment-grid{
-        grid-template-columns:1fr;
+      .fees-payment-row{
+        gap:7px;
       }
-      .fees-responsibility{
-        grid-template-columns:1fr;
-        gap:8px;
+      .fees-professional-note{
+        gap:9px;
+      }
+      .fees-professional-note .btn{
+        width:100%;
+        justify-content:center;
+        text-align:center;
       }
       .fees-policy{
         gap:9px;
@@ -661,23 +681,21 @@
           <h2>Insurance and payment options.</h2>
         </div>
 
-        <div class="fees-payment-grid">
-          <article class="fees-payment-item">
-            <div class="fees-card-label">Accepted now</div>
-            <h3>BCBS Illinois commercial plans</h3>
+        <div class="fees-payment-list">
+          <article class="fees-payment-row">
+            <h3>Accepted insurance</h3>
             <p>Stonebridge currently accepts BCBS Illinois commercial PPO, Blue Choice, and Blue High Performance plans. This does not include Blue Cross Community Health Plans.</p>
           </article>
 
-          <article class="fees-payment-item">
-            <div class="fees-card-label">Other ways to pay</div>
+          <article class="fees-payment-row">
             <h3>Private pay and out-of-network benefits</h3>
-            <p>Private pay, out-of-network reimbursement when applicable, and limited reduced-fee options may be discussed.</p>
+            <p>Private pay, possible out-of-network reimbursement, and limited reduced-fee arrangements may be discussed before care begins.</p>
           </article>
 
-          <div class="fees-responsibility">
-            <strong>What insurance may still leave you responsible for</strong>
+          <article class="fees-payment-row">
+            <h3>Client responsibility</h3>
             <p>Copays, deductibles, coinsurance, non-covered services, and missed appointments may still apply. Benefits are verified before billing begins, but verification is not a guarantee of payment.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -685,9 +703,9 @@
     <section class="fees-section paper" id="fee-schedule">
       <div class="fees-shell fees-relational-layout">
         <div class="fees-relational-intro">
-          <div class="fees-label">Standard rates</div>
-          <h2>Fee schedule.</h2>
-          <p>Rates are reviewed before care begins. Benefits, reimbursement, or an approved reduced-fee arrangement may change the amount owed.</p>
+          <div class="fees-label">Client care rates</div>
+          <h2>Psychotherapy fee schedule.</h2>
+          <p>These are standard client-care rates. Benefits, reimbursement, or an approved reduced-fee arrangement may change the amount owed.</p>
         </div>
 
         <div class="fee-table-wrap" role="region" aria-label="Standard fee schedule" tabindex="0">
@@ -711,11 +729,14 @@
               <tr><td>Group psychotherapy <span class="fee-code">90853</span></td><td>Per group session</td><td>$90</td></tr>
               <tr><td>Interactive complexity add-on <span class="fee-code">90785</span></td><td>When clinically applicable</td><td>$60</td></tr>
               <tr><td>Care coordination / clinical administration</td><td>15 minutes</td><td>$60</td></tr>
-              <tr><td>Report writing / letters</td><td>Per hour</td><td>$300</td></tr>
-              <tr><td>Peer review / professional consultation</td><td>Per hour</td><td>$200</td></tr>
-              <tr><td>Webinar / continuing education</td><td>Per event</td><td>$450</td></tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="fees-professional-note">
+          <strong>Professional services</strong>
+          <p>Consultation, external supervision, assessment-report support, scholarly review, and professional education use a separate service pathway and fee schedule.</p>
+          <a class="btn btn-secondary" href="for-clinicians.html#professional-fees">View Professional Fees</a>
         </div>
       </div>
     </section>
@@ -725,17 +746,17 @@
         <div class="fees-policy-list">
           <article class="fees-policy">
             <div class="fees-policy-heading">
-              <div class="fees-label">Credentialing pipeline</div>
-              <h3>Not yet active for billing.</h3>
+              <div class="fees-label">Not currently accepted</div>
+              <h3>Additional networks.</h3>
             </div>
             <div class="fees-policy-content">
               <ul>
                 <li>Aetna</li>
                 <li>Illinois Medicaid / IMPACT</li>
                 <li>Blue Cross Community Health Plans / BCCHP — enrollment still in progress</li>
-                <li>Cigna / Evernorth after network reopening</li>
+                <li>Cigna / Evernorth</li>
               </ul>
-              <p>These networks are in process or planned and are not currently active for billing. Blue Cross Community Health Plans / BCCHP is separate from the BCBS Illinois commercial plans Stonebridge currently accepts.</p>
+              <p>Stonebridge is not currently able to bill these plans. Blue Cross Community Health Plans / BCCHP is separate from the BCBS Illinois commercial plans Stonebridge currently accepts. Coverage status should be confirmed before scheduling.</p>
             </div>
           </article>
 
@@ -760,8 +781,8 @@
     <section class="fees-cta">
       <div class="fees-cta-inner">
         <div>
-          <h2>Questions about benefits or payment?</h2>
-          <p>Send a brief inquiry so insurance, fees, and next steps can be reviewed.</p>
+          <h2>Questions about coverage or cost?</h2>
+          <p>Send a brief inquiry so benefits, expected responsibility, and next steps can be reviewed.</p>
         </div>
         <a class="btn btn-secondary" href="contact.html">Send an Inquiry</a>
       </div>
