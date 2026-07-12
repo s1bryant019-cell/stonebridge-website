@@ -18,16 +18,16 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <style id="stonebridge-home-calm-confidence">
+  <style id="stonebridge-home-full-bleed-refined">
     :root{
       --home-bg:#f8f5f0;
-      --home-paper:#f1ebe3;
+      --home-paper:#f2ece4;
       --home-ink:#213142;
       --home-muted:#5d6870;
       --home-blue:#163b61;
       --home-blue-deep:#102f4d;
       --home-gold:#78613f;
-      --home-gold-soft:#b89661;
+      --home-gold-soft:#c0a06a;
       --home-line:rgba(33,49,66,.14);
       --home-warm-line:rgba(212,200,185,.74);
       --home-white:#fffaf2;
@@ -61,124 +61,31 @@
     .home-label{
       color:var(--home-gold);
       font-family:"Inter",sans-serif;
-      font-size:.68rem;
+      font-size:.69rem;
       font-weight:800;
       letter-spacing:.18em;
       line-height:1.35;
       text-transform:uppercase;
     }
 
-    .home-text-link{
-      color:var(--home-ink);
-      font-family:"Inter",sans-serif;
-      font-size:.9rem;
-      font-weight:700;
-      text-decoration:underline;
-      text-decoration-thickness:1px;
-      text-underline-offset:4px;
-    }
-
+    /* =========================
+       FULL-BLEED HERO
+    ========================= */
     .home-hero{
       position:relative;
-      min-height:545px;
+      min-height:620px;
       overflow:hidden;
-      background:linear-gradient(180deg,#fbf8f4 0%,#f5efe7 100%);
-      border-bottom:1px solid var(--home-warm-line);
+      background:#1c2d3f;
+      isolation:isolate;
     }
 
-    .home-hero-inner{
-      position:relative;
-      z-index:2;
-      width:min(1220px,calc(100% - 72px));
-      min-height:545px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      padding:48px 0;
-    }
-
-    .home-hero-copy{
-      width:52%;
-      max-width:650px;
-      padding-right:72px;
-    }
-
-    .home-hero-copy::before{
-      content:"";
-      display:block;
-      width:42px;
-      height:2px;
-      margin-bottom:20px;
-      background:var(--home-gold-soft);
-    }
-
-    .home-hero h1{
-      margin:11px 0 0;
-      max-width:12.5ch;
-      color:var(--home-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.35rem,4.7vw,4.8rem);
-      font-weight:700;
-      line-height:1.02;
-      letter-spacing:-.05em;
-      text-wrap:balance;
-    }
-
-    .home-hero-copy > p{
-      max-width:36rem;
-      margin:19px 0 0;
-      color:var(--home-muted);
-      font-family:"Inter",sans-serif;
-      font-size:1rem;
-      line-height:1.7;
-    }
-
-    .home-hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      gap:17px;
-      margin-top:26px;
-    }
-
-    .home-hero-note{
-      display:flex;
-      flex-wrap:wrap;
-      gap:7px 14px;
-      margin-top:17px;
-      color:#75664f;
-      font-family:"Inter",sans-serif;
-      font-size:.76rem;
-      line-height:1.48;
-    }
-
-    .home-hero-note span{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-    }
-
-    .home-hero-note span + span::before{
-      content:"";
-      width:4px;
-      height:4px;
-      border-radius:50%;
-      background:var(--home-gold-soft);
-      flex:0 0 4px;
-    }
-
-    .home-hero-image{
+    .home-hero-media{
       position:absolute;
-      inset:0 0 0 auto;
-      width:48vw;
-      min-width:640px;
-      margin:0;
-      overflow:hidden;
-      background:#d8d0c6;
-      border-top-left-radius:48px;
+      inset:0;
+      z-index:-3;
     }
 
-    .home-hero-image img{
+    .home-hero-media img{
       width:100%;
       height:100%;
       display:block;
@@ -186,26 +93,168 @@
       object-position:center;
     }
 
-    .home-hero-image::after{
+    .home-hero::before{
       content:"";
       position:absolute;
       inset:0;
+      z-index:-2;
       background:
-        linear-gradient(90deg,rgba(16,47,77,.34) 0%,rgba(16,47,77,.08) 26%,rgba(16,47,77,0) 48%),
-        linear-gradient(180deg,rgba(10,20,34,0) 58%,rgba(10,20,34,.12) 100%);
-      pointer-events:none;
+        linear-gradient(
+          90deg,
+          rgba(12,31,49,.92) 0%,
+          rgba(12,31,49,.84) 24%,
+          rgba(12,31,49,.58) 43%,
+          rgba(12,31,49,.18) 63%,
+          rgba(12,31,49,.03) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(10,24,38,.18) 0%,
+          rgba(10,24,38,.04) 52%,
+          rgba(10,24,38,.24) 100%
+        );
     }
 
+    .home-hero::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:1px;
+      background:rgba(255,255,255,.16);
+      z-index:1;
+    }
+
+    .home-hero-inner{
+      width:min(1220px,calc(100% - 72px));
+      min-height:620px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      padding:66px 0 58px;
+    }
+
+    .home-hero-copy{
+      width:min(610px,52%);
+      color:var(--home-white);
+    }
+
+    .home-hero .home-label{
+      color:#e1c79c;
+    }
+
+    .home-hero h1{
+      margin:13px 0 0;
+      max-width:11.6ch;
+      color:var(--home-white);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(3.65rem,5vw,5.15rem);
+      font-weight:700;
+      line-height:1.01;
+      letter-spacing:-.052em;
+      text-wrap:balance;
+      text-shadow:0 10px 30px rgba(0,0,0,.18);
+    }
+
+    .home-hero-copy > p{
+      max-width:36rem;
+      margin:20px 0 0;
+      color:rgba(255,250,242,.88);
+      font-family:"Inter",sans-serif;
+      font-size:1.03rem;
+      line-height:1.72;
+    }
+
+    .home-hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:13px;
+      margin-top:28px;
+    }
+
+    .home-hero-actions .btn-primary{
+      background:#f4eee4;
+      border-color:#f4eee4;
+      color:var(--home-blue-deep);
+    }
+
+    .home-hero-actions .btn-primary:hover{
+      background:#fffaf2;
+      border-color:#fffaf2;
+    }
+
+    .home-hero-actions .btn-secondary{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.56);
+      color:#fff;
+      backdrop-filter:blur(4px);
+    }
+
+    .home-hero-actions .btn-secondary:hover{
+      background:rgba(255,255,255,.14);
+      border-color:rgba(255,255,255,.78);
+    }
+
+    .home-hero-note{
+      max-width:41rem;
+      margin:15px 0 0;
+      color:rgba(255,250,242,.74);
+      font-family:"Inter",sans-serif;
+      font-size:.78rem;
+      line-height:1.55;
+    }
+
+    /* =========================
+       TRUST STRIP
+    ========================= */
+    .home-trust{
+      background:#f2ece4;
+      border-bottom:1px solid var(--home-warm-line);
+    }
+
+    .home-trust-inner{
+      width:min(1120px,calc(100% - 72px));
+      margin:0 auto;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      padding:18px 0;
+      text-align:center;
+    }
+
+    .home-trust span{
+      color:#5c6570;
+      font-family:"Inter",sans-serif;
+      font-size:.86rem;
+      font-weight:600;
+      line-height:1.45;
+    }
+
+    .home-trust i{
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background:var(--home-gold-soft);
+      flex:0 0 4px;
+    }
+
+    /* =========================
+       RECOGNITION
+    ========================= */
     .home-recognition{
-      padding:72px 0 76px;
+      padding:68px 0 72px;
       background:var(--home-bg);
     }
 
-    .home-recognition-grid{
+    .home-recognition-head{
       display:grid;
       grid-template-columns:minmax(290px,.72fr) minmax(0,1.28fr);
-      gap:72px;
-      align-items:start;
+      gap:68px;
+      align-items:end;
+      margin-bottom:30px;
     }
 
     .home-recognition h2,
@@ -214,60 +263,79 @@
       margin:12px 0 0;
       color:var(--home-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.65rem,4vw,3.75rem);
-      line-height:1.05;
-      letter-spacing:-.043em;
+      font-size:clamp(2.45rem,3.6vw,3.45rem);
+      line-height:1.06;
+      letter-spacing:-.04em;
       text-wrap:balance;
     }
 
     .home-recognition h2{
-      max-width:13ch;
+      max-width:14ch;
     }
 
-    .home-recognition-copy > p{
-      max-width:30rem;
-      margin:17px 0 0;
+    .home-recognition-head > p{
+      max-width:39rem;
+      margin:0;
       color:var(--home-muted);
       font-family:"Inter",sans-serif;
-      font-size:.96rem;
-      line-height:1.7;
+      font-size:.97rem;
+      line-height:1.72;
     }
 
-    .home-recognition-list{
+    .home-recognition-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
       border-top:1px solid var(--home-line);
+      border-left:1px solid var(--home-line);
     }
 
-    .home-recognition-line{
-      padding:19px 0 18px;
+    .home-recognition-item{
+      padding:23px 26px 22px;
+      border-right:1px solid var(--home-line);
       border-bottom:1px solid var(--home-line);
+    }
+
+    .home-recognition-item h3{
+      margin:0;
       color:var(--home-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(1.55rem,2.25vw,2.15rem);
+      font-size:1.45rem;
       font-weight:600;
-      line-height:1.12;
-      letter-spacing:-.022em;
+      line-height:1.14;
+      letter-spacing:-.018em;
     }
 
+    .home-recognition-item p{
+      margin:8px 0 0;
+      color:var(--home-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.9rem;
+      line-height:1.58;
+    }
+
+    /* =========================
+       PHILOSOPHY
+    ========================= */
     .home-philosophy{
-      padding:70px 0 68px;
+      padding:66px 0 64px;
       background:linear-gradient(135deg,var(--home-blue),var(--home-blue-deep));
       color:var(--home-white);
     }
 
     .home-philosophy .home-label{
-      color:#d6be94;
+      color:#d8c095;
     }
 
     .home-philosophy h2{
-      max-width:18ch;
+      max-width:16ch;
       color:var(--home-white);
-      font-size:clamp(3rem,4.8vw,4.55rem);
-      line-height:1.02;
+      font-size:clamp(2.9rem,4.5vw,4.2rem);
+      line-height:1.03;
     }
 
     .home-philosophy-sub{
       max-width:42rem;
-      margin:18px 0 0;
+      margin:17px 0 0;
       color:rgba(255,250,242,.82);
       font-family:"Inter",sans-serif;
       font-size:.96rem;
@@ -277,12 +345,12 @@
     .home-principles{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
-      margin-top:38px;
+      margin-top:34px;
       border-top:1px solid rgba(255,255,255,.20);
     }
 
     .home-principle{
-      padding:21px 28px 0 0;
+      padding:20px 28px 0 0;
     }
 
     .home-principle + .home-principle{
@@ -294,21 +362,24 @@
       margin:0 0 7px;
       color:var(--home-white);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:1.5rem;
+      font-size:1.42rem;
       line-height:1.1;
-      letter-spacing:-.02em;
+      letter-spacing:-.018em;
     }
 
     .home-principle p{
       margin:0;
       color:rgba(255,250,242,.78);
       font-family:"Inter",sans-serif;
-      font-size:.9rem;
+      font-size:.89rem;
       line-height:1.6;
     }
 
+    /* =========================
+       FINAL INVITATION
+    ========================= */
     .home-begin{
-      padding:64px 0 68px;
+      padding:60px 0 64px;
       background:var(--home-paper);
       border-bottom:1px solid var(--home-warm-line);
     }
@@ -316,17 +387,17 @@
     .home-begin-inner{
       display:grid;
       grid-template-columns:minmax(0,1fr) minmax(310px,.62fr);
-      gap:72px;
+      gap:70px;
       align-items:center;
     }
 
     .home-begin h2{
-      max-width:14ch;
+      max-width:13ch;
     }
 
     .home-begin-copy > p{
-      max-width:43rem;
-      margin:17px 0 0;
+      max-width:42rem;
+      margin:16px 0 0;
       color:var(--home-muted);
       font-family:"Inter",sans-serif;
       font-size:.96rem;
@@ -360,43 +431,109 @@
       box-shadow:0 0 0 5px var(--home-blue-deep);
     }
 
-    @media(max-width:1260px){
-      .home-hero-image{width:46vw;min-width:560px;}
-      .home-hero-copy{width:54%;padding-right:56px;}
-      .home-hero h1{font-size:clamp(3.2rem,4.4vw,4.45rem);}
-    }
-
     @media(max-width:1080px){
-      .home-hero{min-height:auto;}
-      .home-hero-inner{min-height:auto;display:block;padding:46px 0 36px;}
-      .home-hero-copy{width:100%;max-width:720px;padding-right:0;}
-      .home-hero-image{
-        position:relative;
-        width:min(1180px,calc(100% - 56px));
-        min-width:0;
-        height:430px;
-        margin:0 auto;
-        border-top-left-radius:36px;
+      .home-hero{
+        min-height:580px;
       }
-      .home-recognition-grid,.home-begin-inner{grid-template-columns:1fr;gap:32px;}
-      .home-principles{grid-template-columns:1fr;}
-      .home-principle,.home-principle + .home-principle{
+
+      .home-hero::before{
+        background:
+          linear-gradient(90deg,rgba(12,31,49,.92) 0%,rgba(12,31,49,.80) 45%,rgba(12,31,49,.30) 74%,rgba(12,31,49,.08) 100%),
+          linear-gradient(180deg,rgba(10,24,38,.18),rgba(10,24,38,.22));
+      }
+
+      .home-hero-inner{
+        min-height:580px;
+      }
+
+      .home-hero-copy{
+        width:min(620px,62%);
+      }
+
+      .home-recognition-head,
+      .home-begin-inner{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .home-principles{
+        grid-template-columns:1fr;
+      }
+
+      .home-principle,
+      .home-principle + .home-principle{
         padding:18px 0;
         border-left:0;
         border-bottom:1px solid rgba(255,255,255,.16);
       }
-      .home-begin-actions{max-width:430px;}
+
+      .home-begin-actions{
+        max-width:430px;
+      }
     }
 
-    @media(max-width:720px){
-      .home-shell,.home-hero-inner,.home-hero-image{width:min(100% - 34px,1120px);}
-      .home-hero h1{font-size:clamp(2.85rem,12vw,3.9rem);max-width:11ch;}
-      .home-hero-actions .btn{width:100%;justify-content:center;text-align:center;}
-      .home-text-link{width:100%;text-align:center;}
-      .home-hero-note{display:grid;gap:5px;}
-      .home-hero-note span + span::before{display:none;}
-      .home-hero-image{height:350px;border-top-left-radius:28px;}
-      .home-recognition,.home-philosophy,.home-begin{padding-top:46px;padding-bottom:48px;}
+    @media(max-width:760px){
+      .home-shell,
+      .home-hero-inner,
+      .home-trust-inner{
+        width:min(100% - 34px,1120px);
+      }
+
+      .home-hero{
+        min-height:620px;
+      }
+
+      .home-hero-media img{
+        object-position:62% center;
+      }
+
+      .home-hero::before{
+        background:
+          linear-gradient(180deg,rgba(12,31,49,.78) 0%,rgba(12,31,49,.72) 52%,rgba(12,31,49,.58) 100%),
+          linear-gradient(90deg,rgba(12,31,49,.46),rgba(12,31,49,.08));
+      }
+
+      .home-hero-inner{
+        min-height:620px;
+        align-items:flex-end;
+        padding:54px 0 46px;
+      }
+
+      .home-hero-copy{
+        width:100%;
+      }
+
+      .home-hero h1{
+        font-size:clamp(3rem,12.5vw,4rem);
+        max-width:10.8ch;
+      }
+
+      .home-hero-actions .btn{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+      }
+
+      .home-trust-inner{
+        display:grid;
+        gap:6px;
+        text-align:left;
+      }
+
+      .home-trust i{
+        display:none;
+      }
+
+      .home-recognition,
+      .home-philosophy,
+      .home-begin{
+        padding-top:46px;
+        padding-bottom:48px;
+      }
+
+      .home-recognition-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
@@ -429,6 +566,10 @@
 
   <main id="main-content">
     <section class="home-hero">
+      <div class="home-hero-media" aria-hidden="true">
+        <img src="home-hero-room.png" alt="">
+      </div>
+
       <div class="home-hero-inner">
         <div class="home-hero-copy">
           <div class="home-label">Online psychotherapy in Illinois</div>
@@ -436,36 +577,55 @@
           <p>Thoughtful outpatient care for people who feel overwhelmed, disconnected, or caught in patterns that keep returning.</p>
 
           <div class="home-hero-actions">
-            <a class="btn btn-primary" href="contact.html">Begin Here</a>
-            <a class="home-text-link" href="services.html">Explore services</a>
+            <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noopener noreferrer">Request a Consultation Time</a>
+            <a class="btn btn-secondary" href="contact.html">Write First</a>
           </div>
 
-          <div class="home-hero-note" aria-label="Practice details">
-            <span>Free 10–15 minute consultation</span>
-            <span>Illinois telehealth</span>
-            <span>BCBS Illinois commercial plans accepted</span>
-          </div>
+          <p class="home-hero-note">Consultation requests are reviewed before confirmation and do not establish a therapy relationship.</p>
         </div>
       </div>
+    </section>
 
-      <figure class="home-hero-image">
-        <img src="home-hero-room.png" alt="Quiet therapy room with a chair, bookshelf, and framed bridge artwork" fetchpriority="high">
-      </figure>
+    <section class="home-trust" aria-label="Practice information">
+      <div class="home-trust-inner">
+        <span>Illinois telehealth</span>
+        <i aria-hidden="true"></i>
+        <span>Free 10–15 minute consultation</span>
+        <i aria-hidden="true"></i>
+        <span>BCBS Illinois commercial plans accepted</span>
+      </div>
     </section>
 
     <section class="home-recognition">
-      <div class="home-shell home-recognition-grid">
-        <div class="home-recognition-copy">
-          <div class="home-label">You may not have words for it yet</div>
-          <h2>You may be here because something keeps repeating.</h2>
-          <p>You can still be working, parenting, caring for other people, or doing what needs to be done—and know that something has become harder to carry alone.</p>
+      <div class="home-shell">
+        <div class="home-recognition-head">
+          <div>
+            <div class="home-label">When therapy may help</div>
+            <h2>You may be here because something keeps repeating.</h2>
+          </div>
+          <p>You do not need a diagnosis, a polished explanation, or perfect language before reaching out. Therapy can begin with what you notice now.</p>
         </div>
 
-        <div class="home-recognition-list" aria-label="Common reasons people seek therapy">
-          <div class="home-recognition-line">Your mind or body stays on alert.</div>
-          <div class="home-recognition-line">You understand the pattern, but it keeps returning.</div>
-          <div class="home-recognition-line">The way you cope is creating other problems.</div>
-          <div class="home-recognition-line">You feel distant from yourself or the people you love.</div>
+        <div class="home-recognition-grid" aria-label="Common reasons people seek therapy">
+          <article class="home-recognition-item">
+            <h3>Your mind or body stays on alert.</h3>
+            <p>Anxiety, panic, tension, or the sense that you are always preparing for what comes next.</p>
+          </article>
+
+          <article class="home-recognition-item">
+            <h3>You understand the pattern, but it keeps returning.</h3>
+            <p>In relationships, conflict, avoidance, shame, or the ways you respond when something feels unsafe.</p>
+          </article>
+
+          <article class="home-recognition-item">
+            <h3>The way you cope is creating other problems.</h3>
+            <p>Substance use, overwork, withdrawal, control, or other strategies that once helped you get through.</p>
+          </article>
+
+          <article class="home-recognition-item">
+            <h3>You feel distant from yourself or the people you love.</h3>
+            <p>Depression, grief, numbness, disconnection, or a life that no longer feels like your own.</p>
+          </article>
         </div>
       </div>
     </section>
