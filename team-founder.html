@@ -1428,69 +1428,133 @@
 
 
 <style id="stonebridge-founder-availability-refine">
+  /* Keep the founder hero compact. Availability lives in its own horizontal section below. */
   .founder-page .founder-intro-inner{
     grid-template-columns:minmax(0,1fr) minmax(290px,340px) !important;
-    align-items:start !important;
-    gap:44px !important;
-    padding-top:58px !important;
-    padding-bottom:46px !important;
+    align-items:center !important;
+    gap:52px !important;
+    padding-top:54px !important;
+    padding-bottom:50px !important;
   }
-  .founder-page .founder-intro-copy{
-    max-width:760px;
-  }
-  .founder-page .founder-portrait{
-    max-width:340px !important;
-  }
-  .founder-page .portrait-frame{
-    border-radius:30px 30px 6px 30px;
-  }
-  .founder-page .founder-actions{
-    margin-bottom:0;
-  }
-  .founder-availability-card{
-    margin-top:22px;
-    max-width:620px;
-    padding:22px 24px 18px;
-    border-radius:26px;
-    border:1px solid rgba(212,200,185,.72);
-    background:linear-gradient(180deg, rgba(255,250,242,.92), rgba(248,243,235,.86));
-    box-shadow:0 18px 40px rgba(33,49,66,.06);
-  }
-  .founder-availability-card h2{
-    margin:8px 0 12px;
-    max-width:16ch;
-    color:var(--sb-navy,#213142);
-    font-family:"EB Garamond", Georgia, serif;
-    font-size:clamp(1.6rem,2.2vw,2.12rem);
-    line-height:1.05;
-    letter-spacing:-.02em;
-    text-wrap:balance;
-  }
-  .founder-availability-card ul{
-    margin:0;
-    padding-left:18px;
-    color:var(--sb-muted,#5d6870);
-    font-family:"Inter", sans-serif;
-    font-size:.92rem;
-    line-height:1.6;
-  }
-  .founder-availability-card li + li{ margin-top:7px; }
-  .founder-availability-card p{
-    margin:14px 0 0;
-    padding-top:12px;
-    border-top:1px solid rgba(212,200,185,.62);
-    color:var(--sb-muted,#5d6870);
-    font-size:.82rem;
-    line-height:1.55;
-  }
+  .founder-page .founder-intro-copy{max-width:780px;}
+  .founder-page .founder-portrait{max-width:340px !important;}
+  .founder-page .portrait-frame{border-radius:30px 30px 6px 30px;}
   .founder-page .founder-focus-editorial article:nth-child(5){
     grid-column:1 / -1;
     max-width:760px;
   }
+
+  .founder-availability-section{
+    background:linear-gradient(180deg,#f5efe7 0%,#f8f5f0 100%);
+    border-bottom:1px solid rgba(212,200,185,.62);
+  }
+  .founder-availability-inner{
+    width:min(1080px,calc(100% - 72px));
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:minmax(250px,.72fr) minmax(0,1.5fr);
+    gap:42px;
+    align-items:start;
+    padding:34px 0 32px;
+  }
+  .founder-availability-heading h2{
+    margin:8px 0 9px;
+    color:var(--sb-navy,#213142);
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:clamp(1.9rem,2.6vw,2.55rem);
+    line-height:1.04;
+    letter-spacing:-.025em;
+    text-wrap:balance;
+  }
+  .founder-availability-heading p{
+    margin:0;
+    color:var(--sb-muted,#5d6870);
+    font-size:.92rem;
+    line-height:1.6;
+  }
+  .founder-availability-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    border-top:1px solid rgba(33,49,66,.16);
+    border-bottom:1px solid rgba(33,49,66,.12);
+  }
+  .founder-availability-item{
+    padding:17px 20px 16px;
+    border-left:1px solid rgba(33,49,66,.11);
+  }
+  .founder-availability-item:first-child{
+    border-left:0;
+    padding-left:0;
+  }
+  .founder-availability-item:last-child{padding-right:0;}
+  .founder-availability-item span{
+    display:block;
+    margin-bottom:7px;
+    color:#8c7551;
+    font-family:"Inter",sans-serif;
+    font-size:.61rem;
+    font-weight:800;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+  }
+  .founder-availability-item strong{
+    display:block;
+    margin-bottom:6px;
+    color:var(--sb-navy,#213142);
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:1.25rem;
+    line-height:1.08;
+    font-weight:650;
+  }
+  .founder-availability-item p{
+    margin:0;
+    color:var(--sb-muted,#5d6870);
+    font-size:.85rem;
+    line-height:1.55;
+  }
+  .founder-availability-note{
+    grid-column:2;
+    display:flex;
+    justify-content:space-between;
+    gap:18px;
+    align-items:center;
+    margin-top:-16px;
+  }
+  .founder-availability-note p{
+    margin:0;
+    max-width:560px;
+    color:var(--sb-muted,#5d6870);
+    font-size:.78rem;
+    line-height:1.5;
+  }
+  .founder-availability-note a{
+    flex:0 0 auto;
+    color:var(--sb-navy,#213142);
+    font-family:"Inter",sans-serif;
+    font-size:.82rem;
+    font-weight:800;
+    text-decoration:underline;
+    text-underline-offset:4px;
+  }
   @media(max-width:980px){
-    .founder-page .founder-intro-inner{grid-template-columns:1fr !important; gap:28px !important;}
-    .founder-page .founder-portrait{max-width:360px !important;}
-    .founder-availability-card{max-width:none;}
+    .founder-page .founder-intro-inner{grid-template-columns:1fr !important;gap:28px !important;}
+    .founder-page .founder-portrait{max-width:360px !important;justify-self:start;}
+    .founder-availability-inner{grid-template-columns:1fr;gap:22px;}
+    .founder-availability-note{grid-column:1;margin-top:0;}
+  }
+  @media(max-width:720px){
+    .founder-availability-inner{width:min(100% - 30px,1080px);padding:30px 0;}
+    .founder-availability-grid{grid-template-columns:1fr;}
+    .founder-availability-item,
+    .founder-availability-item:first-child,
+    .founder-availability-item:last-child{
+      border-left:0;
+      border-top:1px solid rgba(33,49,66,.10);
+      padding:14px 0;
+    }
+    .founder-availability-item:first-child{border-top:0;}
+    .founder-availability-note{display:block;}
+    .founder-availability-note a{display:inline-block;margin-top:10px;}
   }
 </style>
 
@@ -1539,16 +1603,6 @@
 <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noopener noreferrer" target="_blank">Request a Consultation Time</a>
 <a class="btn btn-secondary" href="contact.html">Send Waitlist Inquiry</a>
 </div>
-<aside class="founder-availability-card" id="availability" aria-label="Current availability with Dr. Bryant">
-<div class="founder-kicker">Current availability</div>
-<h2>Limited openings now, expanded availability in mid-August.</h2>
-<ul>
-<li>Temporary openings through August 14 include select weekday morning, evening, and Sunday times.</li>
-<li>Dr. Bryant is unavailable July 27–31.</li>
-<li>Expanded regular availability begins in mid-August.</li>
-</ul>
-<p>Consultation requests are reviewed before confirmation and are not therapy, a diagnostic evaluation, or a guarantee of ongoing care.</p>
-</aside>
 </div>
 <figure aria-label="Portrait of Dr. Stephen Bryant" class="founder-portrait">
 <div class="portrait-frame">
@@ -1558,6 +1612,7 @@
 <strong>Dr. Stephen W. Bryant, PsyD, LCPC</strong>
             Founder, Stonebridge Psychological Group
           </figcaption>
+
 </figure>
 </div>
 </section>
@@ -1566,6 +1621,36 @@
 <article class="subpage-band-item"><div><h4>Works with</h4><p>Teens, adults, and caregivers in Illinois.</p></div></article>
 <article class="subpage-band-item"><div><h4>Primary focus</h4><p>Addiction and co-occurring concerns, trauma, mood and anxiety, and emotional regulation.</p></div></article>
 <article class="subpage-band-item"><div><h4>Current format</h4><p>Online psychotherapy and parent consultation, beginning with a brief review of scope and next steps.</p></div></article>
+</div>
+</section>
+<section class="founder-availability-section" id="availability" aria-labelledby="founder-availability-heading">
+<div class="founder-availability-inner">
+<div class="founder-availability-heading">
+<div class="founder-kicker">Current availability</div>
+<h2 id="founder-availability-heading">Limited openings now. Expanded weekday availability begins August 17.</h2>
+<p>Availability is reviewed alongside clinical fit, telehealth appropriateness, and the type of support being requested.</p>
+</div>
+<div class="founder-availability-grid" aria-label="Dr. Bryant availability summary">
+<article class="founder-availability-item">
+<span>Through August 14</span>
+<strong>Temporary openings</strong>
+<p>Select weekday morning, evening, and Sunday times.</p>
+</article>
+<article class="founder-availability-item">
+<span>July 27–31</span>
+<strong>Unavailable</strong>
+<p>Dr. Bryant will not be available during this period.</p>
+</article>
+<article class="founder-availability-item">
+<span>Beginning August 17</span>
+<strong>Expanded schedule</strong>
+<p>Regular weekday daytime and select evening availability.</p>
+</article>
+</div>
+<div class="founder-availability-note">
+<p>Consultation requests are reviewed before confirmation and are not therapy, a diagnostic evaluation, or a guarantee of ongoing care.</p>
+<a href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noopener noreferrer" target="_blank">Request a consultation time</a>
+</div>
 </div>
 </section>
 <section class="founder-section founder-focus-section" id="clinical-focus">
