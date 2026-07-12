@@ -1,94 +1,722 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>For Clinicians | Stonebridge Psychological Group</title>
-      <meta name="description" content="Professional consultation, peer discussion, and educational offerings for mental-health clinicians through Stonebridge Psychological Group.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>For Clinicians | Stonebridge Psychological Group</title>
+  <meta name="description" content="Professional consultation, peer discussion, and educational offerings for mental-health clinicians through Stonebridge Psychological Group.">
 
-      <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="stonebridge-interior.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-    </head>
-    <body class="interior-page">
-      <a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="site-header compact-site-header">
-  <div class="container nav">
-    <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
-      <div class="brand-mark">STONEBRIDGE</div>
-      <div class="brand-sub">Psychological Group</div>
-    </a>
-    <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-    <div class="menu-wrap">
-      <nav class="menu" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="team.html">Team</a><a href="services.html">Services</a><a href="fees-insurance.html">Fees & Insurance</a><a href="portal.html">Portal</a></nav>
-      <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
-    </div>
-  </div>
-</header>
-      <main id="main-content"><section class="interior-hero interior-hero--photo">
-  <div class="interior-hero-copy">
-    <div class="hero-rule"></div>
-    <div class="hero-kicker">For Clinicians</div>
-    <h1>Consultation and professional learning for thoughtful outpatient work.</h1>
-    <p>Stonebridge offers a separate professional pathway for clinicians interested in relational, ethically grounded consultation and education.</p>
-    <div class="hero-actions"><a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Professional%20Consultation%20Inquiry">Email About Consultation</a></div>
-  </div>
-  <figure class="interior-hero-media">
-    <img src="team-consultation-room.png" alt="Professional consultation room with table and chairs" fetchpriority="high">
-  </figure>
-</section><section class="orientation-band" aria-label="Page overview"><div class="orientation-grid"><article><h2>Monthly consultation group</h2><p>A steady forum for difficult outpatient work.</p></article><article><h2>Individual consultation</h2><p>Professional discussion by inquiry and scope.</p></article><article><h2>Education</h2><p>Presentations and continuing education when available.</p></article></div></section>
-<section class="section"><div class="shell split"><div><div class="section-label">Monthly consultation group</div><h2>A steady space for difficult outpatient work.</h2><div class="prose"><p>The group is open to mental-health clinicians inside and outside Stonebridge who want thoughtful discussion of clinical judgment, boundaries, relational dynamics, risk, and sustainable practice.</p></div><ul class="bullet-list"><li>Third Friday of each month</li><li>4:00 PM Central Time</li><li>Held by secure video</li><li>Participation reviewed for scope, timing, and group composition</li></ul></div><article class="info-card"><div class="card-label">Professional services</div><h3>Consultation and education by inquiry.</h3><p>Individual professional consultation, peer review, and educational presentations may be available depending on scope and scheduling.</p><p>This pathway is separate from psychotherapy and from employment supervision arrangements.</p><p><a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Professional%20Consultation%20Inquiry">Contact Stonebridge</a></p></article></div></section>
-<section class="note-strip"><div class="note-strip-inner"><strong>Professional scope</strong><p>Consultation supports reflection and professional judgment. It is not emergency support, legal advice, or a substitute for required formal supervision when supervision is needed.</p></div></section>
-</main>
-      <footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <div class="footer-brand">STONEBRIDGE</div>
-      <div class="footer-sub">Psychological Group</div>
-      <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
-    </div>
-    <div>
-      <div class="footer-title">Care</div>
-      <div class="footer-links">
-        <a href="services.html">Services</a>
-        <a href="fees-insurance.html">Fees &amp; Insurance</a>
-        <a href="contact.html">Join the Waitlist</a>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style id="stonebridge-for-clinicians-page-only">
+    :root{
+      --clinicians-bg:#f8f5f0;
+      --clinicians-paper:#f2ece4;
+      --clinicians-navy:#163b61;
+      --clinicians-navy-deep:#102f4d;
+      --clinicians-ink:#213142;
+      --clinicians-muted:#5d6870;
+      --clinicians-gold:#78613f;
+      --clinicians-line:rgba(33,49,66,.14);
+      --clinicians-warm-line:rgba(212,200,185,.72);
+      --clinicians-white:#fffaf2;
+    }
+
+    body.clinicians-page{
+      background:var(--clinicians-bg);
+      color:var(--clinicians-ink);
+    }
+
+    .clinicians-page .skip-link{
+      position:absolute;
+      left:12px;
+      top:-80px;
+      z-index:1000;
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--clinicians-navy-deep);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .clinicians-page .skip-link:focus{top:12px;}
+
+    .clinicians-hero{
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(620px,55%) minmax(0,45%);
+      min-height:520px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 14% 55%,rgba(200,171,120,.07),transparent 30%),
+        linear-gradient(180deg,#fbf8f4 0%,#f6f1ea 100%);
+      border-bottom:1px solid var(--clinicians-warm-line);
+    }
+
+    .clinicians-hero-copy{
+      width:100%;
+      padding:
+        58px
+        56px
+        52px
+        max(36px,calc((100vw - 1240px)/2));
+      align-self:center;
+    }
+
+    .clinicians-hero-rule{
+      width:40px;
+      height:2px;
+      margin-bottom:20px;
+      background:#b89661;
+    }
+
+    .clinicians-kicker,
+    .clinicians-label,
+    .clinicians-item-label{
+      color:var(--clinicians-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      line-height:1.35;
+      text-transform:uppercase;
+    }
+
+    .clinicians-hero h1{
+      margin:10px 0 0;
+      max-width:650px;
+      color:var(--clinicians-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(3.15rem,4.05vw,4.4rem);
+      line-height:1.01;
+      letter-spacing:-.045em;
+      text-wrap:balance;
+    }
+
+    .clinicians-hero-copy > p{
+      max-width:37rem;
+      margin:18px 0 0;
+      color:var(--clinicians-muted);
+      font-family:"Inter",sans-serif;
+      font-size:1rem;
+      line-height:1.72;
+    }
+
+    .clinicians-hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:13px;
+      margin-top:27px;
+    }
+
+    .clinicians-hero-media{
+      min-height:520px;
+      margin:0;
+      overflow:hidden;
+      border-top-left-radius:42px;
+    }
+
+    .clinicians-hero-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .clinicians-overview{
+      background:linear-gradient(135deg,var(--clinicians-navy),var(--clinicians-navy-deep));
+      color:var(--clinicians-white);
+    }
+
+    .clinicians-overview-grid{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      padding:20px 0;
+    }
+
+    .clinicians-overview article{
+      padding:0 24px;
+      border-left:1px solid rgba(255,255,255,.16);
+    }
+
+    .clinicians-overview article:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .clinicians-overview h2{
+      margin:0 0 4px;
+      color:#fffaf2;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.08rem;
+      line-height:1.1;
+    }
+
+    .clinicians-overview p{
+      margin:0;
+      color:rgba(255,250,242,.86);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.48;
+    }
+
+    .clinicians-section{
+      padding:56px 0 60px;
+      background:var(--clinicians-bg);
+    }
+
+    .clinicians-section.paper{
+      background:var(--clinicians-paper);
+      border-top:1px solid var(--clinicians-warm-line);
+      border-bottom:1px solid var(--clinicians-warm-line);
+    }
+
+    .clinicians-shell{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+    }
+
+    .clinicians-offerings-grid{
+      display:grid;
+      grid-template-columns:minmax(250px,.9fr) repeat(2,minmax(0,1fr));
+      border-top:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-offerings-intro{
+      padding:22px 30px 22px 0;
+      border-bottom:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-label{
+      position:relative;
+      padding-top:14px;
+    }
+
+    .clinicians-label::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      max-width:150px;
+      height:1px;
+      background:linear-gradient(90deg,var(--clinicians-navy),rgba(22,59,97,0));
+    }
+
+    .clinicians-offerings-intro h2,
+    .clinicians-scope-copy h2{
+      margin:11px 0 0;
+      max-width:13ch;
+      color:var(--clinicians-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.15rem,2.9vw,2.9rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
+      text-wrap:balance;
+    }
+
+    .clinicians-offerings-intro p,
+    .clinicians-scope-copy p{
+      margin:13px 0 0;
+      color:var(--clinicians-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.93rem;
+      line-height:1.65;
+    }
+
+    .clinicians-offering{
+      padding:22px 28px 20px;
+      border-left:1px solid var(--clinicians-line);
+      border-bottom:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-offering:last-of-type{
+      padding-right:0;
+    }
+
+    .clinicians-offering h3{
+      margin:9px 0 9px;
+      color:var(--clinicians-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.68rem;
+      line-height:1.08;
+      letter-spacing:-.022em;
+    }
+
+    .clinicians-offering p,
+    .clinicians-offering li{
+      color:var(--clinicians-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.9rem;
+      line-height:1.6;
+    }
+
+    .clinicians-offering p{margin:0;}
+
+    .clinicians-detail-list{
+      margin:15px 0 0;
+      padding:0;
+      list-style:none;
+      border-top:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-detail-list li{
+      position:relative;
+      padding:9px 0 9px 17px;
+      border-bottom:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-detail-list li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:1rem;
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:#b89661;
+    }
+
+    .clinicians-secondary-grid{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      border-bottom:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-secondary{
+      padding:20px 28px 20px 0;
+    }
+
+    .clinicians-secondary + .clinicians-secondary{
+      padding-left:28px;
+      padding-right:0;
+      border-left:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-secondary h3{
+      margin:7px 0 7px;
+      color:var(--clinicians-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.42rem;
+      line-height:1.1;
+    }
+
+    .clinicians-secondary p{
+      margin:0;
+      color:var(--clinicians-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.89rem;
+      line-height:1.6;
+    }
+
+    .clinicians-scope-layout{
+      display:grid;
+      grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+      gap:56px;
+      align-items:start;
+    }
+
+    .clinicians-scope-list{
+      border-top:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-scope-row{
+      display:grid;
+      grid-template-columns:185px minmax(0,1fr);
+      gap:22px;
+      padding:15px 0;
+      border-bottom:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-scope-row strong{
+      color:var(--clinicians-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.28rem;
+      line-height:1.1;
+    }
+
+    .clinicians-scope-row p{
+      margin:0;
+      color:var(--clinicians-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.89rem;
+      line-height:1.58;
+    }
+
+    .clinicians-cta{
+      background:linear-gradient(135deg,var(--clinicians-navy),var(--clinicians-navy-deep));
+      color:var(--clinicians-white);
+    }
+
+    .clinicians-cta-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:30px;
+      align-items:center;
+      padding:34px 0;
+    }
+
+    .clinicians-cta h2{
+      margin:0 0 5px;
+      color:#fffaf2;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2rem,3vw,2.75rem);
+      line-height:1.05;
+      letter-spacing:-.025em;
+    }
+
+    .clinicians-cta p{
+      max-width:45rem;
+      margin:0;
+      color:rgba(255,250,242,.84);
+      font-family:"Inter",sans-serif;
+      font-size:.94rem;
+      line-height:1.6;
+    }
+
+    .clinicians-cta .btn-secondary{
+      color:#fffaf2;
+      border-color:rgba(255,255,255,.30);
+      background:rgba(255,255,255,.08);
+    }
+
+    .clinicians-page a:focus-visible,
+    .clinicians-page button:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:2px;
+      box-shadow:0 0 0 5px var(--clinicians-navy-deep);
+    }
+
+    @media(min-width:1081px) and (max-width:1260px){
+      .clinicians-hero{
+        grid-template-columns:minmax(570px,57%) minmax(0,43%);
+      }
+
+      .clinicians-hero-copy{
+        padding-left:42px;
+        padding-right:42px;
+      }
+
+      .clinicians-hero h1{
+        max-width:590px;
+        font-size:clamp(3rem,4vw,4rem);
+      }
+    }
+
+    @media(max-width:1080px){
+      .clinicians-hero{
+        grid-template-columns:1fr;
+        min-height:auto;
+      }
+
+      .clinicians-hero-copy{
+        width:min(100% - 36px,760px);
+        margin:0 auto;
+        padding:48px 0 42px;
+      }
+
+      .clinicians-hero-media{
+        min-height:340px;
+        border-radius:0;
+      }
+
+      .clinicians-overview-grid,
+      .clinicians-scope-layout,
+      .clinicians-cta-inner{
+        grid-template-columns:1fr;
+      }
+
+      .clinicians-overview article{
+        padding:14px 0;
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.14);
+      }
+
+      .clinicians-overview article:first-child{
+        padding-top:0;
+        border-top:0;
+      }
+
+      .clinicians-offerings-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .clinicians-offerings-intro{
+        grid-column:1 / -1;
+        padding-right:0;
+      }
+
+      .clinicians-offering:first-of-type{
+        padding-left:0;
+        border-left:0;
+      }
+
+      .clinicians-scope-layout,
+      .clinicians-cta-inner{
+        gap:24px;
+      }
+    }
+
+    @media(max-width:720px){
+      .clinicians-shell,
+      .clinicians-overview-grid,
+      .clinicians-cta-inner{
+        width:min(100% - 34px,1080px);
+      }
+
+      .clinicians-hero h1{
+        font-size:clamp(2.65rem,11.5vw,3.7rem);
+      }
+
+      .clinicians-hero-actions .btn,
+      .clinicians-cta .btn{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+      }
+
+      .clinicians-section{
+        padding:44px 0 48px;
+      }
+
+      .clinicians-offerings-grid,
+      .clinicians-secondary-grid{
+        grid-template-columns:1fr;
+      }
+
+      .clinicians-offerings-intro{
+        grid-column:auto;
+        padding:20px 0;
+      }
+
+      .clinicians-offering,
+      .clinicians-offering:first-of-type,
+      .clinicians-offering:last-of-type{
+        padding:21px 0;
+        border-left:0;
+      }
+
+      .clinicians-secondary,
+      .clinicians-secondary + .clinicians-secondary{
+        padding:20px 0;
+        border-left:0;
+        border-top:1px solid var(--clinicians-line);
+      }
+
+      .clinicians-scope-row{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+    }
+  </style>
+</head>
+
+<body class="clinicians-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header compact-site-header">
+    <div class="container nav">
+      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
+        <div class="brand-mark">STONEBRIDGE</div>
+        <div class="brand-sub">Psychological Group</div>
+      </a>
+
+      <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+
+      <div class="menu-wrap">
+        <nav class="menu" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html">Portal</a>
+        </nav>
+        <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
       </div>
     </div>
-    <div>
-      <div class="footer-title">Practice</div>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="team.html">Team</a>
-        <a href="team-founder.html">Founder</a>
-        <a href="for-clinicians.html">For Clinicians</a>
-        <a href="portal.html">Client Portal</a>
+  </header>
+
+  <main id="main-content">
+    <section class="clinicians-hero">
+      <div class="clinicians-hero-copy">
+        <div class="clinicians-hero-rule"></div>
+        <div class="clinicians-kicker">For Clinicians</div>
+        <h1>Consultation and professional learning for thoughtful outpatient work.</h1>
+        <p>Stonebridge offers a separate professional pathway for clinicians interested in relational, ethically grounded consultation, peer discussion, and education.</p>
+
+        <div class="clinicians-hero-actions">
+          <a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Professional%20Consultation%20Inquiry">Email About Consultation</a>
+        </div>
+      </div>
+
+      <figure class="clinicians-hero-media">
+        <img src="team-consultation-room.png" alt="Professional consultation room with table and chairs" fetchpriority="high">
+      </figure>
+    </section>
+
+    <section class="clinicians-overview" aria-label="Professional services overview">
+      <div class="clinicians-overview-grid">
+        <article>
+          <h2>Monthly consultation group</h2>
+          <p>A steady forum for difficult outpatient work.</p>
+        </article>
+        <article>
+          <h2>Individual consultation</h2>
+          <p>Professional discussion by inquiry and scope.</p>
+        </article>
+        <article>
+          <h2>Education</h2>
+          <p>Presentations and continuing education when available.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="clinicians-section">
+      <div class="clinicians-shell">
+        <div class="clinicians-offerings-grid">
+          <div class="clinicians-offerings-intro">
+            <div class="clinicians-label">Professional offerings</div>
+            <h2>A clear frame for complex clinical work.</h2>
+            <p>Professional consultation is organized around judgment, relational dynamics, boundaries, risk, and sustainable outpatient practice.</p>
+          </div>
+
+          <article class="clinicians-offering">
+            <div class="clinicians-item-label">01 · Monthly group</div>
+            <h3>A steady space for difficult outpatient work.</h3>
+            <p>Open to mental-health clinicians inside and outside Stonebridge who want thoughtful discussion with a consistent professional group.</p>
+            <ul class="clinicians-detail-list">
+              <li>Third Friday of each month</li>
+              <li>4:00 PM Central Time</li>
+              <li>Held by secure video</li>
+              <li>Participation reviewed for scope, timing, and group composition</li>
+            </ul>
+          </article>
+
+          <article class="clinicians-offering">
+            <div class="clinicians-item-label">02 · Individual consultation</div>
+            <h3>Focused discussion by inquiry and scope.</h3>
+            <p>Individual consultation may be available for clinical judgment, case conceptualization, boundaries, relational dynamics, risk, or sustainable practice concerns.</p>
+          </article>
+
+          <div class="clinicians-secondary-grid">
+            <article class="clinicians-secondary">
+              <div class="clinicians-item-label">Peer review</div>
+              <h3>Professional reflection with a defined purpose.</h3>
+              <p>Peer review may be available when the request, materials, role, and intended use are clear in advance.</p>
+            </article>
+
+            <article class="clinicians-secondary">
+              <div class="clinicians-item-label">Education</div>
+              <h3>Presentations and continuing education.</h3>
+              <p>Educational presentations, webinars, or continuing-education events may be available depending on topic, audience, scope, and scheduling.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinicians-section paper">
+      <div class="clinicians-shell clinicians-scope-layout">
+        <div class="clinicians-scope-copy">
+          <div class="clinicians-label">Professional scope</div>
+          <h2>Consultation supports judgment. It does not replace required supervision.</h2>
+          <p>This pathway is separate from psychotherapy, employment supervision, and emergency or legal services.</p>
+        </div>
+
+        <div class="clinicians-scope-list">
+          <div class="clinicians-scope-row">
+            <strong>Consultation</strong>
+            <p>Supports reflection, clinical reasoning, professional judgment, and discussion of outpatient work.</p>
+          </div>
+          <div class="clinicians-scope-row">
+            <strong>Not supervision</strong>
+            <p>Does not substitute for required formal supervision, licensure supervision, or an employer’s supervisory responsibility.</p>
+          </div>
+          <div class="clinicians-scope-row">
+            <strong>Not emergency or legal support</strong>
+            <p>Does not provide emergency response, legal advice, or direction for matters requiring an attorney, licensing board, employer, or emergency service.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinicians-cta">
+      <div class="clinicians-cta-inner">
+        <div>
+          <h2>Begin with a professional inquiry.</h2>
+          <p>Share the type of consultation, group participation, peer review, or educational request you are considering.</p>
+        </div>
+        <a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com?subject=Professional%20Consultation%20Inquiry">Email Stonebridge</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Care</div>
+        <div class="footer-links">
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="contact.html">Join the Waitlist</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Practice</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="team-founder.html">Founder</a>
+          <a href="for-clinicians.html">For Clinicians</a>
+          <a href="portal.html">Client Portal</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <a href="tel:+17734171688">(773) 417-1688</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-logo-right">
+        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" loading="lazy">
       </div>
     </div>
-    <div>
-      <div class="footer-title">Contact</div>
-      <div class="footer-links">
-        <span>Serving Illinois via telehealth</span>
-        <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-        <a href="tel:+17734171688">(773) 417-1688</a>
-        <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
-      </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
     </div>
-    <div class="footer-logo-right"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" loading="lazy"></div>
-  </div>
-  <div class="container footer-bottom">
-    <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-    <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-  </div>
-</footer>
-      <script src="script.js"></script>
-    </body>
-    </html>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
