@@ -2600,6 +2600,62 @@
   }
 </style>
 
+
+<style id="stonebridge-founder-accessibility-finish">
+  /* Small essential labels must meet ordinary-text contrast requirements. */
+  .founder-page .founder-kicker,
+  .founder-page .focus-compact-grid span,
+  .founder-page .broader-care-compact strong{
+    color:#78613f !important;
+    font-size:.68rem !important;
+  }
+
+  /* Preserve the orientation strip's visual hierarchy after improving heading semantics. */
+  .founder-page .founder-summary-band .subpage-band-item h2{
+    margin:0 0 4px !important;
+    color:#fffaf2 !important;
+    font-family:"EB Garamond", Georgia, serif !important;
+    font-size:1.02rem !important;
+    font-weight:650 !important;
+    line-height:1.08 !important;
+    letter-spacing:-.01em !important;
+  }
+
+  /* Two-tone focus treatment remains visible on both light and dark surfaces. */
+  .founder-page a:focus-visible,
+  .site-header a:focus-visible,
+  .site-footer a:focus-visible,
+  .mobile-toggle:focus-visible{
+    outline:3px solid #fffaf2 !important;
+    outline-offset:2px !important;
+    box-shadow:0 0 0 5px #213142 !important;
+  }
+
+  /* Protect long content at high zoom and narrow viewport widths. */
+  .founder-page h1,
+  .founder-page h2,
+  .founder-page h3,
+  .founder-page p,
+  .founder-page a{
+    overflow-wrap:break-word;
+  }
+
+  @media(max-width:375px){
+    .founder-page .founder-title{
+      font-size:clamp(1.82rem,9vw,2.35rem) !important;
+      white-space:normal !important;
+    }
+    .founder-page .founder-actions .btn{
+      width:100%;
+      justify-content:center;
+      text-align:center;
+    }
+    .founder-page .founder-portrait{
+      max-width:250px !important;
+    }
+  }
+</style>
+
 </head>
 <body>
 <header class="site-header compact-site-header">
@@ -2642,9 +2698,9 @@
 </section>
 <section class="subpage-band no-icons founder-summary-band" aria-label="How care begins with Dr. Bryant">
 <div class="subpage-band-grid">
-<article class="subpage-band-item"><div><h4>Illinois telehealth</h4><p>Online psychotherapy for clients located in Illinois.</p></div></article>
-<article class="subpage-band-item"><div><h4>Consultation before intake</h4><p>A brief first conversation helps clarify fit, scope, and next steps.</p></div></article>
-<article class="subpage-band-item"><div><h4>Outpatient care</h4><p>Individual psychotherapy and parent consultation when clinically appropriate.</p></div></article>
+<article class="subpage-band-item"><div><h2>Illinois telehealth</h2><p>Online psychotherapy for clients located in Illinois.</p></div></article>
+<article class="subpage-band-item"><div><h2>Consultation before intake</h2><p>A brief first conversation helps clarify fit, scope, and next steps.</p></div></article>
+<article class="subpage-band-item"><div><h2>Outpatient care</h2><p>Individual psychotherapy and parent consultation when clinically appropriate.</p></div></article>
 </div>
 </section>
 
