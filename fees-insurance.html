@@ -53,8 +53,8 @@
     .fees-hero{
       position:relative;
       display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(430px,42vw);
-      min-height:510px;
+      grid-template-columns:minmax(620px,55%) minmax(0,45%);
+      min-height:560px;
       overflow:hidden;
       background:
         radial-gradient(circle at 14% 55%, rgba(200,171,120,.07), transparent 30%),
@@ -63,12 +63,13 @@
     }
 
     .fees-hero-copy{
-      width:min(100%,720px);
+      width:100%;
+      max-width:none;
       padding:
-        64px
-        48px
+        58px
         56px
-        max(36px,calc((100vw - 980px)/2));
+        52px
+        max(36px,calc((100vw - 1240px)/2));
       align-self:center;
     }
 
@@ -93,17 +94,17 @@
 
     .fees-hero h1{
       margin:10px 0 0;
-      max-width:10.8ch;
+      max-width:640px;
       color:var(--fees-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.35rem,4.9vw,5.25rem);
+      font-size:clamp(3.3rem,4.25vw,4.55rem);
       line-height:1.01;
       letter-spacing:-.045em;
       text-wrap:balance;
     }
 
     .fees-hero-copy > p{
-      max-width:41rem;
+      max-width:34rem;
       margin:18px 0 0;
       color:var(--fees-muted);
       font-family:"Inter",sans-serif;
@@ -119,7 +120,7 @@
     }
 
     .fees-hero-media{
-      min-height:510px;
+      min-height:560px;
       margin:0;
       overflow:hidden;
       border-top-left-radius:42px;
@@ -129,7 +130,7 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      object-position:center;
+      object-position:52% center;
     }
 
     /* The overview band is concise and not repeated later. */
@@ -402,7 +403,22 @@
       box-shadow:0 0 0 5px var(--fees-navy-deep);
     }
 
-    @media(max-width:980px){
+
+    @media(min-width:1081px) and (max-width:1260px){
+      .fees-hero{
+        grid-template-columns:minmax(570px,57%) minmax(0,43%);
+      }
+      .fees-hero-copy{
+        padding-left:42px;
+        padding-right:42px;
+      }
+      .fees-hero h1{
+        font-size:clamp(3.2rem,4.4vw,4.15rem);
+        max-width:590px;
+      }
+    }
+
+    @media(max-width:1080px){
       .fees-hero{
         grid-template-columns:1fr;
         min-height:auto;
@@ -413,8 +429,11 @@
         padding:48px 0 42px;
       }
       .fees-hero-media{
-        min-height:320px;
+        min-height:340px;
         border-radius:0;
+      }
+      .fees-hero-media img{
+        object-position:center;
       }
       .fees-overview-grid,
       .fees-section-heading,
