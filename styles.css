@@ -2642,3 +2642,42 @@ body{background:var(--home-bg);}
 
 
 /* End Stonebridge design-system cleanup */
+
+/* =========================================================
+   CLINICIAN PATHWAY NAVIGATION — July 2026
+   Keeps the expanded seven-link header clear before the mobile menu takes over.
+========================================================= */
+.site-header.compact-site-header .menu{
+  flex-wrap:nowrap;
+  white-space:nowrap;
+}
+
+@media (min-width:961px) and (max-width:1100px){
+  .site-header.compact-site-header .menu{gap:12px;font-size:.78rem;}
+  .site-header.compact-site-header .menu-wrap{gap:16px;}
+  .site-header.compact-site-header .header-cta .btn{padding:0 12px;font-size:.80rem;}
+}
+
+@media (min-width:761px) and (max-width:960px){
+  .site-header.compact-site-header .mobile-toggle{display:inline-flex;}
+  .site-header.compact-site-header .header-cta{display:none;}
+  .site-header.compact-site-header .menu{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:20px;
+    right:20px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+    padding:18px;
+    border-radius:18px;
+    background:rgba(255,255,255,.98);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    white-space:normal;
+  }
+  .site-header.compact-site-header .menu.open,
+  .site-header.compact-site-header .menu-wrap.open .menu,
+  .site-header.compact-site-header.is-open .menu{display:flex;}
+}

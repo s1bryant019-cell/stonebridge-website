@@ -386,6 +386,41 @@
       line-height:1.6;
     }
 
+
+    .team-professional-note{
+      display:grid;
+      grid-template-columns:175px minmax(0,1fr);
+      gap:42px;
+      align-items:start;
+      margin-top:16px;
+      padding-top:16px;
+      border-top:1px solid var(--team-line);
+    }
+
+    .team-professional-note strong{
+      color:var(--team-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.25rem;
+      line-height:1.15;
+    }
+
+    .team-professional-note p{
+      max-width:48rem;
+      margin:0;
+      color:var(--team-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.89rem;
+      line-height:1.6;
+    }
+
+    .team-professional-link{
+      color:var(--team-navy);
+      font-weight:700;
+      text-decoration:underline;
+      text-decoration-thickness:1px;
+      text-underline-offset:3px;
+    }
+
     .team-cta{
       background:linear-gradient(135deg,var(--team-navy),var(--team-navy-deep));
       color:var(--team-white);
@@ -472,6 +507,7 @@
       .team-overview-grid,
       .team-intro,
       .team-growth-note,
+      .team-professional-note,
       .team-cta-inner{
         grid-template-columns:1fr;
       }
@@ -489,6 +525,7 @@
 
       .team-intro,
       .team-growth-note,
+      .team-professional-note,
       .team-cta-inner{
         gap:14px;
       }
@@ -570,7 +607,7 @@
         <nav class="menu" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="team.html" class="active" aria-current="page">Team</a>
+          <a href="team.html" class="active" aria-current="page">Team</a><a href="for-clinicians.html">For Clinicians</a>
           <a href="services.html">Services</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="portal.html">Portal</a>
@@ -656,6 +693,12 @@
         <div class="team-growth-note">
           <strong>Finding the right fit</strong>
           <p>Stonebridge considers clinical needs, clinician experience, availability, and telehealth appropriateness before recommending a next step.</p>
+        </div>
+
+
+        <div class="team-professional-note">
+          <strong>For clinicians</strong>
+          <p>Professional consultation groups, individual consultation, peer review, and education are available through a separate clinician pathway. <a class="team-professional-link" href="for-clinicians.html">View Professional Offerings</a></p>
         </div>
       </div>
     </section>
