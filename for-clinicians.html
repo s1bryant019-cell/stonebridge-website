@@ -609,12 +609,23 @@
     }
 
     /* Expanded professional-services system. */
-    .clinicians-service-layout,
+    .clinicians-service-layout{
+      display:grid;
+      grid-template-columns:minmax(290px,.82fr) minmax(0,1.48fr);
+      gap:40px;
+      align-items:start;
+    }
+
     .clinicians-fees-layout{
       display:grid;
       grid-template-columns:minmax(260px,.74fr) minmax(0,1.26fr);
-      gap:56px;
+      gap:48px;
       align-items:start;
+    }
+
+    .clinicians-service-intro{
+      position:sticky;
+      top:108px;
     }
 
     .clinicians-service-intro h2,
@@ -639,15 +650,44 @@
       line-height:1.65;
     }
 
+    .clinicians-consultation-cta{
+      margin-top:24px;
+      padding-top:20px;
+      border-top:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-consultation-cta strong{
+      display:block;
+      color:var(--clinicians-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.28rem;
+      line-height:1.15;
+    }
+
+    .clinicians-consultation-cta p{
+      max-width:27rem;
+      margin:8px 0 15px;
+      color:var(--clinicians-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.84rem;
+      line-height:1.58;
+    }
+
+    .clinicians-consultation-cta .btn{
+      width:100%;
+      justify-content:center;
+      text-align:center;
+    }
+
     .clinicians-service-list{
       border-top:1px solid var(--clinicians-line);
     }
 
     .clinicians-service-row{
       display:grid;
-      grid-template-columns:62px minmax(0,1fr);
-      gap:20px;
-      padding:19px 0;
+      grid-template-columns:48px minmax(0,1fr);
+      gap:16px;
+      padding:17px 0;
       border-bottom:1px solid var(--clinicians-line);
     }
 
@@ -793,13 +833,29 @@
         grid-template-columns:1fr;
         gap:28px;
       }
+
+      .clinicians-service-intro{
+        position:static;
+      }
+
+      .clinicians-consultation-cta{
+        max-width:34rem;
+      }
+
+      .clinicians-consultation-cta .btn{
+        width:auto;
+      }
     }
 
     @media(max-width:720px){
       .clinicians-service-row{
         grid-template-columns:1fr;
         gap:6px;
-        padding:17px 0;
+        padding:16px 0;
+      }
+
+      .clinicians-consultation-cta .btn{
+        width:100%;
       }
 
       .clinicians-service-details{
@@ -882,6 +938,12 @@
           <div class="clinicians-label">Professional offerings</div>
           <h2>Defined services with a clear purpose and frame.</h2>
           <p>Each request is reviewed for role, scope, timing, confidentiality, intended use, and whether Stonebridge is the appropriate professional fit.</p>
+
+          <div class="clinicians-consultation-cta">
+            <strong>Interested in the monthly consultation group?</strong>
+            <p>The group meets on the third Friday of each month at 4:00 PM Central Time by secure video. Share your professional role, practice setting, and what you hope to bring to the group.</p>
+            <a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Monthly%20Consultation%20Group%20Inquiry">Ask to Join the Group</a>
+          </div>
         </div>
 
         <div class="clinicians-service-list">
