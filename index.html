@@ -1,592 +1,571 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Home | Stonebridge Psychological Group</title>
-<meta content="Online psychotherapy in Illinois for clients seeking steady, thoughtful care. Stonebridge uses consultation, clear scope, ethical boundaries, and relational depth." name="description"/>
-<link href="https://stonebridgepsychgroup.com/" rel="canonical"/>
-<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="favicon.ico" rel="icon" sizes="any"/>
-<link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="apple-touch-icon.png" rel="apple-touch-icon"/>
-<link href="site.webmanifest" rel="manifest"/>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-<link href="styles.css" rel="stylesheet">
-<style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Stonebridge Psychological Group</title>
+  <meta name="description" content="Online psychotherapy in Illinois for clients seeking steady, thoughtful care. Stonebridge uses consultation, clear scope, ethical boundaries, and relational depth.">
+  <link rel="canonical" href="https://stonebridgepsychgroup.com/">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style id="stonebridge-homepage-design">
     :root{
-      --bg:#f8f5f0;
-      --bg-soft:#f5efe7;
-      --navy:#213142;
-      --navy-band:#163a60;
-      --navy-band-2:#102f4d;
-      --gold:#c8ab78;
-      --muted:#5f6c78;
-      --line:rgba(212,200,185,.55);
+      --home-bg:#f8f5f0;
+      --home-paper:#f2ece4;
+      --home-navy:#213142;
+      --home-blue:#163b61;
+      --home-blue-deep:#102f4d;
+      --home-muted:#5d6870;
+      --home-gold:#78613f;
+      --home-gold-light:#b89661;
+      --home-line:rgba(33,49,66,.14);
+      --home-warm-line:rgba(212,200,185,.72);
+      --home-white:#fffaf2;
     }
 
-    body{
-      background:var(--bg);
+    body.home-page{
+      background:var(--home-bg);
+      color:var(--home-navy);
     }
+
+    .home-page .skip-link{
+      position:absolute;
+      left:12px;
+      top:-80px;
+      z-index:1000;
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--home-blue-deep);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .home-page .skip-link:focus{top:12px;}
 
     /* =========================
-       HOME HERO
+       LANDING HERO
+       More atmospheric than the interior-page hero, but governed by the same grid.
     ========================= */
     .home-hero{
       position:relative;
+      min-height:610px;
       overflow:hidden;
       background:
-        radial-gradient(circle at 18% 45%, rgba(200,171,120,.08), transparent 25%),
-        linear-gradient(180deg, #fbf8f4 0%, #f6f1ea 100%);
-      border-bottom:1px solid rgba(212,200,185,.35);
+        radial-gradient(circle at 13% 45%,rgba(184,150,97,.10),transparent 29%),
+        linear-gradient(180deg,#fbf8f4 0%,#f5efe7 100%);
+      border-bottom:1px solid var(--home-warm-line);
     }
 
-    .home-hero::after{
-      content:"";
-      position:absolute;
-      right:-340px;
-      bottom:-260px;
-      width:960px;
-      height:760px;
-      background:url("stone_arch_bridge_over_calm_water.png") no-repeat center/contain;
-      opacity:.05;
-      pointer-events:none;
-      z-index:0;
-    }
-
-    .home-hero-top{
+    .home-hero-inner{
       position:relative;
-      min-height:535px;
-      overflow:hidden;
-    }
-
-    /* Right-side integrated image panel */
-    .hero-room-panel{
-      position:absolute;
-      top:0;
-      right:0;
-      bottom:0;
-      width:47vw;
-      min-width:660px;
-      overflow:hidden;
-      z-index:1;
-      border-top-left-radius:56px;
-    }
-
-    .hero-room-panel img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      display:block;
-    }
-
-    .hero-room-overlay{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(20,40,62,.60) 0%,
-          rgba(20,40,62,.24) 28%,
-          rgba(20,40,62,.05) 56%,
-          rgba(20,40,62,0) 76%
-        ),
-        linear-gradient(
-          180deg,
-          rgba(10,20,34,.05) 0%,
-          rgba(10,20,34,.02) 60%,
-          rgba(10,20,34,.18) 100%
-        );
-      pointer-events:none;
       z-index:2;
-    }
-
-    .hero-room-caption{
-      position:absolute;
-      left:28px;
-      bottom:22px;
-      z-index:3;
-      max-width:350px;
-      color:#fff8ef;
-    }
-
-    .hero-room-caption h2{
-      margin:0 0 6px;
-      color:#fff8ef;
-      font-family:"EB Garamond", serif;
-      font-size:clamp(1.45rem, 1.7vw, 1.9rem);
-      line-height:1.02;
-      letter-spacing:-.03em;
-      text-shadow:0 10px 24px rgba(0,0,0,.22);
-    }
-
-    .hero-room-caption p{
-      margin:0;
-      color:rgba(255,248,239,.9);
-      font-family:"Inter", sans-serif;
-      font-size:.8rem;
-      line-height:1.5;
-      text-shadow:0 8px 20px rgba(0,0,0,.18);
-    }
-
-    .hero-room-caption .caption-line{
-      margin-top:10px;
-      width:100%;
-      height:1px;
-      background:linear-gradient(90deg, rgba(255,248,239,.55), rgba(255,248,239,0));
-    }
-
-    /* Left-side hero copy */
-    .hero-inner{
-      position:relative;
-      z-index:4;
-      width:min(1220px, calc(100% - 72px));
+      width:min(1220px,calc(100% - 72px));
+      min-height:610px;
       margin:0 auto;
-      min-height:535px;
       display:flex;
       align-items:center;
-      padding:36px 0 32px;
+      padding:54px 0 52px;
     }
 
-    .hero-copy{
-      width:52%;
+    .home-hero-copy{
+      width:51%;
       max-width:650px;
-      padding-right:88px;
+      padding-right:72px;
     }
 
-    .hero-copy .hero-line{
+    .home-kicker,
+    .home-section-label,
+    .home-step-number{
+      color:var(--home-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      line-height:1.35;
+      text-transform:uppercase;
+    }
+
+    .home-hero-rule{
       width:40px;
       height:2px;
-      background:rgba(200,171,120,.85);
-      margin-bottom:28px;
+      margin-bottom:20px;
+      background:var(--home-gold-light);
     }
 
-    .hero-copy h1{
-      margin:0;
-      color:var(--navy);
-      font-family:"EB Garamond", serif;
-      font-size:clamp(3.25rem, 4.3vw, 4.65rem);
-      line-height:1.08;
-      letter-spacing:-.04em;
-      max-width:13.4ch;
+    .home-hero h1{
+      margin:10px 0 0;
+      max-width:12.5ch;
+      color:var(--home-navy);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(3.65rem,5vw,5.35rem);
+      line-height:1.01;
+      letter-spacing:-.05em;
       text-wrap:balance;
     }
 
-    .hero-copy h1 span{
-      display:block;
-    }
-
-    .hero-copy p{
+    .home-hero-copy > p{
+      max-width:38rem;
       margin:20px 0 0;
-      max-width:37rem;
-      color:var(--muted);
-      font-family:"Inter", sans-serif;
+      color:var(--home-muted);
+      font-family:"Inter",sans-serif;
       font-size:1.02rem;
       line-height:1.72;
     }
 
-    .hero-actions{
+    .home-hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
+      gap:13px;
       margin-top:28px;
     }
 
-    .hero-note{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-top:18px;
-      color:#8e7b61;
-      font-family:"Inter", sans-serif;
-      font-size:.69rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      line-height:1.45;
-    }
-
-    .hero-note::before{
-      content:"";
-      width:13px;
-      height:13px;
-      border-radius:50%;
-      border:1px solid rgba(200,171,120,.8);
-      flex:0 0 13px;
-    }
-
-    /* =========================
-       POSITIONING BAND
-    ========================= */
-    .service-band{
-      position:relative;
-      z-index:5;
-      background:linear-gradient(135deg, var(--navy-band) 0%, var(--navy-band-2) 100%);
-      border-top:1px solid rgba(255,255,255,.05);
-    }
-
-    .service-band-grid{
-      width:min(1220px, calc(100% - 72px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
-      gap:34px;
-      padding:21px 0 23px;
-    }
-
-    .service-item{
-      display:block;
-      padding-right:18px;
-      border-right:1px solid rgba(255,255,255,.13);
-    }
-
-    .service-item:last-child{
-      border-right:none;
-      padding-right:0;
-    }
-
-    .service-item h4{
-      margin:0 0 4px;
-      color:#ffffff;
-      font-family:"EB Garamond", serif;
-      font-size:1.18rem;
-      line-height:1.12;
-      letter-spacing:-.01em;
-    }
-
-    .service-item p{
-      margin:0;
-      color:rgba(255,255,255,.82);
-      font-family:"Inter", sans-serif;
-      font-size:.82rem;
+    .home-hero-note{
+      margin:15px 0 0;
+      max-width:42rem;
+      color:#75654e;
+      font-family:"Inter",sans-serif;
+      font-size:.78rem;
       line-height:1.55;
     }
 
-    /* =========================
-       EDITORIAL HOME SECTIONS
-    ========================= */
-    .home-editorial-section{
-      background:#f7f2eb;
-      padding:54px 0 52px;
-      border-top:1px solid rgba(212,200,185,.42);
+    .home-hero-image{
+      position:absolute;
+      inset:0 0 0 auto;
+      width:48vw;
+      min-width:650px;
+      margin:0;
+      overflow:hidden;
+      border-bottom-left-radius:64px;
+      z-index:1;
+      background:#d8d0c6;
     }
 
-    .home-editorial-inner{
-      width:min(1120px, calc(100% - 72px));
+    .home-hero-image img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .home-hero-image::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(16,47,77,.50) 0%,rgba(16,47,77,.16) 30%,rgba(16,47,77,0) 58%),
+        linear-gradient(180deg,rgba(10,20,34,0) 55%,rgba(10,20,34,.25) 100%);
+      pointer-events:none;
+    }
+
+    .home-image-caption{
+      position:absolute;
+      left:28px;
+      bottom:24px;
+      z-index:2;
+      max-width:330px;
+      color:var(--home-white);
+    }
+
+    .home-image-caption strong{
+      display:block;
+      color:var(--home-white);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(1.55rem,1.8vw,2rem);
+      font-weight:600;
+      line-height:1.05;
+      letter-spacing:-.025em;
+      text-shadow:0 8px 20px rgba(0,0,0,.24);
+    }
+
+    .home-image-caption span{
+      display:block;
+      margin-top:6px;
+      color:rgba(255,250,242,.88);
+      font-family:"Inter",sans-serif;
+      font-size:.8rem;
+      line-height:1.5;
+      text-shadow:0 8px 18px rgba(0,0,0,.22);
+    }
+
+    /* =========================
+       POSITIONING STRIP
+    ========================= */
+    .home-positioning{
+      background:linear-gradient(135deg,var(--home-blue),var(--home-blue-deep));
+      color:var(--home-white);
+    }
+
+    .home-positioning-grid{
+      width:min(1120px,calc(100% - 72px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:58px;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      padding:20px 0;
+    }
+
+    .home-positioning article{
+      padding:0 25px;
+      border-left:1px solid rgba(255,255,255,.16);
+    }
+
+    .home-positioning article:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .home-positioning h2{
+      margin:0 0 4px;
+      color:var(--home-white);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.08rem;
+      line-height:1.1;
+    }
+
+    .home-positioning p{
+      margin:0;
+      color:rgba(255,250,242,.84);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.48;
+    }
+
+    /* =========================
+       PRACTICE IDENTITY
+    ========================= */
+    .home-identity{
+      padding:64px 0;
+      background:var(--home-bg);
+    }
+
+    .home-shell{
+      width:min(1120px,calc(100% - 72px));
+      margin:0 auto;
+    }
+
+    .home-identity-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(300px,.75fr);
+      gap:76px;
       align-items:center;
     }
 
-    .home-kicker{
-      margin:0 0 12px;
-      color:#8c7551;
-      font-family:"Inter", sans-serif;
-      font-size:.68rem;
-      font-weight:800;
-      letter-spacing:.19em;
-      text-transform:uppercase;
-    }
-
-    .home-editorial-copy h2,
-    .home-for-copy h2,
-    .home-principle-copy h2,
-    .home-begin-copy h2{
-      margin:0;
-      color:var(--navy);
-      font-family:"EB Garamond", serif;
-      font-size:clamp(2.55rem, 4vw, 3.75rem);
-      line-height:1.08;
+    .home-identity h2,
+    .home-concerns h2,
+    .home-process h2,
+    .home-begin h2{
+      margin:12px 0 0;
+      color:var(--home-navy);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.55rem,4vw,3.75rem);
+      line-height:1.06;
       letter-spacing:-.04em;
       text-wrap:balance;
     }
 
-    .home-editorial-copy p,
-    .home-for-copy p,
-    .home-begin-copy p{
+    .home-identity h2{max-width:13ch;}
+
+    .home-identity-copy > p{
+      max-width:44rem;
       margin:18px 0 0;
-      color:var(--muted);
-      font-family:"Inter", sans-serif;
-      font-size:1rem;
-      line-height:1.78;
-      max-width:42rem;
+      color:var(--home-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.98rem;
+      line-height:1.75;
     }
 
-    .home-pullquote{
+    .home-quote{
       margin:0;
-      padding-left:32px;
-      border-left:1px solid rgba(200,171,120,.68);
+      padding:9px 0 9px 33px;
+      border-left:2px solid var(--home-gold-light);
     }
 
-    .home-pullquote p{
+    .home-quote p{
       margin:0;
-      color:#213142;
-      font-family:"EB Garamond", serif;
-      font-size:clamp(1.95rem, 3vw, 2.75rem);
-      line-height:1.18;
-      letter-spacing:-.032em;
+      color:var(--home-navy);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2rem,3vw,2.8rem);
+      line-height:1.12;
+      letter-spacing:-.03em;
       text-wrap:balance;
     }
 
-    .home-pullquote cite{
+    .home-quote cite{
       display:block;
-      margin-top:16px;
-      color:#8c7551;
-      font-family:"Inter", sans-serif;
-      font-size:.72rem;
+      margin-top:15px;
+      color:var(--home-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.7rem;
       font-style:normal;
       font-weight:800;
       letter-spacing:.16em;
       text-transform:uppercase;
     }
 
-    .home-for-section{
-      background:#fffaf4;
-      padding:44px 0 42px;
-      border-top:1px solid rgba(212,200,185,.42);
+    /* =========================
+       CONCERNS
+    ========================= */
+    .home-concerns{
+      padding:58px 0 62px;
+      background:var(--home-paper);
+      border-top:1px solid var(--home-warm-line);
+      border-bottom:1px solid var(--home-warm-line);
     }
 
-    .home-for-grid{
-      width:min(1120px, calc(100% - 72px));
-      margin:0 auto;
+    .home-concerns-grid{
       display:grid;
-      grid-template-columns:.82fr 1.18fr;
-      gap:48px;
-      align-items:start;
-    }
-
-    .home-reason-list{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:0 34px;
-      margin-top:4px;
-    }
-
-    .home-reason{
-      padding:12px 0 13px;
-      border-top:1px solid rgba(212,200,185,.64);
-    }
-
-    .home-reason strong{
-      display:block;
-      margin-bottom:5px;
-      color:var(--navy);
-      font-family:"EB Garamond", serif;
-      font-size:1.28rem;
-      line-height:1.12;
-      letter-spacing:-.01em;
-    }
-
-    .home-reason span{
-      display:block;
-      color:var(--muted);
-      font-family:"Inter", sans-serif;
-      font-size:.92rem;
-      line-height:1.58;
-    }
-
-    .home-principle-band{
-      background:linear-gradient(135deg, #17395c 0%, #102f4d 100%);
-      color:#fffaf2;
-      padding:42px 0 40px;
-      border-top:1px solid rgba(255,255,255,.06);
-      border-bottom:1px solid rgba(0,0,0,.12);
-    }
-
-    .home-principle-inner{
-      width:min(1120px, calc(100% - 72px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:.82fr 1.18fr;
+      grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
       gap:58px;
       align-items:start;
     }
 
-    .home-principle-copy h2{
-      color:#fffaf2;
-      max-width:9.5ch;
+    .home-concerns-copy p{
+      max-width:31rem;
+      margin:17px 0 0;
+      color:var(--home-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.96rem;
+      line-height:1.7;
     }
 
-    .home-principle-copy p{
-      color:rgba(255,250,242,.82);
-      margin:16px 0 0;
-      font-family:"Inter", sans-serif;
-      line-height:1.72;
-    }
-
-    .home-principle-list{
+    .home-reason-list{
       display:grid;
-      grid-template-columns:1fr;
-      gap:0;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      border-top:1px solid var(--home-line);
+    }
+
+    .home-reason{
+      padding:19px 25px 18px 0;
+      border-bottom:1px solid var(--home-line);
+    }
+
+    .home-reason:nth-child(even){
+      padding-right:0;
+      padding-left:25px;
+      border-left:1px solid var(--home-line);
+    }
+
+    .home-reason strong{
+      display:block;
+      color:var(--home-navy);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.35rem;
+      line-height:1.12;
+      letter-spacing:-.015em;
+    }
+
+    .home-reason span{
+      display:block;
+      margin-top:5px;
+      color:var(--home-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.88rem;
+      line-height:1.55;
+    }
+
+    /* =========================
+       HOW CARE BEGINS
+    ========================= */
+    .home-process{
+      padding:58px 0 60px;
+      background:linear-gradient(135deg,var(--home-blue),var(--home-blue-deep));
+      color:var(--home-white);
+    }
+
+    .home-process-head{
+      display:grid;
+      grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
+      gap:58px;
+      align-items:end;
+      margin-bottom:26px;
+    }
+
+    .home-process .home-section-label{
+      color:#d6be94;
+    }
+
+    .home-process h2{
+      max-width:12ch;
+      color:var(--home-white);
+    }
+
+    .home-process-head > p{
+      max-width:40rem;
+      margin:0;
+      color:rgba(255,250,242,.82);
+      font-family:"Inter",sans-serif;
+      font-size:.95rem;
+      line-height:1.67;
+    }
+
+    .home-process-steps{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
       border-top:1px solid rgba(255,255,255,.18);
     }
 
-    .home-principle-row{
-      display:grid;
-      grid-template-columns:180px 1fr;
-      gap:24px;
-      padding:16px 0;
-      border-bottom:1px solid rgba(255,255,255,.16);
+    .home-step{
+      padding:22px 28px 2px 0;
     }
 
-    .home-principle-row strong{
-      color:#fffaf2;
-      font-family:"EB Garamond", serif;
-      font-size:1.4rem;
+    .home-step + .home-step{
+      padding-left:28px;
+      border-left:1px solid rgba(255,255,255,.16);
+    }
+
+    .home-step-number{
+      color:#d6be94;
+    }
+
+    .home-step h3{
+      margin:8px 0 7px;
+      color:var(--home-white);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.55rem;
       line-height:1.1;
-      letter-spacing:-.012em;
+      letter-spacing:-.02em;
     }
 
-    .home-principle-row span{
+    .home-step p{
+      margin:0;
       color:rgba(255,250,242,.78);
-      font-family:"Inter", sans-serif;
-      font-size:.95rem;
-      line-height:1.65;
+      font-family:"Inter",sans-serif;
+      font-size:.9rem;
+      line-height:1.62;
     }
 
-    .home-begin-section{
-      background:#f7f2eb;
-      padding:48px 0 54px;
+    /* =========================
+       FINAL ACTION
+    ========================= */
+    .home-begin{
+      padding:54px 0 60px;
+      background:var(--home-bg);
     }
 
     .home-begin-inner{
-      width:min(1120px, calc(100% - 72px));
-      margin:0 auto;
       display:grid;
-      grid-template-columns:minmax(0, 1fr) auto;
-      gap:34px;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:36px;
       align-items:center;
-      padding:34px 0;
-      border-top:1px solid rgba(212,200,185,.68);
-      border-bottom:1px solid rgba(212,200,185,.68);
+      padding:33px 0;
+      border-top:1px solid var(--home-warm-line);
+      border-bottom:1px solid var(--home-warm-line);
+    }
+
+    .home-begin h2{
+      max-width:16ch;
+    }
+
+    .home-begin p{
+      max-width:45rem;
+      margin:15px 0 0;
+      color:var(--home-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.95rem;
+      line-height:1.67;
     }
 
     .home-begin-actions{
       display:flex;
-      gap:14px;
       flex-wrap:wrap;
+      gap:13px;
       justify-content:flex-end;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
-    @media (max-width:1260px){
-      .hero-room-panel{
-        width:45vw;
-        min-width:560px;
+    .home-page a:focus-visible,
+    .home-page button:focus-visible{
+      outline:3px solid var(--home-white);
+      outline-offset:2px;
+      box-shadow:0 0 0 5px var(--home-blue-deep);
+    }
+
+    @media(max-width:1260px){
+      .home-hero-image{
+        width:46vw;
+        min-width:570px;
       }
 
-      .hero-copy{
-        width:52%;
-        padding-right:68px;
+      .home-hero-copy{
+        width:53%;
+        padding-right:58px;
       }
 
-      .hero-copy h1{
-        font-size:clamp(3.15rem, 4.2vw, 4.4rem);
-        max-width:14ch;
+      .home-hero h1{
+        font-size:clamp(3.45rem,4.7vw,4.9rem);
       }
     }
 
-    @media (max-width:1080px){
-      .home-hero-top{
+    @media(max-width:1080px){
+      .home-hero{
         min-height:auto;
       }
 
-      .hero-inner{
+      .home-hero-inner{
         min-height:auto;
         display:block;
-        padding:50px 0 34px;
+        padding:48px 0 38px;
       }
 
-      .hero-copy{
+      .home-hero-copy{
         width:100%;
-        max-width:700px;
+        max-width:720px;
         padding-right:0;
       }
 
-      .hero-room-panel{
+      .home-hero-image{
         position:relative;
-        width:min(1180px, calc(100% - 56px));
+        width:min(1180px,calc(100% - 56px));
         min-width:0;
-        height:470px;
+        height:460px;
         margin:0 auto;
-        border-top-left-radius:36px;
+        border-radius:0 0 0 38px;
       }
 
-      .service-band-grid{
-        grid-template-columns:1fr;
-        gap:18px;
-        padding:18px 0 22px;
-      }
-
-      .content-blocks{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width:760px){
-      .hero-inner,
-      .hero-room-panel,
-      .service-band-grid{
-        width:min(1180px, calc(100% - 30px));
-      }
-
-      .hero-copy h1{
-        font-size:clamp(2.65rem, 10vw, 3.8rem);
-        line-height:1.08;
-        max-width:12ch;
-      }
-
-      .hero-copy p{
-        font-size:.96rem;
-        line-height:1.75;
-      }
-
-      .hero-actions .btn{
-        width:100%;
-        justify-content:center;
-      }
-
-      .hero-note{
-        align-items:flex-start;
-      }
-
-      .hero-room-panel{
-        height:390px;
-        border-top-left-radius:28px;
-      }
-
-      .hero-room-caption{
-        left:18px;
-        right:18px;
-        bottom:18px;
-        max-width:300px;
-      }
-    }
-
-
-    @media (max-width:1080px){
-      .home-editorial-inner,
-      .home-for-grid,
-      .home-principle-inner,
+      .home-positioning-grid,
+      .home-identity-grid,
+      .home-concerns-grid,
+      .home-process-head,
       .home-begin-inner{
         grid-template-columns:1fr;
-        gap:32px;
       }
 
-      .service-item{
-        border-right:none;
-        padding-right:0;
+      .home-positioning article{
+        padding:14px 0;
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.14);
       }
 
-      .home-pullquote{
-        padding-left:24px;
+      .home-positioning article:first-child{
+        padding-top:0;
+        border-top:0;
+      }
+
+      .home-identity-grid,
+      .home-concerns-grid,
+      .home-process-head,
+      .home-begin-inner{
+        gap:30px;
+      }
+
+      .home-process-steps{
+        grid-template-columns:1fr;
+      }
+
+      .home-step,
+      .home-step + .home-step{
+        padding:18px 0;
+        border-left:0;
+        border-bottom:1px solid rgba(255,255,255,.16);
       }
 
       .home-begin-actions{
@@ -594,18 +573,41 @@
       }
     }
 
-    @media (max-width:760px){
-      .home-editorial-inner,
-      .home-for-grid,
-      .home-principle-inner,
-      .home-begin-inner{
-        width:min(1120px, calc(100% - 30px));
+    @media(max-width:720px){
+      .home-hero-inner,
+      .home-hero-image,
+      .home-positioning-grid,
+      .home-shell{
+        width:min(100% - 34px,1120px);
       }
 
-      .home-editorial-section,
-      .home-for-section,
-      .home-principle-band,
-      .home-begin-section{
+      .home-hero h1{
+        font-size:clamp(2.85rem,12vw,4rem);
+        max-width:11.5ch;
+      }
+
+      .home-hero-actions .btn,
+      .home-begin-actions .btn{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+      }
+
+      .home-hero-image{
+        height:370px;
+        border-bottom-left-radius:28px;
+      }
+
+      .home-image-caption{
+        left:18px;
+        right:18px;
+        bottom:18px;
+      }
+
+      .home-identity,
+      .home-concerns,
+      .home-process,
+      .home-begin{
         padding-top:44px;
         padding-bottom:46px;
       }
@@ -614,399 +616,238 @@
         grid-template-columns:1fr;
       }
 
-      .home-principle-row{
-        grid-template-columns:1fr;
-        gap:8px;
-        padding:18px 0;
+      .home-reason,
+      .home-reason:nth-child(even){
+        padding:17px 0;
+        border-left:0;
       }
 
-      .home-begin-actions .btn{
-        width:100%;
-        justify-content:center;
+      .home-quote{
+        padding-left:22px;
       }
     }
-  </style>
-<style id="stonebridge-display-line-height-fix">
-    /* Sitewide display-type guardrail: prevents EB Garamond descenders/ascenders from colliding on wrapped headings. */
-    body h1,
-    body h2,
-    body .stone-page-copy h1,
-    body .stone-page-copy .long-title,
-    body .stone-page-copy .wide-title,
-    body .home-hero h1,
-    body .hero-copy h1,
-    body .founder-title,
-    body .home-led-heading h2,
-    body .about-section-heading h2,
-    body .services-section-heading h2,
-    body .fees-section-heading h2,
-    body .team-section-heading h2,
-    body .clinician-roster-copy h2,
-    body .contact-waitlist-card h2,
-    body .team-final-band h2,
-    body .fees-final-cta h2 {
-      line-height: 1.10 !important;
-    }
-
-    body .stone-page-copy h1,
-    body .home-hero h1,
-    body .founder-title,
-    body .home-led-heading h2,
-    body .about-section-heading h2,
-    body .services-section-heading h2,
-    body .fees-section-heading h2,
-    body .team-section-heading h2 {
-      text-wrap: balance;
-    }
-
-    @media (max-width: 760px) {
-      body h1,
-      body h2,
-      body .stone-page-copy h1,
-      body .home-hero h1,
-      body .founder-title {
-        line-height: 1.13 !important;
-      }
-    }
-  </style>
-<style id="stonebridge-sitewide-layout-optimization">
-    /* Sitewide polish pass: remove accidental-looking space and keep compact editorial rhythm. */
-    .site-header.compact-site-header .nav{
-      min-height:64px;
-      padding:5px 0 6px;
-    }
-    .site-header.compact-site-header .brand-mark{
-      font-size:clamp(1.45rem,1.75vw,1.88rem);
-      line-height:.9;
-    }
-    .site-header.compact-site-header .brand-sub{
-      margin-top:3px;
-      font-size:.49rem;
-      letter-spacing:.3em;
-    }
-    .site-header.compact-site-header .menu{gap:22px;font-size:.84rem;}
-    .site-header.compact-site-header .header-cta .btn{min-height:38px;padding:0 17px;border-radius:11px;}
-
-    @media (min-width:1081px){
-      .stone-page-hero,
-      .stone-page-hero.compact-contact-hero,
-      .stone-page-hero.compact-team-hero,
-      .stone-page-hero.profile-pt-hero{
-        min-height:520px!important;
-      }
-      .stone-page-hero .stone-page-inner,
-      .stone-page-hero.compact-contact-hero .stone-page-inner,
-      .stone-page-hero.compact-team-hero .stone-page-inner,
-      .stone-page-hero.profile-pt-hero .stone-page-inner{
-        min-height:520px!important;
-      }
-      .stone-page-copy h1{font-size:clamp(3.05rem,4.15vw,4.55rem)!important;line-height:1.04!important;}
-      .stone-page-copy p{margin-top:14px!important;}
-      .stone-page-actions{margin-top:22px!important;}
-    }
-
-    .subpage-band{min-height:auto!important;}
-    .subpage-band-grid{padding:16px 0!important;gap:22px!important;}
-    .subpage-band-item{padding:0!important;}
-    .subpage-band-item p{font-size:.82rem!important;line-height:1.45!important;}
-
-    .home-led-section,
-    .home-led-section.paper,
-    .home-led-section.tight{
-      padding-top:42px!important;
-      padding-bottom:42px!important;
-    }
-    .home-led-grid{gap:18px!important;}
-    .home-led-card{padding:22px!important;}
-
-    .about-page-editorial .home-led-section,
-    .about-page-editorial .home-led-section.paper,
-    .about-page-editorial .home-led-section.tight{padding:40px 0!important;}
-    .about-experience-band{padding:38px 0!important;}
-    .about-consult-inner{padding:34px 0!important;}
-    .about-frame-grid,
-    .about-editorial-split{gap:28px!important;}
-    .about-frame-row{padding:12px 0!important;}
-
-    .team-purpose-band{padding:16px 0!important;}
-    .team-purpose-inner{gap:20px!important;}
-    .team-purpose-item{padding:0!important;}
-    .team-roster-section{padding:42px 0!important;}
-    .team-fit-section{padding:34px 0!important;}
-    .team-final-band .team-final-inner,
-    .team-final-band .team-roster-shell{padding:34px 0!important;}
-
-    .services-page .home-led-section,
-    .services-page .home-led-section.paper{padding:42px 0!important;}
-    .services-band-grid{padding:16px 0!important;gap:20px!important;}
-    .services-full-cta-inner{padding:34px 0!important;}
-
-    .fees-page .home-led-section,
-    .fees-page .home-led-section.paper,
-    .fees-page .home-led-section.tight{padding:40px 0!important;}
-    .fees-section-heading{margin-bottom:16px!important;}
-    .fee-row{padding:14px 22px!important;}
-    .fee-service strong{font-size:1.2rem!important;}
-    .fee-service span{font-size:.82rem!important;line-height:1.38!important;}
-    .financial-frame-band .subpage-band-grid{padding:16px 0!important;}
-    .fees-consult-inner{padding:34px 0!important;}
-    .policy-mini-grid{gap:12px!important;margin-top:14px!important;}
-    .policy-mini-card{padding:16px!important;}
-
-    .contact-page .request-band .subpage-band-grid{padding:15px 0!important;gap:22px!important;}
-    .contact-page .contact-action-section{padding-top:34px!important;padding-bottom:42px!important;}
-    .consultation-form-card{padding:22px!important;}
-    .consultation-form{gap:14px!important;}
-
-    .portal-purpose-band{padding:16px 0!important;}
-    .portal-editorial-section{padding:40px 0!important;}
-    .portal-safety-band{padding:24px 0!important;}
-    .portal-final-cta{padding:34px 0!important;}
-
-    .founder-intro-inner{padding-top:56px!important;padding-bottom:50px!important;}
-    .compact-principle-inner{padding:20px 0!important;}
-    .founder-section{padding:36px 0!important;}
-    .founder-section#background,
-    .founder-section#publications,
-    .founder-section#fit-scope{padding:34px 0!important;}
-    .founder-section-inner{gap:34px!important;}
-    .concern-grid{gap:10px!important;}
-    .concern-card{padding:14px 0!important;}
-    .approach-grid{gap:12px!important;}
-    .approach-card{padding:16px!important;}
-    .degree-row{padding:14px 0!important;}
-    .publication-layout{gap:20px!important;align-items:center!important;}
-    .publication-visual{margin:0!important;}
-    .publication-card{padding:16px 0!important;}
-    .founder-final-inner{padding:32px 0!important;}
-
-    @media (max-width:1080px){
-      .stone-page-hero .stone-page-inner{padding:42px 0 28px!important;}
-      .stone-hero-panel{height:360px!important;margin-bottom:18px!important;}
-      .footer-grid{gap:20px!important;}
-    }
-    @media (max-width:760px){
-      .site-header.compact-site-header .nav{min-height:62px;}
-      .home-led-section,.home-led-section.paper,.home-led-section.tight,
-      .founder-section,.founder-section#background,.founder-section#publications,.founder-section#fit-scope{padding:34px 0!important;}
-      .stone-hero-panel{height:300px!important;}
-      .stone-page-copy h1{font-size:clamp(2.6rem,10vw,3.6rem)!important;}
-    }
-  </style>
-</link></link></link></link>
-<style id="stonebridge-quick-consult-cta">
-    .quick-consult-note{
-      margin-top:12px;
-      max-width:42rem;
-      color:var(--home-muted,#5f6c78);
-      font-size:.86rem;
-      line-height:1.58;
-    }
-    .quick-consult-note.light{color:rgba(255,250,242,.82);}
-    .quick-action-stack{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
-    .inline-inquiry-link{display:inline-flex;margin-top:10px;color:var(--home-navy,#213142);font-weight:700;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
-    .contact-quick-box{margin:0 0 22px;padding:18px 0;border-top:1px solid rgba(212,200,185,.62);border-bottom:1px solid rgba(212,200,185,.62);}
-    .contact-quick-box p{margin:10px 0 0;}
-    .contact-quick-box .btn{margin-top:14px;}
-    .team-card-actions-note{margin-top:14px;}
-    @media(max-width:760px){.quick-action-stack .btn,.stone-page-actions .btn,.hero-actions .btn,.home-begin-actions .btn{width:100%;justify-content:center;}}
   </style>
 </head>
-<body>
-<header class="site-header compact-site-header">
-<div class="container nav">
-<a aria-label="Stonebridge Psychological Group home" class="brand-link" href="index.html">
-<div class="brand-mark">STONEBRIDGE</div>
-<div class="brand-sub">Psychological Group</div>
-</a>
-<button aria-label="Toggle menu" class="mobile-toggle" type="button">Menu</button>
-<div class="menu-wrap">
-<nav aria-label="Primary navigation" class="menu"><a class="active" href="index.html">Home</a><a href="about.html">About</a><a href="team.html">Team</a><a href="services.html">Services</a><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="portal.html">Portal</a></nav>
-<div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
-</div>
-</div>
-</header>
-<main>
-<section class="home-hero">
-<div class="home-hero-top">
-<div class="hero-room-panel">
-<img alt="Quiet therapy room with chair, bookshelf, and framed bridge artwork" src="home-hero-room.png"/>
-<div class="hero-room-overlay"></div>
-<div class="hero-room-caption">
-<h2>A quieter kind of psychological practice.</h2>
-<p>Careful work at a steadier pace.</p>
-<div class="caption-line"></div>
-</div>
-</div>
-<div class="hero-inner">
-<div class="hero-copy">
-<div class="hero-line"></div>
-<h1>A steadier place to begin therapy.</h1>
-<p>
-              Online psychotherapy for Illinois clients who are feeling anxious, depressed, overwhelmed, disconnected, or stuck in patterns that keep returning. Stonebridge begins with fit: not open booking, not high volume, and not one-size-fits-all care.
-            </p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
-<a class="btn btn-secondary" href="services.html">What Therapy Can Help With</a>
-</div>
-<div class="hero-note">Waitlist and consultation inquiries are currently open.</div>
-</div>
-</div>
-</div>
-<div class="service-band">
-<div class="service-band-grid">
-<article class="service-item">
-<h4>Online care in Illinois</h4>
-<p>Therapy for clients who can meet from a private, safe setting.</p>
-</article>
-<article class="service-item">
-<h4>Consultation before intake</h4>
-<p>The first step clarifies scope, timing, and whether telehealth is appropriate.</p>
-</article>
-<article class="service-item">
-<h4>Insurance options</h4>
-<p>BCBS Illinois commercial plans are accepted. Additional networks are in credentialing or enrollment.</p>
-</article>
-</div>
-</div>
-</section>
-<section class="home-editorial-section">
-<div class="home-editorial-inner">
-<div class="home-editorial-copy">
-<p class="home-kicker">Practice identity</p>
-<h2>Built for careful, relational work.</h2>
-<p>
-            Stonebridge was created for psychotherapy that has room to think, feel, and understand what is happening beneath the surface. The practice uses clear expectations and clinical review so therapy can begin with steadiness rather than urgency.
-          </p>
-</div>
-<blockquote class="home-pullquote">
-<p>The business exists to support people’s lives, not become their lives.</p>
-<cite>Stonebridge founding principle</cite>
-</blockquote>
-</div>
-</section>
-<section class="home-for-section">
-<div class="home-for-grid">
-<div class="home-for-copy">
-<p class="home-kicker">Who this may be for</p>
-<h2>For concerns that are hard to name at first.</h2>
-<p>
-            You do not need perfect language for what is wrong. Therapy can begin with symptoms, stress, relationships, grief, shame, or the sense that something keeps repeating.
-          </p>
-</div>
-<div aria-label="Common reasons people seek therapy" class="home-reason-list">
-<div class="home-reason">
-<strong>Anxiety, worry, or panic</strong>
-<span>When your mind or body feels hard to settle.</span>
-</div>
-<div class="home-reason">
-<strong>Depression or disconnection</strong>
-<span>When daily life feels heavy, muted, or difficult to engage.</span>
-</div>
-<div class="home-reason">
-<strong>Trauma responses and shame</strong>
-<span>When past harm keeps shaping safety, trust, or self-worth.</span>
-</div>
-<div class="home-reason">
-<strong>Relationships and attachment</strong>
-<span>When familiar patterns keep showing up with others.</span>
-</div>
-<div class="home-reason">
-<strong>Grief and transitions</strong>
-<span>When change, loss, or uncertainty needs room.</span>
-</div>
-<div class="home-reason">
-<strong>Stress and overwhelm</strong>
-<span>When you have been functioning for too long without enough support.</span>
-</div>
-</div>
-</div>
-</section>
-<section class="home-principle-band">
-<div class="home-principle-inner">
-<div class="home-principle-copy">
-<p class="home-kicker">Why the structure matters</p>
-<h2>Care should feel human, not hurried.</h2>
-<p>
-            Stonebridge uses structure not to create distance, but to make care more reliable. Boundaries, fit review, and clear communication help protect the therapy relationship.
-          </p>
-</div>
-<div class="home-principle-list">
-<div class="home-principle-row">
-<strong>Judgment over volume</strong>
-<span>Care is not assigned simply because a calendar slot is open. The first step is a brief review of scope, timing, and clinical appropriateness.</span>
-</div>
-<div class="home-principle-row">
-<strong>Boundaries as care</strong>
-<span>Clear expectations around time, communication, scope, and attendance support consistency rather than urgency or confusion.</span>
-</div>
-<div class="home-principle-row">
-<strong>A steadier pace</strong>
-<span>The practice is built for thoughtful outpatient psychotherapy — careful enough to be personal, structured enough to be sustainable.</span>
-</div>
-</div>
-</div>
-</section>
-<section class="home-begin-section">
-<div class="home-begin-inner">
-<div class="home-begin-copy">
-<p class="home-kicker">How to begin</p>
-<h2>Begin with a short note.</h2>
-<p>
-            A brief waitlist inquiry is enough. Stonebridge will review whether outpatient telehealth psychotherapy appears appropriate and follow up about availability, benefits verification, and next steps.
-          </p>
-<p class="quick-consult-note">Prefer to learn more before reaching out? You can review Dr. Bryant’s clinical focus and current availability on his founder profile.</p>
-</div>
-<div class="home-begin-actions">
-<a class="btn btn-primary" href="contact.html">Join the Waitlist</a>
-<a class="btn btn-secondary" href="team-founder.html">Meet the Founder</a>
-</div>
-</div>
-</section>
-</main>
-<footer class="site-footer">
-<div class="container footer-grid">
-<div>
-<div class="footer-brand">STONEBRIDGE</div>
-<div class="footer-sub">Psychological Group</div>
-<p class="footer-copy">Thoughtful online care for Illinois clients.</p>
-</div>
-<div>
-<div class="footer-title">Care</div>
-<div class="footer-links">
-<a href="services.html">Services</a>
-<a href="fees-insurance.html">Fees &amp; Insurance</a>
-<a href="contact.html">Join the Waitlist</a>
-</div>
-</div>
-<div>
-<div class="footer-title">Practice</div>
-<div class="footer-links">
-<a href="about.html">About</a>
-<a href="team.html">Team</a>
-<a href="team-founder.html">Founder</a>
-<a href="portal.html">Client Portal</a>
-</div>
-</div>
-<div>
-<div class="footer-title">Contact</div>
-<div class="footer-links">
-<span>Serving Illinois via telehealth</span>
-<a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-<a href="tel:+17734171688">(773) 417-1688</a>
-<a aria-label="Stonebridge Psychological Group on LinkedIn" href="https://www.linkedin.com/company/stonebridge-psychological-group/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-<a aria-label="Stonebridge Psychological Group on Facebook" href="https://www.facebook.com/profile.php?id=61590354182651" rel="noopener noreferrer" target="_blank">Facebook</a>
-</div>
-</div>
-<div class="footer-logo-right">
-<img alt="Stonebridge Psychological Group logo" src="stonebridge-logo.png"/>
-</div>
-</div>
-<div class="container footer-bottom">
-<div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-<div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-</div>
-</footer>
-<script src="script.js"></script>
+
+<body class="home-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header compact-site-header">
+    <div class="container nav">
+      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
+        <div class="brand-mark">STONEBRIDGE</div>
+        <div class="brand-sub">Psychological Group</div>
+      </a>
+
+      <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+
+      <div class="menu-wrap">
+        <nav class="menu" aria-label="Primary navigation">
+          <a href="index.html" class="active" aria-current="page">Home</a>
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="portal.html">Portal</a>
+        </nav>
+        <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="home-hero">
+      <div class="home-hero-inner">
+        <div class="home-hero-copy">
+          <div class="home-hero-rule"></div>
+          <div class="home-kicker">Online psychotherapy in Illinois</div>
+          <h1>A steadier place to begin therapy.</h1>
+          <p>Thoughtful outpatient care for people navigating anxiety, depression, trauma responses, relationship patterns, substance-use concerns, family stress, or the sense that something keeps repeating.</p>
+
+          <div class="home-hero-actions">
+            <a class="btn btn-primary" href="contact.html">Begin Here</a>
+            <a class="btn btn-secondary" href="services.html">Explore Services</a>
+          </div>
+
+          <p class="home-hero-note">Free 10–15 minute consultation requests and written waitlist inquiries are reviewed before care is confirmed.</p>
+        </div>
+      </div>
+
+      <figure class="home-hero-image">
+        <img src="home-hero-room.png" alt="Quiet therapy room with a chair, bookshelf, and framed bridge artwork" fetchpriority="high">
+        <figcaption class="home-image-caption">
+          <strong>A quieter kind of psychological practice.</strong>
+          <span>Careful work at a steadier pace.</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="home-positioning" aria-label="Practice overview">
+      <div class="home-positioning-grid">
+        <article>
+          <h2>Illinois telehealth</h2>
+          <p>Online care for clients who can meet from a private, safe setting.</p>
+        </article>
+        <article>
+          <h2>Consultation before intake</h2>
+          <p>A brief first step helps clarify scope, timing, and fit.</p>
+        </article>
+        <article>
+          <h2>BCBS commercial plans</h2>
+          <p>BCBS Illinois commercial PPO, Blue Choice, and Blue High Performance are active.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-identity">
+      <div class="home-shell home-identity-grid">
+        <div class="home-identity-copy">
+          <div class="home-section-label">Practice identity</div>
+          <h2>Built for careful, relational work.</h2>
+          <p>Stonebridge was created for psychotherapy with enough room to think, feel, and understand what is happening beneath the surface. Clear expectations, clinical review, and responsible limits help care begin with steadiness rather than urgency.</p>
+        </div>
+
+        <blockquote class="home-quote">
+          <p>Good therapy needs enough structure to feel safe, and enough room to remain human.</p>
+          <cite>Stonebridge approach</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="home-concerns">
+      <div class="home-shell home-concerns-grid">
+        <div class="home-concerns-copy">
+          <div class="home-section-label">Who this may be for</div>
+          <h2>You do not need perfect language for what is wrong.</h2>
+          <p>Therapy can begin with symptoms, stress, relationships, grief, shame, coping, or simply the sense that familiar patterns are becoming harder to carry alone.</p>
+        </div>
+
+        <div class="home-reason-list" aria-label="Common reasons people seek therapy">
+          <div class="home-reason">
+            <strong>Anxiety, worry, or panic</strong>
+            <span>When your mind or body feels difficult to settle.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Depression or disconnection</strong>
+            <span>When daily life feels heavy, muted, or difficult to engage.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Trauma responses and shame</strong>
+            <span>When earlier harm continues to shape safety, trust, or self-worth.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Relationships and attachment</strong>
+            <span>When familiar patterns keep appearing with other people.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Substance use and coping</strong>
+            <span>When a coping strategy is creating additional problems or concern.</span>
+          </div>
+          <div class="home-reason">
+            <strong>Family stress and parenting</strong>
+            <span>When caregivers need help understanding patterns and responding more steadily.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-process">
+      <div class="home-shell">
+        <div class="home-process-head">
+          <div>
+            <div class="home-section-label">How care begins</div>
+            <h2>Consultation before commitment.</h2>
+          </div>
+          <p>The first step is intentionally brief. It helps clarify whether Stonebridge may be an appropriate setting before anyone is asked to commit to ongoing care.</p>
+        </div>
+
+        <div class="home-process-steps">
+          <article class="home-step">
+            <div class="home-step-number">01 · Begin</div>
+            <h3>Choose the easier first step.</h3>
+            <p>Request a free 10–15 minute consultation time or send a short written inquiry.</p>
+          </article>
+
+          <article class="home-step">
+            <div class="home-step-number">02 · Review</div>
+            <h3>Fit and scope are considered.</h3>
+            <p>Stonebridge reviews telehealth appropriateness, availability, payment or insurance questions, and possible next steps.</p>
+          </article>
+
+          <article class="home-step">
+            <div class="home-step-number">03 · Proceed</div>
+            <h3>Care begins only when it fits.</h3>
+            <p>When the setting appears appropriate, intake and treatment planning can move forward within a clear clinical frame.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-begin">
+      <div class="home-shell home-begin-inner">
+        <div>
+          <div class="home-section-label">Ready to begin</div>
+          <h2>A brief note or consultation request is enough.</h2>
+          <p>Use the Contact page to choose a consultation time or write first. You can also review the clinician roster before deciding on a next step.</p>
+        </div>
+
+        <div class="home-begin-actions">
+          <a class="btn btn-primary" href="contact.html">Begin Here</a>
+          <a class="btn btn-secondary" href="team.html">Meet the Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Care</div>
+        <div class="footer-links">
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="contact.html">Join the Waitlist</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Practice</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <a href="team-founder.html">Founder</a>
+          <a href="portal.html">Client Portal</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <a href="tel:+17734171688">(773) 417-1688</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-logo-right">
+        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" loading="lazy">
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
