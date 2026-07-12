@@ -191,14 +191,6 @@
       margin:0 auto;
     }
 
-    .about-section-heading{
-      display:grid;
-      grid-template-columns:175px minmax(0,1fr);
-      gap:42px;
-      align-items:start;
-      margin-bottom:28px;
-    }
-
     .about-label{
       position:relative;
       padding-top:14px;
@@ -215,8 +207,8 @@
       background:linear-gradient(90deg,var(--about-navy),rgba(22,59,97,0));
     }
 
-    .about-section-heading h2,
-    .about-intro-copy h2{
+    .about-intro-copy h2,
+    .about-relational-intro h2{
       margin:0;
       color:var(--about-ink);
       font-family:"EB Garamond",Georgia,serif;
@@ -226,15 +218,25 @@
       text-wrap:balance;
     }
 
-    .about-section-heading h2{max-width:18ch;}
+    .about-relational-layout{
+      display:grid;
+      grid-template-columns:minmax(260px,.76fr) minmax(0,1.24fr);
+      gap:56px;
+      align-items:start;
+    }
 
-    .about-section-heading p{
-      max-width:47rem;
-      margin:12px 0 0;
+    .about-relational-intro h2{
+      max-width:13ch;
+      margin-top:11px;
+    }
+
+    .about-relational-intro p{
+      max-width:31rem;
+      margin:13px 0 0;
       color:var(--about-muted);
       font-family:"Inter",sans-serif;
-      font-size:.96rem;
-      line-height:1.68;
+      font-size:.94rem;
+      line-height:1.66;
     }
 
     /* Philosophy section: asymmetrical editorial layout, not a card grid. */
@@ -326,20 +328,22 @@
       line-height:1.62;
     }
 
-    /* Client experience: numbered sequence without decorative cards. */
-    .about-experience-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:34px;
+    /* Client experience: a numbered sequence that stays relational to its heading. */
+    .about-experience-list{
       border-top:1px solid var(--about-line);
     }
 
     .about-experience-item{
-      padding-top:21px;
+      display:grid;
+      grid-template-columns:165px minmax(0,1fr);
+      gap:22px;
+      align-items:start;
+      padding:16px 0;
+      border-bottom:1px solid var(--about-line);
     }
 
     .about-experience-item h3{
-      margin:8px 0 7px;
+      margin:0 0 6px;
       color:var(--about-ink);
       font-family:"EB Garamond",Georgia,serif;
       font-size:1.5rem;
@@ -469,9 +473,8 @@
       }
 
       .about-overview-grid,
-      .about-section-heading,
+      .about-relational-layout,
       .about-intro,
-      .about-experience-grid,
       .about-scope-inner,
       .about-cta-inner{
         grid-template-columns:1fr;
@@ -488,7 +491,7 @@
         border-top:0;
       }
 
-      .about-section-heading{gap:14px;}
+      .about-relational-layout{gap:26px;}
 
       .about-intro{gap:34px;}
 
@@ -533,6 +536,11 @@
       .about-frame-item:nth-child(even){
         padding:20px 0;
         border-left:0;
+      }
+
+      .about-experience-item{
+        grid-template-columns:1fr;
+        gap:7px;
       }
 
       .about-quote{
@@ -624,13 +632,11 @@
     </section>
 
     <section class="about-section paper">
-      <div class="about-shell">
-        <div class="about-section-heading">
+      <div class="about-shell about-relational-layout">
+        <div class="about-relational-intro">
           <div class="about-label">Clear structure</div>
-          <div>
-            <h2>What clear structure protects.</h2>
-            <p>Boundaries are not separate from care. They help make honest, sustainable clinical work possible.</p>
-          </div>
+          <h2>What clear structure protects.</h2>
+          <p>Boundaries are not separate from care. They help make honest, sustainable clinical work possible.</p>
         </div>
 
         <div class="about-frame-grid">
@@ -662,31 +668,35 @@
     </section>
 
     <section class="about-section">
-      <div class="about-shell">
-        <div class="about-section-heading">
+      <div class="about-shell about-relational-layout">
+        <div class="about-relational-intro">
           <div class="about-label">Client experience</div>
-          <div>
-            <h2>What the practice is built to offer.</h2>
-          </div>
+          <h2>What the practice is built to offer.</h2>
         </div>
 
-        <div class="about-experience-grid">
+        <div class="about-experience-list">
           <article class="about-experience-item">
             <div class="about-item-label">01 · A thoughtful start</div>
-            <h3>A brief inquiry is enough.</h3>
-            <p>You do not need to tell your whole story in a website form before anyone responds.</p>
+            <div>
+              <h3>A brief inquiry is enough.</h3>
+              <p>You do not need to tell your whole story in a website form before anyone responds.</p>
+            </div>
           </article>
 
           <article class="about-experience-item">
             <div class="about-item-label">02 · A whole-person view</div>
-            <h3>Symptoms are part of the picture.</h3>
-            <p>Therapy may also make room for relationships, identity, grief, shame, coping, and meaning.</p>
+            <div>
+              <h3>Symptoms are part of the picture.</h3>
+              <p>Therapy may also make room for relationships, identity, grief, shame, coping, and meaning.</p>
+            </div>
           </article>
 
           <article class="about-experience-item">
             <div class="about-item-label">03 · A collaborative pace</div>
-            <h3>The work does not have to be rushed.</h3>
-            <p>Therapy can proceed with attention to readiness, capacity, and what feels useful enough to explore.</p>
+            <div>
+              <h3>The work does not have to be rushed.</h3>
+              <p>Therapy can proceed with attention to readiness, capacity, and what feels useful enough to explore.</p>
+            </div>
           </article>
         </div>
       </div>
