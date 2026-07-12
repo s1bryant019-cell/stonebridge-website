@@ -54,7 +54,7 @@
       position:relative;
       display:grid;
       grid-template-columns:minmax(620px,55%) minmax(0,45%);
-      min-height:560px;
+      min-height:520px;
       overflow:hidden;
       background:
         radial-gradient(circle at 14% 55%, rgba(200,171,120,.07), transparent 30%),
@@ -120,7 +120,7 @@
     }
 
     .fees-hero-media{
-      min-height:560px;
+      min-height:520px;
       margin:0;
       overflow:hidden;
       border-top-left-radius:42px;
@@ -175,7 +175,7 @@
     }
 
     .fees-section{
-      padding:58px 0;
+      padding:54px 0;
       background:var(--fees-bg);
     }
 
@@ -287,7 +287,20 @@
 
     .fee-table-wrap{
       overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
       border-top:1px solid var(--fees-line);
+    }
+
+    .visually-hidden{
+      position:absolute !important;
+      width:1px !important;
+      height:1px !important;
+      padding:0 !important;
+      margin:-1px !important;
+      overflow:hidden !important;
+      clip:rect(0,0,0,0) !important;
+      white-space:nowrap !important;
+      border:0 !important;
     }
 
     .fee-table{
@@ -394,6 +407,11 @@
       color:#fffaf2;
       border-color:rgba(255,255,255,.30);
       background:rgba(255,255,255,.08);
+    }
+
+    .fee-table-wrap:focus-visible{
+      outline:3px solid var(--fees-navy);
+      outline-offset:4px;
     }
 
     .fees-page a:focus-visible,
@@ -510,7 +528,7 @@
         <div class="fees-hero-rule"></div>
         <div class="fees-kicker">Fees &amp; Insurance</div>
         <h1>Clear financial expectations before care begins.</h1>
-        <p>Stonebridge reviews insurance, private-pay fees, and client responsibility early so the financial frame is understandable before treatment starts.</p>
+        <p>Stonebridge reviews insurance, private-pay fees, and client responsibility before treatment begins.</p>
         <div class="fees-hero-actions">
           <a class="btn btn-primary" href="#payment-options">Payment Options</a>
           <a class="btn btn-secondary" href="#fee-schedule">View Fee Schedule</a>
@@ -526,15 +544,15 @@
       <div class="fees-overview-grid">
         <article>
           <h2>Accepted now</h2>
-          <p>BCBS Illinois commercial plans are currently active.</p>
+          <p>BCBS Illinois commercial plans.</p>
         </article>
         <article>
-          <h2>Other ways to pay</h2>
-          <p>Private pay and out-of-network options may be available.</p>
+          <h2>Other payment options</h2>
+          <p>Private pay and eligible out-of-network benefits.</p>
         </article>
         <article>
-          <h2>Your responsibility</h2>
-          <p>Benefits are verified before insurance billing begins.</p>
+          <h2>Client responsibility</h2>
+          <p>Copays, deductibles, and non-covered charges may still apply.</p>
         </article>
       </div>
     </section>
@@ -544,7 +562,7 @@
         <div class="fees-section-heading">
           <div class="fees-label">Payment and insurance</div>
           <div>
-            <h2>What is active now, and what you may pay.</h2>
+            <h2>Insurance and payment options.</h2>
           </div>
         </div>
 
@@ -579,8 +597,9 @@
           </div>
         </div>
 
-        <div class="fee-table-wrap">
+        <div class="fee-table-wrap" role="region" aria-label="Standard fee schedule" tabindex="0">
           <table class="fee-table">
+            <caption class="visually-hidden">Standard fees for Stonebridge services</caption>
             <thead>
               <tr>
                 <th>Service</th>
@@ -589,7 +608,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>Free brief consultation <span class="fee-code">CONSULT15</span></td><td>10–15 minutes</td><td>$0</td></tr>
+              <tr><td>Free 10–15 minute consultation</td><td>10–15 minutes</td><td>$0</td></tr>
               <tr><td>Initial diagnostic evaluation <span class="fee-code">90791</span></td><td>60 minutes</td><td>$275</td></tr>
               <tr><td>Individual psychotherapy <span class="fee-code">90832</span></td><td>30 minutes</td><td>$150</td></tr>
               <tr><td>Individual psychotherapy <span class="fee-code">90834</span></td><td>45 minutes</td><td>$200</td></tr>
@@ -625,7 +644,7 @@
 
           <article class="fees-policy">
             <div class="fees-label">Appointments and payment</div>
-            <h3>Clear expectations protect the frame.</h3>
+            <h3>Appointment and cancellation policies.</h3>
             <ul>
               <li>The free 10–15 minute consultation may occur before the first full clinical session.</li>
               <li>The initial diagnostic evaluation is the first full appointment.</li>
@@ -640,10 +659,10 @@
     <section class="fees-cta">
       <div class="fees-cta-inner">
         <div>
-          <h2>Questions about fit or payment?</h2>
-          <p>Send a brief inquiry so benefits, timing, and next steps can be reviewed before care begins.</p>
+          <h2>Questions about benefits or payment?</h2>
+          <p>Send a brief inquiry so insurance, fees, and next steps can be reviewed.</p>
         </div>
-        <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
+        <a class="btn btn-secondary" href="contact.html">Send an Inquiry</a>
       </div>
     </section>
   </main>
