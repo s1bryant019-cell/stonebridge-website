@@ -134,8 +134,48 @@
       object-position:center;
     }
 
+    .portal-overview{
+      background:linear-gradient(135deg,var(--portal-navy),var(--portal-navy-deep));
+      color:var(--portal-white);
+    }
+
+    .portal-overview-grid{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      padding:20px 0;
+    }
+
+    .portal-overview article{
+      padding:0 24px;
+      border-left:1px solid rgba(255,255,255,.16);
+    }
+
+    .portal-overview article:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .portal-overview h2{
+      margin:0 0 4px;
+      color:#fffaf2;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.08rem;
+      line-height:1.1;
+      letter-spacing:-.01em;
+    }
+
+    .portal-overview p{
+      margin:0;
+      color:rgba(255,250,242,.86);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.48;
+    }
+
     .portal-section{
-      padding:52px 0 60px;
+      padding:58px 0 64px;
       background:var(--portal-bg);
     }
 
@@ -346,10 +386,22 @@
         border-radius:0;
       }
 
+      .portal-overview-grid,
       .portal-layout,
       .portal-crisis-inner,
       .portal-new-inner{
         grid-template-columns:1fr;
+      }
+
+      .portal-overview article{
+        padding:14px 0;
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.14);
+      }
+
+      .portal-overview article:first-child{
+        padding-top:0;
+        border-top:0;
       }
 
       .portal-layout{gap:32px;}
@@ -362,6 +414,7 @@
 
     @media(max-width:720px){
       .portal-shell,
+      .portal-overview-grid,
       .portal-crisis-inner,
       .portal-new-inner{
         width:min(100% - 34px,1080px);
@@ -423,7 +476,7 @@
         <div class="portal-hero-rule"></div>
         <div class="portal-kicker">Client Portal</div>
         <h1>Secure access for active clients.</h1>
-        <p>Use TherapyPortal for assigned forms, scheduled telehealth sessions, appointment details, and billing-related items when available.</p>
+        <p>Sign in to complete assigned forms, join scheduled telehealth sessions, and review available account information.</p>
 
         <div class="portal-hero-actions">
           <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Access Client Portal</a>
@@ -435,12 +488,30 @@
       </figure>
     </section>
 
+    <section class="portal-overview" aria-label="Portal overview">
+      <div class="portal-overview-grid">
+        <article>
+          <h2>Assigned forms</h2>
+          <p>Complete paperwork and questionnaires assigned by the practice.</p>
+        </article>
+        <article>
+          <h2>Telehealth sessions</h2>
+          <p>Access telehealth appointments when portal access is active.</p>
+        </article>
+        <article>
+          <h2>Account and billing</h2>
+          <p>Review appointment or billing information when available.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="portal-section">
       <div class="portal-shell portal-layout">
         <div class="portal-main">
           <div class="portal-label">For active clients</div>
           <h2>Use the portal for tasks connected to ongoing care.</h2>
-          <p>TherapyPortal is the secure location for assigned forms, scheduled telehealth sessions, and routine account items. Use it instead of the public website for sensitive information related to active care.</p>
+          <p>TherapyPortal is the secure location for information connected to active care. Use it instead of the public website when viewing assigned documents, session links, or sensitive account details.</p>
+          <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Access Client Portal</a>
         </div>
 
         <aside class="portal-privacy">
