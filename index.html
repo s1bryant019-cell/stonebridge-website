@@ -245,6 +245,7 @@
     }
 
     .home-recognition h2,
+    .home-services h2,
     .home-philosophy h2,
     .home-begin h2{
       margin:11px 0 0;
@@ -297,6 +298,125 @@
       font-family:"Inter",sans-serif;
       font-size:.87rem;
       line-height:1.54;
+    }
+
+
+    /* =========================
+       SERVICES DIRECTORY
+       A restrained editorial directory rather than a card wall.
+    ========================= */
+    .home-services{
+      padding:52px 0 56px;
+      background:var(--home-paper);
+      border-top:1px solid var(--home-warm-line);
+      border-bottom:1px solid var(--home-warm-line);
+    }
+
+    .home-services-layout{
+      display:grid;
+      grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
+      gap:58px;
+      align-items:start;
+    }
+
+    .home-services h2{
+      max-width:13ch;
+    }
+
+    .home-services-intro > p{
+      max-width:31rem;
+      margin:15px 0 0;
+      color:var(--home-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.94rem;
+      line-height:1.66;
+    }
+
+    .home-services-overview{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:19px;
+      padding-bottom:3px;
+      border-bottom:1px solid rgba(22,59,97,.38);
+      color:var(--home-blue);
+      font-family:"Inter",sans-serif;
+      font-size:.84rem;
+      font-weight:700;
+      line-height:1.35;
+      text-decoration:none;
+    }
+
+    .home-services-overview:hover{
+      border-bottom-color:var(--home-blue);
+    }
+
+    .home-services-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      border-top:1px solid var(--home-line);
+      border-left:1px solid var(--home-line);
+    }
+
+    .home-service-item{
+      position:relative;
+      min-height:154px;
+      display:block;
+      padding:19px 48px 18px 21px;
+      border-right:1px solid var(--home-line);
+      border-bottom:1px solid var(--home-line);
+      color:inherit;
+      text-decoration:none;
+      transition:background-color .16s ease;
+    }
+
+    .home-service-item:hover{
+      background:rgba(255,250,242,.72);
+    }
+
+    .home-service-item h3{
+      margin:0;
+      color:var(--home-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.4rem;
+      font-weight:600;
+      line-height:1.12;
+      letter-spacing:-.018em;
+    }
+
+    .home-service-item p{
+      margin:8px 0 0;
+      color:var(--home-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.86rem;
+      line-height:1.54;
+    }
+
+    .home-service-arrow{
+      position:absolute;
+      top:18px;
+      right:20px;
+      color:var(--home-blue);
+      font-family:"Inter",sans-serif;
+      font-size:1rem;
+      line-height:1;
+      transition:transform .16s ease;
+    }
+
+    .home-service-item:hover .home-service-arrow{
+      transform:translateX(3px);
+    }
+
+    .home-service-status{
+      display:inline-block;
+      margin-top:11px;
+      color:var(--home-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.66rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      line-height:1.3;
+      text-transform:uppercase;
     }
 
     /* =========================
@@ -430,6 +550,7 @@
       }
 
       .home-recognition-layout,
+      .home-services-layout,
       .home-philosophy-layout,
       .home-begin-inner{
         grid-template-columns:1fr;
@@ -488,15 +609,18 @@
       .home-trust i{display:none;}
 
       .home-recognition,
+      .home-services,
       .home-philosophy,
       .home-begin{
         padding-top:40px;
         padding-bottom:42px;
       }
 
-      .home-recognition-grid{grid-template-columns:1fr;}
+      .home-recognition-grid,
+      .home-services-grid{grid-template-columns:1fr;}
 
-      .home-recognition-item{
+      .home-recognition-item,
+      .home-service-item{
         min-height:0;
       }
 
@@ -733,6 +857,57 @@
             <h3>You feel distant from yourself or the people you love.</h3>
             <p>Depression, grief, numbness, disconnection, or a life that no longer feels like your own.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="home-services" aria-labelledby="home-services-title">
+      <div class="home-shell home-services-layout">
+        <div class="home-services-intro">
+          <div class="home-label">Ways to work with Stonebridge</div>
+          <h2 id="home-services-title">Care shaped around the people in the room.</h2>
+          <p>Stonebridge offers individual, relational, parent-focused, and group-based care for Illinois clients. A brief consultation helps clarify fit, scope, and the most appropriate place to begin.</p>
+          <a class="home-services-overview" href="services.html">Explore all services <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="home-services-grid" aria-label="Stonebridge services">
+          <a class="home-service-item" href="individual-therapy.html#adult-therapy">
+            <h3>Adult Therapy</h3>
+            <p>Individual psychotherapy for anxiety, depression, trauma, relationships, grief, identity, substance-use concerns, and patterns that keep returning.</p>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="home-service-item" href="individual-therapy.html#adolescent-therapy">
+            <h3>Adolescent Therapy</h3>
+            <p>Developmentally responsive therapy for teens, with caregiver involvement thoughtfully defined around privacy, safety, and treatment goals.</p>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="home-service-item" href="couples-therapy.html">
+            <h3>Couples Therapy</h3>
+            <p>Relational work for recurring conflict, emotional distance, trust injuries, intimacy concerns, and major transitions.</p>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="home-service-item" href="family-therapy.html">
+            <h3>Family Therapy</h3>
+            <p>Family-systems treatment for communication difficulties, parent–adolescent strain, changing roles, and relationship repair.</p>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="home-service-item" href="parent-support.html">
+            <h3>Parent Support</h3>
+            <p>Consultation and classes for parents seeking clearer boundaries, steadier responses, and support with difficult family patterns.</p>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="home-service-item" href="group-therapy.html">
+            <h3>Group Therapy</h3>
+            <p>Structured therapeutic groups are in development. Prospective participants may express interest and receive updates as offerings become available.</p>
+            <span class="home-service-status">In development</span>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </section>
