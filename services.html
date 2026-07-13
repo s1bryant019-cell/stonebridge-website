@@ -53,7 +53,7 @@
     /* Full-width photographic hero with a softer orientation band beneath it. */
     .services-hero{
       position:relative;
-      min-height:440px;
+      min-height:480px;
       overflow:hidden;
       isolation:isolate;
       background:var(--services-navy-deep);
@@ -87,7 +87,7 @@
       position:relative;
       z-index:2;
       width:min(1220px,calc(100% - 72px));
-      min-height:440px;
+      min-height:480px;
       margin:0 auto;
       display:flex;
       flex-direction:column;
@@ -579,7 +579,7 @@
     @media(max-width:1080px){
       .services-hero,
       .services-hero-copy{
-        min-height:460px;
+        min-height:500px;
       }
 
       .services-hero-copy{
@@ -634,7 +634,7 @@
 
       .services-hero,
       .services-hero-copy{
-        min-height:540px;
+        min-height:560px;
       }
 
       .services-hero-copy{
@@ -725,7 +725,160 @@
         gap:4px;
       }
     }
-  </style>
+  
+
+    /* Services dropdown prototype: one-level, click-controlled, and keyboard accessible. */
+    .services-page .site-header.compact-site-header .services-nav-dropdown{
+      position:relative;
+      display:flex!important;
+      align-items:center;
+    }
+
+    .services-nav-main{
+      display:flex;
+      align-items:center;
+      min-height:34px;
+    }
+
+    .services-page .site-header.compact-site-header .services-nav-main > a{
+      min-height:34px;
+    }
+
+    .services-menu-toggle{
+      width:28px;
+      height:34px;
+      margin-left:1px;
+      padding:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:0;
+      border-radius:7px;
+      background:transparent;
+      color:var(--services-muted);
+      cursor:pointer;
+    }
+
+    .services-menu-toggle svg{
+      width:16px;
+      height:16px;
+      transition:transform .16s ease;
+    }
+
+    .services-nav-dropdown.is-open .services-menu-toggle svg{
+      transform:rotate(180deg);
+    }
+
+    .services-page .site-header.compact-site-header .services-dropdown-menu{
+      position:absolute;
+      top:calc(100% + 10px);
+      left:-14px;
+      z-index:80;
+      width:248px;
+      min-width:248px;
+      padding:9px;
+      display:grid!important;
+      gap:1px;
+      border:1px solid rgba(212,200,185,.88);
+      border-radius:12px;
+      background:rgba(255,252,247,.99);
+      box-shadow:0 18px 44px rgba(16,47,77,.14);
+    }
+
+    .services-page .site-header.compact-site-header .services-dropdown-menu[hidden]{
+      display:none!important;
+    }
+
+    .services-dropdown-menu::before{
+      content:"";
+      position:absolute;
+      top:-7px;
+      left:72px;
+      width:12px;
+      height:12px;
+      transform:rotate(45deg);
+      border-left:1px solid rgba(212,200,185,.88);
+      border-top:1px solid rgba(212,200,185,.88);
+      background:#fffaf4;
+    }
+
+    .services-page .site-header.compact-site-header .services-dropdown-menu a{
+      position:relative;
+      z-index:1;
+      min-height:0;
+      padding:9px 11px;
+      border-radius:7px;
+      color:var(--services-muted);
+      font-size:.83rem;
+      line-height:1.25;
+      white-space:normal;
+    }
+
+    .services-page .site-header.compact-site-header .services-dropdown-menu a:hover,
+    .services-page .site-header.compact-site-header .services-dropdown-menu a:focus-visible,
+    .services-page .site-header.compact-site-header .services-dropdown-menu a.active-sub{
+      background:#f1ebe3;
+      color:var(--services-ink);
+    }
+
+    .services-menu-toggle:hover{
+      color:var(--services-ink);
+      background:rgba(22,59,97,.06);
+    }
+
+    .services-menu-toggle:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:1px;
+      box-shadow:0 0 0 5px var(--services-navy-deep);
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .services-menu-toggle svg{transition:none;}
+    }
+
+    @media(max-width:960px){
+      .services-page .site-header.compact-site-header .services-nav-dropdown{
+        width:100%;
+        display:block!important;
+      }
+
+      .services-nav-main{
+        width:100%;
+        justify-content:space-between;
+      }
+
+      .services-page .site-header.compact-site-header .services-nav-main > a{
+        flex:1 1 auto;
+      }
+
+      .services-menu-toggle{
+        width:38px;
+        height:38px;
+        flex:0 0 38px;
+      }
+
+      .services-page .site-header.compact-site-header .services-dropdown-menu{
+        position:static;
+        width:100%;
+        min-width:0;
+        margin:3px 0 2px;
+        padding:4px 0 2px 13px;
+        gap:0;
+        border:0;
+        border-left:1px solid rgba(33,49,66,.17);
+        border-radius:0;
+        background:transparent;
+        box-shadow:none;
+      }
+
+      .services-dropdown-menu::before{display:none;}
+
+      .services-page .site-header.compact-site-header .services-dropdown-menu a{
+        padding:8px 10px;
+        font-size:.85rem;
+      }
+    }
+</style>
 </head>
 
 <body class="services-page">
@@ -744,9 +897,31 @@
         <nav class="menu" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="team.html">Team</a><a href="for-clinicians.html">For Clinicians</a>
-          <a href="services.html" class="active" aria-current="page">Services</a>
+          <a href="team.html">Team</a>
+
+          <div class="nav-dropdown services-nav-dropdown">
+            <div class="services-nav-main">
+              <a href="services.html" class="active" aria-current="page">Services</a>
+              <button class="services-menu-toggle" type="button" aria-expanded="false" aria-controls="services-submenu" aria-haspopup="true" aria-label="Open Services menu">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="dropdown-menu services-dropdown-menu" id="services-submenu" role="menu" aria-label="Services" hidden>
+              <a href="services.html" role="menuitem" class="active-sub">Services Overview</a>
+              <a href="services.html#adult-therapy" role="menuitem">Adult Therapy</a>
+              <a href="services.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
+              <a href="services.html#couples-therapy" role="menuitem">Couples Therapy</a>
+              <a href="services.html#family-therapy" role="menuitem">Family Therapy</a>
+              <a href="parent-support.html" role="menuitem">Parent Support</a>
+              <a href="group-therapy.html" role="menuitem">Group Therapy</a>
+            </div>
+          </div>
+
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Portal</a>
         </nav>
         <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
@@ -957,7 +1132,7 @@
           <a href="about.html">About</a>
           <a href="team.html">Team</a>
           <a href="team-founder.html">Founder</a>
-          <a href="for-clinicians.html">For Clinicians</a>
+          <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Client Portal</a>
         </div>
       </div>
@@ -983,6 +1158,88 @@
       <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
     </div>
   </footer>
+
+
+  <script>
+    (function(){
+      function initServicesDropdown(){
+        var dropdown=document.querySelector('.services-nav-dropdown');
+        if(!dropdown) return;
+
+        var toggle=dropdown.querySelector('.services-menu-toggle');
+        var panel=dropdown.querySelector('.services-dropdown-menu');
+        var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
+
+        function setOpen(open, focusFirst){
+          dropdown.classList.toggle('is-open',open);
+          toggle.setAttribute('aria-expanded',String(open));
+          toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
+          panel.hidden=!open;
+          if(open && focusFirst && items.length) items[0].focus();
+        }
+
+        toggle.addEventListener('click',function(){
+          setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
+        });
+
+        toggle.addEventListener('keydown',function(event){
+          if(event.key==='ArrowDown'){
+            event.preventDefault();
+            setOpen(true,true);
+          }
+          if(event.key==='Escape'){
+            event.preventDefault();
+            setOpen(false,false);
+          }
+        });
+
+        panel.addEventListener('keydown',function(event){
+          var current=items.indexOf(document.activeElement);
+          if(event.key==='Escape'){
+            event.preventDefault();
+            setOpen(false,false);
+            toggle.focus();
+          }else if(event.key==='ArrowDown'){
+            event.preventDefault();
+            items[(current+1+items.length)%items.length].focus();
+          }else if(event.key==='ArrowUp'){
+            event.preventDefault();
+            items[(current-1+items.length)%items.length].focus();
+          }else if(event.key==='Home'){
+            event.preventDefault();
+            items[0].focus();
+          }else if(event.key==='End'){
+            event.preventDefault();
+            items[items.length-1].focus();
+          }
+        });
+
+        items.forEach(function(item){
+          item.addEventListener('click',function(){setOpen(false,false);});
+        });
+
+        document.addEventListener('click',function(event){
+          if(!dropdown.contains(event.target)) setOpen(false,false);
+        });
+
+        document.addEventListener('keydown',function(event){
+          if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
+            setOpen(false,false);
+            toggle.focus();
+          }
+        });
+
+        window.addEventListener('resize',function(){
+          if(window.innerWidth>960 && document.querySelector('.menu.open')===null){
+            setOpen(false,false);
+          }
+        });
+      }
+
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
+      else initServicesDropdown();
+    })();
+  </script>
 
   <script src="script.js"></script>
 </body>
