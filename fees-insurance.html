@@ -389,6 +389,16 @@
       font-weight:600;
     }
 
+    .fees-table-note{
+      grid-column:2;
+      max-width:68ch;
+      margin:-8px 0 0;
+      color:var(--fees-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.86rem;
+      line-height:1.62;
+    }
+
     .fees-professional-note{
       grid-column:1 / -1;
       display:grid;
@@ -536,6 +546,10 @@
         grid-template-columns:1fr;
       }
       .fees-relational-layout{gap:26px;}
+      .fees-table-note{
+        grid-column:1;
+        margin-top:0;
+      }
       .fees-payment-row,
       .fees-professional-note{
         grid-template-columns:1fr;
@@ -875,6 +889,8 @@
             </tbody>
           </table>
         </div>
+
+        <p class="fees-table-note">Care coordination or clinical administration may apply when clinically necessary work occurs outside a standard session. Questions about when this fee may apply can be discussed before services begin.</p>
 
         <div class="fees-professional-note">
           <strong>Professional services</strong>
