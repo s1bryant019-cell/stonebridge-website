@@ -1030,7 +1030,8 @@
         if(!alertBox)return;
         alertBox.textContent=message;
         alertBox.classList.add('show');
-        alertBox.scrollIntoView({behavior:'smooth',block:'nearest'});
+        var reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        alertBox.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'nearest'});
       }
 
       function clearAlert(){
