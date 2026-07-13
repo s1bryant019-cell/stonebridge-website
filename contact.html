@@ -852,6 +852,7 @@
             <input type="text" name="website" autocomplete="off" tabindex="-1">
           </label>
 
+          <input type="hidden" name="inquiryType" value="waitlist">
           <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy">
 
           <div class="contact-form-grid">
@@ -869,11 +870,13 @@
               <span>What are you reaching out about? *</span>
               <select name="serviceRequested" required>
                 <option value="">Select one</option>
-                <option>Individual psychotherapy</option>
-                <option>Parent Consultation / Parenting Support</option>
-                <option>Family-based support</option>
-                <option>Small parent consultation group interest</option>
-                <option>Unsure / fit review</option>
+                <option>Adult Therapy</option>
+                <option>Adolescent Therapy</option>
+                <option>Couples Therapy</option>
+                <option>Family Therapy</option>
+                <option>Parent Support</option>
+                <option>Group Therapy Interest</option>
+                <option>Unsure / Fit Review</option>
               </select>
             </label>
 
@@ -1063,28 +1066,19 @@
         }
 
         var data=new FormData(form);
-        var insurance=data.get('insurancePreference')||'';
         var payload={
+          inquiryType:data.get('inquiryType')||'waitlist',
           website:data.get('website')||'',
-          service:data.get('serviceRequested')||'',
           serviceRequested:data.get('serviceRequested')||'',
           psychotherapyFormat:data.get('psychotherapyFormat')||'',
           fullName:data.get('fullName')||'',
-          name:data.get('fullName')||'',
-          patientName:'',
-          proposedPatientName:'',
           email:data.get('email')||'',
-          insurance:insurance,
-          insurancePayment:insurance,
-          reason:data.get('reason')||'',
-          message:data.get('reason')||''
+          insurancePreference:data.get('insurancePreference')||'',
+          reason:data.get('reason')||''
         };
 
         try{
           var response=await postJson('/api/contact',payload);
-          if(!response.ok){
-            response=await postJson('/api/contact.js',payload);
-          }
           if(!response.ok)throw new Error('Request failed');
 
           form.reset();
