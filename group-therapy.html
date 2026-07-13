@@ -1,23 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Group Therapy | Stonebridge Psychological Group</title>
-  <meta name="description" content="Stonebridge Psychological Group is developing structured, clinician-led therapy groups for Illinois clients. Prospective participants may express interest while offerings are finalized.">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-  <style id="stonebridge-group-therapy-page-only">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Group Therapy | Stonebridge Psychological Group</title>
+<meta content="Stonebridge Psychological Group is developing structured, clinician-led therapy groups for Illinois clients. Prospective participants may express interest while offerings are finalized." name="description"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="favicon.ico" rel="icon" sizes="any"/>
+<link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<style id="stonebridge-group-therapy-page-only">
     :root{
       --group-bg:#f8f5f0;
       --group-paper:#f1ebe3;
@@ -711,266 +709,419 @@
       }
     }
   </style>
-</head>
+<style>
 
+/* Shared Services navigation — synchronized after all service destinations were created. */
+.site-header.compact-site-header .services-nav-dropdown{
+  position:relative;
+  display:flex!important;
+  align-items:center;
+}
+.services-nav-main{
+  display:flex;
+  align-items:center;
+  min-height:34px;
+}
+.site-header.compact-site-header .services-nav-main > a{min-height:34px;}
+.services-menu-toggle{
+  width:28px;
+  height:34px;
+  margin-left:1px;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:7px;
+  background:transparent;
+  color:#5d6870;
+  cursor:pointer;
+}
+.services-menu-toggle svg{
+  width:16px;
+  height:16px;
+  transition:transform .16s ease;
+}
+.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
+.site-header.compact-site-header .services-dropdown-menu{
+  position:absolute;
+  top:calc(100% + 10px);
+  left:-14px;
+  z-index:80;
+  width:248px;
+  min-width:248px;
+  padding:9px;
+  display:grid!important;
+  gap:1px;
+  border:1px solid rgba(212,200,185,.88);
+  border-radius:12px;
+  background:rgba(255,252,247,.99);
+  box-shadow:0 18px 44px rgba(16,47,77,.14);
+}
+.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
+.services-dropdown-menu::before{
+  content:"";
+  position:absolute;
+  top:-7px;
+  left:72px;
+  width:12px;
+  height:12px;
+  transform:rotate(45deg);
+  border-left:1px solid rgba(212,200,185,.88);
+  border-top:1px solid rgba(212,200,185,.88);
+  background:#fffaf4;
+}
+.site-header.compact-site-header .services-dropdown-menu a{
+  position:relative;
+  z-index:1;
+  min-height:0;
+  padding:9px 11px;
+  border-radius:7px;
+  color:#5d6870;
+  font-size:.83rem;
+  line-height:1.25;
+  white-space:normal;
+}
+.site-header.compact-site-header .services-dropdown-menu a:hover,
+.site-header.compact-site-header .services-dropdown-menu a:focus-visible,
+.site-header.compact-site-header .services-dropdown-menu a.active-sub{
+  background:#f1ebe3;
+  color:#213142;
+}
+.services-menu-toggle:hover{
+  color:#213142;
+  background:rgba(22,59,97,.06);
+}
+.services-menu-toggle:focus-visible{
+  outline:3px solid #fffaf2;
+  outline-offset:1px;
+  box-shadow:0 0 0 5px #102f4d;
+}
+@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
+@media(max-width:960px){
+  .site-header.compact-site-header .services-nav-dropdown{
+    width:100%;
+    display:block!important;
+  }
+  .services-nav-main{
+    width:100%;
+    justify-content:space-between;
+  }
+  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
+  .services-menu-toggle{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+  }
+  .site-header.compact-site-header .services-dropdown-menu{
+    position:static;
+    width:100%;
+    min-width:0;
+    margin:3px 0 2px;
+    padding:4px 0 2px 13px;
+    gap:0;
+    border:0;
+    border-left:1px solid rgba(33,49,66,.17);
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .services-dropdown-menu::before{display:none;}
+  .site-header.compact-site-header .services-dropdown-menu a{
+    padding:8px 10px;
+    font-size:.85rem;
+  }
+}
+
+/* Interior hero sizing follows the approved About-page standard. */
+.parent-hero,.parent-hero-copy,.group-hero,.group-hero-copy{min-height:480px;}
+@media(max-width:1080px){
+  .parent-hero,.parent-hero-copy,.group-hero,.group-hero-copy{min-height:500px;}
+}
+@media(max-width:720px){
+  .parent-hero,.parent-hero-copy,.group-hero,.group-hero-copy{min-height:560px;}
+}
+</style></head>
 <body class="group-therapy-page">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header compact-site-header">
+<div class="container nav">
+<a aria-label="Stonebridge Psychological Group home" class="brand-link" href="index.html">
+<div class="brand-mark">STONEBRIDGE</div>
+<div class="brand-sub">Psychological Group</div>
+</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="mobile-toggle" type="button">Menu</button>
+<div class="menu-wrap">
+<nav aria-label="Primary navigation" class="menu"><a href="index.html">Home</a><a href="about.html">About</a><a href="team.html">Team</a><div class="nav-dropdown services-nav-dropdown"><div class="services-nav-main"><a class="active" href="services.html">Services</a><button aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu" class="services-menu-toggle" type="button"><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button></div><div aria-label="Services" class="dropdown-menu services-dropdown-menu" hidden="" id="services-submenu" role="menu"><a href="services.html" role="menuitem">Services Overview</a><a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a><a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a><a href="couples-therapy.html" role="menuitem">Couples Therapy</a><a href="family-therapy.html" role="menuitem">Family Therapy</a><a href="parent-support.html" role="menuitem">Parent Support</a><a aria-current="page" class="active-sub" href="group-therapy.html" role="menuitem">Group Therapy</a></div></div><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="for-clinicians.html">Professionals</a><a href="portal.html">Portal</a></nav>
+<div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
+</div>
+</div>
+</header>
+<main id="main-content">
+<section class="group-hero">
+<div class="group-hero-copy">
+<div class="group-hero-rule"></div>
+<div class="group-kicker">Group Therapy</div>
+<h1>A steady group can make difficult change less isolating.</h1>
+<p>Stonebridge is developing structured, clinician-led therapy groups for people who may benefit from shared work within a thoughtful, clearly held frame. Groups are not currently enrolling, but prospective participants may express interest while offerings are finalized.</p>
+<div class="group-hero-actions">
+<a class="btn btn-primary" href="#group-development">Explore Group Development</a>
+<a class="btn btn-secondary" href="contact.html">Express Interest</a>
+</div>
+</div>
+<figure class="group-hero-media">
+<img alt="A small therapy group in conversation in a warm, private room" fetchpriority="high" height="1373" src="Group Therapy - Hero.png" width="2048"/>
+</figure>
+</section>
+<section aria-label="Group therapy overview" class="group-overview">
+<div class="group-overview-grid">
+<article>
+<h2>Clinician-led</h2>
+<p>Each group is organized and facilitated as psychotherapy, not a drop-in meeting.</p>
+</article>
+<article>
+<h2>Defined purpose</h2>
+<p>Focus, structure, expectations, and length are clarified before participation.</p>
+</article>
+<article>
+<h2>Fit before enrollment</h2>
+<p>Readiness and group composition are reviewed before a place is confirmed.</p>
+</article>
+</div>
+</section>
+<section class="group-section">
+<div class="group-shell group-intro-grid">
+<div class="group-heading">
+<div class="group-label">Why group therapy</div>
+<h2>Insight develops differently when it is shared.</h2>
+</div>
+<div class="group-intro-copy">
+<p>Group therapy offers something individual work cannot fully reproduce: the opportunity to notice patterns, practice new ways of relating, and receive thoughtful feedback within a consistent community. Members bring different histories, but the group is organized around a shared clinical purpose.</p>
+<p>The frame matters. Stonebridge groups will be intentionally composed, clearly structured, and facilitated with attention to safety, participation, boundaries, and the needs of the group as a whole. Group therapy is not simply individual therapy conducted in front of other people.</p>
+</div>
+</div>
+</section>
+<section class="group-section paper" id="group-development">
+<div class="group-shell group-development">
+<div class="group-development-heading">
+<div class="group-label">One group in development</div>
+<h2>Recovery, relapse prevention, and rebuilding daily life.</h2>
+</div>
+<article class="group-concept">
+<div class="group-feature-label">Structured recovery-focused group</div>
+<h3>For adults seeking a steadier approach to recovery.</h3>
+<p>One potential offering is a clinician-led psychotherapy group for adults working to understand patterns related to substance use, strengthen practical recovery skills, and build a life that supports continued change. The group would combine focused discussion, reflection, skills practice, and attention to relationships rather than relying on a single fixed formula.</p>
+<ul aria-label="Possible recovery group topics" class="group-topic-list">
+<li>Triggers, cravings, and high-risk situations</li>
+<li>Emotional regulation and coping under stress</li>
+<li>Daily structure, routines, and meaningful activity</li>
+<li>Relapse warning signs and prevention planning</li>
+<li>Trust, communication, and relationship repair</li>
+<li>Support, accountability, and continued care</li>
+</ul>
+<p class="group-concept-note">The final title, schedule, duration, fee, eligibility criteria, and opening date have not yet been set. Expressing interest does not guarantee enrollment or establish a treatment relationship.</p>
+</article>
+</div>
+</section>
+<section class="group-section">
+<div class="group-shell group-value-layout">
+<div class="group-value-intro">
+<div class="group-label">What the group frame offers</div>
+<h2>Shared work with individual relevance.</h2>
+<p>A well-designed group creates enough structure for members to work honestly without losing sight of their own goals, circumstances, and responsibilities.</p>
+</div>
+<div class="group-point-grid">
+<article class="group-point">
+<div class="group-point-label">Recognition</div>
+<h3>Less isolation</h3>
+<p>Hearing how others understand and navigate similar struggles can reduce shame without minimizing individual differences.</p>
+</article>
+<article class="group-point">
+<div class="group-point-label">Perspective</div>
+<h3>More than one viewpoint</h3>
+<p>Members can consider patterns and choices through perspectives that may not emerge in individual reflection alone.</p>
+</article>
+<article class="group-point">
+<div class="group-point-label">Practice</div>
+<h3>Relationships in real time</h3>
+<p>The group provides a place to notice communication, avoidance, trust, boundaries, and repair as they occur between people.</p>
+</article>
+<article class="group-point">
+<div class="group-point-label">Continuity</div>
+<h3>A steady therapeutic frame</h3>
+<p>Regular attendance, clear expectations, and a consistent purpose help members return to the work over time.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="group-section paper">
+<div class="group-shell group-process">
+<div class="group-process-heading">
+<div class="group-label">How participation will work</div>
+<h2>Interest comes before enrollment.</h2>
+</div>
+<div class="group-steps">
+<article class="group-step">
+<div class="group-step-label">Step 01</div>
+<div>
+<h3>Share your interest.</h3>
+<p>Prospective participants may send a brief inquiry describing the kind of group support they are seeking and any scheduling considerations.</p>
+</div>
+</article>
+<article class="group-step">
+<div class="group-step-label">Step 02</div>
+<div>
+<h3>Complete a fit conversation.</h3>
+<p>Before a group opens, a brief consultation will clarify the group’s purpose, current needs, telehealth suitability, and whether another level or type of care may be more appropriate.</p>
+</div>
+</article>
+<article class="group-step">
+<div class="group-step-label">Step 03</div>
+<div>
+<h3>Review readiness and composition.</h3>
+<p>Group placement depends on clinical fit, readiness to participate, scheduling, and a composition that can support useful work for all members.</p>
+</div>
+</article>
+<article class="group-step">
+<div class="group-step-label">Step 04</div>
+<div>
+<h3>Confirm the frame before commitment.</h3>
+<p>Schedule, attendance expectations, confidentiality, fee, group length, and participation agreements are reviewed before enrollment is confirmed.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section aria-label="Scope of group therapy" class="group-boundary">
+<div class="group-boundary-inner">
+<strong>Scope and boundaries</strong>
+<p>Group therapy is not crisis care, detoxification, withdrawal management, an intensive outpatient program, medical addiction treatment, or a substitute for a higher level of care when one is needed. Privacy and respectful participation are required, but confidentiality in a group also depends on each member honoring the agreements reviewed before enrollment.</p>
+</div>
+</section>
+<section class="group-section">
+<div class="group-shell">
+<div class="group-availability">
+<strong>Availability and fees</strong>
+<p>No Stonebridge therapy group is currently enrolling. Schedule, format, group size, fee, and possible insurance coverage will be stated clearly before a group opens so prospective members can make an informed decision before committing.</p>
+</div>
+</div>
+</section>
+<section class="group-cta">
+<div class="group-cta-inner">
+<div>
+<h2>Interested in a future Stonebridge group?</h2>
+<p>Send a brief inquiry about the kind of group support you are seeking. Interest will help guide development, but it is not enrollment or confirmation of services.</p>
+</div>
+<a class="btn btn-secondary" href="contact.html">Express Interest</a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-brand">STONEBRIDGE</div>
+<div class="footer-sub">Psychological Group</div>
+<p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+</div>
+<div>
+<div class="footer-title">Care</div>
+<div class="footer-links">
+<a href="services.html">Services</a>
+<a href="fees-insurance.html">Fees &amp; Insurance</a>
+<a href="contact.html">Join the Waitlist</a>
+</div>
+</div>
+<div>
+<div class="footer-title">Practice</div>
+<div class="footer-links">
+<a href="about.html">About</a>
+<a href="team.html">Team</a>
+<a href="team-founder.html">Founder</a>
+<a href="for-clinicians.html">Professionals</a>
+<a href="portal.html">Client Portal</a>
+</div>
+</div>
+<div>
+<div class="footer-title">Contact</div>
+<div class="footer-links">
+<span>Serving Illinois via telehealth</span>
+<a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+<a href="tel:+17734171688">(773) 417-1688</a>
+<a aria-label="Stonebridge Psychological Group on LinkedIn" href="https://www.linkedin.com/company/stonebridge-psychological-group/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a aria-label="Stonebridge Psychological Group on Facebook" href="https://www.facebook.com/profile.php?id=61590354182651" rel="noopener noreferrer" target="_blank">Facebook</a>
+</div>
+</div>
+<div class="footer-logo-right">
+<img alt="Stonebridge Psychological Group logo" loading="lazy" src="stonebridge-logo.png"/>
+</div>
+</div>
+<div class="container footer-bottom">
+<div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+<div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+</div>
+</footer>
+<script>
 
-  <header class="site-header compact-site-header">
-    <div class="container nav">
-      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
-        <div class="brand-mark">STONEBRIDGE</div>
-        <div class="brand-sub">Psychological Group</div>
-      </a>
+(function(){
+  function initServicesDropdown(){
+    var dropdown=document.querySelector('.services-nav-dropdown');
+    if(!dropdown) return;
+    var toggle=dropdown.querySelector('.services-menu-toggle');
+    var panel=dropdown.querySelector('.services-dropdown-menu');
+    if(!toggle || !panel) return;
+    var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
+    function setOpen(open,focusFirst){
+      dropdown.classList.toggle('is-open',open);
+      toggle.setAttribute('aria-expanded',String(open));
+      toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
+      panel.hidden=!open;
+      if(open && focusFirst && items.length) items[0].focus();
+    }
+    toggle.addEventListener('click',function(){
+      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
+    });
+    toggle.addEventListener('keydown',function(event){
+      if(event.key==='ArrowDown'){
+        event.preventDefault();
+        setOpen(true,true);
+      }else if(event.key==='Escape'){
+        event.preventDefault();
+        setOpen(false,false);
+      }
+    });
+    panel.addEventListener('keydown',function(event){
+      var current=items.indexOf(document.activeElement);
+      if(event.key==='Escape'){
+        event.preventDefault();
+        setOpen(false,false);
+        toggle.focus();
+      }else if(event.key==='ArrowDown'){
+        event.preventDefault();
+        items[(current+1+items.length)%items.length].focus();
+      }else if(event.key==='ArrowUp'){
+        event.preventDefault();
+        items[(current-1+items.length)%items.length].focus();
+      }else if(event.key==='Home'){
+        event.preventDefault();
+        items[0].focus();
+      }else if(event.key==='End'){
+        event.preventDefault();
+        items[items.length-1].focus();
+      }
+    });
+    items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
+    document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
+    document.addEventListener('keydown',function(event){
+      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
+        setOpen(false,false);
+        toggle.focus();
+      }
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
+  else initServicesDropdown();
+})();
 
-      <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-
-      <div class="menu-wrap">
-        <nav class="menu" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="team.html">Team</a><a href="for-clinicians.html">For Clinicians</a>
-          <a href="services.html" class="active" aria-current="page">Services</a>
-          <a href="fees-insurance.html">Fees &amp; Insurance</a>
-          <a href="portal.html">Portal</a>
-        </nav>
-        <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
-      </div>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <section class="group-hero">
-      <div class="group-hero-copy">
-        <div class="group-hero-rule"></div>
-        <div class="group-kicker">Group Therapy</div>
-        <h1>A steady group can make difficult change less isolating.</h1>
-        <p>Stonebridge is developing structured, clinician-led therapy groups for people who may benefit from shared work within a thoughtful, clearly held frame. Groups are not currently enrolling, but prospective participants may express interest while offerings are finalized.</p>
-
-        <div class="group-hero-actions">
-          <a class="btn btn-primary" href="#group-development">Explore Group Development</a>
-          <a class="btn btn-secondary" href="contact.html">Express Interest</a>
-        </div>
-      </div>
-
-      <figure class="group-hero-media">
-        <img src="Group Therapy - Hero.png" alt="A small therapy group in conversation in a warm, private room" width="2048" height="1373" fetchpriority="high">
-      </figure>
-    </section>
-
-    <section class="group-overview" aria-label="Group therapy overview">
-      <div class="group-overview-grid">
-        <article>
-          <h2>Clinician-led</h2>
-          <p>Each group is organized and facilitated as psychotherapy, not a drop-in meeting.</p>
-        </article>
-        <article>
-          <h2>Defined purpose</h2>
-          <p>Focus, structure, expectations, and length are clarified before participation.</p>
-        </article>
-        <article>
-          <h2>Fit before enrollment</h2>
-          <p>Readiness and group composition are reviewed before a place is confirmed.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="group-section">
-      <div class="group-shell group-intro-grid">
-        <div class="group-heading">
-          <div class="group-label">Why group therapy</div>
-          <h2>Insight develops differently when it is shared.</h2>
-        </div>
-
-        <div class="group-intro-copy">
-          <p>Group therapy offers something individual work cannot fully reproduce: the opportunity to notice patterns, practice new ways of relating, and receive thoughtful feedback within a consistent community. Members bring different histories, but the group is organized around a shared clinical purpose.</p>
-          <p>The frame matters. Stonebridge groups will be intentionally composed, clearly structured, and facilitated with attention to safety, participation, boundaries, and the needs of the group as a whole. Group therapy is not simply individual therapy conducted in front of other people.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="group-section paper" id="group-development">
-      <div class="group-shell group-development">
-        <div class="group-development-heading">
-          <div class="group-label">One group in development</div>
-          <h2>Recovery, relapse prevention, and rebuilding daily life.</h2>
-        </div>
-
-        <article class="group-concept">
-          <div class="group-feature-label">Structured recovery-focused group</div>
-          <h3>For adults seeking a steadier approach to recovery.</h3>
-          <p>One potential offering is a clinician-led psychotherapy group for adults working to understand patterns related to substance use, strengthen practical recovery skills, and build a life that supports continued change. The group would combine focused discussion, reflection, skills practice, and attention to relationships rather than relying on a single fixed formula.</p>
-
-          <ul class="group-topic-list" aria-label="Possible recovery group topics">
-            <li>Triggers, cravings, and high-risk situations</li>
-            <li>Emotional regulation and coping under stress</li>
-            <li>Daily structure, routines, and meaningful activity</li>
-            <li>Relapse warning signs and prevention planning</li>
-            <li>Trust, communication, and relationship repair</li>
-            <li>Support, accountability, and continued care</li>
-          </ul>
-
-          <p class="group-concept-note">The final title, schedule, duration, fee, eligibility criteria, and opening date have not yet been set. Expressing interest does not guarantee enrollment or establish a treatment relationship.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="group-section">
-      <div class="group-shell group-value-layout">
-        <div class="group-value-intro">
-          <div class="group-label">What the group frame offers</div>
-          <h2>Shared work with individual relevance.</h2>
-          <p>A well-designed group creates enough structure for members to work honestly without losing sight of their own goals, circumstances, and responsibilities.</p>
-        </div>
-
-        <div class="group-point-grid">
-          <article class="group-point">
-            <div class="group-point-label">Recognition</div>
-            <h3>Less isolation</h3>
-            <p>Hearing how others understand and navigate similar struggles can reduce shame without minimizing individual differences.</p>
-          </article>
-
-          <article class="group-point">
-            <div class="group-point-label">Perspective</div>
-            <h3>More than one viewpoint</h3>
-            <p>Members can consider patterns and choices through perspectives that may not emerge in individual reflection alone.</p>
-          </article>
-
-          <article class="group-point">
-            <div class="group-point-label">Practice</div>
-            <h3>Relationships in real time</h3>
-            <p>The group provides a place to notice communication, avoidance, trust, boundaries, and repair as they occur between people.</p>
-          </article>
-
-          <article class="group-point">
-            <div class="group-point-label">Continuity</div>
-            <h3>A steady therapeutic frame</h3>
-            <p>Regular attendance, clear expectations, and a consistent purpose help members return to the work over time.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="group-section paper">
-      <div class="group-shell group-process">
-        <div class="group-process-heading">
-          <div class="group-label">How participation will work</div>
-          <h2>Interest comes before enrollment.</h2>
-        </div>
-
-        <div class="group-steps">
-          <article class="group-step">
-            <div class="group-step-label">Step 01</div>
-            <div>
-              <h3>Share your interest.</h3>
-              <p>Prospective participants may send a brief inquiry describing the kind of group support they are seeking and any scheduling considerations.</p>
-            </div>
-          </article>
-
-          <article class="group-step">
-            <div class="group-step-label">Step 02</div>
-            <div>
-              <h3>Complete a fit conversation.</h3>
-              <p>Before a group opens, a brief consultation will clarify the group’s purpose, current needs, telehealth suitability, and whether another level or type of care may be more appropriate.</p>
-            </div>
-          </article>
-
-          <article class="group-step">
-            <div class="group-step-label">Step 03</div>
-            <div>
-              <h3>Review readiness and composition.</h3>
-              <p>Group placement depends on clinical fit, readiness to participate, scheduling, and a composition that can support useful work for all members.</p>
-            </div>
-          </article>
-
-          <article class="group-step">
-            <div class="group-step-label">Step 04</div>
-            <div>
-              <h3>Confirm the frame before commitment.</h3>
-              <p>Schedule, attendance expectations, confidentiality, fee, group length, and participation agreements are reviewed before enrollment is confirmed.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="group-boundary" aria-label="Scope of group therapy">
-      <div class="group-boundary-inner">
-        <strong>Scope and boundaries</strong>
-        <p>Group therapy is not crisis care, detoxification, withdrawal management, an intensive outpatient program, medical addiction treatment, or a substitute for a higher level of care when one is needed. Privacy and respectful participation are required, but confidentiality in a group also depends on each member honoring the agreements reviewed before enrollment.</p>
-      </div>
-    </section>
-
-    <section class="group-section">
-      <div class="group-shell">
-        <div class="group-availability">
-          <strong>Availability and fees</strong>
-          <p>No Stonebridge therapy group is currently enrolling. Schedule, format, group size, fee, and possible insurance coverage will be stated clearly before a group opens so prospective members can make an informed decision before committing.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="group-cta">
-      <div class="group-cta-inner">
-        <div>
-          <h2>Interested in a future Stonebridge group?</h2>
-          <p>Send a brief inquiry about the kind of group support you are seeking. Interest will help guide development, but it is not enrollment or confirmation of services.</p>
-        </div>
-        <a class="btn btn-secondary" href="contact.html">Express Interest</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">STONEBRIDGE</div>
-        <div class="footer-sub">Psychological Group</div>
-        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
-      </div>
-
-      <div>
-        <div class="footer-title">Care</div>
-        <div class="footer-links">
-          <a href="services.html">Services</a>
-          <a href="fees-insurance.html">Fees &amp; Insurance</a>
-          <a href="contact.html">Join the Waitlist</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Practice</div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="team.html">Team</a>
-          <a href="team-founder.html">Founder</a>
-          <a href="for-clinicians.html">For Clinicians</a>
-          <a href="portal.html">Client Portal</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
-          <span>Serving Illinois via telehealth</span>
-          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-          <a href="tel:+17734171688">(773) 417-1688</a>
-          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
-          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
-        </div>
-      </div>
-
-      <div class="footer-logo-right">
-        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" loading="lazy">
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+</script><script src="script.js"></script>
 </body>
 </html>

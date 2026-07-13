@@ -1,24 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Couples Therapy | Stonebridge Psychological Group</title>
-  <meta name="description" content="Relational couples therapy for Illinois partners seeking greater understanding, steadier communication, and meaningful change in recurring relationship patterns.">
-  <link rel="canonical" href="https://stonebridgepsychgroup.com/couples-therapy.html">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-  <style id="stonebridge-couples-therapy-page-only">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Couples Therapy | Stonebridge Psychological Group</title>
+<meta content="Relational couples therapy for Illinois partners seeking greater understanding, steadier communication, and meaningful change in recurring relationship patterns." name="description"/>
+<link href="https://stonebridgepsychgroup.com/couples-therapy.html" rel="canonical"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="favicon.ico" rel="icon" sizes="any"/>
+<link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<style id="stonebridge-couples-therapy-page-only">
     :root{
       --couples-bg:#f8f5f0;
       --couples-paper:#f1ebe3;
@@ -741,395 +739,439 @@
       }
     }
   </style>
-</head>
+<style>
 
+/* Shared Services navigation — synchronized after all service destinations were created. */
+.site-header.compact-site-header .services-nav-dropdown{
+  position:relative;
+  display:flex!important;
+  align-items:center;
+}
+.services-nav-main{
+  display:flex;
+  align-items:center;
+  min-height:34px;
+}
+.site-header.compact-site-header .services-nav-main > a{min-height:34px;}
+.services-menu-toggle{
+  width:28px;
+  height:34px;
+  margin-left:1px;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:7px;
+  background:transparent;
+  color:#5d6870;
+  cursor:pointer;
+}
+.services-menu-toggle svg{
+  width:16px;
+  height:16px;
+  transition:transform .16s ease;
+}
+.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
+.site-header.compact-site-header .services-dropdown-menu{
+  position:absolute;
+  top:calc(100% + 10px);
+  left:-14px;
+  z-index:80;
+  width:248px;
+  min-width:248px;
+  padding:9px;
+  display:grid!important;
+  gap:1px;
+  border:1px solid rgba(212,200,185,.88);
+  border-radius:12px;
+  background:rgba(255,252,247,.99);
+  box-shadow:0 18px 44px rgba(16,47,77,.14);
+}
+.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
+.services-dropdown-menu::before{
+  content:"";
+  position:absolute;
+  top:-7px;
+  left:72px;
+  width:12px;
+  height:12px;
+  transform:rotate(45deg);
+  border-left:1px solid rgba(212,200,185,.88);
+  border-top:1px solid rgba(212,200,185,.88);
+  background:#fffaf4;
+}
+.site-header.compact-site-header .services-dropdown-menu a{
+  position:relative;
+  z-index:1;
+  min-height:0;
+  padding:9px 11px;
+  border-radius:7px;
+  color:#5d6870;
+  font-size:.83rem;
+  line-height:1.25;
+  white-space:normal;
+}
+.site-header.compact-site-header .services-dropdown-menu a:hover,
+.site-header.compact-site-header .services-dropdown-menu a:focus-visible,
+.site-header.compact-site-header .services-dropdown-menu a.active-sub{
+  background:#f1ebe3;
+  color:#213142;
+}
+.services-menu-toggle:hover{
+  color:#213142;
+  background:rgba(22,59,97,.06);
+}
+.services-menu-toggle:focus-visible{
+  outline:3px solid #fffaf2;
+  outline-offset:1px;
+  box-shadow:0 0 0 5px #102f4d;
+}
+@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
+@media(max-width:960px){
+  .site-header.compact-site-header .services-nav-dropdown{
+    width:100%;
+    display:block!important;
+  }
+  .services-nav-main{
+    width:100%;
+    justify-content:space-between;
+  }
+  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
+  .services-menu-toggle{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+  }
+  .site-header.compact-site-header .services-dropdown-menu{
+    position:static;
+    width:100%;
+    min-width:0;
+    margin:3px 0 2px;
+    padding:4px 0 2px 13px;
+    gap:0;
+    border:0;
+    border-left:1px solid rgba(33,49,66,.17);
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .services-dropdown-menu::before{display:none;}
+  .site-header.compact-site-header .services-dropdown-menu a{
+    padding:8px 10px;
+    font-size:.85rem;
+  }
+}
+</style></head>
 <body class="couples-page">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header compact-site-header">
+<div class="container nav">
+<a aria-label="Stonebridge Psychological Group home" class="brand-link" href="index.html">
+<div class="brand-mark">STONEBRIDGE</div>
+<div class="brand-sub">Psychological Group</div>
+</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="mobile-toggle" type="button">Menu</button>
+<div class="menu-wrap">
+<nav aria-label="Primary navigation" class="menu"><a href="index.html">Home</a><a href="about.html">About</a><a href="team.html">Team</a><div class="nav-dropdown services-nav-dropdown"><div class="services-nav-main"><a class="active" href="services.html">Services</a><button aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu" class="services-menu-toggle" type="button"><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button></div><div aria-label="Services" class="dropdown-menu services-dropdown-menu" hidden="" id="services-submenu" role="menu"><a href="services.html" role="menuitem">Services Overview</a><a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a><a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a><a aria-current="page" class="active-sub" href="couples-therapy.html" role="menuitem">Couples Therapy</a><a href="family-therapy.html" role="menuitem">Family Therapy</a><a href="parent-support.html" role="menuitem">Parent Support</a><a href="group-therapy.html" role="menuitem">Group Therapy</a></div></div><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="for-clinicians.html">Professionals</a><a href="portal.html">Portal</a></nav>
+<div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
+</div>
+</div>
+</header>
+<main id="main-content">
+<section class="couples-hero">
+<div class="couples-hero-copy">
+<div class="couples-hero-rule"></div>
+<div class="couples-kicker">Couples Therapy</div>
+<h1>A steadier place for the relationship.</h1>
+<p>Stonebridge offers relational couples therapy for Illinois partners who want to understand recurring patterns, communicate more clearly, and create change that reaches beyond the session.</p>
+<div class="couples-hero-actions">
+<a class="btn btn-primary" href="#couples-focus">Explore Couples Therapy</a>
+<a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
+</div>
+</div>
+<figure class="couples-hero-media">
+<img alt="Warm therapy room arranged for relational conversation" fetchpriority="high" height="1116" src="hero-psychotherapy-room.jpg" width="2000"/>
+</figure>
+</section>
+<section aria-label="Couples therapy overview" class="couples-overview">
+<div class="couples-overview-grid">
+<article>
+<h2>Relationship-centered</h2>
+<p>The work focuses on the patterns happening between partners.</p>
+</article>
+<article>
+<h2>Structure with warmth</h2>
+<p>Sessions create enough steadiness for difficult conversations.</p>
+</article>
+<article>
+<h2>Illinois telehealth</h2>
+<p>Secure online care for partners who are both located in Illinois.</p>
+</article>
+</div>
+</section>
+<section class="couples-section">
+<div class="couples-shell couples-intro-grid">
+<div class="couples-heading">
+<div class="couples-label">When the same conversation keeps returning</div>
+<h2>The problem is often the cycle, not one person.</h2>
+</div>
+<div class="couples-intro-copy">
+<p>Couples often arrive after trying hard to communicate, repair, or move forward, only to find themselves pulled back into the same conflict, distance, or misunderstanding. One partner may pursue while the other withdraws. Both may feel unseen, blamed, or unsure how to reach each other without making things worse.</p>
+<p>Couples therapy creates a structured setting to slow that pattern down. The work looks beneath the immediate argument, makes room for each partner’s experience, and helps the relationship develop more workable ways of responding under stress.</p>
+</div>
+</div>
+</section>
+<section class="couples-section paper" id="couples-focus">
+<div class="couples-shell couples-focus-layout">
+<div class="couples-focus-intro">
+<div class="couples-label">Reasons couples seek therapy</div>
+<h2>Different concerns can be expressions of the same stuck pattern.</h2>
+<p>A brief consultation helps clarify whether couples therapy is the right format and whether the concerns fit Stonebridge’s outpatient telehealth scope.</p>
+</div>
+<div class="couples-focus-grid">
+<article class="couples-focus">
+<div class="couples-focus-label">Conflict</div>
+<h3>Recurring arguments and escalation</h3>
+<p>Conversations become defensive, critical, circular, or difficult to stop even when both partners want a different outcome.</p>
+</article>
+<article class="couples-focus">
+<div class="couples-focus-label">Connection</div>
+<h3>Emotional distance and loneliness</h3>
+<p>The relationship may function on the surface while affection, curiosity, intimacy, or a sense of partnership has become harder to access.</p>
+</article>
+<article class="couples-focus">
+<div class="couples-focus-label">Trust</div>
+<h3>Injuries, ruptures, and repair</h3>
+<p>Partners may be trying to understand the impact of secrecy, betrayal, repeated disappointment, or other experiences that changed the sense of safety between them.</p>
+</article>
+<article class="couples-focus">
+<div class="couples-focus-label">Transition</div>
+<h3>Roles, parenting, and life changes</h3>
+<p>Work demands, caregiving, parenthood, loss, health concerns, relocation, or other transitions can expose differences that were previously easier to manage.</p>
+</article>
+<article class="couples-focus">
+<div class="couples-focus-label">Intimacy</div>
+<h3>Differences in closeness and need</h3>
+<p>Partners may struggle to discuss affection, sex, autonomy, reassurance, or emotional needs without pressure, avoidance, or misunderstanding.</p>
+</article>
+<article class="couples-focus">
+<div class="couples-focus-label">Coping</div>
+<h3>Stress and coping patterns affecting the relationship</h3>
+<p>Anxiety, depression, burnout, grief, or substance-use concerns may be shaping the couple’s interactions when outpatient couples work is clinically appropriate.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="couples-section">
+<div class="couples-shell couples-intro-grid">
+<div class="couples-heading">
+<div class="couples-label">How the work is approached</div>
+<h2>Understanding matters, and so does what happens next.</h2>
+</div>
+<div class="couples-principles">
+<article class="couples-principle">
+<div class="couples-principle-label">01 · Pattern</div>
+<div class="couples-principle-copy">
+<h3>Map the cycle without assigning a villain.</h3>
+<p>Therapy identifies the sequence that keeps taking over: what each partner notices, feels, protects against, and does next. Naming the cycle creates a shared problem the couple can begin to address together.</p>
+</div>
+</article>
+<article class="couples-principle">
+<div class="couples-principle-label">02 · Meaning</div>
+<div class="couples-principle-copy">
+<h3>Understand what each response is carrying.</h3>
+<p>Present conflict may be shaped by attachment needs, earlier experiences, expectations, shame, fear, or efforts to stay safe. The work makes these meanings more visible without excusing harmful behavior.</p>
+</div>
+</article>
+<article class="couples-principle">
+<div class="couples-principle-label">03 · Repair</div>
+<div class="couples-principle-copy">
+<h3>Practice a different kind of conversation.</h3>
+<p>Partners work on slowing escalation, speaking more directly, listening for meaning, tolerating difference, and repairing after disconnection rather than waiting for conflict to disappear entirely.</p>
+</div>
+</article>
+<article class="couples-principle">
+<div class="couples-principle-label">04 · Application</div>
+<div class="couples-principle-copy">
+<h3>Carry the work into ordinary life.</h3>
+<p>Insight is translated into specific changes in communication, boundaries, shared decisions, and responses to stress so the relationship is not dependent on the therapy hour to feel steadier.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section aria-label="Couples therapy scope and boundaries" class="couples-boundary">
+<div class="couples-boundary-inner">
+<strong>A shared clinical frame</strong>
+<p>Couples therapy is not a courtroom, a debate to be won, or individual therapy with a partner present. The therapist helps hold a fair and purposeful process while both partners remain responsible for their participation, choices, and behavior. Expectations for communication, individual contact, privacy, records, and treatment goals are discussed before ongoing work begins.</p>
+</div>
+</section>
+<section class="couples-section paper">
+<div class="couples-shell couples-process">
+<div class="couples-process-heading">
+<div class="couples-label">Consultation before commitment</div>
+<h2>Fit is considered before treatment begins.</h2>
+</div>
+<div class="couples-steps">
+<article class="couples-step">
+<div class="couples-step-label">Step 01</div>
+<div>
+<h3>Write first</h3>
+<p>Share a brief description of what is bringing the relationship to therapy, both partners’ availability, insurance information when relevant, and what you hope will change.</p>
+</div>
+</article>
+<article class="couples-step">
+<div class="couples-step-label">Step 02</div>
+<div>
+<h3>Brief consultation</h3>
+<p>A free 10–15 minute consultation helps clarify scope, telehealth fit, availability, and whether couples therapy appears to be the appropriate next step.</p>
+</div>
+</article>
+<article class="couples-step">
+<div class="couples-step-label">Step 03</div>
+<div>
+<h3>Initial assessment and shared goals</h3>
+<p>Early sessions develop a fuller understanding of the relationship, the recurring cycle, each partner’s perspective, safety and fit considerations, and the goals that will organize the work.</p>
+</div>
+</article>
+<article class="couples-step">
+<div class="couples-step-label">Step 04</div>
+<div>
+<h3>Ongoing relational work</h3>
+<p>Sessions combine reflection, direct conversation, pattern recognition, and practical application while the treatment frame is reviewed as the work develops.</p>
+</div>
+</article>
+<div class="couples-coverage">
+<strong>Fees and coverage</strong>
+<p>Insurance coverage for couples therapy varies by plan and clinical circumstances. Benefits, fees, and the treatment structure are reviewed before services begin; private-pay options may also be available.</p>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="Clinical fit note" class="couples-boundary">
+<div class="couples-boundary-inner">
+<strong>Clinical fit and safety</strong>
+<p>Couples therapy is not emergency response, legal advice, a custody evaluation, or a parenting-time recommendation. Safety, coercion, and the appropriateness of conjoint treatment are reviewed before and during care. Some situations require a different service, additional support, or a higher level of care.</p>
+</div>
+</section>
+<section class="couples-cta">
+<div class="couples-cta-inner">
+<div>
+<h2>Begin with a brief fit review.</h2>
+<p>Share what has been happening in the relationship so scope, availability, telehealth appropriateness, and next steps can be considered carefully.</p>
+</div>
+<a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-brand">STONEBRIDGE</div>
+<div class="footer-sub">Psychological Group</div>
+<p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+</div>
+<div>
+<div class="footer-title">Care</div>
+<div class="footer-links">
+<a href="services.html">Services</a>
+<a href="fees-insurance.html">Fees &amp; Insurance</a>
+<a href="contact.html">Join the Waitlist</a>
+</div>
+</div>
+<div>
+<div class="footer-title">Practice</div>
+<div class="footer-links">
+<a href="about.html">About</a>
+<a href="team.html">Team</a>
+<a href="team-founder.html">Founder</a>
+<a href="for-clinicians.html">Professionals</a>
+<a href="portal.html">Client Portal</a>
+</div>
+</div>
+<div>
+<div class="footer-title">Contact</div>
+<div class="footer-links">
+<span>Serving Illinois via telehealth</span>
+<a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+<a href="tel:+17734171688">(773) 417-1688</a>
+<a aria-label="Stonebridge Psychological Group on LinkedIn" href="https://www.linkedin.com/company/stonebridge-psychological-group/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a aria-label="Stonebridge Psychological Group on Facebook" href="https://www.facebook.com/profile.php?id=61590354182651" rel="noopener noreferrer" target="_blank">Facebook</a>
+</div>
+</div>
+<div class="footer-logo-right">
+<img alt="Stonebridge Psychological Group logo" loading="lazy" src="stonebridge-logo.png"/>
+</div>
+</div>
+<div class="container footer-bottom">
+<div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+<div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+</div>
+</footer>
 
-  <header class="site-header compact-site-header">
-    <div class="container nav">
-      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
-        <div class="brand-mark">STONEBRIDGE</div>
-        <div class="brand-sub">Psychological Group</div>
-      </a>
+<script>
 
-      <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-
-      <div class="menu-wrap">
-        <nav class="menu" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="team.html">Team</a>
-
-          <div class="nav-dropdown services-nav-dropdown">
-            <div class="services-nav-main">
-              <a href="services.html" class="active">Services</a>
-              <button class="services-menu-toggle" type="button" aria-expanded="false" aria-controls="services-submenu" aria-haspopup="true" aria-label="Open Services menu">
-                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                  <path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-            </div>
-
-            <div class="dropdown-menu services-dropdown-menu" id="services-submenu" role="menu" aria-label="Services" hidden>
-              <a href="services.html" role="menuitem">Services Overview</a>
-              <a href="services.html#adult-therapy" role="menuitem">Adult Therapy</a>
-              <a href="services.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
-              <a href="couples-therapy.html" role="menuitem" class="active-sub" aria-current="page">Couples Therapy</a>
-              <a href="services.html#family-therapy" role="menuitem">Family Therapy</a>
-              <a href="parent-support.html" role="menuitem">Parent Support</a>
-              <a href="group-therapy.html" role="menuitem">Group Therapy</a>
-            </div>
-          </div>
-
-          <a href="fees-insurance.html">Fees &amp; Insurance</a>
-          <a href="for-clinicians.html">Professionals</a>
-          <a href="portal.html">Portal</a>
-        </nav>
-        <div class="header-cta"><a class="btn btn-primary" href="contact.html">Join the Waitlist</a></div>
-      </div>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <section class="couples-hero">
-      <div class="couples-hero-copy">
-        <div class="couples-hero-rule"></div>
-        <div class="couples-kicker">Couples Therapy</div>
-        <h1>A steadier place for the relationship.</h1>
-        <p>Stonebridge offers relational couples therapy for Illinois partners who want to understand recurring patterns, communicate more clearly, and create change that reaches beyond the session.</p>
-
-        <div class="couples-hero-actions">
-          <a class="btn btn-primary" href="#couples-focus">Explore Couples Therapy</a>
-          <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
-        </div>
-      </div>
-
-      <figure class="couples-hero-media">
-        <img src="hero-psychotherapy-room.jpg" alt="Warm therapy room arranged for relational conversation" width="2000" height="1116" fetchpriority="high">
-      </figure>
-    </section>
-
-    <section class="couples-overview" aria-label="Couples therapy overview">
-      <div class="couples-overview-grid">
-        <article>
-          <h2>Relationship-centered</h2>
-          <p>The work focuses on the patterns happening between partners.</p>
-        </article>
-        <article>
-          <h2>Structure with warmth</h2>
-          <p>Sessions create enough steadiness for difficult conversations.</p>
-        </article>
-        <article>
-          <h2>Illinois telehealth</h2>
-          <p>Secure online care for partners who are both located in Illinois.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="couples-section">
-      <div class="couples-shell couples-intro-grid">
-        <div class="couples-heading">
-          <div class="couples-label">When the same conversation keeps returning</div>
-          <h2>The problem is often the cycle, not one person.</h2>
-        </div>
-
-        <div class="couples-intro-copy">
-          <p>Couples often arrive after trying hard to communicate, repair, or move forward, only to find themselves pulled back into the same conflict, distance, or misunderstanding. One partner may pursue while the other withdraws. Both may feel unseen, blamed, or unsure how to reach each other without making things worse.</p>
-          <p>Couples therapy creates a structured setting to slow that pattern down. The work looks beneath the immediate argument, makes room for each partner’s experience, and helps the relationship develop more workable ways of responding under stress.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="couples-section paper" id="couples-focus">
-      <div class="couples-shell couples-focus-layout">
-        <div class="couples-focus-intro">
-          <div class="couples-label">Reasons couples seek therapy</div>
-          <h2>Different concerns can be expressions of the same stuck pattern.</h2>
-          <p>A brief consultation helps clarify whether couples therapy is the right format and whether the concerns fit Stonebridge’s outpatient telehealth scope.</p>
-        </div>
-
-        <div class="couples-focus-grid">
-          <article class="couples-focus">
-            <div class="couples-focus-label">Conflict</div>
-            <h3>Recurring arguments and escalation</h3>
-            <p>Conversations become defensive, critical, circular, or difficult to stop even when both partners want a different outcome.</p>
-          </article>
-
-          <article class="couples-focus">
-            <div class="couples-focus-label">Connection</div>
-            <h3>Emotional distance and loneliness</h3>
-            <p>The relationship may function on the surface while affection, curiosity, intimacy, or a sense of partnership has become harder to access.</p>
-          </article>
-
-          <article class="couples-focus">
-            <div class="couples-focus-label">Trust</div>
-            <h3>Injuries, ruptures, and repair</h3>
-            <p>Partners may be trying to understand the impact of secrecy, betrayal, repeated disappointment, or other experiences that changed the sense of safety between them.</p>
-          </article>
-
-          <article class="couples-focus">
-            <div class="couples-focus-label">Transition</div>
-            <h3>Roles, parenting, and life changes</h3>
-            <p>Work demands, caregiving, parenthood, loss, health concerns, relocation, or other transitions can expose differences that were previously easier to manage.</p>
-          </article>
-
-          <article class="couples-focus">
-            <div class="couples-focus-label">Intimacy</div>
-            <h3>Differences in closeness and need</h3>
-            <p>Partners may struggle to discuss affection, sex, autonomy, reassurance, or emotional needs without pressure, avoidance, or misunderstanding.</p>
-          </article>
-
-          <article class="couples-focus">
-            <div class="couples-focus-label">Coping</div>
-            <h3>Stress and coping patterns affecting the relationship</h3>
-            <p>Anxiety, depression, burnout, grief, or substance-use concerns may be shaping the couple’s interactions when outpatient couples work is clinically appropriate.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="couples-section">
-      <div class="couples-shell couples-intro-grid">
-        <div class="couples-heading">
-          <div class="couples-label">How the work is approached</div>
-          <h2>Understanding matters, and so does what happens next.</h2>
-        </div>
-
-        <div class="couples-principles">
-          <article class="couples-principle">
-            <div class="couples-principle-label">01 · Pattern</div>
-            <div class="couples-principle-copy">
-              <h3>Map the cycle without assigning a villain.</h3>
-              <p>Therapy identifies the sequence that keeps taking over: what each partner notices, feels, protects against, and does next. Naming the cycle creates a shared problem the couple can begin to address together.</p>
-            </div>
-          </article>
-
-          <article class="couples-principle">
-            <div class="couples-principle-label">02 · Meaning</div>
-            <div class="couples-principle-copy">
-              <h3>Understand what each response is carrying.</h3>
-              <p>Present conflict may be shaped by attachment needs, earlier experiences, expectations, shame, fear, or efforts to stay safe. The work makes these meanings more visible without excusing harmful behavior.</p>
-            </div>
-          </article>
-
-          <article class="couples-principle">
-            <div class="couples-principle-label">03 · Repair</div>
-            <div class="couples-principle-copy">
-              <h3>Practice a different kind of conversation.</h3>
-              <p>Partners work on slowing escalation, speaking more directly, listening for meaning, tolerating difference, and repairing after disconnection rather than waiting for conflict to disappear entirely.</p>
-            </div>
-          </article>
-
-          <article class="couples-principle">
-            <div class="couples-principle-label">04 · Application</div>
-            <div class="couples-principle-copy">
-              <h3>Carry the work into ordinary life.</h3>
-              <p>Insight is translated into specific changes in communication, boundaries, shared decisions, and responses to stress so the relationship is not dependent on the therapy hour to feel steadier.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="couples-boundary" aria-label="Couples therapy scope and boundaries">
-      <div class="couples-boundary-inner">
-        <strong>A shared clinical frame</strong>
-        <p>Couples therapy is not a courtroom, a debate to be won, or individual therapy with a partner present. The therapist helps hold a fair and purposeful process while both partners remain responsible for their participation, choices, and behavior. Expectations for communication, individual contact, privacy, records, and treatment goals are discussed before ongoing work begins.</p>
-      </div>
-    </section>
-
-    <section class="couples-section paper">
-      <div class="couples-shell couples-process">
-        <div class="couples-process-heading">
-          <div class="couples-label">Consultation before commitment</div>
-          <h2>Fit is considered before treatment begins.</h2>
-        </div>
-
-        <div class="couples-steps">
-          <article class="couples-step">
-            <div class="couples-step-label">Step 01</div>
-            <div>
-              <h3>Write first</h3>
-              <p>Share a brief description of what is bringing the relationship to therapy, both partners’ availability, insurance information when relevant, and what you hope will change.</p>
-            </div>
-          </article>
-
-          <article class="couples-step">
-            <div class="couples-step-label">Step 02</div>
-            <div>
-              <h3>Brief consultation</h3>
-              <p>A free 10–15 minute consultation helps clarify scope, telehealth fit, availability, and whether couples therapy appears to be the appropriate next step.</p>
-            </div>
-          </article>
-
-          <article class="couples-step">
-            <div class="couples-step-label">Step 03</div>
-            <div>
-              <h3>Initial assessment and shared goals</h3>
-              <p>Early sessions develop a fuller understanding of the relationship, the recurring cycle, each partner’s perspective, safety and fit considerations, and the goals that will organize the work.</p>
-            </div>
-          </article>
-
-          <article class="couples-step">
-            <div class="couples-step-label">Step 04</div>
-            <div>
-              <h3>Ongoing relational work</h3>
-              <p>Sessions combine reflection, direct conversation, pattern recognition, and practical application while the treatment frame is reviewed as the work develops.</p>
-            </div>
-          </article>
-
-          <div class="couples-coverage">
-            <strong>Fees and coverage</strong>
-            <p>Insurance coverage for couples therapy varies by plan and clinical circumstances. Benefits, fees, and the treatment structure are reviewed before services begin; private-pay options may also be available.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="couples-boundary" aria-label="Clinical fit note">
-      <div class="couples-boundary-inner">
-        <strong>Clinical fit and safety</strong>
-        <p>Couples therapy is not emergency response, legal advice, a custody evaluation, or a parenting-time recommendation. Safety, coercion, and the appropriateness of conjoint treatment are reviewed before and during care. Some situations require a different service, additional support, or a higher level of care.</p>
-      </div>
-    </section>
-
-    <section class="couples-cta">
-      <div class="couples-cta-inner">
-        <div>
-          <h2>Begin with a brief fit review.</h2>
-          <p>Share what has been happening in the relationship so scope, availability, telehealth appropriateness, and next steps can be considered carefully.</p>
-        </div>
-        <a class="btn btn-secondary" href="contact.html">Join the Waitlist</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">STONEBRIDGE</div>
-        <div class="footer-sub">Psychological Group</div>
-        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
-      </div>
-
-      <div>
-        <div class="footer-title">Care</div>
-        <div class="footer-links">
-          <a href="services.html">Services</a>
-          <a href="fees-insurance.html">Fees &amp; Insurance</a>
-          <a href="contact.html">Join the Waitlist</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Practice</div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="team.html">Team</a>
-          <a href="team-founder.html">Founder</a>
-          <a href="for-clinicians.html">Professionals</a>
-          <a href="portal.html">Client Portal</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
-          <span>Serving Illinois via telehealth</span>
-          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-          <a href="tel:+17734171688">(773) 417-1688</a>
-          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
-          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
-        </div>
-      </div>
-
-      <div class="footer-logo-right">
-        <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" loading="lazy">
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-    </div>
-  </footer>
-
-  <script>
-    (function(){
-      function initServicesDropdown(){
-        var dropdown=document.querySelector('.services-nav-dropdown');
-        if(!dropdown) return;
-
-        var toggle=dropdown.querySelector('.services-menu-toggle');
-        var panel=dropdown.querySelector('.services-dropdown-menu');
-        var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
-
-        function setOpen(open,focusFirst){
-          dropdown.classList.toggle('is-open',open);
-          toggle.setAttribute('aria-expanded',String(open));
-          toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
-          panel.hidden=!open;
-          if(open && focusFirst && items.length) items[0].focus();
-        }
-
-        toggle.addEventListener('click',function(){
-          setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
-        });
-
-        toggle.addEventListener('keydown',function(event){
-          if(event.key==='ArrowDown'){
-            event.preventDefault();
-            setOpen(true,true);
-          }
-          if(event.key==='Escape'){
-            event.preventDefault();
-            setOpen(false,false);
-          }
-        });
-
-        panel.addEventListener('keydown',function(event){
-          var current=items.indexOf(document.activeElement);
-          if(event.key==='Escape'){
-            event.preventDefault();
-            setOpen(false,false);
-            toggle.focus();
-          }else if(event.key==='ArrowDown'){
-            event.preventDefault();
-            items[(current+1+items.length)%items.length].focus();
-          }else if(event.key==='ArrowUp'){
-            event.preventDefault();
-            items[(current-1+items.length)%items.length].focus();
-          }else if(event.key==='Home'){
-            event.preventDefault();
-            items[0].focus();
-          }else if(event.key==='End'){
-            event.preventDefault();
-            items[items.length-1].focus();
-          }
-        });
-
-        items.forEach(function(item){
-          item.addEventListener('click',function(){setOpen(false,false);});
-        });
-
-        document.addEventListener('click',function(event){
-          if(!dropdown.contains(event.target)) setOpen(false,false);
-        });
-
-        document.addEventListener('keydown',function(event){
-          if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
-            setOpen(false,false);
-            toggle.focus();
-          }
-        });
+(function(){
+  function initServicesDropdown(){
+    var dropdown=document.querySelector('.services-nav-dropdown');
+    if(!dropdown) return;
+    var toggle=dropdown.querySelector('.services-menu-toggle');
+    var panel=dropdown.querySelector('.services-dropdown-menu');
+    if(!toggle || !panel) return;
+    var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
+    function setOpen(open,focusFirst){
+      dropdown.classList.toggle('is-open',open);
+      toggle.setAttribute('aria-expanded',String(open));
+      toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
+      panel.hidden=!open;
+      if(open && focusFirst && items.length) items[0].focus();
+    }
+    toggle.addEventListener('click',function(){
+      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
+    });
+    toggle.addEventListener('keydown',function(event){
+      if(event.key==='ArrowDown'){
+        event.preventDefault();
+        setOpen(true,true);
+      }else if(event.key==='Escape'){
+        event.preventDefault();
+        setOpen(false,false);
       }
+    });
+    panel.addEventListener('keydown',function(event){
+      var current=items.indexOf(document.activeElement);
+      if(event.key==='Escape'){
+        event.preventDefault();
+        setOpen(false,false);
+        toggle.focus();
+      }else if(event.key==='ArrowDown'){
+        event.preventDefault();
+        items[(current+1+items.length)%items.length].focus();
+      }else if(event.key==='ArrowUp'){
+        event.preventDefault();
+        items[(current-1+items.length)%items.length].focus();
+      }else if(event.key==='Home'){
+        event.preventDefault();
+        items[0].focus();
+      }else if(event.key==='End'){
+        event.preventDefault();
+        items[items.length-1].focus();
+      }
+    });
+    items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
+    document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
+    document.addEventListener('keydown',function(event){
+      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
+        setOpen(false,false);
+        toggle.focus();
+      }
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
+  else initServicesDropdown();
+})();
 
-      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
-      else initServicesDropdown();
-    })();
-  </script>
-
-  <script src="script.js"></script>
+</script><script src="script.js"></script>
 </body>
 </html>
