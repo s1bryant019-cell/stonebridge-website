@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services | Stonebridge Psychological Group</title>
-  <meta name="description" content="Explore individual psychotherapy, parent consultation, common concerns, clinical approach, and scope of care at Stonebridge Psychological Group.">
+  <meta name="description" content="Explore adult, adolescent, couples, family, parent-support, and group-therapy services at Stonebridge Psychological Group.">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -287,21 +287,26 @@
       align-items:start;
     }
 
-    /* Services offered: introduction and both services share one active row. */
+    /* Six distinct pathways share one restrained, scannable service directory. */
     .services-primary-grid{
       display:grid;
-      grid-template-columns:minmax(250px,.9fr) repeat(2,minmax(0,1fr));
+      grid-template-columns:repeat(2,minmax(0,1fr));
       border-top:1px solid var(--services-line);
     }
 
     .services-primary-intro{
-      padding:22px 30px 22px 0;
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);
+      gap:48px;
+      align-items:end;
+      padding:22px 0 24px;
       border-bottom:1px solid var(--services-line);
     }
 
     .services-primary-intro h2{
       margin:11px 0 0;
-      max-width:12ch;
+      max-width:15ch;
       color:var(--services-ink);
       font-family:"EB Garamond",Georgia,serif;
       font-size:clamp(2.05rem,2.75vw,2.75rem);
@@ -310,27 +315,38 @@
       text-wrap:balance;
     }
 
+    .services-primary-intro p{
+      max-width:43rem;
+      margin:0;
+      color:var(--services-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.93rem;
+      line-height:1.66;
+    }
+
     .services-primary-item{
-      padding:22px 28px 20px;
-      border-left:1px solid var(--services-line);
+      min-width:0;
+      scroll-margin-top:96px;
+      padding:24px 28px 22px 0;
       border-bottom:1px solid var(--services-line);
     }
 
-    .services-primary-item:last-of-type{
+    .services-primary-item:nth-of-type(even){
       padding-right:0;
+      padding-left:28px;
+      border-left:1px solid var(--services-line);
     }
 
     .services-primary-item h3{
       margin:9px 0 10px;
       color:var(--services-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(1.75rem,2.2vw,2.25rem);
+      font-size:clamp(1.72rem,2.1vw,2.12rem);
       line-height:1.08;
       letter-spacing:-.025em;
     }
 
     .services-primary-item p,
-    .services-primary-item li,
     .services-coverage-note p{
       color:var(--services-muted);
       font-family:"Inter",sans-serif;
@@ -339,30 +355,44 @@
     }
 
     .services-primary-item > p{
+      max-width:33rem;
       margin:0;
     }
 
-    .services-primary-item ul{
-      margin:16px 0 0;
-      padding:0;
-      list-style:none;
+    .services-primary-link{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      margin-top:14px;
+      color:var(--services-navy);
+      font-family:"Inter",sans-serif;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.02em;
+      text-decoration:none;
     }
 
-    .services-primary-item li{
-      position:relative;
-      padding:9px 0 9px 18px;
+    .services-primary-link::after{
+      content:"→";
+      transition:transform .18s ease;
+    }
+
+    .services-primary-link:hover::after{
+      transform:translateX(3px);
+    }
+
+    .services-status{
+      display:inline-block;
+      margin-top:13px;
+      padding-top:10px;
       border-top:1px solid var(--services-line);
-    }
-
-    .services-primary-item li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:1.03rem;
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:#b89661;
+      color:var(--services-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.72rem;
+      font-weight:700;
+      line-height:1.45;
+      letter-spacing:.06em;
+      text-transform:uppercase;
     }
 
     .services-coverage-note{
@@ -524,6 +554,10 @@
       background:rgba(255,255,255,.08);
     }
 
+    @media (prefers-reduced-motion: reduce){
+      .services-primary-link::after{transition:none;}
+    }
+
     .services-page a:focus-visible,
     .services-page button:focus-visible{
       outline:3px solid #fffaf2;
@@ -579,18 +613,9 @@
 
       .services-balanced-layout{gap:24px;}
 
-      .services-primary-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
       .services-primary-intro{
-        grid-column:1 / -1;
-        padding-right:0;
-      }
-
-      .services-primary-item:first-of-type{
-        padding-left:0;
-        border-left:0;
+        grid-template-columns:1fr;
+        gap:14px;
       }
 
       .services-scope-inner,
@@ -679,8 +704,7 @@
       }
 
       .services-primary-item,
-      .services-primary-item:first-of-type,
-      .services-primary-item:last-of-type{
+      .services-primary-item:nth-of-type(even){
         padding:21px 0;
         border-left:0;
       }
@@ -735,8 +759,8 @@
       <div class="services-hero-copy">
         <div class="services-hero-rule"></div>
         <div class="services-kicker">Services</div>
-        <h1>Psychotherapy and parent consultation, organized around fit.</h1>
-        <p>Stonebridge provides outpatient telehealth care for Illinois clients navigating distress, trauma responses, relationship patterns, coping concerns, family stress, and problems that feel difficult to change alone.</p>
+        <h1>Therapy for individuals, couples, families, parents, and groups.</h1>
+        <p>Stonebridge provides thoughtful outpatient telehealth care for Illinois adults and adolescents, couples, families, and parents, with group offerings developed around a defined purpose and careful fit.</p>
 
         <div class="services-hero-actions">
           <a class="btn btn-primary" href="#services-offered">Explore Services</a>
@@ -770,35 +794,55 @@
       <div class="services-shell">
         <div class="services-primary-grid">
           <div class="services-primary-intro">
-            <div class="services-label">Services offered</div>
-            <h2>Two primary ways Stonebridge supports clients and families.</h2>
+            <div>
+              <div class="services-label">Ways to work with Stonebridge</div>
+              <h2>Different pathways, held within one thoughtful clinical frame.</h2>
+            </div>
+            <p>The right format depends on who is seeking care, what is happening, and where change needs to occur. A brief consultation helps determine fit before an intake or group enrollment is confirmed.</p>
           </div>
 
-          <article class="services-primary-item">
+          <article class="services-primary-item" id="adult-therapy">
             <div class="services-item-label">01 · Individual care</div>
-            <h3>Individual Psychotherapy</h3>
-            <p>Steady, relational work for people who want to understand what is happening beneath symptoms and develop more workable ways of responding.</p>
-            <ul>
-              <li>Teens and adults located in Illinois</li>
-              <li>Outpatient telehealth sessions</li>
-              <li>Emotional processing, insight, and practical tools when useful</li>
-            </ul>
+            <h3>Adult Therapy</h3>
+            <p>Relational psychotherapy for adults navigating anxiety, depression, trauma responses, grief, identity concerns, burnout, relationship patterns, or substance-use concerns when outpatient care is appropriate.</p>
           </article>
 
-          <article class="services-primary-item">
-            <div class="services-item-label">02 · Caregiver and family support</div>
-            <h3>Parent Consultation &amp; Parenting Support</h3>
-            <p>Support for caregivers who want to understand patterns, strengthen connection, and respond with greater clarity and steadiness.</p>
-            <ul>
-              <li>Individual parent consultation</li>
-              <li>Family-based or parent-child sessions when appropriate</li>
-              <li>Small consultation groups when available</li>
-            </ul>
+          <article class="services-primary-item" id="adolescent-therapy">
+            <div class="services-item-label">02 · Developmentally responsive care</div>
+            <h3>Adolescent Therapy</h3>
+            <p>Psychotherapy for teens that considers development, privacy, autonomy, family context, and caregiver involvement according to age, safety, treatment need, and shared goals.</p>
+          </article>
+
+          <article class="services-primary-item" id="couples-therapy">
+            <div class="services-item-label">03 · Relationship care</div>
+            <h3>Couples Therapy</h3>
+            <p>Therapy for partners seeking to understand recurring conflict, communication breakdowns, disconnection, trust injuries, major transitions, or patterns that keep the relationship stuck.</p>
+          </article>
+
+          <article class="services-primary-item" id="family-therapy">
+            <div class="services-item-label">04 · Family-system care</div>
+            <h3>Family Therapy</h3>
+            <p>Therapy focused on interaction patterns within the family system, particularly when stress, conflict, transitions, or one person’s symptoms are affecting the family more broadly.</p>
+          </article>
+
+          <article class="services-primary-item" id="parent-support">
+            <div class="services-item-label">05 · Caregiver support</div>
+            <h3>Parent Support</h3>
+            <p>Individual consultation, parent-focused and family sessions, and educational classes or small groups for parents seeking greater understanding, steadier boundaries, and more workable responses.</p>
+            <a class="services-primary-link" href="parent-support.html">Explore Parent Support</a>
+          </article>
+
+          <article class="services-primary-item" id="group-therapy">
+            <div class="services-item-label">06 · Shared therapeutic work</div>
+            <h3>Group Therapy</h3>
+            <p>Clinician-led groups organized around a defined population, concern, or treatment purpose. One recovery-focused group is currently being developed, and prospective participants may express interest.</p>
+            <div class="services-status">In development · No group is currently enrolling</div>
+            <a class="services-primary-link" href="group-therapy.html">Explore Group Therapy</a>
           </article>
 
           <div class="services-coverage-note">
-            <strong>Parent and family-service coverage</strong>
-            <p>Parent consultation is not about becoming a perfect parent. It is about understanding patterns, strengthening connection, and responding in ways that support the child, the parent, and the family system. Some parent or family services may be billable to insurance when clinically appropriate and connected to an identified treatment need. Educational workshops or groups may be private-pay. Fees and coverage are reviewed before services begin.</p>
+            <strong>Fit, format, and coverage</strong>
+            <p>Individual, couples, family, and parent-focused services are structured according to the identified treatment need and the people participating in care. Insurance coverage varies by service and plan; educational classes and some groups may be private-pay. Scope, fees, and coverage are reviewed before services begin.</p>
           </div>
         </div>
       </div>
