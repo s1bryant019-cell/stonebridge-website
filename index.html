@@ -454,34 +454,23 @@
       line-height:1.64;
     }
 
-    .home-principles{
-      border-top:1px solid rgba(255,255,255,.20);
+    .home-philosophy-action{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      min-height:100%;
     }
 
-    .home-principle{
-      display:grid;
-      grid-template-columns:165px minmax(0,1fr);
-      gap:22px;
-      align-items:start;
-      padding:14px 0;
-      border-bottom:1px solid rgba(255,255,255,.16);
-    }
-
-    .home-principle h3{
-      margin:0;
+    .home-philosophy-action .btn{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.58);
       color:var(--home-white);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.34rem;
-      line-height:1.1;
-      letter-spacing:-.016em;
+      backdrop-filter:blur(4px);
     }
 
-    .home-principle p{
-      margin:0;
-      color:rgba(255,250,242,.79);
-      font-family:"Inter",sans-serif;
-      font-size:.87rem;
-      line-height:1.55;
+    .home-philosophy-action .btn:hover{
+      background:rgba(255,255,255,.14);
+      border-color:rgba(255,255,255,.80);
     }
 
     /* =========================
@@ -557,8 +546,8 @@
         gap:28px;
       }
 
-      .home-principle{
-        grid-template-columns:180px minmax(0,1fr);
+      .home-philosophy-action{
+        justify-content:flex-start;
       }
 
       .home-begin-actions{max-width:430px;}
@@ -624,10 +613,6 @@
         min-height:0;
       }
 
-      .home-principle{
-        grid-template-columns:1fr;
-        gap:6px;
-      }
     }
   </style>
 
@@ -915,25 +900,11 @@
       <div class="home-shell home-philosophy-layout">
         <div>
           <div class="home-label">The Stonebridge approach</div>
-          <h2>Thoughtful care within a clear clinical frame.</h2>
-          <p class="home-philosophy-sub">Stonebridge offers warm, relational psychotherapy with consistent structure and careful attention to fit.</p>
+          <h2>Thoughtful, relational care within a clear and dependable clinical frame.</h2>
         </div>
 
-        <div class="home-principles">
-          <article class="home-principle">
-            <h3>Careful fit</h3>
-            <p>A brief consultation clarifies scope, timing, and the most appropriate place to begin.</p>
-          </article>
-
-          <article class="home-principle">
-            <h3>Clear structure</h3>
-            <p>Expectations around time, communication, attendance, and scope support consistency and trust.</p>
-          </article>
-
-          <article class="home-principle">
-            <h3>Whole-person care</h3>
-            <p>Therapy makes room for symptoms, relationships, identity, coping, grief, shame, and meaning.</p>
-          </article>
+        <div class="home-philosophy-action">
+          <a class="btn" href="about.html">Learn About Stonebridge</a>
         </div>
       </div>
     </section>
