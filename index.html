@@ -424,51 +424,55 @@
        Uses width rather than excess vertical space.
     ========================= */
     .home-philosophy{
-      padding:50px 0 52px;
+      padding:38px 0 40px;
       background:linear-gradient(135deg,var(--home-blue),var(--home-blue-deep));
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(8,26,43,.22);
       color:var(--home-white);
     }
 
     .home-philosophy-layout{
       display:grid;
-      grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);
-      gap:60px;
-      align-items:start;
+      grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+      gap:72px;
+      align-items:center;
     }
 
-    .home-philosophy .home-label{color:#d8c095;}
+    .home-philosophy .home-label{
+      color:#d8c095;
+      margin-bottom:10px;
+    }
 
     .home-philosophy h2{
-      max-width:14ch;
+      max-width:17ch;
       color:var(--home-white);
-      font-size:clamp(2.75rem,4.1vw,3.9rem);
-      line-height:1.03;
+      font-size:clamp(2.15rem,3vw,3rem);
+      line-height:1.06;
     }
 
-    .home-philosophy-sub{
-      max-width:34rem;
-      margin:15px 0 0;
+    .home-philosophy-detail{
+      padding-left:38px;
+      border-left:1px solid rgba(255,255,255,.24);
+    }
+
+    .home-philosophy-detail p{
+      max-width:31rem;
+      margin:0;
       color:rgba(255,250,242,.82);
       font-family:"Inter",sans-serif;
       font-size:.94rem;
       line-height:1.64;
     }
 
-    .home-philosophy-action{
-      display:flex;
-      align-items:center;
-      justify-content:flex-end;
-      min-height:100%;
-    }
-
-    .home-philosophy-action .btn{
+    .home-philosophy-detail .btn{
+      margin-top:18px;
       background:rgba(255,255,255,.06);
       border-color:rgba(255,255,255,.58);
       color:var(--home-white);
       backdrop-filter:blur(4px);
     }
 
-    .home-philosophy-action .btn:hover{
+    .home-philosophy-detail .btn:hover{
       background:rgba(255,255,255,.14);
       border-color:rgba(255,255,255,.80);
     }
@@ -546,8 +550,10 @@
         gap:28px;
       }
 
-      .home-philosophy-action{
-        justify-content:flex-start;
+      .home-philosophy-detail{
+        padding:24px 0 0;
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.24);
       }
 
       .home-begin-actions{max-width:430px;}
@@ -599,10 +605,14 @@
 
       .home-recognition,
       .home-services,
-      .home-philosophy,
       .home-begin{
         padding-top:40px;
         padding-bottom:42px;
+      }
+
+      .home-philosophy{
+        padding-top:34px;
+        padding-bottom:36px;
       }
 
       .home-recognition-grid,
@@ -900,10 +910,11 @@
       <div class="home-shell home-philosophy-layout">
         <div>
           <div class="home-label">The Stonebridge approach</div>
-          <h2>Thoughtful, relational care within a clear and dependable clinical frame.</h2>
+          <h2>Thoughtful, relational care. A clear clinical frame.</h2>
         </div>
 
-        <div class="home-philosophy-action">
+        <div class="home-philosophy-detail">
+          <p>Learn how Stonebridge approaches fit, structure, and the therapeutic relationship.</p>
           <a class="btn" href="about.html">Learn About Stonebridge</a>
         </div>
       </div>
