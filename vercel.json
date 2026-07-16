@@ -1,0 +1,115 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/about.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/assessment.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/assessment",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/fees-insurance.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/fees-insurance",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/for-clinicians.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/for-clinicians",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/forensic.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/forensic",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/portal.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/portal",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/psychotherapy.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/psychotherapy",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/services.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/services",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/team-founder.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/team-founder",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/team.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/team",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
+}
