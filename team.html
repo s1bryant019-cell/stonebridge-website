@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Team | Stonebridge Psychological Group</title>
-  <meta name="description" content="Meet the clinician providing thoughtful telehealth psychotherapy for adolescents, adults, couples, and families, along with parent consultation through Stonebridge Psychological Group.">
-  <link rel="canonical" href="https://stonebridgepsychgroup.com/team.html">
+  <title>Practice Information | Stonebridge Psychological Group</title>
+  <meta name="description" content="Practice information and new-client resources from Stonebridge Psychological Group.">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -18,798 +18,125 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <style id="stonebridge-team-page-only">
+  <style>
     :root{
-      --team-bg:#f8f5f0;
-      --team-paper:#f2ece4;
-      --team-navy:#163b61;
-      --team-navy-deep:#102f4d;
-      --team-ink:#213142;
-      --team-muted:#5d6870;
-      --team-gold:#78613f;
-      --team-line:rgba(33,49,66,.14);
-      --team-warm-line:rgba(212,200,185,.72);
-      --team-white:#fffaf2;
+      --page-bg:#f8f5f0;
+      --page-navy:#163b61;
+      --page-navy-deep:#102f4d;
+      --page-ink:#213142;
+      --page-muted:#5d6870;
+      --page-gold:#78613f;
+      --page-line:rgba(33,49,66,.14);
+      --page-white:#fffaf2;
     }
 
-    body.team-page{
-      background:var(--team-bg);
-      color:var(--team-ink);
+    body{
+      margin:0;
+      background:var(--page-bg);
+      color:var(--page-ink);
     }
 
-    .team-page .skip-link{
+    .skip-link{
       position:absolute;
       left:12px;
       top:-80px;
       z-index:1000;
       padding:10px 14px;
       border-radius:8px;
-      background:var(--team-navy-deep);
+      background:var(--page-navy-deep);
       color:#fff;
       font-weight:700;
     }
 
-    .team-page .skip-link:focus{top:12px;}
+    .skip-link:focus{top:12px;}
 
-    /* Full-width photographic hero with a softer orientation band beneath it. */
-    .team-hero{
-      position:relative;
-      min-height:480px;
-      overflow:hidden;
-      isolation:isolate;
-      background:var(--team-navy-deep);
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-
-    .team-hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:1;
-      pointer-events:none;
+    .temporary-main{
+      min-height:calc(100vh - 310px);
+      display:grid;
+      place-items:center;
+      padding:72px 0;
       background:
-        linear-gradient(
-          90deg,
-          rgba(12,31,49,.94) 0%,
-          rgba(12,31,49,.88) 27%,
-          rgba(12,31,49,.64) 46%,
-          rgba(12,31,49,.24) 69%,
-          rgba(12,31,49,.08) 100%
-        ),
-        linear-gradient(
-          180deg,
-          rgba(10,24,38,.16) 0%,
-          rgba(10,24,38,.02) 56%,
-          rgba(10,24,38,.24) 100%
-        );
+        linear-gradient(135deg,rgba(22,59,97,.04),rgba(120,97,63,.03)),
+        var(--page-bg);
     }
 
-    .team-hero-copy{
-      position:relative;
-      z-index:2;
-      width:min(1220px,calc(100% - 72px));
-      min-height:480px;
-      margin:0 auto;
+    .temporary-panel{
+      display:grid;
+      grid-template-columns:minmax(0,1.04fr) minmax(320px,.96fr);
+      width:min(100%,980px);
+      overflow:hidden;
+      background:var(--page-white);
+      border:1px solid var(--page-line);
+      box-shadow:0 24px 60px rgba(16,47,77,.08);
+    }
+
+    .temporary-copy{
       display:flex;
       flex-direction:column;
-      align-items:flex-start;
       justify-content:center;
-      padding:42px 0 40px;
-      color:var(--team-white);
+      padding:58px;
     }
 
-    .team-hero-rule{
-      width:40px;
-      height:2px;
-      margin-bottom:20px;
-      background:#d3b57f;
-    }
-
-    .team-kicker,
-    .team-label,
-    .clinician-kicker{
-      color:var(--team-gold);
+    .temporary-kicker{
+      color:var(--page-gold);
       font-family:"Inter",sans-serif;
       font-size:.68rem;
       font-weight:800;
       letter-spacing:.18em;
-      line-height:1.35;
       text-transform:uppercase;
     }
 
-    .team-hero .team-kicker{
-      color:#e1c79c;
-    }
-
-    .team-hero h1{
-      margin:10px 0 0;
-      max-width:11.5ch;
-      color:var(--team-white);
+    .temporary-copy h1{
+      max-width:11ch;
+      margin:14px 0 18px;
+      color:var(--page-navy-deep);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.3rem,4.45vw,4.7rem);
-      line-height:1.01;
-      letter-spacing:-.05em;
-      text-wrap:balance;
-      text-shadow:0 10px 30px rgba(0,0,0,.18);
+      font-size:clamp(3rem,5vw,4.75rem);
+      line-height:.98;
+      letter-spacing:-.045em;
     }
 
-    .team-hero-copy > p{
-      max-width:36rem;
-      margin:18px 0 0;
-      color:rgba(255,250,242,.89);
+    .temporary-copy p{
+      max-width:34rem;
+      margin:0;
+      color:var(--page-muted);
       font-family:"Inter",sans-serif;
       font-size:1rem;
-      line-height:1.7;
+      line-height:1.72;
     }
 
-    .team-hero-actions{
+    .temporary-actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:26px;
+      margin-top:28px;
     }
 
-    .team-hero-actions .btn-primary{
-      background:#f4eee4;
-      border-color:#f4eee4;
-      color:var(--team-navy-deep);
+    .temporary-image{
+      min-height:470px;
+      background:
+        linear-gradient(90deg,rgba(16,47,77,.14),rgba(16,47,77,.02)),
+        url("team-profile-office.png") center/cover no-repeat;
     }
 
-    .team-hero-actions .btn-primary:hover{
-      background:#fffaf2;
-      border-color:#fffaf2;
+    @media(max-width:820px){
+      .temporary-panel{grid-template-columns:1fr;}
+      .temporary-image{order:-1;min-height:300px;}
+      .temporary-copy{padding:38px 30px 42px;}
     }
 
-    .team-hero-actions .btn-secondary{
-      color:#fffaf2;
-      border-color:rgba(255,255,255,.42);
-      background:rgba(255,255,255,.08);
-    }
-
-    .team-hero-actions .btn-secondary:hover{
-      border-color:rgba(255,255,255,.72);
-      background:rgba(255,255,255,.14);
-    }
-
-    .team-hero-media{
-      position:absolute;
-      inset:0;
-      z-index:0;
-      margin:0;
-      overflow:hidden;
-    }
-
-    .team-hero-media img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      object-position:center;
-    }
-
-    .team-overview{
-      background:#eee7de;
-      color:var(--team-ink);
-      border-bottom:1px solid var(--team-warm-line);
-    }
-
-    .team-overview-grid{
-      width:min(1080px,calc(100% - 72px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      padding:17px 0;
-    }
-
-    .team-overview article{
-      padding:0 24px;
-      border-left:1px solid rgba(33,49,66,.14);
-    }
-
-    .team-overview article:first-child{
-      padding-left:0;
-      border-left:0;
-    }
-
-    .team-overview h2{
-      margin:0 0 4px;
-      color:var(--team-navy-deep);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.08rem;
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-
-    .team-overview p{
-      margin:0;
-      color:var(--team-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.82rem;
-      line-height:1.48;
-    }
-
-    .team-section{
-      padding:58px 0 64px;
-      background:var(--team-bg);
-    }
-
-    .team-shell{
-      width:min(1080px,calc(100% - 72px));
-      margin:0 auto;
-    }
-
-    .team-intro{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);
-      gap:52px;
-      align-items:end;
-      margin-bottom:28px;
-    }
-
-    .team-label{
-      position:relative;
-      padding-top:14px;
-    }
-
-    .team-label::before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      max-width:150px;
-      height:1px;
-      background:linear-gradient(90deg,var(--team-navy),rgba(22,59,97,0));
-    }
-
-    .team-intro h2{
-      margin:12px 0 0;
-      max-width:16ch;
-      color:var(--team-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.2rem,3.1vw,3.15rem);
-      line-height:1.04;
-      letter-spacing:-.035em;
-      text-wrap:balance;
-    }
-
-    .team-intro > p{
-      margin:0;
-      max-width:31rem;
-      color:var(--team-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.94rem;
-      line-height:1.66;
-    }
-
-    /* The roster is intentionally a card system because each clinician is one distinct profile. */
-    .clinician-grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:28px;
-    }
-
-    .clinician-card{
-      min-width:0;
-      overflow:hidden;
-      border:1px solid var(--team-warm-line);
-      border-radius:20px;
-      background:#fffdf9;
-    }
-
-    .clinician-card.featured{
-      grid-column:1 / -1;
-      display:grid;
-      grid-template-columns:minmax(280px,34%) minmax(0,1fr);
-      min-height:430px;
-    }
-
-    .clinician-photo{
-      min-height:100%;
-      margin:0;
-      overflow:hidden;
-      background:#e8e0d6;
-    }
-
-    .clinician-photo img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      object-position:center top;
-    }
-
-    .clinician-details{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding:40px 44px;
-    }
-
-    .clinician-details h3{
-      margin:10px 0 5px;
-      color:var(--team-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.25rem,3vw,3rem);
-      line-height:1.02;
-      letter-spacing:-.035em;
-      text-wrap:balance;
-    }
-
-    .clinician-role{
-      color:var(--team-navy);
-      font-family:"Inter",sans-serif;
-      font-size:.84rem;
-      font-weight:700;
-      line-height:1.4;
-    }
-
-    .clinician-details > p{
-      max-width:43rem;
-      margin:17px 0 0;
-      color:var(--team-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.93rem;
-      line-height:1.68;
-    }
-
-    .clinician-focus{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:0 26px;
-      margin:22px 0 0;
-      padding:0;
-      list-style:none;
-      border-top:1px solid var(--team-line);
-    }
-
-    .clinician-focus li{
-      position:relative;
-      padding:11px 0 11px 17px;
-      border-bottom:1px solid var(--team-line);
-      color:var(--team-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.84rem;
-      line-height:1.45;
-    }
-
-    .clinician-focus li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:1.05rem;
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:#b89661;
-    }
-
-    .clinician-actions{
-      margin-top:24px;
-    }
-
-    /* Future standard clinician cards can be added without changing the roster grid. */
-    .clinician-card:not(.featured){
-      display:flex;
-      flex-direction:column;
-    }
-
-    .clinician-card:not(.featured) .clinician-photo{
-      aspect-ratio:4 / 3;
-      min-height:0;
-    }
-
-    .clinician-card:not(.featured) .clinician-details{
-      flex:1;
-      justify-content:flex-start;
-      padding:28px;
-    }
-
-    .clinician-card:not(.featured) .clinician-details h3{
-      font-size:2rem;
-    }
-
-    .clinician-card:not(.featured) .clinician-focus{
-      grid-template-columns:1fr;
-    }
-
-    .team-growth-note{
-      display:grid;
-      grid-template-columns:175px minmax(0,1fr);
-      gap:42px;
-      align-items:start;
-      margin-top:30px;
-      padding-top:22px;
-      border-top:1px solid var(--team-line);
-    }
-
-    .team-growth-note strong{
-      color:var(--team-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.25rem;
-      line-height:1.15;
-    }
-
-    .team-growth-note p{
-      max-width:48rem;
-      margin:0;
-      color:var(--team-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.89rem;
-      line-height:1.6;
-    }
-
-
-    .team-professional-note{
-      display:grid;
-      grid-template-columns:175px minmax(0,1fr);
-      gap:42px;
-      align-items:start;
-      margin-top:16px;
-      padding-top:16px;
-      border-top:1px solid var(--team-line);
-    }
-
-    .team-professional-note strong{
-      color:var(--team-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.25rem;
-      line-height:1.15;
-    }
-
-    .team-professional-note p{
-      max-width:48rem;
-      margin:0;
-      color:var(--team-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.89rem;
-      line-height:1.6;
-    }
-
-    .team-professional-link{
-      color:var(--team-navy);
-      font-weight:700;
-      text-decoration:underline;
-      text-decoration-thickness:1px;
-      text-underline-offset:3px;
-    }
-
-    .team-cta{
-      background:linear-gradient(135deg,var(--team-navy),var(--team-navy-deep));
-      color:var(--team-white);
-    }
-
-    .team-cta-inner{
-      width:min(1080px,calc(100% - 72px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      gap:30px;
-      align-items:center;
-      padding:33px 0;
-    }
-
-    .team-cta h2{
-      margin:0 0 5px;
-      color:#fffaf2;
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2rem,3vw,2.75rem);
-      line-height:1.05;
-      letter-spacing:-.025em;
-    }
-
-    .team-cta p{
-      max-width:45rem;
-      margin:0;
-      color:rgba(255,250,242,.84);
-      font-family:"Inter",sans-serif;
-      font-size:.94rem;
-      line-height:1.6;
-    }
-
-    .team-cta .btn-secondary{
-      color:#fffaf2;
-      border-color:rgba(255,255,255,.30);
-      background:rgba(255,255,255,.08);
-    }
-
-    .team-page a:focus-visible,
-    .team-page button:focus-visible{
-      outline:3px solid #fffaf2;
-      outline-offset:2px;
-      box-shadow:0 0 0 5px var(--team-navy-deep);
-    }
-
-    @media(min-width:1081px) and (max-width:1260px){
-      .team-hero-copy{
-        width:min(100% - 72px,1120px);
-      }
-
-      .team-hero h1{
-        font-size:clamp(3.15rem,4.15vw,4.25rem);
-      }
-
-      .clinician-details{
-        padding:34px 36px;
-      }
-    }
-
-    @media(max-width:1080px){
-      .team-hero,
-      .team-hero-copy{
-        min-height:500px;
-      }
-
-      .team-hero-copy{
-        width:min(100% - 44px,860px);
-        padding:46px 0 42px;
-      }
-
-      .team-hero::before{
-        background:
-          linear-gradient(
-            90deg,
-            rgba(12,31,49,.94) 0%,
-            rgba(12,31,49,.86) 38%,
-            rgba(12,31,49,.58) 72%,
-            rgba(12,31,49,.28) 100%
-          ),
-          linear-gradient(
-            180deg,
-            rgba(10,24,38,.14) 0%,
-            rgba(10,24,38,.04) 56%,
-            rgba(10,24,38,.28) 100%
-          );
-      }
-
-      .team-overview-grid,
-      .team-intro,
-      .team-growth-note,
-      .team-professional-note,
-      .team-cta-inner{
-        grid-template-columns:1fr;
-      }
-
-      .team-intro,
-      .team-growth-note,
-      .team-professional-note,
-      .team-cta-inner{
-        gap:14px;
-      }
-
-      .clinician-card.featured{
-        grid-template-columns:minmax(250px,38%) minmax(0,1fr);
-      }
-
-      .clinician-details{
-        padding:32px;
-      }
-
-      .clinician-focus{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media(max-width:760px){
-      .team-shell,
-      .team-overview-grid,
-      .team-cta-inner{
-        width:min(100% - 34px,1080px);
-      }
-
-      .team-hero,
-      .team-hero-copy{
-        min-height:560px;
-      }
-
-      .team-hero-copy{
-        width:min(100% - 34px,1080px);
-        padding:40px 0 36px;
-      }
-
-      .team-hero-media img{
-        object-position:58% center;
-      }
-
-      .team-hero::before{
-        background:
-          linear-gradient(
-            180deg,
-            rgba(10,27,43,.88) 0%,
-            rgba(10,27,43,.72) 54%,
-            rgba(10,27,43,.88) 100%
-          ),
-          linear-gradient(
-            90deg,
-            rgba(10,27,43,.52) 0%,
-            rgba(10,27,43,.20) 100%
-          );
-      }
-
-      .team-overview-grid{
-        grid-template-columns:1fr;
-        padding:14px 0;
-      }
-
-      .team-overview article{
-        padding:13px 0;
-        border-left:0;
-        border-top:1px solid rgba(33,49,66,.13);
-      }
-
-      .team-overview article:first-child{
-        padding-top:0;
-        border-top:0;
-      }
-
-      .team-hero h1{
-        max-width:12ch;
-        font-size:clamp(2.65rem,11.5vw,3.7rem);
-      }
-
-      .team-hero-actions .btn,
-      .team-cta .btn{
-        width:100%;
-        justify-content:center;
-        text-align:center;
-      }
-
-      .team-section{
-        padding:44px 0 48px;
-      }
-
-      .clinician-grid{
-        grid-template-columns:1fr;
-      }
-
-      .clinician-card.featured{
-        grid-column:auto;
-        grid-template-columns:1fr;
-        min-height:0;
-      }
-
-      .clinician-card.featured .clinician-photo{
-        aspect-ratio:4 / 3;
-        min-height:0;
-      }
-
-      .clinician-details{
-        padding:26px 22px 28px;
-      }
-
-      .clinician-details h3{
-        font-size:clamp(2rem,9vw,2.6rem);
-      }
+    @media(max-width:560px){
+      .temporary-main{padding:42px 0;}
+      .temporary-panel{width:100%;}
+      .temporary-copy h1{font-size:clamp(2.6rem,13vw,3.6rem);}
+      .temporary-actions{flex-direction:column;align-items:stretch;}
+      .temporary-actions .btn{width:100%;}
     }
   </style>
-
-<style id="stonebridge-services-dropdown-shared">
-/* Shared Services navigation. Kept inline so this update changes HTML files only. */
-.site-header.compact-site-header .services-nav-dropdown{
-  position:relative;
-  display:flex!important;
-  align-items:center;
-}
-.services-nav-main{
-  display:flex;
-  align-items:center;
-  min-height:34px;
-}
-.site-header.compact-site-header .services-nav-main > a{min-height:34px;}
-.services-menu-toggle{
-  width:28px;
-  height:34px;
-  margin-left:1px;
-  padding:0;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:0;
-  border-radius:7px;
-  background:transparent;
-  color:#5d6870;
-  cursor:pointer;
-}
-.services-menu-toggle svg{
-  width:16px;
-  height:16px;
-  transition:transform .16s ease;
-}
-.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
-.site-header.compact-site-header .services-dropdown-menu{
-  position:absolute;
-  top:calc(100% + 10px);
-  left:-14px;
-  z-index:80;
-  width:248px;
-  min-width:248px;
-  padding:9px;
-  display:grid!important;
-  gap:1px;
-  border:1px solid rgba(212,200,185,.88);
-  border-radius:12px;
-  background:rgba(255,252,247,.99);
-  box-shadow:0 18px 44px rgba(16,47,77,.14);
-}
-.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
-.services-dropdown-menu::before{
-  content:"";
-  position:absolute;
-  top:-7px;
-  left:72px;
-  width:12px;
-  height:12px;
-  transform:rotate(45deg);
-  border-left:1px solid rgba(212,200,185,.88);
-  border-top:1px solid rgba(212,200,185,.88);
-  background:#fffaf4;
-}
-.site-header.compact-site-header .services-dropdown-menu a{
-  position:relative;
-  z-index:1;
-  min-height:0;
-  padding:9px 11px;
-  border-radius:7px;
-  color:#5d6870;
-  font-size:.83rem;
-  line-height:1.25;
-  white-space:normal;
-}
-.site-header.compact-site-header .services-dropdown-menu a:hover,
-.site-header.compact-site-header .services-dropdown-menu a:focus-visible,
-.site-header.compact-site-header .services-dropdown-menu a.active-sub{
-  background:#f1ebe3;
-  color:#213142;
-}
-.services-menu-toggle:hover{
-  color:#213142;
-  background:rgba(22,59,97,.06);
-}
-.services-menu-toggle:focus-visible{
-  outline:3px solid #fffaf2;
-  outline-offset:1px;
-  box-shadow:0 0 0 5px #102f4d;
-}
-@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
-@media(max-width:960px){
-  .site-header.compact-site-header .services-nav-dropdown{
-    width:100%;
-    display:block!important;
-  }
-  .services-nav-main{
-    width:100%;
-    justify-content:space-between;
-  }
-  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
-  .services-menu-toggle{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-  }
-  .site-header.compact-site-header .services-dropdown-menu{
-    position:static;
-    width:100%;
-    min-width:0;
-    margin:3px 0 2px;
-    padding:4px 0 2px 13px;
-    gap:0;
-    border:0;
-    border-left:1px solid rgba(33,49,66,.17);
-    border-radius:0;
-    background:transparent;
-    box-shadow:none;
-  }
-  .services-dropdown-menu::before{display:none;}
-  .site-header.compact-site-header .services-dropdown-menu a{
-    padding:8px 10px;
-    font-size:.85rem;
-  }
-}
-</style>
 </head>
 
-<body class="team-page">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header compact-site-header">
     <div class="container nav">
@@ -822,128 +149,56 @@
 
       <div class="menu-wrap">
         <nav class="menu" aria-label="Primary navigation">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="team.html" class="active" aria-current="page">Team</a>
-  <div class="nav-dropdown services-nav-dropdown">
-    <div class="services-nav-main">
-      <a href="services.html">Services</a>
-      <button class="services-menu-toggle" type="button" aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu"><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button>
-    </div>
-    <div id="services-submenu" class="dropdown-menu services-dropdown-menu" role="menu" aria-label="Services" hidden>
-      <a href="services.html" role="menuitem">Services Overview</a>
-      <a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a>
-      <a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
-      <a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
-      <a href="family-therapy.html" role="menuitem">Family Therapy</a>
-      <a href="parent-support.html" role="menuitem">Parent Support</a>
-      <a href="group-therapy.html" role="menuitem">Group Therapy</a>
-    </div>
-  </div>
-  <a href="fees-insurance.html">Fees &amp; Insurance</a>
-  <a href="for-clinicians.html">Professionals</a>
-  <a href="portal.html">Portal</a>
-</nav>
-        <div class="header-cta"><a class="btn btn-primary" href="contact.html">New Clients</a></div>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="nav-dropdown services-nav-dropdown">
+            <div class="services-nav-main">
+              <a href="services.html">Services</a>
+              <button class="services-menu-toggle" type="button" aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                  <path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                </svg>
+              </button>
+            </div>
+            <div id="services-submenu" class="dropdown-menu services-dropdown-menu" role="menu" aria-label="Services" hidden>
+              <a href="services.html" role="menuitem">Services Overview</a>
+              <a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a>
+              <a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
+              <a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
+              <a href="family-therapy.html" role="menuitem">Family Therapy</a>
+              <a href="parent-support.html" role="menuitem">Parent Support</a>
+              <a href="group-therapy.html" role="menuitem">Group Therapy</a>
+            </div>
+          </div>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="for-clinicians.html">Professionals</a>
+          <a href="portal.html">Portal</a>
+        </nav>
+
+        <div class="header-cta">
+          <a class="btn btn-primary" href="contact.html">New Clients</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="team-hero">
-      <div class="team-hero-copy">
-        <div class="team-hero-rule"></div>
-        <div class="team-kicker">Team</div>
-        <h1>A small team, chosen with care.</h1>
-        <p>Stonebridge is building a thoughtful group of clinicians who share a commitment to relational outpatient care, clear boundaries, and consultation before intake.</p>
+  <main id="main-content" class="temporary-main">
+    <div class="container">
+      <section class="temporary-panel" aria-labelledby="temporary-page-title">
+        <div class="temporary-copy">
+          <div class="temporary-kicker">Practice information</div>
+          <h1 id="temporary-page-title">This page is currently being updated.</h1>
+          <p>Service information, fees and insurance details, professional resources, and new-client options remain available throughout the website.</p>
 
-        <div class="team-hero-actions">
-          <a class="btn btn-primary" href="#clinicians">Meet the Clinicians</a>
-          <a class="btn btn-secondary" href="contact.html">Start Here</a>
-        </div>
-      </div>
-
-      <figure class="team-hero-media">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="hero-team-consultation-960.webp 960w, hero-team-consultation-1600.webp 1600w, hero-team-consultation-2000.webp 2000w" sizes="100vw"><img alt="Warm, quiet clinical consultation space" decoding="async" fetchpriority="high" height="1116" src="hero-team-consultation.jpg" width="2000"/></picture>
-      </figure>
-    </section>
-
-    <section class="team-overview" aria-label="Team overview">
-      <div class="team-overview-grid">
-        <article>
-          <h2>Small-team model</h2>
-          <p>Clinician roles and profiles remain personal and specific.</p>
-        </article>
-        <article>
-          <h2>Fit before assignment</h2>
-          <p>A brief review helps clarify the most appropriate next step.</p>
-        </article>
-        <article>
-          <h2>Illinois telehealth</h2>
-          <p>Online care for clients and caregivers located in Illinois.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="team-section" id="clinicians">
-      <div class="team-shell">
-        <div class="team-intro">
-          <div>
-            <div class="team-label">Clinician roster</div>
-            <h2>Learn more before choosing a next step.</h2>
+          <div class="temporary-actions">
+            <a class="btn btn-primary" href="contact.html">Start Here</a>
+            <a class="btn btn-secondary" href="services.html">View Services</a>
           </div>
-          <p>Each profile offers a focused view of clinical depth, style, scope, and how to begin.</p>
         </div>
 
-        <div class="clinician-grid">
-          <article class="clinician-card featured">
-            <figure class="clinician-photo">
-              <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="practitioner-headshot-sbryant-760.webp 760w, practitioner-headshot-sbryant-1200.webp 1200w, practitioner-headshot-sbryant-1529.webp 1529w" sizes="(max-width: 760px) 82vw, 420px"><img alt="Dr. Stephen W. Bryant, PsyD, LCPC" decoding="async" height="2048" loading="lazy" src="practitioner-headshot-sbryant.png" width="1529"/></picture>
-            </figure>
-
-            <div class="clinician-details">
-              <div class="clinician-kicker">Founder · Illinois telehealth</div>
-              <h3>Stephen W. Bryant, PsyD, LCPC</h3>
-              <div class="clinician-role">Individual, couples, and family psychotherapist · Parent consultant</div>
-
-              <p>Dr. Bryant provides thoughtful relational psychotherapy for adolescents, adults, couples, and families, along with parent consultation. He brings particular depth to addiction and substance-use concerns, trauma and complex stress, mood and anxiety concerns, relationship patterns, family stress, and co-occurring difficulties. His broader work may also include identity, grief, emotional regulation, neurodevelopmental concerns, life transitions, and rebuilding trust or connection when clinically appropriate.</p>
-
-              <ul class="clinician-focus" aria-label="Clinical areas of focus">
-                <li>Addiction and co-occurring concerns</li>
-                <li>Trauma and complex stress</li>
-                <li>Mood, anxiety, and emotional regulation</li>
-                <li>Couples, family, and parent work</li>
-              </ul>
-
-              <div class="clinician-actions">
-                <a class="btn btn-primary" href="team-founder.html">Read Full Profile</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="team-growth-note">
-          <strong>Finding the right fit</strong>
-          <p>Stonebridge considers clinical needs, clinician experience, availability, and telehealth appropriateness before recommending a next step.</p>
-        </div>
-
-
-        <div class="team-professional-note">
-          <strong>For professionals</strong>
-          <p>Professional consultation groups, individual consultation, peer review, and education are available through a separate professional pathway. <a class="team-professional-link" href="for-clinicians.html">View Professional Offerings</a></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="team-cta">
-      <div class="team-cta-inner">
-        <div>
-          <h2>Not sure which clinician may fit?</h2>
-          <p>A brief written inquiry is enough to begin the review process.</p>
-        </div>
-        <a class="btn btn-secondary" href="contact.html">Start Here</a>
-      </div>
-    </section>
+        <div class="temporary-image" role="img" aria-label="Warm and quiet psychotherapy office"></div>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -967,8 +222,6 @@
         <div class="footer-title">Practice</div>
         <div class="footer-links">
           <a href="about.html">About</a>
-          <a href="team.html">Team</a>
-          <a href="team-founder.html">Founder</a>
           <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Client Portal</a>
         </div>
@@ -980,13 +233,16 @@
           <span>Serving Illinois via telehealth</span>
           <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
           <a href="tel:+17734171688">(773) 417-1688</a>
-          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
-          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
       </div>
 
       <div class="footer-logo-right">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
+        <picture class="sb-responsive-image" style="display:contents">
+          <source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px">
+          <img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800">
+        </picture>
       </div>
     </div>
 
@@ -996,68 +252,6 @@
     </div>
   </footer>
 
-  
-<script id="stonebridge-services-dropdown-script">
-(function(){
-  function initServicesDropdown(){
-    var dropdown=document.querySelector('.services-nav-dropdown');
-    if(!dropdown) return;
-    var toggle=dropdown.querySelector('.services-menu-toggle');
-    var panel=dropdown.querySelector('.services-dropdown-menu');
-    if(!toggle || !panel) return;
-    var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
-    function setOpen(open,focusFirst){
-      dropdown.classList.toggle('is-open',open);
-      toggle.setAttribute('aria-expanded',String(open));
-      toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
-      panel.hidden=!open;
-      if(open && focusFirst && items.length) items[0].focus();
-    }
-    toggle.addEventListener('click',function(){
-      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
-    });
-    toggle.addEventListener('keydown',function(event){
-      if(event.key==='ArrowDown'){
-        event.preventDefault();
-        setOpen(true,true);
-      }else if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-      }
-    });
-    panel.addEventListener('keydown',function(event){
-      var current=items.indexOf(document.activeElement);
-      if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-        toggle.focus();
-      }else if(event.key==='ArrowDown'){
-        event.preventDefault();
-        items[(current+1+items.length)%items.length].focus();
-      }else if(event.key==='ArrowUp'){
-        event.preventDefault();
-        items[(current-1+items.length)%items.length].focus();
-      }else if(event.key==='Home'){
-        event.preventDefault();
-        items[0].focus();
-      }else if(event.key==='End'){
-        event.preventDefault();
-        items[items.length-1].focus();
-      }
-    });
-    items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
-    document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
-    document.addEventListener('keydown',function(event){
-      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
-        setOpen(false,false);
-        toggle.focus();
-      }
-    });
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
-  else initServicesDropdown();
-})();
-</script>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
