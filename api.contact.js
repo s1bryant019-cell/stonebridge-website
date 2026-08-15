@@ -31,9 +31,9 @@ export default async function handler(req, res) {
     const patient = patientName || proposedPatientName || "";
     const paymentInfo = insurance || insurancePayment || "";
     const inquiryReason = reason || message || "";
-    const isWaitlistInquiry = /waitlist/i.test(requestedService);
-    const inquiryLabel = isWaitlistInquiry
-      ? "waitlist inquiry"
+    const isNewClientInquiry = true;
+    const inquiryLabel = isNewClientInquiry
+      ? "new client inquiry"
       : "consultation request";
 
     if (!senderName || !senderEmail || !inquiryReason) {
@@ -95,8 +95,8 @@ This message was submitted through the Stonebridge Psychological Group website.
         from: fromEmail,
         to: [toEmail],
         reply_to: senderEmail,
-        subject: isWaitlistInquiry
-          ? "Stonebridge waitlist inquiry"
+        subject: isNewClientInquiry
+          ? "Stonebridge new client inquiry"
           : "Stonebridge consultation request",
         text: emailBody
       })

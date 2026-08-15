@@ -775,7 +775,7 @@
   <a href="for-clinicians.html">Professionals</a>
   <a href="portal.html">Portal</a>
 </nav>
-        <div class="header-cta"><a class="btn btn-primary" href="#waitlist-form">New Clients</a></div>
+        <div class="header-cta"><a class="btn btn-primary" href="#inquiry-form">New Clients</a></div>
       </div>
     </div>
   </header>
@@ -790,7 +790,7 @@
 
         <div class="contact-hero-actions">
           <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" target="_blank" rel="noopener noreferrer">Schedule a Consultation</a>
-          <a class="btn btn-secondary" href="#waitlist-form">Send a Brief Inquiry</a>
+          <a class="btn btn-secondary" href="#inquiry-form">Send a Brief Inquiry</a>
         </div>
 
         <p class="contact-consult-note">A consultation is not psychotherapy, a diagnostic evaluation, crisis support, or a guarantee of ongoing care. Requests are reviewed before confirmation.</p>
@@ -818,7 +818,7 @@
       </div>
     </section>
 
-    <section class="contact-form-section" id="waitlist-form">
+    <section class="contact-form-section" id="inquiry-form">
       <div class="contact-shell contact-layout">
         <aside class="contact-intro">
           <div class="contact-label">Brief written inquiry</div>
@@ -852,7 +852,7 @@
             <input type="text" name="website" autocomplete="off" tabindex="-1">
           </label>
 
-          <input type="hidden" name="inquiryType" value="waitlist">
+          <input type="hidden" name="inquiryType" value="new-client">
           <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy">
 
           <div class="contact-form-grid">
@@ -1066,7 +1066,7 @@
 
         var data=new FormData(form);
         var payload={
-          inquiryType:data.get('inquiryType')||'waitlist',
+          inquiryType:data.get('inquiryType')||'new-client',
           website:data.get('website')||'',
           serviceRequested:data.get('serviceRequested')||'',
           psychotherapyFormat:data.get('psychotherapyFormat')||'',

@@ -71,8 +71,8 @@ export default async function handler(req, res) {
       MAX_LENGTHS.reason
     );
 
-    const isWaitlistInquiry =
-      inquiryType === "waitlist" || /waitlist/i.test(requestedService);
+    const isNewClientInquiry =
+      inquiryType === "new-client" || inquiryType === "inquiry";
 
     if (!senderName || !senderEmail || !requestedService || !inquiryReason) {
       return res.status(400).json({
@@ -101,8 +101,8 @@ export default async function handler(req, res) {
       });
     }
 
-    const inquiryLabel = isWaitlistInquiry
-      ? "waitlist inquiry"
+    const inquiryLabel = isNewClientInquiry
+      ? "new client inquiry"
       : "consultation request";
 
     const emailBody = `New ${inquiryLabel} from the Stonebridge website.
@@ -141,8 +141,8 @@ This message was submitted through the Stonebridge Psychological Group website.`
         from: fromEmail,
         to: [toEmail],
         reply_to: senderEmail,
-        subject: isWaitlistInquiry
-          ? `Stonebridge waitlist inquiry — ${requestedService}`
+        subject: isNewClientInquiry
+          ? `Stonebridge new client inquiry — ${requestedService}`
           : `Stonebridge consultation request — ${requestedService}`,
         text: emailBody
       })
