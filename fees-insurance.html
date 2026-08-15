@@ -321,6 +321,12 @@
 
     .fees-payment-row p{margin:0;}
 
+    .fees-payment-copy{
+      display:grid;
+      gap:8px;
+      min-width:0;
+    }
+
     .fee-table-wrap{
       overflow-x:auto;
       -webkit-overflow-scrolling:touch;
@@ -841,8 +847,10 @@
         <div class="fees-payment-list">
           <article class="fees-payment-row">
             <h3>Accepted insurance</h3>
-            <p>Stonebridge currently accepts BCBS Illinois commercial PPO, Blue Choice, and Blue High Performance plans. Stonebridge is also contracted with Advocate Medical Group West / Guidehealth Behavioral Health Network.</p>
-            <p>Blue Cross Community Health Plans / BCCHP is separate from BCBS Illinois commercial plans and is not currently billable through Stonebridge.</p>
+            <div class="fees-payment-copy">
+              <p>Stonebridge currently accepts BCBS Illinois commercial PPO, Blue Choice, and Blue High Performance plans. Stonebridge is also contracted with Advocate Medical Group West / Guidehealth Behavioral Health Network.</p>
+              <p>Blue Cross Community Health Plans / BCCHP is separate from BCBS Illinois commercial plans and is not currently billable through Stonebridge.</p>
+            </div>
           </article>
 
           <article class="fees-payment-row">
