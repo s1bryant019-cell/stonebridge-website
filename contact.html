@@ -612,7 +612,32 @@
         grid-column:auto;
       }
     }
-  </style>
+  
+    .contact-privacy-note{
+      margin:0 0 24px;
+      padding:18px 20px;
+      border:1px solid rgba(33,49,66,.14);
+      background:rgba(255,255,255,.42);
+    }
+
+    .contact-privacy-note strong{
+      display:block;
+      margin-bottom:6px;
+      color:#213142;
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.04em;
+    }
+
+    .contact-privacy-note p{
+      margin:0;
+      color:#5d6870;
+      font-family:"Inter",sans-serif;
+      font-size:.88rem;
+      line-height:1.6;
+    }
+</style>
 
 <style id="stonebridge-services-dropdown-shared">
 /* Shared Services navigation. Kept inline so this update changes HTML files only. */
@@ -813,12 +838,18 @@
         </article>
         <article>
           <h2>Fit review</h2>
-          <p>Scope, availability, and telehealth appropriateness are reviewed before confirmation.</p>
+          <p>Scope, availability, service format, insurance or payment questions, and next steps are reviewed before confirmation.</p>
         </article>
       </div>
     </section>
 
     <section class="contact-form-section" id="inquiry-form">
+      <div class="contact-shell">
+        <div class="contact-privacy-note">
+          <strong>Keep this first message brief.</strong>
+          <p>Please do not include detailed clinical history, emergency information, or sensitive records in this form. A brief overview is enough to begin a fit and availability review.</p>
+        </div>
+      </div>
       <div class="contact-shell contact-layout">
         <aside class="contact-intro">
           <div class="contact-label">Brief written inquiry</div>
