@@ -809,16 +809,15 @@
     <section class="contact-hero">
       <div class="contact-hero-copy">
         <div class="contact-hero-rule"></div>
-        <div class="contact-kicker">Contact</div>
-        <h1>Choose how you would like to begin.</h1>
-        <p>Choose the option that feels easiest. Both are ways to begin, and neither commits you to ongoing care.</p>
+        <div class="contact-kicker">New Clients</div>
+        <h1>Begin with a brief consultation.</h1>
+        <p>Request a free 10–15 minute conversation to discuss fit, scope, availability, and next steps.</p>
 
         <div class="contact-hero-actions">
-          <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" target="_blank" rel="noopener noreferrer">Schedule a Consultation</a>
-          <a class="btn btn-secondary" href="#inquiry-form">Send a Brief Inquiry</a>
+          <a class="btn btn-primary" href="#inquiry-form">Schedule a Consultation</a>
         </div>
 
-        <p class="contact-consult-note">A consultation is not psychotherapy, a diagnostic evaluation, crisis support, or a guarantee of ongoing care. Requests are reviewed before confirmation.</p>
+        <p class="contact-consult-note">Submitting a request does not confirm an appointment. Stonebridge reviews consultation requests and follows up to confirm a time. A consultation is not psychotherapy, a diagnostic evaluation, or crisis support.</p>
       </div>
 
       <figure class="contact-hero-media">
@@ -826,19 +825,19 @@
       </figure>
     </section>
 
-    <section class="contact-overview" aria-label="Ways to begin">
+    <section class="contact-overview" aria-label="Consultation process">
       <div class="contact-overview-grid">
         <article>
-          <h2>Schedule a consultation</h2>
-          <p>Choose this option when you are ready to select a time for a free 10–15 minute fit call.</p>
+          <h2>Request</h2>
+          <p>Share a few basic details and general availability for a free 10–15 minute consultation.</p>
         </article>
         <article>
-          <h2>Send a brief written inquiry</h2>
-          <p>Choose this option when you would rather describe what you need first or do not see a workable consultation time.</p>
+          <h2>Review</h2>
+          <p>Stonebridge reviews fit, scope, clinician availability, and insurance or payment questions when relevant.</p>
         </article>
         <article>
-          <h2>Fit review</h2>
-          <p>Scope, availability, service format, insurance or payment questions, and next steps are reviewed before confirmation.</p>
+          <h2>Confirm</h2>
+          <p>A member of Stonebridge follows up to confirm a consultation time. The form itself does not create an appointment.</p>
         </article>
       </div>
     </section>
@@ -852,15 +851,15 @@
       </div>
       <div class="contact-shell contact-layout">
         <aside class="contact-intro">
-          <div class="contact-label">Brief written inquiry</div>
-          <h2>A brief overview is enough.</h2>
-          <p>Use this form if you would rather describe what you need before choosing a consultation time, or if none of the available times work for you.</p>
+          <div class="contact-label">Consultation request</div>
+          <h2>Request a consultation.</h2>
+          <p>Share only what Stonebridge needs to review the request and follow up about a consultation time. A brief, non-sensitive overview is enough.</p>
 
           <ul class="contact-review-list">
-            <li>Scope and clinical fit</li>
-            <li>Telehealth appropriateness</li>
-            <li>Availability and next steps</li>
+            <li>Clinical fit and scope</li>
+            <li>Clinician availability</li>
             <li>Insurance or payment questions when relevant</li>
+            <li>Consultation timing and next steps</li>
           </ul>
 
           <div class="contact-crisis-note">
@@ -872,10 +871,10 @@
         <form class="contact-form" id="consultation-form" novalidate>
           <div class="contact-form-head">
             <div>
-              <div class="form-eyebrow">Brief written inquiry</div>
-              <h2>Tell us what would be helpful to know.</h2>
+              <div class="form-eyebrow">Free 10–15 minute consultation</div>
+              <h2>Request a consultation time.</h2>
             </div>
-            <p>You do not need to explain everything at once. Stonebridge will review the inquiry and follow up by email when appropriate.</p>
+            <p>Stonebridge will review your request and contact you to confirm a consultation time. This is not a clinical intake form.</p>
           </div>
 
           <label class="contact-honeypot" aria-hidden="true">
@@ -883,7 +882,7 @@
             <input type="text" name="website" autocomplete="off" tabindex="-1">
           </label>
 
-          <input type="hidden" name="inquiryType" value="new-client">
+          <input type="hidden" name="inquiryType" value="consultation">
           <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy">
 
           <div class="contact-form-grid">
@@ -906,9 +905,36 @@
                 <option>Couples Therapy</option>
                 <option>Family Therapy</option>
                 <option>Parent Support</option>
-                <option>Group Therapy Interest</option>
+                <option>Group Therapy — no current openings</option>
                 <option>Unsure / Fit Review</option>
               </select>
+            </label>
+
+            <label>
+              <span>Phone <em>Optional</em></span>
+              <input type="tel" name="phone" autocomplete="tel">
+            </label>
+
+            <label>
+              <span>Preferred contact method <em>Optional</em></span>
+              <select name="preferredContact">
+                <option value="">No preference</option>
+                <option>Email</option>
+                <option>Phone</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Preferred clinician <em>Optional</em></span>
+              <select name="preferredClinician">
+                <option value="">No preference</option>
+                <option>Dr. Stephen W. Bryant</option>
+              </select>
+            </label>
+
+            <label>
+              <span>General availability <em>Optional</em></span>
+              <input type="text" name="generalAvailability" placeholder="For example: Tuesday evenings or Friday mornings">
             </label>
 
             <label>
@@ -926,15 +952,15 @@
             <p class="form-note contact-form-full">BCBS Illinois commercial plans and Advocate Medical Group West / Guidehealth Behavioral Health Network are currently accepted. Additional networks are in progress; current status is listed on the <a href="fees-insurance.html">Fees &amp; Insurance</a> page.</p>
 
             <label class="contact-form-full">
-              <span>Brief note *</span>
-              <textarea name="reason" placeholder="What are you hoping for help with, and what would be useful for Stonebridge to know before following up?" required></textarea>
+              <span>Brief reason for reaching out *</span>
+              <textarea name="reason" placeholder="A short, non-sensitive overview is enough. Please do not include detailed clinical history or records." required></textarea>
             </label>
           </div>
 
           <div class="contact-form-alert" id="form-alert" role="status" aria-live="polite"></div>
 
           <div class="contact-form-submit">
-            <button class="btn btn-primary" id="submitButton" type="submit">Send Brief Inquiry</button>
+            <button class="btn btn-primary" id="submitButton" type="submit">Request Consultation</button>
           </div>
         </form>
       </div>
@@ -1099,12 +1125,16 @@
 
         var data=new FormData(form);
         var payload={
-          inquiryType:data.get('inquiryType')||'new-client',
+          inquiryType:data.get('inquiryType')||'consultation',
           website:data.get('website')||'',
           serviceRequested:data.get('serviceRequested')||'',
           psychotherapyFormat:data.get('psychotherapyFormat')||'',
           fullName:data.get('fullName')||'',
           email:data.get('email')||'',
+          phone:data.get('phone')||'',
+          preferredContact:data.get('preferredContact')||'',
+          preferredClinician:data.get('preferredClinician')||'',
+          generalAvailability:data.get('generalAvailability')||'',
           insurancePreference:data.get('insurancePreference')||'',
           reason:data.get('reason')||''
         };
@@ -1114,13 +1144,13 @@
           if(!response.ok)throw new Error('Request failed');
 
           form.reset();
-          showAlert('Your brief inquiry has been sent. Stonebridge will follow up by email if the request appears clinically appropriate.');
+          showAlert('Your consultation request has been received. A member of Stonebridge will review your request and contact you to confirm a consultation time. Submitting this request does not create or confirm a clinical appointment.');
         }catch(error){
           showAlert('The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.');
         }finally{
           if(submitButton){
             submitButton.disabled=false;
-            submitButton.textContent='Send Brief Inquiry';
+            submitButton.textContent='Request Consultation';
           }
         }
       });

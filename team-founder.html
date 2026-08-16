@@ -518,7 +518,73 @@
       .founder-actions .btn,
       .founder-final-band .btn{ width:100%; justify-content:center; text-align:center; }
     }
-  </style>
+  
+.founder-availability{
+  padding:58px 0;
+  background:#f3eee7;
+  border-top:1px solid rgba(33,49,66,.12);
+}
+.founder-availability-heading{
+  max-width:700px;
+}
+.founder-availability-heading h2{
+  margin:10px 0 12px;
+  color:#213142;
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2rem,3vw,3rem);
+  line-height:1.05;
+  letter-spacing:-.03em;
+}
+.founder-availability-heading p,
+.founder-availability-note{
+  max-width:760px;
+  color:#5d6870;
+  font-family:"Inter",sans-serif;
+  font-size:.92rem;
+  line-height:1.65;
+}
+.founder-availability-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:1px;
+  margin-top:28px;
+  border:1px solid rgba(33,49,66,.12);
+  background:rgba(33,49,66,.12);
+}
+.founder-availability-grid article{
+  padding:20px;
+  background:#fbf8f3;
+}
+.founder-availability-grid strong{
+  display:block;
+  margin-bottom:9px;
+  color:#78613f;
+  font-family:"Inter",sans-serif;
+  font-size:.69rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.founder-availability-grid span{
+  color:#213142;
+  font-family:"Inter",sans-serif;
+  font-size:.87rem;
+  line-height:1.75;
+}
+.founder-availability-note{margin:20px 0 0;}
+.founder-availability-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:22px;
+}
+@media(max-width:900px){
+  .founder-availability-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:620px){
+  .founder-availability-grid{grid-template-columns:1fr;}
+}
+</style>
 <style id="founder-profile-slick-update">
     /* Founder page refinement: patient-facing profile, less scaffolding, fewer boxed blocks. */
     .founder-intro-inner{
@@ -3312,9 +3378,9 @@
 <div class="founder-subtitle">PsyD, LCPC · Founder</div>
 <p>Dr. Bryant provides individual, couples, and family psychotherapy for adolescents and adults, along with parent support. His work is psychodynamic and relational at the foundation, with evidence-based approaches integrated for trauma, addiction, mood and anxiety concerns, emotional regulation, relationships, and complex co-occurring patterns.</p>
 <div class="founder-actions">
-<a class="btn btn-primary" href="contact.html">Start Here</a>
+<a class="btn btn-primary" href="contact.html#inquiry-form">Schedule a Consultation</a>
 </div>
-<p class="founder-schedule-note">Choose a consultation time or send a brief written inquiry.</p>
+<p class="founder-schedule-note">New clients may request a free 10–15 minute consultation. Stonebridge reviews the request and confirms the consultation time.</p>
 </div>
 <figure aria-label="Portrait of Dr. Stephen Bryant" class="founder-portrait founder-portrait-integrated">
 <div class="portrait-frame">
@@ -3457,6 +3523,31 @@
 </div>
 </div>
 </section>
+
+<section class="founder-availability" aria-labelledby="founder-availability-title">
+<div class="founder-wide-shell">
+<div class="founder-availability-heading">
+<div class="section-label">Typical availability</div>
+<h2 id="founder-availability-title">Typical scheduling windows.</h2>
+<p>These are Dr. Bryant’s usual scheduling windows, not a list of currently open appointments. Availability changes as appointments are filled.</p>
+</div>
+
+<div class="founder-availability-grid" aria-label="Dr. Bryant's typical scheduling windows">
+<article><strong>Monday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></article>
+<article><strong>Tuesday</strong><span>10:00–11:00 AM<br>12:00–3:00 PM<br>4:00–8:00 PM</span></article>
+<article><strong>Wednesday</strong><span>10:00 AM–3:00 PM<br>4:00–6:00 PM</span></article>
+<article><strong>Thursday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></article>
+<article><strong>Friday</strong><span>9:00 AM–1:00 PM</span></article>
+</div>
+
+<p class="founder-availability-note">New clients may request a brief consultation to discuss fit and current openings. Established Stonebridge clients can view actual available appointment times through the Client Portal.</p>
+
+<div class="founder-availability-actions">
+<a class="btn btn-primary" href="contact.html#inquiry-form">Schedule a Consultation</a>
+<a class="btn btn-secondary" href="portal.html">Client Portal</a>
+</div>
+</div>
+</section>
 <section class="founder-scope-strip" id="fit-scope">
 <div class="founder-wide-shell scope-strip-inner">
 <div class="section-label">Scope of care</div>
@@ -3466,10 +3557,10 @@
 <section aria-label="Begin with a brief inquiry" class="founder-final-band">
 <div class="founder-final-inner">
 <div>
-<h2>A brief note is enough to begin.</h2>
-<p>Share what you are looking for, and Stonebridge will review fit, scope, and next steps before intake.</p>
+<h2>Begin with a brief consultation.</h2>
+<p>Request a free 10–15 minute consultation to discuss fit, scope, availability, and next steps.</p>
 </div>
-<a class="btn btn-secondary" href="contact.html">Start Here</a>
+<a class="btn btn-secondary" href="contact.html#inquiry-form">Schedule a Consultation</a>
 </div>
 </section>
 </main>
