@@ -5,7 +5,11 @@ const MAX_LENGTHS = {
   psychotherapyFormat: 120,
   insurancePreference: 160,
   reason: 4000,
-  website: 200
+  website: 200,
+  phone: 50,
+  preferredContact: 40,
+  preferredClinician: 120,
+  generalAvailability: 500
 };
 
 function normalize(value, maxLength) {
@@ -66,13 +70,25 @@ export default async function handler(req, res) {
       body.insurancePreference || body.insurance || body.insurancePayment || "",
       MAX_LENGTHS.insurancePreference
     );
+    const phone = normalize(body.phone || "", MAX_LENGTHS.phone);
+    const preferredContact = normalize(
+      body.preferredContact || "",
+      MAX_LENGTHS.preferredContact
+    );
+    const preferredClinician = normalize(
+      body.preferredClinician || "",
+      MAX_LENGTHS.preferredClinician
+    );
+    const generalAvailability = normalize(
+      body.generalAvailability || "",
+      MAX_LENGTHS.generalAvailability
+    );
     const inquiryReason = normalize(
       body.reason || body.message || "",
       MAX_LENGTHS.reason
     );
 
-    const isNewClientInquiry =
-      inquiryType === "new-client" || inquiryType === "inquiry";
+    const isConsultationRequest = inquiryType === "consultation";
 
     if (!senderName || !senderEmail || !requestedService || !inquiryReason) {
       return res.status(400).json({
@@ -101,9 +117,9 @@ export default async function handler(req, res) {
       });
     }
 
-    const inquiryLabel = isNewClientInquiry
-      ? "new client inquiry"
-      : "consultation request";
+    const inquiryLabel = isConsultationRequest
+      ? "consultation request"
+      : "new client inquiry";
 
     const emailBody = `New ${inquiryLabel} from the Stonebridge website.
 
@@ -121,6 +137,18 @@ ${senderName}
 
 Email:
 ${senderEmail}
+
+Phone:
+${phone || "Not provided"}
+
+Preferred contact method:
+${preferredContact || "No preference"}
+
+Preferred clinician:
+${preferredClinician || "No preference"}
+
+General availability:
+${generalAvailability || "Not provided"}
 
 Insurance / payment preference:
 ${paymentPreference || "Not provided"}
@@ -141,9 +169,9 @@ This message was submitted through the Stonebridge Psychological Group website.`
         from: fromEmail,
         to: [toEmail],
         reply_to: senderEmail,
-        subject: isNewClientInquiry
-          ? `Stonebridge new client inquiry — ${requestedService}`
-          : `Stonebridge consultation request — ${requestedService}`,
+        subject: isConsultationRequest
+          ? `Stonebridge consultation request — ${requestedService}`
+          : `Stonebridge new client inquiry — ${requestedService}`,
         text: emailBody
       })
     });
