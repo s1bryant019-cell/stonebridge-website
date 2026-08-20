@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Professionals | Stonebridge Psychological Group</title>
-  <meta name="description" content="Clinical consultation, external supervision, psychological assessment report support, scholarly review, and burnout-focused professional education through Stonebridge Psychological Group.">
+  <meta name="description" content="Peer consultation groups for clinicians and graduate or doctoral mental-health students, individual consultation, external supervision, psychological assessment report support, scholarly review, and professional education through Stonebridge Psychological Group.">
   <link rel="canonical" href="https://stonebridgepsychgroup.com/for-clinicians.html">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -680,6 +680,46 @@
       text-align:center;
     }
 
+    .clinicians-group-options{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .clinicians-group-option{
+      padding:16px;
+      border:1px solid var(--clinicians-line);
+      background:rgba(255,250,242,.62);
+    }
+
+    .clinicians-group-option h3{
+      margin:5px 0 7px;
+      color:var(--clinicians-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.24rem;
+      line-height:1.1;
+      letter-spacing:-.015em;
+    }
+
+    .clinicians-group-option p{
+      margin:0 0 13px;
+      font-size:.82rem;
+      line-height:1.57;
+    }
+
+    .clinicians-group-audience{
+      color:var(--clinicians-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.64rem;
+      font-weight:800;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+
+    .clinicians-group-option .btn{
+      font-size:.78rem;
+    }
+
     .clinicians-service-list{
       border-top:1px solid var(--clinicians-line);
     }
@@ -1056,7 +1096,7 @@
         <div class="clinicians-hero-rule"></div>
         <div class="clinicians-kicker">Professionals</div>
         <h1>Professional support for complex clinical work.</h1>
-        <p>Stonebridge offers consultation groups, individual consultation, external supervision, psychological assessment report support, scholarly review, and burnout-focused professional education.</p>
+        <p>Stonebridge offers peer consultation groups for clinicians and students, individual consultation, external supervision, psychological assessment report support, scholarly review, and burnout-focused professional education.</p>
 
         <div class="clinicians-hero-actions">
           <a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Professional%20Services%20Inquiry">Email About Professional Services</a>
@@ -1071,8 +1111,8 @@
     <section class="clinicians-overview" aria-label="Professional services overview">
       <div class="clinicians-overview-grid">
         <article>
-          <h2>Consultation and supervision</h2>
-          <p>Support for clinical judgment, development, and sustainable practice.</p>
+          <h2>Peer consultation and supervision</h2>
+          <p>Separate peer-consultation spaces for clinicians and students, plus formal supervision when appropriate.</p>
         </article>
         <article>
           <h2>Writing and professional review</h2>
@@ -1093,9 +1133,24 @@
           <p>Each request is reviewed for role, scope, timing, confidentiality, intended use, and whether Stonebridge is the appropriate professional fit.</p>
 
           <div class="clinicians-consultation-cta">
-            <strong>Interested in the monthly consultation group?</strong>
-            <p>The group meets on the third Friday of each month at 4:00 PM Central Time by secure video. Share your professional role, practice setting, and what you hope to bring to the group.</p>
-            <a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Monthly%20Consultation%20Group%20Inquiry">Ask to Join the Group</a>
+            <strong>Monthly peer consultation groups</strong>
+            <p>Stonebridge maintains separate consultation spaces for practicing clinicians and for graduate or doctoral mental-health students. Both are facilitated by Dr. Bryant within a clear peer-consultation frame.</p>
+
+            <div class="clinicians-group-options">
+              <article class="clinicians-group-option">
+                <div class="clinicians-group-audience">For practicing clinicians</div>
+                <h3>Clinician Peer Consultation Group</h3>
+                <p>Meets on the third Friday of each month at 4:00 PM Central Time by secure video for thoughtful peer discussion of complex outpatient work.</p>
+                <a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Clinician%20Peer%20Consultation%20Group%20Inquiry">Ask About the Clinician Group</a>
+              </article>
+
+              <article class="clinicians-group-option">
+                <div class="clinicians-group-audience">For graduate and doctoral trainees</div>
+                <h3>Student Peer Consultation Group</h3>
+                <p>A monthly secure-video space for students to think together about clinical work, professional development, and the questions that emerge while learning to practice.</p>
+                <a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com?subject=Student%20Peer%20Consultation%20Group%20Inquiry">Ask About the Student Group</a>
+              </article>
+            </div>
           </div>
         </div>
 
@@ -1103,13 +1158,15 @@
           <article class="clinicians-service-row">
             <div class="clinicians-service-number">01</div>
             <div>
-              <h3>Monthly consultation group</h3>
-              <p>A consistent forum for mental-health clinicians inside and outside Stonebridge who want thoughtful discussion of difficult outpatient work.</p>
+              <h3>Clinician Peer Consultation Group</h3>
+              <p>A consistent monthly forum for licensed clinicians and other non-student mental-health practitioners actively engaged in clinical work who want thoughtful peer discussion of complex outpatient cases and professional challenges.</p>
               <ul class="clinicians-service-details">
                 <li>Third Friday of each month</li>
                 <li>4:00 PM Central Time</li>
                 <li>Held by secure video</li>
+                <li>Facilitated by Dr. Bryant</li>
                 <li>Group composition reviewed before participation</li>
+                <li>Peer consultation rather than formal supervision</li>
               </ul>
             </div>
           </article>
@@ -1117,13 +1174,30 @@
           <article class="clinicians-service-row">
             <div class="clinicians-service-number">02</div>
             <div>
+              <h3>Student Peer Consultation Group</h3>
+              <p>A monthly peer consultation space for graduate and doctoral mental-health students to develop clinical thinking alongside peers at a similar stage of training. Discussion may include case conceptualization, differential diagnosis, treatment planning, modalities and interventions, ethics, professional identity, relational dynamics, use of self, and questions arising in practicum or internship work.</p>
+              <ul class="clinicians-service-details">
+                <li>Meets monthly</li>
+                <li>Held by secure video</li>
+                <li>Facilitated by Dr. Bryant</li>
+                <li>For graduate and doctoral mental-health trainees</li>
+                <li>Peer discussion and professional development</li>
+                <li>Group composition reviewed before participation</li>
+              </ul>
+              <p class="clinicians-boundary"><strong>This is peer consultation, not supervision.</strong> Dr. Bryant facilitates the group to support thoughtful discussion, maintain a clear consultation frame, and reinforce appropriate de-identification and confidentiality practices. The group does not provide evaluation or oversight of a participant’s clinical work and does not replace university, practicum, internship, or site-based supervision. Clinical material must be appropriately de-identified, and participants remain responsible for following applicable confidentiality requirements and the policies of their training program and clinical site.</p>
+            </div>
+          </article>
+
+          <article class="clinicians-service-row">
+            <div class="clinicians-service-number">03</div>
+            <div>
               <h3>Individual clinical consultation and peer consultation</h3>
               <p>Focused discussion for psychologists, counselors, trainees, and other mental-health professionals seeking support with case conceptualization, differential diagnosis, treatment planning, trauma, addiction, co-occurring presentations, risk, ethics, boundaries, relational dynamics, countertransference, documentation, or sustainable practice.</p>
             </div>
           </article>
 
           <article class="clinicians-service-row">
-            <div class="clinicians-service-number">03</div>
+            <div class="clinicians-service-number">04</div>
             <div>
               <h3>External clinical supervision</h3>
               <p>Structured supervision may be available to eligible counselors and trainees who are not employed by Stonebridge. Work may include case conceptualization, treatment planning, documentation, ethics, risk assessment, use of self, professional identity, boundaries, workload, and burnout prevention.</p>
@@ -1132,7 +1206,7 @@
           </article>
 
           <article class="clinicians-service-row">
-            <div class="clinicians-service-number">04</div>
+            <div class="clinicians-service-number">05</div>
             <div>
               <h3>Psychological assessment report drafting and review</h3>
               <p>Professional writing support for psychologists and assessment practices that need assistance transforming authorized referral information, interviews, records, behavioral observations, test data, and clinical findings into a clear, integrated psychological report.</p>
@@ -1147,7 +1221,7 @@
           </article>
 
           <article class="clinicians-service-row">
-            <div class="clinicians-service-number">05</div>
+            <div class="clinicians-service-number">06</div>
             <div>
               <h3>Manuscript, article, and dissertation review</h3>
               <p>Structured conceptual and editorial feedback for psychology-related scholarly or professional work, including journal manuscripts, article drafts, dissertation proposals or chapters, literature integration, argument development, clinical accuracy, methodological coherence, APA-style presentation, and responses to reviewer or committee feedback.</p>
@@ -1156,7 +1230,7 @@
           </article>
 
           <article class="clinicians-service-row">
-            <div class="clinicians-service-number">06</div>
+            <div class="clinicians-service-number">07</div>
             <div>
               <h3>Burnout training, webinars, and continuing education</h3>
               <p>Professional education may be developed for clinicians, supervisors, treatment programs, and organizations seeking a more serious understanding of burnout, secondary trauma, workforce sustainability, and the conditions that shape clinical effectiveness.</p>
@@ -1223,7 +1297,7 @@
               </tbody>
             </table>
           </div>
-          <p class="clinicians-fee-note">Monthly consultation-group fees, multi-session training, extensive report projects, and custom organizational engagements are confirmed separately before participation or work begins.</p>
+          <p class="clinicians-fee-note">Peer consultation-group fees, multi-session training, extensive report projects, and custom organizational engagements are confirmed separately before participation or work begins.</p>
         </div>
       </div>
     </section>
