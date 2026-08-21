@@ -429,40 +429,53 @@
     }
 
     /* =========================
-       PHILOSOPHY
-       Uses width rather than excess vertical space.
+       PHILOSOPHY / CLINICIAN
+       Full-width brand field with an editorial portrait treatment.
     ========================= */
     .home-philosophy{
-      padding:34px 0 36px;
-      background:linear-gradient(135deg,var(--home-blue) 0%,var(--home-blue-deep) 100%);
-      border-top:1px solid rgba(255,255,255,.08);
-      border-bottom:1px solid rgba(8,26,43,.22);
-      color:var(--home-white);
+      padding:38px 0 40px;
+      background:#0F2A45;
+      border-top:1px solid rgba(181,138,73,.28);
+      border-bottom:1px solid rgba(10,30,48,.42);
+      color:#FAF5EF;
     }
 
     .home-philosophy-layout{
       display:grid;
-      grid-template-columns:205px minmax(0,1fr);
-      gap:46px;
+      grid-template-columns:224px minmax(0,1fr);
+      gap:54px;
       align-items:center;
+      max-width:1020px;
     }
 
     .home-philosophy .home-label{
-      color:#d8c095;
-      margin-bottom:8px;
+      color:#D5B36F;
+      margin-bottom:11px;
     }
 
     .home-clinician-photo{
-      width:205px;
-      aspect-ratio:4 / 5;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.20);
-      background:rgba(255,255,255,.06);
+      position:relative;
+      width:210px;
+      padding:7px 7px 17px;
+      background:#FAF5EF;
+      border:1px solid rgba(181,138,73,.58);
+      box-shadow:12px 12px 0 rgba(181,138,73,.14);
+    }
+
+    .home-clinician-photo::after{
+      content:"";
+      position:absolute;
+      left:18px;
+      bottom:8px;
+      width:42px;
+      height:1px;
+      background:#B58A49;
     }
 
     .home-clinician-photo img{
       width:100%;
-      height:100%;
+      height:auto;
+      aspect-ratio:4 / 5;
       display:block;
       object-fit:cover;
       object-position:center 18%;
@@ -470,77 +483,68 @@
 
     .home-clinician-copy{
       min-width:0;
-      max-width:790px;
+      max-width:700px;
     }
 
     .home-clinician-copy h2{
       margin:0;
-      max-width:18ch;
-      color:var(--home-white);
-      font-size:clamp(2.05rem,2.55vw,2.7rem);
-      line-height:1.04;
+      max-width:27ch;
+      color:#FAF5EF;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(1.9rem,2.45vw,2.45rem);
+      font-weight:600;
+      line-height:1.10;
+      letter-spacing:-.028em;
+      text-wrap:balance;
+    }
+
+    .home-clinician-meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+      max-width:41rem;
+      margin-top:23px;
+      padding-top:17px;
+      border-top:1px solid rgba(232,221,206,.24);
+    }
+
+    .home-clinician-identity{
+      min-width:0;
+    }
+
+    .home-clinician-name{
+      margin:0;
+      color:#FAF5EF;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.14rem;
+      font-weight:600;
+      line-height:1.18;
     }
 
     .home-clinician-role{
-      margin:7px 0 0 !important;
-      color:#d8c095 !important;
+      margin:4px 0 0 !important;
+      color:#D8C6A5 !important;
       font-family:"Inter",sans-serif;
-      font-size:.67rem !important;
-      font-weight:800;
-      letter-spacing:.105em;
+      font-size:.64rem !important;
+      font-weight:700;
+      letter-spacing:.10em;
       line-height:1.42;
       text-transform:uppercase;
     }
 
-    .home-clinician-intro{
-      max-width:44rem;
-      margin:13px 0 0;
-      color:rgba(255,250,242,.80);
-      font-family:"Inter",sans-serif;
-      font-size:.89rem;
-      line-height:1.60;
-    }
-
-    .home-clinician-quote{
-      display:grid;
-      grid-template-columns:38px minmax(0,1fr);
-      gap:14px;
-      align-items:start;
-      max-width:46rem;
-      margin-top:18px;
-    }
-
-    .home-clinician-quote-rule{
-      display:block;
-      width:38px;
-      height:1px;
-      margin-top:12px;
-      background:#d8c095;
-      opacity:.92;
-    }
-
-    .home-clinician-quote p{
-      margin:0;
-      color:var(--home-white);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(1.35rem,1.75vw,1.62rem);
-      font-weight:600;
-      line-height:1.20;
-      letter-spacing:-.018em;
-      text-wrap:balance;
-    }
-
     .home-clinician-copy .btn{
-      margin-top:19px;
-      background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.58);
-      color:var(--home-white);
-      backdrop-filter:blur(4px);
+      flex:0 0 auto;
+      margin:0;
+      background:transparent;
+      border-color:rgba(250,245,239,.52);
+      color:#FAF5EF;
+      backdrop-filter:none;
     }
 
     .home-clinician-copy .btn:hover{
-      background:rgba(255,255,255,.14);
-      border-color:rgba(255,255,255,.80);
+      background:rgba(250,245,239,.10);
+      border-color:rgba(250,245,239,.78);
     }
 
     /* =========================
@@ -616,13 +620,17 @@
       }
 
       .home-philosophy-layout{
-        grid-template-columns:175px minmax(0,1fr);
-        gap:32px;
+        grid-template-columns:188px minmax(0,1fr);
+        gap:38px;
         align-items:center;
       }
 
       .home-clinician-photo{
-        width:175px;
+        width:176px;
+      }
+
+      .home-clinician-meta{
+        align-items:flex-start;
       }
 
       .home-begin-actions{max-width:430px;}
@@ -680,27 +688,34 @@
       }
 
       .home-philosophy{
-        padding-top:30px;
-        padding-bottom:32px;
+        padding-top:32px;
+        padding-bottom:34px;
       }
 
       .home-philosophy-layout{
         grid-template-columns:1fr;
-        gap:20px;
+        gap:27px;
       }
 
       .home-clinician-photo{
-        width:min(175px,54vw);
+        width:min(160px,50vw);
+        padding:6px 6px 15px;
+        box-shadow:9px 9px 0 rgba(181,138,73,.14);
       }
 
-      .home-clinician-quote{
-        grid-template-columns:28px minmax(0,1fr);
-        gap:12px;
-        margin-top:16px;
+      .home-clinician-copy h2{
+        max-width:24ch;
+        font-size:clamp(1.75rem,8.2vw,2.15rem);
       }
 
-      .home-clinician-quote-rule{
-        width:28px;
+      .home-clinician-meta{
+        display:grid;
+        gap:16px;
+        margin-top:20px;
+      }
+
+      .home-clinician-copy .btn{
+        width:max-content;
       }
 
       .home-recognition-grid,
@@ -995,26 +1010,24 @@
 
     <section class="home-philosophy" aria-labelledby="home-clinician-title">
       <div class="home-shell home-philosophy-layout">
-        <div class="home-clinician-photo">
+        <div class="home-clinician-photo" aria-hidden="true">
           <picture class="sb-responsive-image" style="display:contents">
-            <source type="image/webp" srcset="practitioner-headshot-sbryant-760.webp 760w, practitioner-headshot-sbryant-1200.webp 1200w" sizes="(max-width: 760px) 175px, 205px">
-            <img src="practitioner-headshot-sbryant.png" alt="Dr. Stephen W. Bryant" width="1529" height="2048" loading="lazy" decoding="async">
+            <source type="image/webp" srcset="practitioner-headshot-sbryant-760.webp 760w, practitioner-headshot-sbryant-1200.webp 1200w" sizes="(max-width: 760px) 160px, 210px">
+            <img src="practitioner-headshot-sbryant.png" alt="" width="1529" height="2048" loading="lazy" decoding="async">
           </picture>
         </div>
 
         <div class="home-clinician-copy">
-          <div class="home-label">Your clinician</div>
-          <h2 id="home-clinician-title">Dr. Stephen W. Bryant</h2>
-          <p class="home-clinician-role">PsyD, LCPC · Psychotherapist · Founder</p>
+          <div class="home-label">A Stonebridge perspective</div>
+          <h2 id="home-clinician-title">“We do not choose every part of the story we inherit. We can still become more intentional authors of how we live it.”</h2>
 
-          <p class="home-clinician-intro">Relational, thoughtful psychotherapy grounded in the belief that meaningful change rarely comes from reducing life to simple answers.</p>
-
-          <div class="home-clinician-quote" aria-label="Dr. Bryant's perspective on therapy">
-            <span class="home-clinician-quote-rule" aria-hidden="true"></span>
-            <p>“We do not choose every part of the story we inherit. We can still become more intentional authors of how we live it.”</p>
+          <div class="home-clinician-meta">
+            <div class="home-clinician-identity">
+              <p class="home-clinician-name">Dr. Stephen W. Bryant</p>
+              <p class="home-clinician-role">PsyD, LCPC · Psychotherapist · Founder</p>
+            </div>
+            <a class="btn" href="team-founder.html">Meet Dr. Bryant</a>
           </div>
-
-          <a class="btn" href="team-founder.html">Meet Dr. Bryant</a>
         </div>
       </div>
     </section>
