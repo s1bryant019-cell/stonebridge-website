@@ -353,9 +353,18 @@
 
     .home-services-grid{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
+      grid-template-columns:repeat(6,minmax(0,1fr));
       border-top:1px solid var(--home-line);
       border-left:1px solid var(--home-line);
+    }
+
+    .home-services-grid .home-service-item{
+      grid-column:span 2;
+    }
+
+    .home-services-grid .home-service-item:nth-child(4),
+    .home-services-grid .home-service-item:nth-child(5){
+      grid-column:span 3;
     }
 
     .home-service-item{
@@ -433,38 +442,63 @@
 
     .home-philosophy-layout{
       display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
-      gap:72px;
+      grid-template-columns:210px minmax(0,1fr);
+      gap:44px;
       align-items:center;
     }
 
     .home-philosophy .home-label{
       color:#d8c095;
-      margin-bottom:10px;
+      margin-bottom:9px;
     }
 
-    .home-philosophy h2{
-      max-width:17ch;
+    .home-clinician-photo{
+      width:210px;
+      aspect-ratio:4 / 5;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.06);
+    }
+
+    .home-clinician-photo img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center 18%;
+    }
+
+    .home-clinician-copy{
+      max-width:760px;
+    }
+
+    .home-clinician-copy h2{
+      margin:0;
+      max-width:18ch;
       color:var(--home-white);
       font-size:clamp(2.15rem,3vw,3rem);
-      line-height:1.06;
+      line-height:1.04;
     }
 
-    .home-philosophy-detail{
-      padding-left:38px;
-      border-left:1px solid rgba(255,255,255,.24);
+    .home-clinician-role{
+      margin:8px 0 0 !important;
+      color:#d8c095 !important;
+      font-size:.72rem !important;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
 
-    .home-philosophy-detail p{
-      max-width:31rem;
-      margin:0;
-      color:rgba(255,250,242,.82);
+    .home-clinician-copy > p:not(.home-clinician-role){
+      max-width:47rem;
+      margin:14px 0 0;
+      color:rgba(255,250,242,.84);
       font-family:"Inter",sans-serif;
       font-size:.94rem;
       line-height:1.64;
     }
 
-    .home-philosophy-detail .btn{
+    .home-clinician-copy .btn{
       margin-top:18px;
       background:rgba(255,255,255,.06);
       border-color:rgba(255,255,255,.58);
@@ -472,7 +506,7 @@
       backdrop-filter:blur(4px);
     }
 
-    .home-philosophy-detail .btn:hover{
+    .home-clinician-copy .btn:hover{
       background:rgba(255,255,255,.14);
       border-color:rgba(255,255,255,.80);
     }
@@ -550,10 +584,8 @@
         gap:28px;
       }
 
-      .home-philosophy-detail{
-        padding:24px 0 0;
-        border-left:0;
-        border-top:1px solid rgba(255,255,255,.24);
+      .home-clinician-photo{
+        width:180px;
       }
 
       .home-begin-actions{max-width:430px;}
@@ -617,6 +649,12 @@
 
       .home-recognition-grid,
       .home-services-grid{grid-template-columns:1fr;}
+
+      .home-services-grid .home-service-item,
+      .home-services-grid .home-service-item:nth-child(4),
+      .home-services-grid .home-service-item:nth-child(5){
+        grid-column:auto;
+      }
 
       .home-recognition-item,
       .home-service-item{
@@ -805,10 +843,10 @@
           <p>Thoughtful outpatient care for people who feel overwhelmed, disconnected, or caught in patterns that keep returning.</p>
 
           <div class="home-hero-actions">
-            <a class="btn btn-primary" href="contact.html">Start Here</a>
+            <a class="btn btn-primary" href="contact.html#inquiry-form">Schedule a Consultation</a>
           </div>
 
-          <p class="home-hero-note">Choose a consultation time or send a brief written inquiry. Requests are reviewed before confirmation and do not establish a therapy relationship.</p>
+          <p class="home-hero-note">Use a brief online form to request a free 10–15 minute consultation. Stonebridge reviews each request and follows up to confirm a time.</p>
         </div>
       </div>
     </section>
@@ -895,27 +933,25 @@
             <p>Guidance, boundaries, and family patterns.</p>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
-
-          <a class="home-service-item" href="group-therapy.html">
-            <h3>Group Therapy</h3>
-            <p>Structured, clinician-led closed therapy groups.</p>
-<span class="home-service-status">No current openings</span>
-            <span class="home-service-arrow" aria-hidden="true">→</span>
-          </a>
         </div>
       </div>
     </section>
 
-    <section class="home-philosophy">
+    <section class="home-philosophy" aria-labelledby="home-clinician-title">
       <div class="home-shell home-philosophy-layout">
-        <div>
-          <div class="home-label">The Stonebridge approach</div>
-          <h2>Thoughtful, relational care. A clear clinical frame.</h2>
+        <div class="home-clinician-photo">
+          <picture class="sb-responsive-image" style="display:contents">
+            <source type="image/webp" srcset="practitioner-headshot-sbryant-760.webp 760w, practitioner-headshot-sbryant-1200.webp 1200w" sizes="(max-width: 760px) 170px, 210px">
+            <img src="practitioner-headshot-sbryant.png" alt="Dr. Stephen W. Bryant" width="1529" height="2048" loading="lazy" decoding="async">
+          </picture>
         </div>
 
-        <div class="home-philosophy-detail">
-          <p>Learn how Stonebridge approaches fit, structure, and the therapeutic relationship.</p>
-          <a class="btn" href="about.html">Learn About Stonebridge</a>
+        <div class="home-clinician-copy">
+          <div class="home-label">Your clinician</div>
+          <h2 id="home-clinician-title">Dr. Stephen W. Bryant</h2>
+          <p class="home-clinician-role">Psychotherapist · Founder</p>
+          <p>Relational, evidence-informed psychotherapy for adolescents, adults, couples, and families, with particular depth in trauma, addiction and co-occurring concerns, mood and anxiety, relationship patterns, and family stress.</p>
+          <a class="btn" href="team-founder.html">Meet Dr. Bryant</a>
         </div>
       </div>
     </section>
@@ -925,14 +961,14 @@
         <div class="home-begin-copy">
           <div class="home-label">A simple first step</div>
           <h2>A brief first step is enough.</h2>
-          <p>Share what you are looking for, choose how you would like to connect, and Stonebridge will follow up about fit and next steps.</p>
+          <p>Request a free 10–15 minute consultation with a brief online form. Stonebridge will review fit, availability, and next steps before confirming a time.</p>
         </div>
 
         <div>
           <div class="home-begin-actions">
-            <a class="btn btn-primary" href="contact.html">Start Here</a>
+            <a class="btn btn-primary" href="contact.html#inquiry-form">Schedule a Consultation</a>
           </div>
-          <p class="home-begin-note">Requests are reviewed before confirmation and do not establish a therapy relationship.</p>
+          <p class="home-begin-note">Consultation requests are typically reviewed within 1–2 business days. Submitting a request does not create or confirm a clinical appointment.</p>
         </div>
       </div>
     </section>

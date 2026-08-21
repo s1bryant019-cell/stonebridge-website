@@ -470,6 +470,15 @@
       margin-top:21px;
     }
 
+    .contact-response-time{
+      margin:10px 0 0;
+      color:var(--contact-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.76rem;
+      line-height:1.48;
+      text-align:center;
+    }
+
     .contact-form button[disabled]{
       cursor:wait;
       opacity:.68;
@@ -961,6 +970,7 @@
 
           <div class="contact-form-submit">
             <button class="btn btn-primary" id="submitButton" type="submit">Request Consultation</button>
+            <p class="contact-response-time">Consultation requests are typically reviewed within 1–2 business days.</p>
           </div>
         </form>
       </div>
@@ -1144,7 +1154,7 @@
           if(!response.ok)throw new Error('Request failed');
 
           form.reset();
-          showAlert('Your consultation request has been received. A member of Stonebridge will review your request and contact you to confirm a consultation time. Submitting this request does not create or confirm a clinical appointment.');
+          showAlert('Your consultation request has been received. Consultation requests are typically reviewed within 1–2 business days. A member of Stonebridge will contact you to confirm a consultation time. Submitting this request does not create or confirm a clinical appointment.');
         }catch(error){
           showAlert('The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.');
         }finally{
