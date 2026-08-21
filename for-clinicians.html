@@ -781,6 +781,32 @@
       border-top:1px solid var(--clinicians-line);
     }
 
+    .clinicians-service-category{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:13px 0 9px;
+      border-bottom:1px solid var(--clinicians-line);
+    }
+
+    .clinicians-service-category::after{
+      content:"";
+      flex:1;
+      height:1px;
+      background:linear-gradient(90deg,rgba(120,97,63,.36),rgba(120,97,63,0));
+    }
+
+    .clinicians-service-category span{
+      color:var(--clinicians-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.64rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+
     .clinicians-service-row{
       display:grid;
       grid-template-columns:48px minmax(0,1fr);
@@ -1217,6 +1243,9 @@
           </div>
 
           <div class="clinicians-service-list">
+          <div class="clinicians-service-category">
+            <span>Peer consultation &amp; clinical support</span>
+          </div>
           <article class="clinicians-service-row">
             <div class="clinicians-service-number">01</div>
             <div>
@@ -1262,9 +1291,12 @@
             <div>
               <h3>External clinical supervision</h3>
               <p>Structured supervision may be available to eligible counselors and trainees who are not employed by Stonebridge. Work may include case conceptualization, treatment planning, documentation, ethics, risk assessment, use of self, professional identity, boundaries, workload, and burnout prevention.</p>
-              <p class="clinicians-boundary">Formal supervision is offered only when Dr. Bryant’s qualifications, the supervisee’s professional pathway, the work setting, and applicable requirements are compatible. A written agreement and clear responsibility structure are required.</p>
             </div>
           </article>
+
+          <div class="clinicians-service-category">
+            <span>Writing &amp; review</span>
+          </div>
 
           <article class="clinicians-service-row">
             <div class="clinicians-service-number">05</div>
@@ -1277,7 +1309,6 @@
                 <li>Revising structure, clarity, and coherence</li>
                 <li>Reviewing a draft before finalization</li>
               </ul>
-              <p class="clinicians-boundary">The requesting evaluator remains responsible for the assessment, independent review of all materials, final interpretations and conclusions, signature, and release of the report. Secure transfer, authorization, and confidentiality requirements must be established before work begins.</p>
             </div>
           </article>
 
@@ -1286,9 +1317,12 @@
             <div>
               <h3>Manuscript, article, and dissertation review</h3>
               <p>Structured conceptual and editorial feedback for psychology-related scholarly or professional work, including journal manuscripts, article drafts, dissertation proposals or chapters, literature integration, argument development, clinical accuracy, methodological coherence, APA-style presentation, and responses to reviewer or committee feedback.</p>
-              <p class="clinicians-boundary">Review services provide feedback and professional consultation. They do not include ghostwriting, authorship misrepresentation, or completing academic requirements on another person’s behalf.</p>
             </div>
           </article>
+
+          <div class="clinicians-service-category">
+            <span>Education</span>
+          </div>
 
           <article class="clinicians-service-row">
             <div class="clinicians-service-number">07</div>
@@ -1303,7 +1337,6 @@
                 <li>Supervisors and organizations as burnout interventions</li>
                 <li>Custom presentations by audience and setting</li>
               </ul>
-              <p class="clinicians-boundary">Formal continuing-education credit is represented only when the event is offered through an appropriate approved sponsor or qualifying collaboration.</p>
             </div>
           </article>
         </div>
