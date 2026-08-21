@@ -466,17 +466,20 @@
 
     .contact-form-submit{
       display:flex;
-      justify-content:flex-start;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:10px;
       margin-top:21px;
     }
 
     .contact-response-time{
-      margin:10px 0 0;
+      max-width:34rem;
+      margin:0;
       color:var(--contact-muted);
       font-family:"Inter",sans-serif;
       font-size:.76rem;
       line-height:1.48;
-      text-align:center;
+      text-align:left;
     }
 
     .contact-form button[disabled]{
