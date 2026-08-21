@@ -442,8 +442,8 @@
 
     .home-philosophy-layout{
       display:grid;
-      grid-template-columns:210px minmax(0,1fr);
-      gap:44px;
+      grid-template-columns:235px minmax(0,1fr) minmax(230px,.62fr);
+      gap:38px;
       align-items:center;
     }
 
@@ -453,7 +453,7 @@
     }
 
     .home-clinician-photo{
-      width:210px;
+      width:235px;
       aspect-ratio:4 / 5;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.20);
@@ -469,33 +469,36 @@
     }
 
     .home-clinician-copy{
-      max-width:760px;
+      min-width:0;
+      max-width:610px;
     }
 
     .home-clinician-copy h2{
       margin:0;
       max-width:18ch;
       color:var(--home-white);
-      font-size:clamp(2.15rem,3vw,3rem);
-      line-height:1.04;
+      font-size:clamp(2.2rem,2.8vw,2.85rem);
+      line-height:1.03;
     }
 
     .home-clinician-role{
       margin:8px 0 0 !important;
       color:#d8c095 !important;
-      font-size:.72rem !important;
+      font-family:"Inter",sans-serif;
+      font-size:.69rem !important;
       font-weight:800;
-      letter-spacing:.12em;
+      letter-spacing:.105em;
+      line-height:1.42;
       text-transform:uppercase;
     }
 
     .home-clinician-copy > p:not(.home-clinician-role){
-      max-width:47rem;
+      max-width:39rem;
       margin:14px 0 0;
       color:rgba(255,250,242,.84);
       font-family:"Inter",sans-serif;
-      font-size:.94rem;
-      line-height:1.64;
+      font-size:.91rem;
+      line-height:1.62;
     }
 
     .home-clinician-copy .btn{
@@ -509,6 +512,45 @@
     .home-clinician-copy .btn:hover{
       background:rgba(255,255,255,.14);
       border-color:rgba(255,255,255,.80);
+    }
+
+    .home-clinician-facts{
+      min-width:0;
+      padding-left:28px;
+      border-left:1px solid rgba(255,255,255,.22);
+    }
+
+    .home-clinician-fact{
+      padding:17px 0;
+      border-bottom:1px solid rgba(255,255,255,.16);
+    }
+
+    .home-clinician-fact:first-child{
+      padding-top:0;
+    }
+
+    .home-clinician-fact:last-child{
+      padding-bottom:0;
+      border-bottom:0;
+    }
+
+    .home-clinician-fact span{
+      display:block;
+      color:#d8c095;
+      font-family:"Inter",sans-serif;
+      font-size:.61rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      line-height:1.35;
+      text-transform:uppercase;
+    }
+
+    .home-clinician-fact p{
+      margin:7px 0 0;
+      color:rgba(255,250,242,.90);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.55;
     }
 
     /* =========================
@@ -578,14 +620,36 @@
 
       .home-recognition-layout,
       .home-services-layout,
-      .home-philosophy-layout,
       .home-begin-inner{
         grid-template-columns:1fr;
         gap:28px;
       }
 
+      .home-philosophy-layout{
+        grid-template-columns:180px minmax(0,1fr);
+        gap:30px;
+        align-items:start;
+      }
+
       .home-clinician-photo{
         width:180px;
+      }
+
+      .home-clinician-facts{
+        grid-column:2;
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:24px;
+        padding:20px 0 0;
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.22);
+      }
+
+      .home-clinician-fact,
+      .home-clinician-fact:first-child,
+      .home-clinician-fact:last-child{
+        padding:0;
+        border-bottom:0;
       }
 
       .home-begin-actions{max-width:430px;}
@@ -645,6 +709,36 @@
       .home-philosophy{
         padding-top:34px;
         padding-bottom:36px;
+      }
+
+      .home-philosophy-layout{
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+
+      .home-clinician-photo{
+        width:min(190px,58vw);
+      }
+
+      .home-clinician-facts{
+        grid-column:auto;
+        grid-template-columns:1fr;
+        gap:0;
+        padding-top:18px;
+      }
+
+      .home-clinician-fact{
+        padding:13px 0;
+        border-bottom:1px solid rgba(255,255,255,.16);
+      }
+
+      .home-clinician-fact:first-child{
+        padding-top:0;
+      }
+
+      .home-clinician-fact:last-child{
+        padding-bottom:0;
+        border-bottom:0;
       }
 
       .home-recognition-grid,
@@ -941,7 +1035,7 @@
       <div class="home-shell home-philosophy-layout">
         <div class="home-clinician-photo">
           <picture class="sb-responsive-image" style="display:contents">
-            <source type="image/webp" srcset="practitioner-headshot-sbryant-760.webp 760w, practitioner-headshot-sbryant-1200.webp 1200w" sizes="(max-width: 760px) 170px, 210px">
+            <source type="image/webp" srcset="practitioner-headshot-sbryant-760.webp 760w, practitioner-headshot-sbryant-1200.webp 1200w" sizes="(max-width: 760px) 170px, 235px">
             <img src="practitioner-headshot-sbryant.png" alt="Dr. Stephen W. Bryant" width="1529" height="2048" loading="lazy" decoding="async">
           </picture>
         </div>
@@ -949,9 +1043,20 @@
         <div class="home-clinician-copy">
           <div class="home-label">Your clinician</div>
           <h2 id="home-clinician-title">Dr. Stephen W. Bryant</h2>
-          <p class="home-clinician-role">Psychotherapist · Founder</p>
-          <p>Relational, evidence-informed psychotherapy for adolescents, adults, couples, and families, with particular depth in trauma, addiction and co-occurring concerns, mood and anxiety, relationship patterns, and family stress.</p>
+          <p class="home-clinician-role">PsyD, LCPC · Psychotherapist · Founder</p>
+          <p>Relational, evidence-informed psychotherapy with particular depth in trauma, addiction and co-occurring concerns, mood and anxiety, relationship patterns, and family stress.</p>
           <a class="btn" href="team-founder.html">Meet Dr. Bryant</a>
+        </div>
+
+        <div class="home-clinician-facts" aria-label="Dr. Bryant clinical overview">
+          <div class="home-clinician-fact">
+            <span>Works with</span>
+            <p>Adolescents · Adults · Couples · Families</p>
+          </div>
+          <div class="home-clinician-fact">
+            <span>Clinical depth</span>
+            <p>Trauma · Addiction &amp; co-occurring concerns · Mood &amp; anxiety · Relationships</p>
+          </div>
         </div>
       </div>
     </section>
