@@ -239,11 +239,11 @@
     }
 
     .team-intro{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);
-      gap:52px;
-      align-items:end;
-      margin-bottom:28px;
+      margin-bottom:24px;
+    }
+
+    .team-intro > div{
+      max-width:760px;
     }
 
     .team-label{
@@ -273,9 +273,9 @@
       text-wrap:balance;
     }
 
-    .team-intro > p{
-      margin:0;
-      max-width:31rem;
+    .team-intro p{
+      margin:12px 0 0;
+      max-width:42rem;
       color:var(--team-muted);
       font-family:"Inter",sans-serif;
       font-size:.94rem;
@@ -563,14 +563,12 @@
       }
 
       .team-overview-grid,
-      .team-intro,
       .team-growth-note,
       .team-professional-note,
       .team-cta-inner{
         grid-template-columns:1fr;
       }
 
-      .team-intro,
       .team-growth-note,
       .team-professional-note,
       .team-cta-inner{
@@ -891,8 +889,8 @@
           <div>
             <div class="team-label">Clinician roster</div>
             <h2>Learn more before choosing a next step.</h2>
+            <p>Each profile offers a focused view of clinical depth, style, scope, and how to begin.</p>
           </div>
-          <p>Each profile offers a focused view of clinical depth, style, scope, and how to begin.</p>
         </div>
 
         <div class="clinician-grid">
@@ -930,7 +928,7 @@
 
         <div class="team-professional-note">
           <strong>For professionals</strong>
-          <p>Clinician and student peer consultation groups, individual consultation, peer review, and education are available through a separate professional pathway. <a class="team-professional-link" href="for-clinicians.html">View Professional Offerings</a></p>
+          <p>Professional consultation groups, individual consultation, peer review, and education are available through a separate professional pathway. <a class="team-professional-link" href="for-clinicians.html">View Professional Offerings</a></p>
         </div>
       </div>
     </section>
