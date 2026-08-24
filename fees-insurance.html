@@ -341,7 +341,32 @@
       color:#6d747a !important;
     }
 
-.fee-table-wrap{
+.fees-rate-context{
+      margin:0 0 18px;
+      padding:14px 18px 15px;
+      border-left:3px solid var(--fees-gold);
+      background:rgba(255,250,242,.62);
+    }
+
+    .fees-rate-context strong{
+      display:block;
+      color:var(--fees-ink);
+      font-family:"Inter",sans-serif;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.03em;
+    }
+
+    .fees-rate-context p{
+      max-width:48rem;
+      margin:5px 0 0;
+      color:var(--fees-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.86rem;
+      line-height:1.58;
+    }
+
+    .fee-table-wrap{
       overflow-x:auto;
       -webkit-overflow-scrolling:touch;
       border-top:1px solid var(--fees-line);
@@ -887,8 +912,12 @@
         <div class="fees-relational-intro">
           <div class="fees-label">Client care rates</div>
           <h2>Psychotherapy fee schedule.</h2>
-          <h3 class="fees-explainer-title">Understanding the fee schedule</h3>
-          <p>The fees below are Stonebridge’s standard rates. For in-network services, the amount a client owes is determined by the plan’s contracted rate and applicable deductible, copay, coinsurance, and coverage rules. Private-pay clients are generally responsible for the standard fee unless another arrangement has been approved in advance. Benefits are reviewed before billing begins, but verification is not a guarantee of coverage or payment.</p>
+          <p>Stonebridge lists standard rates for transparency. What you pay may differ when using in-network insurance.</p>
+        </div>
+
+        <div class="fees-rate-context" aria-label="Important note about in-network insurance">
+          <strong>Using in-network insurance?</strong>
+          <p>The standard fee below is not necessarily what you pay. Your responsibility is based on your plan’s contracted rate and applicable deductible, copay, coinsurance, and coverage rules.</p>
         </div>
 
         <div class="fee-table-wrap" role="region" aria-label="Standard fee schedule" tabindex="0">
