@@ -341,7 +341,11 @@
       color:#6d747a !important;
     }
 
-.fees-rate-context{
+.fees-fee-content{
+      min-width:0;
+    }
+
+    .fees-rate-context{
       margin:0 0 18px;
       padding:14px 18px 15px;
       border-left:3px solid var(--fees-gold);
@@ -915,13 +919,14 @@
           <p>Stonebridge lists standard rates for transparency. What you pay may differ when using in-network insurance.</p>
         </div>
 
-        <div class="fees-rate-context" aria-label="Important note about in-network insurance">
-          <strong>Using in-network insurance?</strong>
-          <p>The standard fee below is not necessarily what you pay. Your responsibility is based on your plan’s contracted rate and applicable deductible, copay, coinsurance, and coverage rules.</p>
-        </div>
+        <div class="fees-fee-content">
+          <div class="fees-rate-context" aria-label="Important note about in-network insurance">
+            <strong>Using in-network insurance?</strong>
+            <p>The standard fee below is not necessarily what you pay. Your responsibility is based on your plan’s contracted rate and applicable deductible, copay, coinsurance, and coverage rules.</p>
+          </div>
 
-        <div class="fee-table-wrap" role="region" aria-label="Standard fee schedule" tabindex="0">
-          <table class="fee-table">
+          <div class="fee-table-wrap" role="region" aria-label="Standard fee schedule" tabindex="0">
+            <table class="fee-table">
             <caption class="visually-hidden">Standard fees for Stonebridge services</caption>
             <thead>
               <tr>
@@ -942,7 +947,8 @@
               <tr><td>Interactive complexity add-on <span class="fee-code">90785</span></td><td>When clinically applicable</td><td>$60</td></tr>
               <tr><td>Care coordination / clinical administration</td><td>15 minutes</td><td>$60</td></tr>
             </tbody>
-          </table>
+            </table>
+          </div>
         </div>
 
         <p class="fees-table-note">Care coordination or clinical administration may apply when clinically necessary work occurs outside a standard session. Questions about when this fee may apply can be discussed before services begin.</p>
