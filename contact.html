@@ -857,8 +857,8 @@
     <section class="contact-form-section" id="inquiry-form">
       <div class="contact-shell">
         <div class="contact-privacy-note">
-          <strong>Keep this first message brief.</strong>
-          <p>Please do not include detailed clinical history, emergency information, or sensitive records in this form. A brief overview is enough to begin a fit and availability review.</p>
+          <strong>Keep the clinical details brief.</strong>
+          <p>Stonebridge asks for basic identifying and contact information, including date of birth, so your consultation can be coordinated and a secure client record can be prepared when appropriate. Please do not include detailed clinical history, emergency information, or sensitive records in the message field.</p>
         </div>
       </div>
       <div class="contact-shell contact-layout">
@@ -875,7 +875,7 @@
               <div class="form-eyebrow">Free 10–15 minute consultation</div>
               <h2>Request a consultation.</h2>
             </div>
-            <p>Stonebridge will review your request and contact you to confirm a consultation time. This is not a clinical intake form.</p>
+            <p>Stonebridge will review your request and contact you to confirm a consultation time. Basic identifying information is collected here to support consultation coordination and, when appropriate, preparation of your secure client record. This is not a clinical intake form.</p>
           </div>
 
           <label class="contact-honeypot" aria-hidden="true">
@@ -893,9 +893,21 @@
             </label>
 
             <label>
+              <span>Date of birth *</span>
+              <input type="date" name="dateOfBirth" autocomplete="bday" required>
+            </label>
+
+            <label>
               <span>Email address *</span>
               <input type="email" name="email" autocomplete="email" required>
             </label>
+
+            <label>
+              <span>Phone number *</span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
+            </label>
+
+            <p class="form-note contact-form-full">Full name, date of birth, email, and phone help Stonebridge coordinate your request and prepare your secure client record if care moves forward.</p>
 
             <label>
               <span>What are you reaching out about? *</span>
@@ -909,11 +921,6 @@
                 <option>Group Therapy — no current openings</option>
                 <option>Unsure / Fit Review</option>
               </select>
-            </label>
-
-            <label>
-              <span>Phone <em>Optional</em></span>
-              <input type="tel" name="phone" autocomplete="tel">
             </label>
 
             <label>
@@ -1132,6 +1139,7 @@
           serviceRequested:data.get('serviceRequested')||'',
           psychotherapyFormat:data.get('psychotherapyFormat')||'',
           fullName:data.get('fullName')||'',
+          dateOfBirth:data.get('dateOfBirth')||'',
           email:data.get('email')||'',
           phone:data.get('phone')||'',
           preferredContact:data.get('preferredContact')||'',
