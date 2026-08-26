@@ -359,25 +359,13 @@
     }
 
     .contact-form-head{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(220px,.72fr);
-      gap:24px;
-      align-items:end;
-      margin-bottom:24px;
-      padding-bottom:21px;
+      margin-bottom:22px;
+      padding-bottom:18px;
       border-bottom:1px solid var(--contact-line);
     }
 
     .contact-form h2{
       font-size:clamp(2rem,2.8vw,2.75rem);
-    }
-
-    .contact-form-head > p{
-      margin:0;
-      color:var(--contact-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.88rem;
-      line-height:1.56;
     }
 
     .contact-form-grid{
@@ -615,7 +603,6 @@
         border-radius:12px;
       }
 
-      .contact-form-head,
       .contact-form-grid{
         grid-template-columns:1fr;
       }
@@ -626,28 +613,28 @@
     }
   
     .contact-privacy-note{
-      margin:0 0 24px;
-      padding:18px 20px;
-      border:1px solid rgba(33,49,66,.14);
-      background:rgba(255,255,255,.42);
+      margin:0 0 22px;
+      padding:0 0 16px;
+      border-bottom:1px solid var(--contact-line);
     }
 
     .contact-privacy-note strong{
       display:block;
-      margin-bottom:6px;
+      margin-bottom:4px;
       color:#213142;
       font-family:"Inter",sans-serif;
-      font-size:.82rem;
+      font-size:.78rem;
       font-weight:700;
-      letter-spacing:.04em;
+      letter-spacing:.03em;
     }
 
     .contact-privacy-note p{
+      max-width:52rem;
       margin:0;
       color:#5d6870;
       font-family:"Inter",sans-serif;
-      font-size:.88rem;
-      line-height:1.6;
+      font-size:.84rem;
+      line-height:1.55;
     }
 </style>
 
@@ -829,7 +816,7 @@
           <a class="btn btn-primary" href="#inquiry-form">Request a Consultation</a>
         </div>
 
-        <p class="contact-consult-note">Submitting a request does not confirm an appointment. Stonebridge reviews consultation requests and follows up to confirm a time. A consultation is not psychotherapy, a diagnostic evaluation, or crisis support.</p>
+        <p class="contact-consult-note">Requests are reviewed before a consultation time is confirmed.</p>
       </div>
 
       <figure class="contact-hero-media">
@@ -841,15 +828,15 @@
       <div class="contact-overview-grid">
         <article>
           <h2>Request</h2>
-          <p>Share a few basic details and general availability for a free 10–15 minute consultation.</p>
+          <p>Share a few details and general availability.</p>
         </article>
         <article>
           <h2>Review</h2>
-          <p>Stonebridge reviews fit, scope, clinician availability, and insurance or payment questions when relevant.</p>
+          <p>Stonebridge reviews fit, availability, and relevant coverage questions.</p>
         </article>
         <article>
           <h2>Confirm</h2>
-          <p>A member of Stonebridge follows up to confirm a consultation time. The form itself does not create an appointment.</p>
+          <p>Stonebridge follows up to confirm a consultation time.</p>
         </article>
       </div>
     </section>
@@ -858,7 +845,7 @@
       <div class="contact-shell">
         <div class="contact-privacy-note">
           <strong>Keep the clinical details brief.</strong>
-          <p>Stonebridge asks for basic identifying and contact information, including date of birth, so your consultation can be coordinated and a secure client record can be prepared when appropriate. Please do not include detailed clinical history, emergency information, or sensitive records in the message field.</p>
+          <p>Date of birth helps us prepare your secure client record if care moves forward. Please do not include detailed clinical history or sensitive records here.</p>
         </div>
       </div>
       <div class="contact-shell contact-layout">
@@ -875,7 +862,6 @@
               <div class="form-eyebrow">Free 10–15 minute consultation</div>
               <h2>Request a consultation.</h2>
             </div>
-            <p>Stonebridge will review your request and contact you to confirm a consultation time. Basic identifying information is collected here to support consultation coordination and, when appropriate, preparation of your secure client record. This is not a clinical intake form.</p>
           </div>
 
           <label class="contact-honeypot" aria-hidden="true">
@@ -906,8 +892,6 @@
               <span>Phone number *</span>
               <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
             </label>
-
-            <p class="form-note contact-form-full">Full name, date of birth, email, and phone help Stonebridge coordinate your request and prepare your secure client record if care moves forward.</p>
 
             <label>
               <span>What are you reaching out about? *</span>
@@ -957,11 +941,11 @@
                 <option>Unsure</option>
               </select>
             </label>
-            <p class="form-note contact-form-full">Aetna and BCBSIL are currently accepted. See <a href="fees-insurance.html">Fees &amp; Insurance</a> for plan details.</p>
+            <p class="form-note contact-form-full">Aetna + BCBSIL accepted. <a href="fees-insurance.html">View plan details.</a></p>
 
             <label class="contact-form-full">
               <span>Brief reason for reaching out *</span>
-              <textarea name="reason" placeholder="A short, non-sensitive overview is enough. Please do not include detailed clinical history or records." required></textarea>
+              <textarea name="reason" placeholder="A brief, non-sensitive overview is enough." required></textarea>
             </label>
           </div>
 
