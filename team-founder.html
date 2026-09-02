@@ -2826,6 +2826,228 @@
   }
 </style>
 
+
+<style id="stonebridge-founder-books-showcase">
+  /* Targeted expansion of the existing writing column into a restrained author showcase. */
+  .credibility-grid-balanced{
+    grid-template-columns:1fr !important;
+    gap:0 !important;
+  }
+
+  .credibility-primary{
+    border-right:0 !important;
+    border-bottom:1px solid rgba(33,49,66,.11);
+  }
+
+  .credibility-grid-balanced > .books-showcase{
+    padding:26px 0 4px !important;
+    border-left:0 !important;
+    border-top:0 !important;
+  }
+
+  .books-showcase-head{
+    display:grid;
+    grid-template-columns:minmax(0,620px) 1fr;
+    gap:32px;
+    align-items:end;
+    margin-bottom:22px;
+  }
+
+  .books-showcase-head .section-label{
+    margin:0 0 9px;
+    padding-top:0;
+  }
+
+  .books-showcase-head .section-label::before{
+    display:none;
+  }
+
+  .credibility-grid-balanced .books-showcase h3{
+    margin:0 0 7px !important;
+    color:var(--sb-navy);
+    font-family:"EB Garamond",serif;
+    font-size:clamp(1.65rem,2.25vw,2.1rem) !important;
+    line-height:1.06;
+    letter-spacing:-.02em;
+  }
+
+  .credibility-grid-balanced .books-showcase-head p{
+    max-width:620px;
+    margin:0;
+    font-size:.86rem !important;
+    line-height:1.58;
+  }
+
+  .books-showcase-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:0;
+    border-top:1px solid rgba(33,49,66,.11);
+  }
+
+  .book-feature{
+    min-width:0;
+    padding:22px 28px 4px;
+    border-left:1px solid rgba(33,49,66,.11);
+  }
+
+  .book-feature:first-child{
+    padding-left:0;
+    border-left:0;
+  }
+
+  .book-feature:last-child{
+    padding-right:0;
+  }
+
+  .book-cover-wrap{
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    height:255px;
+    margin:0 0 18px;
+    padding:0;
+  }
+
+  .book-cover-wrap a{
+    display:flex;
+    height:100%;
+    align-items:flex-end;
+    justify-content:center;
+  }
+
+  .book-cover-wrap img{
+    display:block;
+    width:auto !important;
+    max-width:100%;
+    height:100% !important;
+    object-fit:contain;
+    border:0 !important;
+    border-radius:2px !important;
+    box-shadow:0 14px 28px rgba(33,49,66,.13) !important;
+  }
+
+  .book-feature-copy{
+    max-width:320px;
+  }
+
+  .book-status{
+    display:inline-block;
+    margin:0 0 7px;
+    color:#78613f;
+    font-family:"Inter",sans-serif;
+    font-size:.67rem;
+    font-weight:750;
+    letter-spacing:.12em;
+    line-height:1;
+    text-transform:uppercase;
+  }
+
+  .book-feature h4{
+    margin:0 0 6px;
+    color:var(--sb-navy);
+    font-family:"EB Garamond",serif;
+    font-size:1.3rem;
+    font-weight:650;
+    line-height:1.08;
+    letter-spacing:-.015em;
+  }
+
+  .book-feature h4 a{
+    color:inherit;
+    text-decoration:none;
+  }
+
+  .book-feature h4 a:hover,
+  .book-feature h4 a:focus-visible{
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:4px;
+  }
+
+  .credibility-grid-balanced .book-feature p{
+    margin:0 0 9px;
+    color:var(--sb-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.78rem !important;
+    line-height:1.5;
+  }
+
+  .credibility-grid-balanced .book-feature .book-subtitle{
+    color:var(--sb-navy);
+    font-family:"EB Garamond",serif;
+    font-size:.94rem !important;
+    font-style:italic;
+    line-height:1.32;
+  }
+
+  .book-link{
+    display:inline-block;
+    margin-top:1px;
+    color:var(--sb-navy);
+    font-family:"Inter",sans-serif;
+    font-size:.74rem;
+    font-weight:750;
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:4px;
+  }
+
+  @media(max-width:980px){
+    .books-showcase-grid{
+      grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+    .book-feature{
+      padding-left:20px;
+      padding-right:20px;
+    }
+    .book-cover-wrap{height:220px;}
+  }
+
+  @media(max-width:720px){
+    .books-showcase-head{
+      grid-template-columns:1fr;
+      gap:0;
+    }
+    .books-showcase-grid{
+      grid-template-columns:1fr;
+    }
+    .book-feature,
+    .book-feature:first-child,
+    .book-feature:last-child{
+      display:grid;
+      grid-template-columns:128px minmax(0,1fr);
+      gap:20px;
+      align-items:start;
+      padding:20px 0 !important;
+      border-left:0;
+      border-top:1px solid rgba(33,49,66,.10);
+    }
+    .book-feature:first-child{border-top:0;}
+    .book-cover-wrap{
+      height:auto;
+      margin:0;
+      justify-content:flex-start;
+    }
+    .book-cover-wrap a{height:auto;}
+    .book-cover-wrap img{
+      width:128px !important;
+      height:auto !important;
+    }
+    .book-feature-copy{max-width:none;}
+  }
+
+  @media(max-width:440px){
+    .book-feature,
+    .book-feature:first-child,
+    .book-feature:last-child{
+      grid-template-columns:104px minmax(0,1fr);
+      gap:16px;
+    }
+    .book-cover-wrap img{width:104px !important;}
+  }
+</style>
+
 <style id="founder-professional-pathway-link">
   .founder-professional-pathway{
     display:flex;
@@ -3497,23 +3719,46 @@
 </ul>
 </article>
 </div>
-<article class="credibility-column writing-column" id="publications">
-<div class="writing-mini-head">
+<article class="credibility-column writing-column books-showcase" id="publications">
+<div class="books-showcase-head">
 <div>
-<h3>Writing and education</h3>
-<p>Work on burnout, clinician wellbeing, education, and the systems that shape care.</p>
+<div class="section-label">Selected books</div>
+<h3>Books and writing</h3>
+<p>Dr. Bryant’s writing explores burnout, clinician wellbeing, education, and the practice of trauma therapy.</p>
 </div>
-<picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="founder-publications-books-730.webp 730w" sizes="(max-width: 760px) 90vw, 730px"><img alt="Book covers by Dr. Stephen W. Bryant" decoding="async" height="580" loading="lazy" src="founder-publications-books.png" width="730"/></picture>
 </div>
-<div class="writing-mini-links">
-<div class="writing-mini-item">
-<a href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank">Beyond Burnt-Out</a>
-<span>Burnout and wellbeing in mental health care.</span>
+<div class="books-showcase-grid">
+<article class="book-feature book-feature-forthcoming">
+<figure class="book-cover-wrap">
+<img alt="Cover mockup for Presence Over Performance by Dr. Stephen W. Bryant" decoding="async" height="1350" loading="lazy" src="book-presence-over-performance.webp" width="900"/>
+</figure>
+<div class="book-feature-copy">
+<span class="book-status">Forthcoming</span>
+<h4>Presence Over Performance</h4>
+<p class="book-subtitle">Knowing the Mountain. Guiding Without Carrying.</p>
+<p>A grounded approach to trauma therapy.</p>
 </div>
-<div class="writing-mini-item">
-<a href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank">The Scholastic Burnout Spiral</a>
-<span>Education, therapy readiness, and counselor burnout.</span>
+</article>
+<article class="book-feature">
+<figure class="book-cover-wrap">
+<a aria-label="View Beyond Burnt-Out on Amazon" href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank"><img alt="Beyond Burnt-Out book cover by Stephen William Bryant" decoding="async" height="547" loading="lazy" src="book-beyond-burnt-out.webp" width="350"/></a>
+</figure>
+<div class="book-feature-copy">
+<h4><a href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank">Beyond Burnt-Out</a></h4>
+<p>Burnout and wellbeing in mental health care.</p>
+<a class="book-link" href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank">View book</a>
 </div>
+</article>
+<article class="book-feature">
+<figure class="book-cover-wrap">
+<a aria-label="View The Scholastic Burnout Spiral on Amazon" href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank"><img alt="The Scholastic Burnout Spiral book cover by Stephen W. Bryant" decoding="async" height="553" loading="lazy" src="book-scholastic-burnout-spiral.webp" width="337"/></a>
+</figure>
+<div class="book-feature-copy">
+<h4><a href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank">The Scholastic Burnout Spiral</a></h4>
+<p>Education, therapy readiness, and counselor burnout.</p>
+<a class="book-link" href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank">View book</a>
+</div>
+</article>
 </div>
 </article>
 </div>
