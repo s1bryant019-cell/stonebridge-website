@@ -2886,7 +2886,9 @@
   }
 
   .book-feature{
+    display:flex;
     min-width:0;
+    flex-direction:column;
     padding:22px 28px 4px;
     border-left:1px solid rgba(33,49,66,.11);
   }
@@ -2928,7 +2930,12 @@
   }
 
   .book-feature-copy{
+    display:flex;
+    width:100%;
     max-width:320px;
+    min-height:178px;
+    flex:1;
+    flex-direction:column;
   }
 
   .book-status{
@@ -2983,7 +2990,9 @@
 
   .book-link{
     display:inline-block;
-    margin-top:1px;
+    align-self:flex-start;
+    margin-top:auto;
+    padding-top:5px;
     color:var(--sb-navy);
     font-family:"Inter",sans-serif;
     font-size:.74rem;
@@ -2991,6 +3000,12 @@
     text-decoration:underline;
     text-decoration-thickness:1px;
     text-underline-offset:4px;
+  }
+
+  .book-link-static{
+    color:#7a838a;
+    font-weight:650;
+    text-decoration:none;
   }
 
   @media(max-width:980px){
@@ -3034,7 +3049,10 @@
       width:128px !important;
       height:auto !important;
     }
-    .book-feature-copy{max-width:none;}
+    .book-feature-copy{
+      max-width:none;
+      min-height:0;
+    }
   }
 
   @media(max-width:440px){
@@ -3737,6 +3755,7 @@
 <h4>Presence Over Performance</h4>
 <p class="book-subtitle">Knowing the Mountain. Guiding Without Carrying.</p>
 <p>A grounded approach to trauma therapy.</p>
+<span class="book-link book-link-static">Publication details forthcoming</span>
 </div>
 </article>
 <article class="book-feature">
@@ -3744,7 +3763,9 @@
 <a aria-label="View Beyond Burnt-Out on Amazon" href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank"><img alt="Beyond Burnt-Out book cover by Stephen William Bryant" decoding="async" height="547" loading="lazy" src="book-beyond-burnt-out.webp" width="350"/></a>
 </figure>
 <div class="book-feature-copy">
+<span class="book-status">Published</span>
 <h4><a href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank">Beyond Burnt-Out</a></h4>
+<p class="book-subtitle">Exploring the Realities of Burnout in Mental Health Care.</p>
 <p>Burnout and wellbeing in mental health care.</p>
 <a class="book-link" href="https://www.amazon.com/Beyond-Burnt-out-Exploring-Realities-Burnout-ebook/dp/B0CX91NXLT" rel="noopener noreferrer" target="_blank">View book</a>
 </div>
@@ -3754,8 +3775,10 @@
 <a aria-label="View The Scholastic Burnout Spiral on Amazon" href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank"><img alt="The Scholastic Burnout Spiral book cover by Stephen W. Bryant" decoding="async" height="553" loading="lazy" src="book-scholastic-burnout-spiral.webp" width="337"/></a>
 </figure>
 <div class="book-feature-copy">
+<span class="book-status">Published</span>
 <h4><a href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank">The Scholastic Burnout Spiral</a></h4>
-<p>Education, therapy readiness, and counselor burnout.</p>
+<p class="book-subtitle">Education, Therapy Readiness, and Burnout.</p>
+<p>A quantitative study of substance use disorder counselors.</p>
 <a class="book-link" href="https://www.amazon.com/Scholastic-Burnout-Spiral-Quantitative-Counselors-ebook/dp/B0DRSXHJD2" rel="noopener noreferrer" target="_blank">View book</a>
 </div>
 </article>
