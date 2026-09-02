@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Careers | Stonebridge Psychological Group</title>
-  <meta name="description" content="Explore therapist opportunities with Stonebridge Psychological Group, an Illinois telehealth practice built around thoughtful fit, clinical judgment, and sustainable outpatient work.">
+  <meta name="description" content="Explore clinician careers and future professional pathways with Stonebridge Psychological Group, an Illinois telehealth practice built around thoughtful fit, clinical judgment, and sustainable outpatient work.">
   <link rel="canonical" href="https://stonebridgepsychgroup.com/careers.html">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -15,461 +15,839 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <style id="stonebridge-careers-page-only">
+  <style id="stonebridge-team-page-only">
     :root{
-      --careers-bg:#FAF5EF;
-      --careers-paper:#E8DDCE;
-      --careers-navy:#0F2A45;
-      --careers-navy-soft:#163b61;
-      --careers-ink:#25282B;
-      --careers-muted:#5d6870;
-      --careers-gold:#B58A49;
-      --careers-line:rgba(37,40,43,.14);
-      --careers-white:#fffaf2;
+      --team-bg:#f8f5f0;
+      --team-paper:#f2ece4;
+      --team-navy:#163b61;
+      --team-navy-deep:#102f4d;
+      --team-ink:#213142;
+      --team-muted:#5d6870;
+      --team-gold:#78613f;
+      --team-line:rgba(33,49,66,.14);
+      --team-warm-line:rgba(212,200,185,.72);
+      --team-white:#fffaf2;
     }
 
-    body.careers-page{
-      margin:0;
-      background:var(--careers-bg);
-      color:var(--careers-ink);
+    body.team-page{
+      background:var(--team-bg);
+      color:var(--team-ink);
     }
 
-    .careers-shell{
-      width:min(1080px,calc(100% - 72px));
+    .team-page .skip-link{
+      position:absolute;
+      left:12px;
+      top:-80px;
+      z-index:1000;
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--team-navy-deep);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .team-page .skip-link:focus{top:12px;}
+
+    /* Full-width photographic hero with a softer orientation band beneath it. */
+    .team-hero{
+      position:relative;
+      min-height:480px;
+      overflow:hidden;
+      isolation:isolate;
+      background:var(--team-navy-deep);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+
+    .team-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(12,31,49,.94) 0%,
+          rgba(12,31,49,.88) 27%,
+          rgba(12,31,49,.64) 46%,
+          rgba(12,31,49,.24) 69%,
+          rgba(12,31,49,.08) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(10,24,38,.16) 0%,
+          rgba(10,24,38,.02) 56%,
+          rgba(10,24,38,.24) 100%
+        );
+    }
+
+    .team-hero-copy{
+      position:relative;
+      z-index:2;
+      width:min(1220px,calc(100% - 72px));
+      min-height:480px;
       margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      padding:42px 0 40px;
+      color:var(--team-white);
     }
 
-    .careers-kicker{
-      color:#8d6a38;
+    .team-hero-rule{
+      width:40px;
+      height:2px;
+      margin-bottom:20px;
+      background:#d3b57f;
+    }
+
+    .team-kicker,
+    .team-label,
+    .clinician-kicker{
+      color:var(--team-gold);
       font-family:"Inter",sans-serif;
-      font-size:.67rem;
+      font-size:.68rem;
       font-weight:800;
       letter-spacing:.18em;
       line-height:1.35;
       text-transform:uppercase;
     }
 
-    .careers-hero{
-      background:var(--careers-bg);
-      border-bottom:1px solid rgba(212,200,185,.74);
+    .team-hero .team-kicker{
+      color:#e1c79c;
     }
 
-    .careers-hero-grid{
-      width:min(1180px,calc(100% - 72px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);
-      gap:64px;
-      align-items:center;
-      min-height:510px;
-      padding:54px 0;
-    }
-
-    .careers-hero-copy{
-      max-width:600px;
-    }
-
-    .careers-hero-rule{
-      width:42px;
-      height:1px;
-      margin-bottom:18px;
-      background:var(--careers-gold);
-    }
-
-    .careers-hero h1{
+    .team-hero h1{
       margin:10px 0 0;
-      max-width:11ch;
-      color:var(--careers-navy);
+      max-width:11.5ch;
+      color:var(--team-white);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.25rem,4.4vw,4.65rem);
+      font-size:clamp(3.3rem,4.45vw,4.7rem);
       line-height:1.01;
       letter-spacing:-.05em;
       text-wrap:balance;
+      text-shadow:0 10px 30px rgba(0,0,0,.18);
     }
 
-    .careers-hero-copy > p{
-      max-width:35rem;
+    .team-hero-copy > p{
+      max-width:36rem;
       margin:18px 0 0;
-      color:var(--careers-muted);
+      color:rgba(255,250,242,.89);
       font-family:"Inter",sans-serif;
-      font-size:.98rem;
-      line-height:1.68;
+      font-size:1rem;
+      line-height:1.7;
     }
 
-    .careers-hero-actions{
+    .team-hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:11px;
-      margin-top:25px;
+      gap:12px;
+      margin-top:26px;
     }
 
-    .careers-hero-media{
-      position:relative;
-      margin:0;
-      min-height:350px;
-      overflow:hidden;
-      border:1px solid rgba(15,42,69,.14);
-      background:#e8ddce;
+    .team-hero-actions .btn-primary{
+      background:#f4eee4;
+      border-color:#f4eee4;
+      color:var(--team-navy-deep);
     }
 
-    .careers-hero-media::after{
-      content:"";
+    .team-hero-actions .btn-primary:hover{
+      background:#fffaf2;
+      border-color:#fffaf2;
+    }
+
+    .team-hero-actions .btn-secondary{
+      color:#fffaf2;
+      border-color:rgba(255,255,255,.42);
+      background:rgba(255,255,255,.08);
+    }
+
+    .team-hero-actions .btn-secondary:hover{
+      border-color:rgba(255,255,255,.72);
+      background:rgba(255,255,255,.14);
+    }
+
+    .team-hero-media{
       position:absolute;
-      right:20px;
-      bottom:20px;
-      width:82px;
-      height:1px;
-      background:var(--careers-gold);
+      inset:0;
+      z-index:0;
+      margin:0;
+      overflow:hidden;
     }
 
-    .careers-hero-media img{
+    .team-hero-media img{
       width:100%;
       height:100%;
-      min-height:350px;
       display:block;
       object-fit:cover;
       object-position:center;
     }
 
-    .careers-overview{
+    .team-overview{
       background:#eee7de;
-      border-bottom:1px solid rgba(212,200,185,.76);
+      color:var(--team-ink);
+      border-bottom:1px solid var(--team-warm-line);
     }
 
-    .careers-overview-grid{
+    .team-overview-grid{
       width:min(1080px,calc(100% - 72px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      padding:18px 0;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      padding:17px 0;
     }
 
-    .careers-overview article{
+    .team-overview article{
       padding:0 24px;
-      border-left:1px solid var(--careers-line);
+      border-left:1px solid rgba(33,49,66,.14);
     }
 
-    .careers-overview article:first-child{
+    .team-overview article:first-child{
       padding-left:0;
       border-left:0;
     }
 
-    .careers-overview h2{
+    .team-overview h2{
       margin:0 0 4px;
-      color:var(--careers-navy);
+      color:var(--team-navy-deep);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:1.12rem;
-      line-height:1.15;
+      font-size:1.08rem;
+      line-height:1.1;
+      letter-spacing:-.01em;
     }
 
-    .careers-overview p{
+    .team-overview p{
       margin:0;
-      color:var(--careers-muted);
+      color:var(--team-muted);
       font-family:"Inter",sans-serif;
       font-size:.82rem;
-      line-height:1.5;
+      line-height:1.48;
     }
 
-    .careers-section{
-      padding:58px 0 62px;
+    .team-section{
+      padding:58px 0 64px;
+      background:var(--team-bg);
     }
 
-    .careers-intro-grid{
-      display:grid;
-      grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
-      gap:66px;
-      align-items:start;
+    .team-shell{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
     }
 
-    .careers-intro h2,
-    .careers-opening h2{
-      margin:11px 0 0;
-      color:var(--careers-navy);
+    .team-intro{
+      margin-bottom:24px;
+    }
+
+    .team-intro > div{
+      max-width:760px;
+    }
+
+    .team-label{
+      position:relative;
+      padding-top:14px;
+    }
+
+    .team-label::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      max-width:150px;
+      height:1px;
+      background:linear-gradient(90deg,var(--team-navy),rgba(22,59,97,0));
+    }
+
+    .team-intro h2{
+      margin:12px 0 0;
+      max-width:16ch;
+      color:var(--team-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.4rem,3.35vw,3.2rem);
-      line-height:1.05;
-      letter-spacing:-.04em;
+      font-size:clamp(2.2rem,3.1vw,3.15rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
       text-wrap:balance;
     }
 
-    .careers-intro h2{
-      max-width:12ch;
-    }
-
-    .careers-intro-copy > p{
-      max-width:44rem;
-      margin:0;
-      color:var(--careers-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.95rem;
-      line-height:1.7;
-    }
-
-    .careers-principles{
-      margin-top:25px;
-      border-top:1px solid var(--careers-line);
-    }
-
-    .careers-principle{
-      display:grid;
-      grid-template-columns:155px minmax(0,1fr);
-      gap:26px;
-      padding:16px 0;
-      border-bottom:1px solid var(--careers-line);
-    }
-
-    .careers-principle strong{
-      color:var(--careers-navy);
-      font-family:"Inter",sans-serif;
-      font-size:.76rem;
-      font-weight:800;
-      letter-spacing:.025em;
-    }
-
-    .careers-principle p{
-      margin:0;
-      color:var(--careers-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.88rem;
-      line-height:1.58;
-    }
-
-    .careers-opening{
-      padding:54px 0 58px;
-      background:var(--careers-navy);
-      color:var(--careers-white);
-    }
-
-    .careers-opening .careers-kicker{
-      color:#d8c095;
-    }
-
-    .careers-opening h2{
-      max-width:16ch;
-      color:var(--careers-white);
-    }
-
-    .careers-opening-copy{
-      max-width:48rem;
-      margin:16px 0 0;
-      color:rgba(255,250,242,.84);
+    .team-intro p{
+      margin:12px 0 0;
+      max-width:42rem;
+      color:var(--team-muted);
       font-family:"Inter",sans-serif;
       font-size:.94rem;
-      line-height:1.68;
+      line-height:1.66;
     }
 
-    .careers-role-meta{
+    /* The roster is intentionally a card system because each clinician is one distinct profile. */
+    .clinician-grid{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      margin-top:28px;
-      border-top:1px solid rgba(255,255,255,.20);
-      border-bottom:1px solid rgba(255,255,255,.20);
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:28px;
     }
 
-    .careers-role-meta div{
-      padding:16px 20px 17px;
-      border-left:1px solid rgba(255,255,255,.18);
+    .clinician-card{
+      min-width:0;
+      overflow:hidden;
+      border:1px solid var(--team-warm-line);
+      border-radius:20px;
+      background:#fffdf9;
     }
 
-    .careers-role-meta div:first-child{
-      padding-left:0;
-      border-left:0;
+    .clinician-card.featured{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:minmax(280px,34%) minmax(0,1fr);
+      min-height:430px;
     }
 
-    .careers-role-meta span{
+    .clinician-photo{
+      min-height:100%;
+      margin:0;
+      overflow:hidden;
+      background:#e8e0d6;
+    }
+
+    .clinician-photo img{
+      width:100%;
+      height:100%;
       display:block;
-      color:#d8c095;
-      font-family:"Inter",sans-serif;
-      font-size:.6rem;
-      font-weight:800;
-      letter-spacing:.13em;
-      text-transform:uppercase;
+      object-fit:cover;
+      object-position:center top;
     }
 
-    .careers-role-meta strong{
-      display:block;
-      margin-top:5px;
-      color:var(--careers-white);
+    .clinician-details{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:40px 44px;
+    }
+
+    .clinician-details h3{
+      margin:10px 0 5px;
+      color:var(--team-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.25rem,3vw,3rem);
+      line-height:1.02;
+      letter-spacing:-.035em;
+      text-wrap:balance;
+    }
+
+    .clinician-role{
+      color:var(--team-navy);
       font-family:"Inter",sans-serif;
-      font-size:.9rem;
-      font-weight:600;
+      font-size:.84rem;
+      font-weight:700;
       line-height:1.4;
     }
 
-    .careers-opening-bottom{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:44px;
-      margin-top:25px;
-    }
-
-    .careers-opening-bottom p{
-      max-width:47rem;
-      margin:0;
-      color:rgba(255,250,242,.78);
+    .clinician-details > p{
+      max-width:43rem;
+      margin:17px 0 0;
+      color:var(--team-muted);
       font-family:"Inter",sans-serif;
-      font-size:.86rem;
-      line-height:1.62;
+      font-size:.93rem;
+      line-height:1.68;
     }
 
-    .careers-opening .btn{
-      flex:0 0 auto;
-      background:#f4eee4;
-      border-color:#f4eee4;
-      color:var(--careers-navy);
+    .clinician-focus{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:0 26px;
+      margin:22px 0 0;
+      padding:0;
+      list-style:none;
+      border-top:1px solid var(--team-line);
     }
 
-    .careers-opening .btn:hover{
-      background:#fffaf2;
-      border-color:#fffaf2;
-    }
-
-    .careers-note{
-      padding:34px 0 38px;
-      background:var(--careers-bg);
-      border-bottom:1px solid rgba(212,200,185,.74);
-    }
-
-    .careers-note-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:40px;
-    }
-
-    .careers-note p{
-      max-width:52rem;
-      margin:0;
-      color:var(--careers-muted);
+    .clinician-focus li{
+      position:relative;
+      padding:11px 0 11px 17px;
+      border-bottom:1px solid var(--team-line);
+      color:var(--team-muted);
       font-family:"Inter",sans-serif;
-      font-size:.86rem;
+      font-size:.84rem;
+      line-height:1.45;
+    }
+
+    .clinician-focus li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:1.05rem;
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:#b89661;
+    }
+
+    .clinician-actions{
+      margin-top:24px;
+    }
+
+    /* Future standard clinician cards can be added without changing the roster grid. */
+    .clinician-card:not(.featured){
+      display:flex;
+      flex-direction:column;
+    }
+
+    .clinician-card:not(.featured) .clinician-photo{
+      aspect-ratio:4 / 3;
+      min-height:0;
+    }
+
+    .clinician-card:not(.featured) .clinician-details{
+      flex:1;
+      justify-content:flex-start;
+      padding:28px;
+    }
+
+    .clinician-card:not(.featured) .clinician-details h3{
+      font-size:2rem;
+    }
+
+    .clinician-card:not(.featured) .clinician-focus{
+      grid-template-columns:1fr;
+    }
+
+    .team-growth-note{
+      display:grid;
+      grid-template-columns:175px minmax(0,1fr);
+      gap:42px;
+      align-items:start;
+      margin-top:30px;
+      padding-top:22px;
+      border-top:1px solid var(--team-line);
+    }
+
+    .team-growth-note strong{
+      color:var(--team-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.25rem;
+      line-height:1.15;
+    }
+
+    .team-growth-note p{
+      max-width:48rem;
+      margin:0;
+      color:var(--team-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.89rem;
       line-height:1.6;
     }
 
-    .careers-note a{
-      color:var(--careers-navy);
-      font-family:"Inter",sans-serif;
-      font-size:.78rem;
-      font-weight:700;
-      text-decoration:none;
-      white-space:nowrap;
+
+    .team-professional-note{
+      display:grid;
+      grid-template-columns:175px minmax(0,1fr);
+      gap:42px;
+      align-items:start;
+      margin-top:16px;
+      padding-top:16px;
+      border-top:1px solid var(--team-line);
     }
 
-    .careers-note a:hover{
+    .team-professional-note strong{
+      color:var(--team-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.25rem;
+      line-height:1.15;
+    }
+
+    .team-professional-note p{
+      max-width:48rem;
+      margin:0;
+      color:var(--team-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.89rem;
+      line-height:1.6;
+    }
+
+    .team-professional-link{
+      color:var(--team-navy);
+      font-weight:700;
       text-decoration:underline;
+      text-decoration-thickness:1px;
       text-underline-offset:3px;
     }
 
-    @media(max-width:920px){
-      .careers-hero-grid,
-      .careers-intro-grid{
+    .team-cta{
+      background:linear-gradient(135deg,var(--team-navy),var(--team-navy-deep));
+      color:var(--team-white);
+    }
+
+    .team-cta-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:30px;
+      align-items:center;
+      padding:33px 0;
+    }
+
+    .team-cta h2{
+      margin:0 0 5px;
+      color:#fffaf2;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2rem,3vw,2.75rem);
+      line-height:1.05;
+      letter-spacing:-.025em;
+    }
+
+    .team-cta p{
+      max-width:45rem;
+      margin:0;
+      color:rgba(255,250,242,.84);
+      font-family:"Inter",sans-serif;
+      font-size:.94rem;
+      line-height:1.6;
+    }
+
+    .team-cta .btn-secondary{
+      color:#fffaf2;
+      border-color:rgba(255,255,255,.30);
+      background:rgba(255,255,255,.08);
+    }
+
+    .team-page a:focus-visible,
+    .team-page button:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:2px;
+      box-shadow:0 0 0 5px var(--team-navy-deep);
+    }
+
+    @media(min-width:1081px) and (max-width:1260px){
+      .team-hero-copy{
+        width:min(100% - 72px,1120px);
+      }
+
+      .team-hero h1{
+        font-size:clamp(3.15rem,4.15vw,4.25rem);
+      }
+
+      .clinician-details{
+        padding:34px 36px;
+      }
+    }
+
+    @media(max-width:1080px){
+      .team-hero,
+      .team-hero-copy{
+        min-height:500px;
+      }
+
+      .team-hero-copy{
+        width:min(100% - 44px,860px);
+        padding:46px 0 42px;
+      }
+
+      .team-hero::before{
+        background:
+          linear-gradient(
+            90deg,
+            rgba(12,31,49,.94) 0%,
+            rgba(12,31,49,.86) 38%,
+            rgba(12,31,49,.58) 72%,
+            rgba(12,31,49,.28) 100%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(10,24,38,.14) 0%,
+            rgba(10,24,38,.04) 56%,
+            rgba(10,24,38,.28) 100%
+          );
+      }
+
+      .team-overview-grid,
+      .team-growth-note,
+      .team-professional-note,
+      .team-cta-inner{
         grid-template-columns:1fr;
-        gap:32px;
       }
 
-      .careers-hero-grid{
-        min-height:0;
+      .team-growth-note,
+      .team-professional-note,
+      .team-cta-inner{
+        gap:14px;
       }
 
-      .careers-hero-media{
-        min-height:300px;
+      .clinician-card.featured{
+        grid-template-columns:minmax(250px,38%) minmax(0,1fr);
       }
 
-      .careers-overview-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+      .clinician-details{
+        padding:32px;
       }
 
-      .careers-role-meta{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
-      .careers-role-meta div:nth-child(3){
-        padding-left:0;
-        border-left:0;
-        border-top:1px solid rgba(255,255,255,.18);
-      }
-
-      .careers-role-meta div:nth-child(4){
-        border-top:1px solid rgba(255,255,255,.18);
+      .clinician-focus{
+        grid-template-columns:1fr;
       }
     }
 
     @media(max-width:760px){
-      .careers-shell,
-      .careers-hero-grid,
-      .careers-overview-grid{
+      .team-shell,
+      .team-overview-grid,
+      .team-cta-inner{
         width:min(100% - 34px,1080px);
       }
 
-      .careers-hero-grid{
-        padding:42px 0;
+      .team-hero,
+      .team-hero-copy{
+        min-height:560px;
       }
 
-      .careers-hero h1{
-        font-size:clamp(3rem,13vw,4rem);
+      .team-hero-copy{
+        width:min(100% - 34px,1080px);
+        padding:40px 0 36px;
       }
 
-      .careers-overview-grid{
+      .team-hero-media img{
+        object-position:58% center;
+      }
+
+      .team-hero::before{
+        background:
+          linear-gradient(
+            180deg,
+            rgba(10,27,43,.88) 0%,
+            rgba(10,27,43,.72) 54%,
+            rgba(10,27,43,.88) 100%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(10,27,43,.52) 0%,
+            rgba(10,27,43,.20) 100%
+          );
+      }
+
+      .team-overview-grid{
         grid-template-columns:1fr;
-        padding:0;
-      }
-
-      .careers-overview article,
-      .careers-overview article:first-child{
         padding:14px 0;
-        border-left:0;
-        border-top:1px solid var(--careers-line);
       }
 
-      .careers-overview article:first-child{
-        border-top:0;
-      }
-
-      .careers-principle{
-        grid-template-columns:1fr;
-        gap:6px;
-      }
-
-      .careers-role-meta{
-        grid-template-columns:1fr;
-      }
-
-      .careers-role-meta div,
-      .careers-role-meta div:first-child,
-      .careers-role-meta div:nth-child(3),
-      .careers-role-meta div:nth-child(4){
+      .team-overview article{
         padding:13px 0;
         border-left:0;
-        border-top:1px solid rgba(255,255,255,.18);
+        border-top:1px solid rgba(33,49,66,.13);
       }
 
-      .careers-role-meta div:first-child{
+      .team-overview article:first-child{
+        padding-top:0;
         border-top:0;
       }
 
-      .careers-opening-bottom,
-      .careers-note-inner{
-        align-items:flex-start;
-        flex-direction:column;
-        gap:18px;
+      .team-hero h1{
+        max-width:12ch;
+        font-size:clamp(2.65rem,11.5vw,3.7rem);
       }
 
-      .careers-opening .btn{
+      .team-hero-actions .btn,
+      .team-cta .btn{
         width:100%;
         justify-content:center;
         text-align:center;
       }
+
+      .team-section{
+        padding:44px 0 48px;
+      }
+
+      .clinician-grid{
+        grid-template-columns:1fr;
+      }
+
+      .clinician-card.featured{
+        grid-column:auto;
+        grid-template-columns:1fr;
+        min-height:0;
+      }
+
+      .clinician-card.featured .clinician-photo{
+        aspect-ratio:4 / 3;
+        min-height:0;
+      }
+
+      .clinician-details{
+        padding:26px 22px 28px;
+      }
+
+      .clinician-details h3{
+        font-size:clamp(2rem,9vw,2.6rem);
+      }
     }
+  
+    .team-careers-path{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:26px;
+      margin-top:18px;
+      padding:17px 0 0;
+      border-top:1px solid rgba(33,49,66,.14);
+      font-family:"Inter",sans-serif;
+    }
+
+    .team-careers-path strong{
+      color:#213142;
+      font-size:.82rem;
+      font-weight:700;
+    }
+
+    .team-careers-path a{
+      color:#163b61;
+      font-size:.78rem;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .team-careers-path a:hover{
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    @media(max-width:640px){
+      .team-careers-path{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:7px;
+      }
+    }
+
   </style>
 
+<style id="stonebridge-services-dropdown-shared">
+/* Shared Services navigation. Kept inline so this update changes HTML files only. */
+.site-header.compact-site-header .services-nav-dropdown{
+  position:relative;
+  display:flex!important;
+  align-items:center;
+}
+.services-nav-main{
+  display:flex;
+  align-items:center;
+  min-height:34px;
+}
+.site-header.compact-site-header .services-nav-main > a{min-height:34px;}
+.services-menu-toggle{
+  width:28px;
+  height:34px;
+  margin-left:1px;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:7px;
+  background:transparent;
+  color:#5d6870;
+  cursor:pointer;
+}
+.services-menu-toggle svg{
+  width:16px;
+  height:16px;
+  transition:transform .16s ease;
+}
+.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
+.site-header.compact-site-header .services-dropdown-menu{
+  position:absolute;
+  top:calc(100% + 10px);
+  left:-14px;
+  z-index:80;
+  width:248px;
+  min-width:248px;
+  padding:9px;
+  display:grid!important;
+  gap:1px;
+  border:1px solid rgba(212,200,185,.88);
+  border-radius:12px;
+  background:rgba(255,252,247,.99);
+  box-shadow:0 18px 44px rgba(16,47,77,.14);
+}
+.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
+.services-dropdown-menu::before{
+  content:"";
+  position:absolute;
+  top:-7px;
+  left:72px;
+  width:12px;
+  height:12px;
+  transform:rotate(45deg);
+  border-left:1px solid rgba(212,200,185,.88);
+  border-top:1px solid rgba(212,200,185,.88);
+  background:#fffaf4;
+}
+.site-header.compact-site-header .services-dropdown-menu a{
+  position:relative;
+  z-index:1;
+  min-height:0;
+  padding:9px 11px;
+  border-radius:7px;
+  color:#5d6870;
+  font-size:.83rem;
+  line-height:1.25;
+  white-space:normal;
+}
+.site-header.compact-site-header .services-dropdown-menu a:hover,
+.site-header.compact-site-header .services-dropdown-menu a:focus-visible,
+.site-header.compact-site-header .services-dropdown-menu a.active-sub{
+  background:#f1ebe3;
+  color:#213142;
+}
+.services-menu-toggle:hover{
+  color:#213142;
+  background:rgba(22,59,97,.06);
+}
+.services-menu-toggle:focus-visible{
+  outline:3px solid #fffaf2;
+  outline-offset:1px;
+  box-shadow:0 0 0 5px #102f4d;
+}
+@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
+@media(max-width:960px){
+  .site-header.compact-site-header .services-nav-dropdown{
+    width:100%;
+    display:block!important;
+  }
+  .services-nav-main{
+    width:100%;
+    justify-content:space-between;
+  }
+  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
+  .services-menu-toggle{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+  }
+  .site-header.compact-site-header .services-dropdown-menu{
+    position:static;
+    width:100%;
+    min-width:0;
+    margin:3px 0 2px;
+    padding:4px 0 2px 13px;
+    gap:0;
+    border:0;
+    border-left:1px solid rgba(33,49,66,.17);
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .services-dropdown-menu::before{display:none;}
+  .site-header.compact-site-header .services-dropdown-menu a{
+    padding:8px 10px;
+    font-size:.85rem;
+  }
+}
+</style>
 </head>
-<body class="careers-page">
+
+<body class="team-page careers-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="site-header compact-site-header">
+
+  <header class="site-header compact-site-header">
     <div class="container nav">
       <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
         <div class="brand-mark">STONEBRIDGE</div>
@@ -480,7 +858,7 @@
 
       <div class="menu-wrap">
         <nav class="menu" aria-label="Primary navigation">
-<a href="about.html" class="active" aria-current="page">About</a>
+  <a href="about.html">About</a>
   <a href="team.html">Team</a>
   <div class="nav-dropdown services-nav-dropdown">
     <div class="services-nav-main">
@@ -507,125 +885,108 @@
     </div>
   </header>
 
-
   <main id="main-content">
-    <section class="careers-hero">
-      <div class="careers-hero-grid">
-        <div class="careers-hero-copy">
-          <div class="careers-hero-rule"></div>
-          <div class="careers-kicker">Careers at Stonebridge</div>
-          <h1>Build a professional home around the work you care about.</h1>
-          <p>Stonebridge is growing carefully—hiring licensed clinicians now while also creating future pathways for postdoctoral clinicians and graduate or doctoral trainees who value thoughtful outpatient care.</p>
-          <div class="careers-hero-actions">
-            <a class="btn btn-primary" href="#current-opening">View Current Opening</a>
-            <a class="btn btn-secondary" href="contact.html">Ask About Future Opportunities</a>
-          </div>
+    <section class="team-hero">
+      <div class="team-hero-copy">
+        <div class="team-hero-rule"></div>
+        <div class="team-kicker">Careers at Stonebridge</div>
+        <h1>Build a professional home around the work you care about.</h1>
+        <p>Stonebridge is growing carefully—hiring licensed clinicians now while also creating future pathways for postdoctoral clinicians and graduate or doctoral trainees who value thoughtful outpatient care.</p>
+        <div class="team-hero-actions">
+          <a class="btn btn-primary" href="#current-opening">View Current Opening</a>
+          <a class="btn btn-secondary" href="contact.html">Ask About Future Opportunities</a>
         </div>
-
-        <figure class="careers-hero-media">
-          <picture class="sb-responsive-image" style="display:contents">
-            <source type="image/webp" srcset="team-consultation-room-960.webp 960w, team-consultation-room-1600.webp 1600w, team-consultation-room-2048.webp 2048w" sizes="(max-width: 920px) 92vw, 52vw">
-            <img src="team-consultation-room.png" alt="Professional consultation room with table and chairs prepared for thoughtful clinical conversation" width="2048" height="1143" loading="eager" decoding="async">
-          </picture>
-        </figure>
       </div>
+
+      <figure class="team-hero-media">
+        <picture class="sb-responsive-image" style="display:contents">
+          <source type="image/webp" srcset="careers-hero-office-960.webp 960w, careers-hero-office-1600.webp 1600w, careers-hero-office-2048.webp 2048w" sizes="100vw">
+          <img src="careers-hero-office.png" alt="Warm professional workspace prepared for thoughtful clinical work" width="2048" height="1143" decoding="async" fetchpriority="high">
+        </picture>
+      </figure>
     </section>
 
-    <section class="careers-overview" aria-label="What clinicians can expect">
-      <div class="careers-overview-grid">
+    <section class="team-overview" aria-label="Professional pathways at Stonebridge">
+      <div class="team-overview-grid">
         <article>
           <h2>Licensed clinicians</h2>
           <p>Current hiring is focused on thoughtful outpatient clinicians in Illinois.</p>
         </article>
         <article>
           <h2>Postdoctoral clinicians</h2>
-          <p>Future opportunities may develop for postdoctoral psychologists as the practice grows.</p>
+          <p>Future roles may develop as Stonebridge's training infrastructure grows.</p>
         </article>
         <article>
-          <h2>Graduate trainees</h2>
-          <p>Stonebridge is also open to selective conversations about student training pathways over time.</p>
-        </article>
-        <article>
-          <h2>Sustainable work</h2>
-          <p>Good care needs room for documentation, reflection, consultation, and life outside work.</p>
+          <h2>Graduate &amp; doctoral trainees</h2>
+          <p>Student consultation is available now; formal training placements may develop over time.</p>
         </article>
       </div>
     </section>
 
-    <section class="careers-section careers-intro">
-      <div class="careers-shell careers-intro-grid">
+    <section class="team-section" id="current-opening">
+      <div class="team-shell">
+        <div class="team-intro">
+          <div>
+            <div class="team-label">A small practice by design</div>
+            <h2>Grow deliberately, not just quickly.</h2>
+            <p>Stonebridge is building its team carefully rather than hiring for volume. Clinical interests, experience, scope, and sustainable practice all matter when considering fit.</p>
+          </div>
+        </div>
+
+        <div class="clinician-grid">
+          <article class="clinician-card featured">
+            <figure class="clinician-photo">
+              <picture class="sb-responsive-image" style="display:contents">
+                <source type="image/webp" srcset="hero-portal-workspace-960.webp 960w, hero-portal-workspace-1600.webp 1600w, hero-portal-workspace-2000.webp 2000w" sizes="(max-width: 760px) 82vw, 420px">
+                <img alt="Professional workspace with notebook and laptop" decoding="async" loading="lazy" src="hero-portal-workspace.jpg" width="2000" height="1116">
+              </picture>
+            </figure>
+
+            <div class="clinician-details">
+              <div class="clinician-kicker">Current opening · Illinois telehealth</div>
+              <h3>Therapist</h3>
+              <div class="clinician-role">Part-time · 5–15 hours/week · $55–$95/hour</div>
+
+              <p>This role is for a clinician who wants to develop an outpatient caseload around meaningful clinical interests while working within a small, consultation-minded practice. Stonebridge welcomes different clinical orientations when the work is ethical, clinically grounded, and clearly communicated.</p>
+
+              <ul class="clinician-focus" aria-label="Current therapist role details">
+                <li>Remote clinical work in Illinois</li>
+                <li>Flexible part-time caseload</li>
+                <li>Room for different clinical orientations</li>
+                <li>Consultation-minded practice structure</li>
+              </ul>
+
+              <div class="clinician-actions">
+                <a class="btn btn-primary" href="https://www.indeed.com/job/therapist-dcc3ac4028419732" target="_blank" rel="noopener noreferrer">View Role &amp; Apply on Indeed</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="team-growth-note">
+          <strong>Postdoctoral clinicians</strong>
+          <p>Stonebridge is interested in future postdoctoral opportunities as the practice's training infrastructure develops. No formal postdoctoral position is currently being advertised.</p>
+        </div>
+
+        <div class="team-professional-note">
+          <strong>Graduate &amp; doctoral trainees</strong>
+          <p>Stonebridge currently offers a monthly peer consultation group for mental-health trainees. It is not supervision and does not replace university, practicum, internship, or site supervision. <a class="team-professional-link" href="for-clinicians.html">Explore Student Consultation</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-cta">
+      <div class="team-cta-inner">
         <div>
-          <div class="careers-kicker">A small practice by design</div>
-          <h2>Grow deliberately, with room for different stages of development.</h2>
+          <h2>Interested in a future opportunity?</h2>
+          <p>Stonebridge is growing carefully. Future clinician, postdoctoral, and training pathways will be added as they become available.</p>
         </div>
-
-        <div class="careers-intro-copy">
-          <p>Stonebridge is building its team carefully rather than hiring for volume. The aim is to support thoughtful outpatient work while creating space for licensed clinicians now and future conversations with postdoctoral clinicians and graduate or doctoral trainees as additional pathways take shape.</p>
-
-          <div class="careers-principles">
-            <div class="careers-principle">
-              <strong>Clinical voice</strong>
-              <p>There is room for different orientations and ways of thinking when the work is ethical, grounded, and clearly communicated.</p>
-            </div>
-            <div class="careers-principle">
-              <strong>Clear structure</strong>
-              <p>Expectations around documentation, communication, consultation, and practice operations should feel understandable rather than improvised.</p>
-            </div>
-            <div class="careers-principle">
-              <strong>Postdoctoral path</strong>
-              <p>Stonebridge is interested in future conversations with postdoctoral clinicians as those roles become appropriate for the practice.</p>
-            </div>
-            <div class="careers-principle">
-              <strong>Trainee development</strong>
-              <p>Graduate and doctoral trainees may also have a place in the broader vision, with timing and structure considered carefully.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="careers-opening" id="current-opening">
-      <div class="careers-shell">
-        <div class="careers-kicker">Current opening</div>
-        <h2>Therapist — Illinois Telehealth</h2>
-        <p class="careers-opening-copy">This part-time role is the current active opening. It is designed for a clinician who wants to develop an outpatient caseload around meaningful clinical interests while working within a small, consultation-minded practice.</p>
-
-        <div class="careers-role-meta" aria-label="Current therapist opening details">
-          <div>
-            <span>Schedule</span>
-            <strong>Part-time</strong>
-          </div>
-          <div>
-            <span>Hours</span>
-            <strong>5–15 hours / week</strong>
-          </div>
-          <div>
-            <span>Location</span>
-            <strong>Remote in Illinois</strong>
-          </div>
-          <div>
-            <span>Compensation</span>
-            <strong>$55–$95 / hour</strong>
-          </div>
-        </div>
-
-        <div class="careers-opening-bottom">
-          <p>Stonebridge welcomes a range of clinical orientations, including psychodynamic, relational, trauma-informed, cognitive-behavioral, family-systems, integrative, and other thoughtful approaches. Indeed hosts the complete job description and application. Future conversations with postdoctoral clinicians or trainees may be separate from the current listed role.</p>
-          <a class="btn" href="https://www.indeed.com/job/therapist-dcc3ac4028419732" target="_blank" rel="noopener noreferrer">View Role &amp; Apply on Indeed</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="careers-note">
-      <div class="careers-shell careers-note-inner">
-        <p>Looking for professional consultation, supervision, writing review, or training rather than employment?</p>
-        <a href="for-clinicians.html">View Professional Offerings <span aria-hidden="true">→</span></a>
+        <a class="btn btn-secondary" href="contact.html">Ask About Future Opportunities</a>
       </div>
     </section>
   </main>
 
-
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <div class="footer-brand">STONEBRIDGE</div>
@@ -646,7 +1007,8 @@
         <div class="footer-title">Practice</div>
         <div class="footer-links">
           <a href="about.html">About</a>
-            <a href="team-founder.html">Founder</a>
+          <a href="team.html">Team</a>
+          <a href="team-founder.html">Founder</a>
           <a href="for-clinicians.html">Professionals</a>
           <a href="careers.html">Careers</a>
           <a href="portal.html">Client Portal</a>
@@ -675,6 +1037,68 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  
+<script id="stonebridge-services-dropdown-script">
+(function(){
+  function initServicesDropdown(){
+    var dropdown=document.querySelector('.services-nav-dropdown');
+    if(!dropdown) return;
+    var toggle=dropdown.querySelector('.services-menu-toggle');
+    var panel=dropdown.querySelector('.services-dropdown-menu');
+    if(!toggle || !panel) return;
+    var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
+    function setOpen(open,focusFirst){
+      dropdown.classList.toggle('is-open',open);
+      toggle.setAttribute('aria-expanded',String(open));
+      toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
+      panel.hidden=!open;
+      if(open && focusFirst && items.length) items[0].focus();
+    }
+    toggle.addEventListener('click',function(){
+      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
+    });
+    toggle.addEventListener('keydown',function(event){
+      if(event.key==='ArrowDown'){
+        event.preventDefault();
+        setOpen(true,true);
+      }else if(event.key==='Escape'){
+        event.preventDefault();
+        setOpen(false,false);
+      }
+    });
+    panel.addEventListener('keydown',function(event){
+      var current=items.indexOf(document.activeElement);
+      if(event.key==='Escape'){
+        event.preventDefault();
+        setOpen(false,false);
+        toggle.focus();
+      }else if(event.key==='ArrowDown'){
+        event.preventDefault();
+        items[(current+1+items.length)%items.length].focus();
+      }else if(event.key==='ArrowUp'){
+        event.preventDefault();
+        items[(current-1+items.length)%items.length].focus();
+      }else if(event.key==='Home'){
+        event.preventDefault();
+        items[0].focus();
+      }else if(event.key==='End'){
+        event.preventDefault();
+        items[items.length-1].focus();
+      }
+    });
+    items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
+    document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
+    document.addEventListener('keydown',function(event){
+      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
+        setOpen(false,false);
+        toggle.focus();
+      }
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
+  else initServicesDropdown();
+})();
+</script>
+<script src="script.js"></script>
 </body>
 </html>
