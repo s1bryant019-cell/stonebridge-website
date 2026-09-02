@@ -679,6 +679,44 @@
         font-size:clamp(2rem,9vw,2.6rem);
       }
     }
+  
+    .team-careers-path{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:26px;
+      margin-top:18px;
+      padding:17px 0 0;
+      border-top:1px solid rgba(33,49,66,.14);
+      font-family:"Inter",sans-serif;
+    }
+
+    .team-careers-path strong{
+      color:#213142;
+      font-size:.82rem;
+      font-weight:700;
+    }
+
+    .team-careers-path a{
+      color:#163b61;
+      font-size:.78rem;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .team-careers-path a:hover{
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    @media(max-width:640px){
+      .team-careers-path{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:7px;
+      }
+    }
+
   </style>
 
 <style id="stonebridge-services-dropdown-shared">
@@ -925,6 +963,10 @@
           <p>Stonebridge considers clinical needs, clinician experience, availability, and telehealth appropriateness before recommending a next step.</p>
         </div>
 
+        <div class="team-careers-path">
+          <strong>Stonebridge is growing its clinician team.</strong>
+          <a href="careers.html">View current opportunities <span aria-hidden="true">→</span></a>
+        </div>
 
         <div class="team-professional-note">
           <strong>For professionals</strong>

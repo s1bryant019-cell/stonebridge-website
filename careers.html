@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Careers | Stonebridge Psychological Group</title>
+  <meta name="description" content="Explore therapist opportunities with Stonebridge Psychological Group, an Illinois telehealth practice built around thoughtful fit, clinical judgment, and sustainable outpatient work.">
+  <link rel="canonical" href="https://stonebridgepsychgroup.com/careers.html">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style id="stonebridge-careers-page-only">
+    :root{
+      --careers-bg:#FAF5EF;
+      --careers-paper:#E8DDCE;
+      --careers-navy:#0F2A45;
+      --careers-navy-soft:#163b61;
+      --careers-ink:#25282B;
+      --careers-muted:#5d6870;
+      --careers-gold:#B58A49;
+      --careers-line:rgba(37,40,43,.14);
+      --careers-white:#fffaf2;
+    }
+
+    body.careers-page{
+      margin:0;
+      background:var(--careers-bg);
+      color:var(--careers-ink);
+    }
+
+    .careers-shell{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+    }
+
+    .careers-kicker{
+      color:#8d6a38;
+      font-family:"Inter",sans-serif;
+      font-size:.67rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      line-height:1.35;
+      text-transform:uppercase;
+    }
+
+    .careers-hero{
+      background:var(--careers-bg);
+      border-bottom:1px solid rgba(212,200,185,.74);
+    }
+
+    .careers-hero-grid{
+      width:min(1180px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);
+      gap:64px;
+      align-items:center;
+      min-height:510px;
+      padding:54px 0;
+    }
+
+    .careers-hero-copy{
+      max-width:600px;
+    }
+
+    .careers-hero-rule{
+      width:42px;
+      height:1px;
+      margin-bottom:18px;
+      background:var(--careers-gold);
+    }
+
+    .careers-hero h1{
+      margin:10px 0 0;
+      max-width:11ch;
+      color:var(--careers-navy);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(3.25rem,4.4vw,4.65rem);
+      line-height:1.01;
+      letter-spacing:-.05em;
+      text-wrap:balance;
+    }
+
+    .careers-hero-copy > p{
+      max-width:35rem;
+      margin:18px 0 0;
+      color:var(--careers-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.98rem;
+      line-height:1.68;
+    }
+
+    .careers-hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:11px;
+      margin-top:25px;
+    }
+
+    .careers-hero-media{
+      position:relative;
+      margin:0;
+      min-height:350px;
+      overflow:hidden;
+      border:1px solid rgba(15,42,69,.14);
+      background:#e8ddce;
+    }
+
+    .careers-hero-media::after{
+      content:"";
+      position:absolute;
+      right:20px;
+      bottom:20px;
+      width:82px;
+      height:1px;
+      background:var(--careers-gold);
+    }
+
+    .careers-hero-media img{
+      width:100%;
+      height:100%;
+      min-height:350px;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .careers-overview{
+      background:#eee7de;
+      border-bottom:1px solid rgba(212,200,185,.76);
+    }
+
+    .careers-overview-grid{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      padding:18px 0;
+    }
+
+    .careers-overview article{
+      padding:0 24px;
+      border-left:1px solid var(--careers-line);
+    }
+
+    .careers-overview article:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .careers-overview h2{
+      margin:0 0 4px;
+      color:var(--careers-navy);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.12rem;
+      line-height:1.15;
+    }
+
+    .careers-overview p{
+      margin:0;
+      color:var(--careers-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.5;
+    }
+
+    .careers-section{
+      padding:58px 0 62px;
+    }
+
+    .careers-intro-grid{
+      display:grid;
+      grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
+      gap:66px;
+      align-items:start;
+    }
+
+    .careers-intro h2,
+    .careers-opening h2{
+      margin:11px 0 0;
+      color:var(--careers-navy);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.4rem,3.35vw,3.2rem);
+      line-height:1.05;
+      letter-spacing:-.04em;
+      text-wrap:balance;
+    }
+
+    .careers-intro h2{
+      max-width:12ch;
+    }
+
+    .careers-intro-copy > p{
+      max-width:44rem;
+      margin:0;
+      color:var(--careers-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.95rem;
+      line-height:1.7;
+    }
+
+    .careers-principles{
+      margin-top:25px;
+      border-top:1px solid var(--careers-line);
+    }
+
+    .careers-principle{
+      display:grid;
+      grid-template-columns:155px minmax(0,1fr);
+      gap:26px;
+      padding:16px 0;
+      border-bottom:1px solid var(--careers-line);
+    }
+
+    .careers-principle strong{
+      color:var(--careers-navy);
+      font-family:"Inter",sans-serif;
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.025em;
+    }
+
+    .careers-principle p{
+      margin:0;
+      color:var(--careers-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.88rem;
+      line-height:1.58;
+    }
+
+    .careers-opening{
+      padding:54px 0 58px;
+      background:var(--careers-navy);
+      color:var(--careers-white);
+    }
+
+    .careers-opening .careers-kicker{
+      color:#d8c095;
+    }
+
+    .careers-opening h2{
+      max-width:16ch;
+      color:var(--careers-white);
+    }
+
+    .careers-opening-copy{
+      max-width:48rem;
+      margin:16px 0 0;
+      color:rgba(255,250,242,.84);
+      font-family:"Inter",sans-serif;
+      font-size:.94rem;
+      line-height:1.68;
+    }
+
+    .careers-role-meta{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      margin-top:28px;
+      border-top:1px solid rgba(255,255,255,.20);
+      border-bottom:1px solid rgba(255,255,255,.20);
+    }
+
+    .careers-role-meta div{
+      padding:16px 20px 17px;
+      border-left:1px solid rgba(255,255,255,.18);
+    }
+
+    .careers-role-meta div:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .careers-role-meta span{
+      display:block;
+      color:#d8c095;
+      font-family:"Inter",sans-serif;
+      font-size:.6rem;
+      font-weight:800;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+
+    .careers-role-meta strong{
+      display:block;
+      margin-top:5px;
+      color:var(--careers-white);
+      font-family:"Inter",sans-serif;
+      font-size:.9rem;
+      font-weight:600;
+      line-height:1.4;
+    }
+
+    .careers-opening-bottom{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:44px;
+      margin-top:25px;
+    }
+
+    .careers-opening-bottom p{
+      max-width:47rem;
+      margin:0;
+      color:rgba(255,250,242,.78);
+      font-family:"Inter",sans-serif;
+      font-size:.86rem;
+      line-height:1.62;
+    }
+
+    .careers-opening .btn{
+      flex:0 0 auto;
+      background:#f4eee4;
+      border-color:#f4eee4;
+      color:var(--careers-navy);
+    }
+
+    .careers-opening .btn:hover{
+      background:#fffaf2;
+      border-color:#fffaf2;
+    }
+
+    .careers-note{
+      padding:34px 0 38px;
+      background:var(--careers-bg);
+      border-bottom:1px solid rgba(212,200,185,.74);
+    }
+
+    .careers-note-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+    }
+
+    .careers-note p{
+      max-width:52rem;
+      margin:0;
+      color:var(--careers-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.86rem;
+      line-height:1.6;
+    }
+
+    .careers-note a{
+      color:var(--careers-navy);
+      font-family:"Inter",sans-serif;
+      font-size:.78rem;
+      font-weight:700;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    .careers-note a:hover{
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    @media(max-width:920px){
+      .careers-hero-grid,
+      .careers-intro-grid{
+        grid-template-columns:1fr;
+        gap:32px;
+      }
+
+      .careers-hero-grid{
+        min-height:0;
+      }
+
+      .careers-hero-media{
+        min-height:300px;
+      }
+
+      .careers-role-meta{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .careers-role-meta div:nth-child(3){
+        padding-left:0;
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.18);
+      }
+
+      .careers-role-meta div:nth-child(4){
+        border-top:1px solid rgba(255,255,255,.18);
+      }
+    }
+
+    @media(max-width:760px){
+      .careers-shell,
+      .careers-hero-grid,
+      .careers-overview-grid{
+        width:min(100% - 34px,1080px);
+      }
+
+      .careers-hero-grid{
+        padding:42px 0;
+      }
+
+      .careers-hero h1{
+        font-size:clamp(3rem,13vw,4rem);
+      }
+
+      .careers-overview-grid{
+        grid-template-columns:1fr;
+        padding:0;
+      }
+
+      .careers-overview article,
+      .careers-overview article:first-child{
+        padding:14px 0;
+        border-left:0;
+        border-top:1px solid var(--careers-line);
+      }
+
+      .careers-overview article:first-child{
+        border-top:0;
+      }
+
+      .careers-principle{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+
+      .careers-role-meta{
+        grid-template-columns:1fr;
+      }
+
+      .careers-role-meta div,
+      .careers-role-meta div:first-child,
+      .careers-role-meta div:nth-child(3),
+      .careers-role-meta div:nth-child(4){
+        padding:13px 0;
+        border-left:0;
+        border-top:1px solid rgba(255,255,255,.18);
+      }
+
+      .careers-role-meta div:first-child{
+        border-top:0;
+      }
+
+      .careers-opening-bottom,
+      .careers-note-inner{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .careers-opening .btn{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+      }
+    }
+  </style>
+
+</head>
+<body class="careers-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header compact-site-header">
+    <div class="container nav">
+      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
+        <div class="brand-mark">STONEBRIDGE</div>
+        <div class="brand-sub">Psychological Group</div>
+      </a>
+
+      <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+
+      <div class="menu-wrap">
+        <nav class="menu" aria-label="Primary navigation">
+<a href="about.html" class="active" aria-current="page">About</a>
+  <a href="team.html">Team</a>
+  <div class="nav-dropdown services-nav-dropdown">
+    <div class="services-nav-main">
+      <a href="services.html">Services</a>
+      <button class="services-menu-toggle" type="button" aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu"><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button>
+    </div>
+    <div id="services-submenu" class="dropdown-menu services-dropdown-menu" role="menu" aria-label="Services" hidden>
+      <a href="services.html" role="menuitem">Services Overview</a>
+      <a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a>
+      <a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
+      <a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
+      <a href="family-therapy.html" role="menuitem">Family Therapy</a>
+      <a href="parent-support.html" role="menuitem">Parent Support</a>
+      <a href="group-therapy.html" role="menuitem">Group Therapy</a>
+    </div>
+  </div>
+  <a href="fees-insurance.html">Fees &amp; Insurance</a>
+  <a href="for-clinicians.html">Professionals</a>
+  <a href="careers.html" class="active" aria-current="page">Careers</a>
+  <a href="portal.html">Portal</a>
+</nav>
+        <div class="header-cta"><a class="btn btn-primary" href="contact.html">New Clients</a></div>
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main-content">
+    <section class="careers-hero">
+      <div class="careers-hero-grid">
+        <div class="careers-hero-copy">
+          <div class="careers-hero-rule"></div>
+          <div class="careers-kicker">Careers at Stonebridge</div>
+          <h1>Build a caseload around the work you care about.</h1>
+          <p>Stonebridge is growing a small group of clinicians who value thoughtful outpatient care, clinical judgment, and enough room to practice intentionally.</p>
+          <div class="careers-hero-actions">
+            <a class="btn btn-primary" href="#current-opening">View Current Opening</a>
+            <a class="btn btn-secondary" href="team.html">Meet the Team</a>
+          </div>
+        </div>
+
+        <figure class="careers-hero-media">
+          <picture class="sb-responsive-image" style="display:contents">
+            <source type="image/webp" srcset="hero-team-consultation-960.webp 960w, hero-team-consultation-1600.webp 1600w, hero-team-consultation-2000.webp 2000w" sizes="(max-width: 920px) 92vw, 52vw">
+            <img src="hero-team-consultation.jpg" alt="Warm, quiet clinical consultation space" width="2000" height="1116" loading="eager" decoding="async">
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <section class="careers-overview" aria-label="What clinicians can expect">
+      <div class="careers-overview-grid">
+        <article>
+          <h2>Fit over volume</h2>
+          <p>Caseload growth begins with clinical fit, scope, and availability.</p>
+        </article>
+        <article>
+          <h2>Clinical judgment</h2>
+          <p>Thoughtful individual styles and a range of clinical orientations are welcome.</p>
+        </article>
+        <article>
+          <h2>Sustainable work</h2>
+          <p>Good care needs room for documentation, reflection, consultation, and life outside work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="careers-section careers-intro">
+      <div class="careers-shell careers-intro-grid">
+        <div>
+          <div class="careers-kicker">A small practice by design</div>
+          <h2>Grow deliberately, not just quickly.</h2>
+        </div>
+
+        <div class="careers-intro-copy">
+          <p>Stonebridge is building its clinician team carefully rather than hiring for volume. The aim is to support thoughtful outpatient work while giving clinicians room to develop a caseload that reflects their strengths, interests, experience, and scope.</p>
+
+          <div class="careers-principles">
+            <div class="careers-principle">
+              <strong>Clinical voice</strong>
+              <p>There is room for different orientations and ways of thinking when the work is ethical, clinically grounded, and clearly communicated.</p>
+            </div>
+            <div class="careers-principle">
+              <strong>Clear structure</strong>
+              <p>Expectations around documentation, communication, boundaries, consultation, and practice operations should be understandable rather than improvised.</p>
+            </div>
+            <div class="careers-principle">
+              <strong>Thoughtful growth</strong>
+              <p>Stonebridge supports referral development and clinician visibility without promising an immediate caseload or forcing work that is not a good fit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="careers-opening" id="current-opening">
+      <div class="careers-shell">
+        <div class="careers-kicker">Current opening</div>
+        <h2>Therapist — Illinois Telehealth</h2>
+        <p class="careers-opening-copy">This part-time role is designed for a clinician who wants to develop an outpatient caseload around meaningful clinical interests while working within a small, consultation-minded practice.</p>
+
+        <div class="careers-role-meta" aria-label="Current therapist opening details">
+          <div>
+            <span>Schedule</span>
+            <strong>Part-time</strong>
+          </div>
+          <div>
+            <span>Hours</span>
+            <strong>5–15 hours / week</strong>
+          </div>
+          <div>
+            <span>Location</span>
+            <strong>Remote in Illinois</strong>
+          </div>
+          <div>
+            <span>Compensation</span>
+            <strong>$55–$95 / hour</strong>
+          </div>
+        </div>
+
+        <div class="careers-opening-bottom">
+          <p>Stonebridge welcomes a range of clinical orientations, including psychodynamic, relational, trauma-informed, cognitive-behavioral, family-systems, integrative, and other thoughtful approaches. Indeed hosts the complete job description and application.</p>
+          <a class="btn" href="https://www.indeed.com/job/therapist-dcc3ac4028419732" target="_blank" rel="noopener noreferrer">View Role &amp; Apply on Indeed</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="careers-note">
+      <div class="careers-shell careers-note-inner">
+        <p>Looking for professional consultation, supervision, writing review, or training rather than employment?</p>
+        <a href="for-clinicians.html">View Professional Offerings <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Care</div>
+        <div class="footer-links">
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="contact.html">New Clients</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Practice</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+            <a href="team-founder.html">Founder</a>
+          <a href="for-clinicians.html">Professionals</a>
+          <a href="careers.html">Careers</a>
+          <a href="portal.html">Client Portal</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <a href="tel:+17734171688">(773) 417-1688</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-logo-right">
+        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

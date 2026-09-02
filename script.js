@@ -63,6 +63,58 @@
     });
   }
 
+
+  function initCareersNavigation() {
+    var currentPath = (window.location.pathname || '').toLowerCase();
+    var onCareersPage = currentPath.endsWith('/careers.html') || currentPath.endsWith('careers.html');
+
+    document.querySelectorAll('.menu').forEach(function (menu) {
+      var homeLinks = Array.prototype.slice.call(menu.querySelectorAll('a')).filter(function (link) {
+        var href = (link.getAttribute('href') || '').toLowerCase();
+        var text = (link.textContent || '').trim().toLowerCase();
+        return text === 'home' && (href === 'index.html' || href === '/' || href === './' || href === '');
+      });
+
+      homeLinks.forEach(function (link) {
+        link.remove();
+      });
+
+      var careersLink = menu.querySelector('a[href="careers.html"]');
+      if (!careersLink) {
+        careersLink = document.createElement('a');
+        careersLink.href = 'careers.html';
+        careersLink.textContent = 'Careers';
+
+        var portalLink = menu.querySelector('a[href="portal.html"]');
+        if (portalLink) menu.insertBefore(careersLink, portalLink);
+        else menu.appendChild(careersLink);
+      }
+
+      if (onCareersPage) {
+        careersLink.classList.add('active');
+        careersLink.setAttribute('aria-current', 'page');
+      }
+    });
+
+    document.querySelectorAll('.site-footer').forEach(function (footer) {
+      var practiceTitle = Array.prototype.slice.call(footer.querySelectorAll('.footer-title')).find(function (title) {
+        return (title.textContent || '').trim().toLowerCase() === 'practice';
+      });
+      if (!practiceTitle) return;
+
+      var links = practiceTitle.parentElement ? practiceTitle.parentElement.querySelector('.footer-links') : null;
+      if (!links || links.querySelector('a[href="careers.html"]')) return;
+
+      var careersLink = document.createElement('a');
+      careersLink.href = 'careers.html';
+      careersLink.textContent = 'Careers';
+
+      var portalLink = links.querySelector('a[href="portal.html"]');
+      if (portalLink) links.insertBefore(careersLink, portalLink);
+      else links.appendChild(careersLink);
+    });
+  }
+
   function initSkipLinks() {
     document.querySelectorAll('.skip-link[href^="#"]').forEach(function (link) {
       link.addEventListener('click', function () {
@@ -75,6 +127,7 @@
   }
 
   function init() {
+    initCareersNavigation();
     initMenu();
     initSkipLinks();
   }
