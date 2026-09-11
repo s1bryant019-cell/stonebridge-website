@@ -901,7 +901,7 @@
                 <option>Adult Therapy</option>
                 <option>Adolescent Therapy</option>
                 <option>Group Therapy</option>
-                <option>The Lobby</option>
+                <option>The Lobby — Group Therapy</option>
                 <option>Couples Therapy</option>
                 <option>Family Therapy</option>
                 <option>Parent Support</option>
@@ -1094,7 +1094,7 @@
 
       var requestedService=new URLSearchParams(window.location.search).get('service');
       if(requestedService==='teen-group' && serviceCategory){
-        serviceCategory.value='The Lobby';
+        serviceCategory.value='The Lobby — Group Therapy';
       }
       syncServiceSelection();
 
