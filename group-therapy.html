@@ -1251,76 +1251,68 @@
     }
   </style>
 <style id="stonebridge-group-composition-final">
-  /* Final composition pass: clearer section rhythm and integrated photography. */
+  /* Final composition pass: one integrated program image, cleaner rhythm, no standalone media box. */
   #groups-forming{
-    padding:48px 0;
+    padding:64px 0;
   }
 
   #gameplay,
   #teen-group-focus,
   #how-groups-form,
   #before-joining{
-    padding-top:68px;
-    padding-bottom:68px;
+    padding-top:76px;
+    padding-bottom:76px;
   }
 
+  /* The Lobby image is the page's secondary architectural image treatment. */
+  .group-current-offering .group-offering-photo img{
+    object-position:64% center;
+  }
+
+  /* Gameplay stays content-led. Removing the weaker second photograph avoids a floating-image event. */
   #gameplay .group-editorial-grid{
-    width:min(1220px,calc(100% - 72px));
-    display:grid;
-    grid-template-columns:minmax(360px,.92fr) minmax(0,1.08fr);
-    gap:0;
-    align-items:stretch;
-    background:var(--group-paper);
-  }
-
-  #gameplay .group-editorial-photo{
-    order:0;
-    width:100%;
-    max-width:none;
-    min-height:500px;
-    height:100%;
-    margin:0;
-    aspect-ratio:auto;
-    overflow:hidden;
-    background:#d9d0c4;
-  }
-
-  #gameplay .group-editorial-photo img{
-    width:100%;
-    height:100%;
+    width:min(1080px,calc(100% - 72px));
     display:block;
-    object-fit:cover;
-    object-position:52% center;
+    background:transparent;
   }
 
   #gameplay .group-editorial-copy{
     max-width:none;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:54px clamp(34px,4.6vw,62px);
+    padding:0;
+  }
+
+  #gameplay .group-editorial-copy h2{
+    max-width:17ch;
+  }
+
+  #gameplay .group-editorial-copy > p{
+    max-width:52rem;
+    font-size:1rem;
+    line-height:1.7;
+  }
+
+  #gameplay .group-topic-list{
+    max-width:58rem;
+    margin-top:26px;
   }
 
   @media(max-width:1040px){
+    #groups-forming{padding:50px 0;}
+    #gameplay,
+    #teen-group-focus,
+    #how-groups-form,
+    #before-joining{padding-top:62px;padding-bottom:62px;}
+    #gameplay .group-editorial-grid{width:min(100% - 56px,1080px);}
+  }
+
+  @media(max-width:720px){
     #groups-forming{padding:38px 0;}
     #gameplay,
     #teen-group-focus,
     #how-groups-form,
-    #before-joining{padding-top:56px;padding-bottom:56px;}
-    #gameplay .group-editorial-grid{grid-template-columns:1fr;}
-    #gameplay .group-editorial-photo{min-height:0;aspect-ratio:16/8.5;}
-    #gameplay .group-editorial-copy{padding:40px clamp(28px,5vw,48px) 44px;}
-  }
-
-  @media(max-width:720px){
-    #groups-forming{padding:28px 0;}
-    #gameplay,
-    #teen-group-focus,
-    #how-groups-form,
-    #before-joining{padding-top:46px;padding-bottom:46px;}
-    #gameplay .group-editorial-grid{width:min(100% - 36px,1220px);}
-    #gameplay .group-editorial-photo{aspect-ratio:4/3;}
-    #gameplay .group-editorial-copy{padding:30px 22px 34px;}
+    #before-joining{padding-top:50px;padding-bottom:50px;}
+    #gameplay .group-editorial-grid{width:min(100% - 36px,1080px);}
+    #gameplay .group-topic-list{grid-template-columns:1fr;}
   }
 </style>
 <style>
@@ -1532,9 +1524,6 @@
 
 <section class="group-section" id="gameplay">
 <div class="group-shell group-editorial-grid">
-<figure class="group-editorial-photo">
-<img alt="Warm home workspace with a laptop displaying a cooperative farming game" decoding="async" height="941" loading="lazy" src="teen-cooperative-group-desk.jpg" width="1672" onerror="this.closest('.group-editorial-photo').classList.add('image-unavailable'); this.remove();"/>
-</figure>
 <div class="group-editorial-copy">
 <div class="group-label">How cooperative gameplay helps</div>
 <h2>A shared activity creates something real to work with.</h2>
@@ -1568,7 +1557,7 @@
 <p>For teens whose goals may include reducing withdrawal, increasing social initiation and participation, behavioral activation, contribution, and reconnecting with peers.</p>
 </article>
 </div>
-<p class="group-suitability-note"><strong>Clinical scope:</strong> The Lobby is designed for adolescents appropriate for routine outpatient telehealth group psychotherapy; a different service may be recommended when safety or monitoring needs exceed the group format.</p>
+<p class="group-suitability-note"><strong>Clinical scope:</strong> The Lobby is for adolescents appropriate for routine outpatient telehealth group psychotherapy. Stonebridge may recommend another service when safety or monitoring needs exceed the group format.</p>
 </div>
 </section>
 
@@ -1580,7 +1569,7 @@
 </div>
 <div class="group-steps group-steps-compact">
 <article class="group-step"><div class="group-step-label">Step 01</div><div><h3>Inquire</h3><p>Request a consultation and share general scheduling availability.</p></div></article>
-<article class="group-step"><div class="group-step-label">Step 02</div><div><h3>Review</h3><p>Stonebridge reviews treatment goals, developmental fit, outpatient appropriateness, and readiness for the group format.</p></div></article>
+<article class="group-step"><div class="group-step-label">Step 02</div><div><h3>Review</h3><p>Stonebridge reviews treatment goals, group readiness, and whether the format is appropriate.</p></div></article>
 <article class="group-step"><div class="group-step-label">Step 03</div><div><h3>Form &amp; prepare</h3><p>Once a viable cohort is identified, Stonebridge coordinates the meeting time and completes consent, assent, expectations, and technology orientation before the first session.</p></div></article>
 </div>
 </div>
@@ -1604,7 +1593,7 @@
 <div class="group-cta-inner">
 <div>
 <h2>Interested in The Lobby?</h2>
-<p>Request a consultation to share general availability and begin screening. An inquiry does not guarantee placement or a specific start date.</p>
+<p>Request a consultation to share general availability and begin screening. An inquiry does not guarantee placement or a start date.</p>
 </div>
 <a class="btn btn-secondary" href="contact.html?service=teen-group#inquiry-form">Request a Consultation</a>
 </div>
