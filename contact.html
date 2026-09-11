@@ -438,9 +438,6 @@
       overflow:hidden !important;
     }
 
-    .contact-group-interest[hidden]{
-      display:none !important;
-    }
 
     .contact-form-alert{
       display:none;
@@ -907,18 +904,10 @@
                 <option>Family Therapy</option>
                 <option>Parent Support</option>
                 <option>Group Therapy</option>
+                <option>Teen Cooperative Telehealth Group</option>
                 <option>Unsure / Fit Review</option>
               </select>
               <input type="hidden" name="serviceRequested" id="service-requested" value="">
-            </label>
-
-            <label class="contact-group-interest" id="group-interest-field" hidden>
-              <span>Which group? *</span>
-              <select name="groupInterest" id="group-interest">
-                <option value="">Select one</option>
-                <option value="general">General group inquiry</option>
-                <option value="teen">Teen cooperative group</option>
-              </select>
             </label>
 
             <label>
@@ -1095,38 +1084,17 @@
       var submitButton=document.getElementById('submitButton');
       var serviceCategory=document.getElementById('service-category');
       var serviceRequested=document.getElementById('service-requested');
-      var groupInterestField=document.getElementById('group-interest-field');
-      var groupInterest=document.getElementById('group-interest');
 
       function syncServiceSelection(){
         if(!serviceCategory || !serviceRequested)return;
-
-        var isGroup=serviceCategory.value==='Group Therapy';
-        if(groupInterestField) groupInterestField.hidden=!isGroup;
-        if(groupInterest) groupInterest.required=isGroup;
-
-        if(!isGroup){
-          if(groupInterest) groupInterest.value='';
-          serviceRequested.value=serviceCategory.value;
-          return;
-        }
-
-        if(groupInterest && groupInterest.value==='teen'){
-          serviceRequested.value='Teen Cooperative Telehealth Group — Interest Inquiry';
-        }else if(groupInterest && groupInterest.value==='general'){
-          serviceRequested.value='Group Therapy — general inquiry';
-        }else{
-          serviceRequested.value='';
-        }
+        serviceRequested.value=serviceCategory.value;
       }
 
       if(serviceCategory) serviceCategory.addEventListener('change',syncServiceSelection);
-      if(groupInterest) groupInterest.addEventListener('change',syncServiceSelection);
 
       var requestedService=new URLSearchParams(window.location.search).get('service');
-      if(requestedService==='teen-group' && serviceCategory && groupInterest){
-        serviceCategory.value='Group Therapy';
-        groupInterest.value='teen';
+      if(requestedService==='teen-group' && serviceCategory){
+        serviceCategory.value='Teen Cooperative Telehealth Group';
       }
       syncServiceSelection();
 
