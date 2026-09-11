@@ -438,6 +438,10 @@
       overflow:hidden !important;
     }
 
+    .contact-group-interest[hidden]{
+      display:none !important;
+    }
+
     .contact-form-alert{
       display:none;
       margin-top:18px;
@@ -895,16 +899,25 @@
 
             <label>
               <span>What are you reaching out about? *</span>
-              <select name="serviceRequested" required>
+              <select name="serviceCategory" id="service-category" required>
                 <option value="">Select one</option>
                 <option>Adult Therapy</option>
                 <option>Adolescent Therapy</option>
                 <option>Couples Therapy</option>
                 <option>Family Therapy</option>
                 <option>Parent Support</option>
-                <option>Group Therapy — general inquiry</option>
-                <option>Teen Cooperative Telehealth Group — Interest Inquiry</option>
+                <option>Group Therapy</option>
                 <option>Unsure / Fit Review</option>
+              </select>
+              <input type="hidden" name="serviceRequested" id="service-requested" value="">
+            </label>
+
+            <label class="contact-group-interest" id="group-interest-field" hidden>
+              <span>Which group? *</span>
+              <select name="groupInterest" id="group-interest">
+                <option value="">Select one</option>
+                <option value="general">General group inquiry</option>
+                <option value="teen">Teen cooperative group</option>
               </select>
             </label>
 
@@ -1080,11 +1093,42 @@
 
       var alertBox=document.getElementById('form-alert');
       var submitButton=document.getElementById('submitButton');
-      var requestedService=new URLSearchParams(window.location.search).get('service');
-      if(requestedService==='teen-group'){
-        var serviceSelect=form.querySelector('[name="serviceRequested"]');
-        if(serviceSelect) serviceSelect.value='Teen Cooperative Telehealth Group — Interest Inquiry';
+      var serviceCategory=document.getElementById('service-category');
+      var serviceRequested=document.getElementById('service-requested');
+      var groupInterestField=document.getElementById('group-interest-field');
+      var groupInterest=document.getElementById('group-interest');
+
+      function syncServiceSelection(){
+        if(!serviceCategory || !serviceRequested)return;
+
+        var isGroup=serviceCategory.value==='Group Therapy';
+        if(groupInterestField) groupInterestField.hidden=!isGroup;
+        if(groupInterest) groupInterest.required=isGroup;
+
+        if(!isGroup){
+          if(groupInterest) groupInterest.value='';
+          serviceRequested.value=serviceCategory.value;
+          return;
+        }
+
+        if(groupInterest && groupInterest.value==='teen'){
+          serviceRequested.value='Teen Cooperative Telehealth Group — Interest Inquiry';
+        }else if(groupInterest && groupInterest.value==='general'){
+          serviceRequested.value='Group Therapy — general inquiry';
+        }else{
+          serviceRequested.value='';
+        }
       }
+
+      if(serviceCategory) serviceCategory.addEventListener('change',syncServiceSelection);
+      if(groupInterest) groupInterest.addEventListener('change',syncServiceSelection);
+
+      var requestedService=new URLSearchParams(window.location.search).get('service');
+      if(requestedService==='teen-group' && serviceCategory && groupInterest){
+        serviceCategory.value='Group Therapy';
+        groupInterest.value='teen';
+      }
+      syncServiceSelection();
 
       function showAlert(message){
         if(!alertBox)return;
@@ -1144,6 +1188,7 @@
           if(!response.ok)throw new Error('Request failed');
 
           form.reset();
+          syncServiceSelection();
           showAlert('Your consultation request has been received. Consultation requests are typically reviewed within 1–2 business days. A member of Stonebridge will contact you to confirm a consultation time. Submitting this request does not create or confirm a clinical appointment.');
         }catch(error){
           showAlert('The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.');
