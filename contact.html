@@ -904,7 +904,7 @@
                 <option>Family Therapy</option>
                 <option>Parent Support</option>
                 <option>Group Therapy</option>
-                <option>Teen Cooperative Telehealth Group</option>
+                <option>The Lobby</option>
                 <option>Unsure / Fit Review</option>
               </select>
               <input type="hidden" name="serviceRequested" id="service-requested" value="">
@@ -1094,7 +1094,7 @@
 
       var requestedService=new URLSearchParams(window.location.search).get('service');
       if(requestedService==='teen-group' && serviceCategory){
-        serviceCategory.value='Teen Cooperative Telehealth Group';
+        serviceCategory.value='The Lobby';
       }
       syncServiceSelection();
 
