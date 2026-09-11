@@ -428,6 +428,51 @@
       padding-top:20px;
     }
 
+
+
+    .individual-related-group{
+      background:var(--individual-bg);
+      border-bottom:1px solid var(--individual-warm-line);
+    }
+
+    .individual-related-group-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:180px minmax(0,1fr);
+      gap:42px;
+      align-items:start;
+      padding:26px 0;
+    }
+
+    .individual-related-group strong{
+      color:var(--individual-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.27rem;
+      line-height:1.15;
+    }
+
+    .individual-related-group p{
+      max-width:49rem;
+      margin:0;
+      color:var(--individual-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.89rem;
+      line-height:1.62;
+    }
+
+    .individual-related-group a{
+      display:inline-block;
+      margin-top:9px;
+      color:var(--individual-navy-deep);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.025em;
+      text-underline-offset:3px;
+    }
+
+
     .individual-cta{
       background:linear-gradient(135deg,var(--individual-navy),var(--individual-navy-deep));
       color:var(--individual-white);
@@ -599,6 +644,7 @@
       .individual-focus-layout,
       .individual-process,
       .individual-boundary-inner,
+      .individual-related-group-inner,
       .individual-cta-inner{grid-template-columns:1fr;}
 
       .individual-intro-grid,
@@ -606,6 +652,7 @@
       .individual-process{gap:26px;}
 
       .individual-boundary-inner,
+      .individual-related-group-inner,
       .individual-cta-inner{gap:14px;}
     }
 
@@ -654,6 +701,7 @@
       .individual-shell,
       .individual-overview-grid,
       .individual-boundary-inner,
+      .individual-related-group-inner,
       .individual-cta-inner{
         width:min(100% - 34px,1080px);
       }
@@ -1006,6 +1054,15 @@
 <div class="individual-boundary-inner">
 <strong>Adolescent therapy has a clear but flexible frame</strong>
 <p>The adolescent is the primary individual client. Caregivers remain important partners, but parent involvement is structured according to the teen’s age, safety, clinical needs, treatment goals, and applicable privacy requirements. This differs from family therapy, where the relationship system is the primary focus, and from parent support, where the parent is receiving consultation or education.</p>
+</div>
+</section>
+<section aria-label="Related adolescent group option" class="individual-related-group">
+<div class="individual-related-group-inner">
+<strong>A teen group option</strong>
+<div>
+<p>Stonebridge is also gathering interest for a small, therapist-led adolescent telehealth group that uses cooperative gameplay as a structured setting for practicing connection, communication, flexibility, collaboration, and participation. Placement follows a separate clinical screening and cohort-matching process.</p>
+<a href="group-therapy.html#teen-cooperative-group">Explore the Teen Cooperative Telehealth Group</a>
+</div>
 </div>
 </section>
 <section class="individual-section paper">

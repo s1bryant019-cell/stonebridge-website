@@ -902,7 +902,8 @@
                 <option>Couples Therapy</option>
                 <option>Family Therapy</option>
                 <option>Parent Support</option>
-                <option>Group Therapy — no current openings</option>
+                <option>Group Therapy — general inquiry</option>
+                <option>Teen Cooperative Telehealth Group — Interest Inquiry</option>
                 <option>Unsure / Fit Review</option>
               </select>
             </label>
@@ -1079,6 +1080,11 @@
 
       var alertBox=document.getElementById('form-alert');
       var submitButton=document.getElementById('submitButton');
+      var requestedService=new URLSearchParams(window.location.search).get('service');
+      if(requestedService==='teen-group'){
+        var serviceSelect=form.querySelector('[name="serviceRequested"]');
+        if(serviceSelect) serviceSelect.value='Teen Cooperative Telehealth Group — Interest Inquiry';
+      }
 
       function showAlert(message){
         if(!alertBox)return;
