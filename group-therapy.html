@@ -783,6 +783,7 @@
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       margin:22px 0 0;
+      padding:0;
       border-top:1px solid var(--group-line);
     }
 
@@ -797,9 +798,9 @@
       border-left:1px solid var(--group-line);
     }
 
-    .group-offering-fact strong{
+    .group-offering-fact dt{
       display:block;
-      margin-bottom:4px;
+      margin:0 0 4px;
       color:var(--group-gold);
       font-family:"Inter",sans-serif;
       font-size:.64rem;
@@ -808,12 +809,20 @@
       text-transform:uppercase;
     }
 
-    .group-offering-fact span{
+    .group-offering-fact dd{
       display:block;
+      margin:0;
       color:var(--group-muted);
       font-family:"Inter",sans-serif;
       font-size:.83rem;
       line-height:1.5;
+    }
+
+    .group-offering-fact dd a{
+      color:var(--group-navy);
+      font-weight:700;
+      text-underline-offset:3px;
+      text-decoration-thickness:1px;
     }
 
     .group-offering-actions{
@@ -899,10 +908,59 @@
 
     .group-editorial-copy .group-topic-list{margin-top:20px;}
 
+    .group-family-layout{
+      display:grid;
+      grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);
+      gap:56px;
+      align-items:start;
+    }
+
+    .group-family-facts{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      border-top:1px solid var(--group-line);
+    }
+
+    .group-family-fact{
+      padding:20px 24px 20px 0;
+      border-bottom:1px solid var(--group-line);
+    }
+
+    .group-family-fact:nth-child(even):not(.group-family-fact-wide){
+      padding-right:0;
+      padding-left:24px;
+      border-left:1px solid var(--group-line);
+    }
+
+    .group-family-fact-wide{
+      grid-column:1 / -1;
+      padding-right:0;
+    }
+
+    .group-family-fact strong{
+      display:block;
+      margin-bottom:7px;
+      color:var(--group-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.66rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .group-family-fact p{
+      margin:0;
+      color:var(--group-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.88rem;
+      line-height:1.62;
+    }
+
     @media(max-width:1040px){
       .group-offerings-intro,
       .group-offering-card,
-      .group-editorial-grid{
+      .group-editorial-grid,
+      .group-family-layout{
         grid-template-columns:1fr;
       }
 
@@ -910,16 +968,24 @@
       .group-offering-copy{padding:30px 0 28px;}
       .group-offering-photo{min-height:0;aspect-ratio:16/8.5;}
       .group-editorial-grid{gap:28px;}
+      .group-family-layout{gap:28px;}
       .group-editorial-photo{min-height:0;aspect-ratio:16/9;}
     }
 
     @media(max-width:720px){
-      .group-offering-facts{grid-template-columns:1fr;}
+      .group-offering-facts,
+      .group-family-facts{grid-template-columns:1fr;}
       .group-offering-fact,
       .group-offering-fact:nth-child(even){
         padding:13px 0;
         border-left:0;
       }
+      .group-family-fact,
+      .group-family-fact:nth-child(even):not(.group-family-fact-wide){
+        padding:16px 0;
+        border-left:0;
+      }
+      .group-family-fact-wide{grid-column:auto;}
       .group-offering-actions .btn{width:100%;justify-content:center;text-align:center;}
       .group-offering-photo{aspect-ratio:4/3;}
       .group-editorial-photo{aspect-ratio:4/3;}
@@ -1127,9 +1193,9 @@
 <div class="group-offerings-intro">
 <div>
 <div class="group-label">Current &amp; forming groups</div>
-<h2>A focused adolescent cohort is currently being developed.</h2>
+<h2>One adolescent telehealth group is currently forming.</h2>
 </div>
-<p>Stonebridge is gathering interest for a small, closed telehealth psychotherapy group for teens. Families begin with consultation and screening; a cohort is formed only when clinical fit, developmental fit, and availability align.</p>
+<p>The offering below is the current group-therapy opportunity at Stonebridge. Its practical details are gathered here first so families can quickly decide whether a consultation makes sense.</p>
 </div>
 
 <article class="group-offering-card">
@@ -1137,21 +1203,23 @@
 <div class="group-feature-label">Adolescent telehealth psychotherapy</div>
 <h3>Teen Cooperative Telehealth Group</h3>
 <p>Therapist-led group psychotherapy using cooperative <em>Stardew Valley</em> gameplay as a structured setting for practicing connection, communication, flexibility, collaboration, and participation.</p>
-<p>Participants remain connected through Stonebridge’s clinical telehealth system for the full session. The game provides shared activity and live interpersonal material; it is not the clinical communication platform.</p>
 <p class="group-offering-principle">The game is the medium. The psychotherapy is the service.</p>
 
-<div class="group-offering-facts" aria-label="Teen group overview">
-<div class="group-offering-fact"><strong>Cohort</strong><span>One Stonebridge clinician with approximately 3–4 teens.</span></div>
-<div class="group-offering-fact"><strong>Age &amp; placement</strong><span>Possible age bands of 13–15 and 14–17, with placement based on developmental and clinical fit.</span></div>
-<div class="group-offering-fact"><strong>Format</strong><span>Closed telehealth cohort rather than drop-in or rolling membership.</span></div>
-<div class="group-offering-fact"><strong>Schedule</strong><span>Weeknight or weekend, based on compatible participant availability.</span></div>
-</div>
+<dl class="group-offering-facts" aria-label="Teen Cooperative Telehealth Group practical details">
+<div class="group-offering-fact"><dt>Status</dt><dd>Gathering interest for the initial cohort.</dd></div>
+<div class="group-offering-fact"><dt>Format</dt><dd>Closed telehealth psychotherapy group.</dd></div>
+<div class="group-offering-fact"><dt>Cohort</dt><dd>Approximately 3–4 teens with one Stonebridge clinician.</dd></div>
+<div class="group-offering-fact"><dt>Age</dt><dd>Developmentally matched; likely 13–15 or 14–17 depending on the adolescents who are clinically appropriate and available.</dd></div>
+<div class="group-offering-fact"><dt>Schedule</dt><dd>Weeknight or weekend, coordinated after a cohort is matched.</dd></div>
+<div class="group-offering-fact"><dt>Technology</dt><dd>Computer, Steam, a PC copy of <em>Stardew Valley</em>, reliable internet, and Stonebridge telehealth access.</dd></div>
+<div class="group-offering-fact"><dt>Fees</dt><dd><a href="fees-insurance.html">View group fees &amp; insurance</a></dd></div>
+<div class="group-offering-fact"><dt>Next step</dt><dd>Request a consultation to begin screening and availability matching.</dd></div>
+</dl>
 
 <div class="group-offering-actions">
 <a class="btn btn-primary" href="contact.html?service=teen-group#inquiry-form">Request a Consultation</a>
-<a class="btn btn-secondary" href="#teen-group-fit">How Fit Is Considered</a>
+<a class="btn btn-secondary" href="#how-groups-form">How Cohort Formation Works</a>
 </div>
-<p class="group-offering-note">Submitting an inquiry begins screening and availability matching. It does not guarantee admission, cohort placement, or a specific start date.</p>
 </div>
 
 <figure class="group-offering-photo">
@@ -1182,14 +1250,13 @@
 </div>
 </section>
 
-<section class="group-section paper" id="teen-group-fit">
+<section class="group-section paper" id="teen-group-focus">
 <div class="group-shell group-value-layout">
 <div class="group-value-intro">
-<div class="group-label">Possible clinical pathways</div>
-<h2>Placement follows fit, not a self-selected label.</h2>
-<p>Families do not need to decide which version of the group is appropriate. Stonebridge considers treatment goals, developmental level, current safety needs, group readiness, and cohort composition during screening.</p>
+<div class="group-label">Possible areas of focus</div>
+<h2>The emphasis is determined through screening, not self-selection.</h2>
+<p>Families do not need to choose a track. The clinical emphasis depends on the teen’s treatment goals, developmental level, and the adolescents who ultimately make up the cohort.</p>
 </div>
-<div>
 <div class="group-point-grid">
 <article class="group-point">
 <div class="group-point-label">Peer interaction</div>
@@ -1202,8 +1269,6 @@
 <p>Potential targets include behavioral activation, social initiation, participation, contribution, tolerating awkwardness, confidence with peers, enjoyment, accomplishment, and reconnecting after withdrawal.</p>
 </article>
 </div>
-<p class="group-concept-note">The group is intended for adolescents appropriate for routine outpatient group psychotherapy who can participate safely through telehealth without continuous individualized monitoring.</p>
-</div>
 </div>
 </section>
 
@@ -1211,61 +1276,30 @@
 <div class="group-shell group-process">
 <div class="group-process-heading">
 <div class="group-label">How closed groups form</div>
-<h2>A cohort begins only after fit and availability align.</h2>
+<h2>Screening and scheduling shape the cohort.</h2>
 </div>
 <div class="group-steps">
-<article class="group-step"><div class="group-step-label">Step 01</div><div><h3>Share interest</h3><p>A parent, teen, or referring professional can begin with a consultation request and general scheduling availability.</p></div></article>
-<article class="group-step"><div class="group-step-label">Step 02</div><div><h3>Review clinical fit</h3><p>Stonebridge considers developmental fit, treatment targets, current level of care, group readiness, privacy at home, and whether this modality is likely to be useful.</p></div></article>
-<article class="group-step"><div class="group-step-label">Step 03</div><div><h3>Match the cohort</h3><p>Once approximately 3–4 clinically appropriate teens have compatible availability, Stonebridge coordinates a consistent weeknight or weekend meeting time.</p></div></article>
-<article class="group-step"><div class="group-step-label">Step 04</div><div><h3>Prepare for the group</h3><p>Before the first clinical session, Stonebridge reviews consent and assent, group expectations, privacy limitations, and required technology orientation.</p></div></article>
+<article class="group-step"><div class="group-step-label">Step 01</div><div><h3>Share interest</h3><p>A parent, teen, or referring professional begins with a consultation request and general scheduling availability.</p></div></article>
+<article class="group-step"><div class="group-step-label">Step 02</div><div><h3>Complete screening</h3><p>Stonebridge considers developmental level, treatment goals, current level of care, group readiness, and whether the format is clinically appropriate.</p></div></article>
+<article class="group-step"><div class="group-step-label">Step 03</div><div><h3>Match the cohort</h3><p>When approximately 3–4 appropriate teens have compatible availability, Stonebridge coordinates a consistent weeknight or weekend meeting time.</p></div></article>
+<article class="group-step"><div class="group-step-label">Step 04</div><div><h3>Prepare for the group</h3><p>Before the first clinical session, Stonebridge reviews consent and assent, participation expectations, privacy limitations, and the required technology orientation.</p></div></article>
 </div>
 </div>
 </section>
 
 <section class="group-section paper">
-<div class="group-shell group-value-layout">
+<div class="group-shell group-family-layout">
 <div class="group-value-intro">
 <div class="group-label">What families should know</div>
 <h2>The clinical setting and the game serve different roles.</h2>
-<p>The technology requirements matter, but they should not obscure the central point: Stonebridge is providing psychotherapy. Steam and <em>Stardew Valley</em> are third-party consumer services used as part of the structured activity.</p>
+<p>Stonebridge provides the psychotherapy through its clinical systems. Steam and <em>Stardew Valley</em> are third-party consumer services used only as part of the structured activity.</p>
 </div>
-<div class="group-point-grid">
-<article class="group-point">
-<div class="group-point-label">Technology</div>
-<h3>Participants provide their own equipment and game access.</h3>
-<p>A compatible computer, reliable internet, Zoom access, a working microphone or headphones as needed, a valid Steam account, and a legitimate PC copy of <em>Stardew Valley</em> are required. Families are responsible for purchasing and maintaining the required technology.</p>
-</article>
-<article class="group-point">
-<div class="group-point-label">Clinical platform</div>
-<h3>Therapeutic communication stays within Stonebridge’s clinical systems.</h3>
-<p>Participants remain connected through Stonebridge’s approved telehealth environment. Stonebridge does not represent Steam or <em>Stardew Valley</em> as HIPAA-compliant clinical platforms.</p>
-</article>
-<article class="group-point">
-<div class="group-point-label">Privacy expectations</div>
-<h3>Online participation has clear boundaries.</h3>
-<p>Participants may be asked to use neutral gaming display names and appropriate privacy settings. Group expectations include no screenshots, recording, streaming, or sharing another participant’s information.</p>
-</article>
-<article class="group-point">
-<div class="group-point-label">Parent &amp; teen process</div>
-<h3>Guardian consent and adolescent assent are required.</h3>
-<p>Parents do not ordinarily participate in the group session itself. Before enrollment, Stonebridge reviews group confidentiality, technology limitations, participation expectations, and the caregiver role.</p>
-</article>
-</div>
-</div>
-</section>
-
-<section aria-label="Scope of group therapy" class="group-boundary">
-<div class="group-boundary-inner">
-<strong>Scope and boundaries</strong>
-<p>Group therapy is not crisis care, detoxification, withdrawal management, an intensive outpatient program, medical addiction treatment, or a substitute for a higher level of care when one is needed. The teen cooperative group is intended for adolescents who can participate safely in routine outpatient telehealth group psychotherapy. Privacy and respectful participation are required, but confidentiality in a group also depends on each member honoring the agreements reviewed before enrollment.</p>
-</div>
-</section>
-
-<section class="group-section">
-<div class="group-shell">
-<div class="group-availability">
-<strong>Current availability</strong>
-<p>Stonebridge is currently gathering interest for an initial Teen Cooperative Telehealth Group. A cohort will begin only when a clinically appropriate group of approximately 3–4 teens can be matched with compatible availability. Other Stonebridge therapy groups are not currently open for enrollment.</p>
+<div class="group-family-facts" aria-label="Technology, privacy, consent, and clinical scope">
+<div class="group-family-fact"><strong>Technology</strong><p>Participants need a compatible computer, reliable internet, Stonebridge telehealth access, working audio, a valid Steam account, and a legitimate PC copy of <em>Stardew Valley</em>. Families provide and maintain the required technology.</p></div>
+<div class="group-family-fact"><strong>Clinical platform</strong><p>Therapeutic communication remains within Stonebridge’s approved clinical environment. Stonebridge does not represent Steam or <em>Stardew Valley</em> as HIPAA-compliant clinical platforms.</p></div>
+<div class="group-family-fact"><strong>Privacy expectations</strong><p>Participants may be asked to use neutral gaming display names and appropriate privacy settings. Screenshots, recording, streaming, and sharing another participant’s information are not permitted.</p></div>
+<div class="group-family-fact"><strong>Parent &amp; teen process</strong><p>Guardian consent and adolescent assent are required. Parents do not ordinarily participate in sessions; confidentiality, technology limitations, participation expectations, and caregiver roles are reviewed before enrollment.</p></div>
+<div class="group-family-fact group-family-fact-wide"><strong>Clinical scope</strong><p>This group is intended for adolescents who can participate safely in routine outpatient telehealth group psychotherapy without continuous individualized monitoring. It is not crisis care or a substitute for a higher level of care when one is needed. Group confidentiality also depends on each member honoring the agreements reviewed before enrollment.</p></div>
 </div>
 </div>
 </section>
@@ -1274,7 +1308,7 @@
 <div class="group-cta-inner">
 <div>
 <h2>Consultation first. Fit matters.</h2>
-<p>Share the concern, your teen’s general availability, and your interest in the cooperative telehealth group. Stonebridge will review clinical fit, answer questions, and explain whether there is a reasonable next step.</p>
+<p>Share the concern, your teen’s general availability, and your interest in the cooperative telehealth group. An inquiry begins screening and coordination; it does not guarantee placement or a specific start date.</p>
 </div>
 <a class="btn btn-secondary" href="contact.html?service=teen-group#inquiry-form">Request a Consultation</a>
 </div>
