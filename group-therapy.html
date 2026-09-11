@@ -992,6 +992,130 @@
       .group-editorial-photo{aspect-ratio:4/3;}
     }
 
+    /* Group Therapy compression update — fewer conceptual layers, stronger practical hierarchy. */
+    .group-section{padding:52px 0;}
+
+    .group-current-offering{
+      border-top:0;
+      border-bottom:0;
+      background:transparent;
+    }
+
+    .group-current-offering .group-offering-copy{padding-top:8px;}
+
+    .group-offering-copy h2{
+      margin:8px 0 12px;
+      max-width:18ch;
+      color:var(--group-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.2rem,3.1vw,2.95rem);
+      line-height:1.03;
+      letter-spacing:-.035em;
+      text-wrap:balance;
+    }
+
+    .group-offering-fact-wide{grid-column:1 / -1;padding-right:0;}
+
+    .group-editorial-copy > p,
+    .group-focus-header > p,
+    .group-suitability-note,
+    .group-before-header > p{font-size:1rem;line-height:1.68;}
+
+    .group-focus-compact,
+    .group-process-compact,
+    .group-before-joining{display:block;}
+
+    .group-focus-header,
+    .group-process-compact-heading,
+    .group-before-header{max-width:48rem;margin-bottom:25px;}
+
+    .group-focus-header h2,
+    .group-process-compact-heading h2,
+    .group-before-header h2{
+      margin:11px 0 0;
+      max-width:22ch;
+      color:var(--group-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2rem,2.8vw,2.7rem);
+      line-height:1.05;
+      letter-spacing:-.032em;
+      text-wrap:balance;
+    }
+
+    .group-focus-header > p{
+      max-width:44rem;
+      margin:13px 0 0;
+      color:var(--group-muted);
+      font-family:"Inter",sans-serif;
+    }
+
+    .group-suitability-note{
+      margin:20px 0 0;
+      padding:16px 18px;
+      border-left:2px solid rgba(120,97,63,.44);
+      background:rgba(255,250,242,.44);
+      color:var(--group-muted);
+      font-family:"Inter",sans-serif;
+    }
+
+    .group-suitability-note strong{color:var(--group-ink);}
+
+    .group-steps-compact{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      border-top:1px solid var(--group-line);
+      border-bottom:1px solid var(--group-line);
+    }
+
+    .group-steps-compact .group-step{
+      display:block;
+      padding:21px 24px;
+      border-bottom:0;
+      border-left:1px solid var(--group-line);
+    }
+
+    .group-steps-compact .group-step:first-child{padding-left:0;border-left:0;}
+    .group-steps-compact .group-step:last-child{padding-right:0;}
+
+    .group-before-header{margin-bottom:20px;}
+
+    .group-before-header h2{max-width:18ch;}
+
+    .group-family-fact p,
+    .group-point p,
+    .group-step p,
+    .group-offering-fact dd{font-size:.92rem;}
+
+    @media(max-width:1120px){
+      .group-offering-card,
+      .group-editorial-grid{grid-template-columns:1fr;}
+
+      .group-offering-copy{padding:20px 0 28px;}
+      .group-offering-photo{aspect-ratio:16/8.5;min-height:0;}
+      .group-editorial-grid{gap:26px;}
+      .group-editorial-photo{aspect-ratio:4/3;max-width:760px;}
+    }
+
+    @media(max-width:900px){
+      .group-steps-compact{grid-template-columns:1fr;}
+      .group-steps-compact .group-step,
+      .group-steps-compact .group-step:first-child,
+      .group-steps-compact .group-step:last-child{
+        padding:18px 0;
+        border-left:0;
+        border-bottom:1px solid var(--group-line);
+      }
+      .group-steps-compact .group-step:last-child{border-bottom:0;}
+    }
+
+    @media(max-width:720px){
+      .group-section{padding:40px 0;}
+      .group-offering-fact-wide{grid-column:auto;}
+      .group-focus-header,
+      .group-process-compact-heading,
+      .group-before-header{margin-bottom:20px;}
+    }
+
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto;}
       *,*::before,*::after{
@@ -1157,10 +1281,10 @@
 <div class="group-hero-rule"></div>
 <div class="group-kicker">Group Therapy</div>
 <h1>A steady group can make difficult change less isolating.</h1>
-<p>Stonebridge uses structured, clinician-led closed therapy groups for people who may benefit from shared work within a thoughtful, clearly held frame. Groups are organized around a defined clinical purpose, and fit is reviewed before participation.</p>
+<p>Stonebridge offers structured, clinician-led closed therapy groups organized around a defined clinical purpose. Group work creates opportunities to notice patterns, practice new ways of relating, and receive feedback in real time.</p>
 <div class="group-hero-actions">
 <a class="btn btn-primary" href="#groups-forming">View Current &amp; Forming Groups</a>
-<a class="btn btn-secondary" href="#how-groups-form">How Closed Groups Work</a>
+<a class="btn btn-secondary" href="#how-groups-form">How Enrollment Works</a>
 </div>
 </div>
 <figure class="group-hero-media">
@@ -1168,58 +1292,28 @@
 </figure>
 </section>
 
-<section aria-label="Group therapy overview" class="group-overview">
-<div class="group-overview-grid">
-<article><h2>Clinician-led</h2><p>Each group is organized and facilitated as psychotherapy, not a drop-in meeting.</p></article>
-<article><h2>Defined purpose</h2><p>Focus, structure, expectations, and length are clarified before participation.</p></article>
-<article><h2>Fit before enrollment</h2><p>Readiness and group composition are reviewed before a place is confirmed.</p></article>
-</div>
-</section>
-
-<section class="group-section">
-<div class="group-shell group-intro-grid">
-<div class="group-heading">
-<div class="group-label">Why group therapy</div>
-<h2>Insight develops differently when it is shared.</h2>
-</div>
-<div class="group-intro-copy">
-<p>Group therapy offers something individual work cannot fully reproduce: the opportunity to notice patterns, practice new ways of relating, and receive thoughtful feedback within a consistent community. Members bring different histories, but the group is organized around a shared clinical purpose.</p>
-<p>The frame matters. Stonebridge groups are intentionally composed, clearly structured, and facilitated with attention to safety, participation, boundaries, and the needs of the group as a whole. Group therapy is not simply individual therapy conducted in front of other people.</p>
-</div>
-</div>
-</section>
-
 <section class="group-section paper" id="groups-forming">
 <div class="group-shell">
-<div class="group-offerings-intro">
-<div>
-<div class="group-label">Current &amp; forming groups</div>
-<h2>One adolescent telehealth group is currently forming.</h2>
-</div>
-<p>The practical details are gathered here so families can quickly understand the format, requirements, and next step.</p>
-</div>
-
-<article class="group-offering-card">
+<article class="group-offering-card group-current-offering">
 <div class="group-offering-copy">
-<div class="group-feature-label">Adolescent telehealth psychotherapy</div>
-<h3>Teen Cooperative Telehealth Group</h3>
+<div class="group-feature-label">Current group · Gathering interest</div>
+<h2>Teen Cooperative Telehealth Group</h2>
 <p>Therapist-led group psychotherapy using cooperative <em>Stardew Valley</em> gameplay as a structured setting for practicing connection, communication, flexibility, collaboration, and participation.</p>
 <p class="group-offering-principle">The game is the medium. The psychotherapy is the service.</p>
 
 <dl class="group-offering-facts" aria-label="Teen Cooperative Telehealth Group practical details">
 <div class="group-offering-fact"><dt>Status</dt><dd>Gathering interest for the initial cohort.</dd></div>
-<div class="group-offering-fact"><dt>Format</dt><dd>Closed telehealth psychotherapy group.</dd></div>
+<div class="group-offering-fact"><dt>Age</dt><dd>Developmentally matched adolescent cohort, likely within ages 13–17.</dd></div>
 <div class="group-offering-fact"><dt>Cohort</dt><dd>Approximately 3–4 teens with one Stonebridge clinician.</dd></div>
-<div class="group-offering-fact"><dt>Age</dt><dd>Developmentally matched adolescent cohort, likely within ages 13–17. Final grouping may be 13–15 or 14–17 depending on clinical and developmental fit.</dd></div>
-<div class="group-offering-fact"><dt>Schedule</dt><dd>Weeknight or weekend, coordinated after a cohort is matched.</dd></div>
-<div class="group-offering-fact"><dt>Technology</dt><dd>Computer, Steam, a PC copy of <em>Stardew Valley</em>, reliable internet, and Stonebridge telehealth access.</dd></div>
-<div class="group-offering-fact"><dt>Fees</dt><dd><a href="fees-insurance.html">View group fees &amp; insurance</a></dd></div>
-<div class="group-offering-fact"><dt>Next step</dt><dd>Request a consultation to begin screening and availability matching.</dd></div>
+<div class="group-offering-fact"><dt>Format</dt><dd>Closed telehealth psychotherapy group.</dd></div>
+<div class="group-offering-fact"><dt>Schedule</dt><dd>Weeknight or weekend, coordinated once the cohort is formed.</dd></div>
+<div class="group-offering-fact"><dt>Technology</dt><dd>Compatible computer, Steam, a PC copy of <em>Stardew Valley</em>, reliable internet, audio, and Stonebridge telehealth access.</dd></div>
+<div class="group-offering-fact group-offering-fact-wide"><dt>Fees &amp; insurance</dt><dd><a href="fees-insurance.html">View Stonebridge’s group therapy fees and insurance information</a>.</dd></div>
 </dl>
 
 <div class="group-offering-actions">
 <a class="btn btn-primary" href="contact.html?service=teen-group#inquiry-form">Request a Consultation</a>
-<a class="btn btn-secondary" href="#how-groups-form">How Cohort Formation Works</a>
+<a class="btn btn-secondary" href="#how-groups-form">How Enrollment Works</a>
 </div>
 </div>
 
@@ -1230,77 +1324,73 @@
 </div>
 </section>
 
-<section class="group-section">
+<section class="group-section" id="gameplay">
 <div class="group-shell group-editorial-grid">
 <figure class="group-editorial-photo">
 <img alt="Adolescent viewed from behind wearing headphones at a warm desk with cooperative farming gameplay visible on a monitor" decoding="async" height="941" loading="lazy" src="teen-cooperative-group-participant.jpg" width="1672" onerror="this.closest('.group-editorial-photo').classList.add('image-unavailable'); this.remove();"/>
 </figure>
 <div class="group-editorial-copy">
-<div class="group-label">How gameplay is used</div>
+<div class="group-label">How cooperative gameplay helps</div>
 <h2>A shared activity creates something real to work with.</h2>
-<p>Cooperative play creates ordinary interpersonal moments in real time: who takes initiative, how plans change, whether someone asks for help, what happens when people disagree, and how a group notices and responds when someone withdraws. The clinician can slow those moments down, help participants understand what happened, and connect the experience to relationships outside the game.</p>
+<p>Cooperative play creates interpersonal moments in real time—planning together, asking for help, adapting when someone has a different idea, recovering from mistakes, and reconnecting after friction. The clinician can work with those moments as they happen and connect them to relationships outside the game.</p>
 <ul aria-label="Examples of therapeutic material during cooperative gameplay" class="group-topic-list">
-<li>Reciprocal communication and asking for help</li>
-<li>Collaboration and shared decision-making</li>
-<li>Flexibility when another person has a different plan</li>
-<li>Participation, initiation, and tolerating awkwardness</li>
-<li>Behavioral activation, enjoyment, and accomplishment</li>
-<li>Repair after conflict, mistakes, or disconnection</li>
+<li>Reciprocal communication &amp; asking for help</li>
+<li>Collaboration, shared decisions &amp; flexibility</li>
+<li>Participation, initiation &amp; behavioral activation</li>
+<li>Conflict repair, mistakes &amp; reconnecting</li>
 </ul>
 </div>
 </div>
 </section>
 
 <section class="group-section paper" id="teen-group-focus">
-<div class="group-shell group-value-layout">
-<div class="group-value-intro">
-<div class="group-label">Possible areas of focus</div>
-<h2>The emphasis is determined through screening, not self-selection.</h2>
-<p>Families do not need to choose a track. The clinical emphasis depends on the teen’s treatment goals, developmental level, and the adolescents who ultimately make up the cohort.</p>
+<div class="group-shell group-focus-compact">
+<div class="group-focus-header">
+<div class="group-label">Who the group may fit</div>
+<h2>Two possible areas of clinical focus.</h2>
+<p>Families do not need to choose a track. Stonebridge determines the group’s emphasis through screening and the needs of the adolescents who make up the cohort.</p>
 </div>
 <div class="group-point-grid">
 <article class="group-point">
 <div class="group-point-label">Peer interaction</div>
-<h3>Neurodivergent / reciprocal communication focus</h3>
-<p>Potential targets include joining interactions, reciprocal communication, collaboration, asking for help, perspective-taking, flexibility, problem-solving, managing disagreements, and repairing interpersonal misunderstandings.</p>
+<h3>Communication &amp; collaboration</h3>
+<p>For teens whose goals may include reciprocal communication, perspective-taking, asking for help, flexibility, collaborative problem-solving, and navigating peer interactions.</p>
 </article>
 <article class="group-point">
 <div class="group-point-label">Mood &amp; connection</div>
-<h3>Isolation / withdrawal / social connection focus</h3>
-<p>Potential targets include behavioral activation, social initiation, participation, contribution, tolerating awkwardness, confidence with peers, enjoyment, accomplishment, and reconnecting after withdrawal.</p>
+<h3>Participation &amp; social connection</h3>
+<p>For teens whose goals may include reducing withdrawal, increasing social initiation and participation, behavioral activation, contribution, and reconnecting with peers.</p>
 </article>
 </div>
+<p class="group-suitability-note"><strong>Clinical scope:</strong> This specialty group is intended for adolescents appropriate for routine outpatient telehealth group psychotherapy. Stonebridge may recommend a different service when current safety or monitoring needs exceed the group format.</p>
 </div>
 </section>
 
 <section class="group-section" id="how-groups-form">
-<div class="group-shell group-process">
-<div class="group-process-heading">
-<div class="group-label">How closed groups form</div>
-<h2>Screening and scheduling shape the cohort.</h2>
+<div class="group-shell group-process-compact">
+<div class="group-process-compact-heading">
+<div class="group-label">How enrollment works</div>
+<h2>From inquiry to a closed cohort.</h2>
 </div>
-<div class="group-steps">
-<article class="group-step"><div class="group-step-label">Step 01</div><div><h3>Share interest</h3><p>A parent, teen, or referring professional begins with a consultation request and general scheduling availability.</p></div></article>
-<article class="group-step"><div class="group-step-label">Step 02</div><div><h3>Complete screening</h3><p>Stonebridge reviews developmental level, treatment goals, current level of care, and readiness for this group format.</p></div></article>
-<article class="group-step"><div class="group-step-label">Step 03</div><div><h3>Match the cohort</h3><p>When approximately 3–4 appropriate teens have compatible availability, Stonebridge coordinates a consistent weeknight or weekend meeting time.</p></div></article>
-<article class="group-step"><div class="group-step-label">Step 04</div><div><h3>Prepare for the group</h3><p>Before the first clinical session, Stonebridge reviews consent and assent, participation expectations, privacy limitations, and the required technology orientation.</p></div></article>
+<div class="group-steps group-steps-compact">
+<article class="group-step"><div class="group-step-label">Step 01</div><div><h3>Inquire</h3><p>Request a consultation and share general scheduling availability.</p></div></article>
+<article class="group-step"><div class="group-step-label">Step 02</div><div><h3>Review</h3><p>Stonebridge reviews treatment goals, developmental level, current level of care, and readiness for the group format.</p></div></article>
+<article class="group-step"><div class="group-step-label">Step 03</div><div><h3>Form &amp; prepare</h3><p>Once a viable cohort is identified, Stonebridge coordinates the meeting time and completes consent, assent, expectations, and technology orientation before the first session.</p></div></article>
 </div>
 </div>
 </section>
 
-<section class="group-section paper">
-<div class="group-shell group-family-layout">
-<div class="group-value-intro">
-<div class="group-label">What families should know</div>
-<h2>The clinical setting and the game serve different roles.</h2>
-<p>Stonebridge provides the psychotherapy through its clinical systems. Steam and <em>Stardew Valley</em> are third-party consumer services used only as part of the structured activity.</p>
+<section class="group-section paper" id="before-joining">
+<div class="group-shell group-before-joining">
+<div class="group-before-header">
+<div class="group-label">Before joining</div>
+<h2>A few practical expectations.</h2>
 </div>
-<div class="group-family-facts" aria-label="Technology, privacy, consent, and clinical scope">
-<div class="group-family-fact"><strong>Technology</strong><p>Participants need a compatible computer, reliable internet, Stonebridge telehealth access, working audio, a valid Steam account, and a legitimate PC copy of <em>Stardew Valley</em>. Families provide and maintain the required technology.</p></div>
-<div class="group-family-fact"><strong>Clinical platform</strong><p>Therapeutic communication remains within Stonebridge’s approved clinical environment. Stonebridge does not represent Steam or <em>Stardew Valley</em> as HIPAA-compliant clinical platforms.</p></div>
-<div class="group-family-fact"><strong>Privacy expectations</strong><p>Participants may be asked to use neutral gaming display names and appropriate privacy settings. Screenshots, recording, streaming, and sharing another participant’s information are not permitted.</p></div>
-<div class="group-family-fact"><strong>Parent &amp; teen process</strong><p>Guardian consent and adolescent assent are required. Parents do not ordinarily participate in sessions; confidentiality, technology limitations, participation expectations, and caregiver roles are reviewed before enrollment.</p></div>
-<div class="group-family-fact group-family-fact-wide"><strong>Clinical scope</strong><p>This group is intended for adolescents who can participate safely in routine outpatient telehealth group psychotherapy without continuous individualized monitoring. It is not crisis care or a substitute for a higher level of care when one is needed. Group confidentiality also depends on each member honoring the agreements reviewed before enrollment.</p></div>
+<div class="group-family-facts" aria-label="Technology, privacy, consent, and clinical platform expectations">
+<div class="group-family-fact"><strong>Technology</strong><p>Participants need a compatible computer, reliable internet, working audio, a valid Steam account, Stonebridge telehealth access, and a legitimate PC copy of <em>Stardew Valley</em>. Families provide and maintain the required technology.</p></div>
+<div class="group-family-fact"><strong>Clinical setting</strong><p>Psychotherapy and clinical communication remain within Stonebridge’s approved telehealth environment. Steam and <em>Stardew Valley</em> are third-party consumer services used only for the structured activity.</p></div>
+<div class="group-family-fact"><strong>Privacy</strong><p>Participants may be asked to use neutral gaming display names and appropriate privacy settings. Screenshots, recording, streaming, and sharing another participant’s information are not permitted.</p></div>
+<div class="group-family-fact"><strong>Parent &amp; teen process</strong><p>Guardian consent and adolescent assent are required. Parents do not ordinarily participate in sessions; participation expectations and caregiver roles are reviewed before enrollment.</p></div>
 </div>
 </div>
 </section>
@@ -1308,8 +1398,8 @@
 <section class="group-cta">
 <div class="group-cta-inner">
 <div>
-<h2>Consultation first. Fit matters.</h2>
-<p>Share the concern, your teen’s general availability, and your interest in the cooperative telehealth group. An inquiry begins screening and coordination; it does not guarantee placement or a specific start date.</p>
+<h2>Interested in the teen group?</h2>
+<p>Request a consultation to share general availability and begin screening. An inquiry does not guarantee placement or a specific start date.</p>
 </div>
 <a class="btn btn-secondary" href="contact.html?service=teen-group#inquiry-form">Request a Consultation</a>
 </div>
