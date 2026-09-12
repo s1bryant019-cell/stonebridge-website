@@ -1394,6 +1394,388 @@
       .group-gameplay-layout{gap:14px;}
     }
 
+    
+
+    /* Group Therapy premium body refresh — preserve header, hero, strip, and footer. */
+    .lobby-showcase{
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(0, 46%) minmax(0, 54%);
+      align-items:stretch;
+      background:var(--group-bg);
+      border-top:1px solid var(--group-warm-line);
+      border-bottom:1px solid var(--group-warm-line);
+      overflow:hidden;
+    }
+
+    .lobby-showcase-copy{
+      position:relative;
+      z-index:2;
+      padding:clamp(34px,4.5vw,58px) clamp(28px,4.2vw,58px) clamp(28px,4vw,48px) minmax(24px, calc((100vw - 1280px) / 2 + 38px));
+      background:linear-gradient(90deg, rgba(248,245,240,1) 0%, rgba(248,245,240,.985) 74%, rgba(248,245,240,.84) 90%, rgba(248,245,240,.1) 100%);
+    }
+
+    .lobby-showcase-copy .group-feature-label{
+      display:block;
+      margin-bottom:14px;
+    }
+
+    .lobby-showcase-brand{
+      margin:0 0 16px;
+      width:min(100%, 18rem);
+    }
+
+    .lobby-showcase-brand img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    .lobby-showcase-title{
+      max-width:10ch;
+      margin:0 0 18px;
+      color:var(--group-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.55rem,3.5vw,3.45rem);
+      line-height:.98;
+      letter-spacing:-.05em;
+      text-wrap:balance;
+    }
+
+    .lobby-showcase-intro{
+      max-width:36rem;
+      margin:0;
+      color:var(--group-muted);
+      font-family:"Inter",sans-serif;
+      font-size:1.02rem;
+      line-height:1.72;
+    }
+
+    .lobby-showcase-quote{
+      margin:24px 0 0;
+      padding-top:16px;
+      border-top:1px solid var(--group-line);
+      color:var(--group-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(1.55rem,2.1vw,1.95rem);
+      line-height:1.18;
+      letter-spacing:-.025em;
+      max-width:26rem;
+    }
+
+    .lobby-showcase-facts{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:0;
+      margin:28px 0 0;
+      padding:14px 0 0;
+      border-top:1px solid var(--group-line);
+    }
+
+    .lobby-showcase-fact{
+      padding:0 18px;
+      border-left:1px solid var(--group-line);
+    }
+
+    .lobby-showcase-fact:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .lobby-showcase-fact dt{
+      margin:0 0 8px;
+      color:var(--group-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.64rem;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .lobby-showcase-fact dd{
+      margin:0;
+      color:var(--group-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.48rem;
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+
+    .lobby-showcase-fact dd span{
+      display:block;
+      margin-top:6px;
+      color:var(--group-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.9rem;
+      line-height:1.45;
+      letter-spacing:0;
+    }
+
+    .lobby-showcase-support{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 28px;
+      margin-top:18px;
+    }
+
+    .lobby-showcase-support a{
+      color:var(--group-navy-deep);
+      font-family:"Inter",sans-serif;
+      font-size:.95rem;
+      font-weight:500;
+      text-decoration:underline;
+      text-decoration-color:rgba(16,47,77,.35);
+      text-underline-offset:.18em;
+    }
+
+    .lobby-showcase-actions{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:18px 22px;
+      margin-top:24px;
+    }
+
+    .lobby-showcase-secondary{
+      color:var(--group-navy-deep);
+      font-family:"Inter",sans-serif;
+      font-size:.96rem;
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    .lobby-showcase-secondary:hover{text-decoration:underline;}
+
+    .lobby-showcase-photo{
+      position:relative;
+      min-height:560px;
+      margin:0;
+    }
+
+    .lobby-showcase-photo::before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:24%;
+      background:linear-gradient(90deg, rgba(248,245,240,.92) 0%, rgba(248,245,240,.45) 56%, rgba(248,245,240,0) 100%);
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .lobby-showcase-photo img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:54% center;
+    }
+
+    .editorial-section{
+      padding:34px 0;
+      border-bottom:1px solid var(--group-warm-line);
+    }
+
+    .editorial-section.paper{background:var(--group-paper);}
+
+    .editorial-shell{
+      width:min(1180px, calc(100% - 72px));
+      margin:0 auto;
+    }
+
+    .editorial-grid{
+      display:grid;
+      grid-template-columns:minmax(250px,.95fr) minmax(0,1.55fr);
+      gap:34px;
+      align-items:start;
+    }
+
+    .editorial-heading{
+      padding-top:2px;
+    }
+
+    .editorial-heading h2{
+      margin:10px 0 0;
+      max-width:12ch;
+      color:var(--group-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.5rem,3.1vw,3.35rem);
+      line-height:.98;
+      letter-spacing:-.05em;
+      text-wrap:balance;
+    }
+
+    .editorial-body > p{
+      margin:0;
+      color:var(--group-muted);
+      font-family:"Inter",sans-serif;
+      font-size:1rem;
+      line-height:1.72;
+      max-width:50rem;
+    }
+
+    .feature-card-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      margin-top:22px;
+      border-top:1px solid var(--group-line);
+      border-bottom:1px solid var(--group-line);
+    }
+
+    .feature-card{
+      padding:18px 22px;
+      border-left:1px solid var(--group-line);
+    }
+
+    .feature-card:first-child{
+      border-left:0;
+      padding-left:0;
+    }
+
+    .feature-card:last-child{padding-right:0;}
+
+    .feature-card h3,
+    .focus-card h3,
+    .compact-step h3,
+    .practical-card h3{
+      margin:0 0 8px;
+      color:var(--group-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.55rem;
+      line-height:1.02;
+      letter-spacing:-.03em;
+    }
+
+    .feature-card p,
+    .focus-card p,
+    .compact-step p,
+    .practical-card p,
+    .editorial-note{
+      margin:0;
+      color:var(--group-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.96rem;
+      line-height:1.62;
+    }
+
+    .focus-card-grid,
+    .editorial-steps,
+    .practical-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      margin-top:20px;
+      border-top:1px solid var(--group-line);
+      border-bottom:1px solid var(--group-line);
+    }
+
+    .focus-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+
+    .focus-card,
+    .compact-step,
+    .practical-card{
+      padding:18px 22px;
+      border-left:1px solid var(--group-line);
+    }
+
+    .focus-card:first-child,
+    .compact-step:first-child,
+    .practical-card:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .focus-card:last-child,
+    .compact-step:last-child,
+    .practical-card:last-child{padding-right:0;}
+
+    .compact-step-number{
+      display:inline-flex;
+      width:2.1rem;
+      height:2.1rem;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:14px;
+      border-radius:999px;
+      background:#efe6dc;
+      color:#b56942;
+      font-family:"Inter",sans-serif;
+      font-size:.95rem;
+      font-weight:700;
+    }
+
+    .editorial-note{
+      margin-top:16px;
+      padding-top:14px;
+      border-top:1px solid var(--group-line);
+    }
+
+    .group-cta{
+      margin-top:0;
+    }
+
+    @media(max-width:1180px){
+      .lobby-showcase{grid-template-columns:minmax(0, 49%) minmax(0,51%);}
+      .lobby-showcase-copy{padding-left:32px;}
+      .lobby-showcase-facts{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px;}
+      .lobby-showcase-fact:nth-child(3){padding-left:0;border-left:0;}
+      .feature-card-grid,
+      .editorial-steps,
+      .practical-grid{grid-template-columns:1fr 1fr;}
+      .feature-card:nth-child(3),
+      .compact-step:nth-child(3),
+      .practical-card:nth-child(3){padding-left:0;border-left:0;border-top:1px solid var(--group-line);grid-column:1 / -1;}
+    }
+
+    @media(max-width:900px){
+      .lobby-showcase,
+      .editorial-grid{grid-template-columns:1fr;}
+      .lobby-showcase-copy{padding:34px 24px 30px; background:var(--group-bg);}
+      .lobby-showcase-photo{min-height:0; aspect-ratio:4/3;}
+      .lobby-showcase-photo::before{display:none;}
+      .editorial-shell{width:min(100%, calc(100% - 44px));}
+      .feature-card-grid,
+      .focus-card-grid,
+      .editorial-steps,
+      .practical-grid{grid-template-columns:1fr;}
+      .feature-card,
+      .focus-card,
+      .compact-step,
+      .practical-card,
+      .feature-card:first-child,
+      .focus-card:first-child,
+      .compact-step:first-child,
+      .practical-card:first-child,
+      .feature-card:last-child,
+      .focus-card:last-child,
+      .compact-step:last-child,
+      .practical-card:last-child{
+        padding:16px 0;
+        border-left:0;
+        border-top:1px solid var(--group-line);
+      }
+      .feature-card:first-child,
+      .focus-card:first-child,
+      .compact-step:first-child,
+      .practical-card:first-child{border-top:0;}
+      .lobby-showcase-facts{grid-template-columns:1fr;row-gap:14px;}
+      .lobby-showcase-fact,
+      .lobby-showcase-fact:first-child{padding:0;border-left:0;}
+      .lobby-showcase-title{max-width:12ch;}
+    }
+
+    @media(max-width:720px){
+      .editorial-section{padding:30px 0;}
+      .editorial-shell{width:min(100%, calc(100% - 32px));}
+      .lobby-showcase-copy{padding:30px 18px 28px;}
+      .lobby-showcase-title{font-size:clamp(2.2rem,9vw,3rem);}
+      .lobby-showcase-quote{font-size:1.45rem;}
+      .lobby-showcase-actions{gap:14px 18px;}
+      .feature-card h3,
+      .focus-card h3,
+      .compact-step h3,
+      .practical-card h3{font-size:1.38rem;}
+    }
+
+
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto;}
       *,*::before,*::after{
@@ -1778,109 +2160,135 @@
 </div>
 </section>
 
-<section class="group-section paper" id="groups-forming">
-<div class="group-shell">
-<article class="group-offering-card group-current-offering">
-<div class="group-offering-copy">
+<section class="lobby-showcase" id="groups-forming">
+<div class="lobby-showcase-copy">
 <div class="group-feature-label">Current group · Gathering interest</div>
-<div class="group-lobby-brand">
+<div class="lobby-showcase-brand">
 <h2 class="visually-hidden">The Lobby</h2>
 <img alt="" aria-hidden="true" decoding="async" height="1051" loading="lazy" src="the-lobby-wordmark.png" width="1461"/>
 </div>
-<p class="group-offering-subtitle">Teen group therapy through cooperative play.</p>
-<p class="group-offering-intro">A small therapist-led online group using cooperative <em>Stardew Valley</em> gameplay to practice communication, flexibility, collaboration, participation, and connection.</p>
-<p class="group-offering-principle">The game is the medium. The psychotherapy is the service.</p>
-
-<dl class="group-offering-facts group-offering-facts-premium" aria-label="The Lobby practical details">
-<div class="group-offering-fact"><dt>Ages</dt><dd>13–17</dd></div>
-<div class="group-offering-fact"><dt>Cohort</dt><dd>3–4 teens + one clinician</dd></div>
-<div class="group-offering-fact"><dt>Format</dt><dd>Closed Illinois telehealth group</dd></div>
-<div class="group-offering-fact"><dt>Schedule</dt><dd>Weeknight or weekend</dd></div>
+<p class="lobby-showcase-title">Teen group therapy through cooperative play.</p>
+<p class="lobby-showcase-intro">A small therapist-led online group using cooperative <em>Stardew Valley</em> gameplay to practice communication, flexibility, collaboration, participation, and connection.</p>
+<p class="lobby-showcase-quote">The game is the medium. The psychotherapy is the service.</p>
+<dl class="lobby-showcase-facts" aria-label="The Lobby practical details">
+<div class="lobby-showcase-fact"><dt>Ages</dt><dd>13–17<span>Developmentally matched cohort</span></dd></div>
+<div class="lobby-showcase-fact"><dt>Group size</dt><dd>3–4 teens<span>Plus one Stonebridge clinician</span></dd></div>
+<div class="lobby-showcase-fact"><dt>Format</dt><dd>Telehealth<span>Closed Illinois group</span></dd></div>
+<div class="lobby-showcase-fact"><dt>Schedule</dt><dd>Weeknight<span>or weekend</span></dd></div>
 </dl>
-
-<div class="group-offering-support" aria-label="Additional Lobby details">
-<p><strong>Technology</strong><span>Compatible computer, Steam, a PC copy of <em>Stardew Valley</em>, reliable internet, audio, and Stonebridge telehealth access.</span></p>
-<p><strong>Fees &amp; insurance</strong><span><a href="fees-insurance.html">View Stonebridge’s group therapy fees and insurance information</a>.</span></p>
+<div class="lobby-showcase-support" aria-label="Additional Lobby details">
+<a href="fees-insurance.html">Fees &amp; insurance</a>
+<a href="#before-joining">Technology requirements</a>
 </div>
-
-<div class="group-offering-actions group-offering-actions-premium">
+<div class="lobby-showcase-actions">
 <a class="btn btn-primary" href="contact.html?service=teen-group#inquiry-form">Request a Consultation</a>
-<a class="group-offering-secondary-link" href="#how-groups-form">How enrollment works <span aria-hidden="true">→</span></a>
+<a class="lobby-showcase-secondary" href="#how-groups-form">How enrollment works <span aria-hidden="true">→</span></a>
 </div>
 </div>
-
-<figure class="group-offering-photo">
-<img alt="Adolescent viewed from behind wearing headphones at a warm desk with cooperative farming gameplay visible on a monitor" decoding="async" height="941" loading="lazy" src="teen-cooperative-group-participant.jpg" width="1672" onerror="this.closest('.group-offering-photo').classList.add('image-unavailable'); this.remove();"/>
+<figure class="lobby-showcase-photo">
+<img alt="Adolescent viewed from behind wearing headphones at a warm desk with cooperative farming gameplay visible on a monitor" decoding="async" height="941" loading="lazy" src="teen-cooperative-group-participant.jpg" width="1672" onerror="this.closest('.lobby-showcase-photo').classList.add('image-unavailable'); this.remove();"/>
 </figure>
-</article>
-</div>
 </section>
 
-<section class="group-section" id="gameplay">
-<div class="group-shell group-gameplay-layout">
-<div class="group-gameplay-heading">
+<section class="editorial-section" id="gameplay">
+<div class="editorial-shell editorial-grid">
+<div class="editorial-heading">
 <div class="group-label">How cooperative gameplay helps</div>
 <h2>A shared activity creates something real to work with.</h2>
 </div>
-<div class="group-gameplay-content">
-<p>Cooperative play gives the group something concrete to navigate together: planning, asking for help, adapting to different ideas, making mistakes, and repairing friction. The clinician can work with those moments as they happen and connect them to relationships outside the game.</p>
-<ul aria-label="Examples of therapeutic material during cooperative gameplay" class="group-topic-list">
-<li>Communication &amp; asking for help</li>
-<li>Collaboration, shared decisions &amp; flexibility</li>
-<li>Participation, initiation &amp; engagement</li>
-<li>Conflict repair, mistakes &amp; reconnecting</li>
-</ul>
+<div class="editorial-body">
+<p>Cooperative play gives the group something concrete to navigate together — planning, solving for help, adapting to different ideas, making mistakes, and repairing friction. Those moments become natural opportunities to practice skills that carry into school, friendships, and home.</p>
+<div class="feature-card-grid" aria-label="Examples of therapeutic opportunities during gameplay">
+<article class="feature-card">
+<h3>Communication &amp; perspective-taking</h3>
+<p>Practice expressing ideas, listening, and considering different points of view.</p>
+</article>
+<article class="feature-card">
+<h3>Collaboration &amp; flexibility</h3>
+<p>Navigate different styles, share decisions, and adjust when plans change.</p>
+</article>
+<article class="feature-card">
+<h3>Frustration tolerance &amp; repair</h3>
+<p>Work through setbacks, regulate emotions, and rebuild after conflict.</p>
+</article>
+</div>
 </div>
 </div>
 </section>
 
-<section class="group-section paper" id="teen-group-focus">
-<div class="group-shell group-focus-compact">
-<div class="group-focus-header">
-<div class="group-label">Who it’s designed for</div>
+<section class="editorial-section paper" id="teen-group-focus">
+<div class="editorial-shell editorial-grid">
+<div class="editorial-heading">
+<div class="group-label">How it’s designed for</div>
 <h2>Two possible areas of clinical focus.</h2>
-<p>Stonebridge determines the group’s emphasis through screening and the needs of the adolescents who make up the cohort.</p>
 </div>
-<div class="group-point-grid">
-<article class="group-point">
-<div class="group-point-label">Peer interaction</div>
-<h3>Communication &amp; collaboration</h3>
-<p>For teens whose goals may include reciprocal communication, perspective-taking, asking for help, flexibility, collaborative problem-solving, and navigating peer interactions.</p>
+<div class="editorial-body">
+<p>Stonebridge organizes this group around common needs among adolescents who benefit from structured, social, interest-based experiences.</p>
+<div class="focus-card-grid" aria-label="Possible areas of clinical focus">
+<article class="focus-card">
+<h3>Social connection</h3>
+<p>For teens who want support with friendship skills, feeling more comfortable in social settings, and building confidence with peers.</p>
 </article>
-<article class="group-point">
-<div class="group-point-label">Mood &amp; connection</div>
-<h3>Participation &amp; social connection</h3>
-<p>For teens whose goals may include reducing withdrawal, increasing social initiation and participation, behavioral activation, contribution, and reconnecting with peers.</p>
+<article class="focus-card">
+<h3>Executive functioning</h3>
+<p>For teens who benefit from structure and support with flexibility, organization, follow-through, and emotional regulation.</p>
 </article>
 </div>
-<p class="group-suitability-note"><strong>Clinical scope:</strong> This specialty group is intended for adolescents appropriate for routine outpatient telehealth group psychotherapy. Stonebridge may recommend a different service when current safety or monitoring needs exceed the group format.</p>
+<p class="editorial-note"><strong>Clinical scope:</strong> This specialty group is intended for adolescents appropriate for routine outpatient telehealth group psychotherapy. Stonebridge may recommend a different service when current safety or monitoring needs exceed the group format.</p>
+</div>
 </div>
 </section>
 
-<section class="group-section" id="how-groups-form">
-<div class="group-shell group-process-compact">
-<div class="group-process-compact-heading">
+<section class="editorial-section" id="how-groups-form">
+<div class="editorial-shell editorial-grid">
+<div class="editorial-heading">
 <div class="group-label">How enrollment works</div>
 <h2>From inquiry to a closed cohort.</h2>
 </div>
-<div class="group-steps group-steps-compact">
-<article class="group-step"><div class="group-step-label">Step 01</div><div><h3>Inquire</h3><p>Request a consultation and share general scheduling availability.</p></div></article>
-<article class="group-step"><div class="group-step-label">Step 02</div><div><h3>Review</h3><p>Stonebridge reviews treatment goals, developmental level, current level of care, and readiness for the group format.</p></div></article>
-<article class="group-step"><div class="group-step-label">Step 03</div><div><h3>Form &amp; prepare</h3><p>Once a viable cohort is identified, Stonebridge coordinates the meeting time and completes consent, assent, expectations, and technology orientation before the first session.</p></div></article>
+<div class="editorial-body">
+<div class="editorial-steps" aria-label="Enrollment steps">
+<article class="compact-step">
+<div class="compact-step-number">1</div>
+<h3>Inquire</h3>
+<p>Request a consultation and share general information about your teen.</p>
+</article>
+<article class="compact-step">
+<div class="compact-step-number">2</div>
+<h3>Consult &amp; plan</h3>
+<p>We’ll discuss goals, answer questions, and determine whether this group is a good fit.</p>
+</article>
+<article class="compact-step">
+<div class="compact-step-number">3</div>
+<h3>Join the next group</h3>
+<p>If it feels like a match, we’ll share next steps and add your teen to the interest list for the next group.</p>
+</article>
+</div>
 </div>
 </div>
 </section>
 
-<section class="group-section paper" id="before-joining">
-<div class="group-shell group-before-joining">
-<div class="group-before-header">
+<section class="editorial-section paper" id="before-joining">
+<div class="editorial-shell editorial-grid">
+<div class="editorial-heading">
 <div class="group-label">Before joining</div>
 <h2>A few practical expectations.</h2>
 </div>
-<div class="group-family-facts" aria-label="Privacy, consent, and clinical platform expectations">
-<div class="group-family-fact"><strong>Clinical setting</strong><p>Clinical communication stays within Stonebridge’s telehealth platform; Steam and <em>Stardew Valley</em> are used only for the shared activity.</p></div>
-<div class="group-family-fact"><strong>Privacy</strong><p>Participants use appropriate privacy settings and may be asked to use neutral gaming names. No screenshots, recording, streaming, or sharing another participant’s information.</p></div>
-<div class="group-family-fact"><strong>Parent &amp; teen process</strong><p>Guardian consent and adolescent assent are required. Parents do not ordinarily participate in sessions; expectations are reviewed before enrollment.</p></div>
+<div class="editorial-body">
+<div class="practical-grid" aria-label="Practical expectations before joining">
+<article class="practical-card">
+<h3>Consistent participation</h3>
+<p>Teens are expected to attend regularly and be an active, respectful participant.</p>
+</article>
+<article class="practical-card">
+<h3>Comfort with group format</h3>
+<p>This group works best for teens who are open to real-time conversation and collaboration.</p>
+</article>
+<article class="practical-card">
+<h3>Basic tech setup</h3>
+<p>A computer, stable internet connection, and the ability to use the game platform are required.</p>
+</article>
+</div>
+<p class="editorial-note"><strong>Privacy &amp; consent:</strong> Guardian consent and adolescent assent are required. Screenshots, recording, streaming, and sharing other participants’ information are not permitted.</p>
 </div>
 </div>
 </section>
@@ -1889,7 +2297,7 @@
 <div class="group-cta-inner">
 <div>
 <h2>Interested in The Lobby?</h2>
-<p>Request a consultation to share general availability and begin screening. An inquiry does not guarantee placement or a specific start date.</p>
+<p>Request a consultation to speak with our team and learn more about the group, determine fit, and join the interest list.</p>
 </div>
 <a class="btn btn-secondary" href="contact.html?service=teen-group#inquiry-form">Request a Consultation</a>
 </div>
