@@ -237,7 +237,7 @@
     }
 
     .group-shell{
-      width:min(1080px,calc(100% - 72px));
+      width:min(1220px,calc(100% - 72px));
       margin:0 auto;
     }
 
@@ -993,7 +993,7 @@
     }
 
     /* Group Therapy compression update — fewer conceptual layers, stronger practical hierarchy. */
-    .group-section{padding:52px 0;}
+    .group-section{padding:42px 0;}
 
     .group-current-offering{
       border-top:0;
@@ -1050,7 +1050,7 @@
 
     .group-focus-header,
     .group-process-compact-heading,
-    .group-before-header{max-width:48rem;margin-bottom:25px;}
+    .group-before-header{max-width:48rem;margin-bottom:18px;}
 
     .group-focus-header h2,
     .group-process-compact-heading h2,
@@ -1132,7 +1132,7 @@
     }
 
     @media(max-width:720px){
-      .group-section{padding:40px 0;}
+      .group-section{padding:34px 0;}
       .group-offering-fact-wide{grid-column:auto;}
       .group-focus-header,
       .group-process-compact-heading,
@@ -1153,7 +1153,7 @@
 
     .group-current-offering{
       grid-template-columns:minmax(0,1.06fr) minmax(390px,.94fr);
-      min-height:650px;
+      min-height:600px;
       background:var(--group-paper);
     }
 
@@ -1161,7 +1161,7 @@
       display:flex;
       flex-direction:column;
       justify-content:center;
-      padding:54px clamp(34px,4.6vw,62px) 54px clamp(36px,5vw,70px);
+      padding:44px clamp(34px,4.6vw,62px) 44px clamp(36px,5vw,70px);
     }
 
     .group-offering-subtitle{
@@ -1194,23 +1194,23 @@
       line-height:1.58;
     }
 
-    /* The second image has a different role: a wide atmospheric strip, not another side-by-side box. */
+    /* Keep photography structural: image and copy share one deliberate composition. */
     .group-editorial-grid{
-      grid-template-columns:1fr;
-      gap:28px;
-      align-items:start;
+      grid-template-columns:minmax(380px,.92fr) minmax(0,1.08fr);
+      gap:44px;
+      align-items:center;
     }
 
     .group-editorial-copy{
-      max-width:54rem;
+      max-width:52rem;
     }
 
     .group-editorial-photo{
-      order:2;
+      order:0;
       width:100%;
       max-width:none;
-      aspect-ratio:16 / 6.25;
-      margin-top:2px;
+      aspect-ratio:4 / 3;
+      margin:0;
     }
 
     .group-editorial-photo img{
@@ -1244,7 +1244,7 @@
       .group-current-offering{grid-template-columns:1fr;min-height:0;}
       .group-current-offering .group-offering-copy{padding:42px clamp(28px,5vw,54px);}
       .group-current-offering .group-offering-photo{min-height:0;aspect-ratio:16/8.5;}
-      .group-editorial-photo{aspect-ratio:16/7.5;}
+      .group-editorial-photo{aspect-ratio:16/9;}
       .group-family-facts{grid-template-columns:1fr;}
       .group-family-fact,
       .group-family-fact:nth-child(even):not(.group-family-fact-wide),
@@ -1437,6 +1437,23 @@
 <figure class="group-hero-media">
 <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="group-therapy-hero-960.webp 960w, group-therapy-hero-1600.webp 1600w, group-therapy-hero-2048.webp 2048w" sizes="100vw"><img alt="A small therapy group in conversation in a warm, private room" decoding="async" fetchpriority="high" height="1373" src="Group Therapy - Hero.png" width="2048"/></picture>
 </figure>
+</section>
+
+<section class="group-overview" aria-label="Group therapy at Stonebridge">
+<div class="group-overview-grid">
+<article>
+<h2>Clinician-led</h2>
+<p>Active therapist facilitation with a defined clinical purpose.</p>
+</article>
+<article>
+<h2>Closed cohorts</h2>
+<p>Small, consistent groups rather than drop-in participation.</p>
+</article>
+<article>
+<h2>Consultation before placement</h2>
+<p>Screening considers goals, group readiness, and cohort availability.</p>
+</article>
+</div>
 </section>
 
 <section class="group-section paper" id="groups-forming">
