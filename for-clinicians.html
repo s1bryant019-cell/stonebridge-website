@@ -186,34 +186,32 @@
       width:min(1080px,calc(100% - 72px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+      grid-template-columns:repeat(4,minmax(0,1fr));
       padding:17px 0;
     }
 
-    .clinicians-overview article{
+    .clinicians-overview-link{
+      display:flex;
+      align-items:center;
+      min-height:38px;
       padding:0 24px;
       border-left:1px solid rgba(33,49,66,.14);
+      color:var(--clinicians-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.08rem;
+      font-weight:700;
+      line-height:1.12;
+      text-decoration:none;
     }
 
-    .clinicians-overview article:first-child{
+    .clinicians-overview-link:first-child{
       padding-left:0;
       border-left:0;
     }
 
-    .clinicians-overview h2{
-      margin:0 0 4px;
-      color:var(--clinicians-navy-deep);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.08rem;
-      line-height:1.1;
-    }
-
-    .clinicians-overview p{
-      margin:0;
-      color:var(--clinicians-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.82rem;
-      line-height:1.48;
+    .clinicians-overview-link:hover{
+      text-decoration:underline;
+      text-underline-offset:4px;
     }
 
     .clinicians-section{
@@ -552,13 +550,14 @@
         padding:14px 0;
       }
 
-      .clinicians-overview article{
+      .clinicians-overview-link{
+        min-height:0;
         padding:13px 0;
         border-left:0;
         border-top:1px solid rgba(33,49,66,.13);
       }
 
-      .clinicians-overview article:first-child{
+      .clinicians-overview-link:first-child{
         padding-top:0;
         border-top:0;
       }
@@ -1183,7 +1182,7 @@
         <div class="clinicians-hero-rule"></div>
         <div class="clinicians-kicker">Professionals</div>
         <h1>Professional support for complex clinical work.</h1>
-        <p>Stonebridge offers peer consultation groups for clinicians and students, individual consultation, external supervision, psychological assessment report support, scholarly review, and burnout-focused professional education.</p>
+        <p>Consultation, supervision, writing support, and professional education for clinicians, trainees, evaluators, and organizations.</p>
 
         <div class="clinicians-hero-actions">
           <a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Professional%20Services%20Inquiry">Email About Professional Services</a>
@@ -1195,22 +1194,14 @@
       </figure>
     </section>
 
-    <section class="clinicians-overview" aria-label="Professional services overview">
+    <nav class="clinicians-overview" aria-label="Professional offerings on this page">
       <div class="clinicians-overview-grid">
-        <article>
-          <h2>Peer consultation and supervision</h2>
-          <p>Separate peer-consultation spaces for clinicians and students, plus formal supervision when appropriate.</p>
-        </article>
-        <article>
-          <h2>Writing and professional review</h2>
-          <p>Assessment reports, manuscripts, articles, and dissertations.</p>
-        </article>
-        <article>
-          <h2>Training and education</h2>
-          <p>Burnout-focused webinars, presentations, and continuing education.</p>
-        </article>
+        <a class="clinicians-overview-link" href="#peer-groups">Peer Groups</a>
+        <a class="clinicians-overview-link" href="#consultation-supervision">Consultation &amp; Supervision</a>
+        <a class="clinicians-overview-link" href="#writing-review">Writing &amp; Review</a>
+        <a class="clinicians-overview-link" href="#professional-education">Training &amp; Education</a>
       </div>
-    </section>
+    </nav>
 
     <section class="clinicians-section clinicians-section--offerings">
       <div class="clinicians-shell">
@@ -1219,11 +1210,11 @@
             <div class="clinicians-label">Professional offerings</div>
             <h2>Defined services with a clear purpose and frame.</h2>
           </div>
-          <p>Each request is reviewed for role, scope, timing, confidentiality, intended use, and whether Stonebridge is the appropriate professional fit.</p>
+          <p>Services are defined by role, scope, confidentiality, intended use, and timeline before work begins.</p>
         </div>
 
         <div class="clinicians-service-layout clinicians-service-layout--groups">
-          <div class="clinicians-service-intro clinicians-service-intro--groups">
+          <div class="clinicians-service-intro clinicians-service-intro--groups" id="peer-groups">
             <div class="clinicians-consultation-cta">
             <strong>Monthly peer consultation groups</strong>
             <p>Separate monthly peer-consultation spaces are available for practicing clinicians and for graduate or doctoral mental-health students.</p>
@@ -1232,42 +1223,43 @@
               <article class="clinicians-group-option">
                 <div class="clinicians-group-audience">For practicing clinicians</div>
                 <h3>Clinician Peer Consultation Group</h3>
-                <p>For practicing clinicians seeking thoughtful peer consultation around complex clinical work. Meets the <strong>first Friday of each month at 4:00 PM CT.</strong> Next meeting: <strong>September 4, 2026.</strong></p>
+                <p>For practicing clinicians seeking thoughtful peer consultation around complex clinical work. Meets the <strong>first Friday of each month at 4:00 PM CT.</strong></p>
                 <a class="btn btn-primary" href="mailto:info@stonebridgepsychgroup.com?subject=Clinician%20Peer%20Consultation%20Group%20Inquiry">Ask About the Clinician Group</a>
               </article>
 
               <article class="clinicians-group-option">
                 <div class="clinicians-group-audience">For graduate and doctoral trainees</div>
                 <h3>Student Peer Consultation Group</h3>
-                <p>For graduate and doctoral trainees developing clinical thinking alongside peers. Meets the <strong>third Friday of each month at 6:00 PM CT.</strong> Next meeting: <strong>September 18, 2026.</strong></p>
+                <p>For graduate and doctoral trainees developing clinical thinking alongside peers. Meets the <strong>third Friday of each month at 6:00 PM CT.</strong></p>
                 <a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com?subject=Student%20Peer%20Consultation%20Group%20Inquiry">Ask About the Student Group</a>
               </article>
             </div>
-            <p class="clinicians-boundary"><strong>Group frame:</strong> Groups are facilitated by Dr. Bryant by secure video. Clinical material must be appropriately de-identified. Student peer consultation is not supervision and does not replace university, practicum, internship, or site supervision.</p>
+            <p class="clinicians-boundary"><strong>Group expectations:</strong> Groups meet by secure video and clinical material must be appropriately de-identified. The student group is peer consultation, not supervision, and does not replace university, practicum, internship, or site supervision.</p>
           </div>
           </div>
 
           <div class="clinicians-service-list">
-          <div class="clinicians-service-category">
-            <span>Peer consultation &amp; clinical support</span>
+          <div class="clinicians-service-category" id="consultation-supervision">
+            <span>Individual consultation &amp; supervision</span>
           </div>
 <article class="clinicians-service-row">
             <div class="clinicians-service-number">01</div>
             <div>
-              <h3>Individual clinical consultation and peer consultation</h3>
-              <p>Focused discussion for psychologists, counselors, trainees, and other mental-health professionals seeking support with case conceptualization, differential diagnosis, treatment planning, trauma, addiction, co-occurring presentations, risk, ethics, boundaries, relational dynamics, countertransference, documentation, or sustainable practice.</p>
+              <h3>Individual Clinical Consultation</h3>
+              <p>Focused consultation for clinicians seeking another perspective on formulation, diagnosis, treatment planning, risk, ethics, documentation, relational dynamics, or complex co-occurring presentations. Consultation is advisory and does not create a supervisory relationship.</p>
             </div>
           </article>
 
           <article class="clinicians-service-row">
             <div class="clinicians-service-number">02</div>
             <div>
-              <h3>External clinical supervision</h3>
-              <p>Structured supervision may be available to eligible counselors and trainees who are not employed by Stonebridge. Work may include case conceptualization, treatment planning, documentation, ethics, risk assessment, use of self, professional identity, boundaries, workload, and burnout prevention.</p>
+              <h3>External Clinical Supervision</h3>
+              <p>Formal external supervision may be available to eligible counselors and trainees who are not employed by Stonebridge. Scope, responsibilities, documentation, and compatibility with the supervisee's training or licensure pathway are established before supervision begins.</p>
+              <p class="clinicians-boundary"><strong>Eligibility:</strong> External supervision depends on professional eligibility, role clarity, a written agreement, documentation requirements, and the applicable training or licensure pathway.</p>
             </div>
           </article>
 
-          <div class="clinicians-service-category">
+          <div class="clinicians-service-category" id="writing-review">
             <span>Writing &amp; review</span>
           </div>
 
@@ -1275,13 +1267,14 @@
             <div class="clinicians-service-number">03</div>
             <div>
               <h3>Psychological assessment report drafting and review</h3>
-              <p>Professional writing support for psychologists and assessment practices that need assistance transforming authorized referral information, interviews, records, behavioral observations, test data, and clinical findings into a clear, integrated psychological report.</p>
+              <p>Professional writing support for psychologists and assessment practices transforming supplied assessment materials into clear, integrated psychological reports.</p>
               <ul class="clinicians-service-details">
                 <li>Drafting from supplied assessment materials</li>
                 <li>Integrating history, findings, formulation, and recommendations</li>
                 <li>Revising structure, clarity, and coherence</li>
                 <li>Reviewing a draft before finalization</li>
               </ul>
+              <p class="clinicians-boundary"><strong>Evaluator responsibility:</strong> The requesting evaluator retains responsibility for assessment procedures, data, interpretation, diagnosis, conclusions, signature, and release.</p>
             </div>
           </article>
 
@@ -1289,12 +1282,13 @@
             <div class="clinicians-service-number">04</div>
             <div>
               <h3>Manuscript, article, and dissertation review</h3>
-              <p>Structured conceptual and editorial feedback for psychology-related scholarly or professional work, including journal manuscripts, article drafts, dissertation proposals or chapters, literature integration, argument development, clinical accuracy, methodological coherence, APA-style presentation, and responses to reviewer or committee feedback.</p>
+              <p>Conceptual and editorial feedback for psychology manuscripts, articles, and dissertations, including argument development, literature integration, clinical accuracy, methodological coherence, APA-style presentation, and responses to reviewers or committees.</p>
+              <p class="clinicians-boundary"><strong>Scholarly integrity:</strong> Review provides conceptual and editorial feedback rather than ghostwriting or completion of another person's academic work.</p>
             </div>
           </article>
 
-          <div class="clinicians-service-category">
-            <span>Education</span>
+          <div class="clinicians-service-category" id="professional-education">
+            <span>Professional education</span>
           </div>
 
           <article class="clinicians-service-row">
@@ -1303,13 +1297,13 @@
               <h3>Burnout training, webinars, and continuing education</h3>
               <p>Professional education may be developed for clinicians, supervisors, treatment programs, and organizations seeking a more serious understanding of burnout, secondary trauma, workforce sustainability, and the conditions that shape clinical effectiveness.</p>
               <ul class="clinicians-service-details">
-                <li>Beyond burnout: individual and organizational factors</li>
-                <li>Secondary trauma, compassion fatigue, and vicarious trauma</li>
-                <li>Sustainable clinical practice, caseloads, and boundaries</li>
-                <li>Burnout and workforce stress in addiction treatment</li>
-                <li>Supervisors and organizations as burnout interventions</li>
-                <li>Custom presentations by audience and setting</li>
+                <li>Burnout, secondary trauma, compassion fatigue, and vicarious trauma</li>
+                <li>Caseloads, boundaries, and sustainable clinical practice</li>
+                <li>Workforce stress in addiction and behavioral-health settings</li>
+                <li>Supervisory and organizational approaches to burnout prevention</li>
               </ul>
+              <p>Programs can be adapted to audience and setting.</p>
+              <p class="clinicians-boundary"><strong>Continuing education:</strong> CE credit is identified only when an event is offered through an appropriate approved sponsor or qualifying collaboration.</p>
             </div>
           </article>
         </div>
@@ -1322,7 +1316,6 @@
         <div class="clinicians-fees-intro">
           <div class="clinicians-label">Professional fees</div>
           <h2>Rates are confirmed before work begins.</h2>
-          <p>The scope, materials, timeline, expected deliverable, confidentiality requirements, and professional role are clarified in advance.</p>
         </div>
 
         <div>
@@ -1343,7 +1336,7 @@
                   <td>$300</td>
                 </tr>
                 <tr>
-                  <td>Clinical consultation and peer consultation</td>
+                  <td>Individual clinical consultation</td>
                   <td>Per hour</td>
                   <td>$200</td>
                 </tr>
@@ -1373,31 +1366,15 @@
     <section class="clinicians-section">
       <div class="clinicians-shell clinicians-scope-layout">
         <div class="clinicians-scope-copy">
-          <div class="clinicians-label">Professional scope</div>
+          <div class="clinicians-label">Professional boundaries</div>
           <h2>Clear roles protect the clinician, the client, and the work.</h2>
-          <p>Professional services are separate from psychotherapy and are defined through the requested role, intended use, and applicable responsibilities.</p>
+          <p>Professional services are distinct from psychotherapy and are provided within the role established for the engagement.</p>
         </div>
 
         <div class="clinicians-scope-list">
           <div class="clinicians-scope-row">
-            <strong>Evaluator responsibility</strong>
-            <p>Report support does not transfer responsibility for assessment procedures, data, interpretation, diagnosis, conclusions, signature, or release from the requesting evaluator.</p>
-          </div>
-          <div class="clinicians-scope-row">
-            <strong>Scholarly integrity</strong>
-            <p>Article, manuscript, and dissertation review provides conceptual and editorial feedback rather than ghostwriting or completion of another person’s academic work.</p>
-          </div>
-          <div class="clinicians-scope-row">
-            <strong>Supervision eligibility</strong>
-            <p>External supervision depends on professional eligibility, role clarity, a written agreement, documentation expectations, and compatibility with the supervisee’s training or licensure pathway.</p>
-          </div>
-          <div class="clinicians-scope-row">
-            <strong>Continuing education</strong>
-            <p>CE credit is identified only when the event is offered through an appropriate approved sponsor or qualifying collaboration.</p>
-          </div>
-          <div class="clinicians-scope-row">
             <strong>Consultation limits</strong>
-            <p>Consultation is not psychotherapy, emergency response, legal advice, or a substitute for an employer’s, institution’s, licensing board’s, or attorney’s responsibilities.</p>
+            <p>Consultation is not psychotherapy, emergency response, legal advice, or a substitute for an employer's, institution's, licensing board's, or attorney's responsibilities.</p>
           </div>
         </div>
       </div>
@@ -1406,8 +1383,8 @@
     <section class="clinicians-cta">
       <div class="clinicians-cta-inner">
         <div>
-          <h2>Begin with the professional role you need.</h2>
-          <p>Share the requested service, intended use, timeline, professional setting, and any materials or deliverables involved.</p>
+          <h2>Tell us what kind of professional support you need.</h2>
+          <p>Email the service you're interested in, your professional role, intended use, and timeline.</p>
         </div>
         <a class="btn btn-secondary" href="mailto:info@stonebridgepsychgroup.com?subject=Professional%20Services%20Inquiry">Email Stonebridge</a>
       </div>
