@@ -14,7 +14,7 @@
 <link href="site.webmanifest" rel="manifest"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Pixelify+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
 <style id="stonebridge-group-therapy-page-only">
     :root{
@@ -1249,7 +1249,86 @@
         animation-iteration-count:1 !important;
       }
     }
-  </style>
+  
+
+    /* The Lobby program wordmark — the only pixel-inspired element on the page. */
+    .lobby-wordmark{
+      position:relative;
+      display:inline-grid;
+      grid-template-columns:auto;
+      width:max-content;
+      max-width:100%;
+      margin:12px 0 20px;
+      padding:4px 18px 16px 22px;
+      color:var(--group-navy-deep);
+      font-family:"Pixelify Sans","Courier New",monospace;
+      letter-spacing:-.045em;
+      line-height:.82;
+      isolation:isolate;
+    }
+
+    .lobby-wordmark-the{
+      display:block;
+      margin:0 0 2px 34px;
+      font-size:clamp(1.45rem,2vw,2rem);
+      font-weight:700;
+      line-height:1;
+      letter-spacing:-.035em;
+    }
+
+    .lobby-wordmark-name{
+      position:relative;
+      z-index:1;
+      display:block;
+      font-size:clamp(3.55rem,5.6vw,5.35rem);
+      font-weight:700;
+      line-height:.78;
+      text-rendering:geometricPrecision;
+    }
+
+    /* Architectural accent taken from the program identity: bracket + baseline + pixels. */
+    .lobby-wordmark::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:38%;
+      width:14px;
+      height:46%;
+      border-left:5px solid #b28b5a;
+      border-bottom:5px solid #b28b5a;
+      box-sizing:border-box;
+      opacity:.96;
+    }
+
+    .lobby-wordmark::after{
+      content:"";
+      position:absolute;
+      left:14px;
+      right:54px;
+      bottom:0;
+      height:5px;
+      background:#b28b5a;
+      box-shadow:
+        calc(100% + 22px) -112px 0 -1px #8e8a6d,
+        calc(100% + 42px) -112px 0 -1px #b28b5a,
+        calc(100% + 62px) -112px 0 -1px #955638;
+      opacity:.96;
+    }
+
+    @media(max-width:720px){
+      .lobby-wordmark{
+        margin:10px 0 18px;
+        padding-left:18px;
+        padding-right:12px;
+      }
+      .lobby-wordmark-the{margin-left:24px;}
+      .lobby-wordmark-name{font-size:clamp(3rem,15vw,4.2rem);}
+      .lobby-wordmark::after{
+        right:30px;
+        box-shadow:none;
+      }
+    }
+</style>
 <style id="stonebridge-group-composition-final">
   /* Final composition pass: one integrated program image, cleaner rhythm, no standalone media box. */
   #groups-forming{
@@ -1511,7 +1590,10 @@
 <article class="group-offering-card group-current-offering">
 <div class="group-offering-copy">
 <div class="group-feature-label">Current group · Gathering interest</div>
-<h2>The Lobby</h2>
+<h2 class="lobby-wordmark" aria-label="The Lobby">
+<span class="lobby-wordmark-the" aria-hidden="true">The</span>
+<span class="lobby-wordmark-name" aria-hidden="true">Lobby</span>
+</h2>
 <p class="group-offering-subtitle">Teen group therapy through cooperative play</p>
 <p>A small therapist-led online group using cooperative <em>Stardew Valley</em> gameplay to practice communication, flexibility, collaboration, participation, and connection.</p>
 <p class="group-offering-principle">The game is the medium. The psychotherapy is the service.</p>
