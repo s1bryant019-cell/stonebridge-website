@@ -2284,7 +2284,146 @@
   .editorial-section{padding:26px 0;}
 }
 
-</style></head>
+</style>
+<style id="lobby-integrated-final-override">
+/* Final Lobby integration: image is architectural, not a rectangular content block. */
+.lobby-showcase{
+  position:relative;
+  display:block;
+  min-height:545px;
+  overflow:hidden;
+  background:var(--group-bg);
+  border-top:1px solid var(--group-warm-line);
+  border-bottom:1px solid var(--group-warm-line);
+}
+
+.lobby-showcase::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(90deg,
+    #f8f5f0 0%,
+    #f8f5f0 38%,
+    rgba(248,245,240,.98) 45%,
+    rgba(248,245,240,.90) 51%,
+    rgba(248,245,240,.62) 58%,
+    rgba(248,245,240,.22) 66%,
+    rgba(248,245,240,0) 74%
+  );
+}
+
+.lobby-showcase-copy{
+  position:relative;
+  z-index:2;
+  width:min(58%,760px);
+  min-height:545px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  box-sizing:border-box;
+  padding:36px 56px 34px max(34px,calc((100vw - 1280px)/2 + 44px));
+  background:transparent;
+}
+
+.lobby-showcase-photo{
+  position:absolute;
+  z-index:0;
+  top:0;
+  right:0;
+  bottom:0;
+  width:68%;
+  min-height:0;
+  margin:0;
+}
+
+.lobby-showcase-photo::before{display:none;}
+
+.lobby-showcase-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:58% center;
+}
+
+.lobby-showcase-brand{
+  width:min(100%,17.5rem);
+  margin:0 0 13px;
+}
+
+.lobby-showcase-title{
+  max-width:15ch;
+  margin:0 0 12px;
+  font-size:clamp(2.35rem,3vw,3.05rem);
+  line-height:.99;
+}
+
+.lobby-showcase-intro{
+  max-width:33rem;
+  font-size:.96rem;
+  line-height:1.58;
+}
+
+.lobby-showcase-quote{
+  max-width:31rem;
+  margin-top:16px;
+  padding-top:13px;
+  font-size:clamp(1.25rem,1.55vw,1.5rem);
+}
+
+.lobby-showcase-facts{
+  max-width:39rem;
+  margin-top:20px;
+  padding-top:11px;
+}
+
+.lobby-showcase-support{margin-top:12px;}
+.lobby-showcase-actions{margin-top:18px;}
+
+@media(max-width:1100px){
+  .lobby-showcase{min-height:530px;}
+  .lobby-showcase-copy{
+    width:61%;
+    min-height:530px;
+    padding-left:30px;
+    padding-right:42px;
+  }
+  .lobby-showcase-photo{width:66%;}
+  .lobby-showcase::after{
+    background:linear-gradient(90deg,#f8f5f0 0%,#f8f5f0 40%,rgba(248,245,240,.96) 48%,rgba(248,245,240,.72) 57%,rgba(248,245,240,.22) 67%,rgba(248,245,240,0) 76%);
+  }
+  .lobby-showcase-brand{width:min(100%,16rem);}
+  .lobby-showcase-title{font-size:clamp(2.1rem,3.2vw,2.65rem);}
+  .lobby-showcase-fact dd{font-size:1.12rem;}
+}
+
+@media(max-width:900px){
+  .lobby-showcase{display:grid;grid-template-columns:1fr;min-height:0;}
+  .lobby-showcase::after{display:none;}
+  .lobby-showcase-copy{
+    width:100%;
+    min-height:0;
+    padding:32px 24px 28px;
+    background:var(--group-bg);
+  }
+  .lobby-showcase-photo{
+    position:relative;
+    top:auto;right:auto;bottom:auto;
+    width:100%;
+    aspect-ratio:4/3;
+  }
+  .lobby-showcase-facts{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
+@media(max-width:620px){
+  .lobby-showcase-copy{padding:28px 18px 26px;}
+  .lobby-showcase-facts{grid-template-columns:1fr;}
+  .lobby-showcase-fact{padding:10px 0;border-left:0;border-top:1px solid var(--group-line);}
+  .lobby-showcase-fact:first-child{border-top:0;}
+}
+</style>
+</head>
 <body class="group-therapy-page">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header compact-site-header">
