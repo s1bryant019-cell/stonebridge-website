@@ -2109,6 +2109,181 @@
   .group-current-offering .group-offering-photo{aspect-ratio:4/3;}
 }
 
+
+
+/* Final Lobby proportion + body rhythm correction — preserves header, hero, strip, footer. */
+.lobby-showcase{
+  grid-template-columns:minmax(0,52%) minmax(0,48%);
+  min-height:0;
+}
+
+.lobby-showcase-copy{
+  padding-top:clamp(34px,3.8vw,50px);
+  padding-bottom:clamp(30px,3.4vw,44px);
+  padding-right:clamp(48px,5.5vw,78px);
+  background:linear-gradient(90deg,#f8f5f0 0%,#f8f5f0 76%,rgba(248,245,240,.95) 88%,rgba(248,245,240,.30) 98%,rgba(248,245,240,0) 100%);
+}
+
+.lobby-showcase-brand{
+  width:min(100%,16.75rem);
+  margin-bottom:14px;
+}
+
+.lobby-showcase-title{
+  max-width:16ch;
+  margin-bottom:14px;
+  font-size:clamp(2.3rem,2.8vw,2.9rem);
+  line-height:1.01;
+}
+
+.lobby-showcase-intro{
+  max-width:34rem;
+  font-size:.98rem;
+  line-height:1.62;
+}
+
+.lobby-showcase-quote{
+  max-width:30rem;
+  margin-top:18px;
+  padding-top:14px;
+  font-size:clamp(1.28rem,1.6vw,1.55rem);
+  line-height:1.26;
+}
+
+.lobby-showcase-facts{
+  margin-top:22px;
+  padding-top:12px;
+}
+
+.lobby-showcase-fact{
+  padding:0 14px;
+}
+
+.lobby-showcase-fact dd{
+  font-size:1.25rem;
+}
+
+.lobby-showcase-fact dd span{
+  margin-top:4px;
+  font-size:.82rem;
+  line-height:1.34;
+}
+
+.lobby-showcase-support{
+  margin-top:14px;
+  gap:10px 24px;
+}
+
+.lobby-showcase-support a{font-size:.9rem;}
+
+.lobby-showcase-actions{
+  margin-top:19px;
+}
+
+.lobby-showcase-photo{
+  min-height:500px;
+  margin-left:-54px;
+  width:calc(100% + 54px);
+}
+
+.lobby-showcase-photo::before{
+  width:30%;
+  background:linear-gradient(90deg,#f8f5f0 0%,rgba(248,245,240,.86) 22%,rgba(248,245,240,.46) 58%,rgba(248,245,240,0) 100%);
+}
+
+.lobby-showcase-photo img{
+  object-position:57% center;
+}
+
+.editorial-section{
+  padding:30px 0;
+}
+
+.editorial-grid{
+  grid-template-columns:minmax(290px,1fr) minmax(0,1.62fr);
+  gap:30px;
+}
+
+.editorial-heading h2{
+  max-width:15ch;
+  font-size:clamp(2.35rem,2.85vw,3rem);
+}
+
+.editorial-body > p{
+  font-size:.98rem;
+  line-height:1.62;
+}
+
+.feature-card-grid,
+.focus-card-grid,
+.editorial-steps,
+.practical-grid{
+  margin-top:18px;
+}
+
+.feature-card,
+.focus-card,
+.compact-step,
+.practical-card{
+  padding-top:16px;
+  padding-bottom:16px;
+}
+
+.feature-card h3,
+.focus-card h3,
+.compact-step h3,
+.practical-card h3{
+  font-size:1.42rem;
+}
+
+.feature-card p,
+.focus-card p,
+.compact-step p,
+.practical-card p,
+.editorial-note{
+  font-size:.92rem;
+  line-height:1.55;
+}
+
+.editorial-note{
+  margin-top:13px;
+  padding-top:12px;
+}
+
+@media(max-width:1180px){
+  .lobby-showcase{grid-template-columns:minmax(0,55%) minmax(0,45%);}
+  .lobby-showcase-copy{padding-left:clamp(28px,4vw,46px);padding-right:54px;}
+  .lobby-showcase-title{max-width:17ch;font-size:clamp(2.15rem,3.2vw,2.65rem);}
+  .lobby-showcase-photo{margin-left:-42px;width:calc(100% + 42px);min-height:470px;}
+  .lobby-showcase-brand{width:min(100%,15rem);}
+  .lobby-showcase-facts{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:0;}
+  .lobby-showcase-fact:nth-child(3){padding-left:14px;border-left:1px solid var(--group-line);}
+}
+
+@media(max-width:960px){
+  .lobby-showcase{grid-template-columns:1fr;}
+  .lobby-showcase-copy{padding:34px 30px 30px;background:var(--group-bg);}
+  .lobby-showcase-photo{margin-left:0;width:100%;min-height:0;aspect-ratio:16/9;}
+  .lobby-showcase-photo::before{display:none;}
+  .lobby-showcase-title{max-width:18ch;}
+  .lobby-showcase-facts{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:16px;}
+  .lobby-showcase-fact:nth-child(3){padding-left:0;border-left:0;}
+  .editorial-grid{grid-template-columns:1fr;gap:16px;}
+  .editorial-heading h2{max-width:18ch;}
+}
+
+@media(max-width:720px){
+  .lobby-showcase-copy{padding:28px 18px 26px;}
+  .lobby-showcase-brand{width:min(100%,13.5rem);}
+  .lobby-showcase-title{font-size:clamp(2rem,8vw,2.55rem);}
+  .lobby-showcase-facts{grid-template-columns:1fr 1fr;}
+  .lobby-showcase-fact,
+  .lobby-showcase-fact:first-child,
+  .lobby-showcase-fact:nth-child(3){padding:0 10px 0 0;border-left:0;}
+  .lobby-showcase-fact:nth-child(even){padding:0 0 0 10px;border-left:1px solid var(--group-line);}
+  .editorial-section{padding:26px 0;}
+}
+
 </style></head>
 <body class="group-therapy-page">
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -2219,7 +2394,7 @@
 <section class="editorial-section paper" id="teen-group-focus">
 <div class="editorial-shell editorial-grid">
 <div class="editorial-heading">
-<div class="group-label">How it’s designed for</div>
+<div class="group-label">Who it’s designed for</div>
 <h2>Two possible areas of clinical focus.</h2>
 </div>
 <div class="editorial-body">
@@ -2259,8 +2434,8 @@
 </article>
 <article class="compact-step">
 <div class="compact-step-number">3</div>
-<h3>Join the next group</h3>
-<p>If it feels like a match, we’ll share next steps and add your teen to the interest list for the next group.</p>
+<h3>Form &amp; prepare</h3>
+<p>If the group appears to be a good fit, Stonebridge confirms next steps as an appropriate cohort comes together.</p>
 </article>
 </div>
 </div>
@@ -2297,7 +2472,7 @@
 <div class="group-cta-inner">
 <div>
 <h2>Interested in The Lobby?</h2>
-<p>Request a consultation to speak with our team and learn more about the group, determine fit, and join the interest list.</p>
+<p>Request a consultation to learn more about the group and begin the screening process. An inquiry does not guarantee placement or a specific start date.</p>
 </div>
 <a class="btn btn-secondary" href="contact.html?service=teen-group#inquiry-form">Request a Consultation</a>
 </div>
