@@ -190,28 +190,31 @@
       padding:17px 0;
     }
 
-    .clinicians-overview-link{
-      display:flex;
-      align-items:center;
-      min-height:38px;
+    .clinicians-overview article{
       padding:0 24px;
       border-left:1px solid rgba(33,49,66,.14);
-      color:var(--clinicians-navy-deep);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.08rem;
-      font-weight:700;
-      line-height:1.12;
-      text-decoration:none;
     }
 
-    .clinicians-overview-link:first-child{
+    .clinicians-overview article:first-child{
       padding-left:0;
       border-left:0;
     }
 
-    .clinicians-overview-link:hover{
-      text-decoration:underline;
-      text-underline-offset:4px;
+    .clinicians-overview h2{
+      margin:0 0 4px;
+      color:var(--clinicians-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.08rem;
+      line-height:1.1;
+      letter-spacing:-.01em;
+    }
+
+    .clinicians-overview p{
+      margin:0;
+      color:var(--clinicians-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.48;
     }
 
     .clinicians-section{
@@ -483,7 +486,16 @@
           );
       }
 
-      .clinicians-overview-grid,
+      .clinicians-overview-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        row-gap:18px;
+      }
+
+      .clinicians-overview article:nth-child(3){
+        padding-left:0;
+        border-left:0;
+      }
+
       .clinicians-scope-layout,
       .clinicians-cta-inner{
         grid-template-columns:1fr;
@@ -550,14 +562,13 @@
         padding:14px 0;
       }
 
-      .clinicians-overview-link{
-        min-height:0;
+      .clinicians-overview article{
         padding:13px 0;
         border-left:0;
         border-top:1px solid rgba(33,49,66,.13);
       }
 
-      .clinicians-overview-link:first-child{
+      .clinicians-overview article:first-child{
         padding-top:0;
         border-top:0;
       }
@@ -1194,14 +1205,26 @@
       </figure>
     </section>
 
-    <nav class="clinicians-overview" aria-label="Professional offerings on this page">
+    <section class="clinicians-overview" aria-label="Professional services overview">
       <div class="clinicians-overview-grid">
-        <a class="clinicians-overview-link" href="#peer-groups">Peer Groups</a>
-        <a class="clinicians-overview-link" href="#consultation-supervision">Consultation &amp; Supervision</a>
-        <a class="clinicians-overview-link" href="#writing-review">Writing &amp; Review</a>
-        <a class="clinicians-overview-link" href="#professional-education">Training &amp; Education</a>
+        <article>
+          <h2>Peer Groups</h2>
+          <p>Monthly consultation spaces for practicing clinicians and trainees.</p>
+        </article>
+        <article>
+          <h2>Consultation &amp; Supervision</h2>
+          <p>Individual clinical consultation and eligible external supervision.</p>
+        </article>
+        <article>
+          <h2>Writing &amp; Review</h2>
+          <p>Assessment-report support and scholarly review.</p>
+        </article>
+        <article>
+          <h2>Training &amp; Education</h2>
+          <p>Burnout-focused education for clinicians and organizations.</p>
+        </article>
       </div>
-    </nav>
+    </section>
 
     <section class="clinicians-section clinicians-section--offerings">
       <div class="clinicians-shell">
@@ -1246,7 +1269,7 @@
             <div class="clinicians-service-number">01</div>
             <div>
               <h3>Individual Clinical Consultation</h3>
-              <p>Focused consultation for clinicians seeking another perspective on formulation, diagnosis, treatment planning, risk, ethics, documentation, relational dynamics, or complex co-occurring presentations. Consultation is advisory and does not create a supervisory relationship.</p>
+              <p>Focused consultation for clinicians seeking another perspective on formulation, diagnosis, treatment planning, risk, ethics, relational dynamics, or complex presentations. Consultation is advisory and does not create a supervisory relationship.</p>
             </div>
           </article>
 
