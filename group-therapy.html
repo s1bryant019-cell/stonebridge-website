@@ -1263,6 +1263,137 @@
       .group-editorial-photo{aspect-ratio:4/3;}
     }
 
+
+    /* Group Therapy rhythm refinement — preserve architecture while removing dead space. */
+    .group-section{padding:36px 0;}
+
+    #groups-forming .group-shell{width:min(1280px,100%);}
+
+    .group-current-offering{
+      grid-template-columns:minmax(0,1.2fr) minmax(330px,.8fr);
+      min-height:0;
+    }
+
+    .group-current-offering .group-offering-copy{
+      padding:34px clamp(30px,4vw,54px) 36px clamp(34px,4.6vw,62px);
+    }
+
+    .group-current-offering .group-offering-facts{
+      grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+    .group-current-offering .group-offering-fact,
+    .group-current-offering .group-offering-fact:nth-child(even){
+      padding:12px 16px;
+      border-left:1px solid var(--group-line);
+    }
+
+    .group-current-offering .group-offering-fact:nth-child(3n+1){
+      padding-left:0;
+      border-left:0;
+    }
+
+    .group-current-offering .group-offering-fact:nth-child(3n){padding-right:0;}
+
+    .group-current-offering .group-offering-fact-wide{
+      grid-column:1 / -1;
+      padding-left:0 !important;
+      padding-right:0 !important;
+      border-left:0 !important;
+    }
+
+    .group-current-offering .group-offering-photo{
+      min-height:0;
+      height:auto;
+      align-self:stretch;
+    }
+
+    .group-current-offering .group-offering-photo img{object-position:55% center;}
+
+    .group-gameplay-layout{
+      display:grid;
+      grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+      gap:clamp(36px,5vw,72px);
+      align-items:start;
+    }
+
+    .group-gameplay-heading h2{
+      margin:11px 0 0;
+      max-width:14ch;
+      color:var(--group-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.15rem,2.8vw,2.85rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
+      text-wrap:balance;
+    }
+
+    .group-gameplay-content{
+      padding-top:15px;
+      border-top:1px solid var(--group-line);
+    }
+
+    .group-gameplay-content > p{
+      max-width:48rem;
+      margin:0;
+      color:var(--group-muted);
+      font-family:"Inter",sans-serif;
+      font-size:1rem;
+      line-height:1.68;
+    }
+
+    .group-gameplay-content .group-topic-list{margin-top:18px;}
+
+    #teen-group-focus{padding:36px 0 34px;}
+    #how-groups-form{padding:32px 0 34px;}
+    #before-joining{padding:32px 0 34px;}
+
+    .group-focus-header,
+    .group-process-compact-heading,
+    .group-before-header{margin-bottom:14px;}
+
+    .group-suitability-note{margin-top:16px;}
+
+    .group-steps-compact .group-step{padding-top:16px;padding-bottom:16px;}
+
+    .group-family-fact,
+    .group-family-fact:nth-child(even):not(.group-family-fact-wide){padding-top:15px;padding-bottom:15px;}
+
+    @media(max-width:1120px){
+      .group-current-offering{grid-template-columns:1fr;}
+      .group-current-offering .group-offering-copy{padding:36px clamp(28px,5vw,50px);}
+      .group-current-offering .group-offering-photo{aspect-ratio:16/8.5;}
+      .group-gameplay-layout{grid-template-columns:1fr;gap:18px;}
+      .group-gameplay-content{padding-top:17px;}
+    }
+
+    @media(max-width:860px){
+      .group-current-offering .group-offering-facts{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .group-current-offering .group-offering-fact,
+      .group-current-offering .group-offering-fact:nth-child(even){
+        padding:12px 14px;
+        border-left:1px solid var(--group-line);
+      }
+      .group-current-offering .group-offering-fact:nth-child(odd){padding-left:0;border-left:0;}
+      .group-current-offering .group-offering-fact:nth-child(even){padding-right:0;}
+    }
+
+    @media(max-width:720px){
+      .group-section,
+      #teen-group-focus,
+      #how-groups-form,
+      #before-joining{padding:30px 0;}
+      .group-current-offering .group-offering-facts{grid-template-columns:1fr;}
+      .group-current-offering .group-offering-fact,
+      .group-current-offering .group-offering-fact:nth-child(even),
+      .group-current-offering .group-offering-fact:nth-child(odd){
+        padding:11px 0;
+        border-left:0;
+      }
+      .group-current-offering .group-offering-copy{padding:30px 22px;}
+      .group-gameplay-layout{gap:14px;}
+    }
+
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto;}
       *,*::before,*::after{
@@ -1493,18 +1624,17 @@
 </section>
 
 <section class="group-section" id="gameplay">
-<div class="group-shell group-editorial-grid">
-<figure class="group-editorial-photo">
-<img alt="Warm home workspace with a laptop displaying a cooperative farming game" decoding="async" height="941" loading="lazy" src="teen-cooperative-group-desk.jpg" width="1672" onerror="this.closest('.group-editorial-photo').classList.add('image-unavailable'); this.remove();"/>
-</figure>
-<div class="group-editorial-copy">
+<div class="group-shell group-gameplay-layout">
+<div class="group-gameplay-heading">
 <div class="group-label">How cooperative gameplay helps</div>
 <h2>A shared activity creates something real to work with.</h2>
-<p>Cooperative play creates interpersonal moments in real time—planning together, asking for help, adapting when someone has a different idea, recovering from mistakes, and reconnecting after friction. The clinician can work with those moments as they happen and connect them to relationships outside the game.</p>
+</div>
+<div class="group-gameplay-content">
+<p>Cooperative play gives the group something concrete to navigate together: planning, asking for help, adapting to different ideas, making mistakes, and repairing friction. The clinician can work with those moments as they happen and connect them to relationships outside the game.</p>
 <ul aria-label="Examples of therapeutic material during cooperative gameplay" class="group-topic-list">
-<li>Reciprocal communication &amp; asking for help</li>
+<li>Communication &amp; asking for help</li>
 <li>Collaboration, shared decisions &amp; flexibility</li>
-<li>Participation, initiation &amp; behavioral activation</li>
+<li>Participation, initiation &amp; engagement</li>
 <li>Conflict repair, mistakes &amp; reconnecting</li>
 </ul>
 </div>
