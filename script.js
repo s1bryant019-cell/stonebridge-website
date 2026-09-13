@@ -86,22 +86,8 @@
       }
     });
 
-    document.querySelectorAll('.site-footer').forEach(function (footer) {
-      var practiceTitle = Array.prototype.slice.call(footer.querySelectorAll('.footer-title')).find(function (title) {
-        return (title.textContent || '').trim().toLowerCase() === 'practice';
-      });
-      if (!practiceTitle) return;
-
-      var links = practiceTitle.parentElement ? practiceTitle.parentElement.querySelector('.footer-links') : null;
-      if (!links || links.querySelector('a[href="careers.html"]')) return;
-
-      var careersLink = document.createElement('a');
-      careersLink.href = 'careers.html';
-      careersLink.textContent = 'Careers';
-
-      var portalLink = links.querySelector('a[href="portal.html"]');
-      if (portalLink) links.insertBefore(careersLink, portalLink);
-      else links.appendChild(careersLink);
+    document.querySelectorAll('.site-footer a[href="careers.html"]').forEach(function (link) {
+      link.remove();
     });
   }
 
@@ -132,29 +118,33 @@
     });
   }
 
-  function normalizeImageAltText() {
-    document.querySelectorAll('img[alt]').forEach(function (img) {
-      var alt = (img.getAttribute('alt') || '').trim();
-      var normalized = alt.toLowerCase();
-      var src = (img.getAttribute('src') || '').split('/').pop() || '';
-      var srcBase = src.replace(/\.[a-z0-9]+$/i, '').replace(/[-_]+/g, ' ').trim().toLowerCase();
+  function normalizeTargetedImageAltText() {
+    document.querySelectorAll('body.home-page .home-hero-media img, body.home-page .home-clinician-photo img').forEach(function (img) {
+      img.setAttribute('alt', '');
+      img.setAttribute('role', 'presentation');
+    });
 
-      if (normalized === 'image' || normalized === 'photo' || normalized === 'picture') {
+    document.querySelectorAll('body.group-therapy-page .lobby-showcase-brand img').forEach(function (img) {
+      img.setAttribute('alt', '');
+      img.setAttribute('aria-hidden', 'true');
+      img.setAttribute('role', 'presentation');
+    });
+
+    document.querySelectorAll('body.group-therapy-page #groups-forming img').forEach(function (img) {
+      var src = (img.getAttribute('src') || '').toLowerCase();
+      var alt = (img.getAttribute('alt') || '').trim().toLowerCase();
+      var generic = alt === 'image' || alt === 'photo' || alt === 'picture';
+      if (!generic) return;
+
+      if (src.indexOf('the-lobby-wordmark') !== -1) {
         img.setAttribute('alt', '');
-        return;
+        img.setAttribute('aria-hidden', 'true');
+        img.setAttribute('role', 'presentation');
+      } else if (src.indexOf('teen-cooperative-group-participant') !== -1) {
+        img.setAttribute('alt', 'Adolescent viewed from behind wearing headphones at a desk with cooperative farming gameplay visible on a monitor');
+      } else if (src.indexOf('teen-cooperative-group-desk') !== -1) {
+        img.setAttribute('alt', 'Cooperative farming gameplay displayed on a desk during a teen group therapy activity');
       }
-
-      if (normalized.indexOf('photo of ') === 0) {
-        img.setAttribute('alt', alt.slice(9).replace(/^./, function (character) { return character.toUpperCase(); }));
-        return;
-      }
-
-      if (normalized.indexOf('picture of ') === 0) {
-        img.setAttribute('alt', alt.slice(11).replace(/^./, function (character) { return character.toUpperCase(); }));
-        return;
-      }
-
-      if (srcBase && normalized === srcBase) img.setAttribute('alt', '');
     });
   }
 
@@ -169,18 +159,12 @@
       '.clinicians-page #peer-groups,.clinicians-page #consultation-supervision,.clinicians-page #writing-review,.clinicians-page #professional-education,.clinicians-page #professional-fees{scroll-margin-top:104px}',
       '.clinicians-page .clinicians-service-category h2{margin:0;color:var(--clinicians-gold);font-family:"Inter",sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.13em;line-height:1.4;text-transform:uppercase}',
       '.clinicians-page .professional-group-heading{margin:0 0 8px;color:var(--clinicians-ink);font-family:"EB Garamond",Georgia,serif;font-size:1.65rem;line-height:1.08;letter-spacing:-.02em}',
-      '.clinicians-page .professional-topic-list{margin:14px 0 0;padding:0;list-style:none;border-top:1px solid var(--clinicians-line)}',
-      '.clinicians-page .professional-topic-list li{position:relative;padding:9px 0 9px 16px;border-bottom:1px solid var(--clinicians-line);color:var(--clinicians-muted);font-family:"Inter",sans-serif;font-size:.89rem;line-height:1.55}',
-      '.clinicians-page .professional-topic-list li:before{content:"";position:absolute;left:0;top:1rem;width:6px;height:6px;border-radius:50%;background:#b89661}',
-      '.founder-page .founder-focus-compact{scroll-margin-top:100px}',
+      '.founder-page .founder-summary-band .subpage-band-grid.founder-summary-band--single{grid-template-columns:1fr!important}',
       '.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:repeat(2,minmax(0,1fr))!important}',
-      '.founder-page .founder-approach-compressed{width:min(1080px,calc(100% - 72px));margin:0 auto;max-width:1080px;padding:50px 0}',
-      '.founder-page .founder-approach-compressed .section-copy{max-width:820px}',
-      '.founder-page .founder-approach-compressed .section-copy h2{margin:10px 0 16px;color:var(--sb-navy);font-family:"EB Garamond",serif;font-size:clamp(2.15rem,3.15vw,3.25rem);line-height:1.02;letter-spacing:-.04em}',
-      '.founder-page .founder-approach-compressed .section-copy p{margin:0 0 14px;color:var(--sb-muted);font-family:"Inter",sans-serif;font-size:1rem;line-height:1.72}',
-      '.founder-page .founder-books-compressed{padding:50px 0;background:var(--sb-bg-soft);border-top:1px solid var(--sb-line-warm);border-bottom:1px solid var(--sb-line-warm)}',
-      '.founder-page .founder-books-compressed .founder-wide-shell{width:min(1080px,calc(100% - 72px));margin:0 auto}',
-      '@media(max-width:720px){.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:1fr!important}.founder-page .founder-approach-compressed,.founder-page .founder-books-compressed .founder-wide-shell{width:min(100% - 34px,1080px)}}'
+      '.about-page .about-overview-grid.about-overview-grid--two{grid-template-columns:repeat(2,minmax(0,1fr))}',
+      '.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:minmax(0,760px);justify-content:start}',
+      '.team-page .team-overview-grid.team-overview-grid--single{grid-template-columns:1fr}',
+      '@media(max-width:720px){.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:1fr!important}.about-page .about-overview-grid.about-overview-grid--two{grid-template-columns:1fr}.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:1fr}}'
     ].join('\n');
     document.head.appendChild(style);
   }
@@ -191,6 +175,63 @@
     });
   }
 
+  function initFounderPage() {
+    var main = document.querySelector('main.founder-page');
+    if (!main) return;
+
+    var summaryBand = main.querySelector('.founder-summary-band');
+    if (summaryBand) {
+      var approachSummary = findHeading(summaryBand, '.subpage-band-item h2', 'Clinical approach');
+      if (approachSummary) {
+        var approachItem = approachSummary.closest('.subpage-band-item');
+        if (approachItem) approachItem.remove();
+      }
+      var summaryGrid = summaryBand.querySelector('.subpage-band-grid');
+      if (summaryGrid) summaryGrid.classList.add('founder-summary-band--single');
+    }
+
+    var focus = main.querySelector('#clinical-focus');
+    if (focus) {
+      var focusIntro = focus.querySelector('.compact-section-intro p');
+      if (focusIntro) focusIntro.textContent = 'Dr. Bryant has particular experience across these areas within a broader outpatient practice.';
+
+      var focusGrid = focus.querySelector('.focus-compact-grid');
+      if (focusGrid) {
+        focusGrid.classList.add('founder-focus-compressed');
+        focusGrid.setAttribute('aria-label', 'Clinical focus');
+        focusGrid.innerHTML = [
+          '<article><span>01</span><h3>Addiction and co-occurring concerns</h3><p>Substance use, relapse and recovery patterns, ambivalence, process addictions, shame, coping cycles, and dual-diagnosis concerns.</p></article>',
+          '<article><span>02</span><h3>Trauma, PTSD, and complex stress</h3><p>Threat responses, dissociation, safety, emotional regulation, body-based distress, self-worth, and protective patterns.</p></article>',
+          '<article><span>03</span><h3>Mood, anxiety, and emotional regulation</h3><p>Depression, panic, overthinking, irritability, shutdown, mood instability, avoidance, and difficulty feeling steady.</p></article>',
+          '<article><span>04</span><h3>Relationships, identity &amp; life transitions</h3><p>Couples and family concerns, identity, grief, family stress, parent support, and significant life transitions.</p></article>'
+        ].join('');
+      }
+
+      var broaderCare = focus.querySelector('.broader-care-compact');
+      if (broaderCare) broaderCare.remove();
+    }
+
+    var approach = main.querySelector('#therapy-style');
+    if (approach) {
+      approach.innerHTML = [
+        '<div class="founder-wide-shell therapy-method-layout">',
+          '<div class="therapy-method-intro">',
+            '<div class="section-label">Clinical approach</div>',
+            '<h2>How Dr. Bryant works.</h2>',
+          '</div>',
+          '<div>',
+            '<div class="therapy-method-list">',
+              '<article class="therapy-method-row"><div class="therapy-method-number">01</div><div><h3>Relational &amp; psychodynamic</h3><p>Recurring emotional and relationship patterns, identity, defenses, needs, and the therapeutic relationship.</p></div></article>',
+              '<article class="therapy-method-row"><div class="therapy-method-number">02</div><div><h3>Evidence-based skills &amp; behavior change</h3><p>CBT, ACT, DBT, and motivational interviewing are integrated when useful for regulation, avoidance, values, coping, and change.</p></div></article>',
+              '<article class="therapy-method-row"><div class="therapy-method-number">03</div><div><h3>Trauma, attachment &amp; systems</h3><p>Trauma-informed, attachment-based, and family-systems approaches connect symptoms with safety, development, relationships, and family patterns.</p></div></article>',
+            '</div>',
+            '<p class="therapy-method-note">These approaches are not applied as a fixed formula. Dr. Bryant develops an individualized formulation and draws from different methods when they support the purpose of therapy.</p>',
+          '</div>',
+        '</div>'
+      ].join('');
+    }
+  }
+
   function initProfessionalsPage() {
     var page = document.querySelector('body.clinicians-page');
     if (!page) return;
@@ -199,11 +240,13 @@
     var overviewGrid = overview ? overview.querySelector('.clinicians-overview-grid') : null;
     if (overview && overviewGrid) {
       overview.setAttribute('aria-labelledby', 'professional-services-routing-title');
-      var routingTitle = document.createElement('h2');
-      routingTitle.id = 'professional-services-routing-title';
-      routingTitle.className = 'sr-only';
-      routingTitle.textContent = 'Professional Services';
-      overview.insertBefore(routingTitle, overviewGrid);
+      if (!overview.querySelector('#professional-services-routing-title')) {
+        var routingTitle = document.createElement('h2');
+        routingTitle.id = 'professional-services-routing-title';
+        routingTitle.className = 'sr-only';
+        routingTitle.textContent = 'Professional Services';
+        overview.insertBefore(routingTitle, overviewGrid);
+      }
       overviewGrid.innerHTML = [
         '<article><a class="professional-route-link" href="#peer-groups"><h2>Peer Consultation Groups</h2><p>Ongoing small-group consultation for clinicians.</p></a></article>',
         '<article><a class="professional-route-link" href="#consultation-supervision"><h2>Individual Consultation &amp; Supervision</h2><p>One-to-one professional consultation around clinical work.</p></a></article>',
@@ -225,7 +268,7 @@
         groupHeading.replaceWith(h2);
       }
       var groupIntro = groupSection.querySelector('.clinicians-consultation-cta > p:not(.clinicians-boundary)');
-      if (groupIntro) groupIntro.textContent = 'Separate monthly peer-consultation spaces are available for practicing clinicians and for graduate or doctoral mental-health students. Groups emphasize practical discussion of current clinical work in a small-group format.';
+      if (groupIntro) groupIntro.textContent = 'Separate monthly consultation groups are available for practicing clinicians and graduate/doctoral trainees.';
     }
 
     var categories = {
@@ -242,66 +285,55 @@
 
     var consultationHeading = findHeading(page, '.clinicians-service-row h3', 'Individual Clinical Consultation');
     if (consultationHeading) {
-      var consultationBody = consultationHeading.parentElement;
-      consultationHeading.textContent = 'Individual Clinical Consultation';
-      consultationBody.innerHTML = '<h3>Individual Clinical Consultation</h3>' +
-        '<p>Focused one-to-one consultation for clinicians seeking another perspective on clinical work. Consultation is advisory and does not create a supervisory relationship.</p>' +
-        '<ul class="professional-topic-list">' +
-        '<li><strong>Case conceptualization &amp; treatment planning</strong></li>' +
-        '<li><strong>Relational or clinical complexity</strong></li>' +
-        '<li><strong>Professional development &amp; decision-making</strong></li>' +
-        '<li><strong>Documentation, boundaries, or systems issues</strong></li>' +
-        '</ul>';
+      consultationHeading.parentElement.innerHTML = '<h3>Individual Clinical Consultation</h3><p>Focused consultation on formulation, diagnosis, treatment planning, risk, ethics, relational dynamics, or complex presentations. Consultation is advisory and does not establish supervision.</p>';
     }
 
     var supervisionHeading = findHeading(page, '.clinicians-service-row h3', 'External Clinical Supervision');
     if (supervisionHeading) {
-      var supervisionBody = supervisionHeading.parentElement;
-      supervisionBody.innerHTML = '<h3>External Clinical Supervision</h3><p>Formal external supervision may be available to eligible counselors and trainees who are not employed by Stonebridge. Eligibility, scope, responsibilities, documentation, and compatibility with the applicable training or licensure pathway are established before supervision begins.</p>';
+      supervisionHeading.parentElement.innerHTML = '<h3>External Clinical Supervision</h3><p>Formal external supervision may be available to eligible counselors and trainees who are not employed by Stonebridge. Supervision is established through a written agreement defining the external role, documentation requirements, responsibilities, and compatibility with the applicable training or licensure pathway.</p>';
     }
 
     var assessmentHeading = findHeading(page, '.clinicians-service-row h3', 'Psychological assessment report drafting and review');
+    if (!assessmentHeading) assessmentHeading = findHeading(page, '.clinicians-service-row h3', 'Assessment reports and clinical writing');
     if (assessmentHeading) {
-      var assessmentBody = assessmentHeading.parentElement;
-      assessmentBody.innerHTML = '<h3>Assessment reports and clinical writing</h3>' +
-        '<p>Consultation for psychologists and assessment practices on clinical reports, case formulations, and professional documents where organization, clinical reasoning, and communication need refinement.</p>' +
-        '<ul class="clinicians-service-details">' +
-        '<li>Drafting from supplied assessment materials</li>' +
-        '<li>Integrating history, findings, formulation, and recommendations</li>' +
-        '<li>Revising structure, clarity, and coherence</li>' +
-        '<li>Reviewing a draft before finalization</li>' +
-        '</ul>';
+      assessmentHeading.parentElement.innerHTML = [
+        '<h3>Psychological assessment report drafting and review</h3>',
+        '<p>Professional writing support for psychologists and assessment practices working from supplied assessment materials.</p>',
+        '<ul class="clinicians-service-details">',
+          '<li>Drafting or revising reports from supplied assessment materials</li>',
+          '<li>Integrating history, findings, formulation, and recommendations</li>',
+          '<li>Improving structure, clarity, and coherence before finalization</li>',
+        '</ul>',
+        '<p class="clinicians-boundary"><strong>Evaluator responsibility:</strong> The requesting evaluator retains responsibility for assessment procedures, data, interpretation, diagnosis, conclusions, signature, and release.</p>'
+      ].join('');
     }
 
     var manuscriptHeading = findHeading(page, '.clinicians-service-row h3', 'Manuscript, article, and dissertation review');
     if (manuscriptHeading) {
-      manuscriptHeading.parentElement.innerHTML = '<h3>Manuscript, article, and dissertation review</h3><p>Conceptual and editorial feedback on argument development, literature integration, clinical accuracy, methodological coherence, APA-style presentation, and responses to reviewers or committees.</p>';
+      manuscriptHeading.parentElement.innerHTML = '<h3>Manuscript, article, and dissertation review</h3><p>Conceptual and editorial feedback on psychology manuscripts, articles, and dissertations, including argument development, literature integration, methodological coherence, clinical accuracy, and presentation.</p><p class="clinicians-boundary"><strong>Scholarly integrity:</strong> Review provides conceptual and editorial feedback rather than ghostwriting or completion of another person\'s academic work.</p>';
     }
 
     var educationHeading = findHeading(page, '.clinicians-service-row h3', 'Burnout training, webinars, and continuing education');
+    if (!educationHeading) educationHeading = findHeading(page, '.clinicians-service-row h3', 'Workshops, presentations, and educational programs');
     if (educationHeading) {
-      educationHeading.parentElement.innerHTML = '<h3>Workshops, presentations, and educational programs</h3>' +
-        '<p>Education and training may be developed for clinicians, supervisors, treatment programs, organizations, or professional groups.</p>' +
-        '<ul class="clinicians-service-details">' +
-        '<li>Burnout, secondary trauma, compassion fatigue, and vicarious trauma</li>' +
-        '<li>Caseloads, boundaries, and sustainable clinical practice</li>' +
-        '<li>Workforce stress in addiction and behavioral-health settings</li>' +
-        '<li>Supervisory and organizational approaches to burnout prevention</li>' +
-        '</ul>';
+      educationHeading.parentElement.innerHTML = [
+        '<h3>Workshops, presentations, and educational programs</h3>',
+        '<p>Education and training may be developed for clinicians, organizations, or professional groups.</p>',
+        '<ul class="clinicians-service-details">',
+          '<li>Burnout, secondary trauma, and compassion fatigue</li>',
+          '<li>Caseloads, boundaries, and sustainable clinical practice</li>',
+          '<li>Organizational and supervisory approaches to workforce sustainability</li>',
+        '</ul>',
+        '<p class="clinicians-boundary"><strong>Continuing education:</strong> CE credit is identified only when an event is offered through an appropriate approved sponsor or qualifying collaboration.</p>'
+      ].join('');
     }
-
-    page.querySelectorAll('.clinicians-service-list .clinicians-boundary, #peer-groups .clinicians-boundary').forEach(function (element) {
-      element.remove();
-    });
 
     var boundaries = page.querySelector('.clinicians-scope-list');
     if (boundaries) {
       boundaries.innerHTML = [
-        '<div class="clinicians-scope-row"><strong>Consultation</strong><p>Consultation is not psychotherapy and does not transfer clinical responsibility. Legal, ethical, and professional responsibility remains with the clinician, and consultation is not emergency response or legal advice.</p></div>',
-        '<div class="clinicians-scope-row"><strong>Supervision</strong><p>A supervisory relationship exists only when it is explicitly established. External supervision depends on professional eligibility, role clarity, a written agreement, documentation requirements, and the applicable training or licensure pathway.</p></div>',
-        '<div class="clinicians-scope-row"><strong>Documents &amp; review</strong><p>The requesting evaluator or author retains responsibility for assessment procedures, data, interpretation, diagnosis, conclusions, signature, release, and final authorship. Document consultation does not make Stonebridge the evaluator or author of record, and scholarly review is not ghostwriting.</p></div>',
-        '<div class="clinicians-scope-row"><strong>Peer groups</strong><p>Groups meet by secure video and clinical material must be appropriately de-identified. The student group is peer consultation, not supervision, and does not replace university, practicum, internship, or site supervision.</p></div>',
-        '<div class="clinicians-scope-row"><strong>Education</strong><p>Continuing-education credit is identified only when an event is offered through an appropriate approved sponsor or qualifying collaboration.</p></div>'
+        '<div class="clinicians-scope-row"><strong>Consultation</strong><p>Consultation is not psychotherapy and does not transfer clinical responsibility. Legal, ethical, and professional responsibility remains with the professional.</p></div>',
+        '<div class="clinicians-scope-row"><strong>Supervision</strong><p>Supervision status applies only when a supervisory relationship is explicitly established through the appropriate agreement and professional pathway.</p></div>',
+        '<div class="clinicians-scope-row"><strong>Documents &amp; review</strong><p>Document consultation does not make Stonebridge the author or evaluator of record. Final professional judgment, authorship, conclusions, signature, and release remain with the requesting professional.</p></div>'
       ].join('');
     }
 
@@ -309,77 +341,111 @@
     if (finalCta) finalCta.textContent = 'Request a Consultation';
   }
 
-  function initFounderPage() {
-    var main = document.querySelector('main.founder-page');
-    if (!main) return;
+  function initAboutPage() {
+    var page = document.querySelector('body.about-page');
+    if (!page) return;
 
-    var summaryBand = main.querySelector('.founder-summary-band');
-    if (summaryBand) summaryBand.remove();
-
-    var focus = main.querySelector('#clinical-focus');
-    if (focus) {
-      var focusIntro = focus.querySelector('.compact-section-intro p');
-      if (focusIntro) focusIntro.textContent = 'Primary areas of Dr. Bryant’s clinical work include:';
-
-      var focusGrid = focus.querySelector('.focus-compact-grid');
-      if (focusGrid) {
-        focusGrid.classList.add('founder-focus-compressed');
-        focusGrid.setAttribute('aria-label', 'Clinical focus');
-        focusGrid.innerHTML = [
-          '<article><span>01</span><h3>Addiction and co-occurring concerns</h3><p>Substance use, relapse and recovery patterns, ambivalence, process addictions, shame, coping cycles, and dual-diagnosis concerns.</p></article>',
-          '<article><span>02</span><h3>Trauma, PTSD, and complex stress</h3><p>Threat responses, dissociation, safety, emotional regulation, body-based distress, self-worth, and protective patterns.</p></article>',
-          '<article><span>03</span><h3>Mood, anxiety, and emotional regulation</h3><p>Depression, panic, overthinking, irritability, shutdown, mood instability, avoidance, and difficulty feeling steady.</p></article>',
-          '<article><span>04</span><h3>Relationships, couples, and family concerns</h3><p>Relationship patterns, attachment, family stress, conflict, closeness, and recurring interpersonal concerns.</p></article>',
-          '<article><span>05</span><h3>Identity, grief, and life transitions</h3><p>Identity and self-worth, grief, changing roles, and significant life transitions.</p></article>',
-          '<article><span>06</span><h3>Neurodevelopmental concerns and parent support</h3><p>Neurodevelopmental concerns, family context, and parent support when these are part of the clinical picture.</p></article>'
-        ].join('');
+    var overviewGrid = page.querySelector('.about-overview-grid');
+    if (overviewGrid) {
+      var boundaryHeading = findHeading(overviewGrid, 'article h2', 'Boundaries as care');
+      if (boundaryHeading) {
+        var boundaryArticle = boundaryHeading.closest('article');
+        if (boundaryArticle) boundaryArticle.remove();
       }
-
-      var broaderCare = focus.querySelector('.broader-care-compact');
-      if (broaderCare) broaderCare.remove();
+      overviewGrid.classList.add('about-overview-grid--two');
     }
 
-    var approach = main.querySelector('#therapy-style');
-    if (approach) {
-      approach.className = 'founder-therapy-combined';
-      approach.innerHTML = '<div class="founder-approach-compressed">' +
-        '<div class="section-label">Clinical approach</div>' +
-        '<div class="section-copy">' +
-        '<h2>How Dr. Bryant works.</h2>' +
-        '<p>Dr. Bryant’s work is psychodynamic and relational at the foundation, with attention to recurring patterns, relationships, meaning, and the ways earlier experiences can shape present-day distress.</p>' +
-        '<p>He integrates practical, evidence-based methods—including CBT, ACT, DBT, motivational interviewing, trauma-informed, attachment-based, and family-systems approaches—according to the client’s concerns and treatment goals. Treatment is collaborative and individualized rather than organized around a fixed formula.</p>' +
-        '</div></div>';
+    var aboutProse = page.querySelector('.about-prose');
+    if (aboutProse) {
+      Array.prototype.slice.call(aboutProse.querySelectorAll('p')).forEach(function (paragraph) {
+        if ((paragraph.textContent || '').trim().indexOf('Stonebridge is organized around steady communication') === 0) paragraph.remove();
+      });
     }
 
-    var background = main.querySelector('#background');
-    if (background) {
-      var backgroundHeading = background.querySelector('.credibility-heading h2');
-      if (backgroundHeading) backgroundHeading.textContent = 'Clinical experience and credentials.';
-
-      var credentialsList = background.querySelector('.selected-credentials-column ul');
-      if (credentialsList && !credentialsList.querySelector('[data-founder-role]')) {
-        var role = document.createElement('li');
-        role.setAttribute('data-founder-role', 'true');
-        role.innerHTML = '<strong>Founder</strong><span>Stonebridge Psychological Group</span>';
-        credentialsList.insertBefore(role, credentialsList.firstChild);
-      }
-
-      var pathway = background.querySelector('.founder-professional-pathway');
-      if (pathway) pathway.remove();
-
-      var publications = background.querySelector('#publications');
-      if (publications) {
-        var publicationsSection = document.createElement('section');
-        publicationsSection.className = 'founder-books-compressed';
-        publicationsSection.id = 'books-writing';
-        var publicationsShell = document.createElement('div');
-        publicationsShell.className = 'founder-wide-shell';
-        publications.parentElement.removeChild(publications);
-        publicationsShell.appendChild(publications);
-        publicationsSection.appendChild(publicationsShell);
-        background.insertAdjacentElement('afterend', publicationsSection);
-      }
+    var structureIntro = page.querySelector('.about-relational-intro');
+    if (structureIntro) {
+      var structureParagraph = structureIntro.querySelector('p');
+      if (structureParagraph) structureParagraph.remove();
     }
+
+    page.querySelectorAll('.about-experience-item').forEach(function (item) {
+      var label = item.querySelector('.about-item-label');
+      var text = label ? (label.textContent || '').trim() : '';
+      if (text.indexOf('A whole-person view') !== -1) {
+        item.remove();
+      } else if (text.indexOf('A collaborative pace') !== -1 && label) {
+        label.textContent = '02 · A collaborative pace';
+      }
+    });
+  }
+
+  function initPortalPage() {
+    var page = document.querySelector('body.portal-page');
+    if (!page) return;
+
+    var portalMain = page.querySelector('.portal-main');
+    if (portalMain) portalMain.remove();
+
+    var layout = page.querySelector('.portal-layout');
+    if (layout) layout.classList.add('portal-layout--privacy-only');
+  }
+
+  function initFeesPage() {
+    var page = document.querySelector('body.fees-page');
+    if (!page) return;
+    var overview = page.querySelector('.fees-overview');
+    if (overview) overview.remove();
+  }
+
+  function initTeamPage() {
+    var page = document.querySelector('body.team-page:not(.careers-page)');
+    if (!page) return;
+
+    var details = page.querySelector('.clinician-card.featured .clinician-details');
+    if (details) {
+      var bio = details.querySelector(':scope > p');
+      if (bio) bio.textContent = 'Dr. Bryant provides relational psychotherapy for adolescents, adults, couples, and families, along with parent consultation. His work integrates psychodynamic and evidence-based approaches for complex outpatient concerns.';
+    }
+
+    var overviewGrid = page.querySelector('.team-overview-grid');
+    if (overviewGrid) {
+      var smallTeamHeading = findHeading(overviewGrid, 'article h2', 'Small-team model');
+      if (smallTeamHeading) {
+        var smallTeamArticle = smallTeamHeading.closest('article');
+        if (smallTeamArticle) smallTeamArticle.remove();
+      }
+      overviewGrid.classList.add('team-overview-grid--single');
+    }
+  }
+
+  function initParentSupportPage() {
+    var page = document.querySelector('body.parent-support-page');
+    if (!page) return;
+
+    var thoughtfulLabel = Array.prototype.slice.call(page.querySelectorAll('.parent-label')).find(function (label) {
+      return (label.textContent || '').trim().toLowerCase() === 'a thoughtful place to begin';
+    });
+    if (thoughtfulLabel) {
+      var standaloneSection = thoughtfulLabel.closest('.parent-section');
+      if (standaloneSection) standaloneSection.remove();
+    }
+
+    var focusIntro = page.querySelector('.parent-focus-intro');
+    if (focusIntro) {
+      var focusParagraph = focusIntro.querySelector('p');
+      if (focusParagraph) focusParagraph.textContent = 'Parent support considers behavior within its developmental, relational, emotional, and family context.';
+    }
+  }
+
+  function initCareersPage() {
+    var page = document.querySelector('body.careers-page');
+    if (!page) return;
+    var cta = page.querySelector('.team-cta');
+    if (!cta) return;
+    var heading = cta.querySelector('h2');
+    var paragraph = cta.querySelector('p');
+    if (heading) heading.textContent = 'Interested in a future opportunity?';
+    if (paragraph) paragraph.textContent = 'Ask about future clinician or training opportunities.';
   }
 
   function initSkipLinks() {
@@ -397,9 +463,15 @@
     addRevisionStyles();
     normalizeCareersNavigation();
     normalizeConsultationCtas();
-    normalizeImageAltText();
-    initProfessionalsPage();
+    normalizeTargetedImageAltText();
     initFounderPage();
+    initProfessionalsPage();
+    initAboutPage();
+    initFeesPage();
+    initTeamPage();
+    initPortalPage();
+    initParentSupportPage();
+    initCareersPage();
     initMenu();
     initSkipLinks();
   }
