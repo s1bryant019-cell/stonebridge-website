@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy &amp; Information Use | Stonebridge Psychological Group</title>
+  <meta name="description" content="How Stonebridge Psychological Group uses information submitted through its website consultation-request form and where to direct privacy questions.">
+  <link rel="canonical" href="https://stonebridgepsychgroup.com/privacy-information.html">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style id="stonebridge-privacy-page-only">
+    :root{
+      --privacy-bg:#f8f5f0;
+      --privacy-paper:#f2ece4;
+      --privacy-navy:#163b61;
+      --privacy-navy-deep:#102f4d;
+      --privacy-ink:#213142;
+      --privacy-muted:#5d6870;
+      --privacy-gold:#78613f;
+      --privacy-line:rgba(33,49,66,.14);
+      --privacy-warm-line:rgba(212,200,185,.72);
+      --privacy-white:#fffaf2;
+    }
+
+    body.privacy-page{
+      background:var(--privacy-bg);
+      color:var(--privacy-ink);
+    }
+
+    .privacy-page .skip-link{
+      position:absolute;
+      left:12px;
+      top:-80px;
+      z-index:1000;
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--privacy-navy-deep);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .privacy-page .skip-link:focus{top:12px;}
+
+    .privacy-hero{
+      background:var(--privacy-navy-deep);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      color:var(--privacy-white);
+    }
+
+    .privacy-hero-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      padding:76px 0 70px;
+    }
+
+    .privacy-hero-rule{
+      width:40px;
+      height:2px;
+      margin-bottom:20px;
+      background:#d3b57f;
+    }
+
+    .privacy-kicker,
+    .privacy-label{
+      color:#e1c79c;
+      font-family:"Inter",sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      line-height:1.35;
+      text-transform:uppercase;
+    }
+
+    .privacy-hero h1{
+      margin:11px 0 0;
+      max-width:14ch;
+      color:var(--privacy-white);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(3rem,4.5vw,4.4rem);
+      line-height:1.02;
+      letter-spacing:-.05em;
+      text-wrap:balance;
+    }
+
+    .privacy-hero p{
+      max-width:43rem;
+      margin:18px 0 0;
+      color:rgba(255,250,242,.88);
+      font-family:"Inter",sans-serif;
+      font-size:1rem;
+      line-height:1.7;
+    }
+
+    .privacy-main{
+      padding:58px 0 66px;
+      background:var(--privacy-bg);
+    }
+
+    .privacy-shell{
+      width:min(760px,calc(100% - 72px));
+      margin:0 auto;
+    }
+
+    .privacy-intro{
+      margin:0;
+      padding-bottom:30px;
+      border-bottom:1px solid var(--privacy-line);
+    }
+
+    .privacy-intro p{
+      margin:0;
+      color:var(--privacy-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.96rem;
+      line-height:1.72;
+    }
+
+    .privacy-section{
+      padding:34px 0;
+      border-bottom:1px solid var(--privacy-line);
+    }
+
+    .privacy-section:last-of-type{border-bottom:0;}
+
+    .privacy-section h2{
+      margin:0;
+      color:var(--privacy-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(1.9rem,2.7vw,2.45rem);
+      line-height:1.08;
+      letter-spacing:-.032em;
+    }
+
+    .privacy-section p,
+    .privacy-section li{
+      color:var(--privacy-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.92rem;
+      line-height:1.68;
+    }
+
+    .privacy-section p{margin:13px 0 0;}
+
+    .privacy-section ul{
+      margin:14px 0 0;
+      padding-left:1.2rem;
+    }
+
+    .privacy-section li + li{margin-top:8px;}
+
+    .privacy-section a,
+    .privacy-actions a{
+      color:var(--privacy-navy);
+      font-weight:700;
+      text-decoration:underline;
+      text-decoration-thickness:1px;
+      text-underline-offset:3px;
+    }
+
+    .privacy-note{
+      margin-top:34px;
+      padding:22px 24px;
+      border-left:3px solid #b89661;
+      background:var(--privacy-paper);
+    }
+
+    .privacy-note strong{
+      display:block;
+      color:var(--privacy-ink);
+      font-family:"Inter",sans-serif;
+      font-size:.84rem;
+      line-height:1.45;
+    }
+
+    .privacy-note p{
+      margin:7px 0 0;
+      color:var(--privacy-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.84rem;
+      line-height:1.62;
+    }
+
+    .privacy-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:34px;
+      font-family:"Inter",sans-serif;
+      font-size:.88rem;
+    }
+
+    .privacy-page a:focus-visible,
+    .privacy-page button:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:2px;
+      box-shadow:0 0 0 5px var(--privacy-navy-deep);
+    }
+
+    @media(max-width:720px){
+      .privacy-hero-inner,
+      .privacy-shell{
+        width:min(100% - 34px,760px);
+      }
+
+      .privacy-hero-inner{
+        padding:58px 0 54px;
+      }
+
+      .privacy-main{
+        padding:44px 0 50px;
+      }
+
+      .privacy-section{
+        padding:30px 0;
+      }
+
+      .privacy-note{
+        padding:19px 18px;
+      }
+    }
+  </style>
+
+  <style id="stonebridge-services-dropdown-shared">
+    .site-header.compact-site-header .services-nav-dropdown{position:relative;display:flex!important;align-items:center;}
+    .services-nav-main{display:flex;align-items:center;min-height:34px;}
+    .site-header.compact-site-header .services-nav-main > a{min-height:34px;}
+    .services-menu-toggle{width:28px;height:34px;margin-left:1px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:7px;background:transparent;color:#5d6870;cursor:pointer;}
+    .services-menu-toggle svg{width:16px;height:16px;transition:transform .16s ease;}
+    .services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
+    .site-header.compact-site-header .services-dropdown-menu{position:absolute;top:calc(100% + 10px);left:-14px;z-index:80;width:248px;min-width:248px;padding:9px;display:grid!important;gap:1px;border:1px solid rgba(212,200,185,.88);border-radius:12px;background:rgba(255,252,247,.99);box-shadow:0 18px 44px rgba(16,47,77,.14);}
+    .site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
+    .services-dropdown-menu::before{content:"";position:absolute;top:-7px;left:72px;width:12px;height:12px;transform:rotate(45deg);border-left:1px solid rgba(212,200,185,.88);border-top:1px solid rgba(212,200,185,.88);background:#fffaf4;}
+    .site-header.compact-site-header .services-dropdown-menu a{position:relative;z-index:1;min-height:0;padding:9px 11px;border-radius:7px;color:#5d6870;font-size:.83rem;line-height:1.25;white-space:normal;}
+    .site-header.compact-site-header .services-dropdown-menu a:hover,
+    .site-header.compact-site-header .services-dropdown-menu a:focus-visible,
+    .site-header.compact-site-header .services-dropdown-menu a.active-sub{background:#f1ebe3;color:#213142;}
+    .services-menu-toggle:hover{color:#213142;background:rgba(22,59,97,.06);}
+    .services-menu-toggle:focus-visible{outline:3px solid #fffaf2;outline-offset:1px;box-shadow:0 0 0 5px #102f4d;}
+    @media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
+    @media(max-width:960px){
+      .site-header.compact-site-header .services-nav-dropdown{width:100%;display:block!important;}
+      .services-nav-main{width:100%;justify-content:space-between;}
+      .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
+      .services-menu-toggle{width:38px;height:38px;flex:0 0 38px;}
+      .site-header.compact-site-header .services-dropdown-menu{position:static;width:100%;min-width:0;margin:3px 0 2px;padding:4px 0 2px 13px;gap:0;border:0;border-left:1px solid rgba(33,49,66,.17);border-radius:0;background:transparent;box-shadow:none;}
+      .services-dropdown-menu::before{display:none;}
+      .site-header.compact-site-header .services-dropdown-menu a{padding:8px 10px;font-size:.85rem;}
+    }
+  </style>
+</head>
+
+<body class="privacy-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header compact-site-header">
+    <div class="container nav">
+      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
+        <div class="brand-mark">STONEBRIDGE</div>
+        <div class="brand-sub">Psychological Group</div>
+      </a>
+
+      <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+
+      <div class="menu-wrap">
+        <nav class="menu" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="team.html">Team</a>
+          <div class="nav-dropdown services-nav-dropdown">
+            <div class="services-nav-main">
+              <a href="services.html">Services</a>
+              <button class="services-menu-toggle" type="button" aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+              </button>
+            </div>
+            <div id="services-submenu" class="dropdown-menu services-dropdown-menu" role="menu" aria-label="Services" hidden>
+              <a href="services.html" role="menuitem">Services Overview</a>
+              <a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a>
+              <a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
+              <a href="group-therapy.html" role="menuitem">Group Therapy</a>
+              <a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
+              <a href="family-therapy.html" role="menuitem">Family Therapy</a>
+              <a href="parent-support.html" role="menuitem">Parent Support</a>
+            </div>
+          </div>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="for-clinicians.html">Professionals</a>
+          <a href="portal.html">Portal</a>
+        </nav>
+        <div class="header-cta"><a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="privacy-hero">
+      <div class="privacy-hero-inner">
+        <div class="privacy-hero-rule"></div>
+        <div class="privacy-kicker">Website information</div>
+        <h1>Privacy &amp; Information Use</h1>
+        <p>This page explains how information submitted through the Stonebridge website consultation form is used and what belongs in that form.</p>
+      </div>
+    </section>
+
+    <section class="privacy-main">
+      <div class="privacy-shell">
+        <div class="privacy-intro">
+          <p>Stonebridge uses the website consultation form to understand what a prospective client is looking for, determine how to respond, and support next-step coordination. The form is intentionally limited: it is not a clinical intake, a place to upload records, or a substitute for emergency care.</p>
+        </div>
+
+        <section class="privacy-section">
+          <h2>Information submitted through the consultation form</h2>
+          <p>The form asks for identifying and contact information, the type of service you are seeking, general availability and payment preferences when you choose to provide them, and a brief description of what brings you to Stonebridge.</p>
+          <p>Date of birth helps Stonebridge confirm who it is communicating with and supports accurate client-record and portal setup if care moves forward.</p>
+        </section>
+
+        <section class="privacy-section">
+          <h2>How the information is used</h2>
+          <p>Information submitted through the form is used to respond to the consultation request, review fit and availability, and coordinate next steps. When appropriate, it may also support setup of the prospective client’s record and secure portal workflow if care moves forward.</p>
+          <p>Stonebridge may follow up using the contact information provided in the request.</p>
+        </section>
+
+        <section class="privacy-section">
+          <h2>What not to submit here</h2>
+          <p>Please keep the website form brief. Do not use it to submit detailed clinical history, treatment records, assessment reports, medication lists, extensive trauma history, or other documents.</p>
+          <p>If care moves forward, more detailed clinical information and records can be shared through the appropriate secure process.</p>
+        </section>
+
+        <section class="privacy-section">
+          <h2>Consultation requests are not appointments</h2>
+          <p>Submitting the website form sends a consultation request. It does not schedule or confirm an appointment and does not establish an emergency-response channel.</p>
+        </section>
+
+        <section class="privacy-section">
+          <h2>Emergency and crisis needs</h2>
+          <p>If you are in immediate danger or experiencing a medical emergency, call 911 or go to the nearest emergency department. For crisis support, call or text 988.</p>
+        </section>
+
+        <section class="privacy-section">
+          <h2>Questions about website information use</h2>
+          <p>For questions about information submitted through this website, contact Stonebridge at <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> or <a href="tel:+17734171688">(773) 417-1688</a>.</p>
+        </section>
+
+        <div class="privacy-note">
+          <strong>Scope of this page</strong>
+          <p>This page is a concise explanation of the website consultation workflow. It does not make technical or legal claims about security, confidentiality, or regulatory compliance beyond the practices described here.</p>
+        </div>
+
+        <div class="privacy-actions">
+          <a href="contact.html#inquiry-form">Request a Consultation</a>
+          <a href="index.html">Return to Stonebridge</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Care</div>
+        <div class="footer-links">
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="contact.html">New Clients</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Practice</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="team-founder.html">Founder</a>
+          <a href="for-clinicians.html">Professionals</a>
+          <a href="portal.html">Client Portal</a>
+          <a href="privacy-information.html" aria-current="page">Privacy &amp; Information Use</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <a href="tel:+17734171688">(773) 417-1688</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-logo-right">
+        <picture class="sb-responsive-image" style="display:contents">
+          <source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px">
+          <img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800">
+        </picture>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small"><a href="privacy-information.html" aria-current="page">Privacy &amp; Information Use</a> · <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+    </div>
+  </footer>
+
+  <script id="stonebridge-services-dropdown-script">
+    (function(){
+      function initServicesDropdown(){
+        var dropdown=document.querySelector('.services-nav-dropdown');
+        if(!dropdown) return;
+        var toggle=dropdown.querySelector('.services-menu-toggle');
+        var panel=dropdown.querySelector('.services-dropdown-menu');
+        if(!toggle || !panel) return;
+        var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
+        function setOpen(open,focusFirst){
+          dropdown.classList.toggle('is-open',open);
+          toggle.setAttribute('aria-expanded',String(open));
+          toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
+          panel.hidden=!open;
+          if(open && focusFirst && items.length) items[0].focus();
+        }
+        toggle.addEventListener('click',function(){setOpen(toggle.getAttribute('aria-expanded')!=='true',false);});
+        toggle.addEventListener('keydown',function(event){
+          if(event.key==='ArrowDown'){event.preventDefault();setOpen(true,true);}
+          else if(event.key==='Escape'){event.preventDefault();setOpen(false,false);}
+        });
+        panel.addEventListener('keydown',function(event){
+          var current=items.indexOf(document.activeElement);
+          if(event.key==='Escape'){event.preventDefault();setOpen(false,false);toggle.focus();}
+          else if(event.key==='ArrowDown'){event.preventDefault();items[(current+1+items.length)%items.length].focus();}
+          else if(event.key==='ArrowUp'){event.preventDefault();items[(current-1+items.length)%items.length].focus();}
+          else if(event.key==='Home'){event.preventDefault();items[0].focus();}
+          else if(event.key==='End'){event.preventDefault();items[items.length-1].focus();}
+        });
+        items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
+        document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
+        document.addEventListener('keydown',function(event){
+          if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){setOpen(false,false);toggle.focus();}
+        });
+      }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
+      else initServicesDropdown();
+    })();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
