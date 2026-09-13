@@ -159,12 +159,12 @@
       '.clinicians-page #peer-groups,.clinicians-page #consultation-supervision,.clinicians-page #writing-review,.clinicians-page #professional-education,.clinicians-page #professional-fees{scroll-margin-top:104px}',
       '.clinicians-page .clinicians-service-category h2{margin:0;color:var(--clinicians-gold);font-family:"Inter",sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.13em;line-height:1.4;text-transform:uppercase}',
       '.clinicians-page .professional-group-heading{margin:0 0 8px;color:var(--clinicians-ink);font-family:"EB Garamond",Georgia,serif;font-size:1.65rem;line-height:1.08;letter-spacing:-.02em}',
-      '.founder-page .founder-summary-band .subpage-band-grid.founder-summary-band--single{grid-template-columns:1fr!important}',
-      '.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:repeat(2,minmax(0,1fr))!important}',
+      '.sbx-founder-page .founder-summary-band .subpage-band-grid.founder-summary-band--single,.founder-page .founder-summary-band .subpage-band-grid.founder-summary-band--single{grid-template-columns:1fr!important}',
+      '.sbx-founder-page .focus-compact-grid.founder-focus-compressed,.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:repeat(2,minmax(0,1fr))!important}',
       '.about-page .about-overview-grid.about-overview-grid--two{grid-template-columns:repeat(2,minmax(0,1fr))}',
       '.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:minmax(0,760px);justify-content:start}',
       '.team-page .team-overview-grid.team-overview-grid--single{grid-template-columns:1fr}',
-      '@media(max-width:720px){.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:1fr!important}.about-page .about-overview-grid.about-overview-grid--two{grid-template-columns:1fr}.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:1fr}}'
+      '@media(max-width:720px){.sbx-founder-page .focus-compact-grid.founder-focus-compressed,.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:1fr!important}.about-page .about-overview-grid.about-overview-grid--two{grid-template-columns:1fr}.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:1fr}}'
     ].join('\n');
     document.head.appendChild(style);
   }
@@ -176,8 +176,9 @@
   }
 
   function initFounderPage() {
-    var main = document.querySelector('main.founder-page');
-    if (!main) return;
+    var page = document.querySelector('body.sbx-founder-page, body.founder-page');
+    if (!page) return;
+    var main = page.querySelector('main') || page;
 
     var summaryBand = main.querySelector('.founder-summary-band');
     if (summaryBand) {
@@ -220,7 +221,7 @@
             '<h2>How Dr. Bryant works.</h2>',
           '</div>',
           '<div>',
-            '<div class="therapy-method-list">',
+            '<div class="therapy-method-list" aria-label="Psychotherapy approaches used by Dr. Bryant">',
               '<article class="therapy-method-row"><div class="therapy-method-number">01</div><div><h3>Relational &amp; psychodynamic</h3><p>Recurring emotional and relationship patterns, identity, defenses, needs, and the therapeutic relationship.</p></div></article>',
               '<article class="therapy-method-row"><div class="therapy-method-number">02</div><div><h3>Evidence-based skills &amp; behavior change</h3><p>CBT, ACT, DBT, and motivational interviewing are integrated when useful for regulation, avoidance, values, coping, and change.</p></div></article>',
               '<article class="therapy-method-row"><div class="therapy-method-number">03</div><div><h3>Trauma, attachment &amp; systems</h3><p>Trauma-informed, attachment-based, and family-systems approaches connect symptoms with safety, development, relationships, and family patterns.</p></div></article>',
@@ -332,8 +333,8 @@
     if (boundaries) {
       boundaries.innerHTML = [
         '<div class="clinicians-scope-row"><strong>Consultation</strong><p>Consultation is not psychotherapy and does not transfer clinical responsibility. Legal, ethical, and professional responsibility remains with the professional.</p></div>',
-        '<div class="clinicians-scope-row"><strong>Supervision</strong><p>Supervision status applies only when a supervisory relationship is explicitly established through the appropriate agreement and professional pathway.</p></div>',
-        '<div class="clinicians-scope-row"><strong>Documents &amp; review</strong><p>Document consultation does not make Stonebridge the author or evaluator of record. Final professional judgment, authorship, conclusions, signature, and release remain with the requesting professional.</p></div>'
+        '<div class="clinicians-scope-row"><strong>Supervision</strong><p>A supervisory relationship exists only when it is explicitly established through the appropriate agreement and professional pathway.</p></div>',
+        '<div class="clinicians-scope-row"><strong>Documents &amp; review</strong><p>The requesting evaluator or author retains responsibility for final professional judgment, authorship, conclusions, signature, and release. Document consultation does not make Stonebridge the author or evaluator of record.</p></div>'
       ].join('');
     }
 
