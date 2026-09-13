@@ -91,6 +91,36 @@
     });
   }
 
+  function normalizePrivacyFooter() {
+    document.querySelectorAll('.site-footer').forEach(function (footer) {
+      if (footer.querySelector('a[href="privacy-information.html"]')) return;
+
+      var practiceSection = Array.prototype.slice.call(footer.querySelectorAll('.footer-title')).find(function (title) {
+        return (title.textContent || '').trim().toLowerCase() === 'practice';
+      });
+
+      if (practiceSection) {
+        var links = practiceSection.parentElement ? practiceSection.parentElement.querySelector('.footer-links') : null;
+        if (links) {
+          var link = document.createElement('a');
+          link.href = 'privacy-information.html';
+          link.textContent = 'Privacy & Information Use';
+          links.appendChild(link);
+          return;
+        }
+      }
+
+      var fallback = footer.querySelector('.footer-bottom .footer-small:last-child');
+      if (fallback) {
+        var fallbackLink = document.createElement('a');
+        fallbackLink.href = 'privacy-information.html';
+        fallbackLink.textContent = 'Privacy & Information Use';
+        fallback.insertBefore(document.createTextNode(' · '), fallback.firstChild);
+        fallback.insertBefore(fallbackLink, fallback.firstChild);
+      }
+    });
+  }
+
   function normalizeConsultationCtas() {
     document.querySelectorAll('.header-cta a').forEach(function (link) {
       link.textContent = 'Request a Consultation';
@@ -463,6 +493,7 @@
   function init() {
     addRevisionStyles();
     normalizeCareersNavigation();
+    normalizePrivacyFooter();
     normalizeConsultationCtas();
     normalizeTargetedImageAltText();
     initFounderPage();
