@@ -28,6 +28,7 @@
         header.classList.toggle('is-open', open);
         toggle.setAttribute('aria-expanded', String(open));
         toggle.setAttribute('aria-label', open ? 'Close main menu' : 'Open main menu');
+        toggle.textContent = open ? 'Close' : 'Menu';
         if (!open) closeServicesSubmenu();
         if (!open && returnFocus) toggle.focus();
       }
@@ -183,18 +184,44 @@
     var style = document.createElement('style');
     style.id = 'stonebridge-priority-revisions';
     style.textContent = [
+      ':root{--sb-system-wide:1220px;--sb-system-standard:1080px;--sb-system-reading:46rem;--sb-system-cream:#f2ece4;--sb-system-ink:#213142;--sb-system-muted:#5d6870;--sb-system-navy:#163b61;--sb-system-navy-deep:#102f4d;--sb-system-gold:#c0a06a;--sb-system-line:rgba(33,49,66,.14);--sb-system-warm-line:rgba(212,200,185,.74)}',
       '.clinicians-overview .professional-route-link{display:block;color:inherit;text-decoration:none;border-radius:4px}',
       '.clinicians-overview .professional-route-link:hover h2,.clinicians-overview .professional-route-link:focus-visible h2{text-decoration:underline;text-underline-offset:3px}',
       '.clinicians-overview .professional-route-link:focus-visible{outline:3px solid #163b61;outline-offset:5px}',
       '.clinicians-page #peer-groups,.clinicians-page #consultation-supervision,.clinicians-page #writing-review,.clinicians-page #professional-education,.clinicians-page #professional-fees{scroll-margin-top:104px}',
       '.clinicians-page .clinicians-service-category h2{margin:0;color:var(--clinicians-gold);font-family:"Inter",sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.13em;line-height:1.4;text-transform:uppercase}',
       '.clinicians-page .professional-group-heading{margin:0 0 8px;color:var(--clinicians-ink);font-family:"EB Garamond",Georgia,serif;font-size:1.65rem;line-height:1.08;letter-spacing:-.02em}',
-      '.sbx-founder-page .founder-summary-band .subpage-band-grid.founder-summary-band--single,.founder-page .founder-summary-band .subpage-band-grid.founder-summary-band--single{grid-template-columns:1fr!important}',
       '.sbx-founder-page .focus-compact-grid.founder-focus-compressed,.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:repeat(2,minmax(0,1fr))!important}',
-      '.about-page .about-overview-grid.about-overview-grid--two{grid-template-columns:repeat(2,minmax(0,1fr))}',
       '.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:minmax(0,760px);justify-content:start}',
-      '.team-page .team-overview-grid.team-overview-grid--single{grid-template-columns:1fr}',
-      '@media(max-width:720px){.sbx-founder-page .focus-compact-grid.founder-focus-compressed,.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:1fr!important}.about-page .about-overview-grid.about-overview-grid--two{grid-template-columns:1fr}.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:1fr}}'
+      '.hero-utility-strip{background:var(--sb-system-cream);border-bottom:1px solid var(--sb-system-warm-line);color:var(--sb-system-ink)}',
+      '.hero-utility-strip-inner{width:min(var(--sb-system-standard),calc(100% - 72px));min-height:48px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:12px 0;text-align:center}',
+      '.hero-utility-strip-item{color:#545f6b;font-family:"Inter",sans-serif;font-size:.84rem;font-weight:600;line-height:1.42}',
+      '.hero-utility-strip-separator{width:4px;height:4px;margin:0 15px;border-radius:50%;background:var(--sb-system-gold);flex:0 0 4px}',
+      '.sb-system-hero-rule{width:40px!important;height:2px!important;margin-bottom:20px!important;background:#d3b57f!important}',
+      '.sb-system-hero-eyebrow{color:#e1c79c!important;font-family:"Inter",sans-serif!important;font-size:.68rem!important;font-weight:800!important;letter-spacing:.18em!important;line-height:1.35!important;text-transform:uppercase!important}',
+      '.sb-system-hero-title{margin-top:10px!important;max-width:15ch!important;color:#fffaf2!important;font-family:"EB Garamond",Georgia,serif!important;font-size:clamp(3.1rem,4.1vw,4.45rem)!important;line-height:1.035!important;letter-spacing:-.048em!important;text-wrap:balance!important;text-shadow:0 10px 30px rgba(0,0,0,.18)!important}',
+      '.sb-system-hero-body{max-width:40rem!important;margin-top:18px!important;color:rgba(255,250,242,.90)!important;font-family:"Inter",sans-serif!important;font-size:1rem!important;line-height:1.68!important}',
+      '.sb-system-hero-actions{display:flex!important;flex-wrap:wrap!important;gap:12px!important;margin-top:25px!important}',
+      '.sb-system-hero-actions .btn{min-height:50px;padding:0 22px;border-radius:12px;font-family:"Inter",sans-serif;font-size:.84rem;font-weight:700;line-height:1.2}',
+      '.sb-system-hero-actions .btn-primary{background:#f4eee4!important;border-color:#f4eee4!important;color:var(--sb-system-navy-deep)!important;box-shadow:none}',
+      '.sb-system-hero-actions .btn-primary:hover{background:#fffaf2!important;border-color:#fffaf2!important}',
+      '.sb-system-hero-actions .btn-secondary{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.42)!important;color:#fffaf2!important;box-shadow:none}',
+      '.sb-system-hero-actions .btn-secondary:hover{background:rgba(255,255,255,.14)!important;border-color:rgba(255,255,255,.72)!important}',
+      '.sb-overlay-dark-left::before{background:linear-gradient(90deg,rgba(12,31,49,.95) 0%,rgba(12,31,49,.89) 29%,rgba(12,31,49,.66) 49%,rgba(12,31,49,.28) 72%,rgba(12,31,49,.08) 100%),linear-gradient(180deg,rgba(10,24,38,.15) 0%,rgba(10,24,38,.03) 56%,rgba(10,24,38,.25) 100%)!important}',
+      '.sb-overlay-full-dark::before{background:linear-gradient(180deg,rgba(12,31,49,.78),rgba(12,31,49,.72))!important}',
+      '.sb-overlay-light::before{background:linear-gradient(90deg,rgba(12,31,49,.68),rgba(12,31,49,.12))!important}',
+      '.sb-system-hero-media img{width:100%;height:100%;object-fit:cover}',
+      '.contact-form-submit + .contact-crisis-note{margin-top:24px;padding-top:18px;border-top:1px solid var(--contact-line,rgba(33,49,66,.14))}',
+      '.mobile-toggle,.services-menu-toggle{min-width:44px;min-height:44px}',
+      '.menu a{min-height:44px;display:inline-flex;align-items:center}',
+      '.menu a[aria-current="page"],.menu a.active{color:var(--sb-system-ink);font-weight:700}',
+      '.site-header button:focus-visible,.site-header a:focus-visible{outline:3px solid #163b61;outline-offset:3px}',
+      '.about-label,.services-label,.individual-label,.couples-label,.family-label,.parent-label,.group-label,.fees-label,.team-label,.clinicians-label,.contact-label,.form-eyebrow{font-family:"Inter",sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.18em;line-height:1.35;text-transform:uppercase}',
+      '@media(min-width:1081px){.sb-system-hero{min-height:480px!important}.sb-system-hero.sb-system-hero--compact{min-height:460px!important}.sb-system-hero-copy{width:min(var(--sb-system-wide),calc(100% - 72px))!important;min-height:inherit!important;margin:0 auto!important;padding:42px 0 40px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important}.about-section,.services-section,.individual-section,.couples-section,.family-section,.parent-section,.group-section,.fees-section,.team-section,.clinicians-section{padding-top:60px!important;padding-bottom:60px!important}}',
+      '@media(max-width:1080px){.hero-utility-strip-inner{width:min(100% - 44px,var(--sb-system-standard))}.sb-system-hero-title{font-size:clamp(3rem,5.1vw,4.1rem)!important}.sb-system-hero-body{max-width:38rem!important}}',
+      '@media(max-width:720px){.hero-utility-strip-inner{width:min(100% - 34px,var(--sb-system-standard));min-height:0;flex-direction:column;align-items:flex-start;gap:6px;padding:14px 0;text-align:left}.hero-utility-strip-separator{display:none}.hero-utility-strip-item{font-size:.82rem}.sb-system-hero-title{max-width:13ch!important;font-size:clamp(2.55rem,10.5vw,3.55rem)!important;line-height:1.06!important}.sb-system-hero-body{font-size:.96rem!important;line-height:1.64!important}.sb-system-hero-actions{width:100%!important}.sb-system-hero-actions .btn{width:100%;min-height:48px;justify-content:center;text-align:center}.about-section,.services-section,.individual-section,.couples-section,.family-section,.parent-section,.group-section,.fees-section,.team-section,.clinicians-section{padding-top:44px!important;padding-bottom:46px!important}.sbx-founder-page .focus-compact-grid.founder-focus-compressed,.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:1fr!important}.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:1fr}}',
+      '@media(max-width:760px){.menu{gap:8px!important}.menu a{width:100%;min-height:44px;padding:8px 10px;border-radius:8px}.mobile-toggle{justify-content:center}}',
+      '@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.btn,.menu a,.mobile-toggle,.services-menu-toggle,.sb-system-hero-actions .btn{transition:none!important;transform:none!important}}'
     ].join('\n');
     document.head.appendChild(style);
   }
@@ -202,6 +229,270 @@
   function findHeading(root, selector, text) {
     return Array.prototype.slice.call(root.querySelectorAll(selector)).find(function (element) {
       return (element.textContent || '').trim().toLowerCase() === text.toLowerCase();
+    });
+  }
+
+  function getCurrentFilename() {
+    var path = (window.location.pathname || '').split('/').pop();
+    return (path || 'index.html').toLowerCase();
+  }
+
+  function buildUtilityStrip(items, label) {
+    var strip = document.createElement('section');
+    strip.className = 'hero-utility-strip';
+    strip.setAttribute('aria-label', label || 'Page information');
+
+    var inner = document.createElement('div');
+    inner.className = 'hero-utility-strip-inner';
+
+    items.forEach(function (item, index) {
+      if (index > 0) {
+        var separator = document.createElement('i');
+        separator.className = 'hero-utility-strip-separator';
+        separator.setAttribute('aria-hidden', 'true');
+        inner.appendChild(separator);
+      }
+
+      var text = document.createElement('span');
+      text.className = 'hero-utility-strip-item';
+      text.textContent = item;
+      inner.appendChild(text);
+    });
+
+    strip.appendChild(inner);
+    return strip;
+  }
+
+  function normalizeHeroUtilityStrips() {
+    var filename = getCurrentFilename();
+    var configs = {
+      'index.html': {
+        hero: '.home-hero',
+        existing: '.home-trust',
+        items: ['Illinois telehealth', 'Free 10–15 minute consultation', 'Aetna + BCBSIL accepted'],
+        label: 'Practice information'
+      },
+      'about.html': {
+        hero: '.about-hero',
+        remove: '.about-overview',
+        items: ['Clinical judgment', 'Whole-person care', 'Clear therapeutic frame'],
+        label: 'Stonebridge practice principles'
+      },
+      'contact.html': {
+        hero: '.contact-hero',
+        removeInsideHero: '.contact-practical-line',
+        items: ['Free 10–15 minute consultation', 'Illinois telehealth', 'Reviewed within 1–2 business days'],
+        label: 'Consultation information'
+      },
+      'team.html': {
+        hero: '.team-hero',
+        remove: '.team-overview',
+        items: ['Illinois telehealth', 'Relational outpatient care', 'Clinician matching by fit'],
+        label: 'Team information'
+      },
+      'services.html': {
+        hero: '.services-hero',
+        remove: '.services-overview',
+        items: ['Individual care', 'Relationship & family care', 'Groups & parent support'],
+        label: 'Services overview'
+      },
+      'individual-therapy.html': {
+        hero: '.individual-hero',
+        remove: '.individual-overview',
+        items: ['One-to-one care', 'Relational + practical', 'Illinois telehealth'],
+        label: 'Individual therapy information'
+      },
+      'couples-therapy.html': {
+        hero: '.couples-hero',
+        remove: '.couples-overview',
+        items: ['Relationship-centered', 'Structure with warmth', 'Illinois telehealth'],
+        label: 'Couples therapy information'
+      },
+      'family-therapy.html': {
+        hero: '.family-hero',
+        remove: '.family-overview',
+        items: ['Family-centered', 'Clear participation', 'Illinois telehealth'],
+        label: 'Family therapy information'
+      },
+      'parent-support.html': {
+        hero: '.parent-hero',
+        remove: '.parent-overview',
+        items: ['Support without blame', 'Relational + practical', 'Illinois telehealth'],
+        label: 'Parent support information'
+      },
+      'group-therapy.html': {
+        hero: '.group-hero',
+        remove: '.group-overview',
+        items: ['Live interpersonal practice', 'Stable membership', 'Illinois telehealth'],
+        label: 'Group therapy information'
+      },
+      'fees-insurance.html': {
+        hero: '.fees-hero',
+        remove: '.fees-overview',
+        items: ['Aetna', 'BCBSIL', 'Private pay + out-of-network options'],
+        label: 'Fees and insurance information'
+      },
+      'team-founder.html': {
+        hero: '.founder-intro',
+        remove: '.founder-summary-band',
+        items: ['Illinois telehealth', 'Relational + psychodynamic', 'Evidence-based integration'],
+        label: 'Founder practice information'
+      },
+      'for-clinicians.html': {
+        hero: '.clinicians-hero',
+        remove: '.clinicians-overview',
+        items: ['Peer groups', 'Consultation + supervision', 'Writing, review + education'],
+        label: 'Professional offerings'
+      }
+    };
+
+    var config = configs[filename];
+    if (!config) return;
+
+    var hero = document.querySelector(config.hero);
+    if (!hero) return;
+
+    if (config.removeInsideHero) {
+      var insideHero = hero.querySelector(config.removeInsideHero);
+      if (insideHero) insideHero.remove();
+    }
+
+    if (config.remove) {
+      var oldBand = document.querySelector(config.remove);
+      if (oldBand) oldBand.remove();
+    }
+
+    if (config.existing) {
+      var existing = document.querySelector(config.existing);
+      if (existing) {
+        existing.classList.add('hero-utility-strip');
+        var existingInner = existing.querySelector('.home-trust-inner') || existing.firstElementChild;
+        if (existingInner) {
+          existingInner.classList.add('hero-utility-strip-inner');
+          existingInner.innerHTML = '';
+          config.items.forEach(function (item, index) {
+            if (index > 0) {
+              var existingSeparator = document.createElement('i');
+              existingSeparator.className = 'hero-utility-strip-separator';
+              existingSeparator.setAttribute('aria-hidden', 'true');
+              existingInner.appendChild(existingSeparator);
+            }
+            var existingText = document.createElement('span');
+            existingText.className = 'hero-utility-strip-item';
+            existingText.textContent = item;
+            existingInner.appendChild(existingText);
+          });
+        }
+        existing.setAttribute('aria-label', config.label);
+        if (existing.previousElementSibling !== hero) hero.insertAdjacentElement('afterend', existing);
+        return;
+      }
+    }
+
+    var previousStrip = hero.nextElementSibling && hero.nextElementSibling.classList.contains('hero-utility-strip')
+      ? hero.nextElementSibling
+      : null;
+    if (previousStrip) previousStrip.remove();
+
+    hero.insertAdjacentElement('afterend', buildUtilityStrip(config.items, config.label));
+  }
+
+  function normalizeHeroSystem() {
+    var filename = getCurrentFilename();
+    var configs = {
+      'about.html': ['.about-hero', '.about-hero-copy'],
+      'contact.html': ['.contact-hero', '.contact-hero-copy'],
+      'team.html': ['.team-hero', '.team-hero-copy'],
+      'services.html': ['.services-hero', '.services-hero-copy'],
+      'individual-therapy.html': ['.individual-hero', '.individual-hero-copy'],
+      'couples-therapy.html': ['.couples-hero', '.couples-hero-copy'],
+      'family-therapy.html': ['.family-hero', '.family-hero-copy'],
+      'parent-support.html': ['.parent-hero', '.parent-hero-copy', 'compact'],
+      'group-therapy.html': ['.group-hero', '.group-hero-copy', 'compact'],
+      'fees-insurance.html': ['.fees-hero', '.fees-hero-copy'],
+      'for-clinicians.html': ['.clinicians-hero', '.clinicians-hero-copy']
+    };
+
+    var config = configs[filename];
+    if (!config) return;
+
+    var hero = document.querySelector(config[0]);
+    var copy = document.querySelector(config[1]);
+    if (!hero || !copy) return;
+
+    hero.classList.add('sb-system-hero', 'sb-overlay-dark-left');
+    if (config[2] === 'compact') hero.classList.add('sb-system-hero--compact');
+    copy.classList.add('sb-system-hero-copy');
+
+    var rule = hero.querySelector('[class$="-hero-rule"]');
+    if (rule) rule.classList.add('sb-system-hero-rule');
+
+    var eyebrow = hero.querySelector('[class$="-kicker"]');
+    if (eyebrow) eyebrow.classList.add('sb-system-hero-eyebrow');
+
+    var title = hero.querySelector('h1');
+    if (title) title.classList.add('sb-system-hero-title');
+
+    var directParagraphs = Array.prototype.slice.call(copy.children).filter(function (element) {
+      return element.tagName === 'P';
+    });
+    if (directParagraphs.length) directParagraphs[0].classList.add('sb-system-hero-body');
+
+    var actions = copy.querySelector('[class$="-hero-actions"]');
+    if (actions) actions.classList.add('sb-system-hero-actions');
+
+    var media = hero.querySelector('[class$="-hero-media"]');
+    if (media) media.classList.add('sb-system-hero-media');
+  }
+
+  function normalizeContactExperience() {
+    var page = document.querySelector('body.contact-page');
+    if (!page) return;
+
+    var submitButton = page.querySelector('#submitButton');
+    if (submitButton) {
+      if (!submitButton.disabled) submitButton.textContent = 'Request Consultation';
+      if (window.MutationObserver) {
+        var buttonObserver = new MutationObserver(function () {
+          if (!submitButton.disabled && submitButton.textContent.trim() === 'Request a Consultation') {
+            submitButton.textContent = 'Request Consultation';
+          }
+        });
+        buttonObserver.observe(submitButton, { childList: true, characterData: true, subtree: true });
+      }
+    }
+
+    var crisisNote = page.querySelector('.contact-before-send .contact-crisis-note');
+    var submitArea = page.querySelector('.contact-form-submit');
+    if (crisisNote && submitArea) submitArea.insertAdjacentElement('afterend', crisisNote);
+  }
+
+  function normalizeImageLoading() {
+    var heroSelectors = [
+      '.home-hero',
+      '.about-hero',
+      '.contact-hero',
+      '.team-hero',
+      '.services-hero',
+      '.individual-hero',
+      '.couples-hero',
+      '.family-hero',
+      '.parent-hero',
+      '.group-hero',
+      '.fees-hero',
+      '.clinicians-hero',
+      '.founder-intro'
+    ].join(',');
+
+    document.querySelectorAll('main img').forEach(function (img) {
+      var inHero = Boolean(img.closest(heroSelectors));
+      if (inHero) {
+        img.removeAttribute('loading');
+        if (!img.hasAttribute('fetchpriority')) img.setAttribute('fetchpriority', 'high');
+      } else if (!img.hasAttribute('loading')) {
+        img.setAttribute('loading', 'lazy');
+      }
+      if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
     });
   }
 
@@ -376,16 +667,6 @@
     var page = document.querySelector('body.about-page');
     if (!page) return;
 
-    var overviewGrid = page.querySelector('.about-overview-grid');
-    if (overviewGrid) {
-      var boundaryHeading = findHeading(overviewGrid, 'article h2', 'Boundaries as care');
-      if (boundaryHeading) {
-        var boundaryArticle = boundaryHeading.closest('article');
-        if (boundaryArticle) boundaryArticle.remove();
-      }
-      overviewGrid.classList.add('about-overview-grid--two');
-    }
-
     var aboutProse = page.querySelector('.about-prose');
     if (aboutProse) {
       Array.prototype.slice.call(aboutProse.querySelectorAll('p')).forEach(function (paragraph) {
@@ -424,28 +705,24 @@
   function initFeesPage() {
     var page = document.querySelector('body.fees-page');
     if (!page) return;
-    var overview = page.querySelector('.fees-overview');
-    if (overview) overview.remove();
   }
 
   function initTeamPage() {
     var page = document.querySelector('body.team-page:not(.careers-page)');
     if (!page) return;
 
+    var heroHeading = page.querySelector('.team-hero h1');
+    if (heroHeading) heroHeading.textContent = 'A practice growing with care.';
+
+    var heroCopy = page.querySelector('.team-hero-copy > p');
+    if (heroCopy) {
+      heroCopy.textContent = 'Stonebridge is building a thoughtful group of clinicians who share a commitment to relational outpatient care, clinical depth, and clear boundaries.';
+    }
+
     var details = page.querySelector('.clinician-card.featured .clinician-details');
     if (details) {
       var bio = details.querySelector(':scope > p');
       if (bio) bio.textContent = 'Dr. Bryant provides relational psychotherapy for adolescents, adults, couples, and families, along with parent consultation. His work integrates psychodynamic and evidence-based approaches for complex outpatient concerns.';
-    }
-
-    var overviewGrid = page.querySelector('.team-overview-grid');
-    if (overviewGrid) {
-      var smallTeamHeading = findHeading(overviewGrid, 'article h2', 'Small-team model');
-      if (smallTeamHeading) {
-        var smallTeamArticle = smallTeamHeading.closest('article');
-        if (smallTeamArticle) smallTeamArticle.remove();
-      }
-      overviewGrid.classList.add('team-overview-grid--single');
     }
   }
 
@@ -496,6 +773,9 @@
     normalizePrivacyFooter();
     normalizeConsultationCtas();
     normalizeTargetedImageAltText();
+    normalizeHeroSystem();
+    normalizeHeroUtilityStrips();
+    normalizeContactExperience();
     initFounderPage();
     initProfessionalsPage();
     initAboutPage();
@@ -504,6 +784,7 @@
     initPortalPage();
     initParentSupportPage();
     initCareersPage();
+    normalizeImageLoading();
     initMenu();
     initSkipLinks();
   }
