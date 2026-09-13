@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact &amp; New Client Inquiry | Stonebridge Psychological Group</title>
-  <meta name="description" content="Request a brief consultation time or send a brief written inquiry for Stonebridge Psychological Group telehealth services in Illinois.">
+  <title>Request a Consultation | Stonebridge Psychological Group</title>
+  <meta name="description" content="Request a free 10–15 minute consultation with Stonebridge Psychological Group for thoughtful telehealth psychotherapy in Illinois.">
   <link rel="canonical" href="https://stonebridgepsychgroup.com/contact.html">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -30,6 +30,8 @@
       --contact-line:rgba(33,49,66,.14);
       --contact-warm-line:rgba(212,200,185,.72);
       --contact-white:#fffaf2;
+      --contact-error:#81483f;
+      --contact-error-bg:#f8efec;
     }
 
     body.contact-page{
@@ -51,8 +53,6 @@
 
     .contact-page .skip-link:focus{top:12px;}
 
-    /* Contact hero: same interior language as Fees, with its own content hierarchy. */
-    /* Full-width photographic hero, kept compact so the inquiry form remains close. */
     .contact-hero{
       position:relative;
       min-height:480px;
@@ -118,9 +118,7 @@
       text-transform:uppercase;
     }
 
-    .contact-hero .contact-kicker{
-      color:#e1c79c;
-    }
+    .contact-hero .contact-kicker{color:#e1c79c;}
 
     .contact-hero h1{
       margin:10px 0 0;
@@ -135,19 +133,31 @@
     }
 
     .contact-hero-copy > p{
-      max-width:36rem;
+      max-width:39rem;
       margin:18px 0 0;
-      color:rgba(255,250,242,.89);
+      color:rgba(255,250,242,.90);
       font-family:"Inter",sans-serif;
       font-size:1rem;
-      line-height:1.7;
+      line-height:1.68;
+    }
+
+    .contact-practical-line{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,250,242,.22);
+      color:rgba(255,250,242,.79);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      font-weight:600;
+      line-height:1.5;
+      letter-spacing:.01em;
     }
 
     .contact-hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:25px;
+      margin-top:24px;
     }
 
     .contact-hero-actions .btn-primary{
@@ -159,26 +169,6 @@
     .contact-hero-actions .btn-primary:hover{
       background:#fffaf2;
       border-color:#fffaf2;
-    }
-
-    .contact-hero-actions .btn-secondary{
-      color:#fffaf2;
-      border-color:rgba(255,255,255,.42);
-      background:rgba(255,255,255,.08);
-    }
-
-    .contact-hero-actions .btn-secondary:hover{
-      border-color:rgba(255,255,255,.72);
-      background:rgba(255,255,255,.14);
-    }
-
-    .contact-consult-note{
-      max-width:42rem;
-      margin:13px 0 0;
-      color:rgba(255,250,242,.76);
-      font-family:"Inter",sans-serif;
-      font-size:.82rem;
-      line-height:1.56;
     }
 
     .contact-hero-media{
@@ -197,51 +187,10 @@
       object-position:center;
     }
 
-    .contact-overview{
-      background:#eee7de;
-      color:var(--contact-ink);
-      border-bottom:1px solid var(--contact-warm-line);
-    }
-
-    .contact-overview-grid{
-      width:min(1080px,calc(100% - 72px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      padding:17px 0;
-    }
-
-    .contact-overview article{
-      padding:0 24px;
-      border-left:1px solid rgba(33,49,66,.14);
-    }
-
-    .contact-overview article:first-child{
-      padding-left:0;
-      border-left:0;
-    }
-
-    .contact-overview h2{
-      margin:0 0 4px;
-      color:var(--contact-navy-deep);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.08rem;
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-
-    .contact-overview p{
-      margin:0;
-      color:var(--contact-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.82rem;
-      line-height:1.48;
-    }
-
-    /* One clear form section. Enclosure is used only where it improves task grouping. */
     .contact-form-section{
-      padding:50px 0 56px;
+      padding:52px 0 60px;
       background:var(--contact-paper);
+      border-bottom:1px solid var(--contact-warm-line);
     }
 
     .contact-shell{
@@ -251,9 +200,10 @@
 
     .contact-layout{
       display:grid;
-      grid-template-columns:minmax(260px,330px) minmax(0,1fr);
+      grid-template-columns:minmax(250px,310px) minmax(0,740px);
       gap:48px;
       align-items:start;
+      justify-content:space-between;
     }
 
     .contact-intro{
@@ -277,144 +227,218 @@
       background:linear-gradient(90deg,var(--contact-navy),rgba(22,59,97,0));
     }
 
-    .contact-intro h2,
-    .contact-form h2{
+    .contact-intro h2{
+      max-width:12ch;
       margin:12px 0 0;
       color:var(--contact-ink);
       font-family:"EB Garamond",Georgia,serif;
-      line-height:1.04;
+      font-size:clamp(2.1rem,2.8vw,2.9rem);
+      line-height:1.05;
       letter-spacing:-.035em;
       text-wrap:balance;
-    }
-
-    .contact-intro h2{
-      max-width:11ch;
-      font-size:clamp(2.25rem,3.1vw,3.15rem);
     }
 
     .contact-intro > p{
       margin:16px 0 0;
       color:var(--contact-muted);
       font-family:"Inter",sans-serif;
-      font-size:.94rem;
+      font-size:.93rem;
       line-height:1.68;
     }
 
-    .contact-review-list{
-      margin:21px 0 0;
-      padding:0;
-      list-style:none;
-      border-top:1px solid var(--contact-line);
-    }
-
-    .contact-review-list li{
-      display:grid;
-      grid-template-columns:18px minmax(0,1fr);
-      gap:11px;
-      padding:12px 0;
-      border-bottom:1px solid var(--contact-line);
-      color:var(--contact-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.88rem;
-      line-height:1.5;
-    }
-
-    .contact-review-list li::before{
-      content:"";
-      width:7px;
-      height:7px;
-      margin-top:.45em;
-      border-radius:50%;
-      background:#b89661;
-    }
-
-    .contact-crisis-note{
-      margin-top:24px;
+    .contact-intro-note{
+      margin-top:22px;
       padding-top:17px;
       border-top:1px solid var(--contact-line);
     }
 
-    .contact-crisis-note strong{
+    .contact-intro-note strong{
       display:block;
       color:var(--contact-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.15rem;
-      line-height:1.15;
+      font-family:"Inter",sans-serif;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.03em;
     }
 
-    .contact-crisis-note p{
+    .contact-intro-note p{
       margin:7px 0 0;
       color:var(--contact-muted);
       font-family:"Inter",sans-serif;
       font-size:.82rem;
-      line-height:1.56;
+      line-height:1.58;
     }
 
     .contact-form{
-      padding:27px;
-      border:1px solid rgba(33,49,66,.18);
-      border-radius:13px;
+      width:100%;
+      max-width:740px;
+      padding:30px;
+      border:1px solid rgba(33,49,66,.17);
+      border-radius:12px;
       background:#fffdf9;
       box-shadow:none;
     }
 
+    .contact-form-content[hidden],
+    .contact-success[hidden],
+    .contact-error-summary[hidden],
+    .field-error[hidden]{
+      display:none!important;
+    }
+
     .contact-form-head{
-      margin-bottom:22px;
-      padding-bottom:18px;
+      margin-bottom:24px;
+      padding-bottom:20px;
       border-bottom:1px solid var(--contact-line);
     }
 
-    .contact-form h2{
-      font-size:clamp(2rem,2.8vw,2.75rem);
+    .contact-form-head h2{
+      margin:9px 0 0;
+      color:var(--contact-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(1.9rem,2.4vw,2.35rem);
+      line-height:1.07;
+      letter-spacing:-.03em;
+    }
+
+    .contact-required-note{
+      margin:10px 0 0;
+      color:var(--contact-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.76rem;
+      line-height:1.45;
+    }
+
+    .contact-information-use{
+      margin:0 0 28px;
+      padding:0 0 22px;
+      border-bottom:1px solid var(--contact-line);
+    }
+
+    .contact-information-use strong{
+      display:block;
+      color:var(--contact-ink);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      font-weight:700;
+      line-height:1.4;
+    }
+
+    .contact-information-use p{
+      margin:6px 0 0;
+      color:var(--contact-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.84rem;
+      line-height:1.6;
+    }
+
+    .contact-information-use a,
+    .contact-before-send a,
+    .form-note a,
+    .contact-success a{
+      color:var(--contact-navy);
+      font-weight:700;
+      text-decoration:underline;
+      text-decoration-thickness:1px;
+      text-underline-offset:3px;
+    }
+
+    .contact-form-group{
+      min-width:0;
+      margin:0;
+      padding:0;
+      border:0;
+    }
+
+    .contact-form-group + .contact-form-group{
+      margin-top:44px;
+      padding-top:42px;
+      border-top:1px solid var(--contact-line);
+    }
+
+    .contact-form-group legend{
+      width:100%;
+      margin:0;
+      padding:0;
+      color:var(--contact-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.75rem;
+      font-weight:600;
+      line-height:1.08;
+      letter-spacing:-.025em;
     }
 
     .contact-form-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px;
+      gap:22px 20px;
+      margin-top:23px;
     }
 
-    .contact-form label{
-      display:grid;
-      gap:8px;
+    .contact-field{
+      min-width:0;
+    }
+
+    .contact-field-full{grid-column:1 / -1;}
+
+    .contact-field label{
+      display:block;
+      margin:0 0 8px;
       color:var(--contact-ink);
       font-family:"Inter",sans-serif;
-      font-size:.82rem;
+      font-size:.84rem;
       font-weight:700;
       line-height:1.35;
     }
 
-    .contact-form label em{
-      color:var(--contact-muted);
-      font-size:.74rem;
-      font-style:normal;
-      font-weight:500;
+    .field-label-row{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
     }
+
+    .field-optional{
+      flex:0 0 auto;
+      color:var(--contact-muted);
+      font-size:.72rem;
+      font-weight:500;
+      letter-spacing:.01em;
+    }
+
+    .required-mark{color:var(--contact-error);}
 
     .contact-form input,
     .contact-form select,
     .contact-form textarea{
       width:100%;
-      border:1px solid rgba(33,49,66,.22);
+      border:1px solid rgba(33,49,66,.25);
       border-radius:8px;
       background:#fffdf9;
       color:var(--contact-ink);
-      font:inherit;
+      font-family:"Inter",sans-serif;
+      font-size:1rem;
       font-weight:400;
       line-height:1.4;
-      transition:border-color .18s ease,box-shadow .18s ease,background .18s ease;
+      transition:border-color .16s ease,box-shadow .16s ease,background .16s ease;
     }
 
     .contact-form input,
     .contact-form select{
-      min-height:48px;
+      min-height:50px;
       padding:0 13px;
     }
 
     .contact-form textarea{
-      min-height:165px;
+      min-height:132px;
       padding:13px;
       resize:vertical;
+    }
+
+    .contact-form input:hover,
+    .contact-form select:hover,
+    .contact-form textarea:hover{
+      border-color:rgba(33,49,66,.38);
     }
 
     .contact-form input:focus,
@@ -422,58 +446,182 @@
     .contact-form textarea:focus{
       outline:none;
       border-color:var(--contact-navy);
-      box-shadow:0 0 0 3px rgba(22,59,97,.14);
+      box-shadow:0 0 0 3px rgba(22,59,97,.15);
       background:#fff;
     }
 
-    .contact-form-full{
-      grid-column:1 / -1;
+    .contact-form [aria-invalid="true"]{
+      border-color:var(--contact-error);
+      box-shadow:0 0 0 1px rgba(129,72,63,.08);
+    }
+
+    .field-helper,
+    .field-error,
+    .form-note{
+      margin:7px 0 0;
+      font-family:"Inter",sans-serif;
+      font-size:.77rem;
+      line-height:1.5;
+    }
+
+    .field-helper,
+    .form-note{color:var(--contact-muted);}
+
+    .field-error{
+      color:var(--contact-error);
+      font-weight:600;
     }
 
     .contact-honeypot{
-      position:absolute !important;
-      left:-10000px !important;
-      width:1px !important;
-      height:1px !important;
-      overflow:hidden !important;
+      position:absolute!important;
+      left:-10000px!important;
+      top:auto!important;
+      width:1px!important;
+      height:1px!important;
+      overflow:hidden!important;
+      opacity:0!important;
+      pointer-events:none!important;
     }
 
+    .contact-error-summary{
+      margin:0 0 26px;
+      padding:14px 16px;
+      border-left:3px solid var(--contact-error);
+      background:var(--contact-error-bg);
+      color:var(--contact-ink);
+    }
 
-    .contact-form-alert{
-      display:none;
-      margin-top:18px;
-      padding:13px 15px;
-      border-left:3px solid var(--contact-navy);
-      background:rgba(22,59,97,.08);
+    .contact-error-summary h3{
+      margin:0;
       color:var(--contact-ink);
       font-family:"Inter",sans-serif;
-      font-size:.88rem;
-      line-height:1.55;
+      font-size:.9rem;
+      font-weight:700;
+      line-height:1.45;
     }
 
-    .contact-form-alert.show{display:block;}
+    .contact-error-summary ul{
+      margin:8px 0 0;
+      padding-left:1.15rem;
+    }
+
+    .contact-error-summary li{
+      margin:4px 0 0;
+      color:var(--contact-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.8rem;
+      line-height:1.5;
+    }
+
+    .contact-error-summary a{
+      color:var(--contact-error);
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
+    .contact-before-send{
+      margin-top:44px;
+      padding-top:40px;
+      border-top:1px solid var(--contact-line);
+    }
+
+    .contact-before-send h3{
+      margin:0;
+      color:var(--contact-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.7rem;
+      font-weight:600;
+      line-height:1.08;
+      letter-spacing:-.025em;
+    }
+
+    .contact-before-send-copy{
+      margin-top:17px;
+    }
+
+    .contact-before-send-copy p{
+      margin:8px 0 0;
+      color:var(--contact-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.58;
+    }
+
+    .contact-privacy-link{
+      display:inline-block;
+      margin-top:14px;
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+    }
+
+    .contact-crisis-note{
+      margin-top:20px;
+      padding-top:17px;
+      border-top:1px solid var(--contact-line);
+    }
+
+    .contact-crisis-note p{
+      margin:0;
+      color:var(--contact-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.78rem;
+      line-height:1.56;
+    }
 
     .contact-form-submit{
       display:flex;
       flex-direction:column;
       align-items:flex-start;
       gap:10px;
-      margin-top:21px;
+      margin-top:34px;
     }
 
-    .contact-response-time{
-      max-width:34rem;
+    .contact-form-submit .btn{
+      min-width:220px;
+      min-height:50px;
+    }
+
+    .contact-submit-note{
+      max-width:36rem;
       margin:0;
       color:var(--contact-muted);
       font-family:"Inter",sans-serif;
       font-size:.76rem;
       line-height:1.48;
-      text-align:left;
     }
 
     .contact-form button[disabled]{
       cursor:wait;
       opacity:.68;
+    }
+
+    .contact-success{
+      padding:6px 0 4px;
+    }
+
+    .contact-success h2{
+      margin:0;
+      color:var(--contact-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.15rem,3vw,2.85rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
+    }
+
+    .contact-success p{
+      max-width:38rem;
+      margin:14px 0 0;
+      color:var(--contact-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.92rem;
+      line-height:1.65;
+    }
+
+    .contact-success .contact-success-link{
+      display:inline-block;
+      margin-top:23px;
+      font-family:"Inter",sans-serif;
+      font-size:.88rem;
     }
 
     .contact-page a:focus-visible,
@@ -483,21 +631,22 @@
       box-shadow:0 0 0 5px var(--contact-navy-deep);
     }
 
-    @media(min-width:1081px) and (max-width:1260px){
-      .contact-hero-copy{
-        width:min(100% - 72px,1120px);
-      }
+    .contact-form input:focus-visible,
+    .contact-form select:focus-visible,
+    .contact-form textarea:focus-visible{
+      outline:none;
+      border-color:var(--contact-navy);
+      box-shadow:0 0 0 3px rgba(22,59,97,.18);
+    }
 
-      .contact-hero h1{
-        font-size:clamp(3rem,3.8vw,4rem);
-      }
+    @media(min-width:1081px) and (max-width:1260px){
+      .contact-hero-copy{width:min(100% - 72px,1120px);}
+      .contact-hero h1{font-size:clamp(3rem,3.8vw,4rem);}
     }
 
     @media(max-width:1080px){
       .contact-hero,
-      .contact-hero-copy{
-        min-height:500px;
-      }
+      .contact-hero-copy{min-height:500px;}
 
       .contact-hero-copy{
         width:min(100% - 44px,860px);
@@ -523,69 +672,55 @@
 
       .contact-layout{
         grid-template-columns:1fr;
-        gap:30px;
+        gap:32px;
       }
 
       .contact-intro{
         position:static;
-        max-width:760px;
+        max-width:740px;
+      }
+
+      .contact-form{
+        max-width:740px;
       }
     }
 
     @media(max-width:720px){
-      .contact-shell,
-      .contact-overview-grid{
-        width:min(100% - 34px,1080px);
-      }
+      .contact-shell{width:min(100% - 34px,1080px);}
 
       .contact-hero,
-      .contact-hero-copy{
-        min-height:560px;
-      }
+      .contact-hero-copy{min-height:550px;}
 
       .contact-hero-copy{
         width:min(100% - 34px,1080px);
         padding:38px 0 34px;
       }
 
-      .contact-hero-media img{
-        object-position:58% center;
-      }
+      .contact-hero-media img{object-position:58% center;}
 
       .contact-hero::before{
         background:
           linear-gradient(
             180deg,
-            rgba(10,27,43,.90) 0%,
-            rgba(10,27,43,.74) 56%,
-            rgba(10,27,43,.90) 100%
+            rgba(10,27,43,.91) 0%,
+            rgba(10,27,43,.77) 58%,
+            rgba(10,27,43,.91) 100%
           ),
           linear-gradient(
             90deg,
-            rgba(10,27,43,.54) 0%,
+            rgba(10,27,43,.55) 0%,
             rgba(10,27,43,.22) 100%
           );
-      }
-
-      .contact-overview-grid{
-        grid-template-columns:1fr;
-        padding:14px 0;
-      }
-
-      .contact-overview article{
-        padding:13px 0;
-        border-left:0;
-        border-top:1px solid rgba(33,49,66,.13);
-      }
-
-      .contact-overview article:first-child{
-        padding-top:0;
-        border-top:0;
       }
 
       .contact-hero h1{
         max-width:13ch;
         font-size:clamp(2.55rem,10.5vw,3.5rem);
+      }
+
+      .contact-practical-line{
+        max-width:30rem;
+        font-size:.78rem;
       }
 
       .contact-hero-actions .btn,
@@ -595,173 +730,164 @@
         text-align:center;
       }
 
-      .contact-form-section{
-        padding:40px 0 44px;
-      }
+      .contact-form-section{padding:40px 0 46px;}
 
       .contact-form{
-        padding:22px 18px;
-        border-radius:12px;
+        padding:24px 18px;
+        border-radius:10px;
       }
 
       .contact-form-grid{
         grid-template-columns:1fr;
+        gap:21px;
       }
 
-      .contact-form-full{
-        grid-column:auto;
+      .contact-field-full{grid-column:auto;}
+
+      .contact-form-group + .contact-form-group{
+        margin-top:38px;
+        padding-top:36px;
+      }
+
+      .contact-before-send{
+        margin-top:38px;
+        padding-top:35px;
+      }
+
+      .contact-form-submit{margin-top:30px;}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .contact-form input,
+      .contact-form select,
+      .contact-form textarea{
+        transition:none;
       }
     }
-  
-    .contact-privacy-note{
-      margin:0 0 22px;
-      padding:0 0 16px;
-      border-bottom:1px solid var(--contact-line);
-    }
+  </style>
 
-    .contact-privacy-note strong{
-      display:block;
-      margin-bottom:4px;
-      color:#213142;
-      font-family:"Inter",sans-serif;
-      font-size:.78rem;
-      font-weight:700;
-      letter-spacing:.03em;
+  <style id="stonebridge-services-dropdown-shared">
+    .site-header.compact-site-header .services-nav-dropdown{
+      position:relative;
+      display:flex!important;
+      align-items:center;
     }
-
-    .contact-privacy-note p{
-      max-width:52rem;
-      margin:0;
+    .services-nav-main{
+      display:flex;
+      align-items:center;
+      min-height:34px;
+    }
+    .site-header.compact-site-header .services-nav-main > a{min-height:34px;}
+    .services-menu-toggle{
+      width:28px;
+      height:34px;
+      margin-left:1px;
+      padding:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:0;
+      border-radius:7px;
+      background:transparent;
       color:#5d6870;
-      font-family:"Inter",sans-serif;
-      font-size:.84rem;
-      line-height:1.55;
+      cursor:pointer;
     }
-</style>
-
-<style id="stonebridge-services-dropdown-shared">
-/* Shared Services navigation. Kept inline so this update changes HTML files only. */
-.site-header.compact-site-header .services-nav-dropdown{
-  position:relative;
-  display:flex!important;
-  align-items:center;
-}
-.services-nav-main{
-  display:flex;
-  align-items:center;
-  min-height:34px;
-}
-.site-header.compact-site-header .services-nav-main > a{min-height:34px;}
-.services-menu-toggle{
-  width:28px;
-  height:34px;
-  margin-left:1px;
-  padding:0;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:0;
-  border-radius:7px;
-  background:transparent;
-  color:#5d6870;
-  cursor:pointer;
-}
-.services-menu-toggle svg{
-  width:16px;
-  height:16px;
-  transition:transform .16s ease;
-}
-.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
-.site-header.compact-site-header .services-dropdown-menu{
-  position:absolute;
-  top:calc(100% + 10px);
-  left:-14px;
-  z-index:80;
-  width:248px;
-  min-width:248px;
-  padding:9px;
-  display:grid!important;
-  gap:1px;
-  border:1px solid rgba(212,200,185,.88);
-  border-radius:12px;
-  background:rgba(255,252,247,.99);
-  box-shadow:0 18px 44px rgba(16,47,77,.14);
-}
-.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
-.services-dropdown-menu::before{
-  content:"";
-  position:absolute;
-  top:-7px;
-  left:72px;
-  width:12px;
-  height:12px;
-  transform:rotate(45deg);
-  border-left:1px solid rgba(212,200,185,.88);
-  border-top:1px solid rgba(212,200,185,.88);
-  background:#fffaf4;
-}
-.site-header.compact-site-header .services-dropdown-menu a{
-  position:relative;
-  z-index:1;
-  min-height:0;
-  padding:9px 11px;
-  border-radius:7px;
-  color:#5d6870;
-  font-size:.83rem;
-  line-height:1.25;
-  white-space:normal;
-}
-.site-header.compact-site-header .services-dropdown-menu a:hover,
-.site-header.compact-site-header .services-dropdown-menu a:focus-visible,
-.site-header.compact-site-header .services-dropdown-menu a.active-sub{
-  background:#f1ebe3;
-  color:#213142;
-}
-.services-menu-toggle:hover{
-  color:#213142;
-  background:rgba(22,59,97,.06);
-}
-.services-menu-toggle:focus-visible{
-  outline:3px solid #fffaf2;
-  outline-offset:1px;
-  box-shadow:0 0 0 5px #102f4d;
-}
-@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
-@media(max-width:960px){
-  .site-header.compact-site-header .services-nav-dropdown{
-    width:100%;
-    display:block!important;
-  }
-  .services-nav-main{
-    width:100%;
-    justify-content:space-between;
-  }
-  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
-  .services-menu-toggle{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-  }
-  .site-header.compact-site-header .services-dropdown-menu{
-    position:static;
-    width:100%;
-    min-width:0;
-    margin:3px 0 2px;
-    padding:4px 0 2px 13px;
-    gap:0;
-    border:0;
-    border-left:1px solid rgba(33,49,66,.17);
-    border-radius:0;
-    background:transparent;
-    box-shadow:none;
-  }
-  .services-dropdown-menu::before{display:none;}
-  .site-header.compact-site-header .services-dropdown-menu a{
-    padding:8px 10px;
-    font-size:.85rem;
-  }
-}
-</style>
+    .services-menu-toggle svg{
+      width:16px;
+      height:16px;
+      transition:transform .16s ease;
+    }
+    .services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
+    .site-header.compact-site-header .services-dropdown-menu{
+      position:absolute;
+      top:calc(100% + 10px);
+      left:-14px;
+      z-index:80;
+      width:248px;
+      min-width:248px;
+      padding:9px;
+      display:grid!important;
+      gap:1px;
+      border:1px solid rgba(212,200,185,.88);
+      border-radius:12px;
+      background:rgba(255,252,247,.99);
+      box-shadow:0 18px 44px rgba(16,47,77,.14);
+    }
+    .site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
+    .services-dropdown-menu::before{
+      content:"";
+      position:absolute;
+      top:-7px;
+      left:72px;
+      width:12px;
+      height:12px;
+      transform:rotate(45deg);
+      border-left:1px solid rgba(212,200,185,.88);
+      border-top:1px solid rgba(212,200,185,.88);
+      background:#fffaf4;
+    }
+    .site-header.compact-site-header .services-dropdown-menu a{
+      position:relative;
+      z-index:1;
+      min-height:0;
+      padding:9px 11px;
+      border-radius:7px;
+      color:#5d6870;
+      font-size:.83rem;
+      line-height:1.25;
+      white-space:normal;
+    }
+    .site-header.compact-site-header .services-dropdown-menu a:hover,
+    .site-header.compact-site-header .services-dropdown-menu a:focus-visible,
+    .site-header.compact-site-header .services-dropdown-menu a.active-sub{
+      background:#f1ebe3;
+      color:#213142;
+    }
+    .services-menu-toggle:hover{
+      color:#213142;
+      background:rgba(22,59,97,.06);
+    }
+    .services-menu-toggle:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:1px;
+      box-shadow:0 0 0 5px #102f4d;
+    }
+    @media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
+    @media(max-width:960px){
+      .site-header.compact-site-header .services-nav-dropdown{
+        width:100%;
+        display:block!important;
+      }
+      .services-nav-main{
+        width:100%;
+        justify-content:space-between;
+      }
+      .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
+      .services-menu-toggle{
+        width:38px;
+        height:38px;
+        flex:0 0 38px;
+      }
+      .site-header.compact-site-header .services-dropdown-menu{
+        position:static;
+        width:100%;
+        min-width:0;
+        margin:3px 0 2px;
+        padding:4px 0 2px 13px;
+        gap:0;
+        border:0;
+        border-left:1px solid rgba(33,49,66,.17);
+        border-radius:0;
+        background:transparent;
+        box-shadow:none;
+      }
+      .services-dropdown-menu::before{display:none;}
+      .site-header.compact-site-header .services-dropdown-menu a{
+        padding:8px 10px;
+        font-size:.85rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="contact-page">
@@ -778,29 +904,31 @@
 
       <div class="menu-wrap">
         <nav class="menu" aria-label="Primary navigation">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
           <a href="team.html">Team</a>
-  <div class="nav-dropdown services-nav-dropdown">
-    <div class="services-nav-main">
-      <a href="services.html">Services</a>
-      <button class="services-menu-toggle" type="button" aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu"><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button>
-    </div>
-    <div id="services-submenu" class="dropdown-menu services-dropdown-menu" role="menu" aria-label="Services" hidden>
-<a href="services.html" role="menuitem">Services Overview</a>
-<a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a>
-<a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
-<a href="group-therapy.html" role="menuitem">Group Therapy</a>
-<a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
-<a href="family-therapy.html" role="menuitem">Family Therapy</a>
-<a href="parent-support.html" role="menuitem">Parent Support</a>
-</div>
-  </div>
-  <a href="fees-insurance.html">Fees &amp; Insurance</a>
-  <a href="for-clinicians.html">Professionals</a>
-  <a href="portal.html">Portal</a>
-</nav>
-        <div class="header-cta"><a class="btn btn-primary" href="#inquiry-form">New Clients</a></div>
+          <div class="nav-dropdown services-nav-dropdown">
+            <div class="services-nav-main">
+              <a href="services.html">Services</a>
+              <button class="services-menu-toggle" type="button" aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+              </button>
+            </div>
+            <div id="services-submenu" class="dropdown-menu services-dropdown-menu" role="menu" aria-label="Services" hidden>
+              <a href="services.html" role="menuitem">Services Overview</a>
+              <a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a>
+              <a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
+              <a href="group-therapy.html" role="menuitem">Group Therapy</a>
+              <a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
+              <a href="family-therapy.html" role="menuitem">Family Therapy</a>
+              <a href="parent-support.html" role="menuitem">Parent Support</a>
+            </div>
+          </div>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="for-clinicians.html">Professionals</a>
+          <a href="portal.html">Portal</a>
+        </nav>
+        <div class="header-cta"><a class="btn btn-primary" href="#inquiry-form">Request a Consultation</a></div>
       </div>
     </div>
   </header>
@@ -810,158 +938,197 @@
       <div class="contact-hero-copy">
         <div class="contact-hero-rule"></div>
         <div class="contact-kicker">New Clients</div>
-        <h1>Begin with a brief consultation.</h1>
-        <p>A free 10–15 minute conversation gives you space to ask questions about starting care.</p>
-
+        <h1>Request a consultation</h1>
+        <p>Tell us a little about what you're looking for. Stonebridge will review your request and follow up about fit, availability, and next steps.</p>
+        <div class="contact-practical-line">Free 10–15 minute consultation · Illinois telehealth · Typically reviewed within 1–2 business days</div>
         <div class="contact-hero-actions">
           <a class="btn btn-primary" href="#inquiry-form">Request a Consultation</a>
         </div>
-
-
       </div>
 
       <figure class="contact-hero-media">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="hero-contact-desk-960.webp 960w, hero-contact-desk-1600.webp 1600w, hero-contact-desk-2000.webp 2000w" sizes="100vw"><img alt="Desk prepared for a confidential consultation" decoding="async" fetchpriority="high" height="1116" src="hero-contact-desk.jpg" width="2000"/></picture>
+        <picture class="sb-responsive-image" style="display:contents">
+          <source type="image/webp" srcset="hero-contact-desk-960.webp 960w, hero-contact-desk-1600.webp 1600w, hero-contact-desk-2000.webp 2000w" sizes="100vw">
+          <img alt="Desk prepared for a confidential consultation" decoding="async" fetchpriority="high" height="1116" src="hero-contact-desk.jpg" width="2000">
+        </picture>
       </figure>
     </section>
 
-    <section class="contact-overview" aria-label="Consultation process">
-      <div class="contact-overview-grid">
-        <article>
-          <h2>Request</h2>
-          <p>Share a few details and general availability.</p>
-        </article>
-        <article>
-          <h2>Review</h2>
-          <p>Stonebridge reviews your needs, outpatient scope, telehealth appropriateness, clinician availability, and relevant coverage questions.</p>
-        </article>
-        <article>
-          <h2>Confirm</h2>
-          <p>Stonebridge follows up to confirm a consultation time. Submitting a request does not create or confirm a clinical appointment.</p>
-        </article>
-      </div>
-    </section>
-
     <section class="contact-form-section" id="inquiry-form">
-      <div class="contact-shell">
-        <div class="contact-privacy-note">
-          <strong>Keep the clinical details brief.</strong>
-          <p>Date of birth helps us prepare your secure client record if care moves forward. Please do not include detailed clinical history or sensitive records here.</p>
-        </div>
-      </div>
       <div class="contact-shell contact-layout">
         <aside class="contact-intro">
-          <div class="contact-privacy-note">
-            <strong>After the consultation</strong>
-            <p>If care moves forward, initial sessions develop a fuller understanding of your concerns and goals and establish the treatment structure. Participation and privacy expectations are clarified as needed.</p>
-          </div>
-          <div class="contact-crisis-note">
-            <strong>Emergency and crisis needs</strong>
-            <p>This form is not monitored for emergencies. For immediate danger or medical emergencies, call 911 or go to the nearest emergency room. For crisis support, call or text 988.</p>
+          <div class="contact-label">Consultation first</div>
+          <h2>A clear first step, without turning the form into an intake.</h2>
+          <p>Share enough for Stonebridge to understand what you are looking for and how to reach you. More detailed clinical information can be handled through the appropriate process if care moves forward.</p>
+
+          <div class="contact-intro-note">
+            <strong>What happens next</strong>
+            <p>Stonebridge reviews the request and follows up about fit, availability, and next steps. Submitting the form does not schedule or confirm an appointment.</p>
           </div>
         </aside>
 
-        <form class="contact-form" id="consultation-form" novalidate>
-          <div class="contact-form-head">
-            <div>
+        <form class="contact-form" id="consultation-form" novalidate aria-labelledby="consultation-form-title">
+          <div class="contact-form-content" id="contact-form-content">
+            <div class="contact-form-head">
               <div class="form-eyebrow">Consultation request</div>
-              <h2>Request a consultation.</h2>
+              <h2 id="consultation-form-title">A few details to help us respond.</h2>
+              <p class="contact-required-note"><span aria-hidden="true">*</span> Required</p>
+            </div>
+
+            <div class="contact-information-use">
+              <strong>About information submitted here</strong>
+              <p>Information submitted through this form is used to respond to your consultation request and, when appropriate, support setup of your client record. Please keep clinical details brief and do not submit records or extensive clinical information here.</p>
+              <p><a href="privacy-information.html">Privacy &amp; Information Use</a></p>
+            </div>
+
+            <div class="contact-error-summary" id="form-error-summary" role="alert" tabindex="-1" hidden>
+              <h3>Review the highlighted fields.</h3>
+              <ul id="form-error-list"></ul>
+            </div>
+
+            <div class="contact-honeypot" aria-hidden="true">
+              <label for="contact-website">Website</label>
+              <input id="contact-website" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" data-lpignore="true" data-1p-ignore="true">
+            </div>
+
+            <input type="hidden" name="inquiryType" value="consultation">
+            <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy">
+
+            <fieldset class="contact-form-group">
+              <legend>About you</legend>
+              <div class="contact-form-grid">
+                <div class="contact-field">
+                  <label for="full-name">Full name <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input id="full-name" type="text" name="fullName" autocomplete="name" maxlength="120" required aria-describedby="full-name-error">
+                  <p class="field-error" id="full-name-error" hidden></p>
+                </div>
+
+                <div class="contact-field">
+                  <label for="date-of-birth">Date of birth <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input id="date-of-birth" type="date" name="dateOfBirth" autocomplete="bday" required aria-describedby="date-of-birth-help date-of-birth-error">
+                  <p class="field-helper" id="date-of-birth-help">Helps us confirm who we’re communicating with and supports secure client-record and portal setup if care moves forward.</p>
+                  <p class="field-error" id="date-of-birth-error" hidden></p>
+                </div>
+
+                <div class="contact-field">
+                  <label for="email-address">Email <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input id="email-address" type="email" name="email" autocomplete="email" maxlength="254" required aria-describedby="email-address-error">
+                  <p class="field-error" id="email-address-error" hidden></p>
+                </div>
+
+                <div class="contact-field">
+                  <label for="phone-number">Phone <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input id="phone-number" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="50" required aria-describedby="phone-number-error">
+                  <p class="field-error" id="phone-number-error" hidden></p>
+                </div>
+
+                <div class="contact-field contact-field-full">
+                  <label class="field-label-row" for="preferred-contact">
+                    <span>Preferred contact method</span>
+                    <span class="field-optional">Optional</span>
+                  </label>
+                  <select id="preferred-contact" name="preferredContact">
+                    <option value="">No preference</option>
+                    <option>Email</option>
+                    <option>Phone</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="contact-form-group">
+              <legend>What you’re looking for</legend>
+              <div class="contact-form-grid">
+                <div class="contact-field contact-field-full">
+                  <label for="service-category">What are you reaching out about? <span class="required-mark" aria-hidden="true">*</span></label>
+                  <select id="service-category" name="serviceCategory" required aria-describedby="service-category-error">
+                    <option value="">Select one</option>
+                    <option>Adult Therapy</option>
+                    <option>Adolescent Therapy</option>
+                    <option>Group Therapy</option>
+                    <option>The Lobby — Group Therapy</option>
+                    <option>Couples Therapy</option>
+                    <option>Family Therapy</option>
+                    <option>Parent Support</option>
+                    <option>Unsure / Fit Review</option>
+                  </select>
+                  <input type="hidden" name="serviceRequested" id="service-requested" value="">
+                  <p class="field-error" id="service-category-error" hidden></p>
+                </div>
+
+                <div class="contact-field contact-field-full">
+                  <label class="field-label-row" for="preferred-clinician">
+                    <span>Clinician preference</span>
+                    <span class="field-optional">Optional</span>
+                  </label>
+                  <select id="preferred-clinician" name="preferredClinician">
+                    <option value="">No preference</option>
+                    <option>Dr. Stephen W. Bryant</option>
+                  </select>
+                </div>
+
+                <div class="contact-field contact-field-full">
+                  <label for="brief-reason">Briefly tell us what brings you to Stonebridge <span class="required-mark" aria-hidden="true">*</span></label>
+                  <textarea id="brief-reason" name="reason" maxlength="2000" required aria-describedby="brief-reason-help brief-reason-error"></textarea>
+                  <p class="field-helper" id="brief-reason-help">Please keep this brief. Detailed clinical history and records can be shared through the appropriate secure process if care moves forward.</p>
+                  <p class="field-error" id="brief-reason-error" hidden></p>
+                </div>
+
+                <div class="contact-field">
+                  <label class="field-label-row" for="general-availability">
+                    <span>General availability</span>
+                    <span class="field-optional">Optional</span>
+                  </label>
+                  <input id="general-availability" type="text" name="generalAvailability" maxlength="500" placeholder="For example: Tuesday evenings or Friday mornings">
+                </div>
+
+                <div class="contact-field">
+                  <label class="field-label-row" for="insurance-preference">
+                    <span>Insurance or payment preference</span>
+                    <span class="field-optional">Optional</span>
+                  </label>
+                  <select id="insurance-preference" name="insurancePreference" aria-describedby="insurance-note">
+                    <option value="">Select one</option>
+                    <option>Aetna</option>
+                    <option>BCBSIL</option>
+                    <option>Private pay</option>
+                    <option>Other insurance</option>
+                    <option>Out-of-network benefits / superbill</option>
+                    <option>Unsure</option>
+                  </select>
+                  <p class="form-note" id="insurance-note">Aetna + BCBSIL accepted. <a href="fees-insurance.html">View plan details.</a></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <section class="contact-before-send" aria-labelledby="before-send-title">
+              <h3 id="before-send-title">Before you send</h3>
+              <div class="contact-before-send-copy">
+                <p>This form is for consultation requests and is not a confirmed appointment or a substitute for emergency care.</p>
+                <p>Please do not include detailed clinical history, documents, or other sensitive records in this form.</p>
+                <p>Stonebridge typically reviews consultation requests within 1–2 business days.</p>
+              </div>
+
+              <a class="contact-privacy-link" href="privacy-information.html">Privacy &amp; Information Use</a>
+
+              <div class="contact-crisis-note">
+                <p>If you are in immediate danger or experiencing a medical emergency, call 911 or go to the nearest emergency department. For crisis support, call or text 988.</p>
+              </div>
+            </section>
+
+            <div class="contact-form-submit">
+              <button class="btn btn-primary" id="submitButton" type="submit">Request a Consultation</button>
+              <p class="contact-submit-note">Submitting this form sends a consultation request; it does not schedule or confirm an appointment.</p>
             </div>
           </div>
 
-          <label class="contact-honeypot" aria-hidden="true">
-            <span>Website</span>
-            <input type="text" name="website" autocomplete="off" tabindex="-1">
-          </label>
-
-          <input type="hidden" name="inquiryType" value="consultation">
-          <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy">
-
-          <div class="contact-form-grid">
-            <label>
-              <span>Full name *</span>
-              <input type="text" name="fullName" autocomplete="name" required>
-            </label>
-
-            <label>
-              <span>Date of birth *</span>
-              <input type="date" name="dateOfBirth" autocomplete="bday" required>
-            </label>
-
-            <label>
-              <span>Email address *</span>
-              <input type="email" name="email" autocomplete="email" required>
-            </label>
-
-            <label>
-              <span>Phone number *</span>
-              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required>
-            </label>
-
-            <label>
-              <span>What are you reaching out about? *</span>
-              <select name="serviceCategory" id="service-category" required>
-                <option value="">Select one</option>
-                <option>Adult Therapy</option>
-                <option>Adolescent Therapy</option>
-                <option>Group Therapy</option>
-                <option>The Lobby — Group Therapy</option>
-                <option>Couples Therapy</option>
-                <option>Family Therapy</option>
-                <option>Parent Support</option>
-                <option>Unsure / Fit Review</option>
-              </select>
-              <input type="hidden" name="serviceRequested" id="service-requested" value="">
-            </label>
-
-            <label>
-              <span>Preferred contact method <em>Optional</em></span>
-              <select name="preferredContact">
-                <option value="">No preference</option>
-                <option>Email</option>
-                <option>Phone</option>
-              </select>
-            </label>
-
-            <label>
-              <span>Preferred clinician <em>Optional</em></span>
-              <select name="preferredClinician">
-                <option value="">No preference</option>
-                <option>Dr. Stephen W. Bryant</option>
-              </select>
-            </label>
-
-            <label>
-              <span>General availability <em>Optional</em></span>
-              <input type="text" name="generalAvailability" placeholder="For example: Tuesday evenings or Friday mornings">
-            </label>
-
-            <label>
-              <span>Insurance / payment preference <em>Optional</em></span>
-              <select name="insurancePreference">
-                <option value="">Select one</option>
-                <option>Aetna</option>
-                <option>BCBSIL</option>
-                <option>Private pay</option>
-                <option>Other insurance</option>
-                <option>Out-of-network benefits / superbill</option>
-                <option>Unsure</option>
-              </select>
-            </label>
-            <p class="form-note contact-form-full">Aetna + BCBSIL accepted. <a href="fees-insurance.html">View plan details.</a></p>
-
-            <label class="contact-form-full">
-              <span>Brief reason for reaching out *</span>
-              <textarea name="reason" placeholder="A brief, non-sensitive overview is enough." required></textarea>
-            </label>
-          </div>
-
-          <div class="contact-form-alert" id="form-alert" role="status" aria-live="polite"></div>
-
-          <div class="contact-form-submit">
-            <button class="btn btn-primary" id="submitButton" type="submit">Request Consultation</button>
-            <p class="contact-response-time">Consultation requests are typically reviewed within 1–2 business days.</p>
-          </div>
+          <section class="contact-success" id="form-success" tabindex="-1" aria-live="polite" hidden>
+            <h2 id="success-title">Request received</h2>
+            <p>Thank you. Stonebridge has received your consultation request.</p>
+            <p>Requests are typically reviewed within 1–2 business days. We’ll follow up using the contact information you provided to discuss fit, availability, and next steps.</p>
+            <p>Your request is not a confirmed appointment.</p>
+            <a class="contact-success-link" href="index.html">Return to Stonebridge</a>
+          </section>
         </form>
       </div>
     </section>
@@ -988,9 +1155,10 @@
         <div class="footer-title">Practice</div>
         <div class="footer-links">
           <a href="about.html">About</a>
-            <a href="team-founder.html">Founder</a>
+          <a href="team-founder.html">Founder</a>
           <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Client Portal</a>
+          <a href="privacy-information.html">Privacy &amp; Information Use</a>
         </div>
       </div>
 
@@ -1006,88 +1174,136 @@
       </div>
 
       <div class="footer-logo-right">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
+        <picture class="sb-responsive-image" style="display:contents">
+          <source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px">
+          <img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800">
+        </picture>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+      <div class="footer-small"><a href="privacy-information.html">Privacy &amp; Information Use</a> · <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
     </div>
   </footer>
 
-  
-<script id="stonebridge-services-dropdown-script">
-(function(){
-  function initServicesDropdown(){
-    var dropdown=document.querySelector('.services-nav-dropdown');
-    if(!dropdown) return;
-    var toggle=dropdown.querySelector('.services-menu-toggle');
-    var panel=dropdown.querySelector('.services-dropdown-menu');
-    if(!toggle || !panel) return;
-    var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
-    function setOpen(open,focusFirst){
-      dropdown.classList.toggle('is-open',open);
-      toggle.setAttribute('aria-expanded',String(open));
-      toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
-      panel.hidden=!open;
-      if(open && focusFirst && items.length) items[0].focus();
-    }
-    toggle.addEventListener('click',function(){
-      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
-    });
-    toggle.addEventListener('keydown',function(event){
-      if(event.key==='ArrowDown'){
-        event.preventDefault();
-        setOpen(true,true);
-      }else if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
+  <script id="stonebridge-services-dropdown-script">
+    (function(){
+      function initServicesDropdown(){
+        var dropdown=document.querySelector('.services-nav-dropdown');
+        if(!dropdown) return;
+        var toggle=dropdown.querySelector('.services-menu-toggle');
+        var panel=dropdown.querySelector('.services-dropdown-menu');
+        if(!toggle || !panel) return;
+        var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
+        function setOpen(open,focusFirst){
+          dropdown.classList.toggle('is-open',open);
+          toggle.setAttribute('aria-expanded',String(open));
+          toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
+          panel.hidden=!open;
+          if(open && focusFirst && items.length) items[0].focus();
+        }
+        toggle.addEventListener('click',function(){
+          setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
+        });
+        toggle.addEventListener('keydown',function(event){
+          if(event.key==='ArrowDown'){
+            event.preventDefault();
+            setOpen(true,true);
+          }else if(event.key==='Escape'){
+            event.preventDefault();
+            setOpen(false,false);
+          }
+        });
+        panel.addEventListener('keydown',function(event){
+          var current=items.indexOf(document.activeElement);
+          if(event.key==='Escape'){
+            event.preventDefault();
+            setOpen(false,false);
+            toggle.focus();
+          }else if(event.key==='ArrowDown'){
+            event.preventDefault();
+            items[(current+1+items.length)%items.length].focus();
+          }else if(event.key==='ArrowUp'){
+            event.preventDefault();
+            items[(current-1+items.length)%items.length].focus();
+          }else if(event.key==='Home'){
+            event.preventDefault();
+            items[0].focus();
+          }else if(event.key==='End'){
+            event.preventDefault();
+            items[items.length-1].focus();
+          }
+        });
+        items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
+        document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
+        document.addEventListener('keydown',function(event){
+          if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
+            setOpen(false,false);
+            toggle.focus();
+          }
+        });
       }
-    });
-    panel.addEventListener('keydown',function(event){
-      var current=items.indexOf(document.activeElement);
-      if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-        toggle.focus();
-      }else if(event.key==='ArrowDown'){
-        event.preventDefault();
-        items[(current+1+items.length)%items.length].focus();
-      }else if(event.key==='ArrowUp'){
-        event.preventDefault();
-        items[(current-1+items.length)%items.length].focus();
-      }else if(event.key==='Home'){
-        event.preventDefault();
-        items[0].focus();
-      }else if(event.key==='End'){
-        event.preventDefault();
-        items[items.length-1].focus();
-      }
-    });
-    items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
-    document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
-    document.addEventListener('keydown',function(event){
-      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
-        setOpen(false,false);
-        toggle.focus();
-      }
-    });
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
-  else initServicesDropdown();
-})();
-</script>
-<script src="script.js"></script>
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
+      else initServicesDropdown();
+    })();
+  </script>
+
+  <script src="script.js"></script>
   <script>
     (function(){
       var form=document.getElementById('consultation-form');
       if(!form)return;
 
-      var alertBox=document.getElementById('form-alert');
+      var content=document.getElementById('contact-form-content');
+      var success=document.getElementById('form-success');
       var submitButton=document.getElementById('submitButton');
       var serviceCategory=document.getElementById('service-category');
       var serviceRequested=document.getElementById('service-requested');
+      var errorSummary=document.getElementById('form-error-summary');
+      var errorList=document.getElementById('form-error-list');
+      var dateOfBirth=document.getElementById('date-of-birth');
+
+      var fields={
+        fullName:{
+          input:document.getElementById('full-name'),
+          error:document.getElementById('full-name-error'),
+          message:'Enter your full name.'
+        },
+        dateOfBirth:{
+          input:dateOfBirth,
+          error:document.getElementById('date-of-birth-error'),
+          message:'Enter your date of birth.'
+        },
+        email:{
+          input:document.getElementById('email-address'),
+          error:document.getElementById('email-address-error'),
+          message:'Enter your email address.'
+        },
+        phone:{
+          input:document.getElementById('phone-number'),
+          error:document.getElementById('phone-number-error'),
+          message:'Enter your phone number.'
+        },
+        serviceRequested:{
+          input:serviceCategory,
+          error:document.getElementById('service-category-error'),
+          message:'Choose what you’re reaching out about.'
+        },
+        reason:{
+          input:document.getElementById('brief-reason'),
+          error:document.getElementById('brief-reason-error'),
+          message:'Tell us briefly what you’re reaching out about.'
+        }
+      };
+
+      if(dateOfBirth){
+        var today=new Date();
+        var yyyy=today.getFullYear();
+        var mm=String(today.getMonth()+1).padStart(2,'0');
+        var dd=String(today.getDate()).padStart(2,'0');
+        dateOfBirth.max=yyyy+'-'+mm+'-'+dd;
+      }
 
       function syncServiceSelection(){
         if(!serviceCategory || !serviceRequested)return;
@@ -1102,19 +1318,107 @@
       }
       syncServiceSelection();
 
-      function showAlert(message){
-        if(!alertBox)return;
-        alertBox.textContent=message;
-        alertBox.classList.add('show');
-        var reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        alertBox.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'nearest'});
+      function setFieldError(fieldKey,message){
+        var config=fields[fieldKey];
+        if(!config || !config.input || !config.error)return;
+        config.error.textContent=message;
+        config.error.hidden=false;
+        config.input.setAttribute('aria-invalid','true');
       }
 
-      function clearAlert(){
-        if(!alertBox)return;
-        alertBox.classList.remove('show');
-        alertBox.textContent='';
+      function clearFieldError(fieldKey){
+        var config=fields[fieldKey];
+        if(!config || !config.input || !config.error)return;
+        config.error.textContent='';
+        config.error.hidden=true;
+        config.input.removeAttribute('aria-invalid');
       }
+
+      function clearAllErrors(){
+        Object.keys(fields).forEach(clearFieldError);
+        if(errorSummary) errorSummary.hidden=true;
+        if(errorList) errorList.innerHTML='';
+      }
+
+      function fieldErrorFor(fieldKey){
+        var config=fields[fieldKey];
+        if(!config || !config.input)return '';
+
+        var value=(config.input.value||'').trim();
+
+        if(config.input.required && !value)return config.message;
+
+        if(fieldKey==='email' && value && !config.input.validity.valid){
+          return 'Enter an email address in the format name@example.com.';
+        }
+
+        if(fieldKey==='dateOfBirth' && value){
+          if(!config.input.validity.valid){
+            return 'Enter a valid date of birth.';
+          }
+          var entered=new Date(value+'T00:00:00');
+          var now=new Date();
+          now.setHours(0,0,0,0);
+          if(Number.isNaN(entered.getTime()) || entered>now){
+            return 'Enter a valid date of birth.';
+          }
+        }
+
+        return '';
+      }
+
+      function validateField(fieldKey){
+        var message=fieldErrorFor(fieldKey);
+        if(message){
+          setFieldError(fieldKey,message);
+          return message;
+        }
+        clearFieldError(fieldKey);
+        return '';
+      }
+
+      function showErrorSummary(errors){
+        if(!errorSummary || !errorList)return;
+        errorList.innerHTML='';
+
+        errors.forEach(function(item){
+          var config=fields[item.key];
+          if(!config || !config.input)return;
+          var li=document.createElement('li');
+          var link=document.createElement('a');
+          link.href='#'+config.input.id;
+          link.textContent=item.message;
+          link.addEventListener('click',function(event){
+            event.preventDefault();
+            config.input.focus();
+          });
+          li.appendChild(link);
+          errorList.appendChild(li);
+        });
+
+        errorSummary.hidden=false;
+        errorSummary.focus();
+      }
+
+      function validateForm(){
+        var errors=[];
+        Object.keys(fields).forEach(function(key){
+          var message=validateField(key);
+          if(message)errors.push({key:key,message:message});
+        });
+        return errors;
+      }
+
+      Object.keys(fields).forEach(function(key){
+        var input=fields[key].input;
+        if(!input)return;
+        input.addEventListener('blur',function(){
+          if(input.hasAttribute('aria-invalid'))validateField(key);
+        });
+        input.addEventListener(input.tagName==='SELECT'?'change':'input',function(){
+          if(input.hasAttribute('aria-invalid'))validateField(key);
+        });
+      });
 
       async function postJson(url,payload){
         return fetch(url,{
@@ -1124,18 +1428,50 @@
         });
       }
 
+      function mapServerErrors(fieldErrors){
+        var errors=[];
+        if(!fieldErrors || typeof fieldErrors!=='object')return errors;
+
+        Object.keys(fieldErrors).forEach(function(key){
+          if(!fields[key])return;
+          var message=String(fieldErrors[key]||'').trim();
+          if(!message)return;
+          setFieldError(key,message);
+          errors.push({key:key,message:message});
+        });
+
+        return errors;
+      }
+
+      function showDeliveryError(message){
+        var errors=[{
+          key:'email',
+          message:message || 'The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.'
+        }];
+        if(errorSummary && errorList){
+          errorList.innerHTML='';
+          var li=document.createElement('li');
+          li.textContent=errors[0].message;
+          errorList.appendChild(li);
+          errorSummary.hidden=false;
+          errorSummary.focus();
+        }
+      }
+
       form.addEventListener('submit',async function(event){
         event.preventDefault();
-        clearAlert();
+        clearAllErrors();
+        syncServiceSelection();
 
-        if(!form.checkValidity()){
-          form.reportValidity();
+        var errors=validateForm();
+        if(errors.length){
+          showErrorSummary(errors);
           return;
         }
 
         if(submitButton){
           submitButton.disabled=true;
-          submitButton.textContent='Sending...';
+          submitButton.textContent='Sending…';
         }
 
         var data=new FormData(form);
@@ -1157,17 +1493,33 @@
 
         try{
           var response=await postJson('/api/contact',payload);
-          if(!response.ok)throw new Error('Request failed');
+          var result=await response.json().catch(function(){return {};});
+
+          if(!response.ok){
+            var serverErrors=mapServerErrors(result.fieldErrors);
+            if(serverErrors.length){
+              showErrorSummary(serverErrors);
+            }else{
+              showDeliveryError(result.error);
+            }
+            return;
+          }
 
           form.reset();
           syncServiceSelection();
-          showAlert('Your consultation request has been received. Consultation requests are typically reviewed within 1–2 business days. A member of Stonebridge will contact you to confirm a consultation time. Submitting this request does not create or confirm a clinical appointment.');
+          clearAllErrors();
+
+          if(content)content.hidden=true;
+          if(success){
+            success.hidden=false;
+            success.focus();
+          }
         }catch(error){
-          showAlert('The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.');
+          showDeliveryError('The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.');
         }finally{
           if(submitButton){
             submitButton.disabled=false;
-            submitButton.textContent='Request Consultation';
+            submitButton.textContent='Request a Consultation';
           }
         }
       });
