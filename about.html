@@ -51,7 +51,6 @@
 
     .about-page .skip-link:focus{top:12px;}
 
-    /* Full-width photographic hero: the About-page pilot for the shared interior hero system. */
     .about-hero{
       position:relative;
       min-height:480px;
@@ -197,7 +196,7 @@
       width:min(1080px,calc(100% - 72px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+      grid-template-columns:repeat(2,minmax(0,1fr));
       padding:17px 0;
     }
 
@@ -292,7 +291,6 @@
       line-height:1.66;
     }
 
-    /* Philosophy section: asymmetrical editorial layout, not a card grid. */
     .about-intro{
       display:grid;
       grid-template-columns:minmax(0,1.08fr) minmax(300px,.72fr);
@@ -345,7 +343,6 @@
       line-height:1.6;
     }
 
-    /* Practice frame: four ideas grouped through alignment and rules. */
     .about-frame-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -381,7 +378,6 @@
       line-height:1.62;
     }
 
-    /* Client experience: a numbered sequence that stays relational to its heading. */
     .about-experience-list{
       border-top:1px solid var(--about-line);
     }
@@ -550,12 +546,8 @@
       }
 
       .about-relational-layout{gap:26px;}
-
       .about-intro{gap:34px;}
-
-      .about-quote{
-        max-width:680px;
-      }
+      .about-quote{max-width:680px;}
 
       .about-scope-inner,
       .about-cta-inner{
@@ -581,9 +573,7 @@
         padding:40px 0 36px;
       }
 
-      .about-hero-media img{
-        object-position:58% center;
-      }
+      .about-hero-media img{object-position:58% center;}
 
       .about-hero::before{
         background:
@@ -612,13 +602,8 @@
         text-align:center;
       }
 
-      .about-section{
-        padding:44px 0;
-      }
-
-      .about-frame-grid{
-        grid-template-columns:1fr;
-      }
+      .about-section{padding:44px 0;}
+      .about-frame-grid{grid-template-columns:1fr;}
 
       .about-frame-item,
       .about-frame-item:nth-child(even){
@@ -631,133 +616,35 @@
         gap:7px;
       }
 
-      .about-quote{
-        padding-left:22px;
-      }
+      .about-quote{padding-left:22px;}
     }
   </style>
 
 <style id="stonebridge-services-dropdown-shared">
-/* Shared Services navigation. Kept inline so this update changes HTML files only. */
-.site-header.compact-site-header .services-nav-dropdown{
-  position:relative;
-  display:flex!important;
-  align-items:center;
-}
-.services-nav-main{
-  display:flex;
-  align-items:center;
-  min-height:34px;
-}
+.site-header.compact-site-header .services-nav-dropdown{position:relative;display:flex!important;align-items:center;}
+.services-nav-main{display:flex;align-items:center;min-height:34px;}
 .site-header.compact-site-header .services-nav-main > a{min-height:34px;}
-.services-menu-toggle{
-  width:28px;
-  height:34px;
-  margin-left:1px;
-  padding:0;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:0;
-  border-radius:7px;
-  background:transparent;
-  color:#5d6870;
-  cursor:pointer;
-}
-.services-menu-toggle svg{
-  width:16px;
-  height:16px;
-  transition:transform .16s ease;
-}
+.services-menu-toggle{width:28px;height:34px;margin-left:1px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:7px;background:transparent;color:#5d6870;cursor:pointer;}
+.services-menu-toggle svg{width:16px;height:16px;transition:transform .16s ease;}
 .services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
-.site-header.compact-site-header .services-dropdown-menu{
-  position:absolute;
-  top:calc(100% + 10px);
-  left:-14px;
-  z-index:80;
-  width:248px;
-  min-width:248px;
-  padding:9px;
-  display:grid!important;
-  gap:1px;
-  border:1px solid rgba(212,200,185,.88);
-  border-radius:12px;
-  background:rgba(255,252,247,.99);
-  box-shadow:0 18px 44px rgba(16,47,77,.14);
-}
+.site-header.compact-site-header .services-dropdown-menu{position:absolute;top:calc(100% + 10px);left:-14px;z-index:80;width:248px;min-width:248px;padding:9px;display:grid!important;gap:1px;border:1px solid rgba(212,200,185,.88);border-radius:12px;background:rgba(255,252,247,.99);box-shadow:0 18px 44px rgba(16,47,77,.14);}
 .site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
-.services-dropdown-menu::before{
-  content:"";
-  position:absolute;
-  top:-7px;
-  left:72px;
-  width:12px;
-  height:12px;
-  transform:rotate(45deg);
-  border-left:1px solid rgba(212,200,185,.88);
-  border-top:1px solid rgba(212,200,185,.88);
-  background:#fffaf4;
-}
-.site-header.compact-site-header .services-dropdown-menu a{
-  position:relative;
-  z-index:1;
-  min-height:0;
-  padding:9px 11px;
-  border-radius:7px;
-  color:#5d6870;
-  font-size:.83rem;
-  line-height:1.25;
-  white-space:normal;
-}
+.services-dropdown-menu::before{content:"";position:absolute;top:-7px;left:72px;width:12px;height:12px;transform:rotate(45deg);border-left:1px solid rgba(212,200,185,.88);border-top:1px solid rgba(212,200,185,.88);background:#fffaf4;}
+.site-header.compact-site-header .services-dropdown-menu a{position:relative;z-index:1;min-height:0;padding:9px 11px;border-radius:7px;color:#5d6870;font-size:.83rem;line-height:1.25;white-space:normal;}
 .site-header.compact-site-header .services-dropdown-menu a:hover,
 .site-header.compact-site-header .services-dropdown-menu a:focus-visible,
-.site-header.compact-site-header .services-dropdown-menu a.active-sub{
-  background:#f1ebe3;
-  color:#213142;
-}
-.services-menu-toggle:hover{
-  color:#213142;
-  background:rgba(22,59,97,.06);
-}
-.services-menu-toggle:focus-visible{
-  outline:3px solid #fffaf2;
-  outline-offset:1px;
-  box-shadow:0 0 0 5px #102f4d;
-}
+.site-header.compact-site-header .services-dropdown-menu a.active-sub{background:#f1ebe3;color:#213142;}
+.services-menu-toggle:hover{color:#213142;background:rgba(22,59,97,.06);}
+.services-menu-toggle:focus-visible{outline:3px solid #fffaf2;outline-offset:1px;box-shadow:0 0 0 5px #102f4d;}
 @media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
 @media(max-width:960px){
-  .site-header.compact-site-header .services-nav-dropdown{
-    width:100%;
-    display:block!important;
-  }
-  .services-nav-main{
-    width:100%;
-    justify-content:space-between;
-  }
+  .site-header.compact-site-header .services-nav-dropdown{width:100%;display:block!important;}
+  .services-nav-main{width:100%;justify-content:space-between;}
   .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
-  .services-menu-toggle{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-  }
-  .site-header.compact-site-header .services-dropdown-menu{
-    position:static;
-    width:100%;
-    min-width:0;
-    margin:3px 0 2px;
-    padding:4px 0 2px 13px;
-    gap:0;
-    border:0;
-    border-left:1px solid rgba(33,49,66,.17);
-    border-radius:0;
-    background:transparent;
-    box-shadow:none;
-  }
+  .services-menu-toggle{width:38px;height:38px;flex:0 0 38px;}
+  .site-header.compact-site-header .services-dropdown-menu{position:static;width:100%;min-width:0;margin:3px 0 2px;padding:4px 0 2px 13px;gap:0;border:0;border-left:1px solid rgba(33,49,66,.17);border-radius:0;background:transparent;box-shadow:none;}
   .services-dropdown-menu::before{display:none;}
-  .site-header.compact-site-header .services-dropdown-menu a{
-    padding:8px 10px;
-    font-size:.85rem;
-  }
+  .site-header.compact-site-header .services-dropdown-menu a{padding:8px 10px;font-size:.85rem;}
 }
 </style>
 </head>
@@ -829,10 +716,6 @@
           <p>Clinical judgment guides attentive, responsible care.</p>
         </article>
         <article>
-          <h2>Boundaries as care</h2>
-          <p>Clear expectations protect attention, consistency, and the relationship.</p>
-        </article>
-        <article>
           <h2>Whole-person care</h2>
           <p>Symptoms matter, but so do relationships, identity, coping, grief, and meaning.</p>
         </article>
@@ -847,7 +730,6 @@
 
           <div class="about-prose">
             <p>Many people arrive in therapy feeling overwhelmed or uncertain about what to expect. Clear structure and steady communication can make the path into care easier to understand.</p>
-            <p>Stonebridge is organized around steady communication, responsible limits, and thoughtful relational psychotherapy.</p>
           </div>
         </div>
 
@@ -863,7 +745,6 @@
         <div class="about-relational-intro">
           <div class="about-label">Clear structure</div>
           <h2>What clear structure protects.</h2>
-          <p>Clear boundaries are part of care and help make honest, sustainable clinical work possible.</p>
         </div>
 
         <div class="about-frame-grid">
@@ -911,15 +792,7 @@
           </article>
 
           <article class="about-experience-item">
-            <div class="about-item-label">02 · A whole-person view</div>
-            <div>
-              <h3>Symptoms are part of the picture.</h3>
-              <p>Therapy may also make room for relationships, identity, grief, shame, coping, and meaning.</p>
-            </div>
-          </article>
-
-          <article class="about-experience-item">
-            <div class="about-item-label">03 · A collaborative pace</div>
+            <div class="about-item-label">02 · A collaborative pace</div>
             <div>
               <h3>The work can move at a collaborative pace.</h3>
               <p>Therapy can proceed with attention to readiness, capacity, and what feels useful enough to explore.</p>
@@ -967,7 +840,7 @@
         <div class="footer-title">Practice</div>
         <div class="footer-links">
           <a href="about.html">About</a>
-            <a href="team-founder.html">Founder</a>
+          <a href="team-founder.html">Founder</a>
           <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Client Portal</a>
         </div>
@@ -995,7 +868,6 @@
     </div>
   </footer>
 
-  
 <script id="stonebridge-services-dropdown-script">
 (function(){
   function initServicesDropdown(){
@@ -1012,45 +884,23 @@
       panel.hidden=!open;
       if(open && focusFirst && items.length) items[0].focus();
     }
-    toggle.addEventListener('click',function(){
-      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
-    });
+    toggle.addEventListener('click',function(){setOpen(toggle.getAttribute('aria-expanded')!=='true',false);});
     toggle.addEventListener('keydown',function(event){
-      if(event.key==='ArrowDown'){
-        event.preventDefault();
-        setOpen(true,true);
-      }else if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-      }
+      if(event.key==='ArrowDown'){event.preventDefault();setOpen(true,true);}
+      else if(event.key==='Escape'){event.preventDefault();setOpen(false,false);}
     });
     panel.addEventListener('keydown',function(event){
       var current=items.indexOf(document.activeElement);
-      if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-        toggle.focus();
-      }else if(event.key==='ArrowDown'){
-        event.preventDefault();
-        items[(current+1+items.length)%items.length].focus();
-      }else if(event.key==='ArrowUp'){
-        event.preventDefault();
-        items[(current-1+items.length)%items.length].focus();
-      }else if(event.key==='Home'){
-        event.preventDefault();
-        items[0].focus();
-      }else if(event.key==='End'){
-        event.preventDefault();
-        items[items.length-1].focus();
-      }
+      if(event.key==='Escape'){event.preventDefault();setOpen(false,false);toggle.focus();}
+      else if(event.key==='ArrowDown'){event.preventDefault();items[(current+1+items.length)%items.length].focus();}
+      else if(event.key==='ArrowUp'){event.preventDefault();items[(current-1+items.length)%items.length].focus();}
+      else if(event.key==='Home'){event.preventDefault();items[0].focus();}
+      else if(event.key==='End'){event.preventDefault();items[items.length-1].focus();}
     });
     items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
     document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
     document.addEventListener('keydown',function(event){
-      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
-        setOpen(false,false);
-        toggle.focus();
-      }
+      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){setOpen(false,false);toggle.focus();}
     });
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
