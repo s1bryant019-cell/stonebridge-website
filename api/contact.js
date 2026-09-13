@@ -119,28 +119,41 @@ export default async function handler(req, res) {
 
     const isConsultationRequest = inquiryType === "consultation";
 
-    if (
-      !senderName ||
-      !dateOfBirth ||
-      !senderEmail ||
-      !phone ||
-      !requestedService ||
-      !inquiryReason
-    ) {
+    const fieldErrors = {};
+
+    if (!senderName) fieldErrors.fullName = "Enter your full name.";
+    if (!dateOfBirth) fieldErrors.dateOfBirth = "Enter your date of birth.";
+    if (!senderEmail) fieldErrors.email = "Enter your email address.";
+    if (!phone) fieldErrors.phone = "Enter your phone number.";
+    if (!requestedService) {
+      fieldErrors.serviceRequested = "Choose what you’re reaching out about.";
+    }
+    if (!inquiryReason) {
+      fieldErrors.reason = "Tell us briefly what you’re reaching out about.";
+    }
+
+    if (Object.keys(fieldErrors).length) {
       return res.status(400).json({
-        error: "Please complete all required fields."
+        error: "Review the highlighted fields.",
+        fieldErrors
       });
     }
 
     if (!isValidDateOfBirth(dateOfBirth)) {
       return res.status(400).json({
-        error: "Please enter a valid date of birth."
+        error: "Review the highlighted fields.",
+        fieldErrors: {
+          dateOfBirth: "Enter a valid date of birth."
+        }
       });
     }
 
     if (!isValidEmail(senderEmail)) {
       return res.status(400).json({
-        error: "Please enter a valid email address."
+        error: "Review the highlighted fields.",
+        fieldErrors: {
+          email: "Enter an email address in the format name@example.com."
+        }
       });
     }
 
