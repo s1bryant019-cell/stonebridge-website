@@ -32,622 +32,95 @@
       --portal-white:#fffaf2;
     }
 
-    body.portal-page{
-      background:var(--portal-bg);
-      color:var(--portal-ink);
-    }
-
-    .portal-page .skip-link{
-      position:absolute;
-      left:12px;
-      top:-80px;
-      z-index:1000;
-      padding:10px 14px;
-      border-radius:8px;
-      background:var(--portal-navy-deep);
-      color:#fff;
-      font-weight:700;
-    }
-
+    body.portal-page{background:var(--portal-bg);color:var(--portal-ink);}
+    .portal-page .skip-link{position:absolute;left:12px;top:-80px;z-index:1000;padding:10px 14px;border-radius:8px;background:var(--portal-navy-deep);color:#fff;font-weight:700;}
     .portal-page .skip-link:focus{top:12px;}
 
-    /* Compact full-width photographic hero for a function-led portal page. */
-    .portal-hero{
-      position:relative;
-      min-height:480px;
-      overflow:hidden;
-      isolation:isolate;
-      background:var(--portal-navy-deep);
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
+    .portal-hero{position:relative;min-height:480px;overflow:hidden;isolation:isolate;background:var(--portal-navy-deep);border-bottom:1px solid rgba(255,255,255,.10);}
+    .portal-hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(12,31,49,.95) 0%,rgba(12,31,49,.90) 31%,rgba(12,31,49,.67) 50%,rgba(12,31,49,.28) 73%,rgba(12,31,49,.10) 100%),linear-gradient(180deg,rgba(10,24,38,.16) 0%,rgba(10,24,38,.03) 55%,rgba(10,24,38,.25) 100%);}
+    .portal-hero-copy{position:relative;z-index:2;width:min(1220px,calc(100% - 72px));min-height:480px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:38px 0 36px;color:var(--portal-white);}
+    .portal-hero-rule{width:40px;height:2px;margin-bottom:20px;background:#d3b57f;}
+    .portal-kicker,.portal-label,.portal-item-label{color:var(--portal-gold);font-family:"Inter",sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.18em;line-height:1.35;text-transform:uppercase;}
+    .portal-hero .portal-kicker{color:#e1c79c;}
+    .portal-hero h1{margin:10px 0 0;max-width:12ch;color:var(--portal-white);font-family:"EB Garamond",Georgia,serif;font-size:clamp(3rem,4vw,4.2rem);line-height:1.01;letter-spacing:-.05em;text-wrap:balance;text-shadow:0 10px 30px rgba(0,0,0,.18);}
+    .portal-hero-copy > p{max-width:37rem;margin:18px 0 0;color:rgba(255,250,242,.89);font-family:"Inter",sans-serif;font-size:1rem;line-height:1.7;}
+    .portal-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px;}
+    .portal-hero-actions .btn-primary{background:#f4eee4;border-color:#f4eee4;color:var(--portal-navy-deep);}
+    .portal-hero-actions .btn-primary:hover{background:#fffaf2;border-color:#fffaf2;}
+    .portal-hero-media{position:absolute;inset:0;z-index:0;margin:0;overflow:hidden;}
+    .portal-hero-media img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;}
 
-    .portal-hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:1;
-      pointer-events:none;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(12,31,49,.95) 0%,
-          rgba(12,31,49,.90) 31%,
-          rgba(12,31,49,.67) 50%,
-          rgba(12,31,49,.28) 73%,
-          rgba(12,31,49,.10) 100%
-        ),
-        linear-gradient(
-          180deg,
-          rgba(10,24,38,.16) 0%,
-          rgba(10,24,38,.03) 55%,
-          rgba(10,24,38,.25) 100%
-        );
-    }
+    .portal-overview{background:#eee7de;color:var(--portal-ink);border-bottom:1px solid var(--portal-warm-line);}
+    .portal-overview-grid{width:min(1080px,calc(100% - 72px));margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:17px 0;}
+    .portal-overview article{padding:0 24px;border-left:1px solid rgba(33,49,66,.14);}
+    .portal-overview article:first-child{padding-left:0;border-left:0;}
+    .portal-overview h2{margin:0 0 4px;color:var(--portal-navy-deep);font-family:"EB Garamond",Georgia,serif;font-size:1.08rem;line-height:1.1;letter-spacing:-.01em;}
+    .portal-overview p{margin:0;color:var(--portal-muted);font-family:"Inter",sans-serif;font-size:.82rem;line-height:1.48;}
 
-    .portal-hero-copy{
-      position:relative;
-      z-index:2;
-      width:min(1220px,calc(100% - 72px));
-      min-height:480px;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      justify-content:center;
-      padding:38px 0 36px;
-      color:var(--portal-white);
-    }
+    .portal-section{padding:58px 0 64px;background:var(--portal-bg);}
+    .portal-shell{width:min(1080px,calc(100% - 72px));margin:0 auto;}
+    .portal-layout{display:grid;grid-template-columns:minmax(0,760px);justify-content:start;align-items:start;}
+    .portal-label{position:relative;padding-top:14px;}
+    .portal-label::before{content:"";position:absolute;top:0;left:0;width:100%;max-width:150px;height:1px;background:linear-gradient(90deg,var(--portal-navy),rgba(22,59,97,0));}
+    .portal-privacy{padding:27px 28px;border:1px solid var(--portal-warm-line);border-radius:20px;background:#fffdf9;}
+    .portal-privacy h3{margin:9px 0 0;color:var(--portal-ink);font-family:"EB Garamond",Georgia,serif;font-size:1.85rem;line-height:1.08;letter-spacing:-.025em;}
+    .portal-privacy ul{margin:18px 0 0;padding:0;list-style:none;border-top:1px solid var(--portal-line);}
+    .portal-privacy li{position:relative;padding:12px 0 12px 18px;border-bottom:1px solid var(--portal-line);color:var(--portal-muted);font-family:"Inter",sans-serif;font-size:.88rem;line-height:1.5;}
+    .portal-privacy li::before{content:"";position:absolute;left:0;top:1.08rem;width:6px;height:6px;border-radius:50%;background:#b89661;}
 
-    .portal-hero-rule{
-      width:40px;
-      height:2px;
-      margin-bottom:20px;
-      background:#d3b57f;
-    }
+    .portal-crisis{background:#ece5db;border-top:1px solid var(--portal-warm-line);border-bottom:1px solid var(--portal-warm-line);}
+    .portal-crisis-inner{width:min(1080px,calc(100% - 72px));margin:0 auto;display:grid;grid-template-columns:175px minmax(0,1fr);gap:42px;align-items:start;padding:25px 0;}
+    .portal-crisis strong{color:var(--portal-ink);font-family:"EB Garamond",Georgia,serif;font-size:1.25rem;line-height:1.15;}
+    .portal-crisis p{max-width:49rem;margin:0;color:var(--portal-muted);font-family:"Inter",sans-serif;font-size:.89rem;line-height:1.6;}
 
-    .portal-kicker,
-    .portal-label,
-    .portal-item-label{
-      color:var(--portal-gold);
-      font-family:"Inter",sans-serif;
-      font-size:.68rem;
-      font-weight:800;
-      letter-spacing:.18em;
-      line-height:1.35;
-      text-transform:uppercase;
-    }
+    .portal-new{background:linear-gradient(135deg,var(--portal-navy),var(--portal-navy-deep));color:var(--portal-white);}
+    .portal-new-inner{width:min(1080px,calc(100% - 72px));margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center;padding:33px 0;}
+    .portal-new h2{margin:0 0 5px;color:#fffaf2;font-family:"EB Garamond",Georgia,serif;font-size:clamp(2rem,3vw,2.75rem);line-height:1.05;letter-spacing:-.025em;}
+    .portal-new p{max-width:46rem;margin:0;color:rgba(255,250,242,.84);font-family:"Inter",sans-serif;font-size:.94rem;line-height:1.6;}
+    .portal-new .btn-secondary{color:#fffaf2;border-color:rgba(255,255,255,.30);background:rgba(255,255,255,.08);}
 
-    .portal-hero .portal-kicker{
-      color:#e1c79c;
-    }
+    .portal-page a:focus-visible,.portal-page button:focus-visible{outline:3px solid #fffaf2;outline-offset:2px;box-shadow:0 0 0 5px var(--portal-navy-deep);}
 
-    .portal-hero h1{
-      margin:10px 0 0;
-      max-width:12ch;
-      color:var(--portal-white);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3rem,4vw,4.2rem);
-      line-height:1.01;
-      letter-spacing:-.05em;
-      text-wrap:balance;
-      text-shadow:0 10px 30px rgba(0,0,0,.18);
-    }
-
-    .portal-hero-copy > p{
-      max-width:37rem;
-      margin:18px 0 0;
-      color:rgba(255,250,242,.89);
-      font-family:"Inter",sans-serif;
-      font-size:1rem;
-      line-height:1.7;
-    }
-
-    .portal-hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:25px;
-    }
-
-    .portal-hero-actions .btn-primary{
-      background:#f4eee4;
-      border-color:#f4eee4;
-      color:var(--portal-navy-deep);
-    }
-
-    .portal-hero-actions .btn-primary:hover{
-      background:#fffaf2;
-      border-color:#fffaf2;
-    }
-
-    .portal-hero-media{
-      position:absolute;
-      inset:0;
-      z-index:0;
-      margin:0;
-      overflow:hidden;
-    }
-
-    .portal-hero-media img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      object-position:center;
-    }
-
-    .portal-overview{
-      background:#eee7de;
-      color:var(--portal-ink);
-      border-bottom:1px solid var(--portal-warm-line);
-    }
-
-    .portal-overview-grid{
-      width:min(1080px,calc(100% - 72px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      padding:17px 0;
-    }
-
-    .portal-overview article{
-      padding:0 24px;
-      border-left:1px solid rgba(33,49,66,.14);
-    }
-
-    .portal-overview article:first-child{
-      padding-left:0;
-      border-left:0;
-    }
-
-    .portal-overview h2{
-      margin:0 0 4px;
-      color:var(--portal-navy-deep);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.08rem;
-      line-height:1.1;
-      letter-spacing:-.01em;
-    }
-
-    .portal-overview p{
-      margin:0;
-      color:var(--portal-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.82rem;
-      line-height:1.48;
-    }
-
-    .portal-section{
-      padding:58px 0 64px;
-      background:var(--portal-bg);
-    }
-
-    .portal-shell{
-      width:min(1080px,calc(100% - 72px));
-      margin:0 auto;
-    }
-
-    .portal-layout{
-      display:grid;
-      grid-template-columns:minmax(0,1.08fr) minmax(300px,.72fr);
-      gap:62px;
-      align-items:start;
-    }
-
-    .portal-label{
-      position:relative;
-      padding-top:14px;
-    }
-
-    .portal-label::before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      max-width:150px;
-      height:1px;
-      background:linear-gradient(90deg,var(--portal-navy),rgba(22,59,97,0));
-    }
-
-    .portal-main h2{
-      margin:12px 0 0;
-      max-width:14ch;
-      color:var(--portal-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.25rem,3.1vw,3.15rem);
-      line-height:1.04;
-      letter-spacing:-.035em;
-      text-wrap:balance;
-    }
-
-    .portal-main > p{
-      max-width:43rem;
-      margin:17px 0 0;
-      color:var(--portal-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.96rem;
-      line-height:1.72;
-    }
-
-    .portal-main .btn{
-      margin-top:24px;
-    }
-
-    .portal-privacy{
-      padding:27px 28px;
-      border:1px solid var(--portal-warm-line);
-      border-radius:20px;
-      background:#fffdf9;
-    }
-
-    .portal-privacy h3{
-      margin:9px 0 0;
-      color:var(--portal-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.85rem;
-      line-height:1.08;
-      letter-spacing:-.025em;
-    }
-
-    .portal-privacy ul{
-      margin:18px 0 0;
-      padding:0;
-      list-style:none;
-      border-top:1px solid var(--portal-line);
-    }
-
-    .portal-privacy li{
-      position:relative;
-      padding:12px 0 12px 18px;
-      border-bottom:1px solid var(--portal-line);
-      color:var(--portal-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.88rem;
-      line-height:1.5;
-    }
-
-    .portal-privacy li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:1.08rem;
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:#b89661;
-    }
-
-    .portal-crisis{
-      background:#ece5db;
-      border-top:1px solid var(--portal-warm-line);
-      border-bottom:1px solid var(--portal-warm-line);
-    }
-
-    .portal-crisis-inner{
-      width:min(1080px,calc(100% - 72px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:175px minmax(0,1fr);
-      gap:42px;
-      align-items:start;
-      padding:25px 0;
-    }
-
-    .portal-crisis strong{
-      color:var(--portal-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.25rem;
-      line-height:1.15;
-    }
-
-    .portal-crisis p{
-      max-width:49rem;
-      margin:0;
-      color:var(--portal-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.89rem;
-      line-height:1.6;
-    }
-
-    .portal-new{
-      background:linear-gradient(135deg,var(--portal-navy),var(--portal-navy-deep));
-      color:var(--portal-white);
-    }
-
-    .portal-new-inner{
-      width:min(1080px,calc(100% - 72px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      gap:30px;
-      align-items:center;
-      padding:33px 0;
-    }
-
-    .portal-new h2{
-      margin:0 0 5px;
-      color:#fffaf2;
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2rem,3vw,2.75rem);
-      line-height:1.05;
-      letter-spacing:-.025em;
-    }
-
-    .portal-new p{
-      max-width:46rem;
-      margin:0;
-      color:rgba(255,250,242,.84);
-      font-family:"Inter",sans-serif;
-      font-size:.94rem;
-      line-height:1.6;
-    }
-
-    .portal-new .btn-secondary{
-      color:#fffaf2;
-      border-color:rgba(255,255,255,.30);
-      background:rgba(255,255,255,.08);
-    }
-
-    .portal-page a:focus-visible,
-    .portal-page button:focus-visible{
-      outline:3px solid #fffaf2;
-      outline-offset:2px;
-      box-shadow:0 0 0 5px var(--portal-navy-deep);
-    }
-
-    @media(min-width:1081px) and (max-width:1260px){
-      .portal-hero-copy{
-        width:min(100% - 72px,1120px);
-      }
-
-      .portal-hero h1{
-        font-size:clamp(2.95rem,3.8vw,3.95rem);
-      }
-    }
-
+    @media(min-width:1081px) and (max-width:1260px){.portal-hero-copy{width:min(100% - 72px,1120px);}.portal-hero h1{font-size:clamp(2.95rem,3.8vw,3.95rem);}}
     @media(max-width:1080px){
-      .portal-hero,
-      .portal-hero-copy{
-        min-height:500px;
-      }
-
-      .portal-hero-copy{
-        width:min(100% - 44px,860px);
-        padding:42px 0 38px;
-      }
-
-      .portal-hero::before{
-        background:
-          linear-gradient(
-            90deg,
-            rgba(12,31,49,.95) 0%,
-            rgba(12,31,49,.88) 40%,
-            rgba(12,31,49,.60) 75%,
-            rgba(12,31,49,.30) 100%
-          ),
-          linear-gradient(
-            180deg,
-            rgba(10,24,38,.15) 0%,
-            rgba(10,24,38,.04) 56%,
-            rgba(10,24,38,.28) 100%
-          );
-      }
-
-      .portal-overview-grid,
-      .portal-layout,
-      .portal-crisis-inner,
-      .portal-new-inner{
-        grid-template-columns:1fr;
-      }
-
-      .portal-layout{gap:32px;}
-
-      .portal-crisis-inner,
-      .portal-new-inner{
-        gap:14px;
-      }
+      .portal-hero,.portal-hero-copy{min-height:500px;}
+      .portal-hero-copy{width:min(100% - 44px,860px);padding:42px 0 38px;}
+      .portal-hero::before{background:linear-gradient(90deg,rgba(12,31,49,.95) 0%,rgba(12,31,49,.88) 40%,rgba(12,31,49,.60) 75%,rgba(12,31,49,.30) 100%),linear-gradient(180deg,rgba(10,24,38,.15) 0%,rgba(10,24,38,.04) 56%,rgba(10,24,38,.28) 100%);}
+      .portal-overview-grid,.portal-layout,.portal-crisis-inner,.portal-new-inner{grid-template-columns:1fr;}
+      .portal-crisis-inner,.portal-new-inner{gap:14px;}
     }
-
     @media(max-width:720px){
-      .portal-shell,
-      .portal-overview-grid,
-      .portal-crisis-inner,
-      .portal-new-inner{
-        width:min(100% - 34px,1080px);
-      }
-
-      .portal-hero,
-      .portal-hero-copy{
-        min-height:560px;
-      }
-
-      .portal-hero-copy{
-        width:min(100% - 34px,1080px);
-        padding:38px 0 34px;
-      }
-
-      .portal-hero-media img{
-        object-position:58% center;
-      }
-
-      .portal-hero::before{
-        background:
-          linear-gradient(
-            180deg,
-            rgba(10,27,43,.90) 0%,
-            rgba(10,27,43,.74) 56%,
-            rgba(10,27,43,.90) 100%
-          ),
-          linear-gradient(
-            90deg,
-            rgba(10,27,43,.54) 0%,
-            rgba(10,27,43,.22) 100%
-          );
-      }
-
-      .portal-overview-grid{
-        grid-template-columns:1fr;
-        padding:14px 0;
-      }
-
-      .portal-overview article{
-        padding:13px 0;
-        border-left:0;
-        border-top:1px solid rgba(33,49,66,.13);
-      }
-
-      .portal-overview article:first-child{
-        padding-top:0;
-        border-top:0;
-      }
-
-      .portal-hero h1{
-        max-width:12ch;
-        font-size:clamp(2.5rem,10.5vw,3.45rem);
-      }
-
-      .portal-hero-actions .btn,
-      .portal-main .btn,
-      .portal-new .btn{
-        width:100%;
-        justify-content:center;
-        text-align:center;
-      }
-
-      .portal-section{
-        padding:44px 0 48px;
-      }
-
-      .portal-privacy{
-        padding:23px 20px;
-        border-radius:16px;
-      }
+      .portal-shell,.portal-overview-grid,.portal-crisis-inner,.portal-new-inner{width:min(100% - 34px,1080px);}
+      .portal-hero,.portal-hero-copy{min-height:560px;}
+      .portal-hero-copy{width:min(100% - 34px,1080px);padding:38px 0 34px;}
+      .portal-hero-media img{object-position:58% center;}
+      .portal-hero::before{background:linear-gradient(180deg,rgba(10,27,43,.90) 0%,rgba(10,27,43,.74) 56%,rgba(10,27,43,.90) 100%),linear-gradient(90deg,rgba(10,27,43,.54) 0%,rgba(10,27,43,.22) 100%);}
+      .portal-overview-grid{grid-template-columns:1fr;padding:14px 0;}
+      .portal-overview article{padding:13px 0;border-left:0;border-top:1px solid rgba(33,49,66,.13);}
+      .portal-overview article:first-child{padding-top:0;border-top:0;}
+      .portal-hero h1{max-width:12ch;font-size:clamp(2.5rem,10.5vw,3.45rem);}
+      .portal-hero-actions .btn,.portal-new .btn{width:100%;justify-content:center;text-align:center;}
+      .portal-section{padding:44px 0 48px;}
+      .portal-privacy{padding:23px 20px;border-radius:16px;}
     }
   </style>
 
 <style id="stonebridge-services-dropdown-shared">
-/* Shared Services navigation. Kept inline so this update changes HTML files only. */
-.site-header.compact-site-header .services-nav-dropdown{
-  position:relative;
-  display:flex!important;
-  align-items:center;
-}
-.services-nav-main{
-  display:flex;
-  align-items:center;
-  min-height:34px;
-}
+.site-header.compact-site-header .services-nav-dropdown{position:relative;display:flex!important;align-items:center;}
+.services-nav-main{display:flex;align-items:center;min-height:34px;}
 .site-header.compact-site-header .services-nav-main > a{min-height:34px;}
-.services-menu-toggle{
-  width:28px;
-  height:34px;
-  margin-left:1px;
-  padding:0;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:0;
-  border-radius:7px;
-  background:transparent;
-  color:#5d6870;
-  cursor:pointer;
-}
-.services-menu-toggle svg{
-  width:16px;
-  height:16px;
-  transition:transform .16s ease;
-}
+.services-menu-toggle{width:28px;height:34px;margin-left:1px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:7px;background:transparent;color:#5d6870;cursor:pointer;}
+.services-menu-toggle svg{width:16px;height:16px;transition:transform .16s ease;}
 .services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
-.site-header.compact-site-header .services-dropdown-menu{
-  position:absolute;
-  top:calc(100% + 10px);
-  left:-14px;
-  z-index:80;
-  width:248px;
-  min-width:248px;
-  padding:9px;
-  display:grid!important;
-  gap:1px;
-  border:1px solid rgba(212,200,185,.88);
-  border-radius:12px;
-  background:rgba(255,252,247,.99);
-  box-shadow:0 18px 44px rgba(16,47,77,.14);
-}
+.site-header.compact-site-header .services-dropdown-menu{position:absolute;top:calc(100% + 10px);left:-14px;z-index:80;width:248px;min-width:248px;padding:9px;display:grid!important;gap:1px;border:1px solid rgba(212,200,185,.88);border-radius:12px;background:rgba(255,252,247,.99);box-shadow:0 18px 44px rgba(16,47,77,.14);}
 .site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
-.services-dropdown-menu::before{
-  content:"";
-  position:absolute;
-  top:-7px;
-  left:72px;
-  width:12px;
-  height:12px;
-  transform:rotate(45deg);
-  border-left:1px solid rgba(212,200,185,.88);
-  border-top:1px solid rgba(212,200,185,.88);
-  background:#fffaf4;
-}
-.site-header.compact-site-header .services-dropdown-menu a{
-  position:relative;
-  z-index:1;
-  min-height:0;
-  padding:9px 11px;
-  border-radius:7px;
-  color:#5d6870;
-  font-size:.83rem;
-  line-height:1.25;
-  white-space:normal;
-}
-.site-header.compact-site-header .services-dropdown-menu a:hover,
-.site-header.compact-site-header .services-dropdown-menu a:focus-visible,
-.site-header.compact-site-header .services-dropdown-menu a.active-sub{
-  background:#f1ebe3;
-  color:#213142;
-}
-.services-menu-toggle:hover{
-  color:#213142;
-  background:rgba(22,59,97,.06);
-}
-.services-menu-toggle:focus-visible{
-  outline:3px solid #fffaf2;
-  outline-offset:1px;
-  box-shadow:0 0 0 5px #102f4d;
-}
+.services-dropdown-menu::before{content:"";position:absolute;top:-7px;left:72px;width:12px;height:12px;transform:rotate(45deg);border-left:1px solid rgba(212,200,185,.88);border-top:1px solid rgba(212,200,185,.88);background:#fffaf4;}
+.site-header.compact-site-header .services-dropdown-menu a{position:relative;z-index:1;min-height:0;padding:9px 11px;border-radius:7px;color:#5d6870;font-size:.83rem;line-height:1.25;white-space:normal;}
+.site-header.compact-site-header .services-dropdown-menu a:hover,.site-header.compact-site-header .services-dropdown-menu a:focus-visible,.site-header.compact-site-header .services-dropdown-menu a.active-sub{background:#f1ebe3;color:#213142;}
+.services-menu-toggle:hover{color:#213142;background:rgba(22,59,97,.06);}
+.services-menu-toggle:focus-visible{outline:3px solid #fffaf2;outline-offset:1px;box-shadow:0 0 0 5px #102f4d;}
 @media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
-@media(max-width:960px){
-  .site-header.compact-site-header .services-nav-dropdown{
-    width:100%;
-    display:block!important;
-  }
-  .services-nav-main{
-    width:100%;
-    justify-content:space-between;
-  }
-  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
-  .services-menu-toggle{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-  }
-  .site-header.compact-site-header .services-dropdown-menu{
-    position:static;
-    width:100%;
-    min-width:0;
-    margin:3px 0 2px;
-    padding:4px 0 2px 13px;
-    gap:0;
-    border:0;
-    border-left:1px solid rgba(33,49,66,.17);
-    border-radius:0;
-    background:transparent;
-    box-shadow:none;
-  }
-  .services-dropdown-menu::before{display:none;}
-  .site-header.compact-site-header .services-dropdown-menu a{
-    padding:8px 10px;
-    font-size:.85rem;
-  }
-}
+@media(max-width:960px){.site-header.compact-site-header .services-nav-dropdown{width:100%;display:block!important;}.services-nav-main{width:100%;justify-content:space-between;}.site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}.services-menu-toggle{width:38px;height:38px;flex:0 0 38px;}.site-header.compact-site-header .services-dropdown-menu{position:static;width:100%;min-width:0;margin:3px 0 2px;padding:4px 0 2px 13px;gap:0;border:0;border-left:1px solid rgba(33,49,66,.17);border-radius:0;background:transparent;box-shadow:none;}.services-dropdown-menu::before{display:none;}.site-header.compact-site-header .services-dropdown-menu a{padding:8px 10px;font-size:.85rem;}}
 </style>
 </head>
 
@@ -656,23 +129,15 @@
 
   <header class="site-header compact-site-header">
     <div class="container nav">
-      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
-        <div class="brand-mark">STONEBRIDGE</div>
-        <div class="brand-sub">Psychological Group</div>
-      </a>
-
+      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home"><div class="brand-mark">STONEBRIDGE</div><div class="brand-sub">Psychological Group</div></a>
       <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-
       <div class="menu-wrap">
         <nav class="menu" aria-label="Primary navigation">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-          <a href="team.html">Team</a>
+  <a href="team.html">Team</a>
   <div class="nav-dropdown services-nav-dropdown">
-    <div class="services-nav-main">
-      <a href="services.html">Services</a>
-      <button class="services-menu-toggle" type="button" aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu"><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button>
-    </div>
+    <div class="services-nav-main"><a href="services.html">Services</a><button class="services-menu-toggle" type="button" aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu"><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button></div>
     <div id="services-submenu" class="dropdown-menu services-dropdown-menu" role="menu" aria-label="Services" hidden>
 <a href="services.html" role="menuitem">Services Overview</a>
 <a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a>
@@ -699,43 +164,21 @@
         <div class="portal-kicker">Client Portal</div>
         <h1>Secure access for active clients.</h1>
         <p>Current Stonebridge clients can sign in to view available appointment times, request appointments with their assigned clinician, manage forms and billing, and join scheduled telehealth sessions.</p>
-
-        <div class="portal-hero-actions">
-          <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Open Client Portal</a>
-        </div>
+        <div class="portal-hero-actions"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Open Client Portal</a></div>
       </div>
-
-      <figure class="portal-hero-media">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="hero-portal-workspace-960.webp 960w, hero-portal-workspace-1600.webp 1600w, hero-portal-workspace-2000.webp 2000w" sizes="100vw"><img alt="Secure workspace prepared for active-client portal use" decoding="async" fetchpriority="high" height="1116" src="hero-portal-workspace.jpg" width="2000"/></picture>
-      </figure>
+      <figure class="portal-hero-media"><picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="hero-portal-workspace-960.webp 960w, hero-portal-workspace-1600.webp 1600w, hero-portal-workspace-2000.webp 2000w" sizes="100vw"><img alt="Secure workspace prepared for active-client portal use" decoding="async" fetchpriority="high" height="1116" src="hero-portal-workspace.jpg" width="2000"/></picture></figure>
     </section>
 
     <section class="portal-overview" aria-label="Portal overview">
       <div class="portal-overview-grid">
-        <article>
-          <h2>Assigned forms</h2>
-          <p>Complete paperwork and questionnaires assigned by the practice.</p>
-        </article>
-        <article>
-          <h2>Telehealth sessions</h2>
-          <p>Access telehealth appointments when portal access is active.</p>
-        </article>
-        <article>
-          <h2>Account and billing</h2>
-          <p>Review appointment or billing information when available.</p>
-        </article>
+        <article><h2>Assigned forms</h2><p>Complete paperwork and questionnaires assigned by the practice.</p></article>
+        <article><h2>Telehealth sessions</h2><p>Access telehealth appointments when portal access is active.</p></article>
+        <article><h2>Account and billing</h2><p>Review appointment or billing information when available.</p></article>
       </div>
     </section>
 
     <section class="portal-section">
       <div class="portal-shell portal-layout">
-        <div class="portal-main">
-          <div class="portal-label">For active clients</div>
-          <h2>Use the portal for tasks connected to ongoing care.</h2>
-          <p>TherapyPortal is the secure scheduling and account space for active care. Current clients can view actual available appointment times and request appointments with their assigned clinician, along with accessing assigned documents, billing information, and session links.</p>
-          <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Open Client Portal</a>
-        </div>
-
         <aside class="portal-privacy">
           <div class="portal-item-label">Privacy and access</div>
           <h3>Before you sign in.</h3>
@@ -749,19 +192,11 @@
       </div>
     </section>
 
-    <section class="portal-crisis" aria-label="Emergency information">
-      <div class="portal-crisis-inner">
-        <strong>Not for emergencies</strong>
-        <p>The portal is not monitored as an emergency service. For immediate danger or a medical emergency, call 911 or go to the nearest emergency room. For mental-health, suicide, self-harm, or substance-use crisis support, call or text 988.</p>
-      </div>
-    </section>
+    <section class="portal-crisis" aria-label="Emergency information"><div class="portal-crisis-inner"><strong>Not for emergencies</strong><p>The portal is not monitored as an emergency service. For immediate danger or a medical emergency, call 911 or go to the nearest emergency room. For mental-health, suicide, self-harm, or substance-use crisis support, call or text 988.</p></div></section>
 
     <section class="portal-new">
       <div class="portal-new-inner">
-        <div>
-          <h2>New to Stonebridge?</h2>
-          <p>If you are new to Stonebridge, begin with a free 10–15 minute consultation request. The Client Portal scheduling pathway is for established clients.</p>
-        </div>
+        <div><h2>New to Stonebridge?</h2><p>If you are new to Stonebridge, begin with a free 10–15 minute consultation request. The Client Portal scheduling pathway is for established clients.</p></div>
         <a class="btn btn-secondary" href="contact.html">Schedule a Consultation</a>
       </div>
     </section>
@@ -769,54 +204,15 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">STONEBRIDGE</div>
-        <div class="footer-sub">Psychological Group</div>
-        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
-      </div>
-
-      <div>
-        <div class="footer-title">Care</div>
-        <div class="footer-links">
-          <a href="services.html">Services</a>
-          <a href="fees-insurance.html">Fees &amp; Insurance</a>
-          <a href="contact.html">New Clients</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Practice</div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-            <a href="team-founder.html">Founder</a>
-          <a href="for-clinicians.html">Professionals</a>
-          <a href="portal.html">Client Portal</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
-          <span>Serving Illinois via telehealth</span>
-          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-          <a href="tel:+17734171688">(773) 417-1688</a>
-          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
-          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
-        </div>
-      </div>
-
-      <div class="footer-logo-right">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
-      </div>
+      <div><div class="footer-brand">STONEBRIDGE</div><div class="footer-sub">Psychological Group</div><p class="footer-copy">Thoughtful online care for Illinois clients.</p></div>
+      <div><div class="footer-title">Care</div><div class="footer-links"><a href="services.html">Services</a><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="contact.html">New Clients</a></div></div>
+      <div><div class="footer-title">Practice</div><div class="footer-links"><a href="about.html">About</a><a href="team-founder.html">Founder</a><a href="for-clinicians.html">Professionals</a><a href="portal.html">Client Portal</a></div></div>
+      <div><div class="footer-title">Contact</div><div class="footer-links"><span>Serving Illinois via telehealth</span><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a><a href="tel:+17734171688">(773) 417-1688</a><a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a><a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a></div></div>
+      <div class="footer-logo-right"><picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture></div>
     </div>
-
-    <div class="container footer-bottom">
-      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
-    </div>
+    <div class="container footer-bottom"><div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div><div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div></div>
   </footer>
 
-  
 <script id="stonebridge-services-dropdown-script">
 (function(){
   function initServicesDropdown(){
@@ -826,56 +222,15 @@
     var panel=dropdown.querySelector('.services-dropdown-menu');
     if(!toggle || !panel) return;
     var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
-    function setOpen(open,focusFirst){
-      dropdown.classList.toggle('is-open',open);
-      toggle.setAttribute('aria-expanded',String(open));
-      toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
-      panel.hidden=!open;
-      if(open && focusFirst && items.length) items[0].focus();
-    }
-    toggle.addEventListener('click',function(){
-      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
-    });
-    toggle.addEventListener('keydown',function(event){
-      if(event.key==='ArrowDown'){
-        event.preventDefault();
-        setOpen(true,true);
-      }else if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-      }
-    });
-    panel.addEventListener('keydown',function(event){
-      var current=items.indexOf(document.activeElement);
-      if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-        toggle.focus();
-      }else if(event.key==='ArrowDown'){
-        event.preventDefault();
-        items[(current+1+items.length)%items.length].focus();
-      }else if(event.key==='ArrowUp'){
-        event.preventDefault();
-        items[(current-1+items.length)%items.length].focus();
-      }else if(event.key==='Home'){
-        event.preventDefault();
-        items[0].focus();
-      }else if(event.key==='End'){
-        event.preventDefault();
-        items[items.length-1].focus();
-      }
-    });
+    function setOpen(open,focusFirst){dropdown.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');panel.hidden=!open;if(open && focusFirst && items.length) items[0].focus();}
+    toggle.addEventListener('click',function(){setOpen(toggle.getAttribute('aria-expanded')!=='true',false);});
+    toggle.addEventListener('keydown',function(event){if(event.key==='ArrowDown'){event.preventDefault();setOpen(true,true);}else if(event.key==='Escape'){event.preventDefault();setOpen(false,false);}});
+    panel.addEventListener('keydown',function(event){var current=items.indexOf(document.activeElement);if(event.key==='Escape'){event.preventDefault();setOpen(false,false);toggle.focus();}else if(event.key==='ArrowDown'){event.preventDefault();items[(current+1+items.length)%items.length].focus();}else if(event.key==='ArrowUp'){event.preventDefault();items[(current-1+items.length)%items.length].focus();}else if(event.key==='Home'){event.preventDefault();items[0].focus();}else if(event.key==='End'){event.preventDefault();items[items.length-1].focus();}});
     items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
     document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
-    document.addEventListener('keydown',function(event){
-      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
-        setOpen(false,false);
-        toggle.focus();
-      }
-    });
+    document.addEventListener('keydown',function(event){if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){setOpen(false,false);toggle.focus();}});
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
-  else initServicesDropdown();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);else initServicesDropdown();
 })();
 </script>
 <script src="script.js"></script>
