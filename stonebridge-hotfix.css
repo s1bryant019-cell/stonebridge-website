@@ -218,3 +218,32 @@ body.home-redesign .hero-utility-strip-separator{
   .clinicians-overview-grid.refined-professional-nav a:nth-child(n+3){border-top:1px solid var(--clinicians-line)}
   .clinicians-overview-grid.refined-professional-nav a:nth-child(even){border-left:1px solid var(--clinicians-line)}
 }
+
+/* 2026-09-14 targeted correction: service-card full bleed and single consultation CTA. */
+.site-header.sb-global-header .menu > a[href^="contact.html"]{
+  display:none!important;
+}
+
+body.home-redesign .home-service-media{
+  overflow:hidden!important;
+  padding:0!important;
+  background:transparent!important;
+  line-height:0!important;
+}
+body.home-redesign .home-service-media picture{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important;
+}
+body.home-redesign .home-service-media img{
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
