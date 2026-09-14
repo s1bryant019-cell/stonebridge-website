@@ -1,5 +1,5 @@
 (function () {
-  var VERSION = '20260914e';
+  var VERSION = '20260914f';
 
   function pageName() {
     var path = (window.location.pathname || '').split('/').pop().toLowerCase();
@@ -88,7 +88,7 @@
   }
 
   function normalizeFounderImages() {
-    var headshotSrc = 'founder-headshot-live-20260914.svg?v=' + VERSION;
+    var headshotSrc = 'dr-stephen-bryant-headshot.png?v=' + VERSION;
     var environmentalSrc = 'founder-environmental.png?v=' + VERSION;
 
     document.querySelectorAll(
