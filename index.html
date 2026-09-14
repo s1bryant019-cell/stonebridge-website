@@ -18,9 +18,10 @@
   <link href="home-visual-refresh.css?v=20260914a" rel="stylesheet">
   <link id="stonebridge-brand-sync" href="stonebridge-brand-sync.css?v=20260914b" rel="stylesheet">
   <style id="home-hero-density-tuning">
+    .home-hero-trust{display:none!important;}
     @media(min-width:1025px){
       .home-hero-grid{
-        min-height:500px;
+        min-height:460px;
         grid-template-columns:minmax(0,46%) minmax(0,54%);
       }
       .home-hero-copy{
@@ -33,8 +34,13 @@
       .home-hero h1 .home-hero-line{display:block;white-space:nowrap;}
       .home-hero-lede{max-width:500px;margin-top:17px;}
       .home-hero-copy .home-primary-btn{margin-top:20px;}
-      .home-hero-trust{gap:14px;margin-top:24px;padding-top:16px;}
-      .home-hero-media{min-height:500px;}
+      .home-hero-media{min-height:460px;}
+      body.home-redesign .hero-utility-strip-inner{
+        width:min(1040px,calc(100% - 96px));
+        min-height:54px;
+        padding:14px 0;
+      }
+      body.home-redesign .hero-utility-strip-separator{margin:0 28px;}
     }
   </style>
 </head>
