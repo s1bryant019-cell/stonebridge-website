@@ -1,5 +1,5 @@
 (function () {
-  var VERSION = '20260914k';
+  var VERSION = '20260914l';
 
   function pageName() {
     var path = (window.location.pathname || '').split('/').pop().toLowerCase();
@@ -139,7 +139,7 @@
 
     setCardImage('individual-therapy.html#adult-therapy', 'hero-portal-workspace-960.webp');
     setCardImage('individual-therapy.html#adolescent-therapy', 'profile-nature-hero.jpg');
-    setCardImage('couples-therapy.html', 'home-bridge.jpg');
+    setCardImage('couples-therapy.html', 'couples-therapy-hero-960.webp');
     setCardImage('family-therapy.html', 'team-nature-hero.jpg');
     setCardImage('parent-support.html', 'hero-contact-desk-960.webp');
   }
@@ -191,7 +191,7 @@
   }
 
   function refineCouplesTherapy() {
-    setHeroImage('.couples-hero-media', 'home-bridge.jpg', '');
+    setHeroImage('.couples-hero-media', 'home-bridge-v11.jpg', '');
   }
 
   function refineFamilyTherapy() {
