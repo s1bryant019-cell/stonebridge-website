@@ -184,7 +184,7 @@
     var style = document.createElement('style');
     style.id = 'stonebridge-priority-revisions';
     style.textContent = [
-      ':root{--sb-system-wide:1220px;--sb-system-standard:1080px;--sb-system-reading:46rem;--sb-system-cream:#f2ece4;--sb-system-ink:#213142;--sb-system-muted:#5d6870;--sb-system-navy:#163b61;--sb-system-navy-deep:#102f4d;--sb-system-gold:#c0a06a;--sb-system-line:rgba(33,49,66,.14);--sb-system-warm-line:rgba(212,200,185,.74)}',
+      ':root{--sb-system-wide:1220px;--sb-system-standard:1120px;--sb-system-content:1160px;--sb-system-reading:46rem;--sb-system-cream:#f2ece4;--sb-system-ink:#213142;--sb-system-muted:#5d6870;--sb-system-navy:#163b61;--sb-system-navy-deep:#102f4d;--sb-system-gold:#c0a06a;--sb-system-line:rgba(33,49,66,.14);--sb-system-warm-line:rgba(212,200,185,.74)}',
       '.clinicians-overview .professional-route-link{display:block;color:inherit;text-decoration:none;border-radius:4px}',
       '.clinicians-overview .professional-route-link:hover h2,.clinicians-overview .professional-route-link:focus-visible h2{text-decoration:underline;text-underline-offset:3px}',
       '.clinicians-overview .professional-route-link:focus-visible{outline:3px solid #163b61;outline-offset:5px}',
@@ -192,7 +192,8 @@
       '.clinicians-page .clinicians-service-category h2{margin:0;color:var(--clinicians-gold);font-family:"Inter",sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.13em;line-height:1.4;text-transform:uppercase}',
       '.clinicians-page .professional-group-heading{margin:0 0 8px;color:var(--clinicians-ink);font-family:"EB Garamond",Georgia,serif;font-size:1.65rem;line-height:1.08;letter-spacing:-.02em}',
       '.sbx-founder-page .focus-compact-grid.founder-focus-compressed,.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:repeat(2,minmax(0,1fr))!important}',
-      '.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:minmax(0,760px);justify-content:start}',
+      '.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:1fr!important;justify-content:center!important}',
+      '.portal-page .portal-privacy{width:min(100%,900px);justify-self:center}',
       '.hero-utility-strip{background:var(--sb-system-cream);border-bottom:1px solid var(--sb-system-warm-line);color:var(--sb-system-ink)}',
       '.hero-utility-strip-inner{width:min(var(--sb-system-standard),calc(100% - 72px));min-height:48px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:12px 0;text-align:center}',
       '.hero-utility-strip-item{color:#545f6b;font-family:"Inter",sans-serif;font-size:.84rem;font-weight:600;line-height:1.42}',
@@ -216,10 +217,29 @@
       '.menu a{min-height:44px;display:inline-flex;align-items:center}',
       '.menu a[aria-current="page"],.menu a.active{color:var(--sb-system-ink);font-weight:700}',
       '.site-header button:focus-visible,.site-header a:focus-visible{outline:3px solid #163b61;outline-offset:3px}',
-      '.about-label,.services-label,.individual-label,.couples-label,.family-label,.parent-label,.group-label,.fees-label,.team-label,.clinicians-label,.contact-label,.form-eyebrow{font-family:"Inter",sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.18em;line-height:1.35;text-transform:uppercase}',
-      '@media(min-width:1081px){.sb-system-hero{min-height:480px!important}.sb-system-hero.sb-system-hero--compact{min-height:460px!important}.sb-system-hero-copy{width:min(var(--sb-system-wide),calc(100% - 72px))!important;min-height:inherit!important;margin:0 auto!important;padding:42px 0 40px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important}.about-section,.services-section,.individual-section,.couples-section,.family-section,.parent-section,.group-section,.fees-section,.team-section,.clinicians-section{padding-top:60px!important;padding-bottom:60px!important}}',
-      '@media(max-width:1080px){.hero-utility-strip-inner{width:min(100% - 44px,var(--sb-system-standard))}.sb-system-hero-title{font-size:clamp(3rem,5.1vw,4.1rem)!important}.sb-system-hero-body{max-width:38rem!important}}',
-      '@media(max-width:720px){.hero-utility-strip-inner{width:min(100% - 34px,var(--sb-system-standard));min-height:0;flex-direction:column;align-items:flex-start;gap:6px;padding:14px 0;text-align:left}.hero-utility-strip-separator{display:none}.hero-utility-strip-item{font-size:.82rem}.sb-system-hero-title{max-width:13ch!important;font-size:clamp(2.55rem,10.5vw,3.55rem)!important;line-height:1.06!important}.sb-system-hero-body{font-size:.96rem!important;line-height:1.64!important}.sb-system-hero-actions{width:100%!important}.sb-system-hero-actions .btn{width:100%;min-height:48px;justify-content:center;text-align:center}.about-section,.services-section,.individual-section,.couples-section,.family-section,.parent-section,.group-section,.fees-section,.team-section,.clinicians-section{padding-top:44px!important;padding-bottom:46px!important}.sbx-founder-page .focus-compact-grid.founder-focus-compressed,.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:1fr!important}.portal-page .portal-layout.portal-layout--privacy-only{grid-template-columns:1fr}}',
+      '.about-label,.services-label,.individual-label,.couples-label,.family-label,.parent-label,.group-label,.fees-label,.team-label,.clinicians-label,.contact-label,.portal-label,.form-eyebrow{font-family:"Inter",sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.18em;line-height:1.35;text-transform:uppercase}',
+      '.about-shell,.services-shell,.individual-shell,.couples-shell,.family-shell,.parent-shell,.fees-shell,.team-shell,.clinicians-shell,.contact-shell,.portal-shell{width:min(var(--sb-system-content),calc(100% - 72px))!important}',
+      '.group-shell{width:min(1180px,calc(100% - 72px))!important}',
+      '.about-relational-layout,.services-balanced-layout,.individual-intro-grid,.individual-focus-layout,.individual-process,.couples-intro-grid,.couples-focus-layout,.couples-process,.family-intro-grid,.family-focus-layout,.family-process,.parent-intro-grid,.parent-focus-layout,.parent-process,.group-intro-grid,.group-development,.group-value-layout,.group-process,.clinicians-scope-layout{grid-template-columns:minmax(240px,300px) minmax(0,1fr)!important;gap:44px!important}',
+      '.about-intro{grid-template-columns:minmax(0,1.06fr) minmax(320px,.78fr)!important;gap:52px!important}',
+      '.about-experience-item{grid-template-columns:1fr!important;gap:5px!important;padding:15px 0!important}',
+      '.about-experience-item .about-item-label{margin-bottom:1px}',
+      '.about-scope-inner,.individual-boundary-inner,.couples-boundary-inner,.family-boundary-inner,.parent-boundary-inner,.group-boundary-inner,.individual-related-group-inner,.portal-crisis-inner{width:min(var(--sb-system-content),calc(100% - 72px))!important;grid-template-columns:minmax(240px,300px) minmax(0,1fr)!important;gap:44px!important}',
+      '.about-scope p,.individual-boundary p,.couples-boundary p,.family-boundary p,.parent-boundary p,.group-boundary p,.individual-related-group p,.portal-crisis p{max-width:none!important}',
+      '.services-primary-intro{grid-template-columns:minmax(240px,300px) minmax(0,1fr)!important;gap:44px!important}',
+      '.services-coverage-note{grid-template-columns:minmax(180px,220px) minmax(0,1fr)!important;gap:32px!important}',
+      '.fees-relational-layout{grid-template-columns:minmax(240px,300px) minmax(0,1fr)!important;gap:44px!important}',
+      '.fees-policy{grid-template-columns:minmax(220px,280px) minmax(0,1fr)!important;gap:40px!important}',
+      '.team-growth-note,.team-professional-note{grid-template-columns:minmax(200px,240px) minmax(0,1fr)!important;gap:32px!important}',
+      '.contact-layout{grid-template-columns:minmax(250px,320px) minmax(0,740px)!important;gap:44px!important;justify-content:space-between!important}',
+      '.clinicians-offerings-grid{grid-template-columns:minmax(230px,280px) repeat(2,minmax(0,1fr))!important}',
+      '.clinicians-scope-row{grid-template-columns:160px minmax(0,1fr)!important;gap:24px!important}',
+      '.about-cta-inner,.services-cta-inner,.individual-cta-inner,.couples-cta-inner,.family-cta-inner,.parent-cta-inner,.group-cta-inner,.fees-cta-inner,.team-cta-inner,.clinicians-cta-inner,.portal-new-inner{width:min(var(--sb-system-content),calc(100% - 72px))!important;padding-top:27px!important;padding-bottom:27px!important}',
+      '.contact-form-section{padding-top:48px!important;padding-bottom:52px!important}',
+      '.portal-section{padding-top:48px!important;padding-bottom:52px!important}',
+      '@media(min-width:1081px){.sb-system-hero{min-height:480px!important}.sb-system-hero.sb-system-hero--compact{min-height:460px!important}.sb-system-hero-copy{width:min(var(--sb-system-wide),calc(100% - 72px))!important;min-height:inherit!important;margin:0 auto!important;padding:42px 0 40px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important}.about-section{padding-top:46px!important;padding-bottom:46px!important}.services-section,.individual-section,.couples-section,.family-section,.parent-section,.group-section{padding-top:50px!important;padding-bottom:50px!important}.fees-section,.team-section,.clinicians-section{padding-top:48px!important;padding-bottom:48px!important}}',
+      '@media(max-width:1080px){.hero-utility-strip-inner{width:min(100% - 44px,var(--sb-system-standard))}.sb-system-hero-title{font-size:clamp(3rem,5.1vw,4.1rem)!important}.sb-system-hero-body{max-width:38rem!important}.about-shell,.services-shell,.individual-shell,.couples-shell,.family-shell,.parent-shell,.fees-shell,.team-shell,.clinicians-shell,.contact-shell,.portal-shell,.group-shell{width:min(100% - 44px,var(--sb-system-content))!important}.about-relational-layout,.services-balanced-layout,.individual-intro-grid,.individual-focus-layout,.individual-process,.couples-intro-grid,.couples-focus-layout,.couples-process,.family-intro-grid,.family-focus-layout,.family-process,.parent-intro-grid,.parent-focus-layout,.parent-process,.group-intro-grid,.group-development,.group-value-layout,.group-process,.clinicians-scope-layout,.about-intro,.about-scope-inner,.individual-boundary-inner,.couples-boundary-inner,.family-boundary-inner,.parent-boundary-inner,.group-boundary-inner,.individual-related-group-inner,.portal-crisis-inner,.contact-layout{grid-template-columns:1fr!important;gap:26px!important}.about-experience-item{grid-template-columns:1fr!important}.portal-page .portal-privacy{width:100%}}',
+      '@media(max-width:720px){.hero-utility-strip-inner{width:min(100% - 34px,var(--sb-system-standard));min-height:0;flex-direction:column;align-items:flex-start;gap:6px;padding:14px 0;text-align:left}.hero-utility-strip-separator{display:none}.hero-utility-strip-item{font-size:.82rem}.sb-system-hero-title{max-width:13ch!important;font-size:clamp(2.55rem,10.5vw,3.55rem)!important;line-height:1.06!important}.sb-system-hero-body{font-size:.96rem!important;line-height:1.64!important}.sb-system-hero-actions{width:100%!important}.sb-system-hero-actions .btn{width:100%;min-height:48px;justify-content:center;text-align:center}.about-section,.services-section,.individual-section,.couples-section,.family-section,.parent-section,.group-section,.fees-section,.team-section,.clinicians-section{padding-top:40px!important;padding-bottom:42px!important}.sbx-founder-page .focus-compact-grid.founder-focus-compressed,.founder-page .focus-compact-grid.founder-focus-compressed{grid-template-columns:1fr!important}.about-shell,.services-shell,.individual-shell,.couples-shell,.family-shell,.parent-shell,.fees-shell,.team-shell,.clinicians-shell,.contact-shell,.portal-shell,.group-shell{width:min(100% - 34px,var(--sb-system-content))!important}.about-cta-inner,.services-cta-inner,.individual-cta-inner,.couples-cta-inner,.family-cta-inner,.parent-cta-inner,.group-cta-inner,.fees-cta-inner,.team-cta-inner,.clinicians-cta-inner,.portal-new-inner,.about-scope-inner,.individual-boundary-inner,.couples-boundary-inner,.family-boundary-inner,.parent-boundary-inner,.group-boundary-inner,.individual-related-group-inner,.portal-crisis-inner{width:min(100% - 34px,var(--sb-system-content))!important}}',
       '@media(max-width:760px){.menu{gap:8px!important}.menu a{width:100%;min-height:44px;padding:8px 10px;border-radius:8px}.mobile-toggle{justify-content:center}}',
       '@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.btn,.menu a,.mobile-toggle,.services-menu-toggle,.sb-system-hero-actions .btn{transition:none!important;transform:none!important}}'
     ].join('\n');
@@ -343,6 +363,12 @@
         remove: '.clinicians-overview',
         items: ['Peer groups', 'Consultation + supervision', 'Writing, review + education'],
         label: 'Professional offerings'
+      },
+      'portal.html': {
+        hero: '.portal-hero',
+        remove: '.portal-overview',
+        items: ['Assigned forms', 'Telehealth sessions', 'Account + billing'],
+        label: 'Client portal information'
       }
     };
 
@@ -410,7 +436,8 @@
       'parent-support.html': ['.parent-hero', '.parent-hero-copy', 'compact'],
       'group-therapy.html': ['.group-hero', '.group-hero-copy', 'compact'],
       'fees-insurance.html': ['.fees-hero', '.fees-hero-copy'],
-      'for-clinicians.html': ['.clinicians-hero', '.clinicians-hero-copy']
+      'for-clinicians.html': ['.clinicians-hero', '.clinicians-hero-copy'],
+      'portal.html': ['.portal-hero', '.portal-hero-copy']
     };
 
     var config = configs[filename];
@@ -481,6 +508,7 @@
       '.group-hero',
       '.fees-hero',
       '.clinicians-hero',
+      '.portal-hero',
       '.founder-intro'
     ].join(',');
 
