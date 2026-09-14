@@ -3,1167 +3,252 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Stonebridge Psychological Group</title>
-  <meta name="description" content="Thoughtful online psychotherapy for Illinois clients. Stonebridge offers consultation-first, relational care within a clear and steady clinical frame.">
-  <link rel="canonical" href="https://stonebridgepsychgroup.com/">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-
+  <title>Stonebridge Psychological Group | Online Psychotherapy in Illinois</title>
+  <meta name="description" content="Thoughtful online psychotherapy for Illinois adults, adolescents, couples, families, groups, and parents. Begin with a free 10–15 minute consultation.">
+  <link rel="canonical" href="https://stonebridgepsychgroup.com/index.html">
+  <link href="favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="favicon.ico" rel="icon" sizes="any">
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="site.webmanifest" rel="manifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-  <style id="stonebridge-home-spacing-refinement">
-    :root{
-      --home-bg:#f8f5f0;
-      --home-paper:#f2ece4;
-      --home-ink:#213142;
-      --home-muted:#5d6870;
-      --home-blue:#163b61;
-      --home-blue-deep:#102f4d;
-      --home-gold:#78613f;
-      --home-gold-soft:#c0a06a;
-      --home-line:rgba(33,49,66,.14);
-      --home-warm-line:rgba(212,200,185,.74);
-      --home-white:#fffaf2;
-    }
-
-    body.home-page{
-      margin:0;
-      background:var(--home-bg);
-      color:var(--home-ink);
-    }
-
-    .home-page .skip-link{
-      position:absolute;
-      left:12px;
-      top:-90px;
-      z-index:1000;
-      padding:10px 14px;
-      border-radius:8px;
-      background:var(--home-blue-deep);
-      color:#fff;
-      font-weight:700;
-    }
-
-    .home-page .skip-link:focus{top:12px;}
-
-    .home-shell{
-      width:min(1120px,calc(100% - 72px));
-      margin:0 auto;
-    }
-
-    .home-label{
-      color:var(--home-gold);
-      font-family:"Inter",sans-serif;
-      font-size:.69rem;
-      font-weight:800;
-      letter-spacing:.18em;
-      line-height:1.35;
-      text-transform:uppercase;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-    .home-hero{
-      position:relative;
-      min-height:555px;
-      overflow:hidden;
-      background:#1c2d3f;
-      isolation:isolate;
-    }
-
-    .home-hero-media{
-      position:absolute;
-      inset:0;
-      z-index:-3;
-    }
-
-    .home-hero-media img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      object-position:center;
-    }
-
-    .home-hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:-2;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(12,31,49,.94) 0%,
-          rgba(12,31,49,.84) 25%,
-          rgba(12,31,49,.55) 43%,
-          rgba(12,31,49,.16) 64%,
-          rgba(12,31,49,.02) 100%
-        ),
-        linear-gradient(
-          180deg,
-          rgba(10,24,38,.14) 0%,
-          rgba(10,24,38,.02) 54%,
-          rgba(10,24,38,.20) 100%
-        );
-    }
-
-    .home-hero-inner{
-      width:min(1220px,calc(100% - 72px));
-      min-height:555px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      padding:46px 0 42px;
-    }
-
-    .home-hero-copy{
-      width:min(600px,51%);
-      color:var(--home-white);
-    }
-
-    .home-hero .home-label{color:#e1c79c;}
-
-    .home-hero h1{
-      margin:12px 0 0;
-      max-width:11.6ch;
-      color:var(--home-white);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(3.5rem,4.75vw,4.9rem);
-      font-weight:700;
-      line-height:1.01;
-      letter-spacing:-.052em;
-      text-wrap:balance;
-      text-shadow:0 10px 30px rgba(0,0,0,.18);
-    }
-
-    .home-hero-copy > p{
-      max-width:35rem;
-      margin:18px 0 0;
-      color:rgba(255,250,242,.89);
-      font-family:"Inter",sans-serif;
-      font-size:1rem;
-      line-height:1.68;
-    }
-
-    .home-hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:25px;
-    }
-
-    .home-hero-actions .btn-primary{
-      background:#f4eee4;
-      border-color:#f4eee4;
-      color:var(--home-blue-deep);
-    }
-
-    .home-hero-actions .btn-primary:hover{
-      background:#fffaf2;
-      border-color:#fffaf2;
-    }
-
-    .home-hero-actions .btn-secondary{
-      background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.58);
-      color:#fff;
-      backdrop-filter:blur(4px);
-    }
-
-    .home-hero-actions .btn-secondary:hover{
-      background:rgba(255,255,255,.14);
-      border-color:rgba(255,255,255,.80);
-    }
-
-    .home-hero-note{
-      max-width:40rem;
-      margin:13px 0 0;
-      color:rgba(255,250,242,.76);
-      font-family:"Inter",sans-serif;
-      font-size:.77rem;
-      line-height:1.5;
-    }
-
-    /* =========================
-       TRUST STRIP
-    ========================= */
-    .home-trust{
-      background:var(--home-paper);
-      border-bottom:1px solid var(--home-warm-line);
-    }
-
-    .home-trust-inner{
-      width:min(1120px,calc(100% - 72px));
-      margin:0 auto;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:9px 17px;
-      padding:14px 0;
-      text-align:center;
-    }
-
-    .home-trust span{
-      color:#545f6b;
-      font-family:"Inter",sans-serif;
-      font-size:.84rem;
-      font-weight:600;
-      line-height:1.42;
-    }
-
-    .home-trust i{
-      width:4px;
-      height:4px;
-      border-radius:50%;
-      background:var(--home-gold-soft);
-      flex:0 0 4px;
-    }
-
-    /* =========================
-       RECOGNITION
-       Heading and concerns now share one relational grid.
-    ========================= */
-    .home-recognition{
-      padding:50px 0 54px;
-      background:var(--home-bg);
-    }
-
-    .home-recognition-layout{
-      display:grid;
-      grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
-      gap:58px;
-      align-items:start;
-    }
-
-    .home-recognition h2,
-    .home-services h2,
-    .home-philosophy h2,
-    .home-begin h2{
-      margin:11px 0 0;
-      color:var(--home-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.4rem,3.4vw,3.25rem);
-      line-height:1.06;
-      letter-spacing:-.04em;
-      text-wrap:balance;
-    }
-
-    .home-recognition h2{max-width:14ch;}
-
-    .home-recognition-copy > p{
-      max-width:31rem;
-      margin:15px 0 0;
-      color:var(--home-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.94rem;
-      line-height:1.66;
-    }
-
-    .home-recognition-grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      border-top:1px solid var(--home-line);
-      border-left:1px solid var(--home-line);
-    }
-
-    .home-recognition-item{
-      min-height:142px;
-      padding:18px 21px 17px;
-      border-right:1px solid var(--home-line);
-      border-bottom:1px solid var(--home-line);
-    }
-
-    .home-recognition-item h3{
-      margin:0;
-      color:var(--home-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.34rem;
-      font-weight:600;
-      line-height:1.14;
-      letter-spacing:-.016em;
-    }
-
-    .home-recognition-item p{
-      margin:7px 0 0;
-      color:var(--home-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.87rem;
-      line-height:1.54;
-    }
-
-
-    /* =========================
-       SERVICES DIRECTORY
-       A restrained editorial directory rather than a card wall.
-    ========================= */
-    .home-services{
-      padding:52px 0 56px;
-      background:var(--home-paper);
-      border-top:1px solid var(--home-warm-line);
-      border-bottom:1px solid var(--home-warm-line);
-    }
-
-    .home-services-layout{
-      display:grid;
-      grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
-      gap:58px;
-      align-items:start;
-    }
-
-    .home-services h2{
-      max-width:13ch;
-    }
-
-    .home-services-intro > p{
-      max-width:31rem;
-      margin:15px 0 0;
-      color:var(--home-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.94rem;
-      line-height:1.66;
-    }
-
-    .home-services-overview{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-top:19px;
-      padding-bottom:3px;
-      border-bottom:1px solid rgba(22,59,97,.38);
-      color:var(--home-blue);
-      font-family:"Inter",sans-serif;
-      font-size:.84rem;
-      font-weight:700;
-      line-height:1.35;
-      text-decoration:none;
-    }
-
-    .home-services-overview:hover{
-      border-bottom-color:var(--home-blue);
-    }
-
-    .home-services-grid{
-      display:grid;
-      grid-template-columns:repeat(6,minmax(0,1fr));
-      border-top:1px solid var(--home-line);
-      border-left:1px solid var(--home-line);
-    }
-
-    .home-services-grid .home-service-item{
-      grid-column:span 2;
-    }
-
-    .home-service-item{
-      position:relative;
-      min-height:154px;
-      display:block;
-      padding:19px 48px 18px 21px;
-      border-right:1px solid var(--home-line);
-      border-bottom:1px solid var(--home-line);
-      color:inherit;
-      text-decoration:none;
-      transition:background-color .16s ease;
-    }
-
-    .home-service-item:hover{
-      background:rgba(255,250,242,.72);
-    }
-
-    .home-service-item h3{
-      margin:0;
-      color:var(--home-ink);
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.4rem;
-      font-weight:600;
-      line-height:1.12;
-      letter-spacing:-.018em;
-    }
-
-    .home-service-item p{
-      margin:8px 0 0;
-      color:var(--home-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.86rem;
-      line-height:1.54;
-    }
-
-    .home-service-arrow{
-      position:absolute;
-      top:18px;
-      right:20px;
-      color:var(--home-blue);
-      font-family:"Inter",sans-serif;
-      font-size:1rem;
-      line-height:1;
-      transition:transform .16s ease;
-    }
-
-    .home-service-item:hover .home-service-arrow{
-      transform:translateX(3px);
-    }
-
-    .home-service-status{
-      display:inline-block;
-      margin-top:11px;
-      color:var(--home-gold);
-      font-family:"Inter",sans-serif;
-      font-size:.66rem;
-      font-weight:800;
-      letter-spacing:.12em;
-      line-height:1.3;
-      text-transform:uppercase;
-    }
-
-    /* =========================
-       PHILOSOPHY / CLINICIAN
-       Full-width brand field with an editorial portrait treatment.
-    ========================= */
-    .home-philosophy{
-      padding:38px 0 40px;
-      background:#0F2A45;
-      border-top:1px solid rgba(181,138,73,.28);
-      border-bottom:1px solid rgba(10,30,48,.42);
-      color:#FAF5EF;
-    }
-
-    .home-philosophy-layout{
-      display:grid;
-      grid-template-columns:224px minmax(0,1fr);
-      gap:48px;
-      align-items:center;
-    }
-
-    .home-philosophy .home-label{
-      color:#D5B36F;
-      margin-bottom:11px;
-    }
-
-    .home-clinician-photo{
-      position:relative;
-      width:210px;
-      padding:7px 7px 17px;
-      background:#FAF5EF;
-      border:1px solid rgba(181,138,73,.58);
-      box-shadow:12px 12px 0 rgba(181,138,73,.14);
-    }
-
-    .home-clinician-photo::after{
-      content:"";
-      position:absolute;
-      left:18px;
-      bottom:8px;
-      width:42px;
-      height:1px;
-      background:#B58A49;
-    }
-
-    .home-clinician-photo img{
-      width:100%;
-      height:auto;
-      aspect-ratio:4 / 5;
-      display:block;
-      object-fit:cover;
-      object-position:center 18%;
-    }
-
-    .home-clinician-copy{
-      min-width:0;
-      width:100%;
-      max-width:none;
-    }
-
-    .home-clinician-copy h2{
-      margin:0;
-      width:100%;
-      max-width:none;
-      color:#FAF5EF;
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(1.9rem,2.35vw,2.4rem);
-      font-weight:600;
-      line-height:1.10;
-      letter-spacing:-.028em;
-      text-wrap:balance;
-    }
-
-    .home-clinician-meta{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:28px;
-      width:100%;
-      max-width:none;
-      margin-top:23px;
-      padding-top:17px;
-      border-top:1px solid rgba(232,221,206,.24);
-    }
-
-    .home-clinician-identity{
-      min-width:0;
-    }
-
-    .home-clinician-name{
-      margin:0;
-      color:#FAF5EF;
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:1.14rem;
-      font-weight:600;
-      line-height:1.18;
-    }
-
-    .home-clinician-role{
-      margin:4px 0 0 !important;
-      color:#D8C6A5 !important;
-      font-family:"Inter",sans-serif;
-      font-size:.64rem !important;
-      font-weight:700;
-      letter-spacing:.10em;
-      line-height:1.42;
-      text-transform:uppercase;
-    }
-
-    .home-clinician-copy .btn{
-      flex:0 0 auto;
-      margin:0;
-      background:transparent;
-      border-color:rgba(250,245,239,.52);
-      color:#FAF5EF;
-      backdrop-filter:none;
-    }
-
-    .home-clinician-copy .btn:hover{
-      background:rgba(250,245,239,.10);
-      border-color:rgba(250,245,239,.78);
-    }
-
-    /* =========================
-       FINAL INVITATION
-    ========================= */
-    .home-begin{
-      padding:48px 0 52px;
-      background:var(--home-paper);
-      border-bottom:1px solid var(--home-warm-line);
-    }
-
-    .home-begin-inner{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(310px,.60fr);
-      gap:60px;
-      align-items:center;
-    }
-
-    .home-begin h2{max-width:13ch;}
-
-    .home-begin-copy > p{
-      max-width:40rem;
-      margin:14px 0 0;
-      color:var(--home-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.94rem;
-      line-height:1.64;
-    }
-
-    .home-begin-actions{
-      display:grid;
-      gap:11px;
-    }
-
-    .home-begin-actions .btn{
-      width:100%;
-      justify-content:center;
-      text-align:center;
-    }
-
-    .home-begin-note{
-      margin:10px 0 0;
-      color:var(--home-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.74rem;
-      line-height:1.46;
-      text-align:center;
-    }
-
-    .home-page a:focus-visible,
-    .home-page button:focus-visible{
-      outline:3px solid var(--home-white);
-      outline-offset:2px;
-      box-shadow:0 0 0 5px var(--home-blue-deep);
-    }
-
-    @media(max-width:1080px){
-      .home-hero{min-height:540px;}
-      .home-hero-inner{min-height:540px;}
-      .home-hero-copy{width:min(620px,64%);}
-
-      .home-hero::before{
-        background:
-          linear-gradient(90deg,rgba(12,31,49,.93) 0%,rgba(12,31,49,.81) 46%,rgba(12,31,49,.28) 76%,rgba(12,31,49,.06) 100%),
-          linear-gradient(180deg,rgba(10,24,38,.16),rgba(10,24,38,.20));
-      }
-
-      .home-recognition-layout,
-      .home-services-layout,
-      .home-begin-inner{
-        grid-template-columns:1fr;
-        gap:28px;
-      }
-
-      .home-philosophy-layout{
-        grid-template-columns:188px minmax(0,1fr);
-        gap:34px;
-        align-items:center;
-      }
-
-      .home-clinician-photo{
-        width:176px;
-      }
-
-      .home-clinician-meta{
-        align-items:flex-start;
-      }
-
-      .home-begin-actions{max-width:430px;}
-    }
-
-    @media(max-width:760px){
-      .home-shell,
-      .home-hero-inner,
-      .home-trust-inner{
-        width:min(100% - 34px,1120px);
-      }
-
-      .home-hero{min-height:600px;}
-
-      .home-hero-media img{object-position:62% center;}
-
-      .home-hero::before{
-        background:
-          linear-gradient(180deg,rgba(12,31,49,.76) 0%,rgba(12,31,49,.70) 54%,rgba(12,31,49,.58) 100%),
-          linear-gradient(90deg,rgba(12,31,49,.48),rgba(12,31,49,.10));
-      }
-
-      .home-hero-inner{
-        min-height:600px;
-        align-items:flex-end;
-        padding:48px 0 42px;
-      }
-
-      .home-hero-copy{width:100%;}
-
-      .home-hero h1{
-        font-size:clamp(2.9rem,12.5vw,3.95rem);
-        max-width:10.8ch;
-      }
-
-      .home-hero-actions .btn{
-        width:100%;
-        justify-content:center;
-        text-align:center;
-      }
-
-      .home-trust-inner{
-        display:grid;
-        gap:5px;
-        text-align:left;
-      }
-
-      .home-trust i{display:none;}
-
-      .home-recognition,
-      .home-services,
-      .home-begin{
-        padding-top:40px;
-        padding-bottom:42px;
-      }
-
-      .home-philosophy{
-        padding-top:32px;
-        padding-bottom:34px;
-      }
-
-      .home-philosophy-layout{
-        grid-template-columns:1fr;
-        gap:27px;
-      }
-
-      .home-clinician-photo{
-        width:min(160px,50vw);
-        padding:6px 6px 15px;
-        box-shadow:9px 9px 0 rgba(181,138,73,.14);
-      }
-
-      .home-clinician-copy h2{
-        width:100%;
-        max-width:none;
-        font-size:clamp(1.75rem,8.2vw,2.15rem);
-      }
-
-      .home-clinician-meta{
-        display:grid;
-        gap:16px;
-        margin-top:20px;
-      }
-
-      .home-clinician-copy .btn{
-        width:max-content;
-      }
-
-      .home-recognition-grid,
-      .home-services-grid{grid-template-columns:1fr;}
-
-      .home-services-grid .home-service-item{
-        grid-column:auto;
-      }
-
-      .home-recognition-item,
-      .home-service-item{
-        min-height:0;
-      }
-
-    }
-  </style>
-
-<style id="stonebridge-services-dropdown-shared">
-/* Shared Services navigation. Kept inline so this update changes HTML files only. */
-.site-header.compact-site-header .services-nav-dropdown{
-  position:relative;
-  display:flex!important;
-  align-items:center;
-}
-.services-nav-main{
-  display:flex;
-  align-items:center;
-  min-height:34px;
-}
-.site-header.compact-site-header .services-nav-main > a{min-height:34px;}
-.services-menu-toggle{
-  width:28px;
-  height:34px;
-  margin-left:1px;
-  padding:0;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:0;
-  border-radius:7px;
-  background:transparent;
-  color:#5d6870;
-  cursor:pointer;
-}
-.services-menu-toggle svg{
-  width:16px;
-  height:16px;
-  transition:transform .16s ease;
-}
-.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
-.site-header.compact-site-header .services-dropdown-menu{
-  position:absolute;
-  top:calc(100% + 10px);
-  left:-14px;
-  z-index:80;
-  width:248px;
-  min-width:248px;
-  padding:9px;
-  display:grid!important;
-  gap:1px;
-  border:1px solid rgba(212,200,185,.88);
-  border-radius:12px;
-  background:rgba(255,252,247,.99);
-  box-shadow:0 18px 44px rgba(16,47,77,.14);
-}
-.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
-.services-dropdown-menu::before{
-  content:"";
-  position:absolute;
-  top:-7px;
-  left:72px;
-  width:12px;
-  height:12px;
-  transform:rotate(45deg);
-  border-left:1px solid rgba(212,200,185,.88);
-  border-top:1px solid rgba(212,200,185,.88);
-  background:#fffaf4;
-}
-.site-header.compact-site-header .services-dropdown-menu a{
-  position:relative;
-  z-index:1;
-  min-height:0;
-  padding:9px 11px;
-  border-radius:7px;
-  color:#5d6870;
-  font-size:.83rem;
-  line-height:1.25;
-  white-space:normal;
-}
-.site-header.compact-site-header .services-dropdown-menu a:hover,
-.site-header.compact-site-header .services-dropdown-menu a:focus-visible,
-.site-header.compact-site-header .services-dropdown-menu a.active-sub{
-  background:#f1ebe3;
-  color:#213142;
-}
-.services-menu-toggle:hover{
-  color:#213142;
-  background:rgba(22,59,97,.06);
-}
-.services-menu-toggle:focus-visible{
-  outline:3px solid #fffaf2;
-  outline-offset:1px;
-  box-shadow:0 0 0 5px #102f4d;
-}
-@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
-@media(max-width:960px){
-  .site-header.compact-site-header .services-nav-dropdown{
-    width:100%;
-    display:block!important;
-  }
-  .services-nav-main{
-    width:100%;
-    justify-content:space-between;
-  }
-  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
-  .services-menu-toggle{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-  }
-  .site-header.compact-site-header .services-dropdown-menu{
-    position:static;
-    width:100%;
-    min-width:0;
-    margin:3px 0 2px;
-    padding:4px 0 2px 13px;
-    gap:0;
-    border:0;
-    border-left:1px solid rgba(33,49,66,.17);
-    border-radius:0;
-    background:transparent;
-    box-shadow:none;
-  }
-  .services-dropdown-menu::before{display:none;}
-  .site-header.compact-site-header .services-dropdown-menu a{
-    padding:8px 10px;
-    font-size:.85rem;
-  }
-}
-</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link href="home-visual-refresh.css" rel="stylesheet">
 </head>
-
-<body class="home-page">
+<body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header compact-site-header">
-    <div class="container nav">
-      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">
-        <div class="brand-mark">STONEBRIDGE</div>
-        <div class="brand-sub">Psychological Group</div>
+  <header class="home-site-header" id="site-header">
+    <div class="home-container home-nav">
+      <a class="home-brand" href="index.html" aria-label="Stonebridge Psychological Group home">
+        <div class="home-brand-mark">STONEBRIDGE</div>
+        <div class="home-brand-sub">Psychological Group</div>
       </a>
 
-      <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <button class="home-mobile-toggle" type="button" aria-controls="home-menu-wrap" aria-expanded="false">Menu</button>
 
-      <div class="menu-wrap">
-        <nav class="menu" aria-label="Primary navigation">
-  <a href="index.html" class="active" aria-current="page">Home</a>
-  <a href="about.html">About</a>
+      <div class="home-menu-wrap" id="home-menu-wrap">
+        <nav class="home-menu" aria-label="Primary navigation">
+          <a href="about.html">About</a>
           <a href="team.html">Team</a>
-  <div class="nav-dropdown services-nav-dropdown">
-    <div class="services-nav-main">
-      <a href="services.html">Services</a>
-      <button class="services-menu-toggle" type="button" aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu"><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button>
-    </div>
-    <div id="services-submenu" class="dropdown-menu services-dropdown-menu" role="menu" aria-label="Services" hidden>
-<a href="services.html" role="menuitem">Services Overview</a>
-<a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a>
-<a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
-<a href="group-therapy.html" role="menuitem">Group Therapy</a>
-<a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
-<a href="family-therapy.html" role="menuitem">Family Therapy</a>
-<a href="parent-support.html" role="menuitem">Parent Support</a>
-</div>
-  </div>
-  <a href="fees-insurance.html">Fees &amp; Insurance</a>
-  <a href="for-clinicians.html">Professionals</a>
-  <a href="portal.html">Portal</a>
-</nav>
-        <div class="header-cta"><a class="btn btn-primary" href="contact.html">New Clients</a></div>
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="contact.html">New Clients</a>
+          <a href="for-clinicians.html">Professionals</a>
+          <a href="portal.html">Portal</a>
+        </nav>
+        <a class="home-header-cta" href="contact.html#inquiry-form">Request a consultation</a>
       </div>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="home-hero">
-      <div class="home-hero-media" aria-hidden="true">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="home-hero-room-884.webp 884w" sizes="100vw"><img alt="" decoding="async" fetchpriority="high" height="670" src="home-hero-room.png" width="884"/></picture>
-      </div>
-
-      <div class="home-hero-inner">
+    <section class="home-hero" aria-labelledby="home-hero-title">
+      <div class="home-hero-grid">
         <div class="home-hero-copy">
-          <div class="home-label">Online psychotherapy in Illinois</div>
-          <h1>A steadier place to begin therapy.</h1>
-          <p>Thoughtful outpatient care for people who feel overwhelmed, disconnected, or caught in patterns that keep returning.</p>
-
-          <div class="home-hero-actions">
-            <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
+          <p class="home-eyebrow">Online psychotherapy in Illinois</p>
+          <h1 id="home-hero-title">A steadier place to begin therapy.</h1>
+          <p class="home-hero-lede">Thoughtful outpatient care for people who feel overwhelmed, disconnected, or caught in patterns that keep returning.</p>
+          <div>
+            <a class="home-primary-btn" href="contact.html#inquiry-form">Request a consultation</a>
           </div>
 
-          <p class="home-hero-note">Use a brief online form to request a free 10–15 minute consultation. Stonebridge reviews each request and follows up to confirm a time.</p>
+          <div class="home-hero-trust" aria-label="Practice information">
+            <div class="home-trust-item">
+              <span class="home-trust-icon telehealth" aria-hidden="true"></span>
+              <span>Illinois telehealth</span>
+            </div>
+            <div class="home-trust-item">
+              <span class="home-trust-icon consultation" aria-hidden="true"></span>
+              <span>Free 10–15 minute consultation</span>
+            </div>
+            <div class="home-trust-item">
+              <span class="home-trust-icon insurance" aria-hidden="true"></span>
+              <span>Aetna + BCBSIL accepted</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-hero-media" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="home-hero-room-884.webp 884w" sizes="(max-width: 1024px) 100vw, 54vw">
+            <img src="home-hero-room.png" alt="" width="884" height="670" fetchpriority="high" decoding="async">
+          </picture>
         </div>
       </div>
     </section>
 
-    <section class="home-trust" aria-label="Practice information">
-      <div class="home-trust-inner">
-        <span>Illinois telehealth</span>
-        <i aria-hidden="true"></i>
-        <span>Free 10–15 minute consultation</span>
-        <i aria-hidden="true"></i>
-        <span>Aetna + BCBSIL accepted</span>
-      </div>
-    </section>
-
-    <section class="home-recognition">
-      <div class="home-shell home-recognition-layout">
-        <div class="home-recognition-copy">
-          <div class="home-label">When therapy may help</div>
-          <h2>You may be here because something keeps repeating.</h2>
+    <section class="home-recognition" aria-labelledby="recognition-title">
+      <div class="home-container">
+        <div class="home-section-intro">
+          <h2 class="home-section-title" id="recognition-title">You may be here because something keeps repeating.</h2>
           <p>You do not need a diagnosis or perfect words before reaching out.</p>
         </div>
 
         <div class="home-recognition-grid" aria-label="Common reasons people seek therapy">
           <article class="home-recognition-item">
+            <div class="home-recognition-icon-wrap" aria-hidden="true"><span class="home-recognition-icon alert"></span></div>
             <h3>Your mind or body stays on alert.</h3>
             <p>Anxiety, panic, tension, or always preparing for what comes next.</p>
           </article>
-
           <article class="home-recognition-item">
+            <div class="home-recognition-icon-wrap" aria-hidden="true"><span class="home-recognition-icon pattern"></span></div>
             <h3>You understand the pattern, but it keeps returning.</h3>
             <p>Conflict, avoidance, shame, or responses that keep repeating.</p>
           </article>
-
           <article class="home-recognition-item">
-            <h3>The way you cope is creating other problems.</h3>
+            <div class="home-recognition-icon-wrap" aria-hidden="true"><span class="home-recognition-icon coping"></span></div>
+            <h3>The way you cope may be creating other problems.</h3>
             <p>Substance use, overwork, withdrawal, control, or coping that no longer works.</p>
           </article>
-
           <article class="home-recognition-item">
-            <h3>You feel distant from yourself or the people you love.</h3>
+            <div class="home-recognition-icon-wrap" aria-hidden="true"><span class="home-recognition-icon relationships"></span></div>
+            <h3>Something in your relationships keeps repeating.</h3>
             <p>Depression, grief, numbness, or disconnection from yourself or others.</p>
           </article>
         </div>
       </div>
     </section>
 
-
-    <section class="home-services" aria-labelledby="home-services-title">
-      <div class="home-shell home-services-layout">
-        <div class="home-services-intro">
-          <div class="home-label">Ways to work with Stonebridge</div>
-          <h2 id="home-services-title">Care shaped around the people in the room.</h2>
-          <p>Choose a starting point or review the full range of services.</p>
-          <a class="home-services-overview" href="services.html">Explore all services <span aria-hidden="true">→</span></a>
+    <section class="home-services" aria-labelledby="services-title">
+      <div class="home-container">
+        <div class="home-services-head">
+          <h2 class="home-services-title" id="services-title">Psychotherapy for individuals, relationships, and families</h2>
+          <p>Online psychotherapy throughout Illinois for a range of concerns and life stages.</p>
         </div>
 
-        <div class="home-services-grid" aria-label="Stonebridge services">
-          <a class="home-service-item" href="individual-therapy.html#adult-therapy">
-            <h3>Adult Therapy</h3>
-            <p>Patterns, symptoms, relationships, and life transitions.</p>
+        <div class="home-services-grid">
+          <a class="home-service-card" href="individual-therapy.html#adult-therapy">
+            <span class="home-service-media"><img src="psychotherapy-detail-shelf.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Adult Therapy</h3><p>Patterns, symptoms, relationships, and life transitions.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
-
-          <a class="home-service-item" href="individual-therapy.html#adolescent-therapy">
-            <h3>Adolescent Therapy</h3>
-            <p>Developmentally responsive care for teens.</p>
+          <a class="home-service-card" href="individual-therapy.html#adolescent-therapy">
+            <span class="home-service-media"><img src="team-consultation-room-960.webp" alt="" width="480" height="360" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Adolescent Therapy</h3><p>Developmentally responsive care for teens.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
-
-          <a class="home-service-item" href="group-therapy.html">
-            <h3>Group Therapy</h3>
-            <p>Closed, clinician-led groups with a defined clinical purpose.</p>
-            <span class="home-service-status">The Lobby is currently gathering interest.</span>
+          <a class="home-service-card" href="group-therapy.html">
+            <span class="home-service-media"><img src="teen-cooperative-group-desk-960.webp" alt="" width="480" height="360" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Group Therapy</h3><p>Closed, clinician-led groups with a defined clinical purpose.</p><span class="home-service-status">The Lobby is currently gathering interest.</span></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
-
-          <a class="home-service-item" href="couples-therapy.html">
-            <h3>Couples Therapy</h3>
-            <p>Conflict, connection, trust, and change.</p>
+          <a class="home-service-card" href="couples-therapy.html">
+            <span class="home-service-media"><img src="couples-therapy-hero-960.webp" alt="" width="480" height="360" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Couples Therapy</h3><p>Conflict, connection, trust, and change.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
-
-          <a class="home-service-item" href="family-therapy.html">
-            <h3>Family Therapy</h3>
-            <p>Communication, roles, strain, and repair.</p>
+          <a class="home-service-card" href="family-therapy.html">
+            <span class="home-service-media"><img src="hero-services-room-960.webp" alt="" width="480" height="360" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Family Therapy</h3><p>Communication, roles, strain, and repair.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
-
-          <a class="home-service-item" href="parent-support.html">
-            <h3>Parent Support</h3>
-            <p>Guidance, boundaries, and family patterns.</p>
+          <a class="home-service-card" href="parent-support.html">
+            <span class="home-service-media"><img src="parent-support-hero-960.webp" alt="" width="480" height="360" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Parent Support</h3><p>Guidance, boundaries, and family patterns.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="home-philosophy" aria-labelledby="home-clinician-title">
-      <div class="home-shell home-philosophy-layout">
-        <div class="home-clinician-photo" aria-hidden="true">
-          <picture class="sb-responsive-image" style="display:contents">
-            <source type="image/webp" srcset="practitioner-headshot-sbryant-760.webp 760w, practitioner-headshot-sbryant-1200.webp 1200w" sizes="(max-width: 760px) 160px, 210px">
-            <img src="practitioner-headshot-sbryant.png" alt="" width="1529" height="2048" loading="lazy" decoding="async">
-          </picture>
+    <section class="home-founder" aria-labelledby="founder-title">
+      <div class="home-founder-grid">
+        <div class="home-founder-media">
+          <img src="practitioner-headshot-sbryant-1200.webp" alt="Dr. Stephen W. Bryant in a professional office setting" width="1200" height="1608" loading="lazy" decoding="async">
         </div>
-
-        <div class="home-clinician-copy">
-          <div class="home-label">A Stonebridge perspective</div>
-          <h2 id="home-clinician-title">“We do not choose every part of the story we inherit. We can still become more intentional authors of how we live it.”</h2>
-
-          <div class="home-clinician-meta">
-            <div class="home-clinician-identity">
-              <p class="home-clinician-name">Dr. Stephen W. Bryant</p>
-              <p class="home-clinician-role">PsyD, LCPC · Psychotherapist · Founder</p>
-            </div>
-            <a class="btn" href="team-founder.html">Meet Dr. Bryant</a>
+        <div class="home-founder-copy">
+          <p class="home-eyebrow">The Stonebridge perspective</p>
+          <h2 class="home-founder-quote" id="founder-title">“We do not choose every part of the story we inherit. We can still become more intentional authors of how we live it.”</h2>
+          <p>Stonebridge provides thoughtful, steady, and clinically grounded psychotherapy within a clear and relational setting.</p>
+          <div class="home-founder-meta">
+            <p class="home-founder-name">Dr. Stephen W. Bryant</p>
+            <p class="home-founder-role">PsyD, LCPC · Psychotherapist · Founder</p>
+            <a class="home-founder-link" href="team-founder.html">Meet Dr. Bryant →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="home-begin">
-      <div class="home-shell home-begin-inner">
-        <div class="home-begin-copy">
-
-          <h2>Ready to begin?</h2>
-
-        </div>
-
-        <div>
-          <div class="home-begin-actions">
-            <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
-          </div>
-
-        </div>
+    <section class="home-final" aria-labelledby="final-title">
+      <div class="home-final-inner">
+        <h2 class="home-final-title" id="final-title">Ready to take the next step?</h2>
+        <p>Tell us a little about what you're looking for. Stonebridge will review your request and follow up about fit, availability, and next steps.</p>
+        <a class="home-primary-btn" href="contact.html#inquiry-form">Request a consultation</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
+  <footer class="home-footer">
+    <div class="home-container home-footer-grid">
       <div>
-        <div class="footer-brand">STONEBRIDGE</div>
-        <div class="footer-sub">Psychological Group</div>
-        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+        <div class="home-footer-brand">STONEBRIDGE</div>
+        <div class="home-footer-sub">Psychological Group</div>
+        <p class="home-footer-copy">Thoughtful online care for Illinois clients.</p>
       </div>
-
       <div>
-        <div class="footer-title">Care</div>
-        <div class="footer-links">
+        <div class="home-footer-title">Care</div>
+        <div class="home-footer-links">
           <a href="services.html">Services</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="contact.html">New Clients</a>
         </div>
       </div>
-
       <div>
-        <div class="footer-title">Practice</div>
-        <div class="footer-links">
+        <div class="home-footer-title">Practice</div>
+        <div class="home-footer-links">
           <a href="about.html">About</a>
-            <a href="team-founder.html">Founder</a>
-<a href="for-clinicians.html">Professionals</a>
+          <a href="team.html">Team</a>
+          <a href="team-founder.html">Founder</a>
+          <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Client Portal</a>
+          <a href="privacy-information.html">Privacy &amp; Information Use</a>
         </div>
       </div>
-
       <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
+        <div class="home-footer-title">Contact</div>
+        <div class="home-footer-links">
           <span>Serving Illinois via telehealth</span>
           <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
           <a href="tel:+17734171688">(773) 417-1688</a>
-          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
-          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
       </div>
-
-      <div class="footer-logo-right">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
+      <div class="home-footer-logo">
+        <picture>
+          <source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="220px">
+          <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" width="800" height="340" loading="lazy" decoding="async">
+        </picture>
       </div>
     </div>
-
-    <div class="container footer-bottom">
-      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+    <div class="home-container home-footer-bottom">
+      <div>© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
     </div>
   </footer>
 
-  
-<script id="stonebridge-services-dropdown-script">
-(function(){
-  function initServicesDropdown(){
-    var dropdown=document.querySelector('.services-nav-dropdown');
-    if(!dropdown) return;
-    var toggle=dropdown.querySelector('.services-menu-toggle');
-    var panel=dropdown.querySelector('.services-dropdown-menu');
-    if(!toggle || !panel) return;
-    var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
-    function setOpen(open,focusFirst){
-      dropdown.classList.toggle('is-open',open);
-      toggle.setAttribute('aria-expanded',String(open));
-      toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
-      panel.hidden=!open;
-      if(open && focusFirst && items.length) items[0].focus();
-    }
-    toggle.addEventListener('click',function(){
-      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
-    });
-    toggle.addEventListener('keydown',function(event){
-      if(event.key==='ArrowDown'){
-        event.preventDefault();
-        setOpen(true,true);
-      }else if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-      }
-    });
-    panel.addEventListener('keydown',function(event){
-      var current=items.indexOf(document.activeElement);
-      if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-        toggle.focus();
-      }else if(event.key==='ArrowDown'){
-        event.preventDefault();
-        items[(current+1+items.length)%items.length].focus();
-      }else if(event.key==='ArrowUp'){
-        event.preventDefault();
-        items[(current-1+items.length)%items.length].focus();
-      }else if(event.key==='Home'){
-        event.preventDefault();
-        items[0].focus();
-      }else if(event.key==='End'){
-        event.preventDefault();
-        items[items.length-1].focus();
-      }
-    });
-    items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
-    document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
-    document.addEventListener('keydown',function(event){
-      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
-        setOpen(false,false);
-        toggle.focus();
-      }
-    });
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
-  else initServicesDropdown();
-})();
-</script>
-<script src="script.js"></script>
+  <script>
+    (function(){
+      var header=document.getElementById('site-header');
+      var button=document.querySelector('.home-mobile-toggle');
+      if(!header||!button) return;
+      button.addEventListener('click',function(){
+        var open=header.classList.toggle('is-open');
+        button.setAttribute('aria-expanded',String(open));
+        button.textContent=open?'Close':'Menu';
+      });
+      document.addEventListener('keydown',function(event){
+        if(event.key==='Escape'&&header.classList.contains('is-open')){
+          header.classList.remove('is-open');
+          button.setAttribute('aria-expanded','false');
+          button.textContent='Menu';
+          button.focus();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
