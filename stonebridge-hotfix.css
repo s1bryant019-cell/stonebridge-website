@@ -1,0 +1,52 @@
+/* 2026-09-14 visual correction: exact user-supplied recognition icons, restored founder portrait, larger brand mark. */
+.site-header.sb-global-header .nav{
+  width:min(1320px,calc(100% - 56px))!important;
+  min-height:84px!important;
+  gap:20px!important;
+}
+.site-header.sb-global-header .brand-link{
+  width:292px!important;
+  min-height:66px!important;
+}
+.site-header.sb-global-header .sb-header-logo{
+  width:282px!important;
+  max-height:64px!important;
+}
+.site-header.sb-global-header .menu{gap:17px!important}
+.site-header.sb-global-header .menu>a{font-size:.77rem!important}
+.site-header.sb-global-header .menu-wrap{gap:18px!important}
+.home-recognition-icon{
+  width:38px!important;
+  height:38px!important;
+  background-size:contain!important;
+}
+.home-recognition-icon.alert{background-image:url("home-recognition-alert.svg?v=20260914c")!important}
+.home-recognition-icon.pattern{background-image:url("home-recognition-pattern.svg?v=20260914c")!important}
+.home-recognition-icon.coping{background-image:url("home-recognition-coping.svg?v=20260914c")!important}
+.home-recognition-icon.relationships{background-image:url("home-recognition-relationships.svg?v=20260914c")!important}
+.home-recognition-icon-wrap{
+  width:52px!important;
+  height:52px!important;
+  background:rgba(232,221,206,.72)!important;
+}
+.portrait-frame img,
+.clinician-photo img{
+  opacity:1!important;
+  visibility:visible!important;
+}
+@media(max-width:1180px){
+  .site-header.sb-global-header .brand-link{width:252px!important}
+  .site-header.sb-global-header .sb-header-logo{width:244px!important}
+  .site-header.sb-global-header .menu{gap:13px!important}
+  .site-header.sb-global-header .menu>a{font-size:.73rem!important}
+  .site-header.sb-global-header .header-cta .btn{padding:0 15px!important}
+}
+@media(max-width:1024px){
+  .site-header.sb-global-header .brand-link{width:250px!important}
+  .site-header.sb-global-header .sb-header-logo{width:242px!important}
+}
+@media(max-width:760px){
+  .site-header.sb-global-header .nav{width:min(100% - 34px,1320px)!important;min-height:76px!important}
+  .site-header.sb-global-header .brand-link{width:230px!important;min-height:58px!important}
+  .site-header.sb-global-header .sb-header-logo{width:222px!important;max-height:54px!important}
+}
