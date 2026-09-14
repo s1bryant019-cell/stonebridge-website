@@ -1,0 +1,1 @@
+Founder image repair in progress; invalid WebP signature confirmed.
