@@ -1,125 +1,1226 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services | Stonebridge Psychological Group</title>
-  <meta name="description" content="Explore Stonebridge psychotherapy services for individuals, couples, families, parents, and groups in Illinois.">
-  <link rel="canonical" href="https://stonebridgepsychgroup.com/services.html">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="stonebridge-premium.css">
-</head>
-<body class="services-page premium-page">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header compact-site-header">
-    <div class="container nav">
-      <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home"><div class="brand-mark">STONEBRIDGE</div><div class="brand-sub">Psychological Group</div></a>
-      <button class="mobile-toggle" type="button" aria-label="Open main menu" aria-expanded="false">Menu</button>
-      <div class="menu-wrap">
-        <nav class="menu" aria-label="Primary navigation"><a href="about.html">Approach</a><a href="services.html" class="active" aria-current="page">Services</a><a href="team.html">Clinicians</a><a href="fees-insurance.html">Fees</a></nav>
-        <div class="header-cta"><a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a></div>
-      </div>
-    </div>
-  </header>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Services | Stonebridge Psychological Group</title>
+<meta content="Explore adult, adolescent, group, couples, family, and parent support services at Stonebridge Psychological Group." name="description"/>
+<link rel="canonical" href="https://stonebridgepsychgroup.com/services.html">
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="favicon.ico" rel="icon" sizes="any"/>
+<link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<style id="stonebridge-services-page-only">
+    :root{
+      --services-bg:#f8f5f0;
+      --services-paper:#f2ece4;
+      --services-navy:#163b61;
+      --services-navy-deep:#102f4d;
+      --services-ink:#213142;
+      --services-muted:#5d6870;
+      --services-gold:#78613f;
+      --services-line:rgba(33,49,66,.14);
+      --services-warm-line:rgba(212,200,185,.72);
+      --services-white:#fffaf2;
+    }
 
-  <main id="main-content">
-    <section class="premium-interior-hero">
-      <div class="premium-shell">
-        <div class="premium-eyebrow">Services</div>
-        <h1>Different needs call for different forms of care.</h1>
-        <p>Stonebridge provides outpatient telehealth psychotherapy for adults and adolescents, couples, families, parents, and groups. The service format should fit who is seeking support and where the difficulty is occurring.</p>
-      </div>
-    </section>
+    body.services-page{
+      background:var(--services-bg);
+      color:var(--services-ink);
+    }
 
-    <figure class="premium-image-field">
-      <picture class="sb-responsive-image" style="display:contents">
-        <source type="image/webp" srcset="hero-services-room-960.webp 960w, hero-services-room-1600.webp 1600w, hero-services-room-2000.webp 2000w" sizes="(max-width:760px) 100vw, 1240px">
-        <img src="hero-services-room.jpg" alt="Warm, quiet psychotherapy room" width="2000" height="1116" decoding="async" fetchpriority="high">
-      </picture>
-    </figure>
+    .services-page .skip-link{
+      position:absolute;
+      left:12px;
+      top:-80px;
+      z-index:1000;
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--services-navy-deep);
+      color:#fff;
+      font-weight:700;
+    }
 
-    <section class="premium-services-page-intro" aria-labelledby="service-groups-title">
-      <div class="premium-shell">
-        <div class="premium-eyebrow">Ways to work with Stonebridge</div>
-        <div class="premium-services-head">
-          <h2 id="service-groups-title">Care organized around the person, relationship, or system in the room.</h2>
-          <p>You do not need to know the exact format before reaching out. The consultation can help clarify which service best fits the request.</p>
-        </div>
+    .services-page .skip-link:focus{top:12px;}
 
-        <div class="premium-services-page-groups">
-          <section class="premium-services-page-group" aria-labelledby="individual-group-title">
-            <h2 id="individual-group-title">Individual</h2>
-            <div class="premium-services-page-items">
-              <article class="premium-services-page-item"><h3>Adult Therapy</h3><p>Individual psychotherapy for anxiety, depression, trauma, grief, relationship patterns, identity concerns, and other outpatient needs.</p><a href="individual-therapy.html#adult-therapy">Explore Adult Therapy →</a></article>
-              <article class="premium-services-page-item"><h3>Adolescent Therapy</h3><p>Developmentally responsive individual therapy for teens, with privacy, autonomy, family context, and caregiver involvement considered as appropriate.</p><a href="individual-therapy.html#adolescent-therapy">Explore Adolescent Therapy →</a></article>
-            </div>
-          </section>
+    /* Full-width photographic hero with a softer orientation band beneath it. */
+    .services-hero{
+      position:relative;
+      min-height:480px;
+      overflow:hidden;
+      isolation:isolate;
+      background:var(--services-navy-deep);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
 
-          <section class="premium-services-page-group" aria-labelledby="relationship-group-title">
-            <h2 id="relationship-group-title">Relationships</h2>
-            <div class="premium-services-page-items">
-              <article class="premium-services-page-item"><h3>Couples Therapy</h3><p>Therapy for partners working with conflict, communication, disconnection, trust, intimacy, or major transitions.</p><a href="couples-therapy.html">Explore Couples Therapy →</a></article>
-              <article class="premium-services-page-item"><h3>Family Therapy</h3><p>Therapy focused on interaction patterns, roles, communication, conflict, transitions, and strain within the family system.</p><a href="family-therapy.html">Explore Family Therapy →</a></article>
-            </div>
-          </section>
+    .services-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(12,31,49,.94) 0%,
+          rgba(12,31,49,.88) 27%,
+          rgba(12,31,49,.64) 46%,
+          rgba(12,31,49,.24) 69%,
+          rgba(12,31,49,.08) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(10,24,38,.16) 0%,
+          rgba(10,24,38,.02) 56%,
+          rgba(10,24,38,.24) 100%
+        );
+    }
 
-          <section class="premium-services-page-group" aria-labelledby="parenting-group-title">
-            <h2 id="parenting-group-title">Parenting</h2>
-            <div class="premium-services-page-items">
-              <article class="premium-services-page-item"><h3>Parent Support</h3><p>Consultation, family-based work, and educational support for parents seeking clearer understanding, steadier boundaries, and more workable responses.</p><a href="parent-support.html">Explore Parent Support →</a></article>
-            </div>
-          </section>
+    .services-hero-copy{
+      position:relative;
+      z-index:2;
+      width:min(1220px,calc(100% - 72px));
+      min-height:480px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      padding:42px 0 40px;
+      color:var(--services-white);
+    }
 
-          <section class="premium-services-page-group" aria-labelledby="groups-title">
-            <h2 id="groups-title">Groups</h2>
-            <div class="premium-services-page-items">
-              <article class="premium-services-page-item"><h3>Group Therapy</h3><p>Clinician-led groups organized around a defined population, concern, or therapeutic purpose. The Lobby, a teen group therapy offering through cooperative play, is currently gathering interest.</p><a href="group-therapy.html#groups-forming">Explore Group Therapy →</a></article>
-            </div>
-          </section>
-        </div>
-      </div>
-    </section>
+    .services-hero-rule{
+      width:40px;
+      height:2px;
+      margin-bottom:20px;
+      background:#d3b57f;
+    }
 
-    <section class="premium-scope" aria-label="Format and outpatient scope">
-      <div class="premium-shell premium-scope-inner">
-        <strong>Format and scope</strong>
-        <p>Individual, couples, family, and parent-focused services vary according to who is participating and the treatment need. Stonebridge provides outpatient telehealth care. Emergency services, psychological testing, legal or court-related evaluations, and needs requiring a higher level of care require different services.</p>
-      </div>
-    </section>
+    .services-kicker,
+    .services-label,
+    .services-item-label,
+    .services-principle-label{
+      color:var(--services-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      line-height:1.35;
+      text-transform:uppercase;
+    }
 
-    <section class="premium-editorial-section paper">
-      <div class="premium-shell premium-editorial-grid">
-        <div><div class="premium-eyebrow">Practical information</div><h2>Coverage depends on service and plan.</h2></div>
-        <div class="premium-editorial-copy"><p>Insurance coverage varies by service and plan. Stonebridge keeps fees, accepted insurance, private-pay information, and relevant billing expectations on the Fees &amp; Insurance page.</p><a class="premium-text-link" href="fees-insurance.html">See Fees &amp; Insurance →</a></div>
-      </div>
-    </section>
+    .services-hero .services-kicker{
+      color:#e1c79c;
+    }
 
-    <section class="premium-final">
-      <div class="premium-shell premium-final-inner">
-        <div><h2>Not sure which service to choose?</h2><p>You do not need to know the exact format before reaching out.</p></div>
-        <a class="btn" href="contact.html#inquiry-form">Request a Consultation</a>
-      </div>
-    </section>
-  </main>
+    .services-hero h1{
+      margin:10px 0 0;
+      max-width:15ch;
+      color:var(--services-white);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(3.05rem,4vw,4.25rem);
+      line-height:1.01;
+      letter-spacing:-.05em;
+      text-wrap:balance;
+      text-shadow:0 10px 30px rgba(0,0,0,.18);
+    }
 
-  <footer class="site-footer">
-    <div class="premium-footer-grid">
-      <div class="premium-footer-brand"><div class="footer-brand">STONEBRIDGE</div><div class="footer-sub">Psychological Group</div><p>Thoughtful online psychotherapy for Illinois clients, grounded in clinical judgment, relationship, and clear structure.</p></div>
-      <div><div class="footer-title">Stonebridge</div><div class="footer-links"><a href="about.html">Approach</a><a href="team.html">Clinicians</a><a href="services.html">Services</a><a href="fees-insurance.html">Fees</a></div></div>
-      <div><div class="footer-title">Clients</div><div class="footer-links"><a href="contact.html#inquiry-form">Request a Consultation</a><a href="contact.html">New Client Information</a><a href="portal.html">Client Portal</a></div></div>
-      <div><div class="footer-title">Professionals</div><div class="footer-links"><a href="for-clinicians.html">Professional Offerings</a><a href="mailto:info@stonebridgepsychgroup.com">Contact</a></div></div>
-      <div><div class="footer-title">Practice</div><div class="footer-links"><a href="privacy-information.html">Privacy &amp; Information Use</a><span>Serving Illinois via telehealth</span><a href="tel:+17734171688">(773) 417-1688</a></div></div>
-    </div>
-    <div class="container footer-bottom"><div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div><div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a></div></div>
-  </footer>
-  <script src="script.js"></script>
+    .services-hero-copy > p{
+      max-width:38rem;
+      margin:18px 0 0;
+      color:rgba(255,250,242,.89);
+      font-family:"Inter",sans-serif;
+      font-size:1rem;
+      line-height:1.7;
+    }
+
+    .services-hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .services-hero-actions .btn-primary{
+      background:#f4eee4;
+      border-color:#f4eee4;
+      color:var(--services-navy-deep);
+    }
+
+    .services-hero-actions .btn-primary:hover{
+      background:#fffaf2;
+      border-color:#fffaf2;
+    }
+
+    .services-hero-actions .btn-secondary{
+      color:#fffaf2;
+      border-color:rgba(255,255,255,.42);
+      background:rgba(255,255,255,.08);
+    }
+
+    .services-hero-actions .btn-secondary:hover{
+      border-color:rgba(255,255,255,.72);
+      background:rgba(255,255,255,.14);
+    }
+
+    .services-hero-media{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      margin:0;
+      overflow:hidden;
+    }
+
+    .services-hero-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .services-overview{
+      background:#eee7de;
+      color:var(--services-ink);
+      border-bottom:1px solid var(--services-warm-line);
+    }
+
+    .services-overview-grid{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      padding:17px 0;
+    }
+
+    .services-overview article{
+      padding:0 24px;
+      border-left:1px solid rgba(33,49,66,.14);
+    }
+
+    .services-overview article:first-child{
+      padding-left:0;
+      border-left:0;
+    }
+
+    .services-overview h2{
+      margin:0 0 4px;
+      color:var(--services-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.08rem;
+      line-height:1.1;
+      letter-spacing:-.01em;
+    }
+
+    .services-overview p{
+      margin:0;
+      color:var(--services-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.82rem;
+      line-height:1.48;
+    }
+
+    .services-section{
+      padding:56px 0;
+      background:var(--services-bg);
+    }
+
+    .services-section.paper{
+      background:var(--services-paper);
+      border-top:1px solid var(--services-warm-line);
+      border-bottom:1px solid var(--services-warm-line);
+    }
+
+    .services-shell{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+    }
+
+    .services-label{
+      position:relative;
+      padding-top:14px;
+    }
+
+    .services-label::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      max-width:150px;
+      height:1px;
+      background:linear-gradient(90deg,var(--services-navy),rgba(22,59,97,0));
+    }
+
+    .services-balanced-copy h2{
+      margin:11px 0 0;
+      max-width:18ch;
+      color:var(--services-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.2rem,3.1vw,3.15rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
+      text-wrap:balance;
+    }
+
+    .services-balanced-copy p{
+      max-width:42rem;
+      margin:12px 0 0;
+      color:var(--services-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.96rem;
+      line-height:1.68;
+    }
+
+    .services-balanced-layout{
+      display:grid;
+      grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+      gap:56px;
+      align-items:start;
+    }
+
+    /* Six distinct pathways share one restrained, scannable service directory. */
+    .services-primary-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      border-top:1px solid var(--services-line);
+    }
+
+    .services-primary-intro{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);
+      gap:48px;
+      align-items:end;
+      padding:22px 0 24px;
+      border-bottom:1px solid var(--services-line);
+    }
+
+    .services-primary-intro h2{
+      margin:11px 0 0;
+      max-width:15ch;
+      color:var(--services-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.05rem,2.75vw,2.75rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
+      text-wrap:balance;
+    }
+
+    .services-primary-intro p{
+      max-width:43rem;
+      margin:0;
+      color:var(--services-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.93rem;
+      line-height:1.66;
+    }
+
+    .services-primary-item{
+      min-width:0;
+      scroll-margin-top:96px;
+      padding:24px 28px 22px 0;
+      border-bottom:1px solid var(--services-line);
+    }
+
+    .services-primary-item:nth-of-type(even){
+      padding-right:0;
+      padding-left:28px;
+      border-left:1px solid var(--services-line);
+    }
+
+    .services-primary-item h3{
+      margin:9px 0 10px;
+      color:var(--services-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(1.72rem,2.1vw,2.12rem);
+      line-height:1.08;
+      letter-spacing:-.025em;
+    }
+
+    .services-primary-item p,
+    .services-coverage-note p{
+      color:var(--services-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.91rem;
+      line-height:1.62;
+    }
+
+    .services-primary-item > p{
+      max-width:33rem;
+      margin:0;
+    }
+
+    .services-primary-link{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      margin-top:14px;
+      color:var(--services-navy);
+      font-family:"Inter",sans-serif;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.02em;
+      text-decoration:none;
+    }
+
+    .services-primary-link::after{
+      content:"→";
+      transition:transform .18s ease;
+    }
+
+    .services-primary-link:hover::after{
+      transform:translateX(3px);
+    }
+
+    .services-status{
+      display:inline-block;
+      margin-top:13px;
+      padding-top:10px;
+      border-top:1px solid var(--services-line);
+      color:var(--services-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.72rem;
+      font-weight:700;
+      line-height:1.45;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .services-coverage-note{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:180px minmax(0,1fr);
+      gap:24px;
+      padding:18px 0;
+      border-bottom:1px solid var(--services-line);
+    }
+
+    .services-coverage-note strong{
+      color:var(--services-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.25rem;
+      line-height:1.15;
+    }
+
+    .services-coverage-note p{margin:0;}
+
+    /* Concerns are grouped by meaning, not enclosed in separate floating cards. */
+    .services-concern-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      border-top:1px solid var(--services-line);
+    }
+
+    .services-concern{
+      padding:22px 28px 22px 0;
+      border-bottom:1px solid var(--services-line);
+    }
+
+    .services-concern:nth-child(even){
+      padding-right:0;
+      padding-left:28px;
+      border-left:1px solid var(--services-line);
+    }
+
+    .services-concern h3{
+      margin:0 0 7px;
+      color:var(--services-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.55rem;
+      line-height:1.1;
+      letter-spacing:-.02em;
+    }
+
+    .services-concern p{
+      margin:0;
+      max-width:34rem;
+      color:var(--services-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.91rem;
+      line-height:1.62;
+    }
+
+    .services-principles{
+      border-top:1px solid var(--services-line);
+    }
+
+    .services-principle{
+      display:grid;
+      grid-template-columns:145px minmax(0,1fr);
+      gap:22px;
+      align-items:start;
+      padding:16px 0;
+      border-bottom:1px solid var(--services-line);
+    }
+
+    .services-principle h3{
+      margin:6px 0 0;
+      color:var(--services-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.42rem;
+      line-height:1.1;
+      letter-spacing:-.02em;
+    }
+
+    .services-principle p{
+      margin:6px 0 0;
+      color:var(--services-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.9rem;
+      line-height:1.6;
+    }
+
+    .services-principle-copy{
+      min-width:0;
+    }
+
+    .services-scope{
+      background:#ece5db;
+      border-top:1px solid var(--services-warm-line);
+      border-bottom:1px solid var(--services-warm-line);
+    }
+
+    .services-scope-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:175px minmax(0,1fr);
+      gap:42px;
+      align-items:start;
+      padding:25px 0;
+    }
+
+    .services-scope strong{
+      color:var(--services-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.25rem;
+      line-height:1.15;
+    }
+
+    .services-scope p{
+      max-width:48rem;
+      margin:0;
+      color:var(--services-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.89rem;
+      line-height:1.6;
+    }
+
+    .services-cta{
+      background:linear-gradient(135deg,var(--services-navy),var(--services-navy-deep));
+      color:var(--services-white);
+    }
+
+    .services-cta-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:30px;
+      align-items:center;
+      padding:33px 0;
+    }
+
+    .services-cta h2{
+      margin:0 0 5px;
+      color:#fffaf2;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2rem,3vw,2.75rem);
+      line-height:1.05;
+      letter-spacing:-.025em;
+    }
+
+    .services-cta p{
+      max-width:45rem;
+      margin:0;
+      color:rgba(255,250,242,.84);
+      font-family:"Inter",sans-serif;
+      font-size:.94rem;
+      line-height:1.6;
+    }
+
+    .services-cta .btn-secondary{
+      color:#fffaf2;
+      border-color:rgba(255,255,255,.30);
+      background:rgba(255,255,255,.08);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .services-primary-link::after{transition:none;}
+    }
+
+    .services-page a:focus-visible,
+    .services-page button:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:2px;
+      box-shadow:0 0 0 5px var(--services-navy-deep);
+    }
+
+    @media(min-width:1081px) and (max-width:1260px){
+      .services-hero-copy{
+        width:min(100% - 72px,1120px);
+      }
+
+      .services-hero h1{
+        max-width:15ch;
+        font-size:clamp(3rem,3.8vw,4rem);
+      }
+    }
+
+    @media(max-width:1080px){
+      .services-hero,
+      .services-hero-copy{
+        min-height:500px;
+      }
+
+      .services-hero-copy{
+        width:min(100% - 44px,860px);
+        padding:46px 0 42px;
+      }
+
+      .services-hero::before{
+        background:
+          linear-gradient(
+            90deg,
+            rgba(12,31,49,.94) 0%,
+            rgba(12,31,49,.86) 38%,
+            rgba(12,31,49,.58) 72%,
+            rgba(12,31,49,.28) 100%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(10,24,38,.14) 0%,
+            rgba(10,24,38,.04) 56%,
+            rgba(10,24,38,.28) 100%
+          );
+      }
+
+      .services-overview-grid,
+      .services-balanced-layout,
+      .services-scope-inner,
+      .services-cta-inner{
+        grid-template-columns:1fr;
+      }
+
+      .services-balanced-layout{gap:24px;}
+
+      .services-primary-intro{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+
+      .services-scope-inner,
+      .services-cta-inner{
+        gap:14px;
+      }
+    }
+
+    @media(max-width:720px){
+      .services-shell,
+      .services-overview-grid,
+      .services-scope-inner,
+      .services-cta-inner{
+        width:min(100% - 34px,1080px);
+      }
+
+      .services-hero,
+      .services-hero-copy{
+        min-height:560px;
+      }
+
+      .services-hero-copy{
+        width:min(100% - 34px,1080px);
+        padding:40px 0 36px;
+      }
+
+      .services-hero-media img{
+        object-position:58% center;
+      }
+
+      .services-hero::before{
+        background:
+          linear-gradient(
+            180deg,
+            rgba(10,27,43,.90) 0%,
+            rgba(10,27,43,.74) 56%,
+            rgba(10,27,43,.90) 100%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(10,27,43,.52) 0%,
+            rgba(10,27,43,.20) 100%
+          );
+      }
+
+      .services-overview-grid{
+        grid-template-columns:1fr;
+        padding:14px 0;
+      }
+
+      .services-overview article{
+        padding:13px 0;
+        border-left:0;
+        border-top:1px solid rgba(33,49,66,.13);
+      }
+
+      .services-overview article:first-child{
+        padding-top:0;
+        border-top:0;
+      }
+
+      .services-hero h1{
+        max-width:14ch;
+        font-size:clamp(2.5rem,10.5vw,3.45rem);
+      }
+
+      .services-hero-actions .btn,
+      .services-cta .btn{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+      }
+
+      .services-section{
+        padding:44px 0;
+      }
+
+      .services-primary-grid,
+      .services-concern-grid{
+        grid-template-columns:1fr;
+      }
+
+      .services-primary-intro{
+        grid-column:auto;
+        padding:20px 0;
+      }
+
+      .services-primary-item,
+      .services-primary-item:nth-of-type(even){
+        padding:21px 0;
+        border-left:0;
+      }
+
+      .services-coverage-note{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+
+      .services-concern,
+      .services-concern:nth-child(even){
+        padding:20px 0;
+        border-left:0;
+      }
+
+      .services-principle{
+        grid-template-columns:1fr;
+        gap:4px;
+      }
+    }
+  
+
+    /* Services dropdown prototype: one-level, click-controlled, and keyboard accessible. */
+    .services-page .site-header.compact-site-header .services-nav-dropdown{
+      position:relative;
+      display:flex!important;
+      align-items:center;
+    }
+
+    .services-nav-main{
+      display:flex;
+      align-items:center;
+      min-height:34px;
+    }
+
+    .services-page .site-header.compact-site-header .services-nav-main > a{
+      min-height:34px;
+    }
+
+    .services-menu-toggle{
+      width:28px;
+      height:34px;
+      margin-left:1px;
+      padding:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:0;
+      border-radius:7px;
+      background:transparent;
+      color:var(--services-muted);
+      cursor:pointer;
+    }
+
+    .services-menu-toggle svg{
+      width:16px;
+      height:16px;
+      transition:transform .16s ease;
+    }
+
+    .services-nav-dropdown.is-open .services-menu-toggle svg{
+      transform:rotate(180deg);
+    }
+
+    .services-page .site-header.compact-site-header .services-dropdown-menu{
+      position:absolute;
+      top:calc(100% + 10px);
+      left:-14px;
+      z-index:80;
+      width:248px;
+      min-width:248px;
+      padding:9px;
+      display:grid!important;
+      gap:1px;
+      border:1px solid rgba(212,200,185,.88);
+      border-radius:12px;
+      background:rgba(255,252,247,.99);
+      box-shadow:0 18px 44px rgba(16,47,77,.14);
+    }
+
+    .services-page .site-header.compact-site-header .services-dropdown-menu[hidden]{
+      display:none!important;
+    }
+
+    .services-dropdown-menu::before{
+      content:"";
+      position:absolute;
+      top:-7px;
+      left:72px;
+      width:12px;
+      height:12px;
+      transform:rotate(45deg);
+      border-left:1px solid rgba(212,200,185,.88);
+      border-top:1px solid rgba(212,200,185,.88);
+      background:#fffaf4;
+    }
+
+    .services-page .site-header.compact-site-header .services-dropdown-menu a{
+      position:relative;
+      z-index:1;
+      min-height:0;
+      padding:9px 11px;
+      border-radius:7px;
+      color:var(--services-muted);
+      font-size:.83rem;
+      line-height:1.25;
+      white-space:normal;
+    }
+
+    .services-page .site-header.compact-site-header .services-dropdown-menu a:hover,
+    .services-page .site-header.compact-site-header .services-dropdown-menu a:focus-visible,
+    .services-page .site-header.compact-site-header .services-dropdown-menu a.active-sub{
+      background:#f1ebe3;
+      color:var(--services-ink);
+    }
+
+    .services-menu-toggle:hover{
+      color:var(--services-ink);
+      background:rgba(22,59,97,.06);
+    }
+
+    .services-menu-toggle:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:1px;
+      box-shadow:0 0 0 5px var(--services-navy-deep);
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .services-menu-toggle svg{transition:none;}
+    }
+
+    @media(max-width:960px){
+      .services-page .site-header.compact-site-header .services-nav-dropdown{
+        width:100%;
+        display:block!important;
+      }
+
+      .services-nav-main{
+        width:100%;
+        justify-content:space-between;
+      }
+
+      .services-page .site-header.compact-site-header .services-nav-main > a{
+        flex:1 1 auto;
+      }
+
+      .services-menu-toggle{
+        width:38px;
+        height:38px;
+        flex:0 0 38px;
+      }
+
+      .services-page .site-header.compact-site-header .services-dropdown-menu{
+        position:static;
+        width:100%;
+        min-width:0;
+        margin:3px 0 2px;
+        padding:4px 0 2px 13px;
+        gap:0;
+        border:0;
+        border-left:1px solid rgba(33,49,66,.17);
+        border-radius:0;
+        background:transparent;
+        box-shadow:none;
+      }
+
+      .services-dropdown-menu::before{display:none;}
+
+      .services-page .site-header.compact-site-header .services-dropdown-menu a{
+        padding:8px 10px;
+        font-size:.85rem;
+      }
+    }
+</style>
+<style>
+
+/* Shared Services navigation — synchronized after all service destinations were created. */
+.site-header.compact-site-header .services-nav-dropdown{
+  position:relative;
+  display:flex!important;
+  align-items:center;
+}
+.services-nav-main{
+  display:flex;
+  align-items:center;
+  min-height:34px;
+}
+.site-header.compact-site-header .services-nav-main > a{min-height:34px;}
+.services-menu-toggle{
+  width:28px;
+  height:34px;
+  margin-left:1px;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:7px;
+  background:transparent;
+  color:#5d6870;
+  cursor:pointer;
+}
+.services-menu-toggle svg{
+  width:16px;
+  height:16px;
+  transition:transform .16s ease;
+}
+.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
+.site-header.compact-site-header .services-dropdown-menu{
+  position:absolute;
+  top:calc(100% + 10px);
+  left:-14px;
+  z-index:80;
+  width:248px;
+  min-width:248px;
+  padding:9px;
+  display:grid!important;
+  gap:1px;
+  border:1px solid rgba(212,200,185,.88);
+  border-radius:12px;
+  background:rgba(255,252,247,.99);
+  box-shadow:0 18px 44px rgba(16,47,77,.14);
+}
+.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
+.services-dropdown-menu::before{
+  content:"";
+  position:absolute;
+  top:-7px;
+  left:72px;
+  width:12px;
+  height:12px;
+  transform:rotate(45deg);
+  border-left:1px solid rgba(212,200,185,.88);
+  border-top:1px solid rgba(212,200,185,.88);
+  background:#fffaf4;
+}
+.site-header.compact-site-header .services-dropdown-menu a{
+  position:relative;
+  z-index:1;
+  min-height:0;
+  padding:9px 11px;
+  border-radius:7px;
+  color:#5d6870;
+  font-size:.83rem;
+  line-height:1.25;
+  white-space:normal;
+}
+.site-header.compact-site-header .services-dropdown-menu a:hover,
+.site-header.compact-site-header .services-dropdown-menu a:focus-visible,
+.site-header.compact-site-header .services-dropdown-menu a.active-sub{
+  background:#f1ebe3;
+  color:#213142;
+}
+.services-menu-toggle:hover{
+  color:#213142;
+  background:rgba(22,59,97,.06);
+}
+.services-menu-toggle:focus-visible{
+  outline:3px solid #fffaf2;
+  outline-offset:1px;
+  box-shadow:0 0 0 5px #102f4d;
+}
+@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
+@media(max-width:960px){
+  .site-header.compact-site-header .services-nav-dropdown{
+    width:100%;
+    display:block!important;
+  }
+  .services-nav-main{
+    width:100%;
+    justify-content:space-between;
+  }
+  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
+  .services-menu-toggle{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+  }
+  .site-header.compact-site-header .services-dropdown-menu{
+    position:static;
+    width:100%;
+    min-width:0;
+    margin:3px 0 2px;
+    padding:4px 0 2px 13px;
+    gap:0;
+    border:0;
+    border-left:1px solid rgba(33,49,66,.17);
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .services-dropdown-menu::before{display:none;}
+  .site-header.compact-site-header .services-dropdown-menu a{
+    padding:8px 10px;
+    font-size:.85rem;
+  }
+}
+</style></head>
+<body class="services-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header compact-site-header">
+<div class="container nav">
+<a aria-label="Stonebridge Psychological Group home" class="brand-link" href="index.html">
+<div class="brand-mark">STONEBRIDGE</div>
+<div class="brand-sub">Psychological Group</div>
+</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="mobile-toggle" type="button">Menu</button>
+<div class="menu-wrap">
+<nav aria-label="Primary navigation" class="menu"><a href="index.html">Home</a><a href="about.html">About</a>
+          <a href="team.html">Team</a><div class="nav-dropdown services-nav-dropdown"><div class="services-nav-main"><a aria-current="page" class="active" href="services.html">Services</a><button aria-controls="services-submenu" aria-expanded="false" aria-haspopup="true" aria-label="Open Services menu" class="services-menu-toggle" type="button"><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></button></div><div aria-label="Services" class="dropdown-menu services-dropdown-menu" hidden="" id="services-submenu" role="menu">
+<a aria-current="page" class="active-sub" href="services.html" role="menuitem">Services Overview</a>
+<a href="individual-therapy.html#adult-therapy" role="menuitem">Adult Therapy</a>
+<a href="individual-therapy.html#adolescent-therapy" role="menuitem">Adolescent Therapy</a>
+<a href="group-therapy.html" role="menuitem">Group Therapy</a>
+<a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
+<a href="family-therapy.html" role="menuitem">Family Therapy</a>
+<a href="parent-support.html" role="menuitem">Parent Support</a>
+</div></div><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="for-clinicians.html">Professionals</a><a href="portal.html">Portal</a></nav>
+<div class="header-cta"><a class="btn btn-primary" href="contact.html">New Clients</a></div>
+</div>
+</div>
+</header>
+<main id="main-content">
+<section class="services-hero">
+<div class="services-hero-copy">
+<div class="services-hero-rule"></div>
+<div class="services-kicker">Services</div>
+<h1>Therapy for individuals, couples, families, parents, and groups.</h1>
+<p>Stonebridge provides thoughtful outpatient telehealth care for Illinois adults and adolescents, couples, families, and parents, with group offerings developed around a defined clinical purpose.</p>
+<div class="services-hero-actions">
+<a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
+<a class="btn btn-secondary" href="#services-offered">View Service Options</a>
+</div>
+</div>
+<figure class="services-hero-media">
+<picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="hero-services-room-960.webp 960w, hero-services-room-1600.webp 1600w, hero-services-room-2000.webp 2000w" sizes="100vw"><img alt="Warm, quiet psychotherapy room" decoding="async" fetchpriority="high" height="1116" src="hero-services-room.jpg" width="2000"/></picture>
+</figure>
+</section>
+<section class="services-section" id="services-offered">
+<div class="services-shell">
+<div class="services-primary-grid">
+<div class="services-primary-intro">
+<div>
+<div class="services-label">Ways to work with Stonebridge</div>
+<h2>Different needs call for different forms of care.</h2>
+</div>
+<p>Choose the service that most closely matches who is seeking support and where the difficulty is occurring.</p>
+</div>
+<article class="services-primary-item" id="adult-therapy">
+<div class="services-item-label">Individual care</div>
+<h3>Adult Therapy</h3>
+<p>Individual psychotherapy for anxiety, depression, trauma, grief, relationship patterns, identity concerns, and other outpatient needs.</p>
+<a class="services-primary-link" href="individual-therapy.html#adult-therapy">Explore Adult Therapy</a>
+</article>
+<article class="services-primary-item" id="adolescent-therapy">
+<div class="services-item-label">Developmentally responsive care</div>
+<h3>Adolescent Therapy</h3>
+<p>Developmentally responsive individual therapy for teens, with privacy, autonomy, family context, and caregiver involvement considered as appropriate.</p>
+<a class="services-primary-link" href="individual-therapy.html#adolescent-therapy">Explore Adolescent Therapy</a>
+</article>
+<article class="services-primary-item" id="group-therapy">
+<div class="services-item-label">Shared therapeutic work</div>
+<h3>Group Therapy</h3>
+<p>Clinician-led groups organized around a defined population, concern, or therapeutic purpose.</p>
+<div class="services-status"><strong>The Lobby — teen group therapy through cooperative play</strong><br/>Currently gathering interest.</div>
+<a class="services-primary-link" href="group-therapy.html#groups-forming">Explore Group Therapy</a>
+</article>
+<article class="services-primary-item" id="couples-therapy">
+<div class="services-item-label">Relationship care</div>
+<h3>Couples Therapy</h3>
+<p>Therapy for partners working with conflict, communication, disconnection, trust, intimacy, or major transitions.</p>
+<a class="services-primary-link" href="couples-therapy.html">Explore Couples Therapy</a>
+</article>
+<article class="services-primary-item" id="family-therapy">
+<div class="services-item-label">Family-system care</div>
+<h3>Family Therapy</h3>
+<p>Therapy focused on interaction patterns, roles, communication, conflict, transitions, and strain within the family system.</p>
+<a class="services-primary-link" href="family-therapy.html">Explore Family Therapy</a>
+</article>
+<article class="services-primary-item" id="parent-support">
+<div class="services-item-label">Caregiver support</div>
+<h3>Parent Support</h3>
+<p>Consultation, family-based work, and educational support for parents seeking clearer understanding, steadier boundaries, and more workable responses.</p>
+<a class="services-primary-link" href="parent-support.html">Explore Parent Support</a>
+</article>
+<div class="services-coverage-note">
+<strong>Format and coverage</strong>
+<div>
+<p>Individual, couples, family, and parent-focused services vary according to who is participating and the treatment need. Insurance coverage also varies by service and plan.</p>
+<a class="services-primary-link" href="fees-insurance.html">See Fees &amp; Insurance</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="Outpatient scope" class="services-scope">
+<div class="services-scope-inner">
+<strong>Outpatient scope</strong>
+<p>Stonebridge provides outpatient telehealth care. Emergency services, psychological testing, legal or court-related evaluations, and needs requiring a higher level of care require different services.</p>
+</div>
+</section>
+<section class="services-cta">
+<div class="services-cta-inner">
+<div>
+<h2>Not sure which service to choose?</h2>
+<p>You do not need to know the exact format before reaching out.</p>
+</div>
+<a class="btn btn-secondary" href="contact.html#inquiry-form">Request a Consultation</a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<div class="footer-brand">STONEBRIDGE</div>
+<div class="footer-sub">Psychological Group</div>
+<p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+</div>
+<div>
+<div class="footer-title">Care</div>
+<div class="footer-links">
+<a href="services.html">Services</a>
+<a href="fees-insurance.html">Fees &amp; Insurance</a>
+<a href="contact.html">New Clients</a>
+</div>
+</div>
+<div>
+<div class="footer-title">Practice</div>
+<div class="footer-links">
+<a href="about.html">About</a>
+            <a href="team-founder.html">Founder</a>
+<a href="for-clinicians.html">Professionals</a>
+<a href="portal.html">Client Portal</a>
+</div>
+</div>
+<div>
+<div class="footer-title">Contact</div>
+<div class="footer-links">
+<span>Serving Illinois via telehealth</span>
+<a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+<a href="tel:+17734171688">(773) 417-1688</a>
+<a href="https://www.linkedin.com/company/stonebridge-psychological-group/" rel="noopener noreferrer" target="_blank" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
+<a href="https://www.facebook.com/profile.php?id=61590354182651" rel="noopener noreferrer" target="_blank" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
+</div>
+</div>
+<div class="footer-logo-right">
+<picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
+</div>
+</div>
+<div class="container footer-bottom">
+<div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+<div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+</div>
+</footer>
+
+<script>
+
+(function(){
+  function initServicesDropdown(){
+    var dropdown=document.querySelector('.services-nav-dropdown');
+    if(!dropdown) return;
+    var toggle=dropdown.querySelector('.services-menu-toggle');
+    var panel=dropdown.querySelector('.services-dropdown-menu');
+    if(!toggle || !panel) return;
+    var items=Array.prototype.slice.call(panel.querySelectorAll('[role="menuitem"]'));
+    function setOpen(open,focusFirst){
+      dropdown.classList.toggle('is-open',open);
+      toggle.setAttribute('aria-expanded',String(open));
+      toggle.setAttribute('aria-label',open?'Close Services menu':'Open Services menu');
+      panel.hidden=!open;
+      if(open && focusFirst && items.length) items[0].focus();
+    }
+    toggle.addEventListener('click',function(){
+      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
+    });
+    toggle.addEventListener('keydown',function(event){
+      if(event.key==='ArrowDown'){
+        event.preventDefault();
+        setOpen(true,true);
+      }else if(event.key==='Escape'){
+        event.preventDefault();
+        setOpen(false,false);
+      }
+    });
+    panel.addEventListener('keydown',function(event){
+      var current=items.indexOf(document.activeElement);
+      if(event.key==='Escape'){
+        event.preventDefault();
+        setOpen(false,false);
+        toggle.focus();
+      }else if(event.key==='ArrowDown'){
+        event.preventDefault();
+        items[(current+1+items.length)%items.length].focus();
+      }else if(event.key==='ArrowUp'){
+        event.preventDefault();
+        items[(current-1+items.length)%items.length].focus();
+      }else if(event.key==='Home'){
+        event.preventDefault();
+        items[0].focus();
+      }else if(event.key==='End'){
+        event.preventDefault();
+        items[items.length-1].focus();
+      }
+    });
+    items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
+    document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
+    document.addEventListener('keydown',function(event){
+      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
+        setOpen(false,false);
+        toggle.focus();
+      }
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
+  else initServicesDropdown();
+})();
+
+</script><script src="script.js"></script>
 </body>
 </html>
