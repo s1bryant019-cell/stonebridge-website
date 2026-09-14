@@ -1,5 +1,5 @@
 (function () {
-  var VERSION = '20260914b';
+  var VERSION = '20260914c';
 
   function pageName() {
     var path = (window.location.pathname || '').split('/').pop().toLowerCase();
@@ -73,24 +73,36 @@
     return link;
   }
 
-  function bustFounderImageCache() {
-    document.querySelectorAll('source[srcset*="practitioner-headshot-sbryant"], img[src*="practitioner-headshot-sbryant"]').forEach(function (node) {
-      if (node.tagName.toLowerCase() === 'source') {
-        var set = node.getAttribute('srcset') || '';
-        node.setAttribute('srcset', set.split(',').map(function (part) {
-          var bits = part.trim().split(/\s+/);
-          if (!bits[0]) return part;
-          bits[0] = bits[0].split('?')[0] + '?v=' + VERSION;
-          return bits.join(' ');
-        }).join(', '));
-      } else {
-        var src = node.getAttribute('src') || '';
-        if (src) node.setAttribute('src', 'practitioner-headshot-sbryant-760.webp?v=' + VERSION);
+  function normalizeFounderImages() {
+    var freshSrc = 'founder-headshot-2026.webp?v=' + VERSION;
+    document.querySelectorAll(
+      '.portrait-frame img, .clinician-photo img, img[src*="practitioner-headshot-sbryant"]'
+    ).forEach(function (img) {
+      img.setAttribute('src', freshSrc);
+      img.removeAttribute('srcset');
+      img.setAttribute('alt', 'Dr. Stephen W. Bryant, PsyD, LCPC');
+      var picture = img.closest('picture');
+      if (picture) {
+        picture.querySelectorAll('source').forEach(function (source) {
+          source.setAttribute('srcset', freshSrc);
+        });
       }
     });
   }
 
-  function loadCore(brandLink) {
+  function ensureHotfixCss() {
+    var link = document.getElementById('stonebridge-hotfix');
+    if (!link) {
+      link = document.createElement('link');
+      link.id = 'stonebridge-hotfix';
+      link.rel = 'stylesheet';
+      link.href = 'stonebridge-hotfix.css?v=' + VERSION;
+      document.head.appendChild(link);
+    }
+    return link;
+  }
+
+  function loadCore(brandLink, hotfixLink) {
     if (document.getElementById('stonebridge-script-core')) return;
     var script = document.createElement('script');
     script.id = 'stonebridge-script-core';
@@ -98,6 +110,7 @@
     script.onload = function () {
       /* Keep exact Brand Sheet overrides last in the cascade after core injects its compatibility styles. */
       if (brandLink && brandLink.parentNode) document.head.appendChild(brandLink);
+      if (hotfixLink && hotfixLink.parentNode) document.head.appendChild(hotfixLink);
     };
     document.body.appendChild(script);
   }
@@ -105,8 +118,9 @@
   function init() {
     normalizeHeader();
     var brandLink = ensureBrandCss();
-    bustFounderImageCache();
-    loadCore(brandLink);
+    var hotfixLink = ensureHotfixCss();
+    normalizeFounderImages();
+    loadCore(brandLink, hotfixLink);
   }
 
   if (document.readyState === 'loading') {
