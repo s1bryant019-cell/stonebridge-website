@@ -1,5 +1,5 @@
 (function () {
-  var VERSION = '20260914c';
+  var VERSION = '20260914d';
 
   function pageName() {
     var path = (window.location.pathname || '').split('/').pop().toLowerCase();
@@ -73,20 +73,32 @@
     return link;
   }
 
+  function forceImage(img, src, alt) {
+    if (!img) return;
+    var picture = img.closest('picture');
+    if (picture) {
+      picture.querySelectorAll('source').forEach(function (source) {
+        source.remove();
+      });
+    }
+    img.removeAttribute('srcset');
+    img.removeAttribute('sizes');
+    img.setAttribute('src', src);
+    if (typeof alt === 'string') img.setAttribute('alt', alt);
+  }
+
   function normalizeFounderImages() {
-    var freshSrc = 'founder-headshot-2026.webp?v=' + VERSION;
+    var headshotSrc = 'founder-headshot-live-20260914.svg?v=' + VERSION;
+    var environmentalSrc = 'founder-environmental-live-20260914.svg?v=' + VERSION;
+
     document.querySelectorAll(
-      '.portrait-frame img, .clinician-photo img, img[src*="practitioner-headshot-sbryant"]'
+      '.portrait-frame img, .clinician-photo img, img[src*="practitioner-headshot-sbryant"], img[src*="founder-headshot"]'
     ).forEach(function (img) {
-      img.setAttribute('src', freshSrc);
-      img.removeAttribute('srcset');
-      img.setAttribute('alt', 'Dr. Stephen W. Bryant, PsyD, LCPC');
-      var picture = img.closest('picture');
-      if (picture) {
-        picture.querySelectorAll('source').forEach(function (source) {
-          source.setAttribute('srcset', freshSrc);
-        });
-      }
+      forceImage(img, headshotSrc, 'Dr. Stephen W. Bryant, PsyD, LCPC');
+    });
+
+    document.querySelectorAll('.home-founder-media img').forEach(function (img) {
+      forceImage(img, environmentalSrc, 'Dr. Stephen W. Bryant seated in an office');
     });
   }
 
@@ -108,7 +120,6 @@
     script.id = 'stonebridge-script-core';
     script.src = 'script-core.js?v=' + VERSION;
     script.onload = function () {
-      /* Keep exact Brand Sheet overrides last in the cascade after core injects its compatibility styles. */
       if (brandLink && brandLink.parentNode) document.head.appendChild(brandLink);
       if (hotfixLink && hotfixLink.parentNode) document.head.appendChild(hotfixLink);
     };
