@@ -1,0 +1,20 @@
+UPLOAD THESE FOUR FILES TO THE SITE ROOT
+
+1. index.html
+2. script.js
+3. stonebridge-hotfix.css
+4. vercel.json
+
+What this package changes:
+- Couples Therapy homepage card uses the existing approved home-bridge-v11.jpg asset directly.
+- Service-card images fill their media frame with full-bleed object-fit: cover behavior.
+- The duplicate consultation/New Clients text item is removed from the homepage HTML header.
+- The shared JavaScript header template no longer creates that duplicate link.
+- Existing global headers are cleaned at runtime so the duplicate contact nav item is removed site-wide.
+- The right-side Request a Consultation CTA remains.
+- Asset version is bumped to 20260914j to avoid stale CSS/JS caching.
+
+Existing asset required:
+- home-bridge-v11.jpg
+
+That image already exists in the current Stonebridge repository and was not modified, so it is not included as a replacement file.

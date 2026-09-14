@@ -1,5 +1,5 @@
 (function () {
-  var VERSION = '20260914i';
+  var VERSION = '20260914j';
 
   function pageName() {
     var path = (window.location.pathname || '').split('/').pop().toLowerCase();
@@ -41,7 +41,6 @@
       navLink('team.html','Team','team',active),
       navLink('services.html','Services','services',active),
       navLink('fees-insurance.html','Fees &amp; Insurance','fees',active),
-      navLink('contact.html','New Clients','new-clients',active),
       navLink('for-clinicians.html','Professionals','professionals',active),
       navLink('portal.html','Portal','portal',active),
       '      </nav>',
@@ -52,12 +51,27 @@
     ].join('');
   }
 
+  function removeDuplicateConsultationNav(header) {
+    if (!header) return;
+    header.querySelectorAll('.menu > a[href^="contact.html"]').forEach(function (link) {
+      link.remove();
+    });
+  }
+
   function normalizeHeader() {
     var existing = document.querySelector('.site-header, .home-site-header');
-    if (!existing || existing.classList.contains('sb-global-header')) return;
+    if (!existing) return;
+
+    if (existing.classList.contains('sb-global-header')) {
+      removeDuplicateConsultationNav(existing);
+      return;
+    }
+
     var wrapper = document.createElement('div');
     wrapper.innerHTML = canonicalHeader();
-    existing.replaceWith(wrapper.firstElementChild);
+    var replacement = wrapper.firstElementChild;
+    removeDuplicateConsultationNav(replacement);
+    existing.replaceWith(replacement);
   }
 
   function ensureStylesheet(id, href) {

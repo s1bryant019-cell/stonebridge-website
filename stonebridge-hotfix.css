@@ -219,11 +219,7 @@ body.home-redesign .hero-utility-strip-separator{
   .clinicians-overview-grid.refined-professional-nav a:nth-child(even){border-left:1px solid var(--clinicians-line)}
 }
 
-/* 2026-09-14 targeted correction: service-card full bleed and single consultation CTA. */
-.site-header.sb-global-header .menu > a[href^="contact.html"]{
-  display:none!important;
-}
-
+/* 2026-09-14 targeted correction: service-card full bleed. */
 body.home-redesign .home-service-media{
   overflow:hidden!important;
   padding:0!important;
