@@ -1,6 +1,5 @@
 const MAX_LENGTHS = {
   fullName: 120,
-  dateOfBirth: 10,
   email: 254,
   serviceRequested: 120,
   psychotherapyFormat: 120,
@@ -22,30 +21,6 @@ function normalize(value, maxLength) {
 
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) && !/[\r\n]/.test(value);
-}
-
-function isValidDateOfBirth(value) {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
-
-  const [year, month, day] = value.split("-").map(Number);
-  const date = new Date(Date.UTC(year, month - 1, day));
-
-  if (
-    date.getUTCFullYear() !== year ||
-    date.getUTCMonth() !== month - 1 ||
-    date.getUTCDate() !== day
-  ) {
-    return false;
-  }
-
-  const today = new Date();
-  const todayUtc = Date.UTC(
-    today.getUTCFullYear(),
-    today.getUTCMonth(),
-    today.getUTCDate()
-  );
-
-  return date.getTime() <= todayUtc;
 }
 
 function getRequestBody(req) {
@@ -90,10 +65,6 @@ export default async function handler(req, res) {
       body.fullName || body.name || "",
       MAX_LENGTHS.fullName
     );
-    const dateOfBirth = normalize(
-      body.dateOfBirth || "",
-      MAX_LENGTHS.dateOfBirth
-    );
     const senderEmail = normalize(body.email, MAX_LENGTHS.email).toLowerCase();
     const paymentPreference = normalize(
       body.insurancePreference || body.insurance || body.insurancePayment || "",
@@ -122,7 +93,6 @@ export default async function handler(req, res) {
     const fieldErrors = {};
 
     if (!senderName) fieldErrors.fullName = "Enter your full name.";
-    if (!dateOfBirth) fieldErrors.dateOfBirth = "Enter your date of birth.";
     if (!senderEmail) fieldErrors.email = "Enter your email address.";
     if (!phone) fieldErrors.phone = "Enter your phone number.";
     if (!requestedService) {
@@ -136,15 +106,6 @@ export default async function handler(req, res) {
       return res.status(400).json({
         error: "Review the highlighted fields.",
         fieldErrors
-      });
-    }
-
-    if (!isValidDateOfBirth(dateOfBirth)) {
-      return res.status(400).json({
-        error: "Review the highlighted fields.",
-        fieldErrors: {
-          dateOfBirth: "Enter a valid date of birth."
-        }
       });
     }
 
@@ -189,9 +150,6 @@ ${psychotherapyFormat || "Not specified"}
 
 Full name:
 ${senderName}
-
-Date of birth:
-${dateOfBirth}
 
 Email:
 ${senderEmail}
