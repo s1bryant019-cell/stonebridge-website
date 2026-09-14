@@ -34,6 +34,142 @@
   opacity:1!important;
   visibility:visible!important;
 }
+
+/* 2026-09-14 targeted refinement: proportion, repetition, and image-direction corrections only. */
+body.home-redesign .home-hero-cta-wrap{margin:0!important}
+body.home-redesign .home-hero-cta-wrap .home-primary-btn{margin-top:20px!important}
+body.home-redesign .home-hero-lede{margin-top:18px!important}
+body.home-redesign .hero-utility-strip-inner{
+  min-height:44px!important;
+  padding:10px 0!important;
+}
+body.home-redesign .hero-utility-strip-item{
+  font-size:.76rem!important;
+  font-weight:500!important;
+  line-height:1.4!important;
+}
+body.home-redesign .hero-utility-strip-separator{
+  width:3px!important;
+  height:3px!important;
+  flex-basis:3px!important;
+  margin:0 13px!important;
+}
+
+.parent-process-summary p{
+  max-width:48rem;
+  margin:0;
+  color:var(--parent-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.94rem;
+  line-height:1.68;
+}
+
+.individual-overview-grid.individual-overview-grid--telehealth{
+  grid-template-columns:1fr!important;
+  max-width:760px;
+}
+.individual-overview-grid--telehealth article{
+  padding-left:0!important;
+  border-left:0!important;
+}
+
+.founder-summary-band.is-condensed .subpage-band-grid{
+  grid-template-columns:1fr!important;
+}
+.founder-summary-band.is-condensed .subpage-band-item{
+  max-width:760px;
+}
+
+.clinicians-overview-grid.refined-professional-nav{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+  padding:0!important;
+}
+.clinicians-overview-grid.refined-professional-nav a{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:0 24px;
+  color:var(--clinicians-navy-deep);
+  font-family:"Inter",sans-serif;
+  font-size:.82rem;
+  font-weight:600;
+  line-height:1.35;
+  text-align:center;
+  text-decoration:none;
+}
+.clinicians-overview-grid.refined-professional-nav a + a::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  width:1px;
+  height:20px;
+  transform:translateY(-50%);
+  background:var(--clinicians-line);
+}
+.clinicians-overview-grid.refined-professional-nav a:hover{
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+@media(min-width:1025px){
+  body.home-redesign .home-hero-grid{
+    min-height:0!important;
+    grid-template-columns:minmax(0,45%) minmax(0,55%)!important;
+    align-items:center!important;
+  }
+  body.home-redesign .home-hero-copy{
+    min-height:0!important;
+    padding-top:38px!important;
+    padding-bottom:38px!important;
+  }
+  body.home-redesign .home-hero-media{
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    max-height:520px!important;
+    aspect-ratio:16 / 9!important;
+    align-self:center!important;
+    overflow:hidden!important;
+  }
+  body.home-redesign .home-hero-media picture{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+  }
+  body.home-redesign .home-hero-media img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center 36%!important;
+  }
+}
+
+@media(min-width:761px) and (max-width:1024px){
+  body.home-redesign .home-hero-media{
+    min-height:0!important;
+    height:auto!important;
+    aspect-ratio:3 / 2!important;
+    overflow:hidden!important;
+  }
+  body.home-redesign .home-hero-media picture{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+  }
+  body.home-redesign .home-hero-media img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center 38%!important;
+  }
+}
+
 @media(max-width:1180px){
   .site-header.sb-global-header .brand-link{width:252px!important}
   .site-header.sb-global-header .sb-header-logo{width:244px!important}
@@ -49,4 +185,36 @@
   .site-header.sb-global-header .nav{width:min(100% - 34px,1320px)!important;min-height:76px!important}
   .site-header.sb-global-header .brand-link{width:230px!important;min-height:58px!important}
   .site-header.sb-global-header .sb-header-logo{width:222px!important;max-height:54px!important}
+  body.home-redesign .home-hero-media{
+    min-height:0!important;
+    height:auto!important;
+    aspect-ratio:4 / 3!important;
+    overflow:hidden!important;
+  }
+  body.home-redesign .home-hero-media picture{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+  }
+  body.home-redesign .home-hero-media img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center 40%!important;
+  }
+  body.home-redesign .hero-utility-strip-inner{
+    align-items:flex-start!important;
+    padding:11px 0!important;
+  }
+  .clinicians-overview-grid.refined-professional-nav{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+  }
+  .clinicians-overview-grid.refined-professional-nav a{
+    min-height:48px;
+    padding:8px 12px;
+  }
+  .clinicians-overview-grid.refined-professional-nav a + a::before{display:none}
+  .clinicians-overview-grid.refined-professional-nav a:nth-child(n+3){border-top:1px solid var(--clinicians-line)}
+  .clinicians-overview-grid.refined-professional-nav a:nth-child(even){border-left:1px solid var(--clinicians-line)}
 }
