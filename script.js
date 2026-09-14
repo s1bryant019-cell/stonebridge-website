@@ -1,5 +1,5 @@
 (function () {
-  var VERSION = '20260914d';
+  var VERSION = '20260914e';
 
   function pageName() {
     var path = (window.location.pathname || '').split('/').pop().toLowerCase();
@@ -89,7 +89,7 @@
 
   function normalizeFounderImages() {
     var headshotSrc = 'founder-headshot-live-20260914.svg?v=' + VERSION;
-    var environmentalSrc = 'founder-environmental-live-20260914.svg?v=' + VERSION;
+    var environmentalSrc = 'founder-environmental.png?v=' + VERSION;
 
     document.querySelectorAll(
       '.portrait-frame img, .clinician-photo img, img[src*="practitioner-headshot-sbryant"], img[src*="founder-headshot"]'
