@@ -50,7 +50,6 @@
       color:#fff;
       font-weight:700;
     }
-
     .contact-page .skip-link:focus{top:12px;}
 
     .contact-hero{
@@ -165,7 +164,6 @@
       border-color:#f4eee4;
       color:var(--contact-navy-deep);
     }
-
     .contact-hero-actions .btn-primary:hover{
       background:#fffaf2;
       border-color:#fffaf2;
@@ -178,7 +176,6 @@
       margin:0;
       overflow:hidden;
     }
-
     .contact-hero-media img{
       width:100%;
       height:100%;
@@ -188,34 +185,27 @@
     }
 
     .contact-form-section{
-      padding:52px 0 60px;
+      padding:46px 0 56px;
       background:var(--contact-paper);
       border-bottom:1px solid var(--contact-warm-line);
     }
 
     .contact-shell{
-      width:min(1080px,calc(100% - 72px));
+      width:min(920px,calc(100% - 56px));
       margin:0 auto;
     }
 
-    .contact-layout{
-      display:grid;
-      grid-template-columns:minmax(250px,310px) minmax(0,740px);
-      gap:48px;
-      align-items:start;
-      justify-content:space-between;
-    }
+    .contact-layout{display:block;}
 
     .contact-intro{
-      position:sticky;
-      top:105px;
+      max-width:720px;
+      margin:0 auto 26px;
     }
 
     .contact-label{
       position:relative;
       padding-top:14px;
     }
-
     .contact-label::before{
       content:"";
       position:absolute;
@@ -228,51 +218,28 @@
     }
 
     .contact-intro h2{
-      max-width:12ch;
-      margin:12px 0 0;
+      max-width:15ch;
+      margin:10px 0 0;
       color:var(--contact-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.1rem,2.8vw,2.9rem);
-      line-height:1.05;
+      font-size:clamp(2.15rem,2.7vw,2.8rem);
+      line-height:1.04;
       letter-spacing:-.035em;
       text-wrap:balance;
     }
 
     .contact-intro > p{
-      margin:16px 0 0;
+      max-width:46rem;
+      margin:12px 0 0;
       color:var(--contact-muted);
       font-family:"Inter",sans-serif;
-      font-size:.93rem;
-      line-height:1.68;
-    }
-
-    .contact-intro-note{
-      margin-top:22px;
-      padding-top:17px;
-      border-top:1px solid var(--contact-line);
-    }
-
-    .contact-intro-note strong{
-      display:block;
-      color:var(--contact-ink);
-      font-family:"Inter",sans-serif;
-      font-size:.78rem;
-      font-weight:700;
-      letter-spacing:.03em;
-    }
-
-    .contact-intro-note p{
-      margin:7px 0 0;
-      color:var(--contact-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.82rem;
-      line-height:1.58;
+      font-size:.92rem;
+      line-height:1.65;
     }
 
     .contact-form{
       width:100%;
-      max-width:740px;
-      padding:30px;
+      padding:28px 30px 30px;
       border:1px solid rgba(33,49,66,.17);
       border-radius:12px;
       background:#fffdf9;
@@ -282,65 +249,29 @@
     .contact-form-content[hidden],
     .contact-success[hidden],
     .contact-error-summary[hidden],
-    .field-error[hidden]{
-      display:none!important;
-    }
+    .field-error[hidden]{display:none!important;}
 
     .contact-form-head{
       margin-bottom:24px;
-      padding-bottom:20px;
+      padding-bottom:18px;
       border-bottom:1px solid var(--contact-line);
     }
 
     .contact-form-head h2{
-      margin:9px 0 0;
+      margin:8px 0 0;
       color:var(--contact-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(1.9rem,2.4vw,2.35rem);
+      font-size:clamp(1.85rem,2.3vw,2.25rem);
       line-height:1.07;
       letter-spacing:-.03em;
     }
 
     .contact-required-note{
-      margin:10px 0 0;
+      margin:8px 0 0;
       color:var(--contact-muted);
       font-family:"Inter",sans-serif;
-      font-size:.76rem;
-      line-height:1.45;
-    }
-
-    .contact-information-use{
-      margin:0 0 28px;
-      padding:0 0 22px;
-      border-bottom:1px solid var(--contact-line);
-    }
-
-    .contact-information-use strong{
-      display:block;
-      color:var(--contact-ink);
-      font-family:"Inter",sans-serif;
-      font-size:.82rem;
-      font-weight:700;
+      font-size:.75rem;
       line-height:1.4;
-    }
-
-    .contact-information-use p{
-      margin:6px 0 0;
-      color:var(--contact-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.84rem;
-      line-height:1.6;
-    }
-
-    .contact-information-use a,
-    .contact-before-send a,
-    .form-note a,
-    .contact-success a{
-      color:var(--contact-navy);
-      font-weight:700;
-      text-decoration:underline;
-      text-decoration-thickness:1px;
-      text-underline-offset:3px;
     }
 
     .contact-form-group{
@@ -351,8 +282,8 @@
     }
 
     .contact-form-group + .contact-form-group{
-      margin-top:44px;
-      padding-top:42px;
+      margin-top:32px;
+      padding-top:30px;
       border-top:1px solid var(--contact-line);
     }
 
@@ -362,7 +293,7 @@
       padding:0;
       color:var(--contact-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:1.75rem;
+      font-size:1.62rem;
       font-weight:600;
       line-height:1.08;
       letter-spacing:-.025em;
@@ -371,22 +302,19 @@
     .contact-form-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:22px 20px;
-      margin-top:23px;
+      gap:18px 20px;
+      margin-top:18px;
     }
 
-    .contact-field{
-      min-width:0;
-    }
-
+    .contact-field{min-width:0;}
     .contact-field-full{grid-column:1 / -1;}
 
     .contact-field label{
       display:block;
-      margin:0 0 8px;
+      margin:0 0 6px;
       color:var(--contact-ink);
       font-family:"Inter",sans-serif;
-      font-size:.84rem;
+      font-size:.82rem;
       font-weight:700;
       line-height:1.35;
     }
@@ -395,13 +323,13 @@
       display:flex;
       align-items:baseline;
       justify-content:space-between;
-      gap:12px;
+      gap:10px;
     }
 
     .field-optional{
       flex:0 0 auto;
       color:var(--contact-muted);
-      font-size:.72rem;
+      font-size:.7rem;
       font-weight:500;
       letter-spacing:.01em;
     }
@@ -417,7 +345,7 @@
       background:#fffdf9;
       color:var(--contact-ink);
       font-family:"Inter",sans-serif;
-      font-size:1rem;
+      font-size:.95rem;
       font-weight:400;
       line-height:1.4;
       transition:border-color .16s ease,box-shadow .16s ease,background .16s ease;
@@ -425,21 +353,19 @@
 
     .contact-form input,
     .contact-form select{
-      min-height:50px;
-      padding:0 13px;
+      min-height:48px;
+      padding:0 12px;
     }
 
     .contact-form textarea{
-      min-height:132px;
-      padding:13px;
+      min-height:112px;
+      padding:12px;
       resize:vertical;
     }
 
     .contact-form input:hover,
     .contact-form select:hover,
-    .contact-form textarea:hover{
-      border-color:rgba(33,49,66,.38);
-    }
+    .contact-form textarea:hover{border-color:rgba(33,49,66,.38);}
 
     .contact-form input:focus,
     .contact-form select:focus,
@@ -456,17 +382,14 @@
     }
 
     .field-helper,
-    .field-error,
-    .form-note{
-      margin:7px 0 0;
+    .field-error{
+      margin:6px 0 0;
       font-family:"Inter",sans-serif;
-      font-size:.77rem;
-      line-height:1.5;
+      font-size:.75rem;
+      line-height:1.45;
     }
 
-    .field-helper,
-    .form-note{color:var(--contact-muted);}
-
+    .field-helper{color:var(--contact-muted);}
     .field-error{
       color:var(--contact-error);
       font-weight:600;
@@ -484,8 +407,8 @@
     }
 
     .contact-error-summary{
-      margin:0 0 26px;
-      padding:14px 16px;
+      margin:0 0 22px;
+      padding:13px 15px;
       border-left:3px solid var(--contact-error);
       background:var(--contact-error-bg);
       color:var(--contact-ink);
@@ -495,24 +418,22 @@
       margin:0;
       color:var(--contact-ink);
       font-family:"Inter",sans-serif;
-      font-size:.9rem;
+      font-size:.88rem;
       font-weight:700;
-      line-height:1.45;
+      line-height:1.4;
     }
 
     .contact-error-summary ul{
-      margin:8px 0 0;
+      margin:7px 0 0;
       padding-left:1.15rem;
     }
-
     .contact-error-summary li{
-      margin:4px 0 0;
+      margin:3px 0 0;
       color:var(--contact-muted);
       font-family:"Inter",sans-serif;
-      font-size:.8rem;
-      line-height:1.5;
+      font-size:.78rem;
+      line-height:1.45;
     }
-
     .contact-error-summary a{
       color:var(--contact-error);
       text-decoration:underline;
@@ -520,8 +441,8 @@
     }
 
     .contact-before-send{
-      margin-top:44px;
-      padding-top:40px;
+      margin-top:32px;
+      padding-top:28px;
       border-top:1px solid var(--contact-line);
     }
 
@@ -529,65 +450,56 @@
       margin:0;
       color:var(--contact-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:1.7rem;
+      font-size:1.55rem;
       font-weight:600;
       line-height:1.08;
       letter-spacing:-.025em;
     }
 
-    .contact-before-send-copy{
-      margin-top:17px;
-    }
-
+    .contact-before-send-copy{margin-top:11px;}
     .contact-before-send-copy p{
-      margin:8px 0 0;
+      margin:6px 0 0;
       color:var(--contact-muted);
       font-family:"Inter",sans-serif;
-      font-size:.82rem;
-      line-height:1.58;
+      font-size:.8rem;
+      line-height:1.52;
     }
 
     .contact-privacy-link{
       display:inline-block;
-      margin-top:14px;
+      margin-top:10px;
+      color:var(--contact-navy);
       font-family:"Inter",sans-serif;
-      font-size:.82rem;
+      font-size:.8rem;
+      font-weight:700;
+      text-decoration:underline;
+      text-decoration-thickness:1px;
+      text-underline-offset:3px;
     }
 
     .contact-crisis-note{
-      margin-top:20px;
-      padding-top:17px;
+      margin-top:16px;
+      padding-top:14px;
       border-top:1px solid var(--contact-line);
     }
-
     .contact-crisis-note p{
       margin:0;
       color:var(--contact-muted);
       font-family:"Inter",sans-serif;
-      font-size:.78rem;
-      line-height:1.56;
+      font-size:.76rem;
+      line-height:1.5;
     }
 
     .contact-form-submit{
       display:flex;
       flex-direction:column;
       align-items:flex-start;
-      gap:10px;
-      margin-top:34px;
+      gap:8px;
+      margin-top:26px;
     }
-
     .contact-form-submit .btn{
       min-width:220px;
-      min-height:50px;
-    }
-
-    .contact-submit-note{
-      max-width:36rem;
-      margin:0;
-      color:var(--contact-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.76rem;
-      line-height:1.48;
+      min-height:48px;
     }
 
     .contact-form button[disabled]{
@@ -595,10 +507,7 @@
       opacity:.68;
     }
 
-    .contact-success{
-      padding:6px 0 4px;
-    }
-
+    .contact-success{padding:6px 0 4px;}
     .contact-success h2{
       margin:0;
       color:var(--contact-ink);
@@ -607,7 +516,6 @@
       line-height:1.04;
       letter-spacing:-.035em;
     }
-
     .contact-success p{
       max-width:38rem;
       margin:14px 0 0;
@@ -616,12 +524,15 @@
       font-size:.92rem;
       line-height:1.65;
     }
-
     .contact-success .contact-success-link{
       display:inline-block;
       margin-top:23px;
+      color:var(--contact-navy);
       font-family:"Inter",sans-serif;
       font-size:.88rem;
+      font-weight:700;
+      text-decoration:underline;
+      text-underline-offset:3px;
     }
 
     .contact-page a:focus-visible,
@@ -647,12 +558,10 @@
     @media(max-width:1080px){
       .contact-hero,
       .contact-hero-copy{min-height:500px;}
-
       .contact-hero-copy{
         width:min(100% - 44px,860px);
         padding:42px 0 38px;
       }
-
       .contact-hero::before{
         background:
           linear-gradient(
@@ -669,35 +578,17 @@
             rgba(10,24,38,.28) 100%
           );
       }
-
-      .contact-layout{
-        grid-template-columns:1fr;
-        gap:32px;
-      }
-
-      .contact-intro{
-        position:static;
-        max-width:740px;
-      }
-
-      .contact-form{
-        max-width:740px;
-      }
     }
 
     @media(max-width:720px){
-      .contact-shell{width:min(100% - 34px,1080px);}
-
+      .contact-shell{width:min(100% - 34px,920px);}
       .contact-hero,
       .contact-hero-copy{min-height:550px;}
-
       .contact-hero-copy{
         width:min(100% - 34px,1080px);
         padding:38px 0 34px;
       }
-
       .contact-hero-media img{object-position:58% center;}
-
       .contact-hero::before{
         background:
           linear-gradient(
@@ -712,57 +603,42 @@
             rgba(10,27,43,.22) 100%
           );
       }
-
       .contact-hero h1{
         max-width:13ch;
         font-size:clamp(2.55rem,10.5vw,3.5rem);
       }
-
       .contact-practical-line{
         max-width:30rem;
         font-size:.78rem;
       }
-
+      .contact-form-section{padding:38px 0 44px;}
+      .contact-intro{margin-bottom:22px;}
+      .contact-form{padding:22px 18px 24px;}
+      .contact-form-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+      }
+      .contact-field-full{grid-column:auto;}
+      .contact-form-group + .contact-form-group{
+        margin-top:28px;
+        padding-top:26px;
+      }
+      .contact-before-send{
+        margin-top:28px;
+        padding-top:24px;
+      }
       .contact-hero-actions .btn,
       .contact-form-submit .btn{
         width:100%;
         justify-content:center;
         text-align:center;
       }
-
-      .contact-form-section{padding:40px 0 46px;}
-
-      .contact-form{
-        padding:24px 18px;
-        border-radius:10px;
-      }
-
-      .contact-form-grid{
-        grid-template-columns:1fr;
-        gap:21px;
-      }
-
-      .contact-field-full{grid-column:auto;}
-
-      .contact-form-group + .contact-form-group{
-        margin-top:38px;
-        padding-top:36px;
-      }
-
-      .contact-before-send{
-        margin-top:38px;
-        padding-top:35px;
-      }
-
-      .contact-form-submit{margin-top:30px;}
     }
 
     @media (prefers-reduced-motion:reduce){
       .contact-form input,
       .contact-form select,
-      .contact-form textarea{
-        transition:none;
-      }
+      .contact-form textarea{transition:none;}
     }
   </style>
 
@@ -958,13 +834,8 @@
       <div class="contact-shell contact-layout">
         <aside class="contact-intro">
           <div class="contact-label">Consultation first</div>
-          <h2>A clear first step, without turning the form into an intake.</h2>
-          <p>Share enough for Stonebridge to understand what you are looking for and how to reach you. More detailed clinical information can be handled through the appropriate process if care moves forward.</p>
-
-          <div class="contact-intro-note">
-            <strong>What happens next</strong>
-            <p>Stonebridge reviews the request and follows up about fit, availability, and next steps. Submitting the form does not schedule or confirm an appointment.</p>
-          </div>
+          <h2>A clear first step.</h2>
+          <p>Share enough for Stonebridge to understand what you’re looking for and how to reach you. We’ll follow up about fit, availability, and next steps.</p>
         </aside>
 
         <form class="contact-form" id="consultation-form" novalidate aria-labelledby="consultation-form-title">
@@ -973,12 +844,6 @@
               <div class="form-eyebrow">Consultation request</div>
               <h2 id="consultation-form-title">A few details to help us respond.</h2>
               <p class="contact-required-note"><span aria-hidden="true">*</span> Required</p>
-            </div>
-
-            <div class="contact-information-use">
-              <strong>About information submitted here</strong>
-              <p>Information submitted through this form is used to respond to your consultation request and, when appropriate, support setup of your client record. Please keep clinical details brief and do not submit records or extensive clinical information here.</p>
-              <p><a href="privacy-information.html">Privacy &amp; Information Use</a></p>
             </div>
 
             <div class="contact-error-summary" id="form-error-summary" role="alert" tabindex="-1" hidden>
@@ -1004,13 +869,6 @@
                 </div>
 
                 <div class="contact-field">
-                  <label for="date-of-birth">Date of birth <span class="required-mark" aria-hidden="true">*</span></label>
-                  <input id="date-of-birth" type="date" name="dateOfBirth" autocomplete="bday" required aria-describedby="date-of-birth-help date-of-birth-error">
-                  <p class="field-helper" id="date-of-birth-help">Helps us confirm who we’re communicating with and supports secure client-record and portal setup if care moves forward.</p>
-                  <p class="field-error" id="date-of-birth-error" hidden></p>
-                </div>
-
-                <div class="contact-field">
                   <label for="email-address">Email <span class="required-mark" aria-hidden="true">*</span></label>
                   <input id="email-address" type="email" name="email" autocomplete="email" maxlength="254" required aria-describedby="email-address-error">
                   <p class="field-error" id="email-address-error" hidden></p>
@@ -1022,7 +880,7 @@
                   <p class="field-error" id="phone-number-error" hidden></p>
                 </div>
 
-                <div class="contact-field contact-field-full">
+                <div class="contact-field">
                   <label class="field-label-row" for="preferred-contact">
                     <span>Preferred contact method</span>
                     <span class="field-optional">Optional</span>
@@ -1039,7 +897,7 @@
             <fieldset class="contact-form-group">
               <legend>What you’re looking for</legend>
               <div class="contact-form-grid">
-                <div class="contact-field contact-field-full">
+                <div class="contact-field">
                   <label for="service-category">What are you reaching out about? <span class="required-mark" aria-hidden="true">*</span></label>
                   <select id="service-category" name="serviceCategory" required aria-describedby="service-category-error">
                     <option value="">Select one</option>
@@ -1056,7 +914,7 @@
                   <p class="field-error" id="service-category-error" hidden></p>
                 </div>
 
-                <div class="contact-field contact-field-full">
+                <div class="contact-field">
                   <label class="field-label-row" for="preferred-clinician">
                     <span>Clinician preference</span>
                     <span class="field-optional">Optional</span>
@@ -1070,7 +928,7 @@
                 <div class="contact-field contact-field-full">
                   <label for="brief-reason">Briefly tell us what brings you to Stonebridge <span class="required-mark" aria-hidden="true">*</span></label>
                   <textarea id="brief-reason" name="reason" maxlength="2000" required aria-describedby="brief-reason-help brief-reason-error"></textarea>
-                  <p class="field-helper" id="brief-reason-help">Please keep this brief. Detailed clinical history and records can be shared through the appropriate secure process if care moves forward.</p>
+                  <p class="field-helper" id="brief-reason-help">A few sentences is enough.</p>
                   <p class="field-error" id="brief-reason-error" hidden></p>
                 </div>
 
@@ -1079,26 +937,23 @@
                     <span>General availability</span>
                     <span class="field-optional">Optional</span>
                   </label>
-                  <input id="general-availability" type="text" name="generalAvailability" maxlength="500" placeholder="For example: Tuesday evenings or Friday mornings">
+                  <input id="general-availability" type="text" name="generalAvailability" maxlength="500" placeholder="e.g., Tuesday evenings or Friday mornings">
                 </div>
 
                 <div class="contact-field">
                   <label class="field-label-row" for="insurance-preference">
-                    <span>Insurance or payment preference</span>
+                    <span>Insurance or payment</span>
                     <span class="field-optional">Optional</span>
                   </label>
-                  <select id="insurance-preference" name="insurancePreference" aria-describedby="insurance-note">
+                  <select id="insurance-preference" name="insurancePreference">
                     <option value="">Select one</option>
                     <option>Aetna</option>
                     <option>Blue Cross Blue Shield of Illinois</option>
                     <option>Medicaid FFS</option>
-                    <option>Guidehealth Behavioral Health Network - Advocate Medical Group West (Site 099)</option>
+                    <option value="Guidehealth Behavioral Health Network - Advocate Medical Group West (Site 099)">Guidehealth / Advocate Medical Group West (Site 099)</option>
                     <option>Private pay</option>
-                    <option>Other insurance</option>
-                    <option>Out-of-network benefits / superbill</option>
-                    <option>Unsure</option>
+                    <option>Other / unsure</option>
                   </select>
-                  <p class="form-note" id="insurance-note">Currently effective: Aetna, Blue Cross Blue Shield of Illinois, Medicaid FFS, and Guidehealth Behavioral Health Network - Advocate Medical Group West (Site 099). <a href="fees-insurance.html">View plan details.</a></p>
                 </div>
               </div>
             </fieldset>
@@ -1106,9 +961,8 @@
             <section class="contact-before-send" aria-labelledby="before-send-title">
               <h3 id="before-send-title">Before you send</h3>
               <div class="contact-before-send-copy">
-                <p>This form is for consultation requests and is not a confirmed appointment or a substitute for emergency care.</p>
-                <p>Please do not include detailed clinical history, documents, or other sensitive records in this form.</p>
-                <p>Stonebridge typically reviews consultation requests within 1–2 business days.</p>
+                <p>Submitting this form requests a consultation; it does not schedule or confirm an appointment.</p>
+                <p>Please keep clinical details brief and do not include records or other sensitive documents.</p>
               </div>
 
               <a class="contact-privacy-link" href="privacy-information.html">Privacy &amp; Information Use</a>
@@ -1120,7 +974,6 @@
 
             <div class="contact-form-submit">
               <button class="btn btn-primary" id="submitButton" type="submit">Request a Consultation</button>
-              <p class="contact-submit-note">Submitting this form sends a consultation request; it does not schedule or confirm an appointment.</p>
             </div>
           </div>
 
@@ -1264,18 +1117,12 @@
       var serviceRequested=document.getElementById('service-requested');
       var errorSummary=document.getElementById('form-error-summary');
       var errorList=document.getElementById('form-error-list');
-      var dateOfBirth=document.getElementById('date-of-birth');
 
       var fields={
         fullName:{
           input:document.getElementById('full-name'),
           error:document.getElementById('full-name-error'),
           message:'Enter your full name.'
-        },
-        dateOfBirth:{
-          input:dateOfBirth,
-          error:document.getElementById('date-of-birth-error'),
-          message:'Enter your date of birth.'
         },
         email:{
           input:document.getElementById('email-address'),
@@ -1298,14 +1145,6 @@
           message:'Tell us briefly what you’re reaching out about.'
         }
       };
-
-      if(dateOfBirth){
-        var today=new Date();
-        var yyyy=today.getFullYear();
-        var mm=String(today.getMonth()+1).padStart(2,'0');
-        var dd=String(today.getDate()).padStart(2,'0');
-        dateOfBirth.max=yyyy+'-'+mm+'-'+dd;
-      }
 
       function syncServiceSelection(){
         if(!serviceCategory || !serviceRequested)return;
@@ -1345,25 +1184,12 @@
       function fieldErrorFor(fieldKey){
         var config=fields[fieldKey];
         if(!config || !config.input)return '';
-
         var value=(config.input.value||'').trim();
 
         if(config.input.required && !value)return config.message;
 
         if(fieldKey==='email' && value && !config.input.validity.valid){
           return 'Enter an email address in the format name@example.com.';
-        }
-
-        if(fieldKey==='dateOfBirth' && value){
-          if(!config.input.validity.valid){
-            return 'Enter a valid date of birth.';
-          }
-          var entered=new Date(value+'T00:00:00');
-          var now=new Date();
-          now.setHours(0,0,0,0);
-          if(Number.isNaN(entered.getTime()) || entered>now){
-            return 'Enter a valid date of birth.';
-          }
         }
 
         return '';
@@ -1446,14 +1272,10 @@
       }
 
       function showDeliveryError(message){
-        var errors=[{
-          key:'email',
-          message:message || 'The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.'
-        }];
         if(errorSummary && errorList){
           errorList.innerHTML='';
           var li=document.createElement('li');
-          li.textContent=errors[0].message;
+          li.textContent=message || 'The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.';
           errorList.appendChild(li);
           errorSummary.hidden=false;
           errorSummary.focus();
@@ -1483,7 +1305,6 @@
           serviceRequested:data.get('serviceRequested')||'',
           psychotherapyFormat:data.get('psychotherapyFormat')||'',
           fullName:data.get('fullName')||'',
-          dateOfBirth:data.get('dateOfBirth')||'',
           email:data.get('email')||'',
           phone:data.get('phone')||'',
           preferredContact:data.get('preferredContact')||'',
