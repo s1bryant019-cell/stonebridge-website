@@ -774,7 +774,124 @@
     .clinician-actions .btn{width:100%;justify-content:center}
   }
 </style>
-</head>
+<style id="stonebridge-team-brief-20260921">
+.team-hero-compact{
+  min-height:0!important;
+  background:var(--team-navy-deep)!important;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.team-hero-compact::before{display:none!important}
+.team-hero-compact .team-hero-copy{
+  width:min(1120px,calc(100% - 72px));
+  min-height:0!important;
+  padding:56px 0 60px!important;
+  justify-content:flex-start;
+}
+.team-hero-compact h1{max-width:14ch}
+.team-hero-compact .team-hero-copy>p{max-width:43rem}
+.team-hero-compact .team-hero-actions{margin-top:24px}
+.team-section{padding:56px 0 60px!important}
+.team-shell{width:min(1120px,calc(100% - 72px))!important}
+.team-intro{margin-bottom:24px!important}
+.team-intro h2{margin:12px 0 0!important;max-width:none!important;white-space:normal!important}
+.clinician-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:30px!important;
+  align-items:stretch!important;
+}
+.clinician-card{
+  display:flex!important;
+  flex-direction:column!important;
+  min-width:0!important;
+  min-height:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:1px solid var(--team-warm-line)!important;
+  border-radius:20px!important;
+  background:#fffdf9!important;
+  box-shadow:none!important;
+}
+.clinician-photo{
+  width:100%!important;
+  aspect-ratio:4 / 3!important;
+  margin:0!important;
+  overflow:hidden!important;
+  border-radius:0!important;
+  background:#e8e0d6!important;
+}
+.clinician-photo img{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  object-fit:cover!important;
+  object-position:center 18%!important;
+}
+.clinician-details{
+  flex:1 1 auto!important;
+  min-height:0!important;
+  padding:28px 30px 30px!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+.clinician-details h3{margin:10px 0 5px!important}
+.clinician-details>p{margin-top:14px!important}
+.clinician-actions{margin-top:auto!important;padding-top:22px!important}
+.team-secondary-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:30px;
+  margin-top:32px;
+  padding-top:28px;
+  border-top:1px solid var(--team-line);
+}
+.team-secondary-grid article{min-width:0}
+.team-secondary-grid article+article{
+  padding-left:30px;
+  border-left:1px solid var(--team-line);
+}
+.team-secondary-grid .team-label{padding-top:0}
+.team-secondary-grid .team-label::before{display:none}
+.team-secondary-grid p{
+  margin:10px 0 0;
+  color:var(--team-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.84rem;
+  line-height:1.55;
+}
+.team-secondary-grid a{
+  display:inline-block;
+  margin-top:10px;
+  color:var(--team-navy);
+  font-family:"Inter",sans-serif;
+  font-size:.78rem;
+  font-weight:700;
+  text-decoration:none;
+}
+.team-secondary-grid a:hover{text-decoration:underline;text-underline-offset:3px}
+.team-cta-inner{
+  width:min(1120px,calc(100% - 72px))!important;
+  padding:58px 0!important;
+}
+.team-cta h2{margin:0!important}
+@media(max-width:1024px){
+  .team-hero-compact .team-hero-copy,.team-shell,.team-cta-inner{width:min(100% - 48px,1120px)!important}
+  .team-section{padding:52px 0 56px!important}
+  .clinician-grid{gap:24px!important}
+  .clinician-details{padding:24px!important}
+}
+@media(max-width:760px){
+  .team-hero-compact .team-hero-copy,.team-shell,.team-cta-inner{width:min(100% - 34px,1120px)!important}
+  .team-hero-compact .team-hero-copy{padding:44px 0 46px!important}
+  .team-section{padding:42px 0 46px!important}
+  .clinician-grid{grid-template-columns:1fr!important;gap:22px!important}
+  .clinician-photo{aspect-ratio:4 / 3!important}
+  .team-secondary-grid{grid-template-columns:1fr;gap:22px;margin-top:24px;padding-top:22px}
+  .team-secondary-grid article+article{padding-left:0;padding-top:22px;border-left:0;border-top:1px solid var(--team-line)}
+  .team-cta-inner{grid-template-columns:1fr!important;gap:18px!important;padding:44px 0!important}
+  .team-cta .btn{width:100%;justify-content:center}
+}
+</style></head>
 
 <body class="team-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -818,32 +935,23 @@
   </header>
 
   <main id="main-content">
-    <section class="team-hero">
+    <section class="team-hero team-hero-compact">
       <div class="team-hero-copy">
         <div class="team-hero-rule"></div>
         <div class="team-kicker">Team</div>
         <h1>A small team, chosen with care.</h1>
-        <p>Stonebridge is building a thoughtful group of clinicians who share a commitment to relational outpatient care and clear boundaries.</p>
-
+        <p>Stonebridge clinicians provide relational, clinically grounded psychotherapy for adolescents, adults, couples, and families throughout Illinois.</p>
         <div class="team-hero-actions">
-          <a class="btn btn-primary" href="#clinicians">Meet the Clinicians</a>
-          <a class="btn btn-secondary" href="contact.html#inquiry-form">Request a Consultation</a>
+          <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
         </div>
       </div>
-
-      <figure class="team-hero-media">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="hero-team-consultation-960.webp 960w, hero-team-consultation-1600.webp 1600w, hero-team-consultation-2000.webp 2000w" sizes="100vw"><img alt="Warm, quiet clinical consultation space" decoding="async" fetchpriority="high" height="1116" src="hero-team-consultation.jpg" width="2000"/></picture>
-      </figure>
     </section>
 
     <section class="team-section" id="clinicians">
       <div class="team-shell">
         <div class="team-intro">
-          <div>
-            <div class="team-label">Clinician roster</div>
-            <h2>Learn more before choosing a next step.</h2>
-            <p>Review each clinician’s focus, style, and scope before requesting a consultation.</p>
-          </div>
+          <div class="team-label">Clinicians</div>
+          <h2>Meet the Stonebridge team.</h2>
         </div>
 
         <div class="clinician-grid" aria-label="Stonebridge clinicians">
@@ -878,18 +986,14 @@
           </article>
         </div>
 
-        <div class="team-utility-grid" aria-label="Team information">
+        <div class="team-secondary-grid" aria-label="Additional Stonebridge information">
           <article>
-            <strong>Finding the right fit</strong>
-            <p>Clinical needs, clinician expertise, availability, and telehealth appropriateness inform matching at Stonebridge.</p>
-          </article>
-          <article>
-            <strong>Stonebridge is growing</strong>
+            <div class="team-label">Stonebridge is growing</div>
             <p>We are building the clinician team deliberately rather than for volume.</p>
             <a href="careers.html">View current opportunities <span aria-hidden="true">→</span></a>
           </article>
           <article>
-            <strong>For professionals</strong>
+            <div class="team-label">For professionals</div>
             <p>Consultation, peer review, and education follow a separate professional pathway.</p>
             <a href="for-clinicians.html">View Professional Offerings <span aria-hidden="true">→</span></a>
           </article>
@@ -899,7 +1003,7 @@
 
     <section class="team-cta">
       <div class="team-cta-inner">
-        <div><h2>Interested in working with Stonebridge?</h2></div>
+        <h2>Interested in care at Stonebridge?</h2>
         <a class="btn btn-secondary" href="contact.html#inquiry-form">Request a Consultation</a>
       </div>
     </section>
