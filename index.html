@@ -43,7 +43,59 @@
       body.home-redesign .hero-utility-strip-separator{margin:0 28px;}
     }
   </style>
-</head>
+<style id="stonebridge-home-density-brief-20260921">
+.home-hero-trust{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0!important;
+  width:100%;
+  max-width:690px;
+  margin-top:22px!important;
+  padding:14px 0!important;
+  border-top:1px solid rgba(33,49,66,.14);
+  border-bottom:1px solid rgba(33,49,66,.14);
+}
+.home-trust-item{
+  min-width:0;
+  padding:0 16px!important;
+  border-left:1px solid rgba(33,49,66,.14);
+}
+.home-trust-item:first-child{padding-left:0!important;border-left:0}
+.home-trust-item:last-child{padding-right:0!important}
+.home-recognition{padding:64px 0!important}
+.home-recognition-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:28px 32px!important;
+  margin-top:28px!important;
+}
+.home-recognition-item{min-height:0!important;padding-top:0!important;padding-bottom:0!important}
+.home-recognition-item p{margin-top:8px!important}
+.home-services{padding:64px 0!important}
+.home-services-grid{gap:24px 28px!important;margin-top:28px!important}
+.home-service-card{min-height:0!important}
+.home-founder{padding-top:64px!important;padding-bottom:64px!important}
+.home-founder-grid{min-height:0!important}
+.home-final{padding-top:0!important;padding-bottom:0!important}
+.home-final-inner{padding-top:56px!important;padding-bottom:56px!important}
+@media(max-width:1024px){
+  .home-recognition,.home-services,.home-founder{padding-top:56px!important;padding-bottom:56px!important}
+  .home-recognition-grid{gap:24px!important}
+}
+@media(max-width:720px){
+  .home-hero-trust{grid-template-columns:1fr;margin-top:18px!important;padding:8px 0!important}
+  .home-trust-item,.home-trust-item:first-child,.home-trust-item:last-child{
+    padding:9px 0!important;
+    border-left:0;
+    border-top:1px solid rgba(33,49,66,.12);
+  }
+  .home-trust-item:first-child{border-top:0}
+  .home-recognition,.home-services,.home-founder{padding-top:44px!important;padding-bottom:44px!important}
+  .home-recognition-grid{grid-template-columns:1fr!important;gap:22px!important;margin-top:24px!important}
+  .home-services-grid{gap:20px!important;margin-top:24px!important}
+  .home-final-inner{padding-top:44px!important;padding-bottom:44px!important}
+}
+</style></head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -75,7 +127,7 @@
           <h1 id="home-hero-title"><span class="home-hero-line">A steadier place to</span> <span class="home-hero-line">begin therapy.</span></h1>
           <p class="home-hero-lede">Thoughtful outpatient care for people who feel overwhelmed, disconnected, or caught in patterns that keep returning.</p>
           <div>
-            <a class="home-primary-btn" href="contact.html#inquiry-form">Request a consultation</a>
+            <a class="home-primary-btn" href="contact.html#inquiry-form">Request a Consultation</a>
           </div>
 
           <div class="home-hero-trust" aria-label="Practice information">
@@ -199,7 +251,7 @@
       <div class="home-final-inner">
         <h2 class="home-final-title" id="final-title">Ready to take the next step?</h2>
         <p>Tell us a little about what you're looking for. Stonebridge will review your request and follow up about fit, availability, and next steps.</p>
-        <a class="home-primary-btn" href="contact.html#inquiry-form">Request a consultation</a>
+        <a class="home-primary-btn" href="contact.html#inquiry-form">Request a Consultation</a>
       </div>
     </section>
   </main>
