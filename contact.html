@@ -1062,8 +1062,9 @@
                     <span class="field-optional">Optional</span>
                   </label>
                   <select id="preferred-clinician" name="preferredClinician">
-                    <option value="">No preference</option>
-                    <option>Dr. Stephen W. Bryant</option>
+                    <option value="">No preference — help me determine fit</option>
+                    <option value="Dr. Stephen W. Bryant, PsyD, LCPC">Dr. Stephen W. Bryant, PsyD, LCPC</option>
+                    <option value="Jasmine Wilson, LPC">Jasmine Wilson, LPC</option>
                   </select>
                 </div>
 
@@ -1259,6 +1260,7 @@
       var submitButton=document.getElementById('submitButton');
       var serviceCategory=document.getElementById('service-category');
       var serviceRequested=document.getElementById('service-requested');
+      var preferredClinician=document.getElementById('preferred-clinician');
       var errorSummary=document.getElementById('form-error-summary');
       var errorList=document.getElementById('form-error-list');
       var dateOfBirth=document.getElementById('date-of-birth');
@@ -1311,9 +1313,19 @@
 
       if(serviceCategory) serviceCategory.addEventListener('change',syncServiceSelection);
 
-      var requestedService=new URLSearchParams(window.location.search).get('service');
+      var queryParams=new URLSearchParams(window.location.search);
+      var requestedService=queryParams.get('service');
       if(requestedService==='teen-group' && serviceCategory){
         serviceCategory.value='The Lobby — Group Therapy';
+      }
+
+      var requestedClinician=queryParams.get('clinician');
+      if(preferredClinician){
+        if(requestedClinician==='jasmine-wilson'){
+          preferredClinician.value='Jasmine Wilson, LPC';
+        }else if(requestedClinician==='stephen-bryant'){
+          preferredClinician.value='Dr. Stephen W. Bryant, PsyD, LCPC';
+        }
       }
       syncServiceSelection();
 
