@@ -116,6 +116,7 @@
   }
 
   function setHeroImage(selector, src, alt) {
+    if (document.body && document.body.hasAttribute('data-static-hero-system')) return;
     var img = document.querySelector(selector + ' img');
     if (!img) return;
     forceImage(img, src + '?v=' + VERSION, alt);
