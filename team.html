@@ -848,7 +848,16 @@
   }
 }
 </style>
-</head>
+<style id="team-roster-compact">
+.clinician-grid{align-items:stretch}
+.clinician-card:not(.featured){min-height:0}
+.clinician-card:not(.featured) .clinician-photo{aspect-ratio:4/3}
+.clinician-card:not(.featured) .clinician-photo img{object-position:center 18%}
+.clinician-card:not(.featured) .clinician-details{min-height:295px;padding:26px 28px 28px}
+.clinician-card:not(.featured) .clinician-details>p{margin-top:14px;font-size:.88rem;line-height:1.6}
+.clinician-card:not(.featured) .clinician-actions{margin-top:auto;padding-top:22px}
+@media(max-width:760px){.clinician-card:not(.featured) .clinician-details{min-height:0}}
+</style></head>
 
 <body class="team-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -930,58 +939,17 @@
         </div>
 
         <div class="clinician-grid">
-          <article class="clinician-card featured">
-            <figure class="clinician-photo">
-              <img alt="Dr. Stephen W. Bryant, PsyD, LCPC" decoding="async" height="1089" loading="lazy" src="dr-stephen-bryant-headshot.png?v=20260914f" width="812"/>
-            </figure>
+<article class="clinician-card">
+<figure class="clinician-photo"><img alt="Dr. Stephen W. Bryant, PsyD, LCPC" decoding="async" loading="lazy" src="dr-stephen-bryant-headshot.png?v=20260914f" width="812" height="1089"></figure>
+<div class="clinician-details"><div class="clinician-kicker">Founder · Illinois telehealth</div><h3>Stephen W. Bryant, PsyD, LCPC</h3><div class="clinician-role">Individual, couples, and family psychotherapist · Parent consultant</div><p>Relational psychotherapy for adolescents, adults, couples, and families, with particular depth in trauma, addiction, mood and anxiety concerns, and relationship patterns.</p><div class="clinician-actions"><a class="btn btn-primary" href="team-founder.html">Read Full Profile <span aria-hidden="true">→</span></a></div></div>
+</article>
+<article class="clinician-card">
+<figure class="clinician-photo"><img alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" decoding="async" loading="lazy" src="jasmine-wilson-team.webp?v=20260921b" width="480" height="360"></figure>
+<div class="clinician-details"><div class="clinician-kicker">Clinician · Illinois telehealth</div><h3>Jasmine Wilson, LPC</h3><div class="clinician-role">Licensed Professional Counselor · Postgraduate Clinical Associate</div><p>Individual psychotherapy for adolescents age 12+ and adults, with focus on trauma and complex stress, anxiety and depression, emotional regulation, life transitions, and self-worth.</p><div class="clinician-actions"><a class="btn btn-primary" href="team-jasmine-wilson.html">Read Full Profile <span aria-hidden="true">→</span></a></div></div>
+</article>
+</div>
 
-            <div class="clinician-details">
-              <div class="clinician-kicker">Founder · Illinois telehealth</div>
-              <h3>Stephen W. Bryant, PsyD, LCPC</h3>
-              <div class="clinician-role">Individual, couples, and family psychotherapist · Parent consultant</div>
-
-              <p>Dr. Bryant provides relational psychotherapy for adolescents, adults, couples, and families, along with parent consultation. His work integrates psychodynamic and evidence-based approaches for complex outpatient concerns.</p>
-
-              <ul class="clinician-focus" aria-label="Clinical areas of focus">
-                <li>Addiction and co-occurring concerns</li>
-                <li>Trauma and complex stress</li>
-                <li>Mood, anxiety, and emotional regulation</li>
-                <li>Couples, family, and parent work</li>
-              </ul>
-
-              <div class="clinician-actions">
-                <a class="btn btn-primary" href="team-founder.html">Read Full Profile</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="clinician-card featured">
-            <figure class="clinician-photo">
-              <img alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" decoding="async" height="480" loading="lazy" src="jasmine-wilson-team.webp" width="640"/>
-            </figure>
-
-            <div class="clinician-details">
-              <div class="clinician-kicker">Clinician · Illinois telehealth</div>
-              <h3>Jasmine Wilson, LPC</h3>
-              <div class="clinician-role">Licensed Professional Counselor · Postgraduate Clinical Associate</div>
-
-              <p>Jasmine provides individual psychotherapy for adolescents age 12+ and adults navigating trauma, anxiety, depression, stress, emotional overwhelm, life transitions, and recurring relationship or self-worth concerns. Her style is warm, collaborative, reflective, and direct.</p>
-
-              <ul class="clinician-focus" aria-label="Jasmine Wilson clinical areas of focus">
-                <li>Trauma and complex stress</li>
-                <li>Anxiety, depression, stress, and emotional regulation</li>
-                <li>Life transitions, identity, and self-worth</li>
-                <li>Relationship patterns and family stress</li>
-              </ul>
-
-              <div class="clinician-actions">
-                <a class="btn btn-primary" href="team-jasmine-wilson.html">Read Full Profile <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="team-growth-note">
+<div class="team-growth-note">
           <strong>Finding the right fit</strong>
           <p>Clinical needs, clinician expertise, availability, and telehealth appropriateness inform clinician matching at Stonebridge.</p>
         </div>
