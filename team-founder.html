@@ -3740,6 +3740,184 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+<style id="stonebridge-team-profile-hero-match-20260921">
+.profile-subpage-hero{
+  position:relative;
+  min-height:390px;
+  overflow:hidden;
+  isolation:isolate;
+  background:#102f4d;
+  color:#fffaf2;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.profile-subpage-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(16,47,77,.86) 0%,rgba(16,47,77,.78) 38%,rgba(16,47,77,.58) 66%,rgba(16,47,77,.34) 100%),
+    linear-gradient(180deg,rgba(16,47,77,.16) 0%,rgba(16,47,77,.04) 58%,rgba(16,47,77,.20) 100%);
+}
+.profile-subpage-hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  margin:0;
+}
+.profile-subpage-hero-bg img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.profile-subpage-hero-inner{
+  position:relative;
+  z-index:2;
+  width:min(1120px,calc(100% - 64px));
+  min-height:390px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 238px;
+  gap:52px;
+  align-items:center;
+  padding:32px 0;
+}
+.profile-subpage-copy{
+  min-width:0;
+  max-width:690px;
+}
+.profile-subpage-rule{
+  width:40px;
+  height:2px;
+  margin-bottom:14px;
+  background:#d3b57f;
+}
+.profile-subpage-kicker{
+  color:#e1c79c;
+  font-family:"Inter",sans-serif;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  line-height:1.35;
+  text-transform:uppercase;
+}
+.profile-subpage-title{
+  margin:8px 0 0;
+  max-width:16ch;
+  color:#fffaf2;
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2.65rem,3.35vw,3.45rem);
+  line-height:1.01;
+  letter-spacing:-.045em;
+  text-shadow:0 8px 24px rgba(0,0,0,.14);
+}
+.profile-subpage-meta{
+  margin-top:8px;
+  color:rgba(255,250,242,.84);
+  font-family:"Inter",sans-serif;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  line-height:1.45;
+  text-transform:uppercase;
+}
+.profile-subpage-role{
+  margin-top:3px;
+  color:rgba(255,250,242,.78);
+  font-family:"Inter",sans-serif;
+  font-size:.78rem;
+  font-weight:600;
+  line-height:1.4;
+}
+.profile-subpage-copy>p{
+  max-width:650px;
+  margin:13px 0 0;
+  color:rgba(255,250,242,.91);
+  font-family:"Inter",sans-serif;
+  font-size:.92rem;
+  line-height:1.55;
+}
+.profile-subpage-supervision{
+  padding-top:11px;
+  border-top:1px solid rgba(255,250,242,.22);
+  color:rgba(255,250,242,.88)!important;
+  font-size:.82rem!important;
+}
+.profile-subpage-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:17px;
+}
+.profile-subpage-actions .btn-primary{
+  background:#f4eee4;
+  border-color:#f4eee4;
+  color:#102f4d;
+}
+.profile-subpage-actions .btn-primary:hover{
+  background:#fffaf2;
+  border-color:#fffaf2;
+}
+.profile-subpage-headshot{
+  justify-self:end;
+  width:238px;
+  margin:0;
+}
+.profile-subpage-headshot-frame{
+  overflow:hidden;
+  width:100%;
+  aspect-ratio:4 / 5;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:16px;
+  background:#e9e1d6;
+  box-shadow:0 18px 42px rgba(0,0,0,.16);
+}
+.profile-subpage-headshot img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+.profile-subpage-headshot--jasmine img{
+  object-position:center 18%;
+}
+@media(max-width:900px){
+  .profile-subpage-hero-inner{
+    width:min(100% - 48px,1120px);
+    grid-template-columns:minmax(0,1fr) 210px;
+    gap:34px;
+  }
+  .profile-subpage-headshot{width:210px}
+}
+@media(max-width:760px){
+  .profile-subpage-hero{
+    min-height:0;
+  }
+  .profile-subpage-hero::before{
+    background:
+      linear-gradient(180deg,rgba(16,47,77,.84) 0%,rgba(16,47,77,.70) 58%,rgba(16,47,77,.80) 100%),
+      linear-gradient(90deg,rgba(16,47,77,.22) 0%,rgba(16,47,77,.10) 100%);
+  }
+  .profile-subpage-hero-inner{
+    width:min(100% - 40px,1120px);
+    min-height:0;
+    grid-template-columns:1fr;
+    gap:22px;
+    padding:30px 0 32px;
+  }
+  .profile-subpage-headshot{
+    justify-self:start;
+    width:min(210px,58vw);
+  }
+  .profile-subpage-copy>p{
+    font-size:.9rem;
+  }
+}
+</style>
 </head>
 <body class="sbx-site sbx-founder-page" data-static-hero-system="true"><a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header compact-site-header">
@@ -3777,73 +3955,35 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </div>
 </header>
 <main class="founder-page" id="main-content">
-<section class="founder-intro sb-standard-hero" id="overview">
-<div class="founder-intro-inner">
-<div class="founder-intro-copy sb-standard-hero-copy">
-<div class="founder-rule"></div>
-<div class="founder-kicker">Founder Profile</div>
-<h1 class="founder-title">Dr. <span class="founder-name-lock">Stephen W. Bryant</span></h1>
-<div class="founder-subtitle">PsyD, LCPC · Founder</div>
-<p>Dr. Bryant provides individual, couples, and family psychotherapy for adolescents and adults, along with parent support. His work is psychodynamic and relational at the foundation, with evidence-based approaches integrated according to each client’s needs.</p>
-<div class="founder-actions">
-<a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
-</div>
+<section class="profile-subpage-hero" id="overview">
+  <figure class="profile-subpage-hero-bg" aria-hidden="true">
+    <img src="profile-nature-hero.jpg" alt="" width="2000" height="1116" fetchpriority="high" decoding="async">
+  </figure>
 
-</div>
-<figure aria-label="Portrait of Dr. Stephen Bryant" class="founder-portrait founder-portrait-integrated sb-standard-hero-media">
-<div class="portrait-frame">
-<picture>
-<source type="image/webp" srcset="founder-environmental-wide.webp 1448w" sizes="100vw">
-<img alt="Dr. Stephen W. Bryant seated in an office" decoding="async" fetchpriority="high" height="1086" src="founder-environmental.png" width="1448"/>
-</picture>
-</div>
-</figure>
-</div>
+  <div class="profile-subpage-hero-inner">
+    <div class="profile-subpage-copy">
+      <div class="profile-subpage-rule"></div>
+      <div class="profile-subpage-kicker">Founder Profile</div>
+      <h1 class="profile-subpage-title">Dr. Stephen W. Bryant</h1>
+      <div class="profile-subpage-meta">PsyD, LCPC · Founder</div>
+      <p>Dr. Bryant provides individual, couples, and family psychotherapy for adolescents and adults, along with parent support. His work is psychodynamic and relational at the foundation, with evidence-based approaches integrated according to each client’s needs.</p>
+      <div class="profile-subpage-actions">
+        <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
+      </div>
+    </div>
+
+    <figure class="profile-subpage-headshot" aria-label="Portrait of Dr. Stephen W. Bryant">
+      <div class="profile-subpage-headshot-frame">
+        <img src="dr-stephen-bryant-headshot.png?v=20260914f" alt="Dr. Stephen W. Bryant, PsyD, LCPC" width="812" height="1089" fetchpriority="high" decoding="async">
+      </div>
+    </figure>
+  </div>
 </section>
 <section class="sb-utility-strip sb-utility-strip--beige" aria-label="Founder information">
   <div class="sb-utility-strip__inner">
     <span class="sb-utility-strip__item">Illinois telehealth</span>
     <span class="sb-utility-strip__item">Relational + psychodynamic</span>
     <span class="sb-utility-strip__item">Evidence-based integration</span>
-  </div>
-</section>
-<section class="founder-brief-summary" aria-label="Dr. Bryant care summary">
-  <div class="founder-brief-summary-inner">
-    <div class="founder-brief-location">Illinois telehealth</div>
-    <div class="founder-brief-grid">
-      <article>
-        <h2>Care</h2>
-        <ul>
-          <li>Adolescents</li>
-          <li>Adults</li>
-          <li>Couples</li>
-          <li>Families</li>
-          <li>Parent support</li>
-        </ul>
-      </article>
-      <article>
-        <h2>Clinical focus</h2>
-        <ul>
-          <li>Addiction &amp; co-occurring concerns</li>
-          <li>Trauma, PTSD &amp; complex stress</li>
-          <li>Mood, anxiety &amp; emotional regulation</li>
-          <li>Relationship patterns</li>
-        </ul>
-      </article>
-      <article>
-        <h2>Approach</h2>
-        <ul>
-          <li>Psychodynamic</li>
-          <li>Relational</li>
-          <li>CBT</li>
-          <li>ACT</li>
-          <li>DBT</li>
-          <li>Motivational interviewing</li>
-          <li>Trauma-informed</li>
-          <li>Attachment-based</li>
-        </ul>
-      </article>
-    </div>
   </div>
 </section>
 <section class="founder-focus-compact" id="clinical-focus">
