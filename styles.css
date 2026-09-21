@@ -2949,3 +2949,130 @@ body{background:var(--home-bg);}
     font-size:clamp(2.25rem,10vw,3rem)!important;
   }
 }
+
+/* Specificity lock so page-local legacy hero rules cannot override the shared system. */
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero{
+  position:relative!important;
+  min-height:350px!important;
+  height:auto!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:#102F4D!important;
+}
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  display:block!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(90deg,rgba(16,47,77,.94) 0%,rgba(16,47,77,.88) 28%,rgba(16,47,77,.64) 50%,rgba(16,47,77,.30) 72%,rgba(16,47,77,.12) 100%),
+    linear-gradient(180deg,rgba(16,47,77,.16) 0%,rgba(16,47,77,.04) 58%,rgba(16,47,77,.22) 100%)!important;
+}
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::after{display:none!important}
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero > .team-page-hero-inner,
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero > .contact-page-hero-inner,
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero > .founder-intro-inner,
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero > .cp-intro-inner{
+  display:contents!important;
+}
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy{
+  position:relative!important;
+  z-index:2!important;
+  width:min(1120px,calc(100% - 64px))!important;
+  max-width:none!important;
+  min-height:350px!important;
+  margin:0 auto!important;
+  padding:34px 0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  color:#FFFAF2!important;
+}
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media{
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  min-height:350px!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:0!important;
+  border-radius:0!important;
+  background:#102F4D!important;
+  box-shadow:none!important;
+}
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media picture,
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media .portrait-frame,
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media .cp-portrait-frame{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  aspect-ratio:auto!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:350px!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  border-radius:0!important;
+  filter:none!important;
+}
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy h1,
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy .founder-title{
+  max-width:16ch!important;
+  color:#FFFAF2!important;
+  font-size:clamp(2.65rem,3.35vw,3.45rem)!important;
+  line-height:1.01!important;
+  letter-spacing:-.045em!important;
+  text-shadow:0 8px 24px rgba(0,0,0,.14)!important;
+}
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy > p{
+  max-width:640px!important;
+  margin-top:14px!important;
+  color:rgba(255,250,242,.90)!important;
+  font-size:.95rem!important;
+  line-height:1.56!important;
+}
+@media(max-width:900px){
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero,
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy,
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media,
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media img{
+    min-height:340px!important;
+  }
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy{
+    width:min(100% - 48px,1120px)!important;
+    padding:32px 0!important;
+  }
+}
+@media(max-width:760px){
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero,
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy,
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media,
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media img{
+    min-height:360px!important;
+  }
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
+    background:
+      linear-gradient(180deg,rgba(16,47,77,.88) 0%,rgba(16,47,77,.72) 58%,rgba(16,47,77,.84) 100%),
+      linear-gradient(90deg,rgba(16,47,77,.30) 0%,rgba(16,47,77,.12) 100%)!important;
+  }
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy{
+    width:min(100% - 40px,1120px)!important;
+    padding:30px 0!important;
+  }
+}
