@@ -2698,3 +2698,70 @@ body{background:var(--home-bg);}
   .clinicians-page .clinicians-scope-row{grid-template-columns:minmax(0,1fr)!important}
   .clinicians-page .clinicians-scope-row>*{min-width:0}
 }
+
+/* =========================================================
+   STONEBRIDGE SECOND-PASS SYSTEM — September 2026
+   Shared palette and utility strips.
+========================================================= */
+:root{
+  --sb-navy:#102F4D;
+  --sb-cream:#FAF5EF;
+  --sb-beige:#E8DDCE;
+}
+.sb-utility-strip{
+  min-height:30px;
+  display:flex;
+  align-items:center;
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:.72rem;
+  font-weight:500;
+  line-height:1.25;
+  letter-spacing:.015em;
+}
+.sb-utility-strip--navy{
+  background:var(--sb-navy);
+  color:#FFF8EF;
+}
+.sb-utility-strip--beige{
+  background:var(--sb-beige);
+  color:var(--sb-navy);
+}
+.sb-utility-strip__inner{
+  width:min(1120px,calc(100% - 64px));
+  min-height:30px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+}
+.sb-utility-strip__item{
+  display:inline-flex;
+  align-items:center;
+  min-width:0;
+  white-space:nowrap;
+}
+.sb-utility-strip__item + .sb-utility-strip__item::before{
+  content:"•";
+  margin:0 16px;
+  opacity:.68;
+}
+@media(max-width:1024px){
+  .sb-utility-strip__inner{width:min(100% - 48px,1120px)}
+}
+@media(max-width:760px){
+  .sb-utility-strip{
+    min-height:0;
+    padding:10px 20px;
+    font-size:.72rem;
+  }
+  .sb-utility-strip__inner{
+    width:100%;
+    min-height:0;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    row-gap:6px;
+  }
+  .sb-utility-strip__item{white-space:normal}
+  .sb-utility-strip__item + .sb-utility-strip__item::before{margin:0 10px}
+}
