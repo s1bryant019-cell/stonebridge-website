@@ -51,7 +51,6 @@
 
     .team-page .skip-link:focus{top:12px;}
 
-    /* Full-width photographic hero with a softer orientation band beneath it. */
     .team-hero{
       position:relative;
       min-height:480px;
@@ -283,11 +282,11 @@
       line-height:1.66;
     }
 
-    /* The roster is intentionally a card system because each clinician is one distinct profile. */
     .clinician-grid{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:28px;
+      align-items:stretch;
     }
 
     .clinician-card{
@@ -296,17 +295,14 @@
       border:1px solid var(--team-warm-line);
       border-radius:20px;
       background:#fffdf9;
-    }
-
-    .clinician-card.featured{
-      grid-column:1 / -1;
-      display:grid;
-      grid-template-columns:minmax(280px,34%) minmax(0,1fr);
-      min-height:430px;
+      display:flex;
+      flex-direction:column;
+      min-height:0;
     }
 
     .clinician-photo{
-      min-height:100%;
+      aspect-ratio:4 / 3;
+      min-height:0;
       margin:0;
       overflow:hidden;
       background:#e8e0d6;
@@ -317,21 +313,23 @@
       height:100%;
       display:block;
       object-fit:cover;
-      object-position:center top;
+      object-position:center 18%;
     }
 
     .clinician-details{
+      flex:1;
       display:flex;
       flex-direction:column;
-      justify-content:center;
-      padding:40px 44px;
+      justify-content:flex-start;
+      min-height:295px;
+      padding:26px 28px 28px;
     }
 
     .clinician-details h3{
       margin:10px 0 5px;
       color:var(--team-ink);
       font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(2.25rem,3vw,3rem);
+      font-size:2rem;
       line-height:1.02;
       letter-spacing:-.035em;
       text-wrap:balance;
@@ -347,71 +345,16 @@
 
     .clinician-details > p{
       max-width:43rem;
-      margin:17px 0 0;
+      margin:14px 0 0;
       color:var(--team-muted);
       font-family:"Inter",sans-serif;
-      font-size:.93rem;
-      line-height:1.68;
-    }
-
-    .clinician-focus{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:0 26px;
-      margin:22px 0 0;
-      padding:0;
-      list-style:none;
-      border-top:1px solid var(--team-line);
-    }
-
-    .clinician-focus li{
-      position:relative;
-      padding:11px 0 11px 17px;
-      border-bottom:1px solid var(--team-line);
-      color:var(--team-muted);
-      font-family:"Inter",sans-serif;
-      font-size:.84rem;
-      line-height:1.45;
-    }
-
-    .clinician-focus li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:1.05rem;
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:#b89661;
+      font-size:.88rem;
+      line-height:1.6;
     }
 
     .clinician-actions{
-      margin-top:24px;
-    }
-
-    /* Future standard clinician cards can be added without changing the roster grid. */
-    .clinician-card:not(.featured){
-      display:flex;
-      flex-direction:column;
-    }
-
-    .clinician-card:not(.featured) .clinician-photo{
-      aspect-ratio:4 / 3;
-      min-height:0;
-    }
-
-    .clinician-card:not(.featured) .clinician-details{
-      flex:1;
-      justify-content:flex-start;
-      padding:28px;
-    }
-
-    .clinician-card:not(.featured) .clinician-details h3{
-      font-size:2rem;
-    }
-
-    .clinician-card:not(.featured) .clinician-focus{
-      grid-template-columns:1fr;
+      margin-top:auto;
+      padding-top:22px;
     }
 
     .team-growth-note{
@@ -439,7 +382,6 @@
       font-size:.89rem;
       line-height:1.6;
     }
-
 
     .team-professional-note{
       display:grid;
@@ -521,48 +463,7 @@
       box-shadow:0 0 0 5px var(--team-navy-deep);
     }
 
-    @media(min-width:1081px) and (max-width:1260px){
-      .team-hero-copy{
-        width:min(100% - 72px,1120px);
-      }
-
-      .team-hero h1{
-        font-size:clamp(3.15rem,4.15vw,4.25rem);
-      }
-
-      .clinician-details{
-        padding:34px 36px;
-      }
-    }
-
     @media(max-width:1080px){
-      .team-hero,
-      .team-hero-copy{
-        min-height:500px;
-      }
-
-      .team-hero-copy{
-        width:min(100% - 44px,860px);
-        padding:46px 0 42px;
-      }
-
-      .team-hero::before{
-        background:
-          linear-gradient(
-            90deg,
-            rgba(12,31,49,.94) 0%,
-            rgba(12,31,49,.86) 38%,
-            rgba(12,31,49,.58) 72%,
-            rgba(12,31,49,.28) 100%
-          ),
-          linear-gradient(
-            180deg,
-            rgba(10,24,38,.14) 0%,
-            rgba(10,24,38,.04) 56%,
-            rgba(10,24,38,.28) 100%
-          );
-      }
-
       .team-overview-grid,
       .team-growth-note,
       .team-professional-note,
@@ -576,21 +477,9 @@
         gap:14px;
       }
 
-      .clinician-card.featured{
-        grid-template-columns:minmax(250px,38%) minmax(0,1fr);
-      }
-
-      .clinician-details{
-        padding:32px;
-      }
-
       .team-intro h2{
         max-width:16ch;
         white-space:normal;
-      }
-
-      .clinician-focus{
-        grid-template-columns:1fr;
       }
     }
 
@@ -666,18 +555,8 @@
         grid-template-columns:1fr;
       }
 
-      .clinician-card.featured{
-        grid-column:auto;
-        grid-template-columns:1fr;
-        min-height:0;
-      }
-
-      .clinician-card.featured .clinician-photo{
-        aspect-ratio:4 / 3;
-        min-height:0;
-      }
-
       .clinician-details{
+        min-height:0;
         padding:26px 22px 28px;
       }
 
@@ -685,7 +564,7 @@
         font-size:clamp(2rem,9vw,2.6rem);
       }
     }
-  
+
     .team-careers-path{
       display:flex;
       align-items:center;
@@ -722,142 +601,36 @@
         gap:7px;
       }
     }
-
   </style>
 
 <style id="stonebridge-services-dropdown-shared">
-/* Shared Services navigation. Kept inline so this update changes HTML files only. */
-.site-header.compact-site-header .services-nav-dropdown{
-  position:relative;
-  display:flex!important;
-  align-items:center;
-}
-.services-nav-main{
-  display:flex;
-  align-items:center;
-  min-height:34px;
-}
-.site-header.compact-site-header .services-nav-main > a{min-height:34px;}
-.services-menu-toggle{
-  width:28px;
-  height:34px;
-  margin-left:1px;
-  padding:0;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:0;
-  border-radius:7px;
-  background:transparent;
-  color:#5d6870;
-  cursor:pointer;
-}
-.services-menu-toggle svg{
-  width:16px;
-  height:16px;
-  transition:transform .16s ease;
-}
-.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
-.site-header.compact-site-header .services-dropdown-menu{
-  position:absolute;
-  top:calc(100% + 10px);
-  left:-14px;
-  z-index:80;
-  width:248px;
-  min-width:248px;
-  padding:9px;
-  display:grid!important;
-  gap:1px;
-  border:1px solid rgba(212,200,185,.88);
-  border-radius:12px;
-  background:rgba(255,252,247,.99);
-  box-shadow:0 18px 44px rgba(16,47,77,.14);
-}
-.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
-.services-dropdown-menu::before{
-  content:"";
-  position:absolute;
-  top:-7px;
-  left:72px;
-  width:12px;
-  height:12px;
-  transform:rotate(45deg);
-  border-left:1px solid rgba(212,200,185,.88);
-  border-top:1px solid rgba(212,200,185,.88);
-  background:#fffaf4;
-}
-.site-header.compact-site-header .services-dropdown-menu a{
-  position:relative;
-  z-index:1;
-  min-height:0;
-  padding:9px 11px;
-  border-radius:7px;
-  color:#5d6870;
-  font-size:.83rem;
-  line-height:1.25;
-  white-space:normal;
-}
+.site-header.compact-site-header .services-nav-dropdown{position:relative;display:flex!important;align-items:center}
+.services-nav-main{display:flex;align-items:center;min-height:34px}
+.site-header.compact-site-header .services-nav-main > a{min-height:34px}
+.services-menu-toggle{width:28px;height:34px;margin-left:1px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:7px;background:transparent;color:#5d6870;cursor:pointer}
+.services-menu-toggle svg{width:16px;height:16px;transition:transform .16s ease}
+.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg)}
+.site-header.compact-site-header .services-dropdown-menu{position:absolute;top:calc(100% + 10px);left:-14px;z-index:80;width:248px;min-width:248px;padding:9px;display:grid!important;gap:1px;border:1px solid rgba(212,200,185,.88);border-radius:12px;background:rgba(255,252,247,.99);box-shadow:0 18px 44px rgba(16,47,77,.14)}
+.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important}
+.services-dropdown-menu::before{content:"";position:absolute;top:-7px;left:72px;width:12px;height:12px;transform:rotate(45deg);border-left:1px solid rgba(212,200,185,.88);border-top:1px solid rgba(212,200,185,.88);background:#fffaf4}
+.site-header.compact-site-header .services-dropdown-menu a{position:relative;z-index:1;min-height:0;padding:9px 11px;border-radius:7px;color:#5d6870;font-size:.83rem;line-height:1.25;white-space:normal}
 .site-header.compact-site-header .services-dropdown-menu a:hover,
 .site-header.compact-site-header .services-dropdown-menu a:focus-visible,
-.site-header.compact-site-header .services-dropdown-menu a.active-sub{
-  background:#f1ebe3;
-  color:#213142;
-}
-.services-menu-toggle:hover{
-  color:#213142;
-  background:rgba(22,59,97,.06);
-}
-.services-menu-toggle:focus-visible{
-  outline:3px solid #fffaf2;
-  outline-offset:1px;
-  box-shadow:0 0 0 5px #102f4d;
-}
-@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
+.site-header.compact-site-header .services-dropdown-menu a.active-sub{background:#f1ebe3;color:#213142}
+.services-menu-toggle:hover{color:#213142;background:rgba(22,59,97,.06)}
+.services-menu-toggle:focus-visible{outline:3px solid #fffaf2;outline-offset:1px;box-shadow:0 0 0 5px #102f4d}
+@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none}}
 @media(max-width:960px){
-  .site-header.compact-site-header .services-nav-dropdown{
-    width:100%;
-    display:block!important;
-  }
-  .services-nav-main{
-    width:100%;
-    justify-content:space-between;
-  }
-  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
-  .services-menu-toggle{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-  }
-  .site-header.compact-site-header .services-dropdown-menu{
-    position:static;
-    width:100%;
-    min-width:0;
-    margin:3px 0 2px;
-    padding:4px 0 2px 13px;
-    gap:0;
-    border:0;
-    border-left:1px solid rgba(33,49,66,.17);
-    border-radius:0;
-    background:transparent;
-    box-shadow:none;
-  }
-  .services-dropdown-menu::before{display:none;}
-  .site-header.compact-site-header .services-dropdown-menu a{
-    padding:8px 10px;
-    font-size:.85rem;
-  }
+  .site-header.compact-site-header .services-nav-dropdown{width:100%;display:block!important}
+  .services-nav-main{width:100%;justify-content:space-between}
+  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto}
+  .services-menu-toggle{width:38px;height:38px;flex:0 0 38px}
+  .site-header.compact-site-header .services-dropdown-menu{position:static;width:100%;min-width:0;margin:3px 0 2px;padding:4px 0 2px 13px;gap:0;border:0;border-left:1px solid rgba(33,49,66,.17);border-radius:0;background:transparent;box-shadow:none}
+  .services-dropdown-menu::before{display:none}
+  .site-header.compact-site-header .services-dropdown-menu a{padding:8px 10px;font-size:.85rem}
 }
 </style>
-<style id="team-roster-compact">
-.clinician-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:stretch}
-.clinician-card:not(.featured){min-height:0}
-.clinician-card:not(.featured) .clinician-photo{aspect-ratio:4/3}
-.clinician-card:not(.featured) .clinician-photo img{object-position:center 18%}
-.clinician-card:not(.featured) .clinician-details{min-height:295px;padding:26px 28px 28px}
-.clinician-card:not(.featured) .clinician-details>p{margin-top:14px;font-size:.88rem;line-height:1.6}
-.clinician-card:not(.featured) .clinician-actions{margin-top:auto;padding-top:22px}
-@media(max-width:760px){.clinician-card:not(.featured) .clinician-details{min-height:0}}
-</style></head>
+</head>
 
 <body class="team-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -939,17 +712,34 @@
         </div>
 
         <div class="clinician-grid">
-<article class="clinician-card">
-<figure class="clinician-photo"><img alt="Dr. Stephen W. Bryant, PsyD, LCPC" decoding="async" loading="lazy" src="dr-stephen-bryant-headshot.png?v=20260914f" width="812" height="1089"></figure>
-<div class="clinician-details"><div class="clinician-kicker">Founder · Illinois telehealth</div><h3>Stephen W. Bryant, PsyD, LCPC</h3><div class="clinician-role">Individual, couples, and family psychotherapist · Parent consultant</div><p>Relational psychotherapy for adolescents, adults, couples, and families, with particular depth in trauma, addiction, mood and anxiety concerns, and relationship patterns.</p><div class="clinician-actions"><a class="btn btn-primary" href="team-founder.html">Read Full Profile <span aria-hidden="true">→</span></a></div></div>
-</article>
-<article class="clinician-card">
-<figure class="clinician-photo"><img alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" decoding="async" loading="lazy" src="jasmine-wilson-team.webp?v=20260921b" width="480" height="360"></figure>
-<div class="clinician-details"><div class="clinician-kicker">Clinician · Illinois telehealth</div><h3>Jasmine Wilson, LPC</h3><div class="clinician-role">Licensed Professional Counselor · Postgraduate Clinical Associate</div><p>Individual psychotherapy for adolescents age 12+ and adults, with focus on trauma and complex stress, anxiety and depression, emotional regulation, life transitions, and self-worth.</p><div class="clinician-actions"><a class="btn btn-primary" href="team-jasmine-wilson.html">Read Full Profile <span aria-hidden="true">→</span></a></div></div>
-</article>
-</div>
+          <article class="clinician-card">
+            <figure class="clinician-photo">
+              <img alt="Dr. Stephen W. Bryant, PsyD, LCPC" decoding="async" loading="lazy" src="dr-stephen-bryant-headshot.png?v=20260914f" width="812" height="1089">
+            </figure>
+            <div class="clinician-details">
+              <div class="clinician-kicker">Founder · Illinois telehealth</div>
+              <h3>Stephen W. Bryant, PsyD, LCPC</h3>
+              <div class="clinician-role">Individual, couples, and family psychotherapist · Parent consultant</div>
+              <p>Relational psychotherapy for adolescents, adults, couples, and families, with particular depth in trauma, addiction, mood and anxiety concerns, and relationship patterns.</p>
+              <div class="clinician-actions"><a class="btn btn-primary" href="team-founder.html">Read Full Profile <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
 
-<div class="team-growth-note">
+          <article class="clinician-card">
+            <figure class="clinician-photo">
+              <img alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" decoding="async" loading="lazy" src="jasmine-wilson-headshot.png" width="1122" height="1402">
+            </figure>
+            <div class="clinician-details">
+              <div class="clinician-kicker">Clinician · Illinois telehealth</div>
+              <h3>Jasmine Wilson, LPC</h3>
+              <div class="clinician-role">Licensed Professional Counselor · Postgraduate Clinical Associate</div>
+              <p>Individual psychotherapy for adolescents age 12+ and adults, with focus on trauma and complex stress, anxiety and depression, emotional regulation, life transitions, and self-worth.</p>
+              <div class="clinician-actions"><a class="btn btn-primary" href="team-jasmine-wilson.html">Read Full Profile <span aria-hidden="true">→</span></a></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="team-growth-note">
           <strong>Finding the right fit</strong>
           <p>Clinical needs, clinician expertise, availability, and telehealth appropriateness inform clinician matching at Stonebridge.</p>
         </div>
@@ -968,9 +758,7 @@
 
     <section class="team-cta">
       <div class="team-cta-inner">
-        <div>
-          <h2>Interested in working with Stonebridge?</h2>
-        </div>
+        <div><h2>Interested in working with Stonebridge?</h2></div>
         <a class="btn btn-secondary" href="contact.html#inquiry-form">Request a Consultation</a>
       </div>
     </section>
@@ -983,7 +771,6 @@
         <div class="footer-sub">Psychological Group</div>
         <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
       </div>
-
       <div>
         <div class="footer-title">Care</div>
         <div class="footer-links">
@@ -992,7 +779,6 @@
           <a href="contact.html">New Clients</a>
         </div>
       </div>
-
       <div>
         <div class="footer-title">Practice</div>
         <div class="footer-links">
@@ -1003,30 +789,26 @@
           <a href="portal.html">Client Portal</a>
         </div>
       </div>
-
       <div>
         <div class="footer-title">Contact</div>
         <div class="footer-links">
           <span>Serving Illinois via telehealth</span>
           <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
           <a href="tel:+17734171688">(773) 417-1688</a>
-          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
-          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
       </div>
-
       <div class="footer-logo-right">
         <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
       </div>
     </div>
-
     <div class="container footer-bottom">
       <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
       <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
     </div>
   </footer>
 
-  
 <script id="stonebridge-services-dropdown-script">
 (function(){
   function initServicesDropdown(){
@@ -1043,46 +825,15 @@
       panel.hidden=!open;
       if(open && focusFirst && items.length) items[0].focus();
     }
-    toggle.addEventListener('click',function(){
-      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
-    });
-    toggle.addEventListener('keydown',function(event){
-      if(event.key==='ArrowDown'){
-        event.preventDefault();
-        setOpen(true,true);
-      }else if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-      }
-    });
+    toggle.addEventListener('click',function(){setOpen(toggle.getAttribute('aria-expanded')!=='true',false);});
     panel.addEventListener('keydown',function(event){
       var current=items.indexOf(document.activeElement);
-      if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-        toggle.focus();
-      }else if(event.key==='ArrowDown'){
-        event.preventDefault();
-        items[(current+1+items.length)%items.length].focus();
-      }else if(event.key==='ArrowUp'){
-        event.preventDefault();
-        items[(current-1+items.length)%items.length].focus();
-      }else if(event.key==='Home'){
-        event.preventDefault();
-        items[0].focus();
-      }else if(event.key==='End'){
-        event.preventDefault();
-        items[items.length-1].focus();
-      }
+      if(event.key==='Escape'){event.preventDefault();setOpen(false,false);toggle.focus();}
+      else if(event.key==='ArrowDown'){event.preventDefault();items[(current+1+items.length)%items.length].focus();}
+      else if(event.key==='ArrowUp'){event.preventDefault();items[(current-1+items.length)%items.length].focus();}
     });
     items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
     document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
-    document.addEventListener('keydown',function(event){
-      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
-        setOpen(false,false);
-        toggle.focus();
-      }
-    });
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
   else initServicesDropdown();

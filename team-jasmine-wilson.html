@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 <style id="stonebridge-clinician-profile">
 :root{
   --cp-bg:#f8f5f0;--cp-soft:#f1ebe3;--cp-paper:#fffdf9;--cp-navy:#163b61;--cp-deep:#102f4d;
@@ -37,7 +38,7 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-ink)}
 .cp-hero-actions{margin-top:22px}
 .cp-hero-actions .btn-primary{background:#f4eee4;border-color:#f4eee4;color:var(--cp-deep)}
 .cp-portrait{margin:0;overflow:hidden;border:1px solid rgba(255,255,255,.18);border-radius:20px;background:rgba(255,255,255,.05);box-shadow:0 20px 42px rgba(0,0,0,.18)}
-.cp-portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%}
+.cp-portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%}
 .cp-band{background:#eee7de;border-bottom:1px solid var(--cp-warm-line)}
 .cp-band-inner{width:min(1080px,calc(100% - 72px));margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:17px 0}
 .cp-band article{padding:0 24px;border-left:1px solid var(--cp-line)}
@@ -115,130 +116,36 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-ink)}
   .cp-final-action .btn{width:100%;justify-content:center;text-align:center}
 }
 </style>
+
 <style id="stonebridge-services-dropdown-shared">
-/* Shared Services navigation. Kept inline so this update changes HTML files only. */
-.site-header.compact-site-header .services-nav-dropdown{
-  position:relative;
-  display:flex!important;
-  align-items:center;
-}
-.services-nav-main{
-  display:flex;
-  align-items:center;
-  min-height:34px;
-}
-.site-header.compact-site-header .services-nav-main > a{min-height:34px;}
-.services-menu-toggle{
-  width:28px;
-  height:34px;
-  margin-left:1px;
-  padding:0;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:0;
-  border-radius:7px;
-  background:transparent;
-  color:#5d6870;
-  cursor:pointer;
-}
-.services-menu-toggle svg{
-  width:16px;
-  height:16px;
-  transition:transform .16s ease;
-}
-.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg);}
-.site-header.compact-site-header .services-dropdown-menu{
-  position:absolute;
-  top:calc(100% + 10px);
-  left:-14px;
-  z-index:80;
-  width:248px;
-  min-width:248px;
-  padding:9px;
-  display:grid!important;
-  gap:1px;
-  border:1px solid rgba(212,200,185,.88);
-  border-radius:12px;
-  background:rgba(255,252,247,.99);
-  box-shadow:0 18px 44px rgba(16,47,77,.14);
-}
-.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important;}
-.services-dropdown-menu::before{
-  content:"";
-  position:absolute;
-  top:-7px;
-  left:72px;
-  width:12px;
-  height:12px;
-  transform:rotate(45deg);
-  border-left:1px solid rgba(212,200,185,.88);
-  border-top:1px solid rgba(212,200,185,.88);
-  background:#fffaf4;
-}
-.site-header.compact-site-header .services-dropdown-menu a{
-  position:relative;
-  z-index:1;
-  min-height:0;
-  padding:9px 11px;
-  border-radius:7px;
-  color:#5d6870;
-  font-size:.83rem;
-  line-height:1.25;
-  white-space:normal;
-}
+.site-header.compact-site-header .services-nav-dropdown{position:relative;display:flex!important;align-items:center}
+.services-nav-main{display:flex;align-items:center;min-height:34px}
+.site-header.compact-site-header .services-nav-main > a{min-height:34px}
+.services-menu-toggle{width:28px;height:34px;margin-left:1px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:7px;background:transparent;color:#5d6870;cursor:pointer}
+.services-menu-toggle svg{width:16px;height:16px;transition:transform .16s ease}
+.services-nav-dropdown.is-open .services-menu-toggle svg{transform:rotate(180deg)}
+.site-header.compact-site-header .services-dropdown-menu{position:absolute;top:calc(100% + 10px);left:-14px;z-index:80;width:248px;min-width:248px;padding:9px;display:grid!important;gap:1px;border:1px solid rgba(212,200,185,.88);border-radius:12px;background:rgba(255,252,247,.99);box-shadow:0 18px 44px rgba(16,47,77,.14)}
+.site-header.compact-site-header .services-dropdown-menu[hidden]{display:none!important}
+.services-dropdown-menu::before{content:"";position:absolute;top:-7px;left:72px;width:12px;height:12px;transform:rotate(45deg);border-left:1px solid rgba(212,200,185,.88);border-top:1px solid rgba(212,200,185,.88);background:#fffaf4}
+.site-header.compact-site-header .services-dropdown-menu a{position:relative;z-index:1;min-height:0;padding:9px 11px;border-radius:7px;color:#5d6870;font-size:.83rem;line-height:1.25;white-space:normal}
 .site-header.compact-site-header .services-dropdown-menu a:hover,
 .site-header.compact-site-header .services-dropdown-menu a:focus-visible,
-.site-header.compact-site-header .services-dropdown-menu a.active-sub{
-  background:#f1ebe3;
-  color:#213142;
-}
-.services-menu-toggle:hover{
-  color:#213142;
-  background:rgba(22,59,97,.06);
-}
-.services-menu-toggle:focus-visible{
-  outline:3px solid #fffaf2;
-  outline-offset:1px;
-  box-shadow:0 0 0 5px #102f4d;
-}
-@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
+.site-header.compact-site-header .services-dropdown-menu a.active-sub{background:#f1ebe3;color:#213142}
+.services-menu-toggle:hover{color:#213142;background:rgba(22,59,97,.06)}
+.services-menu-toggle:focus-visible{outline:3px solid #fffaf2;outline-offset:1px;box-shadow:0 0 0 5px #102f4d}
+@media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none}}
 @media(max-width:960px){
-  .site-header.compact-site-header .services-nav-dropdown{
-    width:100%;
-    display:block!important;
-  }
-  .services-nav-main{
-    width:100%;
-    justify-content:space-between;
-  }
-  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}
-  .services-menu-toggle{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-  }
-  .site-header.compact-site-header .services-dropdown-menu{
-    position:static;
-    width:100%;
-    min-width:0;
-    margin:3px 0 2px;
-    padding:4px 0 2px 13px;
-    gap:0;
-    border:0;
-    border-left:1px solid rgba(33,49,66,.17);
-    border-radius:0;
-    background:transparent;
-    box-shadow:none;
-  }
-  .services-dropdown-menu::before{display:none;}
-  .site-header.compact-site-header .services-dropdown-menu a{
-    padding:8px 10px;
-    font-size:.85rem;
-  }
+  .site-header.compact-site-header .services-nav-dropdown{width:100%;display:block!important}
+  .services-nav-main{width:100%;justify-content:space-between}
+  .site-header.compact-site-header .services-nav-main > a{flex:1 1 auto}
+  .services-menu-toggle{width:38px;height:38px;flex:0 0 38px}
+  .site-header.compact-site-header .services-dropdown-menu{position:static;width:100%;min-width:0;margin:3px 0 2px;padding:4px 0 2px 13px;gap:0;border:0;border-left:1px solid rgba(33,49,66,.17);border-radius:0;background:transparent;box-shadow:none}
+  .services-dropdown-menu::before{display:none}
+  .site-header.compact-site-header .services-dropdown-menu a{padding:8px 10px;font-size:.85rem}
 }
 </style>
 </head>
+
 <body class="clinician-profile-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -294,8 +201,9 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-ink)}
       <p class="cp-supervision"><strong>Jasmine provides services under the clinical supervision of Dr. Stephen W. Bryant, PsyD, LCPC.</strong></p>
       <div class="cp-hero-actions"><a class="btn btn-primary" href="contact.html?clinician=jasmine-wilson#inquiry-form">Request a Consultation</a></div>
     </div>
+
     <figure class="cp-portrait" aria-label="Portrait of Jasmine Wilson">
-      <img src="jasmine-wilson-profile.webp?v=20260921b" alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" width="480" height="600" fetchpriority="high" decoding="async">
+      <img src="jasmine-wilson-headshot.png" alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" width="1122" height="1402" fetchpriority="high" decoding="async">
     </figure>
   </div>
 </section>
@@ -408,62 +316,64 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-ink)}
 
 <section class="cp-final" aria-label="Working with Jasmine Wilson">
   <div class="cp-final-inner">
-    <div><h2>Interested in working with Jasmine?</h2><p>You do not need to decide whether Jasmine is the right therapist before contacting Stonebridge.</p><p>Start with a brief consultation. Stonebridge will review what you are looking for, current availability, service fit, and next steps.</p></div>
-    <div class="cp-final-action"><a class="btn btn-secondary" href="contact.html?clinician=jasmine-wilson#inquiry-form">Request a Consultation</a><span>Free 10–15 minute consultation · Illinois telehealth</span></div>
+    <div>
+      <h2>Interested in working with Jasmine?</h2>
+      <p>You do not need to decide whether Jasmine is the right therapist before contacting Stonebridge.</p>
+      <p>Start with a brief consultation. Stonebridge will review what you are looking for, current availability, service fit, and next steps.</p>
+    </div>
+    <div class="cp-final-action">
+      <a class="btn btn-secondary" href="contact.html?clinician=jasmine-wilson#inquiry-form">Request a Consultation</a>
+      <span>Free 10–15 minute consultation · Illinois telehealth</span>
+    </div>
   </div>
 </section>
 </main>
+
 <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">STONEBRIDGE</div>
-        <div class="footer-sub">Psychological Group</div>
-        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
-      </div>
-
-      <div>
-        <div class="footer-title">Care</div>
-        <div class="footer-links">
-          <a href="services.html">Services</a>
-          <a href="fees-insurance.html">Fees &amp; Insurance</a>
-          <a href="contact.html">New Clients</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Practice</div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="team.html">Team</a>
-          <a href="team-founder.html">Founder</a>
-          <a href="for-clinicians.html">Professionals</a>
-          <a href="portal.html">Client Portal</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-links">
-          <span>Serving Illinois via telehealth</span>
-          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
-          <a href="tel:+17734171688">(773) 417-1688</a>
-          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
-          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
-        </div>
-      </div>
-
-      <div class="footer-logo-right">
-        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">STONEBRIDGE</div>
+      <div class="footer-sub">Psychological Group</div>
+      <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+    </div>
+    <div>
+      <div class="footer-title">Care</div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="fees-insurance.html">Fees &amp; Insurance</a>
+        <a href="contact.html">New Clients</a>
       </div>
     </div>
-
-    <div class="container footer-bottom">
-      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+    <div>
+      <div class="footer-title">Practice</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="team.html">Team</a>
+        <a href="team-founder.html">Founder</a>
+        <a href="for-clinicians.html">Professionals</a>
+        <a href="portal.html">Client Portal</a>
+      </div>
     </div>
-  </footer>
+    <div>
+      <div class="footer-title">Contact</div>
+      <div class="footer-links">
+        <span>Serving Illinois via telehealth</span>
+        <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+        <a href="tel:+17734171688">(773) 417-1688</a>
+        <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-logo-right">
+      <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"></picture>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+    <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
+  </div>
+</footer>
 
-  
 <script id="stonebridge-services-dropdown-script">
 (function(){
   function initServicesDropdown(){
@@ -480,46 +390,15 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-ink)}
       panel.hidden=!open;
       if(open && focusFirst && items.length) items[0].focus();
     }
-    toggle.addEventListener('click',function(){
-      setOpen(toggle.getAttribute('aria-expanded')!=='true',false);
-    });
-    toggle.addEventListener('keydown',function(event){
-      if(event.key==='ArrowDown'){
-        event.preventDefault();
-        setOpen(true,true);
-      }else if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-      }
-    });
+    toggle.addEventListener('click',function(){setOpen(toggle.getAttribute('aria-expanded')!=='true',false);});
     panel.addEventListener('keydown',function(event){
       var current=items.indexOf(document.activeElement);
-      if(event.key==='Escape'){
-        event.preventDefault();
-        setOpen(false,false);
-        toggle.focus();
-      }else if(event.key==='ArrowDown'){
-        event.preventDefault();
-        items[(current+1+items.length)%items.length].focus();
-      }else if(event.key==='ArrowUp'){
-        event.preventDefault();
-        items[(current-1+items.length)%items.length].focus();
-      }else if(event.key==='Home'){
-        event.preventDefault();
-        items[0].focus();
-      }else if(event.key==='End'){
-        event.preventDefault();
-        items[items.length-1].focus();
-      }
+      if(event.key==='Escape'){event.preventDefault();setOpen(false,false);toggle.focus();}
+      else if(event.key==='ArrowDown'){event.preventDefault();items[(current+1+items.length)%items.length].focus();}
+      else if(event.key==='ArrowUp'){event.preventDefault();items[(current-1+items.length)%items.length].focus();}
     });
     items.forEach(function(item){item.addEventListener('click',function(){setOpen(false,false);});});
     document.addEventListener('click',function(event){if(!dropdown.contains(event.target)) setOpen(false,false);});
-    document.addEventListener('keydown',function(event){
-      if(event.key==='Escape' && toggle.getAttribute('aria-expanded')==='true'){
-        setOpen(false,false);
-        toggle.focus();
-      }
-    });
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initServicesDropdown);
   else initServicesDropdown();
