@@ -36,72 +36,131 @@
     .portal-page .skip-link{position:absolute;left:12px;top:-80px;z-index:1000;padding:10px 14px;border-radius:8px;background:var(--portal-navy-deep);color:#fff;font-weight:700;}
     .portal-page .skip-link:focus{top:12px;}
 
-    .portal-hero{position:relative;min-height:480px;overflow:hidden;isolation:isolate;background:var(--portal-navy-deep);border-bottom:1px solid rgba(255,255,255,.10);}
-    .portal-hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(12,31,49,.95) 0%,rgba(12,31,49,.90) 31%,rgba(12,31,49,.67) 50%,rgba(12,31,49,.28) 73%,rgba(12,31,49,.10) 100%),linear-gradient(180deg,rgba(10,24,38,.16) 0%,rgba(10,24,38,.03) 55%,rgba(10,24,38,.25) 100%);}
-    .portal-hero-copy{position:relative;z-index:2;width:min(1220px,calc(100% - 72px));min-height:480px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:38px 0 36px;color:var(--portal-white);}
-    .portal-hero-rule{width:40px;height:2px;margin-bottom:20px;background:#d3b57f;}
-    .portal-kicker,.portal-label,.portal-item-label{color:var(--portal-gold);font-family:"Inter",sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.18em;line-height:1.35;text-transform:uppercase;}
+    .portal-kicker,.portal-item-label{
+      color:var(--portal-gold);
+      font-family:"Inter",sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      line-height:1.35;
+      text-transform:uppercase;
+    }
     .portal-hero .portal-kicker{color:#e1c79c;}
-    .portal-hero h1{margin:10px 0 0;max-width:12ch;color:var(--portal-white);font-family:"EB Garamond",Georgia,serif;font-size:clamp(3rem,4vw,4.2rem);line-height:1.01;letter-spacing:-.05em;text-wrap:balance;text-shadow:0 10px 30px rgba(0,0,0,.18);}
-    .portal-hero-copy > p{max-width:37rem;margin:18px 0 0;color:rgba(255,250,242,.89);font-family:"Inter",sans-serif;font-size:1rem;line-height:1.7;}
-    .portal-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px;}
+    .portal-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;}
     .portal-hero-actions .btn-primary{background:#f4eee4;border-color:#f4eee4;color:var(--portal-navy-deep);}
     .portal-hero-actions .btn-primary:hover{background:#fffaf2;border-color:#fffaf2;}
-    .portal-hero-media{position:absolute;inset:0;z-index:0;margin:0;overflow:hidden;}
-    .portal-hero-media img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;}
 
-    .portal-overview{background:#eee7de;color:var(--portal-ink);border-bottom:1px solid var(--portal-warm-line);}
-    .portal-overview-grid{width:min(1080px,calc(100% - 72px));margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:17px 0;}
-    .portal-overview article{padding:0 24px;border-left:1px solid rgba(33,49,66,.14);}
-    .portal-overview article:first-child{padding-left:0;border-left:0;}
-    .portal-overview h2{margin:0 0 4px;color:var(--portal-navy-deep);font-family:"EB Garamond",Georgia,serif;font-size:1.08rem;line-height:1.1;letter-spacing:-.01em;}
-    .portal-overview p{margin:0;color:var(--portal-muted);font-family:"Inter",sans-serif;font-size:.82rem;line-height:1.48;}
-
-    .portal-section{padding:58px 0 64px;background:var(--portal-bg);}
-    .portal-shell{width:min(1080px,calc(100% - 72px));margin:0 auto;}
-    .portal-layout{display:grid;grid-template-columns:minmax(0,760px);justify-content:start;align-items:start;}
-    .portal-label{position:relative;padding-top:14px;}
-    .portal-label::before{content:"";position:absolute;top:0;left:0;width:100%;max-width:150px;height:1px;background:linear-gradient(90deg,var(--portal-navy),rgba(22,59,97,0));}
-    .portal-privacy{padding:27px 28px;border:1px solid var(--portal-warm-line);border-radius:20px;background:#fffdf9;}
-    .portal-privacy h3{margin:9px 0 0;color:var(--portal-ink);font-family:"EB Garamond",Georgia,serif;font-size:1.85rem;line-height:1.08;letter-spacing:-.025em;}
-    .portal-privacy ul{margin:18px 0 0;padding:0;list-style:none;border-top:1px solid var(--portal-line);}
-    .portal-privacy li{position:relative;padding:12px 0 12px 18px;border-bottom:1px solid var(--portal-line);color:var(--portal-muted);font-family:"Inter",sans-serif;font-size:.88rem;line-height:1.5;}
-    .portal-privacy li::before{content:"";position:absolute;left:0;top:1.08rem;width:6px;height:6px;border-radius:50%;background:#b89661;}
-
-    .portal-crisis{background:#ece5db;border-top:1px solid var(--portal-warm-line);border-bottom:1px solid var(--portal-warm-line);}
-    .portal-crisis-inner{width:min(1080px,calc(100% - 72px));margin:0 auto;display:grid;grid-template-columns:175px minmax(0,1fr);gap:42px;align-items:start;padding:25px 0;}
-    .portal-crisis strong{color:var(--portal-ink);font-family:"EB Garamond",Georgia,serif;font-size:1.25rem;line-height:1.15;}
-    .portal-crisis p{max-width:49rem;margin:0;color:var(--portal-muted);font-family:"Inter",sans-serif;font-size:.89rem;line-height:1.6;}
-
-    .portal-new{background:linear-gradient(135deg,var(--portal-navy),var(--portal-navy-deep));color:var(--portal-white);}
-    .portal-new-inner{width:min(1080px,calc(100% - 72px));margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center;padding:33px 0;}
-    .portal-new h2{margin:0 0 5px;color:#fffaf2;font-family:"EB Garamond",Georgia,serif;font-size:clamp(2rem,3vw,2.75rem);line-height:1.05;letter-spacing:-.025em;}
-    .portal-new p{max-width:46rem;margin:0;color:rgba(255,250,242,.84);font-family:"Inter",sans-serif;font-size:.94rem;line-height:1.6;}
-    .portal-new .btn-secondary{color:#fffaf2;border-color:rgba(255,255,255,.30);background:rgba(255,255,255,.08);}
-
-    .portal-page a:focus-visible,.portal-page button:focus-visible{outline:3px solid #fffaf2;outline-offset:2px;box-shadow:0 0 0 5px var(--portal-navy-deep);}
-
-    @media(min-width:1081px) and (max-width:1260px){.portal-hero-copy{width:min(100% - 72px,1120px);}.portal-hero h1{font-size:clamp(2.95rem,3.8vw,3.95rem);}}
-    @media(max-width:1080px){
-      .portal-hero,.portal-hero-copy{min-height:500px;}
-      .portal-hero-copy{width:min(100% - 44px,860px);padding:42px 0 38px;}
-      .portal-hero::before{background:linear-gradient(90deg,rgba(12,31,49,.95) 0%,rgba(12,31,49,.88) 40%,rgba(12,31,49,.60) 75%,rgba(12,31,49,.30) 100%),linear-gradient(180deg,rgba(10,24,38,.15) 0%,rgba(10,24,38,.04) 56%,rgba(10,24,38,.28) 100%);}
-      .portal-overview-grid,.portal-layout,.portal-crisis-inner,.portal-new-inner{grid-template-columns:1fr;}
-      .portal-crisis-inner,.portal-new-inner{gap:14px;}
+    .portal-doorway{
+      padding:56px 0 60px;
+      background:var(--portal-bg);
+      border-bottom:1px solid var(--portal-warm-line);
     }
-    @media(max-width:720px){
-      .portal-shell,.portal-overview-grid,.portal-crisis-inner,.portal-new-inner{width:min(100% - 34px,1080px);}
-      .portal-hero,.portal-hero-copy{min-height:560px;}
-      .portal-hero-copy{width:min(100% - 34px,1080px);padding:38px 0 34px;}
-      .portal-hero-media img{object-position:58% center;}
-      .portal-hero::before{background:linear-gradient(180deg,rgba(10,27,43,.90) 0%,rgba(10,27,43,.74) 56%,rgba(10,27,43,.90) 100%),linear-gradient(90deg,rgba(10,27,43,.54) 0%,rgba(10,27,43,.22) 100%);}
-      .portal-overview-grid{grid-template-columns:1fr;padding:14px 0;}
-      .portal-overview article{padding:13px 0;border-left:0;border-top:1px solid rgba(33,49,66,.13);}
-      .portal-overview article:first-child{padding-top:0;border-top:0;}
-      .portal-hero h1{max-width:12ch;font-size:clamp(2.5rem,10.5vw,3.45rem);}
-      .portal-hero-actions .btn,.portal-new .btn{width:100%;justify-content:center;text-align:center;}
-      .portal-section{padding:44px 0 48px;}
-      .portal-privacy{padding:23px 20px;border-radius:16px;}
+    .portal-doorway-inner{
+      width:min(1080px,calc(100% - 72px));
+      margin:0 auto;
+    }
+    .portal-doorway h2{
+      margin:0;
+      color:var(--portal-ink);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2rem,2.8vw,2.7rem);
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+    .portal-options{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:0;
+      margin-top:26px;
+      border-top:1px solid var(--portal-line);
+      border-bottom:1px solid var(--portal-line);
+    }
+    .portal-option{
+      min-width:0;
+      padding:22px 24px 22px 0;
+    }
+    .portal-option + .portal-option{
+      padding-left:24px;
+      border-left:1px solid var(--portal-line);
+    }
+    .portal-option h3{
+      margin:0;
+      color:var(--portal-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.28rem;
+      line-height:1.15;
+      letter-spacing:-.015em;
+    }
+    .portal-option p{
+      margin:7px 0 0;
+      color:var(--portal-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.86rem;
+      line-height:1.55;
+    }
+    .portal-access-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      margin-top:24px;
+    }
+    .portal-access-row p{
+      margin:0;
+      color:var(--portal-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.84rem;
+      line-height:1.5;
+    }
+    .portal-access-row .btn{
+      flex:0 0 auto;
+    }
+    .portal-new-client{
+      margin:28px 0 0;
+      padding-top:20px;
+      border-top:1px solid var(--portal-line);
+      color:var(--portal-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.84rem;
+      line-height:1.5;
+    }
+    .portal-new-client a{
+      color:var(--portal-navy);
+      font-weight:700;
+      text-decoration:underline;
+      text-decoration-thickness:1px;
+      text-underline-offset:3px;
+    }
+    .portal-emergency-note{
+      margin:16px 0 0;
+      color:var(--portal-muted);
+      font-family:"Inter",sans-serif;
+      font-size:.75rem;
+      line-height:1.5;
+    }
+
+    .portal-page a:focus-visible,.portal-page button:focus-visible{
+      outline:3px solid #fffaf2;
+      outline-offset:2px;
+      box-shadow:0 0 0 5px var(--portal-navy-deep);
+    }
+
+    @media(max-width:760px){
+      .portal-doorway{padding:44px 0 48px;}
+      .portal-doorway-inner{width:min(100% - 40px,1080px);}
+      .portal-options{grid-template-columns:1fr;margin-top:22px;}
+      .portal-option,.portal-option + .portal-option{
+        padding:18px 0;
+        border-left:0;
+      }
+      .portal-option + .portal-option{border-top:1px solid var(--portal-line);}
+      .portal-access-row{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:16px;
+      }
+      .portal-access-row .btn{width:100%;justify-content:center;text-align:center;}
+      .portal-new-client{margin-top:24px;}
     }
   </style>
 
@@ -158,48 +217,60 @@
   </header>
 
   <main id="main-content">
-    <section class="portal-hero sb-standard-hero">
+    <section class="portal-hero sb-standard-hero sb-standard-hero--focus-right">
       <div class="portal-hero-copy sb-standard-hero-copy">
         <div class="portal-hero-rule"></div>
-        <div class="portal-kicker">Client Portal</div>
-        <h1>Secure access for active clients.</h1>
-        <p>Current Stonebridge clients can sign in to view available appointment times, request appointments with their assigned clinician, manage forms and billing, and join scheduled telehealth sessions.</p>
-        <div class="portal-hero-actions"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Open Client Portal</a></div>
+        <div class="portal-kicker">CLIENT PORTAL</div>
+        <h1>Your Stonebridge client portal</h1>
+        <p>Use the secure client portal to manage appointments with your assigned clinician and access your account.</p>
+        <div class="portal-hero-actions">
+          <a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Open Client Portal</a>
+        </div>
       </div>
-      <figure class="portal-hero-media sb-standard-hero-media"><picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="hero-portal-workspace-960.webp 960w, hero-portal-workspace-1600.webp 1600w, hero-portal-workspace-2000.webp 2000w" sizes="100vw"><img alt="Secure workspace prepared for active-client portal use" decoding="async" fetchpriority="high" height="1116" src="hero-portal-workspace.jpg" width="2000"/></picture></figure>
+
+      <figure class="portal-hero-media sb-standard-hero-media">
+        <picture class="sb-responsive-image" style="display:contents">
+          <source type="image/webp" srcset="hero-portal-workspace-960.webp 960w, hero-portal-workspace-1600.webp 1600w, hero-portal-workspace-2000.webp 2000w" sizes="100vw">
+          <img alt="Secure workspace prepared for active-client portal use" decoding="async" fetchpriority="high" height="1116" src="hero-portal-workspace.jpg" width="2000">
+        </picture>
+      </figure>
     </section>
 
-<section class="sb-utility-strip sb-utility-strip--beige" aria-label="Page information">
-  <div class="sb-utility-strip__inner">
-    <span class="sb-utility-strip__item">Assigned forms</span>
-    <span class="sb-utility-strip__item">Telehealth sessions</span>
-    <span class="sb-utility-strip__item">Account + billing</span>
-  </div>
-</section>
-
-    
-
-    <section class="portal-section">
-      <div class="portal-shell portal-layout">
-        <aside class="portal-privacy">
-          <div class="portal-item-label">Privacy and access</div>
-          <h3>Before you sign in.</h3>
-          <ul>
-            <li>Use your own secure login.</li>
-            <li>Complete only items assigned to your account.</li>
-            <li>Keep telehealth links and documents private.</li>
-            <li>Contact Stonebridge if you cannot access an assigned item.</li>
-          </ul>
-        </aside>
+    <section class="sb-utility-strip sb-utility-strip--beige" aria-label="Portal information">
+      <div class="sb-utility-strip__inner">
+        <span class="sb-utility-strip__item">Established clients</span>
+        <span class="sb-utility-strip__item">Assigned clinician appointments</span>
+        <span class="sb-utility-strip__item">Secure account access</span>
       </div>
     </section>
 
-    <section class="portal-crisis" aria-label="Emergency information"><div class="portal-crisis-inner"><strong>Not for emergencies</strong><p>The portal is not monitored as an emergency service. For immediate danger or a medical emergency, call 911 or go to the nearest emergency room. For mental-health, suicide, self-harm, or substance-use crisis support, call or text 988.</p></div></section>
+    <section class="portal-doorway" aria-labelledby="portal-options-title">
+      <div class="portal-doorway-inner">
+        <h2 id="portal-options-title">In the portal</h2>
 
-    <section class="portal-new">
-      <div class="portal-new-inner">
-        <div><h2>New to Stonebridge?</h2><p>If you are new to Stonebridge, begin with a free 10–15 minute consultation request. The Client Portal scheduling pathway is for established clients.</p></div>
-        <a class="btn btn-secondary" href="contact.html">Schedule a Consultation</a>
+        <div class="portal-options">
+          <article class="portal-option">
+            <h3>Appointments</h3>
+            <p>View or manage available appointments with your assigned clinician.</p>
+          </article>
+          <article class="portal-option">
+            <h3>Forms &amp; documents</h3>
+            <p>Complete forms or review items shared through your account.</p>
+          </article>
+          <article class="portal-option">
+            <h3>Account</h3>
+            <p>Review account or billing information when applicable.</p>
+          </article>
+        </div>
+
+        <div class="portal-access-row">
+          <p>For established Stonebridge clients with active portal access.</p>
+          <a class="btn btn-secondary" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Open Client Portal</a>
+        </div>
+
+        <p class="portal-new-client">New to Stonebridge? Request a consultation to get started. <a href="contact.html#inquiry-form">Request a Consultation</a></p>
+
+        <p class="portal-emergency-note">The client portal is not monitored for emergencies. If you are in immediate danger or experiencing a medical emergency, call 911 or go to the nearest emergency department. For crisis support, call or text 988.</p>
       </div>
     </section>
   </main>
