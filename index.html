@@ -149,7 +149,35 @@
   .home-recognition,.home-services{padding:44px 0!important}
   .home-services-grid{gap:20px!important}
 }
-</style></head>
+</style>
+<style id="stonebridge-home-utility-repair-20260921">
+  .home-trust.utility-strip.hero-utility-strip{
+    min-height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0;
+    padding:6px 24px;
+    box-sizing:border-box;
+    background:var(--sb-navy,#102F4D);
+    border:0;
+    color:#FAF5EF;
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:.72rem;
+    font-weight:500;
+    line-height:1.25;
+    letter-spacing:.01em;
+    text-align:center;
+  }
+  @media(max-width:760px){
+    .home-trust.utility-strip.hero-utility-strip{
+      min-height:30px;
+      padding:10px 20px;
+      flex-wrap:wrap;
+    }
+  }
+</style>
+</head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -184,7 +212,20 @@
             <a class="home-primary-btn" href="contact.html#inquiry-form">Request a Consultation</a>
           </div>
 
-          
+          <div class="home-hero-trust" aria-label="Practice information">
+            <div class="home-trust-item">
+              <span class="home-trust-icon telehealth" aria-hidden="true"></span>
+              <span>Illinois telehealth</span>
+            </div>
+            <div class="home-trust-item">
+              <span class="home-trust-icon consultation" aria-hidden="true"></span>
+              <span>Free 10–15 minute consultation</span>
+            </div>
+            <div class="home-trust-item">
+              <span class="home-trust-icon insurance" aria-hidden="true"></span>
+              <span>Aetna + BCBSIL accepted</span>
+            </div>
+          </div>
         </div>
 
         <div class="home-hero-media" aria-hidden="true">
@@ -196,13 +237,7 @@
       </div>
     </section>
 
-    <section class="sb-utility-strip sb-utility-strip--navy" aria-label="Practice information">
-      <div class="sb-utility-strip__inner">
-        <span class="sb-utility-strip__item">Illinois telehealth</span>
-        <span class="sb-utility-strip__item">Free 10–15 minute consultation</span>
-        <span class="sb-utility-strip__item">Aetna + BCBSIL accepted</span>
-      </div>
-    </section>
+    <section class="home-trust hero-utility-strip utility-strip utility-strip--navy" aria-label="Practice information">Illinois telehealth · Free 10–15 minute consultation · Aetna + BCBSIL accepted</section>
 
     <section class="home-recognition" aria-labelledby="recognition-title">
       <div class="home-container">
