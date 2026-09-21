@@ -284,6 +284,7 @@
   }
 
   function normalizeHeroUtilityStrips() {
+    if (document.body && document.body.hasAttribute('data-static-hero-system')) return;
     var filename = getCurrentFilename();
     var configs = {
       'index.html': {
@@ -424,6 +425,7 @@
   }
 
   function normalizeHeroSystem() {
+    if (document.body && document.body.hasAttribute('data-static-hero-system')) return;
     var filename = getCurrentFilename();
     var configs = {
       'about.html': ['.about-hero', '.about-hero-copy'],
