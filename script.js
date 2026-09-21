@@ -287,42 +287,8 @@
   }
 
   function refineFounder() {
-    var summaryBand = document.querySelector('.founder-summary-band');
-    if (summaryBand) {
-      summaryBand.querySelectorAll('.subpage-band-item').forEach(function (item) {
-        var heading = item.querySelector('h2');
-        if (heading && heading.textContent.trim() === 'Clinical approach') item.remove();
-      });
-      summaryBand.classList.add('is-condensed');
-    }
-
-    var methodList = document.querySelector('.therapy-method-list');
-    if (methodList) {
-      methodList.innerHTML = [
-        '<article class="therapy-method-row">',
-        '  <div class="therapy-method-number">01</div>',
-        '  <div>',
-        '    <h3>Psychodynamic and relational</h3>',
-        '    <p>Work focuses on recurring emotional and relationship patterns, defenses, identity, self-worth, and the ways earlier experiences continue to shape present life. The therapeutic relationship can also make patterns more visible in real time, creating a place to understand them with greater clarity and develop more flexible ways of responding.</p>',
-        '  </div>',
-        '</article>',
-        '<article class="therapy-method-row">',
-        '  <div class="therapy-method-number">02</div>',
-        '  <div>',
-        '    <h3>Evidence-based and skills-focused methods</h3>',
-        '    <p>When useful, Dr. Bryant integrates cognitive, behavioral, acceptance-based, emotion-regulation, and motivational methods to support practical change. This may include examining avoidance and behavior patterns, clarifying values, building distress-tolerance or interpersonal skills, and exploring ambivalence about change without relying on confrontation or applying techniques simply because they fit a diagnostic label.</p>',
-        '  </div>',
-        '</article>',
-        '<article class="therapy-method-row">',
-        '  <div class="therapy-method-number">03</div>',
-        '  <div>',
-        '    <h3>Trauma, attachment, and systems</h3>',
-        '    <p>Trauma-informed, attachment-based, and family-systems perspectives help connect symptoms with safety, protective responses, development, relationships, and family patterns. These lenses can guide pacing, attention to trust and regulation, and decisions about when parent or family involvement may support the work without reducing the individual to a single symptom or role.</p>',
-        '  </div>',
-        '</article>',
-        '<p class="therapy-method-note">These approaches are not applied as a fixed formula. Dr. Bryant develops an individualized formulation and draws from different methods when they support the purpose of therapy.</p>'
-      ].join('');
-    }
+    // Founder profile is authored directly in team-founder.html.
+    // Keep runtime behavior from rewriting the compact summary or detailed method sections.
   }
 
   function refineProfessionals() {
