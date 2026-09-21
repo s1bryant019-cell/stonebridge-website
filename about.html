@@ -647,7 +647,79 @@
   .site-header.compact-site-header .services-dropdown-menu a{padding:8px 10px;font-size:.85rem;}
 }
 </style>
-</head>
+<style id="stonebridge-about-density-brief-20260921">
+.about-hero{min-height:0!important}
+.about-hero-copy{
+  min-height:0!important;
+  width:min(1120px,calc(100% - 72px))!important;
+  padding:58px 0 60px!important;
+}
+.about-hero-copy>p{max-width:43rem!important}
+.about-overview-grid{
+  width:min(1120px,calc(100% - 72px))!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  padding:28px 0!important;
+}
+.about-overview article{padding:0 30px!important}
+.about-overview article:first-child{padding-left:0!important}
+.about-overview article:last-child{padding-right:0!important}
+.about-section{padding:52px 0!important}
+.about-shell{width:min(1120px,calc(100% - 72px))!important}
+.about-intro{gap:32px!important}
+.about-prose{max-width:700px}
+.about-quote{padding:26px 28px!important;min-height:0!important}
+.about-relational-layout{gap:40px!important}
+.about-frame-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:24px 28px!important;
+}
+.about-frame-item{
+  min-height:0!important;
+  padding:24px 0!important;
+}
+.about-experience-list{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:28px!important;
+  border-top:1px solid var(--about-line);
+}
+.about-experience-item{
+  min-height:0!important;
+  padding:24px 0!important;
+  border-bottom:1px solid var(--about-line);
+}
+.about-scope-inner{
+  width:min(1120px,calc(100% - 72px))!important;
+  padding:28px 0!important;
+}
+.about-scope-inner p{max-width:760px!important}
+.about-cta-inner{
+  width:min(1120px,calc(100% - 72px))!important;
+  padding:56px 0!important;
+}
+@media(max-width:1024px){
+  .about-hero-copy,.about-overview-grid,.about-shell,.about-scope-inner,.about-cta-inner{width:min(100% - 48px,1120px)!important}
+  .about-section{padding:48px 0!important}
+}
+@media(max-width:760px){
+  .about-hero-copy,.about-overview-grid,.about-shell,.about-scope-inner,.about-cta-inner{width:min(100% - 34px,1120px)!important}
+  .about-hero-copy{padding:44px 0 46px!important}
+  .about-overview-grid{grid-template-columns:1fr!important;padding:18px 0!important}
+  .about-overview article,.about-overview article:first-child,.about-overview article:last-child{
+    padding:14px 0!important;
+    border-left:0!important;
+    border-top:1px solid var(--about-line);
+  }
+  .about-overview article:first-child{border-top:0}
+  .about-section{padding:40px 0!important}
+  .about-frame-grid,.about-experience-list{grid-template-columns:1fr!important;gap:0!important}
+  .about-frame-item,.about-experience-item{padding:20px 0!important}
+  .about-scope-inner{padding:24px 0!important}
+  .about-cta-inner{grid-template-columns:1fr!important;gap:18px!important;padding:44px 0!important}
+  .about-cta .btn{width:100%;justify-content:center}
+}
+</style></head>
 
 <body class="about-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
