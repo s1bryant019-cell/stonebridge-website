@@ -1140,6 +1140,36 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+<style id="stonebridge-team-hero-brighten-20260921">
+body.team-page .team-page-hero.sb-standard-hero::before{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16,47,77,.70) 0%,
+      rgba(16,47,77,.62) 30%,
+      rgba(16,47,77,.42) 54%,
+      rgba(16,47,77,.20) 76%,
+      rgba(16,47,77,.08) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(16,47,77,.08) 0%,
+      rgba(16,47,77,.01) 58%,
+      rgba(16,47,77,.12) 100%
+    )!important;
+}
+body.team-page .team-page-hero-media img{
+  object-position:center center!important;
+  filter:brightness(1.08) saturate(.96) contrast(.96)!important;
+}
+@media(max-width:760px){
+  body.team-page .team-page-hero.sb-standard-hero::before{
+    background:
+      linear-gradient(180deg,rgba(16,47,77,.72) 0%,rgba(16,47,77,.56) 58%,rgba(16,47,77,.68) 100%),
+      linear-gradient(90deg,rgba(16,47,77,.18) 0%,rgba(16,47,77,.06) 100%)!important;
+  }
+}
+</style>
 </head>
 
 <body class="team-page" data-static-hero-system="true">
@@ -1194,10 +1224,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         </div>
 
         <figure class="team-page-hero-media sb-standard-hero-media">
-          <picture>
-            <source type="image/webp" srcset="hero-team-consultation-960.webp 960w, hero-team-consultation-1600.webp 1600w, hero-team-consultation-2000.webp 2000w" sizes="(max-width: 760px) 100vw, 46vw">
-            <img src="hero-team-consultation.jpg" alt="Warm, quiet clinical consultation space" width="2000" height="1116" fetchpriority="high" decoding="async">
-          </picture>
+          <img src="team-hero-office.png" alt="Warm, bright professional office interior" fetchpriority="high" decoding="async">
         </figure>
       </div>
     </section>
