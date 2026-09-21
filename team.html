@@ -630,6 +630,150 @@
   .site-header.compact-site-header .services-dropdown-menu a{padding:8px 10px;font-size:.85rem}
 }
 </style>
+<style id="stonebridge-team-roster-refine-20260921">
+  .team-section{padding-top:48px;padding-bottom:54px}
+  .team-shell{width:min(1120px,calc(100% - 72px))}
+  .team-intro{margin-bottom:28px}
+  .team-intro p{max-width:38rem}
+  .clinician-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px;
+    align-items:stretch;
+  }
+  .clinician-card{
+    display:grid;
+    grid-template-columns:164px minmax(0,1fr);
+    gap:22px;
+    align-items:start;
+    min-width:0;
+    min-height:0;
+    padding:18px;
+    overflow:hidden;
+    border:1px solid var(--team-warm-line);
+    border-radius:18px;
+    background:#fffdf9;
+    box-shadow:0 12px 30px rgba(33,49,66,.035);
+  }
+  .clinician-photo{
+    width:164px;
+    min-height:0;
+    aspect-ratio:4 / 5;
+    margin:0;
+    overflow:hidden;
+    border-radius:14px;
+    background:#e8e0d6;
+  }
+  .clinician-photo img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center top;
+  }
+  .clinician-details{
+    min-width:0;
+    min-height:210px;
+    padding:2px 0 0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+  }
+  .clinician-details h3{
+    margin:8px 0 5px;
+    font-size:clamp(1.72rem,2vw,2.05rem);
+    line-height:1.05;
+  }
+  .clinician-role{
+    font-size:.78rem;
+    line-height:1.42;
+  }
+  .clinician-details > p{
+    margin-top:12px;
+    font-size:.84rem;
+    line-height:1.55;
+  }
+  .clinician-actions{
+    margin-top:auto;
+    padding-top:16px;
+  }
+  .clinician-actions .btn{
+    min-height:40px;
+    padding:0 14px;
+    font-size:.8rem;
+  }
+  .team-utility-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    margin-top:28px;
+    border-top:1px solid var(--team-line);
+    border-bottom:1px solid var(--team-line);
+  }
+  .team-utility-grid article{
+    min-width:0;
+    padding:18px 22px;
+    border-left:1px solid var(--team-line);
+  }
+  .team-utility-grid article:first-child{
+    padding-left:0;
+    border-left:0;
+  }
+  .team-utility-grid article:last-child{padding-right:0}
+  .team-utility-grid strong{
+    display:block;
+    margin-bottom:6px;
+    color:var(--team-ink);
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:1.18rem;
+    line-height:1.12;
+  }
+  .team-utility-grid p{
+    margin:0;
+    color:var(--team-muted);
+    font-family:"Inter",sans-serif;
+    font-size:.82rem;
+    line-height:1.52;
+  }
+  .team-utility-grid a{
+    display:inline-block;
+    margin-top:8px;
+    color:var(--team-navy);
+    font-family:"Inter",sans-serif;
+    font-size:.78rem;
+    font-weight:700;
+    text-decoration:none;
+  }
+  .team-utility-grid a:hover{text-decoration:underline;text-underline-offset:3px}
+  @media(min-width:901px){
+    .team-intro h2{max-width:none;white-space:nowrap}
+  }
+  @media(max-width:900px){
+    .clinician-grid{grid-template-columns:1fr}
+    .team-utility-grid{grid-template-columns:1fr}
+    .team-utility-grid article,
+    .team-utility-grid article:first-child,
+    .team-utility-grid article:last-child{
+      padding:16px 0;
+      border-left:0;
+      border-top:1px solid var(--team-line);
+    }
+    .team-utility-grid article:first-child{border-top:0}
+  }
+  @media(max-width:560px){
+    .team-shell{width:min(100% - 34px,1120px)}
+    .clinician-card{
+      grid-template-columns:118px minmax(0,1fr);
+      gap:15px;
+      padding:14px;
+    }
+    .clinician-photo{width:118px}
+    .clinician-details{min-height:0;padding-top:0}
+    .clinician-details h3{font-size:1.58rem}
+    .clinician-role{font-size:.74rem}
+    .clinician-details > p{font-size:.8rem;line-height:1.5}
+    .clinician-actions .btn{width:100%;justify-content:center}
+  }
+</style>
 </head>
 
 <body class="team-page">
@@ -692,26 +836,17 @@
       </figure>
     </section>
 
-    <section class="team-overview" aria-label="Team overview">
-      <div class="team-overview-grid">
-        <article>
-          <h2>Illinois telehealth</h2>
-          <p>Online care for clients and caregivers located in Illinois.</p>
-        </article>
-      </div>
-    </section>
-
     <section class="team-section" id="clinicians">
       <div class="team-shell">
         <div class="team-intro">
           <div>
             <div class="team-label">Clinician roster</div>
             <h2>Learn more before choosing a next step.</h2>
-            <p>Each profile offers a focused view of clinical depth, style, scope, and how to begin.</p>
+            <p>Review each clinician’s focus, style, and scope before requesting a consultation.</p>
           </div>
         </div>
 
-        <div class="clinician-grid">
+        <div class="clinician-grid" aria-label="Stonebridge clinicians">
           <article class="clinician-card">
             <figure class="clinician-photo">
               <img alt="Dr. Stephen W. Bryant, PsyD, LCPC" decoding="async" loading="lazy" src="dr-stephen-bryant-headshot.png?v=20260914f" width="812" height="1089">
@@ -721,37 +856,43 @@
               <h3>Stephen W. Bryant, PsyD, LCPC</h3>
               <div class="clinician-role">Individual, couples, and family psychotherapist · Parent consultant</div>
               <p>Relational psychotherapy for adolescents, adults, couples, and families, with particular depth in trauma, addiction, mood and anxiety concerns, and relationship patterns.</p>
-              <div class="clinician-actions"><a class="btn btn-primary" href="team-founder.html">Read Full Profile <span aria-hidden="true">→</span></a></div>
+              <div class="clinician-actions">
+                <a class="btn btn-primary" href="team-founder.html">Read Full Profile <span aria-hidden="true">→</span></a>
+              </div>
             </div>
           </article>
 
           <article class="clinician-card">
             <figure class="clinician-photo">
-              <img alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" decoding="async" loading="lazy" src="jasmine-wilson-headshot.png" width="1122" height="1402">
+              <img alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" decoding="async" loading="lazy" src="jasmine-wilson-headshot.png?v=20260921d" width="1122" height="1402">
             </figure>
             <div class="clinician-details">
               <div class="clinician-kicker">Clinician · Illinois telehealth</div>
               <h3>Jasmine Wilson, LPC</h3>
               <div class="clinician-role">Licensed Professional Counselor · Postgraduate Clinical Associate</div>
               <p>Individual psychotherapy for adolescents age 12+ and adults, with focus on trauma and complex stress, anxiety and depression, emotional regulation, life transitions, and self-worth.</p>
-              <div class="clinician-actions"><a class="btn btn-primary" href="team-jasmine-wilson.html">Read Full Profile <span aria-hidden="true">→</span></a></div>
+              <div class="clinician-actions">
+                <a class="btn btn-primary" href="team-jasmine-wilson.html">Read Full Profile <span aria-hidden="true">→</span></a>
+              </div>
             </div>
           </article>
         </div>
 
-        <div class="team-growth-note">
-          <strong>Finding the right fit</strong>
-          <p>Clinical needs, clinician expertise, availability, and telehealth appropriateness inform clinician matching at Stonebridge.</p>
-        </div>
-
-        <div class="team-careers-path">
-          <strong>Stonebridge is growing its clinician team.</strong>
-          <a href="careers.html">View current opportunities <span aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="team-professional-note">
-          <strong>For professionals</strong>
-          <p>Professional consultation groups, individual consultation, peer review, and education are available through a separate professional pathway. <a class="team-professional-link" href="for-clinicians.html">View Professional Offerings</a></p>
+        <div class="team-utility-grid" aria-label="Team information">
+          <article>
+            <strong>Finding the right fit</strong>
+            <p>Clinical needs, clinician expertise, availability, and telehealth appropriateness inform matching at Stonebridge.</p>
+          </article>
+          <article>
+            <strong>Stonebridge is growing</strong>
+            <p>We are building the clinician team deliberately rather than for volume.</p>
+            <a href="careers.html">View current opportunities <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <strong>For professionals</strong>
+            <p>Consultation, peer review, and education follow a separate professional pathway.</p>
+            <a href="for-clinicians.html">View Professional Offerings <span aria-hidden="true">→</span></a>
+          </article>
         </div>
       </div>
     </section>
