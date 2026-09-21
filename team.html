@@ -1114,7 +1114,33 @@
   .team-page-hero-media{border-radius:14px}
   .team-page-hero-media img{aspect-ratio:4 / 3}
 }
-</style></head>
+</style><style id="stonebridge-standard-hero-overlay-soften-20260921">
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16,47,77,.84) 0%,
+      rgba(16,47,77,.78) 28%,
+      rgba(16,47,77,.58) 50%,
+      rgba(16,47,77,.30) 72%,
+      rgba(16,47,77,.14) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(16,47,77,.12) 0%,
+      rgba(16,47,77,.02) 58%,
+      rgba(16,47,77,.18) 100%
+    )!important;
+}
+@media(max-width:760px){
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
+    background:
+      linear-gradient(180deg,rgba(16,47,77,.82) 0%,rgba(16,47,77,.66) 58%,rgba(16,47,77,.78) 100%),
+      linear-gradient(90deg,rgba(16,47,77,.24) 0%,rgba(16,47,77,.10) 100%)!important;
+  }
+}
+</style>
+</head>
 
 <body class="team-page" data-static-hero-system="true">
   <a class="skip-link" href="#main-content">Skip to main content</a>
