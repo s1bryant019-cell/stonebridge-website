@@ -323,6 +323,184 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+<style id="stonebridge-team-profile-hero-match-20260921">
+.profile-subpage-hero{
+  position:relative;
+  min-height:390px;
+  overflow:hidden;
+  isolation:isolate;
+  background:#102f4d;
+  color:#fffaf2;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.profile-subpage-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(16,47,77,.86) 0%,rgba(16,47,77,.78) 38%,rgba(16,47,77,.58) 66%,rgba(16,47,77,.34) 100%),
+    linear-gradient(180deg,rgba(16,47,77,.16) 0%,rgba(16,47,77,.04) 58%,rgba(16,47,77,.20) 100%);
+}
+.profile-subpage-hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  margin:0;
+}
+.profile-subpage-hero-bg img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.profile-subpage-hero-inner{
+  position:relative;
+  z-index:2;
+  width:min(1120px,calc(100% - 64px));
+  min-height:390px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 238px;
+  gap:52px;
+  align-items:center;
+  padding:32px 0;
+}
+.profile-subpage-copy{
+  min-width:0;
+  max-width:690px;
+}
+.profile-subpage-rule{
+  width:40px;
+  height:2px;
+  margin-bottom:14px;
+  background:#d3b57f;
+}
+.profile-subpage-kicker{
+  color:#e1c79c;
+  font-family:"Inter",sans-serif;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  line-height:1.35;
+  text-transform:uppercase;
+}
+.profile-subpage-title{
+  margin:8px 0 0;
+  max-width:16ch;
+  color:#fffaf2;
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2.65rem,3.35vw,3.45rem);
+  line-height:1.01;
+  letter-spacing:-.045em;
+  text-shadow:0 8px 24px rgba(0,0,0,.14);
+}
+.profile-subpage-meta{
+  margin-top:8px;
+  color:rgba(255,250,242,.84);
+  font-family:"Inter",sans-serif;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  line-height:1.45;
+  text-transform:uppercase;
+}
+.profile-subpage-role{
+  margin-top:3px;
+  color:rgba(255,250,242,.78);
+  font-family:"Inter",sans-serif;
+  font-size:.78rem;
+  font-weight:600;
+  line-height:1.4;
+}
+.profile-subpage-copy>p{
+  max-width:650px;
+  margin:13px 0 0;
+  color:rgba(255,250,242,.91);
+  font-family:"Inter",sans-serif;
+  font-size:.92rem;
+  line-height:1.55;
+}
+.profile-subpage-supervision{
+  padding-top:11px;
+  border-top:1px solid rgba(255,250,242,.22);
+  color:rgba(255,250,242,.88)!important;
+  font-size:.82rem!important;
+}
+.profile-subpage-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:17px;
+}
+.profile-subpage-actions .btn-primary{
+  background:#f4eee4;
+  border-color:#f4eee4;
+  color:#102f4d;
+}
+.profile-subpage-actions .btn-primary:hover{
+  background:#fffaf2;
+  border-color:#fffaf2;
+}
+.profile-subpage-headshot{
+  justify-self:end;
+  width:238px;
+  margin:0;
+}
+.profile-subpage-headshot-frame{
+  overflow:hidden;
+  width:100%;
+  aspect-ratio:4 / 5;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:16px;
+  background:#e9e1d6;
+  box-shadow:0 18px 42px rgba(0,0,0,.16);
+}
+.profile-subpage-headshot img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+.profile-subpage-headshot--jasmine img{
+  object-position:center 18%;
+}
+@media(max-width:900px){
+  .profile-subpage-hero-inner{
+    width:min(100% - 48px,1120px);
+    grid-template-columns:minmax(0,1fr) 210px;
+    gap:34px;
+  }
+  .profile-subpage-headshot{width:210px}
+}
+@media(max-width:760px){
+  .profile-subpage-hero{
+    min-height:0;
+  }
+  .profile-subpage-hero::before{
+    background:
+      linear-gradient(180deg,rgba(16,47,77,.84) 0%,rgba(16,47,77,.70) 58%,rgba(16,47,77,.80) 100%),
+      linear-gradient(90deg,rgba(16,47,77,.22) 0%,rgba(16,47,77,.10) 100%);
+  }
+  .profile-subpage-hero-inner{
+    width:min(100% - 40px,1120px);
+    min-height:0;
+    grid-template-columns:1fr;
+    gap:22px;
+    padding:30px 0 32px;
+  }
+  .profile-subpage-headshot{
+    justify-self:start;
+    width:min(210px,58vw);
+  }
+  .profile-subpage-copy>p{
+    font-size:.9rem;
+  }
+}
+</style>
 </head>
 
 <body class="clinician-profile-page" data-static-hero-system="true">
@@ -367,24 +545,28 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   </header>
 
   <main id="main-content">
-<section class="cp-intro sb-standard-hero" id="overview">
-  <div class="cp-intro-inner">
-    <div class="cp-intro-copy sb-standard-hero-copy">
-      <div class="cp-rule"></div>
-      <div class="cp-kicker">Clinician Profile</div>
-      <h1>Jasmine Wilson</h1>
-      <div class="cp-credential">LPC · Licensed Professional Counselor</div>
-      <div class="cp-role">Postgraduate Clinical Associate</div>
+<section class="profile-subpage-hero" id="overview">
+  <figure class="profile-subpage-hero-bg" aria-hidden="true">
+    <img src="profile-nature-hero.jpg" alt="" width="2000" height="1116" fetchpriority="high" decoding="async">
+  </figure>
+
+  <div class="profile-subpage-hero-inner">
+    <div class="profile-subpage-copy">
+      <div class="profile-subpage-rule"></div>
+      <div class="profile-subpage-kicker">Clinician Profile</div>
+      <h1 class="profile-subpage-title">Jasmine Wilson</h1>
+      <div class="profile-subpage-meta">LPC · Licensed Professional Counselor</div>
+      <div class="profile-subpage-role">Postgraduate Clinical Associate</div>
       <p>Jasmine provides individual psychotherapy for adolescents age 12+ and adults navigating trauma, anxiety, depression, stress, emotional overwhelm, life transitions, and recurring concerns related to relationships or self-worth. Her style is warm, collaborative, reflective, and direct.</p>
-      <p class="cp-supervision"><strong>Jasmine provides services under the clinical supervision of Dr. Stephen W. Bryant, PsyD, LCPC.</strong></p>
-      <div class="cp-intro-actions">
+      <p class="profile-subpage-supervision"><strong>Jasmine provides services under the clinical supervision of Dr. Stephen W. Bryant, PsyD, LCPC.</strong></p>
+      <div class="profile-subpage-actions">
         <a class="btn btn-primary" href="contact.html?clinician=jasmine-wilson#inquiry-form">Request a Consultation</a>
       </div>
     </div>
 
-    <figure class="cp-portrait sb-standard-hero-media" aria-label="Jasmine Wilson profile hero image">
-      <div class="cp-portrait-frame">
-        <img src="profile-nature-hero.jpg" alt="" width="2000" height="1116" fetchpriority="high" decoding="async">
+    <figure class="profile-subpage-headshot profile-subpage-headshot--jasmine" aria-label="Portrait of Jasmine Wilson">
+      <div class="profile-subpage-headshot-frame">
+        <img src="jasmine-wilson-headshot.png?v=20260921i" alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" width="1122" height="1402" fetchpriority="high" decoding="async">
       </div>
     </figure>
   </div>
@@ -394,14 +576,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     <span class="sb-utility-strip__item">Illinois telehealth</span>
     <span class="sb-utility-strip__item">Adolescents age 12+ &amp; adults</span>
     <span class="sb-utility-strip__item">Postgraduate Clinical Associate</span>
-  </div>
-</section>
-
-<section class="cp-summary" aria-label="Jasmine Wilson care overview">
-  <div class="cp-summary-inner">
-    <article><strong>Illinois telehealth</strong><span>Online outpatient care for clients located in Illinois.</span></article>
-    <article><strong>Adolescents 12+ and adults</strong><span>Individual psychotherapy across adolescence and adulthood.</span></article>
-    <article><strong>Individual psychotherapy</strong><span>Consultation first, with fit and scope reviewed before treatment begins.</span></article>
   </div>
 </section>
 
