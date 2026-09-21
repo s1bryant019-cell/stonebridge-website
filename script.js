@@ -105,7 +105,7 @@
     var environmentalSrc = 'founder-environmental.png?v=' + VERSION;
 
     document.querySelectorAll(
-      '.portrait-frame img, .clinician-photo img, img[src*="practitioner-headshot-sbryant"], img[src*="founder-headshot"]'
+      '.portrait-frame img, img[src*="practitioner-headshot-sbryant"], img[src*="founder-headshot"]'
     ).forEach(function (img) {
       forceImage(img, headshotSrc, 'Dr. Stephen W. Bryant, PsyD, LCPC');
     });
