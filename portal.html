@@ -181,6 +181,32 @@
 @media (prefers-reduced-motion:reduce){.services-menu-toggle svg{transition:none;}}
 @media(max-width:960px){.site-header.compact-site-header .services-nav-dropdown{width:100%;display:block!important;}.services-nav-main{width:100%;justify-content:space-between;}.site-header.compact-site-header .services-nav-main > a{flex:1 1 auto;}.services-menu-toggle{width:38px;height:38px;flex:0 0 38px;}.site-header.compact-site-header .services-dropdown-menu{position:static;width:100%;min-width:0;margin:3px 0 2px;padding:4px 0 2px 13px;gap:0;border:0;border-left:1px solid rgba(33,49,66,.17);border-radius:0;background:transparent;box-shadow:none;}.services-dropdown-menu::before{display:none;}.site-header.compact-site-header .services-dropdown-menu a{padding:8px 10px;font-size:.85rem;}}
 </style>
+<style id="stonebridge-standard-hero-overlay-soften-20260921">
+html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16,47,77,.84) 0%,
+      rgba(16,47,77,.78) 28%,
+      rgba(16,47,77,.58) 50%,
+      rgba(16,47,77,.30) 72%,
+      rgba(16,47,77,.14) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(16,47,77,.12) 0%,
+      rgba(16,47,77,.02) 58%,
+      rgba(16,47,77,.18) 100%
+    )!important;
+}
+@media(max-width:760px){
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
+    background:
+      linear-gradient(180deg,rgba(16,47,77,.82) 0%,rgba(16,47,77,.66) 58%,rgba(16,47,77,.78) 100%),
+      linear-gradient(90deg,rgba(16,47,77,.24) 0%,rgba(16,47,77,.10) 100%)!important;
+  }
+}
+</style>
 </head>
 
 <body class="portal-page" data-static-hero-system="true">
