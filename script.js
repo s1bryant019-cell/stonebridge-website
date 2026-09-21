@@ -1,5 +1,5 @@
 (function () {
-  var VERSION = '20260921h';
+  var VERSION = '20260921j';
 
   function pageName() {
     var path = (window.location.pathname || '').split('/').pop().toLowerCase();
@@ -9,7 +9,7 @@
   function activeKey() {
     var page = pageName();
     if (page === 'about.html') return 'about';
-    if (page === 'team.html' || page === 'team-founder.html') return 'team';
+    if (page === 'team.html' || page === 'team-founder.html' || page === 'team-jasmine-wilson.html') return 'team';
     if ([
       'services.html','psychotherapy.html','individual-therapy.html','couples-therapy.html',
       'family-therapy.html','parent-support.html','group-therapy.html','assessment.html'
@@ -302,34 +302,8 @@
         '<a href="#professional-education">Training &amp; Education</a>'
       ].join('');
     }
-
-    document.querySelectorAll('.clinicians-boundary').forEach(function (note) {
-      if (note.textContent.indexOf('Evaluator responsibility:') !== -1) note.remove();
-    });
-
-    var scopeCopy = document.querySelector('.clinicians-scope-copy');
-    if (scopeCopy) {
-      var scopeIntro = scopeCopy.querySelector('p');
-      if (scopeIntro) scopeIntro.remove();
-    }
-
-    var scopeList = document.querySelector('.clinicians-scope-list');
-    if (scopeList) {
-      scopeList.innerHTML = [
-        '<div class="clinicians-scope-row">',
-        '  <strong>Consultation</strong>',
-        '  <p>Clinical responsibility remains with the treating professional.</p>',
-        '</div>',
-        '<div class="clinicians-scope-row">',
-        '  <strong>Supervision</strong>',
-        '  <p>A supervisory relationship exists only when formally established through the appropriate written agreement and professional pathway.</p>',
-        '</div>',
-        '<div class="clinicians-scope-row">',
-        '  <strong>Writing &amp; review</strong>',
-        '  <p>The requesting professional retains responsibility for final judgment, authorship, conclusions, signature, and release.</p>',
-        '</div>'
-      ].join('');
-    }
+    // Preserve the authored Professional Boundaries content.
+    // Do not remove qualifying language or rewrite the Consultation / Supervision / Documents & review distinctions.
   }
 
   function applyTargetedRefinements() {
