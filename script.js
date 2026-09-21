@@ -1,5 +1,5 @@
 (function () {
-  var VERSION = '20260914l';
+  var VERSION = '20260921h';
 
   function pageName() {
     var path = (window.location.pathname || '').split('/').pop().toLowerCase();
