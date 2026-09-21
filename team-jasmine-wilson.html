@@ -299,7 +299,7 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-navy)}
 </style>
 </head>
 
-<body class="clinician-profile-page">
+<body class="clinician-profile-page" data-static-hero-system="true">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header compact-site-header">
@@ -341,9 +341,9 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-navy)}
   </header>
 
   <main id="main-content">
-<section class="cp-intro" id="overview">
+<section class="cp-intro sb-standard-hero" id="overview">
   <div class="cp-intro-inner">
-    <div class="cp-intro-copy">
+    <div class="cp-intro-copy sb-standard-hero-copy">
       <div class="cp-rule"></div>
       <div class="cp-kicker">Clinician Profile</div>
       <h1>Jasmine Wilson</h1>
@@ -356,11 +356,18 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-navy)}
       </div>
     </div>
 
-    <figure class="cp-portrait" aria-label="Portrait of Jasmine Wilson">
+    <figure class="cp-portrait sb-standard-hero-media" aria-label="Jasmine Wilson profile hero image">
       <div class="cp-portrait-frame">
-        <img src="jasmine-wilson-headshot.png?v=20260921i" alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" width="1122" height="1402" fetchpriority="high" decoding="async">
+        <img src="profile-nature-hero.jpg" alt="" width="2000" height="1116" fetchpriority="high" decoding="async">
       </div>
     </figure>
+  </div>
+</section>
+<section class="sb-utility-strip sb-utility-strip--beige" aria-label="Clinician information">
+  <div class="sb-utility-strip__inner">
+    <span class="sb-utility-strip__item">Illinois telehealth</span>
+    <span class="sb-utility-strip__item">Adolescents age 12+ &amp; adults</span>
+    <span class="sb-utility-strip__item">Postgraduate Clinical Associate</span>
   </div>
 </section>
 
