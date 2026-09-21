@@ -891,6 +891,127 @@
   .team-cta-inner{grid-template-columns:1fr!important;gap:18px!important;padding:44px 0!important}
   .team-cta .btn{width:100%;justify-content:center}
 }
+</style><style id="stonebridge-team-second-pass-20260921">
+.team-hero-compact{
+  min-height:0!important;
+  height:auto!important;
+  background:#102F4D!important;
+}
+.team-hero-compact::before{display:none!important}
+.team-hero-compact .team-hero-copy,
+.team-shell,
+.team-cta-inner{
+  width:min(1120px,calc(100% - 64px))!important;
+}
+.team-hero-compact .team-hero-copy{
+  min-height:0!important;
+  height:auto!important;
+  padding:40px 0 42px!important;
+  justify-content:flex-start!important;
+}
+.team-hero-compact h1{
+  margin-top:8px!important;
+  max-width:18ch!important;
+  font-size:clamp(2.45rem,3.25vw,3.25rem)!important;
+}
+.team-hero-compact .team-hero-copy>p{
+  max-width:700px!important;
+  margin-top:12px!important;
+  font-size:.96rem!important;
+  line-height:1.55!important;
+}
+.team-section{padding:48px 0 0!important}
+.team-intro{margin-bottom:24px!important}
+.team-intro h2{margin-top:10px!important}
+.clinician-grid{
+  width:min(1040px,100%)!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:26px!important;
+}
+.clinician-card{
+  min-height:0!important;
+  background:#fffdf9!important;
+  border:1px solid rgba(212,200,185,.72)!important;
+  box-shadow:none!important;
+}
+.clinician-photo{
+  width:100%!important;
+  aspect-ratio:4 / 3!important;
+  height:auto!important;
+  border-radius:0!important;
+}
+.clinician-photo img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center 18%!important;
+}
+.clinician-details{
+  min-height:0!important;
+  padding:26px!important;
+}
+.clinician-kicker{font-size:.7rem!important}
+.clinician-details h3{
+  font-size:clamp(1.55rem,2vw,1.75rem)!important;
+  line-height:1.08!important;
+}
+.clinician-role{
+  font-size:.88rem!important;
+  line-height:1.45!important;
+}
+.clinician-details>p{
+  font-size:.94rem!important;
+  line-height:1.55!important;
+}
+.team-secondary{
+  padding:52px 0!important;
+  background:var(--team-bg);
+}
+.team-secondary-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:32px!important;
+  margin:0!important;
+  padding:0!important;
+  border-top:1px solid var(--team-line)!important;
+  border-bottom:1px solid var(--team-line)!important;
+}
+.team-secondary-grid article{
+  min-width:0;
+  padding:22px 0!important;
+}
+.team-secondary-grid article+article{
+  padding-left:32px!important;
+  border-left:1px solid var(--team-line)!important;
+}
+.team-secondary-grid .team-label{font-size:.68rem!important}
+.team-secondary-grid p{max-width:520px;font-size:.88rem!important}
+.team-cta{background:#102F4D!important}
+.team-cta-inner{padding:56px 0!important}
+@media(max-width:1024px){
+  .team-hero-compact .team-hero-copy,
+  .team-shell,
+  .team-cta-inner{width:min(100% - 48px,1120px)!important}
+  .team-hero-compact .team-hero-copy{padding:36px 0!important}
+  .team-section{padding-top:44px!important}
+}
+@media(max-width:760px){
+  .team-hero-compact .team-hero-copy,
+  .team-shell,
+  .team-cta-inner{width:min(100% - 40px,1120px)!important}
+  .team-hero-compact .team-hero-copy{padding:32px 0!important}
+  .team-section{padding-top:36px!important}
+  .clinician-grid{grid-template-columns:1fr!important;gap:22px!important}
+  .clinician-details{padding:22px!important}
+  .team-secondary{padding:44px 0!important}
+  .team-secondary-grid{grid-template-columns:1fr!important;gap:0!important}
+  .team-secondary-grid article+article{
+    padding-left:0!important;
+    border-left:0!important;
+    border-top:1px solid var(--team-line)!important;
+  }
+  .team-cta-inner{padding:44px 0!important}
+}
 </style></head>
 
 <body class="team-page">
@@ -941,9 +1062,14 @@
         <div class="team-kicker">Team</div>
         <h1>A small team, chosen with care.</h1>
         <p>Stonebridge clinicians provide relational, clinically grounded psychotherapy for adolescents, adults, couples, and families throughout Illinois.</p>
-        <div class="team-hero-actions">
-          <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
-        </div>
+      </div>
+    </section>
+
+    <section class="sb-utility-strip sb-utility-strip--beige" aria-label="Team information">
+      <div class="sb-utility-strip__inner">
+        <span class="sb-utility-strip__item">Illinois telehealth</span>
+        <span class="sb-utility-strip__item">Relational outpatient care</span>
+        <span class="sb-utility-strip__item">Clinician matching by fit</span>
       </div>
     </section>
 
@@ -972,7 +1098,7 @@
 
           <article class="clinician-card">
             <figure class="clinician-photo">
-              <img alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" decoding="async" loading="lazy" src="jasmine-wilson-headshot-verified.webp?v=20260921f" width="240" height="300">
+              <img alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" decoding="async" loading="lazy" src="jasmine-wilson-headshot.png?v=20260921i" width="1122" height="1402">
             </figure>
             <div class="clinician-details">
               <div class="clinician-kicker">Clinician · Illinois telehealth</div>
@@ -986,6 +1112,11 @@
           </article>
         </div>
 
+      </div>
+    </section>
+
+    <section class="team-secondary">
+      <div class="team-shell">
         <div class="team-secondary-grid" aria-label="Additional Stonebridge information">
           <article>
             <div class="team-label">Stonebridge is growing</div>
@@ -998,6 +1129,7 @@
             <a href="for-clinicians.html">View Professional Offerings <span aria-hidden="true">→</span></a>
           </article>
         </div>
+
       </div>
     </section>
 
