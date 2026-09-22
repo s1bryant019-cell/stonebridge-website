@@ -3089,6 +3089,15 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standa
     max-width:calc(100% - 40px)!important;
     transform:translateX(-50%)!important;
     box-sizing:border-box!important;
-    align-items:flex-start!important;
+    align-items:center!important;
+  }
+  .site-header.compact-site-header .menu > a,
+  .site-header.compact-site-header .menu > .nav-dropdown{
+    width:100%!important;
+    justify-content:center!important;
+    text-align:center!important;
+  }
+  .site-header.compact-site-header .services-nav-main{
+    justify-content:center!important;
   }
 }
