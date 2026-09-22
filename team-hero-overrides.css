@@ -1,17 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stonebridge Team Hero Preview</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--team-navy-deep:#102f4d;--team-white:#fffaf2}
-*{box-sizing:border-box} body{margin:0;background:#f8f5f0}
-.team-page-hero-rule{width:40px;height:2px;background:#d3b57f;margin-bottom:14px}
-.team-kicker{font:800 .68rem/1.35 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#e1c79c}
-.team-page-hero h1{margin:8px 0 0;color:#fffaf2;font-family:"EB Garamond",Georgia,serif;font-size:clamp(2.45rem,3.2vw,3.25rem);line-height:1;letter-spacing:-.045em}
-.team-page-hero p{margin:13px 0 0;color:rgba(255,250,242,.88);font:400 .95rem/1.52 Inter,sans-serif;max-width:680px}
 body.team-page .team-page-hero{
   position:relative !important;
   min-height:320px !important;
@@ -137,31 +123,3 @@ body.team-page .team-page-hero.sb-standard-hero::before{
     width:min(100% - 40px,1120px) !important;
   }
 }
-
-</style>
-</head>
-<body class="team-page">
-<section class="team-page-hero team-page-hero-compact sb-standard-hero">
-  <div class="team-page-hero-inner">
-    <div class="team-page-hero-copy sb-standard-hero-copy">
-      <div class="team-page-hero-rule"></div>
-      <div class="team-kicker">Team</div>
-      <h1>A small team, chosen with care.</h1>
-      <p>Stonebridge clinicians provide relational, clinically grounded psychotherapy for adolescents, adults, couples, and families throughout Illinois.</p>
-    </div>
-
-    <figure class="team-page-hero-media sb-standard-hero-media">
-      <img
-        src="team-hero-final.webp"
-        alt="Warm Stonebridge therapy room with blue sofa, lamp, shelving, and natural light"
-        fetchpriority="high"
-        decoding="async"
-        width="1648"
-        height="928"
-      >
-    </figure>
-  </div>
-</section>
-
-</body>
-</html>
