@@ -1483,6 +1483,63 @@ body.team-page .team-page-hero-media img{
   }
   .team-cta .btn{width:100%;justify-content:center}
 }
+
+/* Mockup-fidelity visual pass: approved hero, white-chair image, and die-cut plant. */
+body.team-page .team-page-hero-media img{
+  object-position:center center!important;
+  filter:brightness(1.02) saturate(.94) contrast(.96)!important;
+}
+body.team-page .team-page-hero.sb-standard-hero::before{
+  background:
+    linear-gradient(90deg,rgba(16,47,77,.84) 0%,rgba(16,47,77,.72) 29%,rgba(16,47,77,.44) 54%,rgba(16,47,77,.14) 82%,rgba(16,47,77,.02) 100%),
+    linear-gradient(180deg,rgba(16,47,77,.05) 0%,rgba(16,47,77,0) 58%,rgba(16,47,77,.10) 100%)!important;
+}
+.team-consultation{
+  position:relative;
+  overflow:visible;
+}
+.team-consultation-media img{
+  object-position:center center!important;
+}
+.team-secondary{
+  position:relative;
+  overflow:visible;
+  isolation:isolate;
+}
+.team-secondary .team-shell{
+  position:relative;
+  z-index:2;
+}
+.team-secondary-plant{
+  position:absolute;
+  z-index:3;
+  right:-18px;
+  bottom:-44px;
+  width:clamp(150px,13vw,220px);
+  height:auto;
+  pointer-events:none;
+  user-select:none;
+  filter:drop-shadow(0 16px 18px rgba(16,47,77,.08));
+}
+.team-secondary-grid article:last-child{
+  padding-right:clamp(130px,13vw,210px)!important;
+}
+@media(max-width:900px){
+  .team-secondary-plant{
+    width:155px;
+    right:-22px;
+    bottom:-34px;
+    opacity:.96;
+  }
+  .team-secondary-grid article:last-child{
+    padding-right:120px!important;
+  }
+}
+@media(max-width:760px){
+  .team-secondary-plant{display:none}
+  .team-secondary-grid article:last-child{padding-right:0!important}
+}
+
 </style>
 
 </head>
@@ -1539,7 +1596,7 @@ body.team-page .team-page-hero-media img{
         </div>
 
         <figure class="team-page-hero-media sb-standard-hero-media">
-          <img src="team-consultation-room-960.webp" alt="Warm, quiet Stonebridge consultation room" fetchpriority="high" decoding="async">
+          <img src="team-hero-mockup-room.webp" alt="Warm Stonebridge therapy room with lamp, shelving, seating, and plants" fetchpriority="high" decoding="async">
         </figure>
       </div>
     </section>
@@ -1597,7 +1654,7 @@ body.team-page .team-page-hero-media img{
     <section class="team-consultation" aria-labelledby="team-consultation-title">
       <div class="team-consultation-inner">
         <figure class="team-consultation-media">
-          <img src="home-hero-room.png" alt="Warm, quiet psychotherapy room" loading="lazy" decoding="async">
+          <img src="team-consultation-white-chair.webp" alt="Warm psychotherapy room with upholstered chair, plants, and soft natural light" loading="lazy" decoding="async">
         </figure>
         <div class="team-consultation-copy">
           <div class="team-label">Consultation first</div>
@@ -1647,6 +1704,7 @@ body.team-page .team-page-hero-media img{
     </section>
 
     <section class="team-secondary">
+      <img class="team-secondary-plant" src="team-plant-cutout.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <div class="team-shell">
         <div class="team-secondary-grid" aria-label="Additional Stonebridge information">
           <article>
