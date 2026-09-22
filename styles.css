@@ -3091,13 +3091,32 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standa
     box-sizing:border-box!important;
     align-items:center!important;
   }
-  .site-header.compact-site-header .menu > a,
-  .site-header.compact-site-header .menu > .nav-dropdown{
+  .site-header.compact-site-header .menu > a{
+    display:flex!important;
     width:100%!important;
+    min-width:0!important;
     justify-content:center!important;
     text-align:center!important;
   }
+  .site-header.compact-site-header .menu > .nav-dropdown{
+    width:100%!important;
+    min-width:0!important;
+  }
   .site-header.compact-site-header .services-nav-main{
+    position:relative!important;
+    width:100%!important;
     justify-content:center!important;
+  }
+  .site-header.compact-site-header .services-nav-main > a{
+    flex:0 1 auto!important;
+    width:auto!important;
+    justify-content:center!important;
+    text-align:center!important;
+  }
+  .site-header.compact-site-header .services-menu-toggle{
+    position:absolute!important;
+    right:0!important;
+    top:50%!important;
+    transform:translateY(-50%)!important;
   }
 }
