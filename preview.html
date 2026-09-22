@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stonebridge Consultation Section Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--team-navy-deep:#102f4d;--team-muted:#5d6870;--team-warm-line:rgba(212,200,185,.72);}
+*{box-sizing:border-box} body{margin:0;background:#f8f5f0;color:#213142}
+.team-label{color:#78613f;font:800 .68rem/1.35 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.btn{display:inline-flex;min-height:46px;align-items:center;padding:0 18px;border-radius:8px;text-decoration:none;font:700 .82rem Inter,sans-serif}
+.btn-primary{background:#102f4d;color:#fffaf2}
+/*
+  Stonebridge Team Page — Consultation section only
+  Purpose:
+  - Use the approved chair image.
+  - Let the image bleed all the way to the LEFT viewport edge.
+  - Preserve the existing copy, CTA styling, and overall Stonebridge system.
+*/
+
+.team-consultation{
+  position:relative;
+  overflow:hidden !important;
+  background:#f2ece4;
+  border-top:1px solid var(--team-warm-line);
+  border-bottom:1px solid var(--team-warm-line);
+}
+
+.team-consultation-inner{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,50vw) minmax(0,1fr) !important;
+  gap:0 !important;
+  align-items:stretch !important;
+}
+
+.team-consultation-media{
+  width:100% !important;
+  min-height:500px;
+  margin:0 !important;
+  overflow:hidden;
+  border:0 !important;
+  border-radius:0 !important;
+  background:#ddd3c7;
+}
+
+.team-consultation-media img{
+  display:block;
+  width:100% !important;
+  height:100% !important;
+  min-height:500px;
+  object-fit:cover !important;
+  object-position:center center !important;
+  border-radius:0 !important;
+}
+
+.team-consultation-copy{
+  width:100%;
+  max-width:640px !important;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:64px clamp(42px,5vw,76px) !important;
+}
+
+.team-consultation-copy .team-label{
+  margin-bottom:12px;
+}
+
+.team-consultation-copy h2{
+  max-width:10ch;
+  margin:0;
+  color:var(--team-navy-deep);
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2.65rem,3.6vw,3.85rem);
+  line-height:1;
+  letter-spacing:-.045em;
+}
+
+.team-consultation-copy > p{
+  max-width:610px;
+  margin:20px 0 0;
+  color:var(--team-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.98rem;
+  line-height:1.7;
+}
+
+.team-consultation-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:16px 22px;
+  margin-top:28px;
+}
+
+.team-consultation-link{
+  color:var(--team-navy-deep);
+  font-family:"Inter",sans-serif;
+  font-size:.84rem;
+  font-weight:700;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:4px;
+}
+
+/* Tablet: stack the image and copy cleanly. */
+@media(max-width:900px){
+  .team-consultation-inner{
+    grid-template-columns:1fr !important;
+  }
+
+  .team-consultation-media,
+  .team-consultation-media img{
+    min-height:390px;
+  }
+
+  .team-consultation-copy{
+    width:min(100% - 48px,760px);
+    max-width:none !important;
+    margin:0 auto;
+    padding:48px 0 54px !important;
+  }
+}
+
+/* Mobile */
+@media(max-width:760px){
+  .team-consultation-media,
+  .team-consultation-media img{
+    min-height:300px;
+  }
+
+  .team-consultation-copy{
+    width:min(100% - 40px,680px);
+    padding:42px 0 46px !important;
+  }
+}
+
+</style>
+</head>
+<body>
+<section class="team-consultation" aria-labelledby="team-consultation-title">
+  <div class="team-consultation-inner">
+    <figure class="team-consultation-media">
+      <img
+        src="team-consultation-chair.webp"
+        alt="Warm psychotherapy room with upholstered chair, lamp, plant, and soft natural light"
+        loading="lazy"
+        decoding="async"
+        width="1672"
+        height="941"
+      >
+    </figure>
+
+    <div class="team-consultation-copy">
+      <div class="team-label">Consultation first</div>
+      <h2 id="team-consultation-title">Consultation before commitment.</h2>
+      <p>Beginning therapy starts with a thoughtful look at fit, scope, timing, telehealth appropriateness, and relational match.</p>
+
+      <div class="team-consultation-actions">
+        <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
+        <a class="team-consultation-link" href="contact.html#contact-next-title">
+          What to expect <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
