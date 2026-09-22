@@ -3076,3 +3076,19 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standa
     padding:30px 0!important;
   }
 }
+
+/* =========================================================
+   MOBILE MENU CENTERING — September 2026
+   Keep the compact navigation panel visually centered on phones.
+========================================================= */
+@media (max-width:760px){
+  .site-header.compact-site-header .menu{
+    left:50%!important;
+    right:auto!important;
+    width:min(calc(100% - 40px),640px)!important;
+    max-width:calc(100% - 40px)!important;
+    transform:translateX(-50%)!important;
+    box-sizing:border-box!important;
+    align-items:flex-start!important;
+  }
+}
