@@ -1486,8 +1486,8 @@ body.team-page .team-page-hero-media img{
 
 /* Mockup-fidelity visual pass: approved hero, white-chair image, and die-cut plant. */
 body.team-page .team-page-hero-media img{
-  object-position:center center!important;
-  filter:brightness(1.02) saturate(.94) contrast(.96)!important;
+  object-position:center 48%!important;
+  filter:brightness(1.06) saturate(.94) contrast(.96)!important;
 }
 body.team-page .team-page-hero.sb-standard-hero::before{
   background:
@@ -1513,16 +1513,16 @@ body.team-page .team-page-hero.sb-standard-hero::before{
 .team-secondary-plant{
   position:absolute;
   z-index:3;
-  right:-18px;
-  bottom:-44px;
-  width:clamp(150px,13vw,220px);
+  right:-8px;
+  bottom:-58px;
+  width:clamp(170px,15vw,238px);
   height:auto;
   pointer-events:none;
   user-select:none;
-  filter:drop-shadow(0 16px 18px rgba(16,47,77,.08));
+  filter:drop-shadow(0 16px 18px rgba(16,47,77,.10));
 }
 .team-secondary-grid article:last-child{
-  padding-right:clamp(130px,13vw,210px)!important;
+  padding-right:clamp(150px,15vw,230px)!important;
 }
 @media(max-width:900px){
   .team-secondary-plant{
@@ -1596,7 +1596,7 @@ body.team-page .team-page-hero.sb-standard-hero::before{
         </div>
 
         <figure class="team-page-hero-media sb-standard-hero-media">
-          <img src="team-hero-mockup-room.webp" alt="Warm Stonebridge therapy room with lamp, shelving, seating, and plants" fetchpriority="high" decoding="async">
+          <img src="team-hero-office.png" alt="Warm Stonebridge office with seating, lamp, shelving, and plants" fetchpriority="high" decoding="async">
         </figure>
       </div>
     </section>
@@ -1654,7 +1654,7 @@ body.team-page .team-page-hero.sb-standard-hero::before{
     <section class="team-consultation" aria-labelledby="team-consultation-title">
       <div class="team-consultation-inner">
         <figure class="team-consultation-media">
-          <img src="team-consultation-white-chair.webp" alt="Warm psychotherapy room with upholstered chair, plants, and soft natural light" loading="lazy" decoding="async">
+          <img src="home-hero-room.png" alt="Warm psychotherapy room with upholstered chair, plants, and soft natural light" loading="lazy" decoding="async">
         </figure>
         <div class="team-consultation-copy">
           <div class="team-label">Consultation first</div>
@@ -1704,7 +1704,27 @@ body.team-page .team-page-hero.sb-standard-hero::before{
     </section>
 
     <section class="team-secondary">
-      <img class="team-secondary-plant" src="team-plant-cutout.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <svg class="team-secondary-plant" viewBox="0 0 190 300" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="rgba(70,92,55,.72)" stroke-width="4" stroke-linecap="round">
+          <path d="M95 288 C96 226 94 162 98 74"/>
+          <path d="M96 224 C77 199 60 180 42 165"/>
+          <path d="M97 190 C116 165 134 143 150 126"/>
+          <path d="M97 154 C77 133 62 113 48 92"/>
+          <path d="M98 122 C116 98 128 79 139 58"/>
+        </g>
+        <g fill="rgba(92,117,72,.92)">
+          <ellipse cx="38" cy="161" rx="30" ry="15" transform="rotate(24 38 161)"/>
+          <ellipse cx="63" cy="194" rx="27" ry="14" transform="rotate(-31 63 194)"/>
+          <ellipse cx="151" cy="125" rx="30" ry="15" transform="rotate(-28 151 125)"/>
+          <ellipse cx="129" cy="157" rx="27" ry="14" transform="rotate(26 129 157)"/>
+          <ellipse cx="47" cy="91" rx="29" ry="14" transform="rotate(38 47 91)"/>
+          <ellipse cx="72" cy="122" rx="25" ry="13" transform="rotate(-20 72 122)"/>
+          <ellipse cx="140" cy="56" rx="28" ry="14" transform="rotate(-42 140 56)"/>
+          <ellipse cx="112" cy="91" rx="25" ry="13" transform="rotate(31 112 91)"/>
+          <ellipse cx="99" cy="52" rx="22" ry="12" transform="rotate(-8 99 52)"/>
+        </g>
+        <path d="M70 275 C78 263 113 263 123 275 L117 299 H77 Z" fill="rgba(156,132,101,.95)"/>
+      </svg>
       <div class="team-shell">
         <div class="team-secondary-grid" aria-label="Additional Stonebridge information">
           <article>
