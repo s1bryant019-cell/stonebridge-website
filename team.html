@@ -1174,6 +1174,317 @@ body.team-page .team-page-hero-media img{
   }
 }
 </style>
+
+<style id="stonebridge-team-depth-20260922">
+/* Team depth pass: preserve clinician cards; add stronger page rhythm around them. */
+.team-section{
+  padding:58px 0 72px!important;
+}
+.team-intro{
+  max-width:760px;
+  margin-bottom:30px!important;
+}
+.team-intro h2{
+  max-width:18ch;
+}
+
+/* Warmer hero treatment using an existing Stonebridge room asset. */
+body.team-page .team-page-hero.sb-standard-hero::before{
+  background:
+    linear-gradient(90deg,rgba(16,47,77,.78) 0%,rgba(16,47,77,.68) 30%,rgba(16,47,77,.43) 56%,rgba(16,47,77,.14) 82%,rgba(16,47,77,.04) 100%),
+    linear-gradient(180deg,rgba(16,47,77,.08) 0%,rgba(16,47,77,.01) 58%,rgba(16,47,77,.14) 100%)!important;
+}
+body.team-page .team-page-hero-media img{
+  object-position:center 52%!important;
+  filter:brightness(1.03) saturate(.92) contrast(.96)!important;
+}
+
+/* Consultation before commitment */
+.team-consultation{
+  background:#f2ece4;
+  border-top:1px solid var(--team-warm-line);
+  border-bottom:1px solid var(--team-warm-line);
+}
+.team-consultation-inner{
+  width:min(1180px,calc(100% - 64px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,52%) minmax(0,48%);
+  align-items:stretch;
+}
+.team-consultation-media{
+  min-height:470px;
+  margin:0;
+  overflow:hidden;
+  background:#ddd3c7;
+}
+.team-consultation-media img{
+  width:100%;
+  height:100%;
+  min-height:470px;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
+.team-consultation-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:64px clamp(42px,5vw,76px);
+}
+.team-consultation-copy .team-label{
+  margin-bottom:12px;
+}
+.team-consultation-copy h2{
+  max-width:10ch;
+  margin:0;
+  color:var(--team-navy-deep);
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2.65rem,3.6vw,3.85rem);
+  line-height:1;
+  letter-spacing:-.045em;
+}
+.team-consultation-copy>p{
+  max-width:610px;
+  margin:20px 0 0;
+  color:var(--team-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.98rem;
+  line-height:1.7;
+}
+.team-consultation-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:16px 22px;
+  margin-top:28px;
+}
+.team-consultation-link{
+  color:var(--team-navy-deep);
+  font-family:"Inter",sans-serif;
+  font-size:.84rem;
+  font-weight:700;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:4px;
+}
+
+/* What guides our work */
+.team-guides{
+  padding:70px 0 72px;
+  background:var(--team-bg);
+}
+.team-guides-inner{
+  width:min(1120px,calc(100% - 64px));
+  margin:0 auto;
+}
+.team-guides-heading{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:56px;
+  align-items:end;
+  padding-bottom:30px;
+  border-bottom:1px solid var(--team-line);
+}
+.team-guides-heading h2{
+  max-width:12ch;
+  margin:10px 0 0;
+  color:var(--team-navy-deep);
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2.5rem,3.3vw,3.45rem);
+  line-height:1.02;
+  letter-spacing:-.04em;
+}
+.team-guides-heading p{
+  max-width:590px;
+  margin:0;
+  color:var(--team-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.95rem;
+  line-height:1.65;
+}
+.team-guides-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  margin-top:0;
+}
+.team-guide{
+  min-width:0;
+  padding:30px 26px 4px;
+  border-left:1px solid var(--team-line);
+}
+.team-guide:first-child{
+  padding-left:0;
+  border-left:0;
+}
+.team-guide:last-child{padding-right:0}
+.team-guide-index{
+  display:block;
+  margin-bottom:16px;
+  color:var(--team-gold);
+  font-family:"Inter",sans-serif;
+  font-size:.67rem;
+  font-weight:800;
+  letter-spacing:.16em;
+}
+.team-guide h3{
+  margin:0;
+  color:var(--team-navy-deep);
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:1.55rem;
+  line-height:1.08;
+}
+.team-guide p{
+  margin:10px 0 0;
+  color:var(--team-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.88rem;
+  line-height:1.6;
+}
+
+/* Existing practice/professional pathways, elevated rather than replaced. */
+.team-secondary{
+  padding:0!important;
+  background:#f4eee7!important;
+  border-top:1px solid var(--team-warm-line);
+  border-bottom:1px solid var(--team-warm-line);
+}
+.team-secondary .team-shell{
+  width:min(1120px,calc(100% - 64px))!important;
+}
+.team-secondary-grid{
+  gap:0!important;
+  padding:0!important;
+  border:0!important;
+}
+.team-secondary-grid article{
+  padding:46px 42px!important;
+}
+.team-secondary-grid article:first-child{padding-left:0!important}
+.team-secondary-grid article:last-child{padding-right:0!important}
+.team-secondary-grid article+article{
+  border-left:1px solid var(--team-line)!important;
+}
+.team-secondary-grid .team-label{
+  color:var(--team-navy-deep)!important;
+  font-family:"EB Garamond",Georgia,serif!important;
+  font-size:clamp(2rem,2.7vw,2.6rem)!important;
+  font-weight:600!important;
+  letter-spacing:-.035em!important;
+  line-height:1.02!important;
+  text-transform:none!important;
+}
+.team-secondary-grid p{
+  max-width:500px;
+  margin-top:14px!important;
+  font-size:.92rem!important;
+  line-height:1.65!important;
+}
+.team-secondary-grid a{
+  margin-top:14px!important;
+}
+
+/* Strong closing band using the former hero office image as atmosphere. */
+.team-cta{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:#102F4D!important;
+}
+.team-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:url('team-hero-office.png') center 52% / cover no-repeat;
+}
+.team-cta::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(90deg,rgba(16,47,77,.95) 0%,rgba(16,47,77,.82) 52%,rgba(16,47,77,.50) 100%);
+}
+.team-cta-inner{
+  width:min(1120px,calc(100% - 64px))!important;
+  min-height:230px;
+  padding:54px 0!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:40px!important;
+  align-items:center!important;
+}
+.team-cta-copy h2{
+  max-width:14ch;
+  margin:0;
+  color:#fffaf2!important;
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2.45rem,3.4vw,3.5rem);
+  line-height:1;
+  letter-spacing:-.04em;
+}
+.team-cta-copy p{
+  max-width:650px;
+  margin:14px 0 0;
+  color:rgba(255,250,242,.82)!important;
+  font-family:"Inter",sans-serif;
+  font-size:.94rem;
+  line-height:1.65;
+}
+.team-cta .btn-secondary{
+  background:#f4eee4!important;
+  border-color:#f4eee4!important;
+  color:var(--team-navy-deep)!important;
+  white-space:nowrap;
+}
+
+@media(max-width:900px){
+  .team-consultation-inner{grid-template-columns:1fr}
+  .team-consultation-media,
+  .team-consultation-media img{min-height:390px}
+  .team-consultation-copy{padding:48px 42px 54px}
+  .team-guides-heading{grid-template-columns:1fr;gap:18px}
+  .team-guides-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .team-guide:nth-child(3){border-left:0;padding-left:0;border-top:1px solid var(--team-line)}
+  .team-guide:nth-child(4){border-top:1px solid var(--team-line)}
+}
+@media(max-width:760px){
+  .team-section{padding:42px 0 52px!important}
+  .team-consultation-inner,
+  .team-guides-inner,
+  .team-secondary .team-shell,
+  .team-cta-inner{width:min(100% - 40px,680px)!important}
+  .team-consultation-media,
+  .team-consultation-media img{min-height:300px}
+  .team-consultation-copy{padding:42px 0 46px}
+  .team-guides{padding:52px 0}
+  .team-guides-grid{grid-template-columns:1fr}
+  .team-guide,
+  .team-guide:first-child{
+    padding:24px 0!important;
+    border-left:0!important;
+    border-top:1px solid var(--team-line);
+  }
+  .team-guide:first-child{border-top:0!important}
+  .team-secondary-grid article,
+  .team-secondary-grid article:first-child,
+  .team-secondary-grid article:last-child{
+    padding:34px 0!important;
+  }
+  .team-secondary-grid article+article{
+    border-left:0!important;
+    border-top:1px solid var(--team-line)!important;
+  }
+  .team-cta-inner{
+    min-height:0;
+    grid-template-columns:1fr!important;
+    gap:24px!important;
+    padding:46px 0!important;
+  }
+  .team-cta .btn{width:100%;justify-content:center}
+}
+</style>
+
 </head>
 
 <body class="team-page" data-static-hero-system="true">
@@ -1228,7 +1539,7 @@ body.team-page .team-page-hero-media img{
         </div>
 
         <figure class="team-page-hero-media sb-standard-hero-media">
-          <img src="team-hero-office.png" alt="Warm, bright professional office interior" fetchpriority="high" decoding="async">
+          <img src="team-consultation-room-960.webp" alt="Warm, quiet Stonebridge consultation room" fetchpriority="high" decoding="async">
         </figure>
       </div>
     </section>
@@ -1283,6 +1594,58 @@ body.team-page .team-page-hero-media img{
       </div>
     </section>
 
+    <section class="team-consultation" aria-labelledby="team-consultation-title">
+      <div class="team-consultation-inner">
+        <figure class="team-consultation-media">
+          <img src="home-hero-room.png" alt="Warm, quiet psychotherapy room" loading="lazy" decoding="async">
+        </figure>
+        <div class="team-consultation-copy">
+          <div class="team-label">Consultation first</div>
+          <h2 id="team-consultation-title">Consultation before commitment.</h2>
+          <p>Beginning therapy starts with a thoughtful look at fit, scope, timing, telehealth appropriateness, and relational match.</p>
+          <div class="team-consultation-actions">
+            <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
+            <a class="team-consultation-link" href="contact.html#contact-next-title">What to expect <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-guides" aria-labelledby="team-guides-title">
+      <div class="team-guides-inner">
+        <div class="team-guides-heading">
+          <div>
+            <div class="team-label">What guides our work</div>
+            <h2 id="team-guides-title">Steadiness, fit, and presence.</h2>
+          </div>
+          <p>Stonebridge is intentionally structured around thoughtful clinical work, clear expectations, and enough capacity for clinicians to remain attentive to the people they serve.</p>
+        </div>
+
+        <div class="team-guides-grid">
+          <article class="team-guide">
+            <span class="team-guide-index">01</span>
+            <h3>Careful fit</h3>
+            <p>Age, concern, risk level, format, and clinician expertise should make sense before ongoing care begins.</p>
+          </article>
+          <article class="team-guide">
+            <span class="team-guide-index">02</span>
+            <h3>Attentive presence</h3>
+            <p>Your concerns and perspective help shape the work, supported by time for reflection, clinical judgment, and responsive attention.</p>
+          </article>
+          <article class="team-guide">
+            <span class="team-guide-index">03</span>
+            <h3>Boundaries as care</h3>
+            <p>Clear expectations around time, communication, privacy, attendance, scope, and emergencies help make therapy steadier and more honest.</p>
+          </article>
+          <article class="team-guide">
+            <span class="team-guide-index">04</span>
+            <h3>Sustainable clinical work</h3>
+            <p>Clinical presence depends on capacity. Stonebridge is built to support thoughtful work rather than normalize chronic overextension.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="team-secondary">
       <div class="team-shell">
         <div class="team-secondary-grid" aria-label="Additional Stonebridge information">
@@ -1303,7 +1666,10 @@ body.team-page .team-page-hero-media img{
 
     <section class="team-cta">
       <div class="team-cta-inner">
-        <h2>Interested in care at Stonebridge?</h2>
+        <div class="team-cta-copy">
+          <h2>Ready to take the next step?</h2>
+          <p>Tell us a little about what you're looking for. Stonebridge will review your request and follow up about fit, availability, and next steps.</p>
+        </div>
         <a class="btn btn-secondary" href="contact.html#inquiry-form">Request a Consultation</a>
       </div>
     </section>
