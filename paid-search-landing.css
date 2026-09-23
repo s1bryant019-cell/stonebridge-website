@@ -561,18 +561,20 @@ body.paid-search-page{
 
 @media(max-width:760px){
   .paid-search-page .paid-search-header .nav{
-    width:min(100% - 34px,1220px)!important;
+    width:min(100% - 28px,1220px)!important;
     min-height:70px!important;
+    gap:8px!important;
   }
   .paid-search-page .paid-search-header .brand-link{
-    width:172px!important;
+    width:132px!important;
     min-height:52px!important;
   }
-  .paid-search-page .paid-search-header .sb-header-logo{width:168px!important}
+  .paid-search-page .paid-search-header .sb-header-logo{width:128px!important}
   .paid-search-page .paid-search-header .landing-header-cta .btn{
     min-height:42px!important;
-    padding:0 14px!important;
-    font-size:.72rem!important;
+    padding:0 9px!important;
+    font-size:.66rem!important;
+    white-space:nowrap!important;
   }
 
   .paid-hero{min-height:500px}
