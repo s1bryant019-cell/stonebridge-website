@@ -2187,6 +2187,31 @@ body{background:var(--home-bg);}
   align-items:center;
   min-height:34px;
 }
+
+/* Consistent active-page indicator across compact site headers. */
+.site-header.compact-site-header .menu > a,
+.site-header.compact-site-header .services-nav-main > a{
+  position:relative;
+}
+.site-header.compact-site-header .menu > a::after,
+.site-header.compact-site-header .services-nav-main > a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:2px;
+  height:1px;
+  background:#b28a43;
+  transition:right .18s ease;
+}
+.site-header.compact-site-header .menu > a:hover::after,
+.site-header.compact-site-header .menu > a.active::after,
+.site-header.compact-site-header .menu > a[aria-current="page"]::after,
+.site-header.compact-site-header .services-nav-main > a:hover::after,
+.site-header.compact-site-header .services-nav-main > a.active::after,
+.site-header.compact-site-header .services-nav-main > a[aria-current="page"]::after{
+  right:0;
+}
 .site-header.compact-site-header .header-cta .btn{
   min-height:40px;
   padding:0 18px;
