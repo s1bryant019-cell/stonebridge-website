@@ -249,6 +249,93 @@
 }
 </style>
 
+
+<style id="stonebridge-home-recognition-refine-20260923">
+/* Approved recognition-section refinement: open composition, no icon tangencies. */
+.home-recognition{
+  padding:70px 0 76px!important;
+}
+.home-recognition .home-section-intro{
+  max-width:1080px!important;
+  margin:0 auto 38px!important;
+  padding:0 24px;
+  text-align:center;
+}
+.home-recognition-accent{
+  width:46px;
+  height:2px;
+  margin:0 auto 20px;
+  border-radius:999px;
+  background:#b28a43;
+}
+.home-recognition .home-section-title{
+  max-width:100%!important;
+  margin:0 auto!important;
+  font-size:clamp(2.15rem,3vw,2.9rem)!important;
+  line-height:1.12!important;
+  text-wrap:balance;
+}
+.home-recognition-nowrap{
+  white-space:nowrap;
+}
+.home-recognition .home-section-intro p{
+  max-width:720px!important;
+  margin:14px auto 0!important;
+}
+.home-recognition-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  column-gap:72px!important;
+  row-gap:48px!important;
+  margin-top:0!important;
+  border:0!important;
+}
+.home-recognition-item,
+.home-recognition-item + .home-recognition-item,
+.home-recognition-item:nth-child(3),
+.home-recognition-item:nth-child(4){
+  padding:4px 24px!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.home-recognition-icon-wrap{
+  margin:0 auto 18px!important;
+}
+.home-recognition-item h3{
+  max-width:22ch;
+  margin:0 auto!important;
+}
+.home-recognition-item p{
+  max-width:44ch;
+  margin:10px auto 0!important;
+}
+@media(max-width:768px){
+  .home-recognition{
+    padding:56px 0 60px!important;
+  }
+  .home-recognition .home-section-intro{
+    margin-bottom:32px!important;
+    padding:0;
+  }
+  .home-recognition .home-section-title{
+    font-size:clamp(2rem,9vw,2.5rem)!important;
+  }
+  .home-recognition-grid{
+    grid-template-columns:1fr!important;
+    row-gap:34px!important;
+    column-gap:0!important;
+  }
+  .home-recognition-item,
+  .home-recognition-item + .home-recognition-item,
+  .home-recognition-item:nth-child(3),
+  .home-recognition-item:nth-child(4){
+    padding:0 10px!important;
+    border:0!important;
+  }
+}
+</style>
+
 </head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -308,7 +395,8 @@
     <section class="home-recognition" aria-labelledby="recognition-title">
       <div class="home-container">
         <div class="home-section-intro">
-          <h2 class="home-section-title" id="recognition-title">You may be here because something keeps repeating.</h2>
+          <div class="home-recognition-accent" aria-hidden="true"></div>
+          <h2 class="home-section-title" id="recognition-title">You may be here because something <span class="home-recognition-nowrap">keeps repeating.</span></h2>
           <p>You do not need a diagnosis or perfect words before reaching out.</p>
         </div>
 
