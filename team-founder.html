@@ -3974,23 +3974,23 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     isolation:isolate;
   }
 
-  /* Carry a consistent rail lane through every desktop profile section. */
-  .founder-sticky-region > section::after{
+  /* One uninterrupted rail lane so section background changes do not show through. */
+  .founder-sticky-region::after{
     content:"";
     position:absolute;
-    z-index:0;
+    z-index:5;
     top:0;
     bottom:0;
     right:max(28px,calc((100vw - 1420px)/2));
     width:260px;
     border-left:1px solid rgba(120,97,63,.20);
-    background:rgba(255,250,242,.30);
+    background:#f7f1e9;
     pointer-events:none;
   }
 
   .founder-sticky-region > section > .founder-wide-shell{
     position:relative;
-    z-index:1;
+    z-index:6;
   }
 
   .founder-sticky-rail-slot{
