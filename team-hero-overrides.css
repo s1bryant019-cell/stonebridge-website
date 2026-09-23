@@ -83,7 +83,7 @@ body.team-page .team-page-hero.sb-standard-hero::before{
 @media(max-width:900px){
   body.team-page .team-page-hero{
     min-height:360px !important;
-    height:360px !important;
+    height:auto !important;
   }
 
   body.team-page .team-page-hero-inner{
@@ -93,7 +93,7 @@ body.team-page .team-page-hero.sb-standard-hero::before{
   body.team-page .team-page-hero-copy,
   body.team-page .team-page-hero-compact .team-page-hero-copy{
     min-height:360px !important;
-    height:360px !important;
+    height:auto !important;
     max-width:560px !important;
     padding:38px 0 !important;
   }
