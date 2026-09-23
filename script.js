@@ -370,7 +370,10 @@
       'services.html',
       'team.html',
       'team-founder.html',
-      'team-jasmine-wilson.html'
+      'team-jasmine-wilson.html',
+      'bcbs-therapy-illinois.html',
+      'adolescent-therapy-illinois.html',
+      'trauma-therapy-illinois.html'
     ];
 
     if (eligible.indexOf(page) === -1) return;
@@ -378,7 +381,12 @@
 
     var cta = document.createElement('a');
     cta.className = 'sb-mobile-consultation-cta';
-    cta.href = page === 'contact.html' ? '#inquiry-form' : 'contact.html#inquiry-form';
+    var landingSource = document.body ? document.body.getAttribute('data-landing-source') : '';
+    cta.href = page === 'contact.html'
+      ? '#inquiry-form'
+      : (landingSource
+          ? 'contact.html?source=' + encodeURIComponent(landingSource) + '#inquiry-form'
+          : 'contact.html#inquiry-form');
     cta.textContent = 'Request a Consultation';
     cta.setAttribute('aria-label', 'Request a Consultation');
     document.body.appendChild(cta);
