@@ -4123,6 +4123,24 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     margin-bottom:14px!important;
   }
 
+  .founder-books-section .books-section-label{
+    position:relative!important;
+    display:block!important;
+    padding-top:14px!important;
+    margin-bottom:10px!important;
+  }
+
+  .founder-books-section .books-section-label::before{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    top:0!important;
+    left:0!important;
+    width:165px!important;
+    height:1px!important;
+    background:linear-gradient(90deg,#102f4d,rgba(16,47,77,0))!important;
+  }
+
   .founder-books-section .book-feature,
   .founder-books-section .book-feature:first-child,
   .founder-books-section .book-feature:last-child{
@@ -4161,28 +4179,21 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 
   .founder-profile-rail-heading{
-    margin:0 0 18px;
-    padding:0 0 16px;
+    margin:0 0 16px;
+    padding:13px 0 12px;
+    border-top:1px solid rgba(33,49,66,.22);
     border-bottom:1px solid rgba(33,49,66,.14);
   }
 
-  .founder-profile-rail-kicker{
-    margin:0 0 4px;
+  .founder-profile-rail-title{
+    margin:0;
     color:#78613f;
     font-family:"Inter",sans-serif;
-    font-size:.68rem;
+    font-size:.74rem;
     font-weight:800;
     letter-spacing:.16em;
+    line-height:1.2;
     text-transform:uppercase;
-  }
-
-  .founder-profile-rail-heading h2{
-    margin:0;
-    color:#102f4d;
-    font-family:"EB Garamond",Georgia,serif;
-    font-size:1.7rem;
-    line-height:1.02;
-    letter-spacing:-.025em;
   }
 
   .founder-profile-rail-summary{
@@ -4354,6 +4365,20 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     border-bottom-color:#102f4d;
   }
 
+  .founder-final-band .btn-secondary{
+    background:#fffaf2!important;
+    color:#102f4d!important;
+    border-color:#fffaf2!important;
+    box-shadow:none!important;
+  }
+
+  .founder-final-band .btn-secondary:hover,
+  .founder-final-band .btn-secondary:focus-visible{
+    background:#f2e8dc!important;
+    color:#102f4d!important;
+    border-color:#f2e8dc!important;
+  }
+
   .founder-availability{
     display:none!important;
   }
@@ -4489,6 +4514,18 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     gap:6px;
   }
 }
+
+.founder-final-band .btn-secondary{
+  background:#fffaf2!important;
+  color:#102f4d!important;
+  border-color:#fffaf2!important;
+}
+.founder-final-band .btn-secondary:hover,
+.founder-final-band .btn-secondary:focus-visible{
+  background:#f2e8dc!important;
+  color:#102f4d!important;
+  border-color:#f2e8dc!important;
+}
 </style>
 
 </head>
@@ -4563,8 +4600,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   <div class="founder-sticky-rail-slot">
     <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
     <div class="founder-profile-rail-heading">
-      <div class="founder-profile-rail-kicker">Dr. Bryant</div>
-      <h2>At a glance</h2>
+      <div class="founder-profile-rail-title">Practice details</div>
     </div>
 
     <div class="founder-profile-rail-status" aria-label="Practice status">
@@ -4690,7 +4726,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <div class="founder-wide-shell">
 <div class="credibility-heading">
 <div class="section-label">Professional background</div>
-<h2>Clinical experience, credentials, and writing.</h2>
+<h2>Clinical experience and credentials.</h2>
 </div>
 <div class="credibility-grid credibility-grid-balanced founder-credibility-core-grid">
 <div class="credibility-primary">
@@ -4718,7 +4754,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <article class="credibility-column writing-column books-showcase" id="publications">
 <div class="books-showcase-head">
 <div>
-<div class="section-label">Selected books</div>
+<div class="section-label books-section-label">Clinical writing</div>
 <h3 id="founder-books-title">Books and writing</h3>
 <p>Dr. Bryant’s writing explores burnout, clinician wellbeing, education, and the practice of trauma therapy.</p>
 </div>
