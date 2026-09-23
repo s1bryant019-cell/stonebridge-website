@@ -355,6 +355,70 @@
     document.body.appendChild(script);
   }
 
+  function syncMobileConsultationCTAVisibility(cta) {
+    if (!cta) return;
+
+    var candidates = Array.prototype.filter.call(document.querySelectorAll('a'), function (link) {
+      if (link === cta) return false;
+
+      var text = (link.textContent || '').trim().replace(/\s+/g, ' ').toLowerCase();
+      var href = (link.getAttribute('href') || '').toLowerCase();
+      var buttonLike = link.matches('.btn, .home-hero-action, .home-primary-btn, [class*="-cta"]');
+
+      return buttonLike &&
+        text.indexOf('request a consultation') === 0 &&
+        (href.indexOf('contact') !== -1 || href.indexOf('#inquiry-form') !== -1);
+    });
+
+    if (!candidates.length) return;
+
+    function setSuppressed(suppressed) {
+      var shouldSuppress = suppressed && window.matchMedia('(max-width: 760px)').matches;
+      cta.style.display = shouldSuppress ? 'none' : '';
+      if (shouldSuppress) {
+        cta.setAttribute('aria-hidden', 'true');
+        cta.setAttribute('tabindex', '-1');
+      } else {
+        cta.removeAttribute('aria-hidden');
+        cta.removeAttribute('tabindex');
+      }
+    }
+
+    function isClearlyVisible(link) {
+      var style = window.getComputedStyle(link);
+      if (style.display === 'none' || style.visibility === 'hidden') return false;
+
+      var rect = link.getBoundingClientRect();
+      if (!rect.height || !rect.width) return false;
+
+      var usableBottom = Math.max(0, window.innerHeight - 72);
+      var visibleTop = Math.max(0, rect.top);
+      var visibleBottom = Math.min(usableBottom, rect.bottom);
+      var visibleHeight = Math.max(0, visibleBottom - visibleTop);
+
+      return visibleHeight / rect.height >= 0.55;
+    }
+
+    function refresh() {
+      setSuppressed(candidates.some(isClearlyVisible));
+    }
+
+    refresh();
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(refresh, {
+        root: null,
+        rootMargin: '0px 0px -72px 0px',
+        threshold: [0, 0.55, 1]
+      });
+      candidates.forEach(function (link) { observer.observe(link); });
+    } else {
+      window.addEventListener('scroll', refresh, { passive: true });
+    }
+
+    window.addEventListener('resize', refresh, { passive: true });
+  }
+
   function ensureMobileConsultationCTA() {
     var page = pageName();
     var eligible = [
@@ -403,6 +467,7 @@
     cta.setAttribute('aria-label', 'Request a Consultation');
     document.body.appendChild(cta);
     document.body.classList.add('sb-has-mobile-consultation-cta');
+    syncMobileConsultationCTAVisibility(cta);
   }
 
   function init() {
