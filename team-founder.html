@@ -3954,41 +3954,48 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </style>
 
 <style id="stonebridge-founder-profile-rail-20260923">
-/* Desktop-only practical rail; existing mobile availability remains unchanged. */
+/* One persistent desktop practical rail; mobile keeps the original availability section. */
 @media(min-width:1100px){
   .profile-subpage-actions{
     display:none!important;
   }
 
-  .founder-focus-with-rail,
-  .founder-therapy-with-rail{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) 286px;
-    gap:36px;
-    align-items:start;
+  .founder-sticky-region{
+    position:relative;
   }
 
-  .founder-focus-with-rail .focus-compact-layout{
-    width:100%;
-    display:grid;
-    grid-template-columns:minmax(200px,.66fr) minmax(0,1.72fr);
-    gap:32px;
-    align-items:start;
-  }
-
-  .founder-therapy-with-rail .therapy-method-layout{
-    width:100%;
-    display:grid;
-    grid-template-columns:minmax(210px,.66fr) minmax(0,1.5fr);
-    gap:32px;
-    align-items:start;
+  .founder-sticky-rail-slot{
+    position:sticky;
+    top:92px;
+    z-index:12;
+    height:1px;
+    pointer-events:none;
   }
 
   .founder-profile-rail{
-    position:sticky;
-    top:92px;
+    width:286px;
+    margin-left:auto;
+    margin-right:max(36px,calc((100vw - 1120px)/2));
+    transform:translateY(28px);
     padding:2px 0 2px 26px;
     border-left:1px solid rgba(120,97,63,.34);
+    background:rgba(248,245,240,.96);
+    pointer-events:auto;
+  }
+
+  .founder-sticky-region .founder-wide-shell{
+    box-sizing:border-box;
+    padding-right:322px;
+  }
+
+  .founder-sticky-region .focus-compact-layout{
+    grid-template-columns:minmax(200px,.66fr) minmax(0,1.72fr);
+    gap:32px;
+  }
+
+  .founder-sticky-region .therapy-method-layout{
+    grid-template-columns:minmax(210px,.66fr) minmax(0,1.5fr);
+    gap:32px;
   }
 
   .founder-profile-rail-label{
@@ -4076,13 +4083,12 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 }
 
 @media(max-width:1099px){
-  .founder-focus-with-rail,
-  .founder-therapy-with-rail{
-    display:block;
+  .founder-sticky-rail-slot{
+    display:none!important;
   }
 
-  .founder-profile-rail{
-    display:none!important;
+  .founder-sticky-region .founder-wide-shell{
+    padding-right:0;
   }
 }
 </style>
@@ -4155,40 +4161,9 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     <span class="sb-utility-strip__item">Evidence-based integration</span>
   </div>
 </section>
-<section class="founder-focus-compact" id="clinical-focus">
-<div class="founder-wide-shell founder-focus-with-rail">
-  <div class="focus-compact-layout">
-    <div class="compact-section-intro">
-      <div class="section-label">Clinical focus</div>
-      <h2>Areas of clinical depth.</h2>
-      <p>Dr. Bryant has particular experience in three areas while maintaining a broader outpatient practice.</p>
-    </div>
-    <div class="focus-compact-content">
-      <div aria-label="Areas of particular clinical experience" class="focus-compact-grid">
-        <article>
-          <span>01</span>
-          <h3>Addiction and co-occurring concerns</h3>
-          <p>Substance use, relapse and recovery patterns, ambivalence, process addictions, shame, coping cycles, and dual-diagnosis concerns.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Trauma, PTSD, and complex stress</h3>
-          <p>Threat responses, dissociation, safety, emotional regulation, body-based distress, self-worth, and protective patterns.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Mood, anxiety, and emotional regulation</h3>
-          <p>Depression, panic, overthinking, irritability, shutdown, mood instability, avoidance, and difficulty feeling steady.</p>
-        </article>
-      </div>
-      <div class="broader-care-compact">
-        <strong>Broader care may include</strong>
-        <p>Relationship patterns, couples and family concerns, identity and self-worth, grief, life transitions, neurodevelopmental concerns, family stress, and parent support.</p>
-      </div>
-    </div>
-  </div>
-
-  <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
+<div class="founder-sticky-region">
+  <div class="founder-sticky-rail-slot">
+    <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
     <div class="founder-profile-rail-label">Typical availability</div>
     <div class="founder-profile-rail-hours" aria-label="Dr. Bryant typical scheduling windows">
       <div><strong>Monday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></div>
@@ -4204,73 +4179,86 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     </div>
     <a class="btn btn-primary founder-profile-rail-cta" href="contact.html?clinician=stephen-bryant#inquiry-form">Request a Consultation</a>
   </aside>
-</div>
-</section>
-<section class="founder-therapy-combined" id="therapy-style">
-<div class="founder-wide-shell founder-therapy-with-rail">
-  <div class="therapy-method-layout">
-    <div class="therapy-method-intro">
-      <div class="section-label">Clinical approach</div>
-      <h2>How Dr. Bryant works.</h2>
-      <p class="lead">Psychodynamic and relational at the foundation, with evidence-based and skills-focused methods integrated according to the client’s concerns, goals, readiness, and needs of the moment.</p>
-      <blockquote class="therapy-method-quote">Good therapy needs a steady frame: enough structure to feel safe, and enough room to be fully human.</blockquote>
-    </div>
-
-    <div class="therapy-method-list" aria-label="Psychotherapy approaches used by Dr. Bryant">
-      <article class="therapy-method-row">
-        <div class="therapy-method-number">01</div>
-        <div>
-          <h3>Psychodynamic and relational psychotherapy</h3>
-          <p>Explores recurring emotional and relationship patterns, defenses, unmet needs, identity, self-worth, and the ways earlier experiences continue to shape present life. The therapeutic relationship itself may help patterns become clearer and more workable.</p>
-        </div>
-      </article>
-
-      <article class="therapy-method-row">
-        <div class="therapy-method-number">02</div>
-        <div>
-          <h3>CBT, ACT, and DBT</h3>
-          <p>Cognitive Behavioral Therapy may be used to examine thoughts, behaviors, avoidance, and practical patterns. Acceptance and Commitment Therapy supports values-based action and psychological flexibility. Dialectical Behavior Therapy skills may support emotion regulation, distress tolerance, mindfulness, and interpersonal effectiveness.</p>
-        </div>
-      </article>
-
-      <article class="therapy-method-row">
-        <div class="therapy-method-number">03</div>
-        <div>
-          <h3>Motivational interviewing and addiction-focused work</h3>
-          <p>Motivational interviewing supports honest exploration of ambivalence, readiness, substance use, recovery, coping patterns, and change without relying on confrontation or pressure.</p>
-        </div>
-      </article>
-
-      <article class="therapy-method-row">
-        <div class="therapy-method-number">04</div>
-        <div>
-          <h3>Trauma-informed, attachment-based, and family-systems work</h3>
-          <p>These approaches connect symptoms with safety, protective responses, relationships, development, and family patterns. Parent or family work may draw on attachment and systems concepts when clinically appropriate.</p>
-        </div>
-      </article>
-
-      <p class="therapy-method-note">These approaches are not applied as a fixed formula. Dr. Bryant develops an individualized formulation and draws from different methods when they support the purpose of therapy.</p>
-    </div>
   </div>
-
-  <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information continued">
-    <div class="founder-profile-rail-label">Typical availability</div>
-    <div class="founder-profile-rail-hours" aria-label="Dr. Bryant typical scheduling windows">
-      <div><strong>Monday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></div>
-      <div><strong>Tuesday</strong><span>10:00–11:00 AM<br>12:00–3:00 PM<br>4:00–8:00 PM</span></div>
-      <div><strong>Wednesday</strong><span>10:00 AM–3:00 PM<br>4:00–6:00 PM</span></div>
-      <div><strong>Thursday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></div>
-      <div><strong>Friday</strong><span>9:00 AM–1:00 PM</span></div>
-    </div>
-    <p class="founder-profile-rail-note">Typical scheduling windows are not the same as currently open appointments.</p>
-    <div class="founder-profile-rail-status">
-      <span>Accepting new clients</span>
-      <span>Illinois telehealth</span>
-    </div>
-    <a class="btn btn-primary founder-profile-rail-cta" href="contact.html?clinician=stephen-bryant#inquiry-form">Request a Consultation</a>
-  </aside>
+  <section class="founder-focus-compact" id="clinical-focus">
+<div class="founder-wide-shell focus-compact-layout">
+<div class="compact-section-intro">
+<div class="section-label">Clinical focus</div>
+<h2>Areas of clinical depth.</h2>
+<p>Dr. Bryant has particular experience in three areas while maintaining a broader outpatient practice.</p>
+</div>
+<div class="focus-compact-content">
+<div aria-label="Areas of particular clinical experience" class="focus-compact-grid">
+<article>
+<span>01</span>
+<h3>Addiction and co-occurring concerns</h3>
+<p>Substance use, relapse and recovery patterns, ambivalence, process addictions, shame, coping cycles, and dual-diagnosis concerns.</p>
+</article>
+<article>
+<span>02</span>
+<h3>Trauma, PTSD, and complex stress</h3>
+<p>Threat responses, dissociation, safety, emotional regulation, body-based distress, self-worth, and protective patterns.</p>
+</article>
+<article>
+<span>03</span>
+<h3>Mood, anxiety, and emotional regulation</h3>
+<p>Depression, panic, overthinking, irritability, shutdown, mood instability, avoidance, and difficulty feeling steady.</p>
+</article>
+</div>
+<div class="broader-care-compact">
+<strong>Broader care may include</strong>
+<p>Relationship patterns, couples and family concerns, identity and self-worth, grief, life transitions, neurodevelopmental concerns, family stress, and parent support.</p>
+</div>
+</div>
 </div>
 </section>
+  <section class="founder-therapy-combined" id="therapy-style">
+<div class="founder-wide-shell therapy-method-layout">
+<div class="therapy-method-intro">
+<div class="section-label">Clinical approach</div>
+<h2>How Dr. Bryant works.</h2>
+<p class="lead">Psychodynamic and relational at the foundation, with evidence-based and skills-focused methods integrated according to the client’s concerns, goals, readiness, and needs of the moment.</p>
+<blockquote class="therapy-method-quote">Good therapy needs a steady frame: enough structure to feel safe, and enough room to be fully human.</blockquote>
+</div>
+
+<div class="therapy-method-list" aria-label="Psychotherapy approaches used by Dr. Bryant">
+<article class="therapy-method-row">
+<div class="therapy-method-number">01</div>
+<div>
+<h3>Psychodynamic and relational psychotherapy</h3>
+<p>Explores recurring emotional and relationship patterns, defenses, unmet needs, identity, self-worth, and the ways earlier experiences continue to shape present life. The therapeutic relationship itself may help patterns become clearer and more workable.</p>
+</div>
+</article>
+
+<article class="therapy-method-row">
+<div class="therapy-method-number">02</div>
+<div>
+<h3>CBT, ACT, and DBT</h3>
+<p>Cognitive Behavioral Therapy may be used to examine thoughts, behaviors, avoidance, and practical patterns. Acceptance and Commitment Therapy supports values-based action and psychological flexibility. Dialectical Behavior Therapy skills may support emotion regulation, distress tolerance, mindfulness, and interpersonal effectiveness.</p>
+</div>
+</article>
+
+<article class="therapy-method-row">
+<div class="therapy-method-number">03</div>
+<div>
+<h3>Motivational interviewing and addiction-focused work</h3>
+<p>Motivational interviewing supports honest exploration of ambivalence, readiness, substance use, recovery, coping patterns, and change without relying on confrontation or pressure.</p>
+</div>
+</article>
+
+<article class="therapy-method-row">
+<div class="therapy-method-number">04</div>
+<div>
+<h3>Trauma-informed, attachment-based, and family-systems work</h3>
+<p>These approaches connect symptoms with safety, protective responses, relationships, development, and family patterns. Parent or family work may draw on attachment and systems concepts when clinically appropriate.</p>
+</div>
+</article>
+
+<p class="therapy-method-note">These approaches are not applied as a fixed formula. Dr. Bryant develops an individualized formulation and draws from different methods when they support the purpose of therapy.</p>
+</div>
+</div>
+</section>
+</div>
 <section class="founder-credibility-combined" id="background">
 <div class="founder-wide-shell">
 <div class="credibility-heading">
