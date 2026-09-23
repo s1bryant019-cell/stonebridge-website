@@ -566,10 +566,13 @@ body.paid-search-page{
     gap:8px!important;
   }
   .paid-search-page .paid-search-header .brand-link{
-    width:132px!important;
-    min-height:52px!important;
+    width:clamp(190px,58vw,220px)!important;
+    min-height:54px!important;
   }
-  .paid-search-page .paid-search-header .sb-header-logo{width:128px!important}
+  .paid-search-page .paid-search-header .sb-header-logo{
+    width:clamp(184px,56vw,214px)!important;
+    max-height:54px!important;
+  }
   .paid-search-page .paid-search-header .landing-header-cta .btn{
     min-height:42px!important;
     padding:0 9px!important;
