@@ -3954,10 +3954,9 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </style>
 
 <style id="stonebridge-founder-profile-rail-20260923">
-/* One persistent desktop practical rail; mobile keeps the original availability section. */
+/* Desktop practical rail. It begins in-place, then is fixed by a small scroll
+   controller until the Books section begins. Mobile keeps the original availability. */
 @media(min-width:1100px){
-  /* Sticky availability needs a non-clipping ancestor. Individual visual sections
-     (including the hero) retain their own overflow containment. */
   .founder-page{
     overflow:visible!important;
   }
@@ -3971,22 +3970,34 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 
   .founder-sticky-rail-slot{
-    position:sticky;
-    top:92px;
+    position:absolute;
+    inset:0 0 auto 0;
     z-index:12;
-    height:1px;
+    height:0;
     pointer-events:none;
   }
 
   .founder-profile-rail{
+    position:absolute;
+    top:28px;
+    right:max(36px,calc((100vw - 1120px)/2));
     width:286px;
-    margin-left:auto;
-    margin-right:max(36px,calc((100vw - 1120px)/2));
-    transform:translateY(28px);
     padding:2px 0 2px 26px;
     border-left:1px solid rgba(120,97,63,.34);
-    background:rgba(248,245,240,.96);
+    background:rgba(248,245,240,.97);
     pointer-events:auto;
+  }
+
+  .founder-profile-rail.is-fixed{
+    position:fixed;
+    top:92px;
+    right:max(36px,calc((100vw - 1120px)/2));
+  }
+
+  .founder-profile-rail.is-ended{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
   }
 
   .founder-sticky-region .founder-wide-shell{
@@ -4526,5 +4537,34 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 })();
 </script>
 <script src="script.js?v=20260923sticky1"></script>
+
+<script id="founder-rail-scroll-controller">
+(function(){
+  var rail=document.querySelector('.founder-profile-rail');
+  var region=document.querySelector('.founder-sticky-region');
+  var books=document.querySelector('.founder-books-section');
+  if(!rail||!region||!books) return;
+
+  var fixedTop=92;
+
+  function updateFounderRail(){
+    if(window.innerWidth<1100){
+      rail.classList.remove('is-fixed','is-ended');
+      return;
+    }
+
+    var regionTop=region.getBoundingClientRect().top;
+    var booksTop=books.getBoundingClientRect().top;
+
+    rail.classList.toggle('is-fixed', regionTop<=fixedTop && booksTop>fixedTop);
+    rail.classList.toggle('is-ended', booksTop<=fixedTop);
+  }
+
+  updateFounderRail();
+  window.addEventListener('scroll',updateFounderRail,{passive:true});
+  window.addEventListener('resize',updateFounderRail);
+})();
+</script>
+
 </body>
 </html>
