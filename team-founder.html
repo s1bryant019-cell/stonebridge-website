@@ -3952,6 +3952,112 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+
+<style id="stonebridge-founder-profile-rail-20260923">
+/* Desktop-only practical rail; existing mobile availability remains unchanged. */
+@media(min-width:1100px){
+  .founder-focus-with-rail{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 286px;
+    gap:36px;
+    align-items:start;
+  }
+  .founder-focus-with-rail .focus-compact-layout{
+    width:100%;
+    display:grid;
+    grid-template-columns:minmax(200px,.66fr) minmax(0,1.72fr);
+    gap:32px;
+    align-items:start;
+  }
+  .founder-profile-rail{
+    position:sticky;
+    top:92px;
+    padding:2px 0 2px 26px;
+    border-left:1px solid rgba(120,97,63,.34);
+  }
+  .founder-profile-rail-label{
+    margin-bottom:14px;
+    color:#78613f;
+    font-family:"Inter",sans-serif;
+    font-size:.67rem;
+    font-weight:800;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+  }
+  .founder-profile-rail-hours{
+    border-top:1px solid rgba(33,49,66,.13);
+  }
+  .founder-profile-rail-hours > div{
+    display:grid;
+    grid-template-columns:72px minmax(0,1fr);
+    gap:10px;
+    padding:10px 0;
+    border-bottom:1px solid rgba(33,49,66,.11);
+  }
+  .founder-profile-rail-hours strong{
+    color:#213142;
+    font-family:"Inter",sans-serif;
+    font-size:.72rem;
+    line-height:1.45;
+  }
+  .founder-profile-rail-hours span{
+    color:#5d6870;
+    font-family:"Inter",sans-serif;
+    font-size:.72rem;
+    line-height:1.5;
+  }
+  .founder-profile-rail-note{
+    margin:12px 0 0;
+    color:#6a7278;
+    font-family:"Inter",sans-serif;
+    font-size:.68rem;
+    line-height:1.48;
+  }
+  .founder-profile-rail-status{
+    display:grid;
+    gap:7px;
+    margin:16px 0 14px;
+    padding-top:14px;
+    border-top:1px solid rgba(33,49,66,.13);
+  }
+  .founder-profile-rail-status span{
+    position:relative;
+    padding-left:13px;
+    color:#213142;
+    font-family:"Inter",sans-serif;
+    font-size:.73rem;
+    font-weight:600;
+    line-height:1.4;
+  }
+  .founder-profile-rail-status span::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.48em;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#b28a43;
+  }
+  .founder-profile-rail-cta{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+  .founder-availability{
+    display:none!important;
+  }
+}
+@media(max-width:1099px){
+  .founder-focus-with-rail{
+    display:block;
+  }
+  .founder-profile-rail{
+    display:none!important;
+  }
+}
+</style>
+
 </head>
 <body class="sbx-site sbx-founder-page" data-static-hero-system="true"><a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header compact-site-header">
@@ -4021,35 +4127,54 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   </div>
 </section>
 <section class="founder-focus-compact" id="clinical-focus">
-<div class="founder-wide-shell focus-compact-layout">
-<div class="compact-section-intro">
-<div class="section-label">Clinical focus</div>
-<h2>Areas of clinical depth.</h2>
-<p>Dr. Bryant has particular experience in three areas while maintaining a broader outpatient practice.</p>
-</div>
-<div class="focus-compact-content">
-<div aria-label="Areas of particular clinical experience" class="focus-compact-grid">
-<article>
-<span>01</span>
-<h3>Addiction and co-occurring concerns</h3>
-<p>Substance use, relapse and recovery patterns, ambivalence, process addictions, shame, coping cycles, and dual-diagnosis concerns.</p>
-</article>
-<article>
-<span>02</span>
-<h3>Trauma, PTSD, and complex stress</h3>
-<p>Threat responses, dissociation, safety, emotional regulation, body-based distress, self-worth, and protective patterns.</p>
-</article>
-<article>
-<span>03</span>
-<h3>Mood, anxiety, and emotional regulation</h3>
-<p>Depression, panic, overthinking, irritability, shutdown, mood instability, avoidance, and difficulty feeling steady.</p>
-</article>
-</div>
-<div class="broader-care-compact">
-<strong>Broader care may include</strong>
-<p>Relationship patterns, couples and family concerns, identity and self-worth, grief, life transitions, neurodevelopmental concerns, family stress, and parent support.</p>
-</div>
-</div>
+<div class="founder-wide-shell founder-focus-with-rail">
+  <div class="focus-compact-layout">
+    <div class="compact-section-intro">
+      <div class="section-label">Clinical focus</div>
+      <h2>Areas of clinical depth.</h2>
+      <p>Dr. Bryant has particular experience in three areas while maintaining a broader outpatient practice.</p>
+    </div>
+    <div class="focus-compact-content">
+      <div aria-label="Areas of particular clinical experience" class="focus-compact-grid">
+        <article>
+          <span>01</span>
+          <h3>Addiction and co-occurring concerns</h3>
+          <p>Substance use, relapse and recovery patterns, ambivalence, process addictions, shame, coping cycles, and dual-diagnosis concerns.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Trauma, PTSD, and complex stress</h3>
+          <p>Threat responses, dissociation, safety, emotional regulation, body-based distress, self-worth, and protective patterns.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Mood, anxiety, and emotional regulation</h3>
+          <p>Depression, panic, overthinking, irritability, shutdown, mood instability, avoidance, and difficulty feeling steady.</p>
+        </article>
+      </div>
+      <div class="broader-care-compact">
+        <strong>Broader care may include</strong>
+        <p>Relationship patterns, couples and family concerns, identity and self-worth, grief, life transitions, neurodevelopmental concerns, family stress, and parent support.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
+    <div class="founder-profile-rail-label">Typical availability</div>
+    <div class="founder-profile-rail-hours" aria-label="Dr. Bryant typical scheduling windows">
+      <div><strong>Monday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></div>
+      <div><strong>Tuesday</strong><span>10:00–11:00 AM<br>12:00–3:00 PM<br>4:00–8:00 PM</span></div>
+      <div><strong>Wednesday</strong><span>10:00 AM–3:00 PM<br>4:00–6:00 PM</span></div>
+      <div><strong>Thursday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></div>
+      <div><strong>Friday</strong><span>9:00 AM–1:00 PM</span></div>
+    </div>
+    <p class="founder-profile-rail-note">Typical scheduling windows are not the same as currently open appointments.</p>
+    <div class="founder-profile-rail-status">
+      <span>Accepting new clients</span>
+      <span>Illinois telehealth</span>
+    </div>
+    <a class="btn btn-primary founder-profile-rail-cta" href="contact.html?clinician=stephen-bryant#inquiry-form">Request a Consultation</a>
+  </aside>
 </div>
 </section>
 <section class="founder-therapy-combined" id="therapy-style">
