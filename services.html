@@ -1038,6 +1038,67 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+<style id="stonebridge-services-mobile-width-hardening-20260923">
+@media(max-width:760px){
+  html,
+  body.services-page{
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:hidden!important;
+  }
+
+  .services-page main,
+  .services-page .services-section,
+  .services-page .services-shell,
+  .services-page .services-primary-grid,
+  .services-page .services-primary-intro,
+  .services-page .services-primary-intro > *,
+  .services-page .services-primary-item,
+  .services-page .services-coverage-note,
+  .services-page .services-coverage-note > *{
+    min-width:0!important;
+    max-width:100%!important;
+    box-sizing:border-box!important;
+  }
+
+  .services-page .services-shell{
+    width:calc(100% - 40px)!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  .services-page .services-primary-grid{
+    display:block!important;
+    width:100%!important;
+  }
+
+  .services-page .services-primary-intro{
+    display:block!important;
+    width:100%!important;
+    grid-column:1 / -1!important;
+    padding:20px 0!important;
+  }
+
+  .services-page .services-primary-intro > div,
+  .services-page .services-primary-intro > p{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+
+  .services-page .services-primary-intro > p{
+    margin-top:14px!important;
+  }
+
+  .services-page .services-primary-item,
+  .services-page .services-coverage-note{
+    display:block!important;
+    width:100%!important;
+  }
+}
+</style>
 </head>
 <body class="services-page" data-static-hero-system="true">
 <a class="skip-link" href="#main-content">Skip to main content</a>
