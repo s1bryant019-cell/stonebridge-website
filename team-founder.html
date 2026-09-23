@@ -3954,8 +3954,8 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </style>
 
 <style id="stonebridge-founder-profile-rail-20260923">
-/* Desktop practical rail. It begins in-place, then is fixed by a small scroll
-   controller until the Books section begins. Mobile keeps the original availability. */
+/* Desktop practical rail. The reserved right lane remains visually consistent
+   while the compact rail stays fixed until Books and writing begins. */
 @media(min-width:1100px){
   .founder-page{
     overflow:visible!important;
@@ -3967,6 +3967,29 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
   .founder-sticky-region{
     position:relative;
+  }
+
+  .founder-sticky-region > section{
+    position:relative;
+    isolation:isolate;
+  }
+
+  .founder-sticky-region > section::after{
+    content:"";
+    position:absolute;
+    z-index:0;
+    top:0;
+    bottom:0;
+    right:max(36px,calc((100vw - 1120px)/2));
+    width:250px;
+    border-left:1px solid rgba(120,97,63,.20);
+    background:rgba(255,250,242,.34);
+    pointer-events:none;
+  }
+
+  .founder-sticky-region > section > .founder-wide-shell{
+    position:relative;
+    z-index:1;
   }
 
   .founder-sticky-rail-slot{
@@ -3981,16 +4004,16 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     position:absolute;
     top:28px;
     right:max(36px,calc((100vw - 1120px)/2));
-    width:286px;
-    padding:2px 0 2px 26px;
-    border-left:1px solid rgba(120,97,63,.34);
-    background:rgba(248,245,240,.97);
+    width:250px;
+    box-sizing:border-box;
+    padding:18px 18px 16px 20px;
+    background:transparent;
     pointer-events:auto;
   }
 
   .founder-profile-rail.is-fixed{
     position:fixed;
-    top:92px;
+    top:82px;
     right:max(36px,calc((100vw - 1120px)/2));
   }
 
@@ -4002,7 +4025,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
   .founder-sticky-region .founder-wide-shell{
     box-sizing:border-box;
-    padding-right:322px;
+    padding-right:286px;
   }
 
   .founder-sticky-region .focus-compact-layout{
@@ -4041,83 +4064,101 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     padding-top:28px!important;
   }
 
-  .founder-profile-rail-label{
-    margin-bottom:14px;
-    color:#78613f;
-    font-family:"Inter",sans-serif;
-    font-size:.67rem;
-    font-weight:800;
-    letter-spacing:.15em;
-    text-transform:uppercase;
-  }
-
-  .founder-profile-rail-hours{
-    border-top:1px solid rgba(33,49,66,.13);
-  }
-
-  .founder-profile-rail-hours > div{
-    display:grid;
-    grid-template-columns:72px minmax(0,1fr);
-    gap:10px;
-    padding:10px 0;
-    border-bottom:1px solid rgba(33,49,66,.11);
-  }
-
-  .founder-profile-rail-hours strong{
-    color:#213142;
-    font-family:"Inter",sans-serif;
-    font-size:.72rem;
-    line-height:1.45;
-  }
-
-  .founder-profile-rail-hours span{
-    color:#5d6870;
-    font-family:"Inter",sans-serif;
-    font-size:.72rem;
-    line-height:1.5;
-  }
-
-  .founder-profile-rail-note{
-    margin:12px 0 0;
-    color:#6a7278;
-    font-family:"Inter",sans-serif;
-    font-size:.68rem;
-    line-height:1.48;
-  }
-
   .founder-profile-rail-status{
-    display:grid;
-    gap:7px;
-    margin:16px 0 14px;
-    padding-top:14px;
-    border-top:1px solid rgba(33,49,66,.13);
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 10px;
+    margin:0 0 18px;
+    padding:0 0 14px;
+    border-bottom:1px solid rgba(33,49,66,.12);
   }
 
   .founder-profile-rail-status span{
     position:relative;
-    padding-left:13px;
+    padding-left:11px;
     color:#213142;
     font-family:"Inter",sans-serif;
-    font-size:.73rem;
-    font-weight:600;
-    line-height:1.4;
+    font-size:.66rem;
+    font-weight:700;
+    line-height:1.35;
   }
 
   .founder-profile-rail-status span::before{
     content:"";
     position:absolute;
     left:0;
-    top:.48em;
-    width:5px;
-    height:5px;
+    top:.42em;
+    width:4px;
+    height:4px;
     border-radius:50%;
     background:#b28a43;
   }
 
+  .founder-profile-rail-label{
+    margin:0 0 10px;
+    color:#78613f;
+    font-family:"Inter",sans-serif;
+    font-size:.64rem;
+    font-weight:800;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+  }
+
+  .founder-profile-rail-hours{
+    display:grid;
+    gap:7px;
+  }
+
+  .founder-profile-rail-hours > div{
+    display:grid;
+    grid-template-columns:32px minmax(0,1fr);
+    gap:8px;
+    align-items:start;
+    padding:0;
+    border:0;
+  }
+
+  .founder-profile-rail-hours strong{
+    color:#213142;
+    font-family:"Inter",sans-serif;
+    font-size:.66rem;
+    line-height:1.45;
+  }
+
+  .founder-profile-rail-hours span{
+    color:#5d6870;
+    font-family:"Inter",sans-serif;
+    font-size:.66rem;
+    line-height:1.45;
+  }
+
+  .founder-profile-rail-note{
+    margin:13px 0 0;
+    color:#6a7278;
+    font-family:"Inter",sans-serif;
+    font-size:.64rem;
+    font-style:italic;
+    line-height:1.42;
+  }
+
   .founder-profile-rail-cta{
-    width:100%;
-    justify-content:center;
-    text-align:center;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-top:15px;
+    padding:0 0 3px;
+    border-bottom:1px solid rgba(16,47,77,.34);
+    color:#102f4d;
+    font-family:"Inter",sans-serif;
+    font-size:.7rem;
+    font-weight:800;
+    line-height:1.35;
+    text-decoration:none;
+  }
+
+  .founder-profile-rail-cta:hover,
+  .founder-profile-rail-cta:focus-visible{
+    border-bottom-color:#102f4d;
   }
 
   .founder-availability{
@@ -4207,20 +4248,20 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <div class="founder-sticky-region">
   <div class="founder-sticky-rail-slot">
     <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
-    <div class="founder-profile-rail-label">Typical availability</div>
-    <div class="founder-profile-rail-hours" aria-label="Dr. Bryant typical scheduling windows">
-      <div><strong>Monday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></div>
-      <div><strong>Tuesday</strong><span>10:00–11:00 AM<br>12:00–3:00 PM<br>4:00–8:00 PM</span></div>
-      <div><strong>Wednesday</strong><span>10:00 AM–3:00 PM<br>4:00–6:00 PM</span></div>
-      <div><strong>Thursday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></div>
-      <div><strong>Friday</strong><span>9:00 AM–1:00 PM</span></div>
-    </div>
-    <p class="founder-profile-rail-note">Typical scheduling windows are not the same as currently open appointments.</p>
-    <div class="founder-profile-rail-status">
+    <div class="founder-profile-rail-status" aria-label="Practice status">
       <span>Accepting new clients</span>
       <span>Illinois telehealth</span>
     </div>
-    <a class="btn btn-primary founder-profile-rail-cta" href="contact.html?clinician=stephen-bryant#inquiry-form">Request a Consultation</a>
+    <div class="founder-profile-rail-label">Typical availability</div>
+    <div class="founder-profile-rail-hours" aria-label="Dr. Bryant typical scheduling windows">
+      <div><strong>Mon</strong><span>9–11 AM · 12–3 PM · 4–5 PM</span></div>
+      <div><strong>Tue</strong><span>10–11 AM · 12–3 PM · 4–8 PM</span></div>
+      <div><strong>Wed</strong><span>10 AM–3 PM · 4–6 PM</span></div>
+      <div><strong>Thu</strong><span>9–11 AM · 12–3 PM · 4–5 PM</span></div>
+      <div><strong>Fri</strong><span>9 AM–1 PM</span></div>
+    </div>
+    <p class="founder-profile-rail-note">Typical windows; current openings vary.</p>
+    <a class="founder-profile-rail-cta" href="contact.html?clinician=stephen-bryant#inquiry-form">Request a consultation <span aria-hidden="true">→</span></a>
   </aside>
   </div>
   <section class="founder-focus-compact" id="clinical-focus">
@@ -4545,7 +4586,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   var books=document.querySelector('.founder-books-section');
   if(!rail||!region||!books) return;
 
-  var fixedTop=92;
+  var fixedTop=82;
 
   function updateFounderRail(){
     if(window.innerWidth<1100){
