@@ -346,11 +346,43 @@
     document.body.appendChild(script);
   }
 
+  function ensureMobileConsultationCTA() {
+    var page = pageName();
+    var eligible = [
+      'index.html',
+      'about.html',
+      'assessment.html',
+      'contact.html',
+      'couples-therapy.html',
+      'family-therapy.html',
+      'fees-insurance.html',
+      'group-therapy.html',
+      'individual-therapy.html',
+      'parent-support.html',
+      'services.html',
+      'team.html',
+      'team-founder.html',
+      'team-jasmine-wilson.html'
+    ];
+
+    if (eligible.indexOf(page) === -1) return;
+    if (document.querySelector('.sb-mobile-consultation-cta')) return;
+
+    var cta = document.createElement('a');
+    cta.className = 'sb-mobile-consultation-cta';
+    cta.href = page === 'contact.html' ? '#inquiry-form' : 'contact.html#inquiry-form';
+    cta.textContent = 'Request a Consultation';
+    cta.setAttribute('aria-label', 'Request a Consultation');
+    document.body.appendChild(cta);
+    document.body.classList.add('sb-has-mobile-consultation-cta');
+  }
+
   function init() {
     ensureStylesheet('stonebridge-brand-sync', 'stonebridge-brand-sync.css?v=' + VERSION);
     ensureStylesheet('stonebridge-hotfix', 'stonebridge-hotfix.css?v=' + VERSION);
     normalizeHeader();
     normalizeFounderImages();
+    ensureMobileConsultationCTA();
     loadCore(scheduleTargetedRefinements);
   }
 
