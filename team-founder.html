@@ -4078,6 +4078,14 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     border-bottom:1px solid rgba(212,200,185,.5)!important;
   }
 
+  .founder-credibility-core .founder-credibility-core-grid{
+    border-bottom:0!important;
+  }
+
+  .founder-books-section .founder-books-grid{
+    border-top:0!important;
+  }
+
   .founder-books-section{
     padding-top:34px!important;
   }
@@ -4114,6 +4122,25 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     font-family:"Inter",sans-serif;
     font-size:.74rem;
     line-height:1.48;
+  }
+
+  .founder-profile-rail-payment a{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    margin-top:6px;
+    color:#102f4d;
+    font-family:"Inter",sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    line-height:1.35;
+    text-decoration:none;
+    border-bottom:1px solid rgba(16,47,77,.28);
+  }
+
+  .founder-profile-rail-payment a:hover,
+  .founder-profile-rail-payment a:focus-visible{
+    border-bottom-color:#102f4d;
   }
 
   .founder-profile-rail-availability{
@@ -4261,33 +4288,61 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   font-size:.88rem;
   line-height:1.62;
 }
-.founder-fit-list{
+.founder-fit-grid{
   display:grid;
-  gap:0;
-  margin:0;
-  padding:0;
-  list-style:none;
+  grid-template-columns:repeat(3,minmax(0,1fr));
   border-top:1px solid rgba(33,49,66,.16);
+  border-bottom:1px solid rgba(33,49,66,.12);
 }
-.founder-fit-list li{
-  position:relative;
-  margin:0;
-  padding:12px 0 12px 20px;
-  border-bottom:1px solid rgba(33,49,66,.11);
-  color:#334454;
+.founder-fit-grid article{
+  min-width:0;
+  padding:18px 20px 19px;
+  border-left:1px solid rgba(33,49,66,.11);
+}
+.founder-fit-grid article:first-child{
+  padding-left:0;
+  border-left:0;
+}
+.founder-fit-grid article:last-child{
+  padding-right:0;
+}
+.founder-fit-number{
+  color:#9a8058;
   font-family:"Inter",sans-serif;
-  font-size:.88rem;
-  line-height:1.55;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.18em;
 }
-.founder-fit-list li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:1.25rem;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:#b28a43;
+.founder-fit-grid h3{
+  margin:15px 0 8px;
+  color:#213142;
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:1.38rem;
+  line-height:1.08;
+  letter-spacing:-.018em;
+}
+.founder-fit-grid p,
+.founder-fit-broader p{
+  margin:0;
+  color:#5d6870;
+  font-family:"Inter",sans-serif;
+  font-size:.84rem;
+  line-height:1.58;
+}
+.founder-fit-broader{
+  display:grid;
+  grid-template-columns:170px minmax(0,1fr);
+  gap:20px;
+  padding-top:15px;
+}
+.founder-fit-broader strong{
+  color:#78613f;
+  font-family:"Inter",sans-serif;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  line-height:1.45;
+  text-transform:uppercase;
 }
 .broader-care-compact-secondary{
   margin-top:0!important;
@@ -4305,6 +4360,23 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
   .founder-fit-compact{
     padding:40px 0;
+  }
+  .founder-fit-grid{
+    grid-template-columns:1fr;
+  }
+  .founder-fit-grid article,
+  .founder-fit-grid article:first-child,
+  .founder-fit-grid article:last-child{
+    padding:16px 0 17px;
+    border-left:0;
+    border-top:1px solid rgba(33,49,66,.10);
+  }
+  .founder-fit-grid article:first-child{
+    border-top:0;
+  }
+  .founder-fit-broader{
+    grid-template-columns:1fr;
+    gap:6px;
   }
 }
 </style>
@@ -4398,6 +4470,11 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         <div class="founder-profile-rail-label">Approach</div>
         <p>Exploratory · Relational · Psychodynamic</p>
       </div>
+      <div class="founder-profile-rail-summary-row founder-profile-rail-payment">
+        <div class="founder-profile-rail-label">Payment</div>
+        <p>Self-pay rates · Sliding scale available</p>
+        <a href="fees-insurance.html">Fees &amp; Insurance <span aria-hidden="true">→</span></a>
+      </div>
     </div>
 
     <div class="founder-profile-rail-availability">
@@ -4419,19 +4496,33 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   <section class="founder-fit-compact" id="patient-fit" aria-labelledby="founder-fit-title">
     <div class="founder-wide-shell founder-fit-layout">
       <div class="founder-fit-intro">
-        <div class="section-label">Patient fit</div>
-        <h2 id="founder-fit-title">You may find this work helpful if…</h2>
-        <p>The goal is not to fit you into a diagnostic list, but to help you recognize whether this style of therapy may fit what you are looking for.</p>
+        <div class="section-label">Common concerns</div>
+        <h2 id="founder-fit-title">Areas Dr. Bryant commonly works with.</h2>
+        <p>Common reasons people reach out, with more clinical detail below.</p>
       </div>
-      <ul class="founder-fit-list">
-        <li>You understand a pattern intellectually but still find yourself repeating it.</li>
-        <li>Trauma or past experiences continue to affect relationships, emotions, coping, or your sense of safety.</li>
-        <li>Substance use or other coping strategies have become difficult to change.</li>
-        <li>You have a complicated treatment history or have previously received outpatient, intensive outpatient, partial-hospitalization, inpatient, or other higher-acuity care.</li>
-        <li>Anxiety, depression, trauma, relationships, substance use, or emotional regulation overlap rather than fitting neatly into one concern.</li>
-        <li>You prefer exploratory and conversational therapy rather than a highly structured or homework-driven approach.</li>
-        <li>You appreciate a therapist who can be warm and collaborative while also willing to name difficult patterns directly when that is useful.</li>
-      </ul>
+      <div>
+        <div class="founder-fit-grid" aria-label="Areas Dr. Bryant commonly works with">
+          <article>
+            <div class="founder-fit-number">01</div>
+            <h3>Trauma and complex stress</h3>
+            <p>Trauma responses, safety, dissociation, emotional regulation, body-based distress, relationship effects, and protective patterns that remain active in the present.</p>
+          </article>
+          <article>
+            <div class="founder-fit-number">02</div>
+            <h3>Substance use and co-occurring concerns</h3>
+            <p>Substance use, ambivalence, relapse and recovery patterns, coping cycles, and mental-health concerns that overlap with substance use rather than occurring separately.</p>
+          </article>
+          <article>
+            <div class="founder-fit-number">03</div>
+            <h3>Complex patterns and treatment histories</h3>
+            <p>Recurring emotional or relationship patterns, feeling stuck despite insight, and complicated treatment histories that may include outpatient, IOP, PHP, inpatient, or other higher-acuity care.</p>
+          </article>
+        </div>
+        <div class="founder-fit-broader">
+          <strong>Broader care may include</strong>
+          <p>Anxiety, depression, emotional regulation, identity and self-worth, grief, life transitions, couples and family concerns, and parent support.</p>
+        </div>
+      </div>
     </div>
   </section>
 
