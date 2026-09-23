@@ -9,7 +9,8 @@ const MAX_LENGTHS = {
   phone: 50,
   preferredContact: 40,
   preferredClinician: 120,
-  generalAvailability: 500
+  generalAvailability: 500,
+  landingSource: 120
 };
 
 function normalize(value, maxLength) {
@@ -82,6 +83,10 @@ export default async function handler(req, res) {
     const generalAvailability = normalize(
       body.generalAvailability || "",
       MAX_LENGTHS.generalAvailability
+    );
+    const landingSource = normalize(
+      body.landingSource || "",
+      MAX_LENGTHS.landingSource
     );
     const inquiryReason = normalize(
       body.reason || body.message || "",
@@ -165,6 +170,9 @@ ${preferredClinician || "No preference"}
 
 General availability:
 ${generalAvailability || "Not provided"}
+
+Landing page source:
+${landingSource || "Direct / not provided"}
 
 Insurance / payment preference:
 ${paymentPreference || "Not provided"}
