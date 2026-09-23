@@ -183,8 +183,8 @@ body.home-redesign .hero-utility-strip-separator{
 }
 @media(max-width:760px){
   .site-header.sb-global-header .nav{width:min(100% - 34px,1320px)!important;min-height:76px!important}
-  .site-header.sb-global-header .brand-link{width:184px!important;min-height:54px!important}
-  .site-header.sb-global-header .sb-header-logo{width:178px!important;max-height:52px!important}
+  .site-header.sb-global-header .brand-link{width:clamp(190px,58vw,220px)!important;min-height:54px!important}
+  .site-header.sb-global-header .sb-header-logo{width:clamp(184px,56vw,214px)!important;max-height:54px!important}
   body.home-redesign .home-hero-media{
     min-height:0!important;
     height:auto!important;
