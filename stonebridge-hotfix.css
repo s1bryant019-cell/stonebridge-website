@@ -393,3 +393,60 @@ body.home-redesign .home-service-media img{
     margin:2px auto 0!important;
   }
 }
+
+
+/* Mobile footer density normalization */
+@media(max-width:760px){
+  .site-footer{
+    padding:26px 0 14px!important;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+    padding-bottom:18px!important;
+  }
+
+  .footer-title{
+    margin-bottom:7px!important;
+  }
+
+  .footer-links{
+    gap:5px!important;
+  }
+
+  .footer-logo-right{
+    min-height:0!important;
+    padding-left:0!important;
+    margin-top:2px!important;
+  }
+
+  .footer-bottom{
+    gap:10px!important;
+    padding-top:12px!important;
+  }
+
+  body.home-redesign .home-footer-grid{
+    grid-template-columns:1fr!important;
+    gap:20px!important;
+    padding:32px 0 24px!important;
+  }
+
+  body.home-redesign .home-footer-copy{
+    margin-top:12px!important;
+  }
+
+  body.home-redesign .home-footer-title{
+    margin-bottom:8px!important;
+  }
+
+  body.home-redesign .home-footer-links{
+    gap:6px!important;
+  }
+
+  body.home-redesign .home-footer-bottom{
+    min-height:0!important;
+    gap:10px!important;
+    padding:14px 0!important;
+  }
+}
