@@ -251,20 +251,20 @@
 
 
 <style id="stonebridge-home-recognition-refine-20260923">
-/* Approved recognition-section refinement: open composition, no icon tangencies. */
+/* Recognition section: compact open composition with isolated icons. */
 .home-recognition{
-  padding:70px 0 76px!important;
+  padding:58px 0 62px!important;
 }
 .home-recognition .home-section-intro{
   max-width:1080px!important;
-  margin:0 auto 38px!important;
+  margin:0 auto 30px!important;
   padding:0 24px;
   text-align:center;
 }
 .home-recognition-accent{
   width:46px;
   height:2px;
-  margin:0 auto 20px;
+  margin:0 auto 18px;
   border-radius:999px;
   background:#b28a43;
 }
@@ -275,18 +275,17 @@
   line-height:1.12!important;
   text-wrap:balance;
 }
-.home-recognition-nowrap{
-  white-space:nowrap;
-}
+.home-recognition-nowrap{white-space:nowrap}
 .home-recognition .home-section-intro p{
   max-width:720px!important;
-  margin:14px auto 0!important;
+  margin:12px auto 0!important;
 }
+
 .home-recognition-grid{
   display:grid!important;
   grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  column-gap:72px!important;
-  row-gap:48px!important;
+  column-gap:64px!important;
+  row-gap:28px!important;
   margin-top:0!important;
   border:0!important;
 }
@@ -294,28 +293,53 @@
 .home-recognition-item + .home-recognition-item,
 .home-recognition-item:nth-child(3),
 .home-recognition-item:nth-child(4){
-  padding:4px 24px!important;
+  min-width:0;
+  display:grid!important;
+  grid-template-columns:56px minmax(0,1fr);
+  grid-template-rows:auto auto;
+  column-gap:18px;
+  row-gap:6px;
+  align-items:start;
+  padding:8px 6px!important;
   border:0!important;
   background:transparent!important;
   box-shadow:none!important;
+  text-align:left!important;
 }
 .home-recognition-icon-wrap{
-  margin:0 auto 18px!important;
+  grid-column:1;
+  grid-row:1 / span 2;
+  width:52px!important;
+  height:52px!important;
+  margin:0!important;
+  align-self:start;
+}
+.home-recognition-icon{
+  width:30px!important;
+  height:30px!important;
 }
 .home-recognition-item h3{
-  max-width:22ch;
-  margin:0 auto!important;
+  grid-column:2;
+  grid-row:1;
+  max-width:none!important;
+  margin:1px 0 0!important;
+  font-size:1.48rem!important;
+  line-height:1.18!important;
 }
 .home-recognition-item p{
-  max-width:44ch;
-  margin:10px auto 0!important;
+  grid-column:2;
+  grid-row:2;
+  max-width:48ch!important;
+  margin:0!important;
+  line-height:1.55!important;
 }
+
 @media(max-width:768px){
   .home-recognition{
-    padding:56px 0 60px!important;
+    padding:50px 0 54px!important;
   }
   .home-recognition .home-section-intro{
-    margin-bottom:32px!important;
+    margin-bottom:28px!important;
     padding:0;
   }
   .home-recognition .home-section-title{
@@ -323,15 +347,28 @@
   }
   .home-recognition-grid{
     grid-template-columns:1fr!important;
-    row-gap:34px!important;
+    row-gap:24px!important;
     column-gap:0!important;
   }
   .home-recognition-item,
   .home-recognition-item + .home-recognition-item,
   .home-recognition-item:nth-child(3),
   .home-recognition-item:nth-child(4){
-    padding:0 10px!important;
+    grid-template-columns:50px minmax(0,1fr);
+    column-gap:16px;
+    padding:4px 0!important;
     border:0!important;
+  }
+  .home-recognition-icon-wrap{
+    width:48px!important;
+    height:48px!important;
+  }
+  .home-recognition-icon{
+    width:28px!important;
+    height:28px!important;
+  }
+  .home-recognition-item h3{
+    font-size:1.35rem!important;
   }
 }
 </style>
