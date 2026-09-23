@@ -3162,3 +3162,19 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standa
     outline-offset:2px;
   }
 }
+
+
+/* SITEWIDE HERO RULE CONSISTENCY — Sep 2026 */
+.sb-standard-hero [class*="hero-rule"],
+.profile-subpage-hero .profile-subpage-rule,
+.home-hero .home-hero-rule{
+  display:block!important;
+  width:40px!important;
+  height:2px!important;
+  min-height:2px!important;
+  margin:0 0 20px!important;
+  padding:0!important;
+  border:0!important;
+  background:#d3b57f!important;
+  opacity:1!important;
+}
