@@ -1295,15 +1295,24 @@ body.contact-page .contact-form-section .contact-shell{
 }
 body.contact-page .contact-detail-decoration{
   position:absolute;
-  right:-18px;
-  bottom:-54px;
+  right:-140px;
+  bottom:-40px;
   z-index:1;
-  width:clamp(300px,22vw,430px);
+  width:min(42vw,760px);
   height:auto;
   display:block;
   pointer-events:none;
   user-select:none;
-  opacity:.9;
+  opacity:.32;
+}
+
+@media(min-width:1500px){
+  body.contact-page .contact-detail-decoration{
+    right:-120px;
+    bottom:-30px;
+    width:min(40vw,840px);
+    opacity:.34;
+  }
 }
 body.contact-page .contact-form-section .contact-shell{
   width:min(1120px,calc(100% - 64px))!important;
