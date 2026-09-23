@@ -1293,28 +1293,6 @@ body.contact-page .contact-form-section .contact-shell{
   position:relative;
   z-index:2;
 }
-body.contact-page .contact-detail-decoration{
-  position:absolute;
-  right:-235px;
-  bottom:-205px;
-  z-index:1;
-  width:980px;
-  max-width:none;
-  height:auto;
-  display:block;
-  pointer-events:none;
-  user-select:none;
-  opacity:.16;
-}
-
-@media(min-width:1500px){
-  body.contact-page .contact-detail-decoration{
-    right:-210px;
-    bottom:-195px;
-    width:1080px;
-    opacity:.17;
-  }
-}
 }
 body.contact-page .contact-form-section .contact-shell{
   width:min(1120px,calc(100% - 64px))!important;
@@ -1331,6 +1309,26 @@ body.contact-page .contact-form-content,
 body.contact-page .contact-success{
   position:relative;
   z-index:2;
+}
+body.contact-page .contact-form::after{
+  content:none;
+}
+@media(min-width:1280px){
+  body.contact-page .contact-form::after{
+    content:"";
+    position:absolute;
+    right:-72px;
+    bottom:-58px;
+    z-index:1;
+    width:520px;
+    height:520px;
+    background-image:url("Consultation%20Detail.png");
+    background-repeat:no-repeat;
+    background-size:760px auto;
+    background-position:right bottom;
+    opacity:.24;
+    pointer-events:none;
+  }
 }
 body.contact-page .contact-form-head{
   margin-bottom:14px!important;
@@ -1415,11 +1413,6 @@ body.contact-page .contact-form-submit .btn{
   min-height:46px!important;
 }
 
-@media(max-width:1279px){
-  body.contact-page .contact-detail-decoration{
-    display:none;
-  }
-}
 
 @media(min-width:1100px){
   body.contact-page .contact-form-grid--compact{
@@ -1565,7 +1558,6 @@ body.contact-page .contact-form-submit .btn{
       <div class="contact-shell">
 
         <form class="contact-form" id="consultation-form" novalidate aria-labelledby="consultation-form-title">
-          <img class="contact-detail-decoration" src="Consultation%20Detail.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
           <div class="contact-form-content" id="contact-form-content">
             <div class="contact-form-head">
               <div class="form-eyebrow">Consultation request</div>
