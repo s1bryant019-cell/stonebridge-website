@@ -152,33 +152,60 @@
 </style>
 
 <style id="stonebridge-home-hero-open-spacing-20260923">
+.home-hero-copy{
+  align-items:flex-start!important;
+  text-align:left!important;
+}
+.home-hero-copy > .home-eyebrow,
+.home-hero h1,
+.home-hero-lede,
+.home-hero-actions{
+  margin-left:0!important;
+  margin-right:0!important;
+}
 .home-hero-actions{
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  gap:16px 22px;
-  margin-top:30px;
+  gap:14px;
+  margin-top:30px!important;
 }
-.home-hero-actions .home-primary-btn{
-  margin-top:0!important;
-}
-.home-hero-secondary-link{
+.home-hero-action{
   display:inline-flex;
   align-items:center;
-  min-height:48px;
+  justify-content:center;
+  min-width:205px;
+  min-height:50px;
+  padding:0 24px;
+  border:1px solid transparent;
+  border-radius:9px;
+  font-family:var(--home-sans, "Inter", sans-serif);
+  font-size:.88rem;
+  font-weight:600;
+  line-height:1;
+  text-align:center;
+  text-decoration:none!important;
+  transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
+}
+.home-hero-action--primary{
+  background:var(--home-olive);
+  border-color:var(--home-olive);
+  color:#fff!important;
+}
+.home-hero-action--primary:hover{
+  background:var(--home-olive-hover);
+  border-color:var(--home-olive-hover);
+}
+.home-hero-action--secondary{
+  background:transparent;
+  border-color:rgba(16,47,77,.34);
   color:var(--home-ink)!important;
-  font-family:var(--home-serif);
-  font-size:1rem;
-  font-weight:500;
-  line-height:1.2;
-  text-decoration:none;
-  border-bottom:1px solid rgba(120,97,63,.72);
 }
-.home-hero-secondary-link span{margin-left:8px}
-.home-hero-secondary-link:hover{
-  color:var(--home-olive)!important;
-  border-bottom-color:var(--home-olive);
+.home-hero-action--secondary:hover{
+  background:rgba(16,47,77,.05);
+  border-color:rgba(16,47,77,.55);
 }
+.home-hero-action:active{transform:translateY(1px)}
 
 @media(min-width:1025px){
   .home-hero-grid{
@@ -189,20 +216,21 @@
     min-height:520px!important;
   }
   .home-hero-copy{
-    padding-top:58px!important;
-    padding-right:88px!important;
-    padding-bottom:56px!important;
+    padding-top:62px!important;
+    padding-right:76px!important;
+    padding-bottom:62px!important;
   }
   .home-hero-copy > .home-eyebrow{
-    margin-bottom:22px!important;
+    margin-bottom:26px!important;
   }
   .home-hero h1{
-    max-width:14.5ch!important;
+    max-width:15ch!important;
+    line-height:1.08!important;
   }
   .home-hero-lede{
-    max-width:560px!important;
-    margin-top:24px!important;
-    line-height:1.68!important;
+    max-width:590px!important;
+    margin-top:30px!important;
+    line-height:1.7!important;
   }
 }
 
@@ -210,16 +238,13 @@
   .home-hero-actions{
     display:grid;
     grid-template-columns:1fr;
-    gap:12px;
-    margin-top:24px;
-  }
-  .home-hero-actions .home-primary-btn{width:100%}
-  .home-hero-secondary-link{
     width:100%;
-    justify-content:center;
-    min-height:44px;
-    border:1px solid rgba(33,49,66,.22);
-    border-radius:9px;
+    gap:12px;
+    margin-top:24px!important;
+  }
+  .home-hero-action{
+    width:100%;
+    min-width:0;
   }
 }
 </style>
@@ -256,8 +281,8 @@
           <h1 id="home-hero-title"><span class="home-hero-line">A steadier place to</span> <span class="home-hero-line">begin therapy.</span></h1>
           <p class="home-hero-lede">Thoughtful outpatient care for people who feel overwhelmed, disconnected, or caught in patterns that keep returning.</p>
           <div class="home-hero-actions">
-            <a class="home-primary-btn" href="contact.html#inquiry-form">Request a Consultation</a>
-            <a class="home-hero-secondary-link" href="team.html#clinicians">Meet the Clinicians <span aria-hidden="true">→</span></a>
+            <a class="home-hero-action home-hero-action--primary" href="contact.html#inquiry-form">Request a Consultation</a>
+            <a class="home-hero-action home-hero-action--secondary" href="team.html#clinicians">Meet the Clinicians</a>
           </div>
 
         </div>
