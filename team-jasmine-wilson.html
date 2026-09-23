@@ -501,6 +501,299 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+
+<style id="stonebridge-jasmine-profile-rail-20260923">
+@media(min-width:1100px){
+  body{
+    overflow:visible!important;
+  }
+
+  .profile-subpage-actions{
+    display:none!important;
+  }
+
+  .jasmine-sticky-region{
+    position:relative;
+  }
+
+  .jasmine-sticky-region::after{
+    content:"";
+    position:absolute;
+    z-index:5;
+    top:0;
+    bottom:0;
+    left:calc(50% + 410px);
+    right:0;
+    border-left:1px solid rgba(120,97,63,.20);
+    background:#f7f1e9;
+    pointer-events:none;
+  }
+
+  .jasmine-sticky-region > section{
+    position:relative;
+    isolation:isolate;
+  }
+
+  .jasmine-sticky-region > section > .cp-shell{
+    position:relative;
+    z-index:6;
+    width:min(1420px,calc(100% - 56px))!important;
+    max-width:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    box-sizing:border-box;
+    padding-right:348px!important;
+  }
+
+  .jasmine-sticky-region .cp-layout,
+  .jasmine-sticky-region .cp-practical{
+    grid-template-columns:minmax(285px,.78fr) minmax(0,2fr)!important;
+    gap:40px!important;
+    align-items:start;
+  }
+
+  .jasmine-sticky-region .cp-fit-background{
+    width:min(1420px,calc(100% - 56px))!important;
+    max-width:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    box-sizing:border-box;
+    padding-right:348px!important;
+  }
+
+  .jasmine-sticky-rail-slot{
+    position:absolute;
+    inset:0;
+    z-index:12;
+    pointer-events:none;
+  }
+
+  .jasmine-profile-rail{
+    position:absolute;
+    top:18px;
+    right:max(28px,calc((100vw - 1420px)/2));
+    width:260px;
+    box-sizing:border-box;
+    padding:18px 18px 17px 20px;
+    background:transparent;
+    pointer-events:auto;
+  }
+
+  .jasmine-profile-rail.is-fixed{
+    position:fixed;
+    top:18px;
+    right:max(28px,calc((100vw - 1420px)/2));
+  }
+
+  .jasmine-profile-rail.is-ended{
+    position:absolute;
+    top:auto;
+    bottom:18px;
+    right:max(28px,calc((100vw - 1420px)/2));
+  }
+
+  .jasmine-profile-rail-heading{
+    display:none;
+    margin:0 0 13px;
+    padding:0 0 13px;
+    border-bottom:1px solid rgba(33,49,66,.14);
+  }
+
+  .jasmine-profile-rail-portrait{
+    width:94px;
+    margin:0;
+  }
+
+  .jasmine-profile-rail-portrait img{
+    display:block;
+    width:94px;
+    height:114px;
+    object-fit:cover;
+    object-position:center 28%;
+    border:1px solid rgba(120,97,63,.28);
+    border-radius:10px;
+    background:#efe7dd;
+  }
+
+  .jasmine-profile-rail-portrait figcaption{
+    margin-top:8px;
+    color:#102f4d;
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:1.05rem;
+    font-weight:650;
+    line-height:1.1;
+    letter-spacing:-.015em;
+  }
+
+  .jasmine-profile-rail.show-rail-portrait .jasmine-profile-rail-heading{
+    display:block;
+    animation:jasmineRailPortraitIn .18s ease both;
+  }
+
+  @keyframes jasmineRailPortraitIn{
+    from{opacity:0;transform:translateY(-4px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  .jasmine-profile-rail-status{
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px 10px;
+    margin:0 0 14px;
+    padding:0 0 11px;
+    border-bottom:1px solid rgba(33,49,66,.12);
+  }
+
+  .jasmine-profile-rail-status span{
+    position:relative;
+    padding-left:11px;
+    color:#213142;
+    font-family:"Inter",sans-serif;
+    font-size:.76rem;
+    font-weight:700;
+    line-height:1.35;
+  }
+
+  .jasmine-profile-rail-status span::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.42em;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:#b28a43;
+  }
+
+  .jasmine-profile-rail-summary{
+    display:grid;
+    gap:12px;
+    margin:0 0 14px;
+    padding:0 0 14px;
+    border-bottom:1px solid rgba(33,49,66,.12);
+  }
+
+  .jasmine-profile-rail-label{
+    margin:0 0 5px;
+    color:#78613f;
+    font-family:"Inter",sans-serif;
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.15em;
+    line-height:1.2;
+    text-transform:uppercase;
+  }
+
+  .jasmine-profile-rail-summary-row p{
+    margin:0;
+    color:#455767;
+    font-family:"Inter",sans-serif;
+    font-size:.74rem;
+    line-height:1.48;
+  }
+
+  .jasmine-profile-rail-summary-row .jasmine-profile-rail-subtle{
+    margin-top:4px;
+    color:#6a7278;
+    font-size:.69rem;
+    line-height:1.42;
+  }
+
+  .jasmine-profile-rail-payment a{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    margin-top:6px;
+    color:#102f4d;
+    font-family:"Inter",sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    line-height:1.35;
+    text-decoration:none;
+    border-bottom:1px solid rgba(16,47,77,.28);
+  }
+
+  .jasmine-profile-rail-payment a:hover,
+  .jasmine-profile-rail-payment a:focus-visible{
+    border-bottom-color:#102f4d;
+  }
+
+  .jasmine-profile-rail-hours{
+    display:grid;
+    gap:7px;
+  }
+
+  .jasmine-profile-rail-hours > div{
+    display:grid;
+    grid-template-columns:32px minmax(0,1fr);
+    gap:8px;
+    align-items:start;
+  }
+
+  .jasmine-profile-rail-hours strong{
+    color:#213142;
+    font-family:"Inter",sans-serif;
+    font-size:.75rem;
+    line-height:1.48;
+  }
+
+  .jasmine-profile-rail-hours span{
+    color:#5d6870;
+    font-family:"Inter",sans-serif;
+    font-size:.75rem;
+    line-height:1.48;
+  }
+
+  .jasmine-profile-rail-note{
+    margin:9px 0 0;
+    color:#6a7278;
+    font-family:"Inter",sans-serif;
+    font-size:.72rem;
+    font-style:italic;
+    line-height:1.42;
+  }
+
+  .jasmine-profile-rail-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-top:11px;
+    padding:0 0 3px;
+    border-bottom:1px solid rgba(16,47,77,.34);
+    color:#102f4d;
+    font-family:"Inter",sans-serif;
+    font-size:.77rem;
+    font-weight:800;
+    line-height:1.35;
+    text-decoration:none;
+  }
+
+  .jasmine-profile-rail-cta:hover,
+  .jasmine-profile-rail-cta:focus-visible{
+    border-bottom-color:#102f4d;
+  }
+
+  .cp-final .btn-secondary{
+    background:#fffaf2!important;
+    color:#102f4d!important;
+    border-color:#fffaf2!important;
+  }
+
+  .cp-final .btn-secondary:hover,
+  .cp-final .btn-secondary:focus-visible{
+    background:#f2e8dc!important;
+    color:#102f4d!important;
+    border-color:#f2e8dc!important;
+  }
+}
+
+@media(max-width:1099px){
+  .jasmine-sticky-rail-slot{
+    display:none!important;
+  }
+}
+</style>
+
 </head>
 
 <body class="clinician-profile-page" data-static-hero-system="true">
@@ -578,6 +871,56 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     <span class="sb-utility-strip__item">Postgraduate Clinical Associate</span>
   </div>
 </section>
+
+<div class="jasmine-sticky-region">
+  <div class="jasmine-sticky-rail-slot">
+    <aside class="jasmine-profile-rail" aria-label="Jasmine Wilson practical information">
+      <div class="jasmine-profile-rail-heading">
+        <figure class="jasmine-profile-rail-portrait">
+          <img src="jasmine-wilson-headshot.png?v=20260921i" alt="Jasmine Wilson" width="1122" height="1402" decoding="async">
+          <figcaption>Jasmine Wilson</figcaption>
+        </figure>
+      </div>
+
+      <div class="jasmine-profile-rail-status" aria-label="Practice status">
+        <span>Accepting new clients</span>
+        <span>Illinois telehealth</span>
+      </div>
+
+      <div class="jasmine-profile-rail-summary" aria-label="Jasmine Wilson profile summary">
+        <div class="jasmine-profile-rail-summary-row">
+          <div class="jasmine-profile-rail-label">Works with</div>
+          <p>Adolescents 12+ · Adults</p>
+          <p class="jasmine-profile-rail-subtle">Parent consultation may also be available when clinically appropriate.</p>
+        </div>
+        <div class="jasmine-profile-rail-summary-row">
+          <div class="jasmine-profile-rail-label">Clinical depth</div>
+          <p>Trauma · Anxiety and depression · Emotional regulation · Life transitions · Identity and self-worth</p>
+        </div>
+        <div class="jasmine-profile-rail-summary-row">
+          <div class="jasmine-profile-rail-label">Approach</div>
+          <p>Warm · Collaborative · Person-centered · Trauma-informed · Body-aware</p>
+        </div>
+        <div class="jasmine-profile-rail-summary-row jasmine-profile-rail-payment">
+          <div class="jasmine-profile-rail-label">Insurance &amp; payment</div>
+          <p>Participation can vary by clinician and plan.</p>
+          <a href="fees-insurance.html">Fees &amp; Insurance <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="jasmine-profile-rail-availability">
+        <div class="jasmine-profile-rail-label">Typical availability</div>
+        <div class="jasmine-profile-rail-hours" aria-label="Jasmine Wilson typical scheduling windows">
+          <div><strong>Tue</strong><span>2–7 PM</span></div>
+          <div><strong>Fri</strong><span>3–6 PM</span></div>
+          <div><strong>Sat</strong><span>8 AM–12 PM</span></div>
+        </div>
+        <p class="jasmine-profile-rail-note">Typical windows; current openings vary.</p>
+      </div>
+
+      <a class="jasmine-profile-rail-cta" href="contact.html?clinician=jasmine-wilson#inquiry-form">Request a consultation <span aria-hidden="true">→</span></a>
+    </aside>
+  </div>
 
 <section class="cp-section" id="clinical-focus">
   <div class="cp-shell cp-layout">
@@ -697,6 +1040,8 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   </div>
 </section>
 
+
+</div>
 <section class="cp-final" aria-label="Working with Jasmine Wilson">
   <div class="cp-final-inner">
     <div>
@@ -784,5 +1129,43 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 })();
 </script>
 <script src="script.js?v=20260923sticky1"></script>
+
+<script id="jasmine-rail-scroll-controller">
+(function(){
+  var rail=document.querySelector('.jasmine-profile-rail');
+  var region=document.querySelector('.jasmine-sticky-region');
+  var heroPortrait=document.querySelector('.profile-subpage-headshot--jasmine');
+  if(!rail||!region) return;
+
+  var fixedTop=18;
+  var endGap=30;
+
+  function updateJasmineRail(){
+    if(window.innerWidth<1100){
+      rail.classList.remove('is-fixed','is-ended','show-rail-portrait');
+      return;
+    }
+
+    var regionRect=region.getBoundingClientRect();
+    var railHeight=rail.offsetHeight;
+    var shouldStart=regionRect.top<=fixedTop;
+    var shouldEnd=regionRect.bottom<=fixedTop+railHeight+endGap;
+
+    rail.classList.toggle('is-fixed',shouldStart&&!shouldEnd);
+    rail.classList.toggle('is-ended',shouldStart&&shouldEnd);
+
+    if(heroPortrait){
+      var heroRect=heroPortrait.getBoundingClientRect();
+      var heroVisible=heroRect.bottom>0 && heroRect.top<window.innerHeight;
+      rail.classList.toggle('show-rail-portrait',!heroVisible);
+    }
+  }
+
+  updateJasmineRail();
+  window.addEventListener('scroll',updateJasmineRail,{passive:true});
+  window.addEventListener('resize',updateJasmineRail);
+})();
+</script>
+
 </body>
 </html>
