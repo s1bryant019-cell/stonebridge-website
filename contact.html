@@ -1295,33 +1295,42 @@ body.contact-page .contact-form-section .contact-shell{
 }
 body.contact-page .contact-detail-decoration{
   position:absolute;
-  right:-140px;
-  bottom:-40px;
+  right:-235px;
+  bottom:-205px;
   z-index:1;
-  width:min(42vw,760px);
+  width:980px;
+  max-width:none;
   height:auto;
   display:block;
   pointer-events:none;
   user-select:none;
-  opacity:.32;
+  opacity:.16;
 }
 
 @media(min-width:1500px){
   body.contact-page .contact-detail-decoration{
-    right:-120px;
-    bottom:-30px;
-    width:min(40vw,840px);
-    opacity:.34;
+    right:-210px;
+    bottom:-195px;
+    width:1080px;
+    opacity:.17;
   }
+}
 }
 body.contact-page .contact-form-section .contact-shell{
   width:min(1120px,calc(100% - 64px))!important;
 }
 body.contact-page .contact-form-section .contact-shell > .contact-form{
+  position:relative;
+  overflow:hidden;
   width:100%!important;
   max-width:none!important;
   margin:0 auto!important;
   padding:20px 22px!important;
+}
+body.contact-page .contact-form-content,
+body.contact-page .contact-success{
+  position:relative;
+  z-index:2;
 }
 body.contact-page .contact-form-head{
   margin-bottom:14px!important;
@@ -1556,6 +1565,7 @@ body.contact-page .contact-form-submit .btn{
       <div class="contact-shell">
 
         <form class="contact-form" id="consultation-form" novalidate aria-labelledby="consultation-form-title">
+          <img class="contact-detail-decoration" src="Consultation%20Detail.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
           <div class="contact-form-content" id="contact-form-content">
             <div class="contact-form-head">
               <div class="form-eyebrow">Consultation request</div>
@@ -1696,7 +1706,6 @@ body.contact-page .contact-form-submit .btn{
           </section>
         </form>
       </div>
-      <img class="contact-detail-decoration" src="Consultation%20Detail.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
     </section>
 
     <div class="contact-runtime-decoys" hidden aria-hidden="true">
