@@ -4160,6 +4160,31 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     white-space:nowrap;
   }
 
+  .founder-profile-rail-heading{
+    margin:0 0 18px;
+    padding:0 0 16px;
+    border-bottom:1px solid rgba(33,49,66,.14);
+  }
+
+  .founder-profile-rail-kicker{
+    margin:0 0 4px;
+    color:#78613f;
+    font-family:"Inter",sans-serif;
+    font-size:.68rem;
+    font-weight:800;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  .founder-profile-rail-heading h2{
+    margin:0;
+    color:#102f4d;
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:1.7rem;
+    line-height:1.02;
+    letter-spacing:-.025em;
+  }
+
   .founder-profile-rail-summary{
     display:grid;
     gap:15px;
@@ -4178,6 +4203,35 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     font-family:"Inter",sans-serif;
     font-size:.74rem;
     line-height:1.48;
+  }
+
+  .founder-profile-rail-insurance{
+    display:grid;
+    gap:3px;
+    margin:0 0 7px;
+    padding:0;
+    list-style:none;
+  }
+
+  .founder-profile-rail-insurance li{
+    position:relative;
+    margin:0;
+    padding-left:10px;
+    color:#455767;
+    font-family:"Inter",sans-serif;
+    font-size:.72rem;
+    line-height:1.38;
+  }
+
+  .founder-profile-rail-insurance li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.52em;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:#b28a43;
   }
 
   .founder-profile-rail-payment a{
@@ -4508,6 +4562,11 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <div class="founder-sticky-region">
   <div class="founder-sticky-rail-slot">
     <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
+    <div class="founder-profile-rail-heading">
+      <div class="founder-profile-rail-kicker">Dr. Bryant</div>
+      <h2>At a glance</h2>
+    </div>
+
     <div class="founder-profile-rail-status" aria-label="Practice status">
       <span>Accepting new clients</span>
       <span>Illinois telehealth</span>
@@ -4527,8 +4586,14 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         <p>Exploratory · Relational · Psychodynamic</p>
       </div>
       <div class="founder-profile-rail-summary-row founder-profile-rail-payment">
-        <div class="founder-profile-rail-label">Payment</div>
-        <p>Self-pay rates · Sliding scale available</p>
+        <div class="founder-profile-rail-label">Insurance &amp; payment</div>
+        <ul class="founder-profile-rail-insurance" aria-label="Accepted insurance">
+          <li>Aetna</li>
+          <li>Blue Cross Blue Shield of Illinois</li>
+          <li>Medicaid FFS</li>
+          <li>Guidehealth / Advocate Medical Group West</li>
+        </ul>
+        <p>Self-pay · Sliding scale available</p>
         <a href="fees-insurance.html">Fees &amp; Insurance <span aria-hidden="true">→</span></a>
       </div>
     </div>
