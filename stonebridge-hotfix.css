@@ -336,3 +336,46 @@ body.home-redesign .home-service-media img{
     padding:0 4px 6px 0!important;
   }
 }
+
+
+/* Mobile utility strip normalization */
+@media(max-width:760px){
+  .sb-utility-strip{
+    min-height:0!important;
+    padding:0!important;
+  }
+
+  .sb-utility-strip__inner,
+  .fees-page .sb-utility-strip__inner{
+    width:calc(100% - 40px)!important;
+    min-height:0!important;
+    margin:0 auto!important;
+    padding:8px 0!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:0!important;
+    justify-content:stretch!important;
+  }
+
+  .sb-utility-strip__item,
+  .fees-page .sb-utility-strip__item{
+    display:block!important;
+    width:100%!important;
+    padding:7px 0!important;
+    text-align:center!important;
+    white-space:normal!important;
+    line-height:1.35!important;
+  }
+
+  .sb-utility-strip__item + .sb-utility-strip__item,
+  .fees-page .sb-utility-strip__item + .sb-utility-strip__item{
+    border-top:1px solid rgba(33,49,66,.10)!important;
+  }
+
+  .sb-utility-strip__item::before,
+  .sb-utility-strip__item + .sb-utility-strip__item::before,
+  .fees-page .sb-utility-strip__item::before{
+    display:none!important;
+    content:none!important;
+  }
+}
