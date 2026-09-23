@@ -4032,18 +4032,18 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     margin-left:auto!important;
     margin-right:auto!important;
     box-sizing:border-box;
-    padding-right:300px!important;
+    padding-right:348px!important;
   }
 
   .founder-sticky-region .focus-compact-layout{
-    grid-template-columns:minmax(245px,.72fr) minmax(0,2fr)!important;
-    gap:44px!important;
+    grid-template-columns:minmax(285px,.78fr) minmax(0,2fr)!important;
+    gap:40px!important;
     align-items:start;
   }
 
   .founder-sticky-region .therapy-method-layout{
-    grid-template-columns:minmax(275px,.76fr) minmax(0,1.55fr)!important;
-    gap:46px!important;
+    grid-template-columns:minmax(360px,.92fr) minmax(0,1.55fr)!important;
+    gap:40px!important;
     align-items:start;
   }
 
@@ -4085,6 +4085,39 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   .founder-sticky-region .scope-strip-inner{
     grid-template-columns:150px minmax(0,1fr)!important;
     gap:32px!important;
+  }
+
+  .founder-sticky-region .therapy-method-intro h2{
+    max-width:none!important;
+    text-wrap:balance;
+  }
+
+  .founder-name-inline{
+    white-space:nowrap;
+  }
+
+  .founder-profile-rail-summary{
+    display:grid;
+    gap:15px;
+    margin:0 0 18px;
+    padding:0 0 17px;
+    border-bottom:1px solid rgba(33,49,66,.12);
+  }
+
+  .founder-profile-rail-summary-row .founder-profile-rail-label{
+    margin-bottom:5px;
+  }
+
+  .founder-profile-rail-summary-row p{
+    margin:0;
+    color:#455767;
+    font-family:"Inter",sans-serif;
+    font-size:.74rem;
+    line-height:1.48;
+  }
+
+  .founder-profile-rail-availability{
+    padding-top:1px;
   }
 
   .founder-profile-rail-status{
@@ -4259,6 +4292,12 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 .broader-care-compact-secondary{
   margin-top:0!important;
 }
+@media(min-width:1100px){
+  .founder-sticky-region .founder-fit-layout{
+    grid-template-columns:minmax(285px,.78fr) minmax(0,2fr);
+    gap:40px;
+  }
+}
 @media(max-width:1099px){
   .founder-fit-layout{
     grid-template-columns:1fr;
@@ -4345,15 +4384,34 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       <span>Accepting new clients</span>
       <span>Illinois telehealth</span>
     </div>
-    <div class="founder-profile-rail-label">Typical availability</div>
-    <div class="founder-profile-rail-hours" aria-label="Dr. Bryant typical scheduling windows">
-      <div><strong>Mon</strong><span>9–11 AM · 12–3 PM · 4–5 PM</span></div>
-      <div><strong>Tue</strong><span>10–11 AM · 12–3 PM · 4–8 PM</span></div>
-      <div><strong>Wed</strong><span>10 AM–3 PM · 4–6 PM</span></div>
-      <div><strong>Thu</strong><span>9–11 AM · 12–3 PM · 4–5 PM</span></div>
-      <div><strong>Fri</strong><span>9 AM–1 PM</span></div>
+
+    <div class="founder-profile-rail-summary" aria-label="Dr. Bryant at a glance">
+      <div class="founder-profile-rail-summary-row">
+        <div class="founder-profile-rail-label">Works with</div>
+        <p>Adolescents 12+ · Adults · Couples · Families · Parent support</p>
+      </div>
+      <div class="founder-profile-rail-summary-row">
+        <div class="founder-profile-rail-label">Clinical depth</div>
+        <p>Trauma · Substance use · Co-occurring concerns · Complex treatment histories</p>
+      </div>
+      <div class="founder-profile-rail-summary-row">
+        <div class="founder-profile-rail-label">Approach</div>
+        <p>Exploratory · Relational · Psychodynamic</p>
+      </div>
     </div>
-    <p class="founder-profile-rail-note">Typical windows; current openings vary.</p>
+
+    <div class="founder-profile-rail-availability">
+      <div class="founder-profile-rail-label">Typical availability</div>
+      <div class="founder-profile-rail-hours" aria-label="Dr. Bryant typical scheduling windows">
+        <div><strong>Mon</strong><span>9–11 AM · 12–3 PM · 4–5 PM</span></div>
+        <div><strong>Tue</strong><span>10–11 AM · 12–3 PM · 4–8 PM</span></div>
+        <div><strong>Wed</strong><span>10 AM–3 PM · 4–6 PM</span></div>
+        <div><strong>Thu</strong><span>9–11 AM · 12–3 PM · 4–5 PM</span></div>
+        <div><strong>Fri</strong><span>9 AM–1 PM</span></div>
+      </div>
+      <p class="founder-profile-rail-note">Typical windows; current openings vary.</p>
+    </div>
+
     <a class="founder-profile-rail-cta" href="contact.html?clinician=stephen-bryant#inquiry-form">Request a consultation <span aria-hidden="true">→</span></a>
   </aside>
   </div>
@@ -4417,7 +4475,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <div class="founder-wide-shell therapy-method-layout">
 <div class="therapy-method-intro">
 <div class="section-label">Clinical approach</div>
-<h2>How Dr. Bryant works.</h2>
+<h2>How <span class="founder-name-inline">Dr. Bryant</span> works.</h2>
 <p class="lead">Therapy is exploratory, relational, and conversational. Dr. Bryant works collaboratively to understand what keeps repeating, what those patterns may be protecting or expressing, and what may become possible when they are approached differently.</p>
 <blockquote class="therapy-method-quote">Good therapy needs a steady frame: enough structure to feel safe, and enough room to be fully human.</blockquote>
 </div>
