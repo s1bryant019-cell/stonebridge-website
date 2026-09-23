@@ -1719,6 +1719,45 @@ body.team-page .team-consultation{
 </style>
 
   <link rel="stylesheet" href="team-hero-overrides.css?v=20260922">
+
+<style id="stonebridge-team-botanical-20260922">
+/* Decorative botanical accent from the approved mockup treatment. */
+body.team-page .team-secondary{
+  position:relative!important;
+  overflow:visible!important;
+  isolation:isolate!important;
+}
+body.team-page .team-secondary .team-shell{
+  position:relative!important;
+  z-index:2!important;
+}
+body.team-page .team-secondary-botanical{
+  position:absolute;
+  right:-8px;
+  bottom:-54px;
+  z-index:1;
+  width:clamp(170px,13vw,235px);
+  height:auto;
+  display:block;
+  pointer-events:none;
+  user-select:none;
+  opacity:.96;
+}
+@media(max-width:980px){
+  body.team-page .team-secondary-botanical{
+    right:-18px;
+    bottom:-42px;
+    width:165px;
+    opacity:.92;
+  }
+}
+@media(max-width:760px){
+  body.team-page .team-secondary-botanical{
+    display:none;
+  }
+}
+</style>
+
 </head>
 
 <body class="team-page" data-static-hero-system="true">
@@ -1897,6 +1936,7 @@ body.team-page .team-consultation{
         </div>
 
       </div>
+      <img class="team-secondary-botanical" src="team-secondary-botanical.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
     </section>
 
     <section class="team-cta">
