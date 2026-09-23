@@ -1284,40 +1284,10 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <style id="stonebridge-contact-checkout-20260923">
 /* Contact page: compact completion-focused consultation request flow. */
 body.contact-page .contact-form-section{
-  padding:24px 0 36px!important;
+  padding:18px 0 34px!important;
 }
 body.contact-page .contact-form-section .contact-shell{
   width:min(1180px,calc(100% - 64px))!important;
-}
-body.contact-page .contact-checkout-note{
-  width:min(1180px,100%);
-  margin:0 auto 12px!important;
-  padding:11px 14px!important;
-  border:1px solid var(--contact-warm-line);
-  border-radius:9px;
-  background:rgba(232,221,206,.42);
-  font-family:"Inter",sans-serif;
-}
-body.contact-page .contact-checkout-note p{
-  margin:0;
-  color:var(--contact-muted);
-  font-size:.82rem;
-  line-height:1.42;
-}
-body.contact-page .contact-checkout-note strong{
-  color:var(--contact-ink);
-}
-body.contact-page .contact-checkout-note a{
-  display:inline-block;
-  margin-top:5px;
-  color:var(--contact-navy);
-  font-size:.74rem;
-  font-weight:700;
-  text-decoration:none;
-}
-body.contact-page .contact-checkout-note a:hover{
-  text-decoration:underline;
-  text-underline-offset:3px;
 }
 body.contact-page .contact-form-section .contact-shell > .contact-form{
   width:100%!important;
@@ -1333,7 +1303,16 @@ body.contact-page .contact-form-head h2{
   margin-top:7px!important;
 }
 body.contact-page .contact-required-note{
-  margin-top:5px!important;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:4px 18px;
+  margin-top:6px!important;
+}
+body.contact-page .contact-form-brief-note{
+  color:var(--contact-muted);
+  font-size:.76rem;
+  font-weight:400;
 }
 body.contact-page .contact-form-grid--compact{
   gap:12px 18px!important;
@@ -1355,12 +1334,27 @@ body.contact-page .field-helper{
   font-size:.72rem!important;
   line-height:1.35!important;
 }
+body.contact-page .contact-brief-privacy{
+  margin:5px 0 0!important;
+  font-family:"Inter",sans-serif;
+  font-size:.72rem;
+  line-height:1.35;
+}
+body.contact-page .contact-brief-privacy a{
+  color:var(--contact-navy);
+  font-weight:700;
+  text-decoration:none;
+}
+body.contact-page .contact-brief-privacy a:hover{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
 body.contact-page .contact-form-footer{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:24px;
-  margin-top:12px;
+  margin-top:10px;
   padding-top:8px;
   border-top:1px solid var(--contact-line);
 }
@@ -1411,17 +1405,21 @@ body.contact-page .contact-form-submit .btn{
 
 @media(max-width:760px){
   body.contact-page .contact-form-section{
-    padding:22px 0 32px!important;
+    padding:16px 0 30px!important;
   }
   body.contact-page .contact-form-section .contact-shell{
     width:min(100% - 40px,1100px)!important;
   }
-  body.contact-page .contact-checkout-note{
-    margin-bottom:12px!important;
-    padding:10px 12px!important;
-  }
   body.contact-page .contact-form-section .contact-shell > .contact-form{
     padding:18px 16px!important;
+  }
+  body.contact-page .contact-required-note{
+    display:block;
+  }
+  body.contact-page .contact-form-brief-note{
+    display:block;
+    margin-top:4px;
+    line-height:1.4;
   }
   body.contact-page .contact-form-grid--compact{
     grid-template-columns:1fr!important;
@@ -1436,7 +1434,7 @@ body.contact-page .contact-form-submit .btn{
   }
   body.contact-page .contact-form-footer{
     display:block;
-    margin-top:14px;
+    margin-top:12px;
     padding-top:10px;
   }
   body.contact-page .contact-crisis-guidance{
@@ -1522,17 +1520,16 @@ body.contact-page .contact-form-submit .btn{
 
     <section class="contact-form-section" id="inquiry-form">
       <div class="contact-shell">
-        <div class="contact-checkout-note">
-          <p><strong>Keep clinical details brief.</strong> We only need enough information to review fit and availability.</p>
-          <a href="privacy-information.html">Privacy &amp; Information Use <span aria-hidden="true">→</span></a>
-        </div>
 
         <form class="contact-form" id="consultation-form" novalidate aria-labelledby="consultation-form-title">
           <div class="contact-form-content" id="contact-form-content">
             <div class="contact-form-head">
               <div class="form-eyebrow">Consultation request</div>
               <h2 id="consultation-form-title">A few details to help us respond.</h2>
-              <p class="contact-required-note"><span aria-hidden="true">*</span> Required</p>
+              <p class="contact-required-note">
+                <span><span aria-hidden="true">*</span> Required</span>
+                <span class="contact-form-brief-note">Keep clinical details brief. We only need a little information to get started.</span>
+              </p>
             </div>
 
             <div class="contact-error-summary" id="form-error-summary" role="alert" tabindex="-1" hidden>
@@ -1631,19 +1628,19 @@ body.contact-page .contact-form-submit .btn{
                 </select>
               </div>
 
-              <div class="contact-field contact-field-full">
-                <label for="brief-reason">Briefly tell us what brings you to Stonebridge <span class="required-mark" aria-hidden="true">*</span></label>
-                <textarea id="brief-reason" name="reason" maxlength="2000" required aria-describedby="brief-reason-guidance brief-reason-error"></textarea>
-                <p class="field-helper" id="brief-reason-guidance">A few sentences is enough.</p>
-                <p class="field-error" id="brief-reason-error" hidden></p>
-              </div>
-
               <div class="contact-field contact-field-availability">
                 <label class="field-label-row" for="general-availability">
                   <span>General availability</span>
                   <span class="field-optional">Optional</span>
                 </label>
                 <input id="general-availability" type="text" name="generalAvailability" maxlength="500" placeholder="For example: Tuesday evenings or Friday mornings">
+              </div>
+
+              <div class="contact-field contact-field-full">
+                <label for="brief-reason">Briefly tell us what brings you to Stonebridge <span class="required-mark" aria-hidden="true">*</span></label>
+                <textarea id="brief-reason" name="reason" maxlength="2000" required aria-describedby="brief-reason-privacy brief-reason-error"></textarea>
+                <p class="contact-brief-privacy" id="brief-reason-privacy"><a href="privacy-information.html">Privacy &amp; Information Use <span aria-hidden="true">→</span></a></p>
+                <p class="field-error" id="brief-reason-error" hidden></p>
               </div>
             </div>
 
@@ -1792,7 +1789,7 @@ body.contact-page .contact-form-submit .btn{
     })();
   </script>
 
-  <script src="script.js?v=20260923checkout3"></script>
+  <script src="script.js?v=20260923checkout4"></script>
   <script>
     (function(){
       var form=document.getElementById('consultation-form');
