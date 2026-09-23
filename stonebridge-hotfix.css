@@ -379,3 +379,17 @@ body.home-redesign .home-service-media img{
     content:none!important;
   }
 }
+
+
+/* Mobile clinician profile hero composition */
+@media(max-width:760px){
+  .profile-subpage-hero .profile-subpage-hero-inner{
+    gap:28px!important;
+  }
+
+  .profile-subpage-hero .profile-subpage-headshot{
+    justify-self:center!important;
+    width:min(240px,64vw)!important;
+    margin:2px auto 0!important;
+  }
+}
