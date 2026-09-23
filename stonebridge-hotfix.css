@@ -243,3 +243,20 @@ body.home-redesign .home-service-media img{
   object-fit:cover!important;
   object-position:center!important;
 }
+
+
+/* Mobile horizontal rhythm normalization — 20px page gutter */
+@media(max-width:760px){
+  .site-header.sb-global-header .nav,
+  .container,
+  .home-container,
+  .sbx-shell,
+  .sbx-hero-inner,
+  .sbx-hero-copy,
+  .orientation-grid,
+  .shell,
+  .note-strip-inner,
+  .cta-inner{
+    width:calc(100% - 40px)!important;
+  }
+}
