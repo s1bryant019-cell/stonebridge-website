@@ -3998,6 +3998,32 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     gap:32px;
   }
 
+  .founder-sticky-region .founder-credibility-core-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  .founder-sticky-region .founder-credibility-core .credibility-primary{
+    border-right:0!important;
+  }
+
+  .founder-books-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  .founder-books-grid > .books-showcase{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+
+  .founder-credibility-core{
+    padding-bottom:26px!important;
+    border-bottom:0!important;
+  }
+
+  .founder-books-section{
+    padding-top:28px!important;
+  }
+
   .founder-profile-rail-label{
     margin-bottom:14px;
     color:#78613f;
@@ -4258,14 +4284,13 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </div>
 </div>
 </section>
-</div>
-<section class="founder-credibility-combined" id="background">
+<section class="founder-credibility-combined founder-credibility-core" id="background">
 <div class="founder-wide-shell">
 <div class="credibility-heading">
 <div class="section-label">Professional background</div>
 <h2>Clinical experience, credentials, and writing.</h2>
 </div>
-<div class="credibility-grid credibility-grid-balanced">
+<div class="credibility-grid credibility-grid-balanced founder-credibility-core-grid">
 <div class="credibility-primary">
 <article class="credibility-column clinical-experience-column">
 <h3>Clinical experience</h3>
@@ -4282,11 +4307,18 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </ul>
 </article>
 </div>
+</div>
+</div>
+</section>
+</div>
+<section class="founder-credibility-combined founder-books-section" aria-labelledby="founder-books-title">
+<div class="founder-wide-shell">
+<div class="credibility-grid credibility-grid-balanced founder-books-grid">
 <article class="credibility-column writing-column books-showcase" id="publications">
 <div class="books-showcase-head">
 <div>
 <div class="section-label">Selected books</div>
-<h3>Books and writing</h3>
+<h3 id="founder-books-title">Books and writing</h3>
 <p>Dr. Bryant’s writing explores burnout, clinician wellbeing, education, and the practice of trauma therapy.</p>
 </div>
 </div>
@@ -4336,7 +4368,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </div>
 </div>
 </section>
-
 <section class="founder-availability" aria-labelledby="founder-availability-title">
 <div class="founder-wide-shell">
 <div class="founder-availability-heading">
