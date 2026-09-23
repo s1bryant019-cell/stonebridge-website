@@ -2426,6 +2426,131 @@
   .lobby-showcase-fact:first-child{border-top:0;}
 }
 </style>
+<style id="stonebridge-group-mobile-normalization-20260923">
+/* Final phone layout: one predictable composition across Stonebridge mobile widths. */
+@media(max-width:760px){
+  .group-current-offering{
+    grid-template-columns:1fr !important;
+    min-height:0 !important;
+  }
+
+  .group-current-offering .group-offering-copy{
+    padding:30px 20px 28px !important;
+  }
+
+  .group-current-offering .group-offering-facts-premium{
+    grid-template-columns:1fr !important;
+    margin-top:24px !important;
+  }
+
+  .group-current-offering .group-offering-facts-premium .group-offering-fact,
+  .group-current-offering .group-offering-facts-premium .group-offering-fact:nth-child(even),
+  .group-current-offering .group-offering-facts-premium .group-offering-fact:nth-child(odd){
+    padding:12px 0 !important;
+    border-left:0 !important;
+    border-bottom:1px solid var(--group-line) !important;
+  }
+
+  .group-current-offering .group-offering-facts-premium .group-offering-fact:last-child{
+    border-bottom:0 !important;
+  }
+
+  .group-offering-support{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+
+  .group-offering-support p,
+  .group-offering-support p + p{
+    padding:0 !important;
+    border-left:0 !important;
+  }
+
+  .group-offering-actions-premium{
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:12px !important;
+  }
+
+  .group-offering-actions-premium .btn{
+    width:100% !important;
+  }
+
+  .group-current-offering .group-offering-photo{
+    min-height:0 !important;
+    height:auto !important;
+    aspect-ratio:4 / 3 !important;
+  }
+
+  .lobby-showcase{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    min-height:0 !important;
+  }
+
+  .lobby-showcase::after{
+    display:none !important;
+  }
+
+  .lobby-showcase-copy{
+    width:100% !important;
+    min-height:0 !important;
+    padding:30px 20px 28px !important;
+    background:var(--group-bg) !important;
+  }
+
+  .lobby-showcase-brand{
+    width:min(100%,13.5rem) !important;
+  }
+
+  .lobby-showcase-title{
+    max-width:none !important;
+    font-size:clamp(2rem,8vw,2.55rem) !important;
+  }
+
+  .lobby-showcase-intro,
+  .lobby-showcase-quote,
+  .lobby-showcase-facts{
+    max-width:none !important;
+  }
+
+  .lobby-showcase-facts{
+    grid-template-columns:1fr !important;
+    row-gap:0 !important;
+    margin-top:20px !important;
+  }
+
+  .lobby-showcase-fact,
+  .lobby-showcase-fact:first-child,
+  .lobby-showcase-fact:nth-child(3),
+  .lobby-showcase-fact:nth-child(even){
+    padding:10px 0 !important;
+    border-left:0 !important;
+    border-top:1px solid var(--group-line) !important;
+  }
+
+  .lobby-showcase-fact:first-child{
+    border-top:0 !important;
+  }
+
+  .lobby-showcase-actions{
+    gap:12px !important;
+  }
+
+  .lobby-showcase-photo{
+    position:relative !important;
+    inset:auto !important;
+    width:100% !important;
+    min-height:0 !important;
+    margin:0 !important;
+    aspect-ratio:4 / 3 !important;
+  }
+
+  .lobby-showcase-photo img{
+    object-position:54% center !important;
+  }
+}
+</style>
 <style id="stonebridge-standard-hero-overlay-soften-20260921">
 html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   background:
