@@ -450,3 +450,12 @@ body.home-redesign .home-service-media img{
     padding:14px 0!important;
   }
 }
+
+
+/* Mobile header consultation CTA removal */
+@media(max-width:760px){
+  .site-header.sb-global-header .header-cta,
+  .paid-search-page .paid-search-header .landing-header-cta{
+    display:none!important;
+  }
+}
