@@ -3956,6 +3956,12 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <style id="stonebridge-founder-profile-rail-20260923">
 /* One persistent desktop practical rail; mobile keeps the original availability section. */
 @media(min-width:1100px){
+  /* Sticky availability needs a non-clipping ancestor. Individual visual sections
+     (including the hero) retain their own overflow containment. */
+  .founder-page{
+    overflow:visible!important;
+  }
+
   .profile-subpage-actions{
     display:none!important;
   }
