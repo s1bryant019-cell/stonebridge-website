@@ -1317,17 +1317,35 @@ body.contact-page .contact-form::after{
   body.contact-page .contact-form-section::after{
     content:"";
     position:absolute;
-    right:-110px;
-    bottom:-42px;
+    top:20px;
+    right:-40px;
+    bottom:20px;
     z-index:0;
-    width:700px;
-    height:700px;
+    width:980px;
+    pointer-events:none;
     background-image:url("Consultation%20Detail.png");
     background-repeat:no-repeat;
+    background-position:right center;
     background-size:contain;
-    background-position:right bottom;
-    opacity:.24;
-    pointer-events:none;
+    opacity:.34;
+    -webkit-mask-image:linear-gradient(
+      to left,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,.95) 22%,
+      rgba(0,0,0,.75) 42%,
+      rgba(0,0,0,.35) 58%,
+      rgba(0,0,0,.08) 70%,
+      rgba(0,0,0,0) 78%
+    );
+    mask-image:linear-gradient(
+      to left,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,.95) 22%,
+      rgba(0,0,0,.75) 42%,
+      rgba(0,0,0,.35) 58%,
+      rgba(0,0,0,.08) 70%,
+      rgba(0,0,0,0) 78%
+    );
   }
   body.contact-page .contact-form-section .contact-shell{
     position:relative;
