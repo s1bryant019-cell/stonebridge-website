@@ -3954,8 +3954,8 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </style>
 
 <style id="stonebridge-founder-profile-rail-20260923">
-/* Desktop practical rail. The reserved right lane remains visually consistent
-   while the compact rail stays fixed until Books and writing begins. */
+/* Desktop clinician profile grid: one wide centered content lane plus one
+   persistent right-side practical rail. Mobile/tablet keep the original flow. */
 @media(min-width:1100px){
   .founder-page{
     overflow:visible!important;
@@ -3974,16 +3974,17 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     isolation:isolate;
   }
 
+  /* Carry a consistent rail lane through every desktop profile section. */
   .founder-sticky-region > section::after{
     content:"";
     position:absolute;
     z-index:0;
     top:0;
     bottom:0;
-    right:max(36px,calc((100vw - 1120px)/2));
-    width:250px;
+    right:max(28px,calc((100vw - 1420px)/2));
+    width:260px;
     border-left:1px solid rgba(120,97,63,.20);
-    background:rgba(255,250,242,.34);
+    background:rgba(255,250,242,.30);
     pointer-events:none;
   }
 
@@ -3994,19 +3995,18 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
   .founder-sticky-rail-slot{
     position:absolute;
-    inset:0 0 auto 0;
+    inset:0;
     z-index:12;
-    height:0;
     pointer-events:none;
   }
 
   .founder-profile-rail{
     position:absolute;
-    top:28px;
-    right:max(36px,calc((100vw - 1120px)/2));
-    width:250px;
+    top:30px;
+    right:max(28px,calc((100vw - 1420px)/2));
+    width:260px;
     box-sizing:border-box;
-    padding:18px 18px 16px 20px;
+    padding:18px 18px 17px 20px;
     background:transparent;
     pointer-events:auto;
   }
@@ -4014,28 +4014,41 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   .founder-profile-rail.is-fixed{
     position:fixed;
     top:82px;
-    right:max(36px,calc((100vw - 1120px)/2));
+    right:max(28px,calc((100vw - 1420px)/2));
   }
 
   .founder-profile-rail.is-ended{
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
+    position:absolute;
+    top:auto;
+    bottom:30px;
+    right:max(28px,calc((100vw - 1420px)/2));
   }
 
+  /* Use substantially more desktop width, then reserve the rail consistently.
+     The main content is centered within its own remaining lane. */
   .founder-sticky-region .founder-wide-shell{
+    width:min(1420px,calc(100% - 56px))!important;
+    max-width:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
     box-sizing:border-box;
-    padding-right:286px;
+    padding-right:300px!important;
   }
 
   .founder-sticky-region .focus-compact-layout{
-    grid-template-columns:minmax(200px,.66fr) minmax(0,1.72fr);
-    gap:32px;
+    grid-template-columns:minmax(245px,.72fr) minmax(0,2fr)!important;
+    gap:44px!important;
+    align-items:start;
   }
 
   .founder-sticky-region .therapy-method-layout{
-    grid-template-columns:minmax(210px,.66fr) minmax(0,1.5fr);
-    gap:32px;
+    grid-template-columns:minmax(275px,.76fr) minmax(0,1.55fr)!important;
+    gap:46px!important;
+    align-items:start;
+  }
+
+  .founder-sticky-region .credibility-heading{
+    max-width:100%;
   }
 
   .founder-sticky-region .founder-credibility-core-grid{
@@ -4043,25 +4056,35 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 
   .founder-sticky-region .founder-credibility-core .credibility-primary{
+    grid-template-columns:minmax(0,1fr) minmax(0,1.08fr)!important;
     border-right:0!important;
   }
 
-  .founder-books-grid{
+  .founder-sticky-region .founder-books-grid{
     grid-template-columns:1fr!important;
   }
 
-  .founder-books-grid > .books-showcase{
+  .founder-sticky-region .founder-books-grid > .books-showcase{
     padding-left:0!important;
     padding-right:0!important;
   }
 
+  .founder-sticky-region .books-showcase-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+
   .founder-credibility-core{
     padding-bottom:26px!important;
-    border-bottom:0!important;
+    border-bottom:1px solid rgba(212,200,185,.5)!important;
   }
 
   .founder-books-section{
-    padding-top:28px!important;
+    padding-top:34px!important;
+  }
+
+  .founder-sticky-region .scope-strip-inner{
+    grid-template-columns:150px minmax(0,1fr)!important;
+    gap:32px!important;
   }
 
   .founder-profile-rail-status{
@@ -4368,7 +4391,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </div>
 </div>
 </section>
-</div>
 <section class="founder-credibility-combined founder-books-section" aria-labelledby="founder-books-title">
 <div class="founder-wide-shell">
 <div class="credibility-grid credibility-grid-balanced founder-books-grid">
@@ -4456,6 +4478,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <p>Dr. Bryant provides outpatient telehealth psychotherapy for individuals, couples, and families, along with parent support, for clients located in Illinois. Stonebridge is not an emergency, crisis, psychological-testing, or forensic service. When another type or level of care is more appropriate, referral direction may be discussed when possible.</p>
 </div>
 </section>
+</div>
 <section aria-label="Working with Dr. Bryant" class="founder-final-band">
 <div class="founder-final-inner">
 <div>
@@ -4583,10 +4606,10 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 (function(){
   var rail=document.querySelector('.founder-profile-rail');
   var region=document.querySelector('.founder-sticky-region');
-  var books=document.querySelector('.founder-books-section');
-  if(!rail||!region||!books) return;
+  if(!rail||!region) return;
 
   var fixedTop=82;
+  var endGap=30;
 
   function updateFounderRail(){
     if(window.innerWidth<1100){
@@ -4594,11 +4617,13 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       return;
     }
 
-    var regionTop=region.getBoundingClientRect().top;
-    var booksTop=books.getBoundingClientRect().top;
+    var regionRect=region.getBoundingClientRect();
+    var railHeight=rail.offsetHeight;
+    var shouldStart=regionRect.top<=fixedTop;
+    var shouldEnd=regionRect.bottom<=fixedTop+railHeight+endGap;
 
-    rail.classList.toggle('is-fixed', regionTop<=fixedTop && booksTop>fixedTop);
-    rail.classList.toggle('is-ended', booksTop<=fixedTop);
+    rail.classList.toggle('is-fixed',shouldStart&&!shouldEnd);
+    rail.classList.toggle('is-ended',shouldStart&&shouldEnd);
   }
 
   updateFounderRail();
