@@ -1286,8 +1286,11 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 body.contact-page .contact-form-section{
   padding:24px 0 36px!important;
 }
+body.contact-page .contact-form-section .contact-shell{
+  width:min(1180px,calc(100% - 64px))!important;
+}
 body.contact-page .contact-checkout-note{
-  width:min(880px,100%);
+  width:min(1180px,100%);
   margin:0 auto 12px!important;
   padding:11px 14px!important;
   border:1px solid var(--contact-warm-line);
@@ -1317,7 +1320,7 @@ body.contact-page .contact-checkout-note a:hover{
   text-underline-offset:3px;
 }
 body.contact-page .contact-form-section .contact-shell > .contact-form{
-  width:min(880px,100%)!important;
+  width:100%!important;
   max-width:none!important;
   margin:0 auto!important;
   padding:20px 22px!important;
@@ -1352,24 +1355,66 @@ body.contact-page .field-helper{
   font-size:.72rem!important;
   line-height:1.35!important;
 }
+body.contact-page .contact-form-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin-top:12px;
+  padding-top:8px;
+  border-top:1px solid var(--contact-line);
+}
 body.contact-page .contact-crisis-guidance{
-  margin:12px 0 0!important;
-  padding-top:8px!important;
+  flex:1 1 auto;
+  max-width:760px;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
   font-size:.72rem!important;
   line-height:1.4!important;
   font-weight:500!important;
 }
 body.contact-page .contact-form-submit{
-  margin-top:14px!important;
+  flex:0 0 auto;
+  margin:0!important;
   gap:0!important;
 }
 body.contact-page .contact-form-submit .btn{
   min-width:170px!important;
   min-height:46px!important;
 }
+
+@media(min-width:1100px){
+  body.contact-page .contact-form-grid--compact{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+  body.contact-page .contact-form-grid--compact .contact-field-full{
+    grid-column:1 / -1!important;
+  }
+  body.contact-page .contact-form-grid--compact .contact-field-availability{
+    grid-column:auto!important;
+  }
+}
+
+@media(min-width:761px) and (max-width:1099px){
+  body.contact-page .contact-form-section .contact-shell{
+    width:min(100% - 48px,960px)!important;
+  }
+  body.contact-page .contact-form-grid--compact{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  body.contact-page .contact-form-grid--compact .contact-field-full,
+  body.contact-page .contact-form-grid--compact .contact-field-availability{
+    grid-column:1 / -1!important;
+  }
+}
+
 @media(max-width:760px){
   body.contact-page .contact-form-section{
     padding:22px 0 32px!important;
+  }
+  body.contact-page .contact-form-section .contact-shell{
+    width:min(100% - 40px,1100px)!important;
   }
   body.contact-page .contact-checkout-note{
     margin-bottom:12px!important;
@@ -1379,10 +1424,27 @@ body.contact-page .contact-form-submit .btn{
     padding:18px 16px!important;
   }
   body.contact-page .contact-form-grid--compact{
+    grid-template-columns:1fr!important;
     gap:15px!important;
+  }
+  body.contact-page .contact-form-grid--compact .contact-field-full,
+  body.contact-page .contact-form-grid--compact .contact-field-availability{
+    grid-column:auto!important;
   }
   body.contact-page .contact-field textarea{
     min-height:96px!important;
+  }
+  body.contact-page .contact-form-footer{
+    display:block;
+    margin-top:14px;
+    padding-top:10px;
+  }
+  body.contact-page .contact-crisis-guidance{
+    max-width:none;
+    margin-bottom:12px!important;
+  }
+  body.contact-page .contact-form-submit .btn{
+    width:100%!important;
   }
 }
 </style>
@@ -1576,7 +1638,7 @@ body.contact-page .contact-form-submit .btn{
                 <p class="field-error" id="brief-reason-error" hidden></p>
               </div>
 
-              <div class="contact-field contact-field-full">
+              <div class="contact-field contact-field-availability">
                 <label class="field-label-row" for="general-availability">
                   <span>General availability</span>
                   <span class="field-optional">Optional</span>
@@ -1585,10 +1647,12 @@ body.contact-page .contact-form-submit .btn{
               </div>
             </div>
 
-            <p class="contact-crisis-guidance">If you are in immediate danger or experiencing a medical emergency, call 911 or go to the nearest emergency department. For crisis support, call or text 988.</p>
+            <div class="contact-form-footer">
+              <p class="contact-crisis-guidance">If you are in immediate danger or experiencing a medical emergency, call 911 or go to the nearest emergency department. For crisis support, call or text 988.</p>
 
-            <div class="contact-form-submit">
-              <button class="btn btn-primary" id="contact-submit-button" type="submit">Submit request</button>
+              <div class="contact-form-submit">
+                <button class="btn btn-primary" id="contact-submit-button" type="submit">Submit request</button>
+              </div>
             </div>
           </div>
 
@@ -1728,7 +1792,7 @@ body.contact-page .contact-form-submit .btn{
     })();
   </script>
 
-  <script src="script.js?v=20260923checkout2"></script>
+  <script src="script.js?v=20260923checkout3"></script>
   <script>
     (function(){
       var form=document.getElementById('consultation-form');
