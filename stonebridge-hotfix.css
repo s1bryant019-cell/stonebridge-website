@@ -459,3 +459,80 @@ body.home-redesign .home-service-media img{
     display:none!important;
   }
 }
+
+
+/* Mobile readable support-copy floor */
+@media(max-width:760px){
+  /* Overview and explanatory body copy */
+  .about-overview p,
+  .about-client-grid p,
+  .group-overview p,
+  .clinicians-overview p,
+  .clinicians-consultation-cta p,
+  .clinicians-group-option p,
+  .fees-overview p,
+  .services-overview p,
+  .individual-overview p,
+  .couples-overview p,
+  .family-overview p,
+  .parent-overview p,
+  .assessment-overview p{
+    font-size:.90rem!important;
+    line-height:1.58!important;
+  }
+
+  /* Supporting notes and practical guidance */
+  .group-offering-note,
+  .group-offering-support p,
+  .lobby-showcase-fact dd span,
+  .clinicians-boundary,
+  .clinicians-fee-note,
+  .clinicians-fee-table td:nth-child(2),
+  .fees-small-note,
+  .fees-page .fee-table td:nth-child(2),
+  .fees-page .fees-table-note,
+  .contact-intro-note p,
+  .contact-information-use p,
+  .contact-before-send-copy p,
+  .contact-crisis-note p,
+  .contact-submit-note,
+  body.contact-page .contact-process-steps p,
+  body.contact-page .contact-process-privacy p,
+  body.contact-page .contact-information-notice p,
+  body.contact-page .contact-send-notice li,
+  body.contact-page .contact-crisis-guidance,
+  body.contact-page .contact-submit-guidance,
+  body.contact-page .contact-form-brief-note,
+  .founder-page .founder-schedule-note,
+  .founder-page .founder-summary-band .subpage-band-item p,
+  .broader-care-compact p,
+  .credibility-column .small-note,
+  .scope-strip-inner p,
+  .credibility-grid-balanced .writing-column p,
+  .credibility-grid-balanced .book-feature p,
+  .founder-page .therapy-method-note,
+  .founder-brief-grid li,
+  .profile-subpage-supervision{
+    font-size:.88rem!important;
+    line-height:1.55!important;
+  }
+
+  /* Captions and meaningful inline links */
+  .about-story-bridge figcaption,
+  .about-page .about-books figcaption span,
+  .about-origin-link,
+  .individual-related-group a,
+  body.contact-page .contact-information-notice a{
+    font-size:.88rem!important;
+    line-height:1.5!important;
+  }
+
+  /* Homepage readable support text; retain eyebrow/role metadata scale. */
+  body.home-redesign .home-trust-item,
+  body.home-redesign .home-footer-copy,
+  body.home-redesign .home-footer-links a,
+  body.home-redesign .home-footer-links span{
+    font-size:.88rem!important;
+    line-height:1.5!important;
+  }
+}
