@@ -4555,6 +4555,122 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 }
 </style>
 
+<style id="founder-profile-background-parity">
+/* Targeted founder-profile parity with the approved Jasmine fit/background section. */
+.founder-fit-background-section{
+  padding:42px 0 46px;
+  background:#f8f5f0;
+}
+.founder-fit-background-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:54px;
+  align-items:start;
+}
+.founder-background-panel{min-width:0}
+.founder-background-panel + .founder-background-panel{
+  padding-left:44px;
+  border-left:1px solid rgba(33,49,66,.14);
+}
+.founder-background-panel h2{
+  margin:12px 0 0;
+  color:var(--sb-navy);
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2.45rem,3.25vw,3.45rem);
+  font-weight:600;
+  line-height:1.02;
+  letter-spacing:-.04em;
+  text-wrap:balance;
+}
+.founder-background-panel>p{
+  max-width:48rem;
+  margin:15px 0 0;
+  color:var(--sb-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.96rem;
+  line-height:1.68;
+}
+.founder-fit-list{
+  margin:18px 0 0;
+  padding:0;
+  list-style:none;
+  border-top:1px solid rgba(33,49,66,.14);
+}
+.founder-fit-list li{
+  position:relative;
+  padding:12px 0 12px 20px;
+  border-bottom:1px solid rgba(33,49,66,.11);
+  color:var(--sb-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.83rem;
+  line-height:1.56;
+}
+.founder-fit-list li::before{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:1.05rem;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#b89661;
+}
+.founder-credential-list{
+  margin-top:18px;
+  border-top:1px solid rgba(33,49,66,.14);
+}
+.founder-credential-row{
+  display:grid;
+  grid-template-columns:135px minmax(0,1fr);
+  gap:18px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(33,49,66,.11);
+}
+.founder-credential-label{
+  padding-top:4px;
+  color:#8c7551;
+  font-family:"Inter",sans-serif;
+  font-size:.59rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  line-height:1.45;
+  text-transform:uppercase;
+}
+.founder-credential-list h3{
+  margin:0 0 2px;
+  color:var(--sb-navy);
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:1.16rem;
+  font-weight:650;
+  line-height:1.08;
+}
+.founder-credential-list p{
+  margin:0;
+  color:var(--sb-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.83rem;
+  line-height:1.56;
+}
+@media(max-width:960px){
+  .founder-fit-background-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+  .founder-background-panel + .founder-background-panel{
+    padding-left:0;
+    padding-top:28px;
+    border-left:0;
+    border-top:1px solid rgba(33,49,66,.14);
+  }
+}
+@media(max-width:760px){
+  .founder-fit-background-section{padding:38px 0}
+  .founder-credential-row{
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+}
+</style>
 </head>
 <body class="sbx-site sbx-founder-page" data-static-hero-system="true"><a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header compact-site-header">
@@ -4752,28 +4868,48 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </div>
 </div>
 </section>
-<section class="founder-credibility-combined founder-credibility-core" id="background">
-<div class="founder-wide-shell">
-<div class="credibility-heading">
-<div class="section-label">Professional background</div>
-<h2>Clinical experience and credentials.</h2>
-</div>
-<div class="credibility-grid credibility-grid-balanced founder-credibility-core-grid">
-<div class="credibility-primary">
-<article class="credibility-column clinical-experience-column">
-<h3>Clinical experience</h3>
-<p>Dr. Bryant’s background spans outpatient psychotherapy, community mental health, hospital-based behavioral health, trauma and substance-use treatment, supervision, interdisciplinary care, and higher-acuity behavioral-health settings.</p>
-<p class="small-note">Additional graduate education includes clinical psychology and forensic psychology.</p>
-</article>
-<article aria-label="Selected credentials" class="credibility-column selected-credentials-column">
-<h3>Selected credentials</h3>
-<ul>
-<li><strong>PsyD, Clinical Psychology</strong><span>The Chicago School of Professional Psychology</span></li>
-<li><strong>Licensed Clinical Professional Counselor</strong><span>Illinois</span></li>
-<li><strong>Trauma-Focused CBT Certification</strong><span>Medical University of South Carolina</span></li>
-<li><strong>Certified Clinical Trauma Professional</strong><span>Evergreen Certifications</span></li>
+<section class="founder-fit-background-section" id="background" aria-labelledby="founder-background-title">
+<div class="founder-wide-shell founder-fit-background-grid">
+<div class="founder-background-panel">
+<div class="section-label">Who may find this work helpful</div>
+<h2>You do not need everything figured out before reaching out.</h2>
+<ul class="founder-fit-list">
+<li>You understand a pattern intellectually, but still feel caught in it emotionally, relationally, or behaviorally.</li>
+<li>Something from the past still seems to show up in the present.</li>
+<li>Substance use, avoidance, overwork, control, or other coping patterns are creating new problems.</li>
+<li>You have a complicated treatment history or have tried therapy before and still feel stuck.</li>
 </ul>
-</article>
+</div>
+
+<div class="founder-background-panel">
+<div class="section-label">Professional background</div>
+<h2 id="founder-background-title">Training shaped by clinical psychology, forensic psychology, and complex behavioral-health settings.</h2>
+<p>Dr. Bryant’s background spans outpatient psychotherapy, community mental health, hospital-based behavioral health, trauma and substance-use treatment, supervision, interdisciplinary care, and higher-acuity behavioral-health settings.</p>
+<div class="founder-credential-list" aria-label="Dr. Stephen Bryant education and credentials">
+<div class="founder-credential-row">
+<div class="founder-credential-label">Credential</div>
+<div><h3>Licensed Clinical Professional Counselor (LCPC)</h3><p>Illinois</p></div>
+</div>
+<div class="founder-credential-row">
+<div class="founder-credential-label">Doctoral education</div>
+<div><h3>Doctor of Psychology (PsyD), Clinical Psychology</h3><p>The Chicago School of Professional Psychology</p></div>
+</div>
+<div class="founder-credential-row">
+<div class="founder-credential-label">Graduate education</div>
+<div><h3>Master of Arts in Clinical Psychology (MACP)</h3><p>The Chicago School of Professional Psychology</p></div>
+</div>
+<div class="founder-credential-row">
+<div class="founder-credential-label">Graduate education</div>
+<div><h3>Master of Arts in Forensic Psychology (MAFP)</h3><p>The Chicago School of Professional Psychology</p></div>
+</div>
+<div class="founder-credential-row">
+<div class="founder-credential-label">Certification</div>
+<div><h3>Trauma-Focused CBT Certification</h3><p>Medical University of South Carolina</p></div>
+</div>
+<div class="founder-credential-row">
+<div class="founder-credential-label">Certification</div>
+<div><h3>Certified Clinical Trauma Professional</h3><p>Evergreen Certifications</p></div>
+</div>
 </div>
 </div>
 </div>
