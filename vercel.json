@@ -99,5 +99,19 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/bcbs-therapy-illinois",
+      "destination": "/bcbs-therapy-illinois.html"
+    },
+    {
+      "source": "/adolescent-therapy-illinois",
+      "destination": "/adolescent-therapy-illinois.html"
+    },
+    {
+      "source": "/trauma-therapy-illinois",
+      "destination": "/trauma-therapy-illinois.html"
+    }
   ]
 }

@@ -370,7 +370,13 @@
       'services.html',
       'team.html',
       'team-founder.html',
-      'team-jasmine-wilson.html'
+      'team-jasmine-wilson.html',
+      'bcbs-therapy-illinois.html',
+      'adolescent-therapy-illinois.html',
+      'trauma-therapy-illinois.html',
+      'bcbs-therapy-illinois',
+      'adolescent-therapy-illinois',
+      'trauma-therapy-illinois'
     ];
 
     if (eligible.indexOf(page) === -1) return;
@@ -378,7 +384,21 @@
 
     var cta = document.createElement('a');
     cta.className = 'sb-mobile-consultation-cta';
-    cta.href = page === 'contact.html' ? '#inquiry-form' : 'contact.html#inquiry-form';
+    var landingSource = document.body ? document.body.getAttribute('data-landing-source') : '';
+    if (page === 'contact.html') {
+      cta.href = '#inquiry-form';
+    } else if (landingSource) {
+      var paidParams = new URLSearchParams();
+      paidParams.set('source', landingSource);
+      var currentParams = new URLSearchParams(window.location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid'].forEach(function (key) {
+        var value = currentParams.get(key);
+        if (value) paidParams.set(key, value);
+      });
+      cta.href = 'contact.html?' + paidParams.toString() + '#inquiry-form';
+    } else {
+      cta.href = 'contact.html#inquiry-form';
+    }
     cta.textContent = 'Request a Consultation';
     cta.setAttribute('aria-label', 'Request a Consultation');
     document.body.appendChild(cta);
