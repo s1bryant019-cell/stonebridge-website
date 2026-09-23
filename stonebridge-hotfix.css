@@ -260,3 +260,29 @@ body.home-redesign .home-service-media img{
     width:calc(100% - 40px)!important;
   }
 }
+
+
+/* Mobile standard hero proportion normalization */
+@media(max-width:760px){
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero,
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy,
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media,
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media img{
+    min-height:330px!important;
+  }
+
+  html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy{
+    padding:26px 0!important;
+  }
+
+  html body.team-page[data-static-hero-system] .sb-standard-hero.sb-standard-hero,
+  html body.team-page[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy,
+  html body.team-page[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media,
+  html body.team-page[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-media img{
+    min-height:360px!important;
+  }
+
+  html body.team-page[data-static-hero-system] .sb-standard-hero.sb-standard-hero .sb-standard-hero-copy{
+    padding:38px 0!important;
+  }
+}
