@@ -1311,23 +1311,32 @@ body.contact-page .contact-success{
   z-index:2;
 }
 body.contact-page .contact-form::after{
-  content:none;
+  content:none!important;
 }
 @media(min-width:1280px){
-  body.contact-page .contact-form::after{
+  body.contact-page .contact-form-section::after{
     content:"";
     position:absolute;
-    right:-72px;
-    bottom:-58px;
-    z-index:1;
-    width:520px;
-    height:520px;
+    right:-110px;
+    bottom:-42px;
+    z-index:0;
+    width:700px;
+    height:700px;
     background-image:url("Consultation%20Detail.png");
     background-repeat:no-repeat;
-    background-size:760px auto;
+    background-size:contain;
     background-position:right bottom;
     opacity:.24;
     pointer-events:none;
+  }
+  body.contact-page .contact-form-section .contact-shell{
+    position:relative;
+    z-index:2;
+  }
+}
+@media(max-width:1279px){
+  body.contact-page .contact-form-section::after{
+    content:none;
   }
 }
 body.contact-page .contact-form-head{
