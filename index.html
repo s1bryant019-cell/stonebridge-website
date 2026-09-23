@@ -150,6 +150,68 @@
   .home-services-grid{gap:20px!important}
 }
 </style>
+
+<style id="stonebridge-home-hero-open-spacing-20260923">
+.home-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:16px 28px;
+  margin-top:28px;
+}
+.home-hero-actions .home-primary-btn{
+  margin-top:0!important;
+}
+.home-hero-secondary-link{
+  display:inline-flex;
+  align-items:center;
+  min-height:48px;
+  color:var(--home-ink)!important;
+  font-family:var(--home-serif);
+  font-size:1rem;
+  font-weight:500;
+  line-height:1.2;
+  text-decoration:none;
+  border-bottom:1px solid rgba(120,97,63,.72);
+}
+.home-hero-secondary-link span{margin-left:8px}
+.home-hero-secondary-link:hover{
+  color:var(--home-olive)!important;
+  border-bottom-color:var(--home-olive);
+}
+@media(min-width:1025px){
+  .home-hero-grid{min-height:520px!important}
+  .home-hero-media{min-height:520px!important}
+  .home-hero-copy{
+    padding-top:58px!important;
+    padding-right:64px!important;
+    padding-bottom:56px!important;
+  }
+  .home-hero-copy > .home-eyebrow{margin-bottom:20px!important}
+  .home-hero-lede{
+    max-width:520px!important;
+    margin-top:22px!important;
+    line-height:1.68!important;
+  }
+}
+@media(max-width:768px){
+  .home-hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:24px;
+  }
+  .home-hero-actions .home-primary-btn{width:100%}
+  .home-hero-secondary-link{
+    width:100%;
+    justify-content:center;
+    min-height:44px;
+    border:1px solid rgba(33,49,66,.22);
+    border-radius:9px;
+  }
+}
+</style>
+
 </head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -181,8 +243,9 @@
           <p class="home-eyebrow">Online psychotherapy in Illinois</p>
           <h1 id="home-hero-title"><span class="home-hero-line">A steadier place to</span> <span class="home-hero-line">begin therapy.</span></h1>
           <p class="home-hero-lede">Thoughtful outpatient care for people who feel overwhelmed, disconnected, or caught in patterns that keep returning.</p>
-          <div>
+          <div class="home-hero-actions">
             <a class="home-primary-btn" href="contact.html#inquiry-form">Request a Consultation</a>
+            <a class="home-hero-secondary-link" href="team.html#clinicians">Meet the Clinicians <span aria-hidden="true">→</span></a>
           </div>
 
         </div>
