@@ -3956,12 +3956,18 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <style id="stonebridge-founder-profile-rail-20260923">
 /* Desktop-only practical rail; existing mobile availability remains unchanged. */
 @media(min-width:1100px){
-  .founder-focus-with-rail{
+  .profile-subpage-actions{
+    display:none!important;
+  }
+
+  .founder-focus-with-rail,
+  .founder-therapy-with-rail{
     display:grid;
     grid-template-columns:minmax(0,1fr) 286px;
     gap:36px;
     align-items:start;
   }
+
   .founder-focus-with-rail .focus-compact-layout{
     width:100%;
     display:grid;
@@ -3969,12 +3975,22 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     gap:32px;
     align-items:start;
   }
+
+  .founder-therapy-with-rail .therapy-method-layout{
+    width:100%;
+    display:grid;
+    grid-template-columns:minmax(210px,.66fr) minmax(0,1.5fr);
+    gap:32px;
+    align-items:start;
+  }
+
   .founder-profile-rail{
     position:sticky;
     top:92px;
     padding:2px 0 2px 26px;
     border-left:1px solid rgba(120,97,63,.34);
   }
+
   .founder-profile-rail-label{
     margin-bottom:14px;
     color:#78613f;
@@ -3984,9 +4000,11 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     letter-spacing:.15em;
     text-transform:uppercase;
   }
+
   .founder-profile-rail-hours{
     border-top:1px solid rgba(33,49,66,.13);
   }
+
   .founder-profile-rail-hours > div{
     display:grid;
     grid-template-columns:72px minmax(0,1fr);
@@ -3994,18 +4012,21 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     padding:10px 0;
     border-bottom:1px solid rgba(33,49,66,.11);
   }
+
   .founder-profile-rail-hours strong{
     color:#213142;
     font-family:"Inter",sans-serif;
     font-size:.72rem;
     line-height:1.45;
   }
+
   .founder-profile-rail-hours span{
     color:#5d6870;
     font-family:"Inter",sans-serif;
     font-size:.72rem;
     line-height:1.5;
   }
+
   .founder-profile-rail-note{
     margin:12px 0 0;
     color:#6a7278;
@@ -4013,6 +4034,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     font-size:.68rem;
     line-height:1.48;
   }
+
   .founder-profile-rail-status{
     display:grid;
     gap:7px;
@@ -4020,6 +4042,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     padding-top:14px;
     border-top:1px solid rgba(33,49,66,.13);
   }
+
   .founder-profile-rail-status span{
     position:relative;
     padding-left:13px;
@@ -4029,6 +4052,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     font-weight:600;
     line-height:1.4;
   }
+
   .founder-profile-rail-status span::before{
     content:"";
     position:absolute;
@@ -4039,19 +4063,24 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     border-radius:50%;
     background:#b28a43;
   }
+
   .founder-profile-rail-cta{
     width:100%;
     justify-content:center;
     text-align:center;
   }
+
   .founder-availability{
     display:none!important;
   }
 }
+
 @media(max-width:1099px){
-  .founder-focus-with-rail{
+  .founder-focus-with-rail,
+  .founder-therapy-with-rail{
     display:block;
   }
+
   .founder-profile-rail{
     display:none!important;
   }
@@ -4178,49 +4207,68 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </div>
 </section>
 <section class="founder-therapy-combined" id="therapy-style">
-<div class="founder-wide-shell therapy-method-layout">
-<div class="therapy-method-intro">
-<div class="section-label">Clinical approach</div>
-<h2>How Dr. Bryant works.</h2>
-<p class="lead">Psychodynamic and relational at the foundation, with evidence-based and skills-focused methods integrated according to the client’s concerns, goals, readiness, and needs of the moment.</p>
-<blockquote class="therapy-method-quote">Good therapy needs a steady frame: enough structure to feel safe, and enough room to be fully human.</blockquote>
-</div>
+<div class="founder-wide-shell founder-therapy-with-rail">
+  <div class="therapy-method-layout">
+    <div class="therapy-method-intro">
+      <div class="section-label">Clinical approach</div>
+      <h2>How Dr. Bryant works.</h2>
+      <p class="lead">Psychodynamic and relational at the foundation, with evidence-based and skills-focused methods integrated according to the client’s concerns, goals, readiness, and needs of the moment.</p>
+      <blockquote class="therapy-method-quote">Good therapy needs a steady frame: enough structure to feel safe, and enough room to be fully human.</blockquote>
+    </div>
 
-<div class="therapy-method-list" aria-label="Psychotherapy approaches used by Dr. Bryant">
-<article class="therapy-method-row">
-<div class="therapy-method-number">01</div>
-<div>
-<h3>Psychodynamic and relational psychotherapy</h3>
-<p>Explores recurring emotional and relationship patterns, defenses, unmet needs, identity, self-worth, and the ways earlier experiences continue to shape present life. The therapeutic relationship itself may help patterns become clearer and more workable.</p>
-</div>
-</article>
+    <div class="therapy-method-list" aria-label="Psychotherapy approaches used by Dr. Bryant">
+      <article class="therapy-method-row">
+        <div class="therapy-method-number">01</div>
+        <div>
+          <h3>Psychodynamic and relational psychotherapy</h3>
+          <p>Explores recurring emotional and relationship patterns, defenses, unmet needs, identity, self-worth, and the ways earlier experiences continue to shape present life. The therapeutic relationship itself may help patterns become clearer and more workable.</p>
+        </div>
+      </article>
 
-<article class="therapy-method-row">
-<div class="therapy-method-number">02</div>
-<div>
-<h3>CBT, ACT, and DBT</h3>
-<p>Cognitive Behavioral Therapy may be used to examine thoughts, behaviors, avoidance, and practical patterns. Acceptance and Commitment Therapy supports values-based action and psychological flexibility. Dialectical Behavior Therapy skills may support emotion regulation, distress tolerance, mindfulness, and interpersonal effectiveness.</p>
-</div>
-</article>
+      <article class="therapy-method-row">
+        <div class="therapy-method-number">02</div>
+        <div>
+          <h3>CBT, ACT, and DBT</h3>
+          <p>Cognitive Behavioral Therapy may be used to examine thoughts, behaviors, avoidance, and practical patterns. Acceptance and Commitment Therapy supports values-based action and psychological flexibility. Dialectical Behavior Therapy skills may support emotion regulation, distress tolerance, mindfulness, and interpersonal effectiveness.</p>
+        </div>
+      </article>
 
-<article class="therapy-method-row">
-<div class="therapy-method-number">03</div>
-<div>
-<h3>Motivational interviewing and addiction-focused work</h3>
-<p>Motivational interviewing supports honest exploration of ambivalence, readiness, substance use, recovery, coping patterns, and change without relying on confrontation or pressure.</p>
-</div>
-</article>
+      <article class="therapy-method-row">
+        <div class="therapy-method-number">03</div>
+        <div>
+          <h3>Motivational interviewing and addiction-focused work</h3>
+          <p>Motivational interviewing supports honest exploration of ambivalence, readiness, substance use, recovery, coping patterns, and change without relying on confrontation or pressure.</p>
+        </div>
+      </article>
 
-<article class="therapy-method-row">
-<div class="therapy-method-number">04</div>
-<div>
-<h3>Trauma-informed, attachment-based, and family-systems work</h3>
-<p>These approaches connect symptoms with safety, protective responses, relationships, development, and family patterns. Parent or family work may draw on attachment and systems concepts when clinically appropriate.</p>
-</div>
-</article>
+      <article class="therapy-method-row">
+        <div class="therapy-method-number">04</div>
+        <div>
+          <h3>Trauma-informed, attachment-based, and family-systems work</h3>
+          <p>These approaches connect symptoms with safety, protective responses, relationships, development, and family patterns. Parent or family work may draw on attachment and systems concepts when clinically appropriate.</p>
+        </div>
+      </article>
 
-<p class="therapy-method-note">These approaches are not applied as a fixed formula. Dr. Bryant develops an individualized formulation and draws from different methods when they support the purpose of therapy.</p>
-</div>
+      <p class="therapy-method-note">These approaches are not applied as a fixed formula. Dr. Bryant develops an individualized formulation and draws from different methods when they support the purpose of therapy.</p>
+    </div>
+  </div>
+
+  <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information continued">
+    <div class="founder-profile-rail-label">Typical availability</div>
+    <div class="founder-profile-rail-hours" aria-label="Dr. Bryant typical scheduling windows">
+      <div><strong>Monday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></div>
+      <div><strong>Tuesday</strong><span>10:00–11:00 AM<br>12:00–3:00 PM<br>4:00–8:00 PM</span></div>
+      <div><strong>Wednesday</strong><span>10:00 AM–3:00 PM<br>4:00–6:00 PM</span></div>
+      <div><strong>Thursday</strong><span>9:00–11:00 AM<br>12:00–3:00 PM<br>4:00–5:00 PM</span></div>
+      <div><strong>Friday</strong><span>9:00 AM–1:00 PM</span></div>
+    </div>
+    <p class="founder-profile-rail-note">Typical scheduling windows are not the same as currently open appointments.</p>
+    <div class="founder-profile-rail-status">
+      <span>Accepting new clients</span>
+      <span>Illinois telehealth</span>
+    </div>
+    <a class="btn btn-primary founder-profile-rail-cta" href="contact.html?clinician=stephen-bryant#inquiry-form">Request a Consultation</a>
+  </aside>
 </div>
 </section>
 <section class="founder-credibility-combined" id="background">
