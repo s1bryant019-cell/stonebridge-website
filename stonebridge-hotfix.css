@@ -286,3 +286,53 @@ body.home-redesign .home-service-media img{
     padding:38px 0!important;
   }
 }
+
+
+/* Narrow-phone homepage service card reflow */
+@media(max-width:480px){
+  body.home-redesign .home-service-card{
+    grid-template-columns:minmax(0,1fr) auto!important;
+    grid-template-rows:auto auto!important;
+    gap:0 12px!important;
+    min-height:0!important;
+    padding:10px!important;
+    align-items:end!important;
+  }
+
+  body.home-redesign .home-service-media{
+    grid-column:1 / -1!important;
+    grid-row:1!important;
+    width:100%!important;
+    aspect-ratio:16 / 9!important;
+    border-radius:9px!important;
+  }
+
+  body.home-redesign .home-service-copy{
+    grid-column:1!important;
+    grid-row:2!important;
+    align-self:start!important;
+    padding:14px 4px 4px!important;
+  }
+
+  body.home-redesign .home-service-copy h3{
+    font-size:1.35rem!important;
+  }
+
+  body.home-redesign .home-service-copy p{
+    font-size:.95rem!important;
+    line-height:1.55!important;
+  }
+
+  body.home-redesign .home-service-status{
+    font-size:.82rem!important;
+    line-height:1.45!important;
+  }
+
+  body.home-redesign .home-service-arrow{
+    grid-column:2!important;
+    grid-row:2!important;
+    align-self:end!important;
+    justify-self:end!important;
+    padding:0 4px 6px 0!important;
+  }
+}
