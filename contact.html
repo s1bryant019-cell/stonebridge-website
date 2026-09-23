@@ -1282,52 +1282,107 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </style>
 
 <style id="stonebridge-contact-checkout-20260923">
-/* Contact page: completion-focused consultation request flow. */
-.contact-form-section{
-  padding:42px 0 58px!important;
+/* Contact page: compact completion-focused consultation request flow. */
+body.contact-page .contact-form-section{
+  padding:24px 0 36px!important;
 }
-.contact-checkout-note{
+body.contact-page .contact-checkout-note{
   width:min(880px,100%);
-  margin:0 auto 22px;
-  padding:16px 18px;
+  margin:0 auto 12px!important;
+  padding:11px 14px!important;
   border:1px solid var(--contact-warm-line);
-  border-radius:10px;
+  border-radius:9px;
   background:rgba(232,221,206,.42);
   font-family:"Inter",sans-serif;
 }
-.contact-checkout-note p{
+body.contact-page .contact-checkout-note p{
   margin:0;
   color:var(--contact-muted);
-  font-size:.9rem;
-  line-height:1.52;
+  font-size:.82rem;
+  line-height:1.42;
 }
-.contact-checkout-note strong{
+body.contact-page .contact-checkout-note strong{
   color:var(--contact-ink);
 }
-.contact-checkout-note a{
+body.contact-page .contact-checkout-note a{
   display:inline-block;
-  margin-top:7px;
+  margin-top:5px;
   color:var(--contact-navy);
-  font-size:.78rem;
+  font-size:.74rem;
   font-weight:700;
   text-decoration:none;
 }
-.contact-checkout-note a:hover{
+body.contact-page .contact-checkout-note a:hover{
   text-decoration:underline;
   text-underline-offset:3px;
 }
-.contact-form-section .contact-shell > .contact-form{
+body.contact-page .contact-form-section .contact-shell > .contact-form{
   width:min(880px,100%)!important;
   max-width:none!important;
   margin:0 auto!important;
+  padding:20px 22px!important;
+}
+body.contact-page .contact-form-head{
+  margin-bottom:14px!important;
+  padding-bottom:12px!important;
+}
+body.contact-page .contact-form-head h2{
+  margin-top:7px!important;
+}
+body.contact-page .contact-required-note{
+  margin-top:5px!important;
+}
+body.contact-page .contact-form-grid--compact{
+  gap:12px 18px!important;
+  margin-top:14px!important;
+}
+body.contact-page .contact-field label,
+body.contact-page .field-label-row{
+  margin-bottom:5px!important;
+}
+body.contact-page .contact-field input,
+body.contact-page .contact-field select{
+  min-height:44px!important;
+}
+body.contact-page .contact-field textarea{
+  min-height:88px!important;
+}
+body.contact-page .field-helper{
+  margin-top:4px!important;
+  font-size:.72rem!important;
+  line-height:1.35!important;
+}
+body.contact-page .contact-crisis-guidance{
+  margin:12px 0 0!important;
+  padding-top:8px!important;
+  font-size:.72rem!important;
+  line-height:1.4!important;
+  font-weight:500!important;
+}
+body.contact-page .contact-form-submit{
+  margin-top:14px!important;
+  gap:0!important;
+}
+body.contact-page .contact-form-submit .btn{
+  min-width:170px!important;
+  min-height:46px!important;
 }
 @media(max-width:760px){
-  .contact-form-section{
-    padding:32px 0 44px!important;
+  body.contact-page .contact-form-section{
+    padding:22px 0 32px!important;
   }
-  .contact-checkout-note{
-    margin-bottom:18px;
-    padding:14px 15px;
+  body.contact-page .contact-checkout-note{
+    margin-bottom:12px!important;
+    padding:10px 12px!important;
+  }
+  body.contact-page .contact-form-section .contact-shell > .contact-form{
+    padding:18px 16px!important;
+  }
+  body.contact-page .contact-form-grid--compact{
+    gap:15px!important;
+  }
+  body.contact-page .contact-field textarea{
+    min-height:96px!important;
   }
 }
 </style>
@@ -1441,7 +1496,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
               <div class="contact-field">
                 <label for="consultation-date-of-birth">Date of birth <span class="required-mark" aria-hidden="true">*</span></label>
                 <input id="consultation-date-of-birth" type="date" name="dateOfBirth" autocomplete="bday" required aria-describedby="date-of-birth-help date-of-birth-error">
-                <p class="field-helper" id="date-of-birth-help">Helps us confirm who we’re communicating with and supports secure client-record and portal setup if care moves forward.</p>
+                <p class="field-helper" id="date-of-birth-help">Required to determine whether the request involves a minor or adult.</p>
                 <p class="field-error" id="date-of-birth-error" hidden></p>
               </div>
 
@@ -1517,7 +1572,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
               <div class="contact-field contact-field-full">
                 <label for="brief-reason">Briefly tell us what brings you to Stonebridge <span class="required-mark" aria-hidden="true">*</span></label>
                 <textarea id="brief-reason" name="reason" maxlength="2000" required aria-describedby="brief-reason-guidance brief-reason-error"></textarea>
-                <p class="field-helper" id="brief-reason-guidance">Please keep this brief. Detailed clinical history and records can be shared through the appropriate secure process if care moves forward.</p>
+                <p class="field-helper" id="brief-reason-guidance">A few sentences is enough.</p>
                 <p class="field-error" id="brief-reason-error" hidden></p>
               </div>
 
@@ -1533,8 +1588,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
             <p class="contact-crisis-guidance">If you are in immediate danger or experiencing a medical emergency, call 911 or go to the nearest emergency department. For crisis support, call or text 988.</p>
 
             <div class="contact-form-submit">
-              <button class="btn btn-primary" id="contact-submit-button" type="submit">Request a Consultation</button>
-              <p class="contact-submit-guidance">Submitting this form sends a consultation request; it does not schedule or confirm an appointment.</p>
+              <button class="btn btn-primary" id="contact-submit-button" type="submit">Submit request</button>
             </div>
           </div>
 
@@ -1674,7 +1728,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     })();
   </script>
 
-  <script src="script.js?v=20260923checkout1"></script>
+  <script src="script.js?v=20260923checkout2"></script>
   <script>
     (function(){
       var form=document.getElementById('consultation-form');
@@ -1955,7 +2009,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         }finally{
           if(submitButton){
             submitButton.disabled=false;
-            submitButton.textContent='Request a Consultation';
+            submitButton.textContent='Submit request';
           }
         }
       });
