@@ -4002,7 +4002,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
   .founder-profile-rail{
     position:absolute;
-    top:30px;
+    top:18px;
     right:max(28px,calc((100vw - 1420px)/2));
     width:260px;
     box-sizing:border-box;
@@ -4013,14 +4013,14 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
   .founder-profile-rail.is-fixed{
     position:fixed;
-    top:82px;
+    top:18px;
     right:max(28px,calc((100vw - 1420px)/2));
   }
 
   .founder-profile-rail.is-ended{
     position:absolute;
     top:auto;
-    bottom:30px;
+    bottom:18px;
     right:max(28px,calc((100vw - 1420px)/2));
   }
 
@@ -4179,41 +4179,40 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 
   .founder-profile-rail-heading{
-    display:flex;
-    align-items:center;
-    gap:0;
-    margin:0 0 16px;
-    padding:13px 0 12px;
-    border-top:1px solid rgba(33,49,66,.22);
+    display:none;
+    margin:0 0 13px;
+    padding:0 0 13px;
     border-bottom:1px solid rgba(33,49,66,.14);
-    transition:gap .18s ease;
   }
 
   .founder-profile-rail-portrait{
-    display:none;
-    width:72px;
-    height:88px;
-    flex:0 0 72px;
+    width:94px;
     margin:0;
-    overflow:hidden;
-    border:1px solid rgba(120,97,63,.28);
-    border-radius:9px;
-    background:#efe7dd;
   }
 
   .founder-profile-rail-portrait img{
     display:block;
-    width:100%;
-    height:100%;
+    width:94px;
+    height:114px;
     object-fit:cover;
     object-position:center 28%;
+    overflow:hidden;
+    border:1px solid rgba(120,97,63,.28);
+    border-radius:10px;
+    background:#efe7dd;
+  }
+
+  .founder-profile-rail-portrait figcaption{
+    margin-top:8px;
+    color:#102f4d;
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:1.05rem;
+    font-weight:650;
+    line-height:1.1;
+    letter-spacing:-.015em;
   }
 
   .founder-profile-rail.show-rail-portrait .founder-profile-rail-heading{
-    gap:14px;
-  }
-
-  .founder-profile-rail.show-rail-portrait .founder-profile-rail-portrait{
     display:block;
     animation:founderRailPortraitIn .18s ease both;
   }
@@ -4223,22 +4222,11 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     to{opacity:1;transform:translateY(0);}
   }
 
-  .founder-profile-rail-title{
-    margin:0;
-    color:#78613f;
-    font-family:"Inter",sans-serif;
-    font-size:.74rem;
-    font-weight:800;
-    letter-spacing:.16em;
-    line-height:1.2;
-    text-transform:uppercase;
-  }
-
   .founder-profile-rail-summary{
     display:grid;
-    gap:15px;
-    margin:0 0 18px;
-    padding:0 0 17px;
+    gap:12px;
+    margin:0 0 14px;
+    padding:0 0 14px;
     border-bottom:1px solid rgba(33,49,66,.12);
   }
 
@@ -4309,9 +4297,9 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   .founder-profile-rail-status{
     display:flex;
     flex-wrap:wrap;
-    gap:5px 10px;
-    margin:0 0 18px;
-    padding:0 0 14px;
+    gap:4px 10px;
+    margin:0 0 14px;
+    padding:0 0 11px;
     border-bottom:1px solid rgba(33,49,66,.12);
   }
 
@@ -4375,7 +4363,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 
   .founder-profile-rail-note{
-    margin:13px 0 0;
+    margin:9px 0 0;
     color:#6a7278;
     font-family:"Inter",sans-serif;
     font-size:.72rem;
@@ -4387,7 +4375,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     display:inline-flex;
     align-items:center;
     gap:7px;
-    margin-top:15px;
+    margin-top:11px;
     padding:0 0 3px;
     border-bottom:1px solid rgba(16,47,77,.34);
     color:#102f4d;
@@ -4638,10 +4626,10 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   <div class="founder-sticky-rail-slot">
     <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
     <div class="founder-profile-rail-heading">
-      <figure class="founder-profile-rail-portrait" aria-hidden="true">
-        <img src="dr-stephen-bryant-headshot-20260922.webp" alt="" width="900" height="1125" decoding="async">
+      <figure class="founder-profile-rail-portrait">
+        <img src="dr-stephen-bryant-headshot-20260922.webp" alt="Dr. Stephen Bryant" width="900" height="1125" decoding="async">
+        <figcaption>Dr. Stephen Bryant</figcaption>
       </figure>
-      <div class="founder-profile-rail-title">Practice details</div>
     </div>
 
     <div class="founder-profile-rail-status" aria-label="Practice status">
@@ -5007,7 +4995,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   var heroPortrait=document.querySelector('.profile-subpage-headshot');
   if(!rail||!region) return;
 
-  var fixedTop=82;
+  var fixedTop=18;
   var endGap=30;
 
   function updateFounderRail(){
