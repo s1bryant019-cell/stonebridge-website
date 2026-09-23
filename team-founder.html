@@ -4179,10 +4179,48 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 
   .founder-profile-rail-heading{
+    display:flex;
+    align-items:center;
+    gap:0;
     margin:0 0 16px;
     padding:13px 0 12px;
     border-top:1px solid rgba(33,49,66,.22);
     border-bottom:1px solid rgba(33,49,66,.14);
+    transition:gap .18s ease;
+  }
+
+  .founder-profile-rail-portrait{
+    display:none;
+    width:72px;
+    height:88px;
+    flex:0 0 72px;
+    margin:0;
+    overflow:hidden;
+    border:1px solid rgba(120,97,63,.28);
+    border-radius:9px;
+    background:#efe7dd;
+  }
+
+  .founder-profile-rail-portrait img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 28%;
+  }
+
+  .founder-profile-rail.show-rail-portrait .founder-profile-rail-heading{
+    gap:14px;
+  }
+
+  .founder-profile-rail.show-rail-portrait .founder-profile-rail-portrait{
+    display:block;
+    animation:founderRailPortraitIn .18s ease both;
+  }
+
+  @keyframes founderRailPortraitIn{
+    from{opacity:0;transform:translateY(-4px);}
+    to{opacity:1;transform:translateY(0);}
   }
 
   .founder-profile-rail-title{
@@ -4600,6 +4638,9 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   <div class="founder-sticky-rail-slot">
     <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
     <div class="founder-profile-rail-heading">
+      <figure class="founder-profile-rail-portrait" aria-hidden="true">
+        <img src="dr-stephen-bryant-headshot-20260922.webp" alt="" width="900" height="1125" decoding="async">
+      </figure>
       <div class="founder-profile-rail-title">Practice details</div>
     </div>
 
@@ -4963,6 +5004,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 (function(){
   var rail=document.querySelector('.founder-profile-rail');
   var region=document.querySelector('.founder-sticky-region');
+  var heroPortrait=document.querySelector('.profile-subpage-headshot');
   if(!rail||!region) return;
 
   var fixedTop=82;
@@ -4970,7 +5012,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
   function updateFounderRail(){
     if(window.innerWidth<1100){
-      rail.classList.remove('is-fixed','is-ended');
+      rail.classList.remove('is-fixed','is-ended','show-rail-portrait');
       return;
     }
 
@@ -4981,6 +5023,12 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
     rail.classList.toggle('is-fixed',shouldStart&&!shouldEnd);
     rail.classList.toggle('is-ended',shouldStart&&shouldEnd);
+
+    if(heroPortrait){
+      var heroRect=heroPortrait.getBoundingClientRect();
+      var heroVisible=heroRect.bottom>0 && heroRect.top<window.innerHeight;
+      rail.classList.toggle('show-rail-portrait',!heroVisible);
+    }
   }
 
   updateFounderRail();
