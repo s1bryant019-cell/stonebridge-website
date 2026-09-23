@@ -58,12 +58,20 @@
     });
   }
 
+  function suppressContactHeaderCTA(header) {
+    if (pageName() !== 'contact.html' || !header) return;
+    header.querySelectorAll('.header-cta, .home-header-cta').forEach(function (cta) {
+      cta.remove();
+    });
+  }
+
   function normalizeHeader() {
     var existing = document.querySelector('.site-header, .home-site-header');
     if (!existing) return;
 
     if (existing.classList.contains('sb-global-header')) {
       removeDuplicateConsultationNav(existing);
+      suppressContactHeaderCTA(existing);
       return;
     }
 
@@ -71,6 +79,7 @@
     wrapper.innerHTML = canonicalHeader();
     var replacement = wrapper.firstElementChild;
     removeDuplicateConsultationNav(replacement);
+    suppressContactHeaderCTA(replacement);
     existing.replaceWith(replacement);
   }
 
@@ -352,7 +361,6 @@
       'index.html',
       'about.html',
       'assessment.html',
-      'contact.html',
       'couples-therapy.html',
       'family-therapy.html',
       'fees-insurance.html',
