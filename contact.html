@@ -1280,6 +1280,58 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+
+<style id="stonebridge-contact-checkout-20260923">
+/* Contact page: completion-focused consultation request flow. */
+.contact-form-section{
+  padding:42px 0 58px!important;
+}
+.contact-checkout-note{
+  width:min(880px,100%);
+  margin:0 auto 22px;
+  padding:16px 18px;
+  border:1px solid var(--contact-warm-line);
+  border-radius:10px;
+  background:rgba(232,221,206,.42);
+  font-family:"Inter",sans-serif;
+}
+.contact-checkout-note p{
+  margin:0;
+  color:var(--contact-muted);
+  font-size:.9rem;
+  line-height:1.52;
+}
+.contact-checkout-note strong{
+  color:var(--contact-ink);
+}
+.contact-checkout-note a{
+  display:inline-block;
+  margin-top:7px;
+  color:var(--contact-navy);
+  font-size:.78rem;
+  font-weight:700;
+  text-decoration:none;
+}
+.contact-checkout-note a:hover{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.contact-form-section .contact-shell > .contact-form{
+  width:min(880px,100%)!important;
+  max-width:none!important;
+  margin:0 auto!important;
+}
+@media(max-width:760px){
+  .contact-form-section{
+    padding:32px 0 44px!important;
+  }
+  .contact-checkout-note{
+    margin-bottom:18px;
+    padding:14px 15px;
+  }
+}
+</style>
+
 </head>
 
 <body class="contact-page" data-static-hero-system="true">
@@ -1320,7 +1372,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
           <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Portal</a>
         </nav>
-        <div class="header-cta"><a class="btn btn-primary" href="#inquiry-form">Request a Consultation</a></div>
       </div>
     </div>
   </header>
@@ -1331,8 +1382,8 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         <div class="contact-hero-copy sb-standard-hero-copy">
           <div class="contact-hero-rule"></div>
           <div class="contact-kicker">New Clients</div>
-          <h1 id="contact-page-title">Request a consultation</h1>
-          <p>Tell us a little about what you're looking for. Stonebridge will review your request and follow up about fit, availability, and next steps.</p>
+          <h1 id="contact-page-title">New client consultation request</h1>
+          <p>Complete the brief form below. We’ll review fit and availability and follow up within 1–2 business days.</p>
         </div>
 
         <figure class="contact-page-hero-media sb-standard-hero-media">
@@ -1348,36 +1399,16 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       <div class="sb-utility-strip__inner">
         <span class="sb-utility-strip__item">Accepting new clients</span>
         <span class="sb-utility-strip__item">Free 10–15 minute consultation</span>
-        <span class="sb-utility-strip__item">Typically reviewed within 1–2 business days</span>
+        <span class="sb-utility-strip__item">Illinois telehealth</span>
       </div>
     </section>
 
     <section class="contact-form-section" id="inquiry-form">
-      <div class="contact-shell contact-layout">
-        <aside class="contact-process-panel" aria-labelledby="contact-next-title">
-          <h2 id="contact-next-title">What happens next</h2>
-
-          <ol class="contact-process-steps">
-            <li>
-              <strong>1. Send your request</strong>
-              <p>Share a few details so we can understand what you are looking for.</p>
-            </li>
-            <li>
-              <strong>2. We review fit and availability</strong>
-              <p>Stonebridge typically reviews requests within 1–2 business days.</p>
-            </li>
-            <li>
-              <strong>3. We follow up</strong>
-              <p>We will contact you about fit, availability, and possible next steps.</p>
-            </li>
-          </ol>
-
-          <div class="contact-process-privacy">
-            <strong>Keep clinical details brief</strong>
-            <p>Detailed clinical history and records can be shared through the appropriate secure process if care moves forward.</p>
-            <a href="privacy-information.html">Privacy &amp; Information Use <span aria-hidden="true">→</span></a>
-          </div>
-        </aside>
+      <div class="contact-shell">
+        <div class="contact-checkout-note">
+          <p><strong>Keep clinical details brief.</strong> We only need enough information to review fit and availability.</p>
+          <a href="privacy-information.html">Privacy &amp; Information Use <span aria-hidden="true">→</span></a>
+        </div>
 
         <form class="contact-form" id="consultation-form" novalidate aria-labelledby="consultation-form-title">
           <div class="contact-form-content" id="contact-form-content">
@@ -1385,11 +1416,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
               <div class="form-eyebrow">Consultation request</div>
               <h2 id="consultation-form-title">A few details to help us respond.</h2>
               <p class="contact-required-note"><span aria-hidden="true">*</span> Required</p>
-            </div>
-
-            <div class="contact-information-notice">
-              <p><strong>Please keep clinical details brief.</strong> Information submitted here is used to respond to your request and, when appropriate, support client-record setup if care moves forward. Do not submit records or extensive clinical information here.</p>
-              <a href="privacy-information.html">Privacy &amp; Information Use <span aria-hidden="true">→</span></a>
             </div>
 
             <div class="contact-error-summary" id="form-error-summary" role="alert" tabindex="-1" hidden>
@@ -1656,7 +1682,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     })();
   </script>
 
-  <script src="script.js?v=20260923sticky1"></script>
+  <script src="script.js?v=20260923checkout1"></script>
   <script>
     (function(){
       var form=document.getElementById('consultation-form');
