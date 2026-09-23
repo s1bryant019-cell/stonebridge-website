@@ -1622,6 +1622,7 @@ body.contact-page .contact-form-submit .btn{
 
             <input type="hidden" name="inquiryType" value="consultation">
             <input type="hidden" name="psychotherapyFormat" value="Telehealth psychotherapy">
+            <input type="hidden" name="landingSource" id="landing-source" value="">
 
             <div class="contact-form-grid contact-form-grid--compact">
               <div class="contact-field">
@@ -1879,6 +1880,7 @@ body.contact-page .contact-form-submit .btn{
       var serviceCategory=document.getElementById('service-category');
       var serviceRequested=document.getElementById('service-requested');
       var preferredClinician=document.getElementById('preferred-clinician');
+      var landingSource=document.getElementById('landing-source');
       var errorSummary=document.getElementById('form-error-summary');
       var errorList=document.getElementById('form-error-list');
       var dateOfBirth=document.getElementById('consultation-date-of-birth');
@@ -1932,6 +1934,10 @@ body.contact-page .contact-form-submit .btn{
       if(serviceCategory) serviceCategory.addEventListener('change',syncServiceSelection);
 
       var queryParams=new URLSearchParams(window.location.search);
+      var requestedSource=queryParams.get('source');
+      if(landingSource && requestedSource){
+        landingSource.value=String(requestedSource).trim().slice(0,120);
+      }
       var requestedService=queryParams.get('service');
       if(requestedService==='teen-group' && serviceCategory){
         serviceCategory.value='The Lobby — Group Therapy';
@@ -2109,6 +2115,7 @@ body.contact-page .contact-form-submit .btn{
           website:data.get('website')||'',
           serviceRequested:data.get('serviceRequested')||'',
           psychotherapyFormat:data.get('psychotherapyFormat')||'',
+          landingSource:data.get('landingSource')||'',
           fullName:data.get('fullName')||'',
           dateOfBirth:data.get('dateOfBirth')||'',
           email:data.get('email')||'',
