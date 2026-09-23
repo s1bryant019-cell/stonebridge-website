@@ -1,0 +1,43 @@
+/*
+  Stonebridge Team Page — botanical overlay only
+  Exact transparent PNG from the approved preview.
+  Placement: lower-right of the "Stonebridge is growing / For professionals" band.
+*/
+
+body.team-page .team-secondary{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+}
+
+body.team-page .team-secondary .team-shell{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+body.team-page .team-secondary-botanical{
+  position:absolute;
+  right:-6px;
+  bottom:-52px;
+  z-index:1;
+  display:block;
+  width:clamp(180px,13vw,240px);
+  height:auto;
+  max-width:none;
+  pointer-events:none;
+  user-select:none;
+}
+
+@media(max-width:980px){
+  body.team-page .team-secondary-botanical{
+    right:-14px;
+    bottom:-38px;
+    width:165px;
+  }
+}
+
+@media(max-width:760px){
+  body.team-page .team-secondary-botanical{
+    display:none;
+  }
+}

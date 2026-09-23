@@ -1,43 +1,34 @@
 STONEBRIDGE PSYCHOLOGICAL GROUP
-TEAM PAGE — HERO IMAGE PATCH
+TEAM PAGE — EXACT BOTANICAL PNG
 
-SCOPE
-This package changes ONLY the Team-page hero.
-
-It does NOT change:
-- the Consultation before commitment section
-- Dr. Bryant's headshot
-- Jasmine Wilson's headshot
-- clinician card sizing/crops
-- clinician copy
-- lower Team-page sections
+THIS IS THE EXACT PNG THAT WAS SHOWN IN THE PREVIEW.
+It is not the SVG redraw.
 
 FILES
-1. team-hero-final.webp
-   Optimized version of the hero image you supplied.
+- team-secondary-botanical.png
+  Exact transparent botanical PNG.
+- botanical-html-snippet.html
+  Image element to place inside the Team secondary band.
+- botanical-overrides.css
+  Placement/style code.
+- README-UPLOAD.txt
+  These instructions.
 
-2. team-hero-section.html
-   The exact Team hero markup using that image.
+UPLOAD FIRST
+Upload team-secondary-botanical.png to the same website directory as team.html.
 
-3. team-hero-overrides.css
-   Hero-only CSS with the existing Stonebridge blue overlay.
+DO NOT CHANGE THE HERO.
+This botanical belongs only in the lower:
+"Stonebridge is growing / For professionals" band.
 
-4. apply_team_hero_patch.py
-   Optional patch script for an existing team.html.
+PLACEMENT
+The <img> element should sit inside:
+<section class="team-secondary">
 
-HOW TO APPLY — AUTOMATIC
-1. Put your CURRENT team.html into this folder.
-2. Run:
-      python apply_team_hero_patch.py
-3. Upload the resulting team.html and team-hero-final.webp.
+Place it after the existing .team-shell closing </div> and before the section's closing </section>.
 
-HOW TO APPLY — MANUAL
-1. Upload team-hero-final.webp to the same directory as team.html.
-2. Replace the current Team hero section with team-hero-section.html.
-3. Add the contents of team-hero-overrides.css in a <style> block near the bottom of <head>.
+Then add botanical-overrides.css after the existing Team-page styles.
 
-EXPECTED RESULT
-- Your supplied room image becomes the Team hero.
-- Existing blue Stonebridge overlay remains.
-- Existing hero headline and copy remain.
-- No other Team-page section changes.
+NOTE
+If team.html currently references team-secondary-botanical.svg, replace that src with:
+team-secondary-botanical.png
