@@ -253,7 +253,7 @@
       display:flex;
       align-items:center;
       gap:16px;
-      padding:12px 0;
+      padding:9px 0;
       overflow-x:auto;
       scrollbar-width:none;
     }
@@ -4558,23 +4558,23 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <style id="founder-profile-background-parity">
 /* Targeted founder-profile parity with the approved Jasmine fit/background section. */
 .founder-fit-background-section{
-  padding:44px 0;
+  padding:30px 0;
   background:#f8f5f0;
   border-bottom:1px solid rgba(212,200,185,.48);
 }
 .founder-fit-background-grid{
   display:grid;
-  grid-template-columns:1fr;
-  gap:0;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:34px;
   align-items:start;
 }
 .founder-background-panel{min-width:0}
 .founder-background-panel + .founder-background-panel{
-  padding-left:44px;
+  padding-left:30px;
   border-left:1px solid rgba(33,49,66,.14);
 }
 .founder-background-panel h2{
-  margin:12px 0 0;
+  margin:8px 0 0;
   color:var(--sb-navy);
   font-family:"EB Garamond",Georgia,serif;
   font-size:clamp(2.15rem,2.85vw,3rem);
@@ -4592,14 +4592,14 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   line-height:1.62;
 }
 .founder-fit-list{
-  margin:18px 0 0;
+  margin:12px 0 0;
   padding:0;
   list-style:none;
   border-top:1px solid rgba(33,49,66,.14);
 }
 .founder-fit-list li{
   position:relative;
-  padding:12px 0 12px 20px;
+  padding:9px 0 9px 20px;
   border-bottom:1px solid rgba(33,49,66,.11);
   color:var(--sb-muted);
   font-family:"Inter",sans-serif;
@@ -4617,7 +4617,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   background:#b89661;
 }
 .founder-credential-list{
-  margin-top:18px;
+  margin-top:12px;
   border-top:1px solid rgba(33,49,66,.14);
 }
 .founder-credential-row{
@@ -4665,7 +4665,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 @media(max-width:760px){
-  .founder-fit-background-section{padding:38px 0}
+  .founder-fit-background-section{padding:28px 0}
   .founder-credential-row{
     grid-template-columns:1fr;
     gap:5px;
@@ -4862,6 +4862,16 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </section>
 <section class="founder-fit-background-section" id="background" aria-labelledby="founder-background-title">
 <div class="founder-wide-shell founder-fit-background-grid">
+<div class="founder-background-panel">
+<div class="section-label">Who may find this work helpful</div>
+<h2>You do not need everything figured out before reaching out.</h2>
+<ul class="founder-fit-list">
+<li>Patterns keep repeating despite insight or prior therapy.</li>
+<li>Past experiences still shape present reactions.</li>
+<li>Substance use or coping patterns are getting in the way.</li>
+</ul>
+</div>
+
 <div class="founder-background-panel">
 <div class="section-label">Professional background</div>
 <h2 id="founder-background-title">Training across clinical and forensic psychology.</h2>
