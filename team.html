@@ -1724,7 +1724,7 @@ body.team-page .team-consultation{
 
 
 <style id="stonebridge-team-closing-balance-20260924">
-/* Canonical Team consultation layout: one controlled rule set for this section. */
+/* Canonical Team consultation layout. */
 body.team-page .team-consultation{
   position:relative!important;
   overflow:hidden!important;
@@ -1746,8 +1746,8 @@ body.team-page .team-consultation{
 
   body.team-page .team-consultation-media{
     width:100%!important;
-    min-height:500px!important;
     height:500px!important;
+    min-height:500px!important;
     margin:0!important;
     overflow:hidden!important;
     border:0!important;
@@ -1772,21 +1772,24 @@ body.team-page .team-consultation{
     height:500px!important;
     margin:0!important;
     padding:46px clamp(46px,4vw,70px)!important;
-    display:grid!important;
-    grid-template-columns:minmax(230px,.92fr) minmax(320px,1.08fr)!important;
-    grid-template-areas:
-      "heading details"
-      "secondary secondary"!important;
-    column-gap:38px!important;
-    row-gap:28px!important;
-    align-content:center!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:center!important;
     overflow:visible!important;
   }
 
-  body.team-page .team-consultation-heading{
-    grid-area:heading!important;
+  body.team-page .team-consultation-primary{
+    display:grid!important;
+    grid-template-columns:minmax(250px,.9fr) minmax(340px,1.1fr)!important;
+    gap:44px!important;
+    align-items:start!important;
+    width:100%!important;
     min-width:0!important;
-    align-self:start!important;
+  }
+
+  body.team-page .team-consultation-heading,
+  body.team-page .team-consultation-details{
+    min-width:0!important;
   }
 
   body.team-page .team-consultation-heading .team-label{
@@ -1794,21 +1797,18 @@ body.team-page .team-consultation{
   }
 
   body.team-page .team-consultation-heading h2{
-    max-width:8ch!important;
+    max-width:10ch!important;
     margin:0!important;
-    font-size:clamp(2.8rem,3.2vw,3.6rem)!important;
-    line-height:.98!important;
+    font-size:clamp(2.7rem,3vw,3.45rem)!important;
+    line-height:1!important;
   }
 
   body.team-page .team-consultation-details{
-    grid-area:details!important;
-    min-width:0!important;
-    align-self:start!important;
     padding-top:5px!important;
   }
 
   body.team-page .team-consultation-details>p{
-    max-width:35rem!important;
+    max-width:36rem!important;
     margin:0!important;
     color:var(--team-muted)!important;
     font-family:"Inter",sans-serif!important;
@@ -1825,13 +1825,12 @@ body.team-page .team-consultation{
   }
 
   body.team-page .team-consultation-secondary{
-    grid-area:secondary!important;
     display:grid!important;
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
     gap:0!important;
     width:100%!important;
     min-width:0!important;
-    margin:0!important;
+    margin-top:30px!important;
     padding:22px 0 0!important;
     border-top:1px solid var(--team-line)!important;
   }
@@ -1899,6 +1898,10 @@ body.team-page .team-consultation{
     height:auto!important;
     margin:0 auto!important;
     padding:46px 0 50px!important;
+    display:block!important;
+  }
+
+  body.team-page .team-consultation-primary{
     display:block!important;
   }
 
