@@ -291,3 +291,112 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
   .home-primary-btn,
   .home-service-card{transition:none!important}
 }
+
+
+/* Homepage perspective/founder separation — 2026-09-24 */
+.home-perspective{
+  padding:76px 0!important;
+  background:var(--sb-brand-navy)!important;
+  color:#fff!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+}
+.home-perspective-inner{
+  width:min(920px,calc(100% - 80px));
+  margin:0 auto;
+  text-align:center;
+}
+.home-perspective .home-eyebrow{
+  margin:0 0 20px!important;
+  color:#D3B57F!important;
+}
+.home-perspective .home-founder-quote{
+  max-width:22ch!important;
+  margin:0 auto!important;
+  color:#fff!important;
+  font-size:clamp(2.35rem,3.5vw,3.65rem)!important;
+  line-height:1.06!important;
+  letter-spacing:-.035em!important;
+}
+.home-perspective-copy{
+  max-width:620px;
+  margin:24px auto 0!important;
+  color:rgba(255,255,255,.78)!important;
+  font-family:"Inter",sans-serif;
+  font-size:.98rem;
+  line-height:1.68;
+}
+.home-founder-profile{
+  padding:72px 0!important;
+  background:var(--sb-brand-ivory)!important;
+}
+.home-founder-profile .home-founder-grid{
+  align-items:start!important;
+}
+.home-founder-portrait{
+  min-width:0;
+}
+.home-founder-profile .home-founder-media{
+  height:430px!important;
+}
+.home-founder-photo-caption{
+  margin:11px 0 0!important;
+  color:var(--sb-brand-muted)!important;
+  font-family:"Inter",sans-serif!important;
+  font-size:.72rem!important;
+  font-weight:600!important;
+  letter-spacing:.045em;
+  line-height:1.4!important;
+}
+.home-founder-profile .home-founder-copy{
+  align-self:center!important;
+}
+.home-founder-profile .home-founder-copy .home-eyebrow{
+  margin:0 0 15px!important;
+}
+.home-founder-heading{
+  margin:0;
+  color:var(--sb-brand-navy)!important;
+  font-family:"EB Garamond",Georgia,serif!important;
+  font-size:clamp(2.5rem,3.3vw,3.45rem)!important;
+  font-weight:600;
+  line-height:1.02!important;
+  letter-spacing:-.035em!important;
+}
+.home-founder-profile .home-founder-role{
+  margin:10px 0 0!important;
+  color:var(--sb-brand-navy)!important;
+  font-size:.84rem!important;
+  font-weight:600!important;
+  line-height:1.5!important;
+}
+.home-founder-summary{
+  max-width:610px!important;
+  margin:24px 0 0!important;
+  color:var(--sb-brand-muted)!important;
+  font-size:.98rem!important;
+  line-height:1.68!important;
+}
+.home-founder-profile .home-founder-link{
+  margin-top:22px!important;
+}
+
+@media(max-width:720px){
+  .home-perspective{
+    padding:54px 0!important;
+  }
+  .home-perspective-inner{
+    width:min(100% - 38px,680px);
+  }
+  .home-perspective .home-founder-quote{
+    font-size:clamp(2.05rem,9vw,2.75rem)!important;
+  }
+  .home-founder-profile{
+    padding:52px 0!important;
+  }
+  .home-founder-profile .home-founder-media{
+    height:340px!important;
+  }
+  .home-founder-photo-caption{
+    margin-left:2px!important;
+  }
+}
