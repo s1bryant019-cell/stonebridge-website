@@ -1775,12 +1775,21 @@ body.team-page .team-secondary-botanical{
 
 
 <style id="stonebridge-team-closing-consolidation-20260924">
-/* Consolidate the Team page ending into the existing consultation panel. */
-body.team-page .team-consultation-copy{
+/* Consolidate the Team page ending into the existing consultation section. */
+body.team-page .team-consultation{
   position:relative!important;
   overflow:hidden!important;
+  isolation:isolate!important;
 }
-body.team-page .team-consultation-copy > *:not(.team-consultation-botanical){
+body.team-page .team-consultation-inner{
+  position:relative!important;
+  z-index:2!important;
+}
+body.team-page .team-consultation-copy{
+  position:relative!important;
+  overflow:visible!important;
+}
+body.team-page .team-consultation-copy > *{
   position:relative;
   z-index:2;
 }
@@ -1826,20 +1835,27 @@ body.team-page .team-consultation-secondary a:hover{
 }
 body.team-page .team-consultation-botanical{
   position:absolute;
-  right:14px;
-  bottom:10px;
+  right:-18px;
+  bottom:0;
   z-index:1;
-  width:128px;
+  width:clamp(150px,11vw,180px);
   height:auto;
+  max-width:none;
   display:block;
   pointer-events:none;
   user-select:none;
-  opacity:.72;
+  opacity:.84;
 }
 @media(min-width:901px){
   body.team-page .team-consultation-copy{
     padding-top:52px!important;
     padding-bottom:52px!important;
+  }
+}
+@media(max-width:980px){
+  body.team-page .team-consultation-botanical{
+    right:-14px;
+    width:150px;
   }
 }
 @media(max-width:760px){
@@ -2003,9 +2019,9 @@ body.team-page .team-consultation-botanical{
             </article>
           </div>
 
-          <img class="team-consultation-botanical" src="team-secondary-botanical.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
         </div>
       </div>
+      <img class="team-consultation-botanical" src="team-secondary-botanical.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
     </section>
 
   </main>
