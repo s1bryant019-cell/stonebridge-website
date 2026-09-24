@@ -1776,6 +1776,67 @@ body.team-page .team-secondary-botanical{
 }
 </style>
 
+<style id="stonebridge-team-closing-balance-20260924">
+/* Balance the consolidated Team closing section after removing the botanical. */
+@media(min-width:901px){
+  body.team-page .team-consultation-copy{
+    width:100%!important;
+    max-width:none!important;
+    padding:54px clamp(54px,5vw,86px)!important;
+  }
+  body.team-page .team-consultation-copy>p{
+    max-width:560px!important;
+  }
+  body.team-page .team-consultation-secondary{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:0!important;
+    width:100%!important;
+    margin-top:30px!important;
+    padding:22px 0 0!important;
+    border-top:1px solid var(--team-line)!important;
+  }
+  body.team-page .team-consultation-secondary article{
+    min-width:0!important;
+    padding:0 24px 0 0!important;
+  }
+  body.team-page .team-consultation-secondary article+article{
+    padding:0 0 0 24px!important;
+    border-top:0!important;
+    border-left:1px solid var(--team-line)!important;
+  }
+  body.team-page .team-consultation-secondary .team-label{
+    margin:0 0 7px!important;
+  }
+  body.team-page .team-consultation-secondary p{
+    max-width:260px!important;
+    margin:0!important;
+    font-size:.82rem!important;
+    line-height:1.5!important;
+  }
+  body.team-page .team-consultation-secondary a{
+    display:inline-block!important;
+    margin-top:10px!important;
+    font-size:.77rem!important;
+  }
+}
+@media(max-width:900px){
+  body.team-page .team-consultation-secondary{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+    margin-top:28px!important;
+    padding-top:20px!important;
+    border-top:1px solid var(--team-line)!important;
+  }
+  body.team-page .team-consultation-secondary article+article{
+    padding-top:16px!important;
+    padding-left:0!important;
+    border-top:1px solid var(--team-line)!important;
+    border-left:0!important;
+  }
+}
+</style>
 </head>
 
 <body class="team-page" data-static-hero-system="true">
