@@ -1776,32 +1776,64 @@ body.team-page .team-secondary-botanical{
 }
 </style>
 
+
 <style id="stonebridge-team-closing-balance-20260924">
-/* Balance the consolidated Team closing section after removing the botanical. */
+/* Use the full width of the Team consultation panel. */
 @media(min-width:901px){
   body.team-page .team-consultation-copy{
     width:100%!important;
     max-width:none!important;
-    padding:54px clamp(54px,5vw,86px)!important;
+    padding:48px clamp(48px,4.5vw,78px)!important;
+    display:grid!important;
+    grid-template-rows:auto auto!important;
+    align-content:center!important;
   }
-  body.team-page .team-consultation-copy>p{
-    max-width:560px!important;
+  body.team-page .team-consultation-primary{
+    display:grid!important;
+    grid-template-columns:minmax(220px,.82fr) minmax(300px,1.18fr)!important;
+    gap:40px!important;
+    align-items:end!important;
+  }
+  body.team-page .team-consultation-heading{
+    min-width:0!important;
+  }
+  body.team-page .team-consultation-heading .team-label{
+    margin:0 0 12px!important;
+  }
+  body.team-page .team-consultation-heading h2{
+    max-width:9ch!important;
+    margin:0!important;
+  }
+  body.team-page .team-consultation-details{
+    min-width:0!important;
+    padding-bottom:3px!important;
+  }
+  body.team-page .team-consultation-details>p{
+    max-width:520px!important;
+    margin:0!important;
+    color:var(--team-muted)!important;
+    font-family:"Inter",sans-serif!important;
+    font-size:.96rem!important;
+    line-height:1.65!important;
+  }
+  body.team-page .team-consultation-actions{
+    margin-top:24px!important;
   }
   body.team-page .team-consultation-secondary{
     display:grid!important;
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
     gap:0!important;
     width:100%!important;
-    margin-top:30px!important;
+    margin-top:32px!important;
     padding:22px 0 0!important;
     border-top:1px solid var(--team-line)!important;
   }
   body.team-page .team-consultation-secondary article{
     min-width:0!important;
-    padding:0 24px 0 0!important;
+    padding:0 28px 0 0!important;
   }
   body.team-page .team-consultation-secondary article+article{
-    padding:0 0 0 24px!important;
+    padding:0 0 0 28px!important;
     border-top:0!important;
     border-left:1px solid var(--team-line)!important;
   }
@@ -1809,18 +1841,24 @@ body.team-page .team-secondary-botanical{
     margin:0 0 7px!important;
   }
   body.team-page .team-consultation-secondary p{
-    max-width:260px!important;
+    max-width:360px!important;
     margin:0!important;
     font-size:.82rem!important;
     line-height:1.5!important;
   }
   body.team-page .team-consultation-secondary a{
     display:inline-block!important;
-    margin-top:10px!important;
+    margin-top:9px!important;
     font-size:.77rem!important;
   }
 }
 @media(max-width:900px){
+  body.team-page .team-consultation-primary{
+    display:block!important;
+  }
+  body.team-page .team-consultation-details>p{
+    margin:20px 0 0!important;
+  }
   body.team-page .team-consultation-secondary{
     display:grid!important;
     grid-template-columns:1fr!important;
@@ -1957,12 +1995,18 @@ body.team-page .team-secondary-botanical{
           <img src="team-consultation-chair.webp" alt="Warm psychotherapy room with upholstered chair, lamp, plant, and soft natural light" loading="lazy" decoding="async" width="1672" height="941">
         </figure>
         <div class="team-consultation-copy">
-          <div class="team-label">Consultation first</div>
-          <h2 id="team-consultation-title">Finding the right fit.</h2>
-          <p>You do not need to choose a clinician before reaching out. Stonebridge reviews your needs, clinician fit, and current availability before recommending a next step.</p>
-          <div class="team-consultation-actions">
-            <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
-            <a class="team-consultation-link" href="contact.html#contact-next-title">What to expect <span aria-hidden="true">→</span></a>
+          <div class="team-consultation-primary">
+            <div class="team-consultation-heading">
+              <div class="team-label">Consultation first</div>
+              <h2 id="team-consultation-title">Finding the right fit.</h2>
+            </div>
+            <div class="team-consultation-details">
+              <p>You do not need to choose a clinician before reaching out. Stonebridge reviews your needs, clinician fit, and current availability before recommending a next step.</p>
+              <div class="team-consultation-actions">
+                <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
+                <a class="team-consultation-link" href="contact.html#contact-next-title">What to expect <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
           </div>
 
           <div class="team-consultation-secondary" aria-label="Additional Stonebridge information">
