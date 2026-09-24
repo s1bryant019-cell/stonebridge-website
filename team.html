@@ -1773,6 +1773,95 @@ body.team-page .team-secondary-botanical{
 }
 </style>
 
+
+<style id="stonebridge-team-closing-consolidation-20260924">
+/* Consolidate the Team page ending into the existing consultation panel. */
+body.team-page .team-consultation-copy{
+  position:relative!important;
+  overflow:hidden!important;
+}
+body.team-page .team-consultation-copy > *:not(.team-consultation-botanical){
+  position:relative;
+  z-index:2;
+}
+body.team-page .team-consultation-secondary{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+  margin-top:32px;
+  padding-top:22px;
+  border-top:1px solid var(--team-line);
+}
+body.team-page .team-consultation-secondary article{
+  min-width:0;
+}
+body.team-page .team-consultation-secondary article+article{
+  padding-left:20px;
+  border-left:1px solid var(--team-line);
+}
+body.team-page .team-consultation-secondary .team-label{
+  margin:0 0 6px!important;
+  font-size:.65rem!important;
+}
+body.team-page .team-consultation-secondary p{
+  max-width:230px;
+  margin:0;
+  color:var(--team-muted);
+  font-family:"Inter",sans-serif;
+  font-size:.78rem;
+  line-height:1.5;
+}
+body.team-page .team-consultation-secondary a{
+  display:inline-block;
+  margin-top:8px;
+  color:var(--team-navy-deep);
+  font-family:"Inter",sans-serif;
+  font-size:.74rem;
+  font-weight:700;
+  text-decoration:none;
+}
+body.team-page .team-consultation-secondary a:hover{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+body.team-page .team-consultation-botanical{
+  position:absolute;
+  right:-30px;
+  bottom:-42px;
+  z-index:1;
+  width:150px;
+  height:auto;
+  display:block;
+  pointer-events:none;
+  user-select:none;
+  opacity:.72;
+}
+@media(min-width:901px){
+  body.team-page .team-consultation-copy{
+    padding-top:52px!important;
+    padding-bottom:52px!important;
+  }
+}
+@media(max-width:760px){
+  body.team-page .team-consultation-secondary{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  body.team-page .team-consultation-secondary article+article{
+    padding-top:16px;
+    padding-left:0;
+    border-top:1px solid var(--team-line);
+    border-left:0;
+  }
+  body.team-page .team-consultation-secondary p{
+    max-width:none;
+  }
+  body.team-page .team-consultation-botanical{
+    display:none;
+  }
+}
+</style>
+
 </head>
 
 <body class="team-page" data-static-hero-system="true">
@@ -1900,39 +1989,25 @@ body.team-page .team-secondary-botanical{
             <a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a>
             <a class="team-consultation-link" href="contact.html#contact-next-title">What to expect <span aria-hidden="true">→</span></a>
           </div>
+
+          <div class="team-consultation-secondary" aria-label="Additional Stonebridge information">
+            <article>
+              <div class="team-label">Stonebridge is growing</div>
+              <p>We are building the clinician team deliberately rather than for volume.</p>
+              <a href="careers.html">View current opportunities <span aria-hidden="true">→</span></a>
+            </article>
+            <article>
+              <div class="team-label">For professionals</div>
+              <p>Consultation, peer review, and education for professionals.</p>
+              <a href="for-clinicians.html">View Professional Offerings <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+
+          <img class="team-consultation-botanical" src="team-secondary-botanical.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
 
-    <section class="team-secondary">
-
-      <div class="team-shell">
-        <div class="team-secondary-grid" aria-label="Additional Stonebridge information">
-          <article>
-            <div class="team-label">Stonebridge is growing</div>
-            <p>We are building the clinician team deliberately rather than for volume.</p>
-            <a href="careers.html">View current opportunities <span aria-hidden="true">→</span></a>
-          </article>
-          <article>
-            <div class="team-label">For professionals</div>
-            <p>Consultation, peer review, and education for professionals.</p>
-            <a href="for-clinicians.html">View Professional Offerings <span aria-hidden="true">→</span></a>
-          </article>
-        </div>
-
-      </div>
-      <img class="team-secondary-botanical" src="team-secondary-botanical.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
-    </section>
-
-    <section class="team-cta">
-      <div class="team-cta-inner">
-        <div class="team-cta-copy">
-          <h2>Ready to take the next step?</h2>
-          <p>Tell us what you’re looking for. Stonebridge will review fit, availability, and next steps.</p>
-        </div>
-        <a class="btn btn-secondary" href="contact.html#inquiry-form">Request a Consultation</a>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
