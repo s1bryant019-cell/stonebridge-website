@@ -500,10 +500,10 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
 /* Sitewide desktop header brand scale - 2026-09-24 */
 @media(min-width:1081px){
   .site-header.sb-global-header .brand-link{
-    width:292px!important;
+    width:260px!important;
   }
   .site-header.sb-global-header .sb-header-logo{
-    width:286px!important;
-    max-height:60px!important;
+    width:254px!important;
+    max-height:56px!important;
   }
 }
