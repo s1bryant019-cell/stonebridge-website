@@ -6,7 +6,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, max-age=0, must-revalidate"
+          "value": "no-store, max-age=0"
         },
         {
           "key": "Link",
@@ -19,7 +19,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, max-age=0, must-revalidate"
+          "value": "no-store, max-age=0"
         },
         {
           "key": "Link",
@@ -101,6 +101,14 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/",
+      "destination": "/home-current.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/home-current.html"
+    },
     {
       "source": "/bcbs-therapy-illinois",
       "destination": "/bcbs-therapy-illinois.html"
