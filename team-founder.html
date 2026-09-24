@@ -476,45 +476,7 @@
       line-height:1.65;
     }
 
-    .founder-scope-scan{
-  margin-top:14px;
-  padding-top:13px;
-  border-top:1px solid rgba(33,49,66,.12);
-}
-.founder-scope-scan-label{
-  margin-bottom:8px;
-  color:#78613f;
-  font-family:"Inter",sans-serif;
-  font-size:.68rem;
-  font-weight:800;
-  letter-spacing:.16em;
-  line-height:1.45;
-  text-transform:uppercase;
-}
-.founder-scope-scan-list{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:0 28px;
-  margin:0;
-  padding:0;
-  list-style:none;
-  border-top:1px solid rgba(33,49,66,.10);
-}
-.founder-scope-scan-list li{
-  padding:8px 0;
-  border-bottom:1px solid rgba(33,49,66,.10);
-  color:#5d6870;
-  font-family:"Inter",sans-serif;
-  font-size:.82rem;
-  line-height:1.45;
-}
-@media(max-width:640px){
-  .founder-scope-scan-list{
-    grid-template-columns:1fr;
-  }
-}
-
-.founder-final-band .btn-secondary{
+    .founder-final-band .btn-secondary{
       background:rgba(255,255,255,.1);
       color:#fffaf2;
       border-color:rgba(255,255,255,.25);
@@ -4710,6 +4672,143 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+<style id="shared-clinician-focus-20260924">
+.clinician-focus-section{
+  padding:34px 0;
+  background:#f8f5f0;
+  border-bottom:1px solid rgba(212,200,185,.48);
+}
+.clinician-focus-shell{
+  width:min(1120px,calc(100% - 72px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(210px,.72fr) minmax(0,2fr);
+  gap:34px;
+  align-items:start;
+}
+.clinician-focus-label,
+.clinician-focus-number,
+.clinician-scope-label{
+  font-family:"Inter",sans-serif;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.clinician-focus-label{
+  position:relative;
+  padding-top:14px;
+  color:#8c7551;
+  font-size:.66rem;
+  letter-spacing:.19em;
+}
+.clinician-focus-label::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:150px;
+  height:1px;
+  background:linear-gradient(90deg,#213142,transparent);
+}
+.clinician-focus-heading{
+  margin:8px 0 0;
+  color:#213142;
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2.15rem,2.85vw,3rem);
+  font-weight:600;
+  line-height:1.04;
+  letter-spacing:-.035em;
+}
+.clinician-focus-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  border-top:1px solid rgba(33,49,66,.16);
+  border-bottom:1px solid rgba(33,49,66,.12);
+}
+.clinician-focus-card{
+  min-width:0;
+  padding:14px 18px 15px;
+  border-left:1px solid rgba(33,49,66,.11);
+}
+.clinician-focus-card:first-child{
+  padding-left:0;
+  border-left:0;
+}
+.clinician-focus-card:last-child{
+  padding-right:0;
+}
+.clinician-focus-number{
+  color:#9a8058;
+  font-size:.66rem;
+  letter-spacing:.18em;
+}
+.clinician-focus-card h3{
+  margin:13px 0 6px;
+  color:#213142;
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:1.34rem;
+  font-weight:650;
+  line-height:1.08;
+}
+.clinician-focus-card p{
+  margin:0;
+  color:#5d6870;
+  font-family:"Inter",sans-serif;
+  font-size:.83rem;
+  line-height:1.56;
+}
+.clinician-scope{
+  margin-top:11px;
+  padding-top:12px;
+  border-top:1px solid rgba(33,49,66,.12);
+}
+.clinician-scope-label{
+  display:block;
+  margin-bottom:8px;
+  color:#8c7551;
+  font-size:.62rem;
+  letter-spacing:.16em;
+  line-height:1.45;
+}
+.clinician-scope-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 24px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  border-top:1px solid rgba(33,49,66,.10);
+}
+.clinician-scope-list li{
+  padding:8px 0;
+  border-bottom:1px solid rgba(33,49,66,.10);
+  color:#5d6870;
+  font-family:"Inter",sans-serif;
+  font-size:.82rem;
+  line-height:1.45;
+}
+@media(max-width:960px){
+  .clinician-focus-shell{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+}
+@media(max-width:760px){
+  .clinician-focus-section{padding:28px 0}
+  .clinician-focus-shell{width:min(100% - 34px,1120px)}
+  .clinician-focus-grid{grid-template-columns:1fr}
+  .clinician-focus-card,
+  .clinician-focus-card:first-child,
+  .clinician-focus-card:last-child{
+    padding:15px 0;
+    border-left:0;
+    border-top:1px solid rgba(33,49,66,.11);
+  }
+  .clinician-focus-card:first-child{border-top:0}
+}
+@media(max-width:640px){
+  .clinician-scope-list{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body class="sbx-site sbx-founder-page" data-static-hero-system="true"><a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header compact-site-header">
@@ -4834,50 +4933,48 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   </aside>
   </div>
 
-  <section class="founder-fit-compact" id="patient-fit" aria-labelledby="founder-fit-title">
-    <div class="founder-wide-shell founder-fit-layout">
-      <div class="founder-fit-intro">
-        <div class="section-label">Areas of particular depth</div>
-        <h2 id="founder-fit-title">Areas of particular depth.</h2>
-        
+  <section class="clinician-focus-section" id="patient-fit" aria-labelledby="founder-fit-title">
+  <div class="clinician-focus-shell">
+    <div>
+      <div class="clinician-focus-label">Areas of particular depth</div>
+      <h2 class="clinician-focus-heading" id="founder-fit-title">Areas of particular depth.</h2>
+    </div>
+    <div>
+      <div class="clinician-focus-grid" aria-label="Areas Dr. Bryant has particular clinical depth">
+        <article class="clinician-focus-card">
+          <div class="clinician-focus-number">01</div>
+          <h3>Trauma and complex stress</h3>
+          <p>Trauma-related distress, dissociation, emotional regulation, and protective patterns.</p>
+        </article>
+        <article class="clinician-focus-card">
+          <div class="clinician-focus-number">02</div>
+          <h3>Substance use and co-occurring concerns</h3>
+          <p>Substance use, recovery and relapse patterns, and co-occurring concerns. Abstinence is not required to begin therapy.</p>
+        </article>
+        <article class="clinician-focus-card">
+          <div class="clinician-focus-number">03</div>
+          <h3>Complex patterns and treatment histories</h3>
+          <p>Persistent emotional or relationship patterns, including when prior treatment has not fully resolved what feels stuck.</p>
+        </article>
       </div>
-      <div>
-        <div class="founder-fit-grid" aria-label="Areas Dr. Bryant commonly works with">
-          <article>
-            <div class="founder-fit-number">01</div>
-            <h3>Trauma and complex stress</h3>
-            <p>Trauma-related distress, dissociation, emotional regulation, and protective patterns.</p>
-          </article>
-          <article>
-            <div class="founder-fit-number">02</div>
-            <h3>Substance use and co-occurring concerns</h3>
-            <p>Substance use, recovery and relapse patterns, and co-occurring concerns. Abstinence is not required to begin therapy.</p>
-          </article>
-          <article>
-            <div class="founder-fit-number">03</div>
-            <h3>Complex patterns and treatment histories</h3>
-            <p>Persistent emotional or relationship patterns, including when prior treatment has not fully resolved what feels stuck.</p>
-          </article>
-        </div>
-        <div class="founder-scope-scan" aria-label="Other concerns Dr. Bryant commonly works with">
-          <div class="founder-scope-scan-label">Also commonly works with</div>
-          <ul class="founder-scope-scan-list">
-            <li>Anxiety</li>
-            <li>Depression</li>
-            <li>Grief and loss</li>
-            <li>Identity and self-worth</li>
-            <li>Relationship concerns</li>
-            <li>Life transitions</li>
-            <li>Couples and family concerns</li>
-            <li>Parent support</li>
-          </ul>
-        </div>
+      <div class="clinician-scope" aria-label="Other concerns Dr. Bryant commonly works with">
+        <div class="clinician-scope-label">Also commonly works with</div>
+        <ul class="clinician-scope-list">
+          <li>Anxiety</li>
+          <li>Depression</li>
+          <li>Grief and loss</li>
+          <li>Identity and self-worth</li>
+          <li>Relationship concerns</li>
+          <li>Life transitions</li>
+          <li>Couples and family concerns</li>
+          <li>Parent support</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  
-  <section class="founder-therapy-combined" id="therapy-style">
+<section class="founder-therapy-combined" id="therapy-style">
 <div class="founder-wide-shell therapy-method-layout">
 <div class="therapy-method-intro">
 <div class="section-label">Clinical approach</div>
