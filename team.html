@@ -1758,123 +1758,6 @@ body.team-page .team-secondary-botanical{
   user-select:none;
   opacity:.96;
 }
-@media(max-width:980px){
-  body.team-page .team-secondary-botanical{
-    right:-18px;
-    bottom:-42px;
-    width:165px;
-    opacity:.92;
-  }
-}
-@media(max-width:760px){
-  body.team-page .team-secondary-botanical{
-    display:none;
-  }
-}
-</style>
-
-
-<style id="stonebridge-team-closing-consolidation-20260924">
-/* Consolidate the Team page ending into the existing consultation section. */
-body.team-page .team-consultation{
-  position:relative!important;
-  overflow:hidden!important;
-  isolation:isolate!important;
-}
-body.team-page .team-consultation-inner{
-  position:relative!important;
-  z-index:2!important;
-}
-body.team-page .team-consultation-copy{
-  position:relative!important;
-  overflow:hidden!important;
-}
-body.team-page .team-consultation-copy > *:not(.team-consultation-botanical-slot){
-  position:relative;
-  z-index:2;
-}
-body.team-page .team-consultation-secondary{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:20px;
-  margin-top:32px;
-  padding-top:22px;
-  padding-right:116px;
-  border-top:1px solid var(--team-line);
-}
-body.team-page .team-consultation-secondary article{
-  min-width:0;
-}
-body.team-page .team-consultation-secondary article+article{
-  padding-left:20px;
-  border-left:1px solid var(--team-line);
-}
-body.team-page .team-consultation-secondary .team-label{
-  margin:0 0 6px!important;
-  font-size:.65rem!important;
-}
-body.team-page .team-consultation-secondary p{
-  max-width:230px;
-  margin:0;
-  color:var(--team-muted);
-  font-family:"Inter",sans-serif;
-  font-size:.78rem;
-  line-height:1.5;
-}
-body.team-page .team-consultation-secondary a{
-  display:inline-block;
-  margin-top:8px;
-  color:var(--team-navy-deep);
-  font-family:"Inter",sans-serif;
-  font-size:.74rem;
-  font-weight:700;
-  text-decoration:none;
-}
-body.team-page .team-consultation-secondary a:hover{
-  text-decoration:underline;
-  text-underline-offset:3px;
-}
-body.team-page .team-consultation-botanical-slot{
-  position:absolute;
-  right:0;
-  bottom:0;
-  z-index:1;
-  width:118px;
-  height:148px;
-  overflow:hidden;
-  pointer-events:none;
-}
-body.team-page .team-consultation-botanical{
-  position:absolute;
-  right:-26px;
-  bottom:-2px;
-  width:150px;
-  height:auto;
-  max-width:none;
-  display:block;
-  pointer-events:none;
-  user-select:none;
-  opacity:.82;
-}
-@media(min-width:901px){
-  body.team-page .team-consultation-copy{
-    padding-top:52px!important;
-    padding-bottom:52px!important;
-  }
-}
-@media(max-width:980px){
-  body.team-page .team-consultation-secondary{
-    padding-right:92px;
-  }
-  body.team-page .team-consultation-botanical-slot{
-    width:94px;
-    height:132px;
-  }
-  body.team-page .team-consultation-botanical{
-    right:-30px;
-    width:136px;
-  }
-}
 @media(max-width:760px){
   body.team-page .team-consultation-secondary{
     grid-template-columns:1fr;
@@ -1889,9 +1772,6 @@ body.team-page .team-consultation-botanical{
   }
   body.team-page .team-consultation-secondary p{
     max-width:none;
-  }
-  body.team-page .team-consultation-botanical-slot{
-    display:none;
   }
 }
 </style>
@@ -2035,10 +1915,6 @@ body.team-page .team-consultation-botanical{
               <p>Consultation, peer review, and education for professionals.</p>
               <a href="for-clinicians.html">View Professional Offerings <span aria-hidden="true">→</span></a>
             </article>
-          </div>
-
-          <div class="team-consultation-botanical-slot" aria-hidden="true">
-            <img class="team-consultation-botanical" src="team-secondary-botanical.png" alt="" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
