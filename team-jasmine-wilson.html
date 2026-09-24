@@ -186,6 +186,38 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-navy)}
 .cp-broader{display:grid;grid-template-columns:155px minmax(0,1fr);gap:16px;padding-top:11px}
 .cp-broader strong{color:#8c7551;font:800 .62rem/1.45 "Inter",sans-serif;letter-spacing:.16em;text-transform:uppercase}
 
+.cp-scope-scan{
+  margin-top:11px;
+  padding-top:12px;
+  border-top:1px solid rgba(33,49,66,.12);
+}
+.cp-scope-scan>strong{
+  display:block;
+  margin-bottom:8px;
+  color:#8c7551;
+  font:800 .62rem/1.45 "Inter",sans-serif;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.cp-scope-scan-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 24px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  border-top:1px solid rgba(33,49,66,.10);
+}
+.cp-scope-scan-list li{
+  padding:8px 0;
+  border-bottom:1px solid rgba(33,49,66,.10);
+  color:var(--cp-muted);
+  font:400 .82rem/1.45 "Inter",sans-serif;
+}
+@media(max-width:640px){
+  .cp-scope-scan-list{grid-template-columns:1fr}
+}
+
 .cp-approach-list{border-top:1px solid var(--cp-line)}
 .cp-approach-row{
   display:grid;
@@ -897,6 +929,10 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
           <p>Adolescents 12+ · Adults</p>
         </div>
         <div class="jasmine-profile-rail-summary-row">
+          <div class="jasmine-profile-rail-label">Common areas of focus</div>
+          <p>Trauma · Anxiety · Depression · Emotional regulation · Life transitions · Identity and self-worth</p>
+        </div>
+        <div class="jasmine-profile-rail-summary-row">
           <div class="jasmine-profile-rail-label">Approach</div>
           <p>Warm · Collaborative · Person-centered · Trauma-informed · Body-aware</p>
         </div>
@@ -922,8 +958,8 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <section class="cp-section" id="clinical-focus">
   <div class="cp-shell cp-layout">
     <div class="cp-section-intro">
-      <div class="cp-label">Clinical focus</div>
-      <h2>Areas Jasmine commonly works with.</h2>
+      <div class="cp-label">Areas of particular depth</div>
+      <h2>Areas of particular depth.</h2>
       
     </div>
     <div>
@@ -944,9 +980,17 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
           <p>Changes in school, work, relationships, family roles, independence, identity, and direction.</p>
         </article>
       </div>
-      <div class="cp-broader">
-        <strong>Broader care may include</strong>
-        <p>Grief, ADHD-related concerns, relationship and family stress, parenting concerns, and substance-use concerns when harm reduction is clinically appropriate.</p>
+      <div class="cp-scope-scan" aria-label="Other concerns Jasmine commonly works with">
+        <strong>Also commonly works with</strong>
+        <ul class="cp-scope-scan-list">
+          <li>Grief and loss</li>
+          <li>ADHD-related concerns</li>
+          <li>Relationship stress</li>
+          <li>Family stress</li>
+          <li>Parenting concerns</li>
+          <li>Behavioral concerns</li>
+          <li>Substance-use concerns when harm reduction is clinically appropriate</li>
+        </ul>
       </div>
     </div>
   </div>

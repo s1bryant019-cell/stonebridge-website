@@ -476,7 +476,45 @@
       line-height:1.65;
     }
 
-    .founder-final-band .btn-secondary{
+    .founder-scope-scan{
+  margin-top:14px;
+  padding-top:13px;
+  border-top:1px solid rgba(33,49,66,.12);
+}
+.founder-scope-scan-label{
+  margin-bottom:8px;
+  color:#78613f;
+  font-family:"Inter",sans-serif;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  line-height:1.45;
+  text-transform:uppercase;
+}
+.founder-scope-scan-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 28px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  border-top:1px solid rgba(33,49,66,.10);
+}
+.founder-scope-scan-list li{
+  padding:8px 0;
+  border-bottom:1px solid rgba(33,49,66,.10);
+  color:#5d6870;
+  font-family:"Inter",sans-serif;
+  font-size:.82rem;
+  line-height:1.45;
+}
+@media(max-width:640px){
+  .founder-scope-scan-list{
+    grid-template-columns:1fr;
+  }
+}
+
+.founder-final-band .btn-secondary{
       background:rgba(255,255,255,.1);
       color:#fffaf2;
       border-color:rgba(255,255,255,.25);
@@ -4761,6 +4799,10 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         <p>Adolescents 12+ · Adults · Couples · Families · Parent support</p>
       </div>
       <div class="founder-profile-rail-summary-row">
+        <div class="founder-profile-rail-label">Common areas of focus</div>
+        <p>Trauma · Substance use · Anxiety · Depression · Relationship concerns · Life transitions</p>
+      </div>
+      <div class="founder-profile-rail-summary-row">
         <div class="founder-profile-rail-label">Approach</div>
         <p>Exploratory · Relational · Psychodynamic</p>
       </div>
@@ -4795,8 +4837,8 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   <section class="founder-fit-compact" id="patient-fit" aria-labelledby="founder-fit-title">
     <div class="founder-wide-shell founder-fit-layout">
       <div class="founder-fit-intro">
-        <div class="section-label">Clinical focus</div>
-        <h2 id="founder-fit-title">Areas Dr. Bryant commonly works with.</h2>
+        <div class="section-label">Areas of particular depth</div>
+        <h2 id="founder-fit-title">Areas of particular depth.</h2>
         
       </div>
       <div>
@@ -4816,6 +4858,19 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
             <h3>Complex patterns and treatment histories</h3>
             <p>Persistent emotional or relationship patterns, including when prior treatment has not fully resolved what feels stuck.</p>
           </article>
+        </div>
+        <div class="founder-scope-scan" aria-label="Other concerns Dr. Bryant commonly works with">
+          <div class="founder-scope-scan-label">Also commonly works with</div>
+          <ul class="founder-scope-scan-list">
+            <li>Anxiety</li>
+            <li>Depression</li>
+            <li>Grief and loss</li>
+            <li>Identity and self-worth</li>
+            <li>Relationship concerns</li>
+            <li>Life transitions</li>
+            <li>Couples and family concerns</li>
+            <li>Parent support</li>
+          </ul>
         </div>
       </div>
     </div>
