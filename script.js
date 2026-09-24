@@ -147,11 +147,6 @@
       copy.insertBefore(ctaWrap, lede);
     }
 
-    setCardImage('individual-therapy.html#adult-therapy', 'hero-portal-workspace-960.webp');
-    setCardImage('individual-therapy.html#adolescent-therapy', 'profile-nature-hero.jpg');
-    setCardImage('couples-therapy.html', 'couples-therapy-hero-960.webp');
-    setCardImage('family-therapy.html', 'team-nature-hero.jpg');
-    setCardImage('parent-support.html', 'hero-contact-desk-960.webp');
   }
 
   function refineGroupTherapy() {
