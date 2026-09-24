@@ -140,14 +140,14 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-navy)}
 }
 .cp-summary span{color:rgba(255,250,242,.72);font:400 .79rem/1.45 "Inter",sans-serif}
 
-.cp-section{padding:44px 0;background:var(--cp-bg);border-bottom:1px solid rgba(212,200,185,.48)}
+.cp-section{padding:34px 0;background:var(--cp-bg);border-bottom:1px solid rgba(212,200,185,.48)}
 .cp-section.warm{background:var(--cp-soft)}
 .cp-shell{width:min(1120px,calc(100% - 72px));margin:0 auto}
-.cp-layout{display:grid;grid-template-columns:minmax(210px,.68fr) minmax(0,2fr);gap:46px;align-items:start}
+.cp-layout{display:grid;grid-template-columns:minmax(210px,.72fr) minmax(0,2fr);gap:34px;align-items:start}
 .cp-label{position:relative;padding-top:14px;color:#8c7551}
 .cp-label::before{content:"";position:absolute;left:0;top:0;width:150px;height:1px;background:linear-gradient(90deg,var(--cp-navy),transparent)}
 .cp-section-intro h2,.cp-panel h2,.cp-practical-copy h2{
-  margin:12px 0 0;
+  margin:8px 0 0;
   color:var(--cp-navy);
   font-family:"EB Garamond",Georgia,serif;
   font-size:clamp(2.15rem,2.85vw,3rem);
@@ -166,7 +166,7 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-navy)}
   border-top:1px solid var(--cp-line);
   border-bottom:1px solid rgba(33,49,66,.12);
 }
-.cp-focus-grid article{min-width:0;padding:18px 20px 19px;border-left:1px solid rgba(33,49,66,.11)}
+.cp-focus-grid article{min-width:0;padding:14px 18px 15px;border-left:1px solid rgba(33,49,66,.11)}
 .cp-focus-grid article:first-child{padding-left:0;border-left:0}
 .cp-focus-grid article:last-child{padding-right:0}
 .cp-number{color:#9a8058}
@@ -183,35 +183,35 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-navy)}
   color:var(--cp-muted);
   font:400 .83rem/1.56 "Inter",sans-serif;
 }
-.cp-broader{display:grid;grid-template-columns:165px minmax(0,1fr);gap:20px;padding-top:15px}
+.cp-broader{display:grid;grid-template-columns:155px minmax(0,1fr);gap:16px;padding-top:11px}
 .cp-broader strong{color:#8c7551;font:800 .62rem/1.45 "Inter",sans-serif;letter-spacing:.16em;text-transform:uppercase}
 
 .cp-approach-list{border-top:1px solid var(--cp-line)}
 .cp-approach-row{
   display:grid;
   grid-template-columns:46px minmax(0,1fr);
-  gap:18px;
-  padding:16px 0;
+  gap:16px;
+  padding:12px 0;
   border-bottom:1px solid rgba(33,49,66,.12);
 }
 .cp-approach-row h3{margin:0 0 5px}
 
 .cp-fit-background{
   display:grid;
-  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
-  gap:54px;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:34px;
 }
 .cp-panel{min-width:0}
-.cp-panel + .cp-panel{padding-left:44px;border-left:1px solid var(--cp-line)}
-.cp-fit-list{margin:18px 0 0;padding:0;list-style:none;border-top:1px solid var(--cp-line)}
-.cp-fit-list li{position:relative;padding:12px 0 12px 20px;border-bottom:1px solid rgba(33,49,66,.11)}
+.cp-panel + .cp-panel{padding-left:30px;border-left:1px solid var(--cp-line)}
+.cp-fit-list{margin:12px 0 0;padding:0;list-style:none;border-top:1px solid var(--cp-line)}
+.cp-fit-list li{position:relative;padding:9px 0 9px 20px;border-bottom:1px solid rgba(33,49,66,.11)}
 .cp-fit-list li::before{content:"";position:absolute;left:2px;top:1.05rem;width:6px;height:6px;border-radius:50%;background:#b89661}
-.cp-credential-list{margin-top:18px;border-top:1px solid var(--cp-line)}
-.cp-credential-row{display:grid;grid-template-columns:135px minmax(0,1fr);gap:18px;padding:12px 0;border-bottom:1px solid rgba(33,49,66,.11)}
+.cp-credential-list{margin-top:12px;border-top:1px solid var(--cp-line)}
+.cp-credential-row{display:grid;grid-template-columns:135px minmax(0,1fr);gap:16px;padding:9px 0;border-bottom:1px solid rgba(33,49,66,.11)}
 .cp-meta-label{padding-top:4px;color:#8c7551;font-size:.59rem}
 .cp-credential-list h3{margin:0 0 2px;font-size:1.16rem}
 
-.cp-practical{display:grid;grid-template-columns:minmax(210px,.68fr) minmax(0,2fr);gap:46px;align-items:start}
+.cp-practical{display:grid;grid-template-columns:minmax(210px,.72fr) minmax(0,2fr);gap:34px;align-items:start}
 .cp-availability{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -223,8 +223,8 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-navy)}
 .cp-availability article{padding:17px 18px;background:#fffdf9}
 .cp-availability strong{display:block;margin-bottom:5px;color:#8c7551;font:800 .63rem/1.4 "Inter",sans-serif;letter-spacing:.15em;text-transform:uppercase}
 .cp-availability span{color:var(--cp-navy);font:500 .88rem/1.5 "Inter",sans-serif}
-.cp-meta-list{margin-top:18px;border-top:1px solid var(--cp-line)}
-.cp-meta-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:12px 0;border-bottom:1px solid rgba(33,49,66,.11)}
+.cp-meta-list{margin-top:12px;border-top:1px solid var(--cp-line)}
+.cp-meta-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:9px 0;border-bottom:1px solid rgba(33,49,66,.11)}
 .cp-meta-row strong{color:var(--cp-navy);font:650 1rem/1.2 "EB Garamond",Georgia,serif}
 .cp-meta-row a{color:var(--cp-deep);font-weight:700;text-underline-offset:3px}
 
@@ -258,7 +258,7 @@ body.clinician-profile-page{background:var(--cp-bg);color:var(--cp-navy)}
   .cp-summary-inner{grid-template-columns:1fr;padding:11px 0}
   .cp-summary article,.cp-summary article:first-child,.cp-summary article:last-child{padding:11px 0;border-left:0;border-top:1px solid rgba(255,255,255,.14)}
   .cp-summary article:first-child{border-top:0}
-  .cp-section{padding:38px 0}
+  .cp-section{padding:28px 0}
   .cp-focus-grid{grid-template-columns:1fr}
   .cp-focus-grid article,.cp-focus-grid article:first-child,.cp-focus-grid article:last-child{padding:15px 0;border-left:0;border-top:1px solid rgba(33,49,66,.11)}
   .cp-focus-grid article:first-child{border-top:0}
@@ -854,7 +854,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       <h1 class="profile-subpage-title">Jasmine Wilson</h1>
       <div class="profile-subpage-meta">LPC · Licensed Professional Counselor</div>
       <div class="profile-subpage-role">Postgraduate Clinical Associate</div>
-      <p>Jasmine provides individual psychotherapy for adolescents age 12+ and adults navigating trauma, anxiety, depression, emotional overwhelm, life transitions, and concerns related to relationships or self-worth. Her style is warm, collaborative, reflective, and direct.</p>
+      <p>Jasmine provides individual psychotherapy for adolescents 12+ and adults navigating trauma, anxiety, depression, emotional overwhelm, and life transitions. Her style is warm, collaborative, reflective, and direct.</p>
       <p class="profile-subpage-supervision"><strong>Jasmine provides services under the clinical supervision of Dr. Stephen W. Bryant, PsyD, LCPC.</strong></p>
       <div class="profile-subpage-actions">
         <a class="btn btn-primary" href="contact.html?clinician=jasmine-wilson#inquiry-form">Request a Consultation</a>
@@ -895,11 +895,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         <div class="jasmine-profile-rail-summary-row">
           <div class="jasmine-profile-rail-label">Works with</div>
           <p>Adolescents 12+ · Adults</p>
-          <p class="jasmine-profile-rail-subtle">Parent consultation may also be available when clinically appropriate.</p>
-        </div>
-        <div class="jasmine-profile-rail-summary-row">
-          <div class="jasmine-profile-rail-label">Clinical depth</div>
-          <p>Trauma · Anxiety and depression · Emotional regulation · Life transitions · Identity and self-worth</p>
         </div>
         <div class="jasmine-profile-rail-summary-row">
           <div class="jasmine-profile-rail-label">Approach</div>
@@ -907,7 +902,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         </div>
         <div class="jasmine-profile-rail-summary-row jasmine-profile-rail-payment">
           <div class="jasmine-profile-rail-label">Insurance &amp; payment</div>
-          <p>Participation can vary by clinician and plan.</p>
           <a href="fees-insurance.html">Fees &amp; Insurance <span aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -919,7 +913,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
           <div><strong>Fri</strong><span>3–6 PM</span></div>
           <div><strong>Sat</strong><span>8 AM–12 PM</span></div>
         </div>
-        <p class="jasmine-profile-rail-note">Typical windows; current openings vary.</p>
       </div>
 
       <a class="jasmine-profile-rail-cta" href="contact.html?clinician=jasmine-wilson#inquiry-form">Request a consultation <span aria-hidden="true">→</span></a>
@@ -938,22 +931,22 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         <article>
           <div class="cp-number">01</div>
           <h3>Trauma and complex stress</h3>
-          <p>Trauma-related distress, emotional reactivity, avoidance, shame, and protective patterns that are no longer working as well.</p>
+          <p>Trauma-related distress, emotional reactivity, avoidance, shame, and protective patterns.</p>
         </article>
         <article>
           <div class="cp-number">02</div>
           <h3>Anxiety, depression, and regulation</h3>
-          <p>Persistent worry, low mood, irritability, shutdown, overwhelm, burnout, and difficulty recovering after stress.</p>
+          <p>Persistent worry, low mood, irritability, shutdown, overwhelm, and difficulty recovering after stress.</p>
         </article>
         <article>
           <div class="cp-number">03</div>
           <h3>Life transitions, identity, and self-worth</h3>
-          <p>Changes in school, work, relationships, family roles, independence, confidence, identity, and direction.</p>
+          <p>Changes in school, work, relationships, family roles, independence, identity, and direction.</p>
         </article>
       </div>
       <div class="cp-broader">
         <strong>Broader care may include</strong>
-        <p>Grief and loss, ADHD-related concerns, relationship and family stress, parenting concerns, behavioral concerns, and substance-use concerns when a harm-reduction approach is clinically appropriate.</p>
+        <p>Grief, ADHD-related concerns, relationship and family stress, parenting concerns, and substance-use concerns when harm reduction is clinically appropriate.</p>
       </div>
     </div>
   </div>
@@ -964,20 +957,20 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     <div class="cp-section-intro">
       <div class="cp-label">Clinical approach</div>
       <h2>Warm, collaborative, and direct.</h2>
-      <p>Jasmine works from a person-centered foundation and integrates trauma-informed, body-aware, reflective, and skills-based approaches according to the person and the concern.</p>
+      <p>Jasmine works from a person-centered foundation and integrates trauma-informed, body-aware, reflective, and skills-based approaches.</p>
     </div>
     <div class="cp-approach-list" aria-label="How Jasmine Wilson works">
       <article class="cp-approach-row">
         <div class="cp-number">01</div>
-        <div><h3>Person-centered and collaborative</h3><p>Therapy emphasizes curiosity, respect, and understanding the individual rather than assuming the same approach fits everyone.</p></div>
+        <div><h3>Person-centered and collaborative</h3><p>Therapy emphasizes curiosity, respect, and an approach shaped to the individual.</p></div>
       </article>
       <article class="cp-approach-row">
         <div class="cp-number">02</div>
-        <div><h3>Trauma-informed and body-aware</h3><p>The work may attend to physical activation, shutdown, emotional responses, and protective patterns when stress or past experiences remain active.</p></div>
+        <div><h3>Trauma-informed and body-aware</h3><p>The work may attend to activation, shutdown, emotional responses, and protective patterns.</p></div>
       </article>
       <article class="cp-approach-row">
         <div class="cp-number">03</div>
-        <div><h3>Reflective and practical</h3><p>Insight can be paired with practical skills to support different responses outside therapy.</p></div>
+        <div><h3>Reflective and practical</h3><p>Insight can be paired with practical skills for use outside therapy.</p></div>
       </article>
     </div>
   </div>
@@ -989,17 +982,16 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       <div class="cp-label">Who may find this work helpful</div>
       <h2>You do not need everything figured out before reaching out.</h2>
       <ul class="cp-fit-list">
-        <li>Something from the past still seems to show up in the present.</li>
-        <li>Stress, anxiety, low mood, or emotions have become harder to manage.</li>
+        <li>Past experiences still shape the present.</li>
+        <li>Stress, anxiety, low mood, or emotions feel harder to manage.</li>
         <li>A transition has left you unsure of yourself or what comes next.</li>
-        <li>You want therapy that feels compassionate without feeling vague or passive.</li>
       </ul>
     </div>
 
     <div class="cp-panel">
       <div class="cp-label">Professional background</div>
       <h2>Training shaped by behavioral health and community settings.</h2>
-      <p>Jasmine’s background includes behavioral health assessment and treatment, community mental health, crisis intervention, trauma-informed services, and work with adolescents and adults navigating significant life stressors.</p>
+      <p>Jasmine’s background includes behavioral health assessment and treatment, community mental health, crisis intervention, and trauma-informed services.</p>
       <div class="cp-credential-list" aria-label="Jasmine Wilson education and credentials">
         <div class="cp-credential-row">
           <div class="cp-meta-label">Credential</div>
@@ -1027,7 +1019,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     <div class="cp-section-intro">
       <div class="cp-label">Practical details</div>
       <h2>Scheduling and scope.</h2>
-      <p>Typical scheduling windows provide orientation; current openings are confirmed during consultation.</p>
     </div>
     <div class="cp-practical-copy">
       <div class="cp-availability" aria-label="Jasmine Wilson typical scheduling windows">
@@ -1038,7 +1029,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       <div class="cp-meta-list">
         <div class="cp-meta-row"><strong>Parent consultation</strong><span>May also be available when clinically appropriate.</span></div>
         <div class="cp-meta-row"><strong>Insurance</strong><span>Participation can vary by clinician and plan. <a href="fees-insurance.html">Review fees and insurance.</a></span></div>
-        <div class="cp-meta-row"><strong>Scope</strong><span>Outpatient telehealth psychotherapy for clients located in Illinois. Stonebridge is not an emergency or crisis service and does not provide psychological testing, forensic evaluation, or court-related evaluation through this care pathway.</span></div>
+        <div class="cp-meta-row"><strong>Scope</strong><span>Outpatient telehealth psychotherapy for Illinois clients. Stonebridge does not provide emergency, crisis, psychological-testing, forensic, or court-related evaluation through this pathway.</span></div>
       </div>
     </div>
   </div>
@@ -1050,7 +1041,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   <div class="cp-final-inner">
     <div>
       <h2>Interested in working with Jasmine?</h2>
-      <p>Start with a brief consultation to review fit, availability, and next steps.</p>
     </div>
     <a class="btn btn-secondary" href="contact.html?clinician=jasmine-wilson#inquiry-form">Request a Consultation</a>
   </div>
