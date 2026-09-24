@@ -1720,193 +1720,222 @@ body.team-page .team-consultation{
 
   <link rel="stylesheet" href="team-hero-overrides.css?v=20260922">
 
-<style id="stonebridge-team-botanical-20260922">
-/* Decorative botanical accent from the approved mockup treatment. */
-body.team-page .team-secondary{
-  position:relative!important;
-  overflow:visible!important;
-  isolation:isolate!important;
-}
-body.team-page .team-secondary .team-shell{
-  position:relative!important;
-  z-index:2!important;
-}
-@media(min-width:761px){
-  body.team-page .team-secondary-grid article{
-    padding-top:22px!important;
-    padding-bottom:22px!important;
-  }
-  body.team-page .team-secondary-grid p{
-    margin-top:6px!important;
-  }
-  body.team-page .team-secondary-grid a{
-    margin-top:8px!important;
-  }
-  body.team-page .team-secondary-botanical{
-    bottom:-36px;
-  }
-}
-body.team-page .team-secondary-botanical{
-  position:absolute;
-  right:-8px;
-  bottom:-54px;
-  z-index:1;
-  width:clamp(170px,13vw,235px);
-  height:auto;
-  display:block;
-  pointer-events:none;
-  user-select:none;
-  opacity:.96;
-}
-@media(max-width:760px){
-  body.team-page .team-consultation-secondary{
-    grid-template-columns:1fr;
-    gap:16px;
-    padding-right:0;
-  }
-  body.team-page .team-consultation-secondary article+article{
-    padding-top:16px;
-    padding-left:0;
-    border-top:1px solid var(--team-line);
-    border-left:0;
-  }
-  body.team-page .team-consultation-secondary p{
-    max-width:none;
-  }
-}
-</style>
+
 
 
 <style id="stonebridge-team-closing-balance-20260924">
-/* Rebalance the Team closing section without changing the overall design system. */
+/* Canonical Team consultation layout: one controlled rule set for this section. */
+body.team-page .team-consultation{
+  position:relative!important;
+  overflow:hidden!important;
+  background:#f2ece4!important;
+  border-top:1px solid var(--team-warm-line)!important;
+  border-bottom:1px solid var(--team-warm-line)!important;
+}
+
 @media (min-width: 901px) {
-  body.team-page .team-consultation-copy {
-    width: 100% !important;
-    max-width: none !important;
-    padding: 50px clamp(44px, 4vw, 72px) !important;
-    display: grid !important;
-    grid-template-rows: auto auto !important;
-    align-content: center !important;
+  body.team-page .team-consultation-inner{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,46%) minmax(0,54%)!important;
+    gap:0!important;
+    align-items:stretch!important;
   }
 
-  body.team-page .team-consultation-primary {
-    display: grid !important;
-    grid-template-columns: minmax(250px, 0.95fr) minmax(330px, 1.05fr) !important;
-    gap: 34px !important;
-    align-items: start !important;
+  body.team-page .team-consultation-media{
+    width:100%!important;
+    min-height:500px!important;
+    height:500px!important;
+    margin:0!important;
+    overflow:hidden!important;
+    border:0!important;
+    border-radius:0!important;
+    background:#ddd3c7!important;
   }
 
-  body.team-page .team-consultation-heading {
-    min-width: 0 !important;
+  body.team-page .team-consultation-media img{
+    display:block!important;
+    width:100%!important;
+    height:500px!important;
+    min-height:0!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    border-radius:0!important;
   }
 
-  body.team-page .team-consultation-heading .team-label {
-    margin: 0 0 12px !important;
+  body.team-page .team-consultation-copy{
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+    height:500px!important;
+    margin:0!important;
+    padding:46px clamp(46px,4vw,70px)!important;
+    display:grid!important;
+    grid-template-columns:minmax(230px,.92fr) minmax(320px,1.08fr)!important;
+    grid-template-areas:
+      "heading details"
+      "secondary secondary"!important;
+    column-gap:38px!important;
+    row-gap:28px!important;
+    align-content:center!important;
+    overflow:visible!important;
   }
 
-  body.team-page .team-consultation-heading h2 {
-    max-width: 8ch !important;
-    margin: 0 !important;
-    font-size: clamp(2.85rem, 3.45vw, 3.75rem) !important;
-    line-height: 0.98 !important;
+  body.team-page .team-consultation-heading{
+    grid-area:heading!important;
+    min-width:0!important;
+    align-self:start!important;
   }
 
-  body.team-page .team-consultation-details {
-    min-width: 0 !important;
-    padding-top: 6px !important;
+  body.team-page .team-consultation-heading .team-label{
+    margin:0 0 12px!important;
   }
 
-  body.team-page .team-consultation-details > p {
-    max-width: 33rem !important;
-    margin: 0 !important;
-    color: var(--team-muted) !important;
-    font-family: "Inter", sans-serif !important;
-    font-size: 0.98rem !important;
-    line-height: 1.65 !important;
+  body.team-page .team-consultation-heading h2{
+    max-width:8ch!important;
+    margin:0!important;
+    font-size:clamp(2.8rem,3.2vw,3.6rem)!important;
+    line-height:.98!important;
   }
 
-  body.team-page .team-consultation-actions {
-    margin-top: 22px !important;
-    gap: 14px 20px !important;
-    align-items: center !important;
+  body.team-page .team-consultation-details{
+    grid-area:details!important;
+    min-width:0!important;
+    align-self:start!important;
+    padding-top:5px!important;
   }
 
-  body.team-page .team-consultation-secondary {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 0 !important;
-    width: 100% !important;
-    margin-top: 28px !important;
-    padding-top: 22px !important;
-    border-top: 1px solid var(--team-line) !important;
+  body.team-page .team-consultation-details>p{
+    max-width:35rem!important;
+    margin:0!important;
+    color:var(--team-muted)!important;
+    font-family:"Inter",sans-serif!important;
+    font-size:.96rem!important;
+    line-height:1.62!important;
   }
 
-  body.team-page .team-consultation-secondary article {
-    min-width: 0 !important;
-    padding: 0 26px 0 0 !important;
+  body.team-page .team-consultation-actions{
+    display:flex!important;
+    flex-wrap:wrap!important;
+    align-items:center!important;
+    gap:14px 20px!important;
+    margin-top:22px!important;
   }
 
-  body.team-page .team-consultation-secondary article + article {
-    padding: 0 0 0 26px !important;
-    border-top: 0 !important;
-    border-left: 1px solid var(--team-line) !important;
+  body.team-page .team-consultation-secondary{
+    grid-area:secondary!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:0!important;
+    width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:22px 0 0!important;
+    border-top:1px solid var(--team-line)!important;
   }
 
-  body.team-page .team-consultation-secondary .team-label {
-    margin: 0 0 8px !important;
+  body.team-page .team-consultation-secondary article{
+    min-width:0!important;
+    padding:0 30px 0 0!important;
   }
 
-  body.team-page .team-consultation-secondary p {
-    max-width: 24rem !important;
-    margin: 0 !important;
-    color: var(--team-muted) !important;
-    font-family: "Inter", sans-serif !important;
-    font-size: 0.84rem !important;
-    line-height: 1.55 !important;
+  body.team-page .team-consultation-secondary article+article{
+    padding:0 0 0 30px!important;
+    border-top:0!important;
+    border-left:1px solid var(--team-line)!important;
   }
 
-  body.team-page .team-consultation-secondary a {
-    display: inline-block !important;
-    margin-top: 10px !important;
-    color: var(--team-navy-deep) !important;
-    font-family: "Inter", sans-serif !important;
-    font-size: 0.77rem !important;
-    font-weight: 700 !important;
-    text-decoration: none !important;
+  body.team-page .team-consultation-secondary .team-label{
+    margin:0 0 7px!important;
   }
 
-  body.team-page .team-consultation-secondary a:hover {
-    text-decoration: underline !important;
-    text-underline-offset: 3px !important;
+  body.team-page .team-consultation-secondary p{
+    max-width:30rem!important;
+    margin:0!important;
+    color:var(--team-muted)!important;
+    font-family:"Inter",sans-serif!important;
+    font-size:.82rem!important;
+    line-height:1.48!important;
+  }
+
+  body.team-page .team-consultation-secondary a{
+    display:inline-block!important;
+    margin-top:9px!important;
+    color:var(--team-navy-deep)!important;
+    font-family:"Inter",sans-serif!important;
+    font-size:.76rem!important;
+    font-weight:700!important;
+    text-decoration:none!important;
+  }
+
+  body.team-page .team-consultation-secondary a:hover{
+    text-decoration:underline!important;
+    text-underline-offset:3px!important;
   }
 }
 
 @media (max-width: 900px) {
-  body.team-page .team-consultation-primary {
-    display: block !important;
+  body.team-page .team-consultation-inner{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
   }
 
-  body.team-page .team-consultation-details > p {
-    margin: 20px 0 0 !important;
+  body.team-page .team-consultation-media,
+  body.team-page .team-consultation-media img{
+    width:100%!important;
+    height:360px!important;
+    min-height:360px!important;
+    object-fit:cover!important;
   }
 
-  body.team-page .team-consultation-secondary {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-    margin-top: 28px !important;
-    padding-top: 20px !important;
-    border-top: 1px solid var(--team-line) !important;
+  body.team-page .team-consultation-copy{
+    width:min(100% - 48px,760px)!important;
+    max-width:none!important;
+    height:auto!important;
+    margin:0 auto!important;
+    padding:46px 0 50px!important;
+    display:block!important;
   }
 
-  body.team-page .team-consultation-secondary article {
-    padding: 0 !important;
-    border-left: 0 !important;
+  body.team-page .team-consultation-details>p{
+    margin:20px 0 0!important;
   }
 
-  body.team-page .team-consultation-secondary article + article {
-    padding-top: 16px !important;
-    border-top: 1px solid var(--team-line) !important;
+  body.team-page .team-consultation-secondary{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+    margin-top:28px!important;
+    padding-top:20px!important;
+    border-top:1px solid var(--team-line)!important;
+  }
+
+  body.team-page .team-consultation-secondary article{
+    padding:0!important;
+    border-left:0!important;
+  }
+
+  body.team-page .team-consultation-secondary article+article{
+    padding-top:16px!important;
+    border-top:1px solid var(--team-line)!important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.team-page .team-consultation-media,
+  body.team-page .team-consultation-media img{
+    height:300px!important;
+    min-height:300px!important;
+  }
+
+  body.team-page .team-consultation-copy{
+    width:min(100% - 40px,680px)!important;
+    padding:40px 0 44px!important;
   }
 }
 </style>
