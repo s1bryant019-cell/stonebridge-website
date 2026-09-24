@@ -293,7 +293,7 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
 }
 
 
-/* Homepage perspective/founder separation — 2026-09-24 */
+/* Homepage perspective/founder separation - 2026-09-24 */
 .home-perspective{
   padding:76px 0!important;
   background:var(--sb-brand-navy)!important;
@@ -402,7 +402,7 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
 }
 
 
-/* Homepage perspective/founder mobile refinement — 2026-09-24 */
+/* Homepage perspective/founder mobile refinement - 2026-09-24 */
 .home-service-card[href="group-therapy.html"] .home-service-media img{
   object-position:center 46%;
 }

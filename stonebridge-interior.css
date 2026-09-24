@@ -32,7 +32,7 @@ p{margin-top:0}
 .skip-link{position:fixed;left:16px;top:12px;z-index:1000;transform:translateY(-160%);padding:10px 14px;background:#fff;color:var(--navy-deep);border:2px solid var(--navy-deep);border-radius:8px;font-weight:700}
 .skip-link:focus{transform:translateY(0)}
 
-/* Header — intentionally matches the current homepage shell. */
+/* Header - intentionally matches the current homepage shell. */
 .site-header{position:sticky;top:0;z-index:100;background:rgba(247,243,238,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(33,49,66,.10)}
 .site-header .nav{min-height:64px;padding:5px 0 6px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand-link{display:block;min-width:max-content}

@@ -245,7 +245,7 @@ body.home-redesign .home-service-media img{
 }
 
 
-/* Mobile horizontal rhythm normalization — 20px page gutter */
+/* Mobile horizontal rhythm normalization - 20px page gutter */
 @media(max-width:760px){
   .site-header.sb-global-header .nav,
   .container,
