@@ -400,3 +400,98 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
     margin-left:2px!important;
   }
 }
+
+
+/* Homepage perspective/founder mobile refinement — 2026-09-24 */
+.home-service-card[href="group-therapy.html"] .home-service-media img{
+  object-position:center 46%;
+}
+
+@media(max-width:720px){
+  .home-perspective{
+    padding:48px 0 50px!important;
+  }
+  .home-perspective-inner{
+    width:min(100% - 34px,620px)!important;
+    text-align:left!important;
+  }
+  .home-perspective .home-eyebrow{
+    margin-bottom:15px!important;
+  }
+  .home-perspective .home-founder-quote{
+    max-width:15ch!important;
+    margin:0!important;
+    font-size:clamp(2rem,9.2vw,2.65rem)!important;
+    line-height:1.04!important;
+  }
+  .home-perspective-copy{
+    max-width:34rem!important;
+    margin:20px 0 0!important;
+    font-size:.93rem!important;
+    line-height:1.62!important;
+  }
+
+  .home-founder-profile{
+    padding:44px 0 50px!important;
+  }
+  .home-founder-profile .home-founder-grid{
+    width:min(100% - 34px,620px)!important;
+    gap:22px!important;
+  }
+  .home-founder-profile .home-founder-media{
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:4 / 3!important;
+    margin:0!important;
+  }
+  .home-founder-profile .home-founder-media img{
+    object-position:center 34%!important;
+  }
+  .home-founder-photo-caption{
+    margin:9px 0 0!important;
+    font-size:.68rem!important;
+  }
+  .home-founder-profile .home-founder-copy{
+    padding:0!important;
+  }
+  .home-founder-profile .home-founder-copy .home-eyebrow{
+    margin-bottom:11px!important;
+  }
+  .home-founder-heading{
+    font-size:clamp(2.2rem,10vw,2.8rem)!important;
+  }
+  .home-founder-profile .home-founder-role{
+    margin-top:7px!important;
+    font-size:.8rem!important;
+  }
+  .home-founder-summary{
+    margin-top:17px!important;
+    font-size:.93rem!important;
+    line-height:1.62!important;
+  }
+  .home-founder-profile .home-founder-link{
+    margin-top:18px!important;
+  }
+
+  .home-service-card[href="group-therapy.html"] .home-service-media img{
+    object-position:center 42%;
+  }
+}
+
+@media(max-width:480px){
+  .home-perspective{
+    padding:42px 0 44px!important;
+  }
+  .home-perspective .home-founder-quote{
+    max-width:16ch!important;
+    font-size:clamp(1.9rem,9.7vw,2.4rem)!important;
+  }
+  .home-founder-profile{
+    padding:38px 0 44px!important;
+  }
+  .home-founder-profile .home-founder-media{
+    aspect-ratio:1.16 / 1!important;
+  }
+}
