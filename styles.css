@@ -3364,3 +3364,109 @@ html body.paid-search-page main .paid-final-cta-inner{
     padding-bottom:28px!important;
   }
 }
+
+
+/* Sitewide content balance audit - 2026-09-24 */
+/* Reduce accidental dead space created by narrow heading columns and capped companion copy. */
+@media(min-width:901px){
+  html body.services-page .services-primary-intro{
+    grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr)!important;
+    gap:32px!important;
+    align-items:center!important;
+    padding-top:18px!important;
+    padding-bottom:20px!important;
+  }
+  html body.services-page .services-primary-intro h2{
+    max-width:20ch!important;
+  }
+  html body.services-page .services-primary-intro > p{
+    max-width:none!important;
+    font-size:.96rem!important;
+  }
+
+  html body.about-page .about-principles-heading,
+  html body.about-page .about-client-heading{
+    grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr)!important;
+    gap:32px!important;
+    align-items:center!important;
+  }
+  html body.about-page .about-principles-heading h2,
+  html body.about-page .about-client-heading h2{
+    max-width:20ch!important;
+  }
+
+  html body.clinicians-page .clinicians-section-intro{
+    grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr)!important;
+    gap:32px!important;
+    align-items:center!important;
+  }
+  html body.clinicians-page .clinicians-section-intro h2{
+    max-width:19ch!important;
+  }
+  html body.clinicians-page .clinicians-section-intro p{
+    max-width:none!important;
+  }
+
+  html body.group-therapy-page .group-offerings-intro{
+    grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr)!important;
+    gap:32px!important;
+    align-items:center!important;
+    margin-bottom:24px!important;
+    padding-bottom:18px!important;
+  }
+  html body.group-therapy-page .group-offerings-intro h2{
+    max-width:19ch!important;
+  }
+  html body.group-therapy-page .group-offerings-intro > p{
+    max-width:none!important;
+  }
+  html body.group-therapy-page .editorial-grid{
+    grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr)!important;
+    gap:28px!important;
+  }
+  html body.group-therapy-page .editorial-heading h2{
+    max-width:16ch!important;
+  }
+  html body.group-therapy-page .editorial-body > p{
+    max-width:none!important;
+  }
+
+  html body.team-page:not(.careers-page) .team-guides-heading{
+    grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr)!important;
+    gap:32px!important;
+    align-items:center!important;
+    padding-bottom:24px!important;
+  }
+  html body.team-page:not(.careers-page) .team-guides-heading h2{
+    max-width:18ch!important;
+  }
+  html body.team-page:not(.careers-page) .team-guides-heading p{
+    max-width:none!important;
+  }
+
+  html body.couples-page .couples-intro-grid,
+  html body.family-page .family-intro-grid,
+  html body.individual-page .individual-intro-grid,
+  html body.parent-support-page .parent-intro-grid,
+  html body.group-therapy-page .group-intro-grid{
+    grid-template-columns:minmax(340px,.95fr) minmax(0,1.05fr)!important;
+    gap:36px!important;
+    align-items:center!important;
+  }
+
+  html body.couples-page .couples-heading h2,
+  html body.family-page .family-heading h2,
+  html body.individual-page .individual-heading h2,
+  html body.parent-support-page .parent-heading h2,
+  html body.group-therapy-page .group-heading h2{
+    max-width:18ch!important;
+  }
+
+  html body.couples-page .couples-intro-copy p,
+  html body.family-page .family-intro-copy p,
+  html body.individual-page .individual-intro-copy p,
+  html body.parent-support-page .parent-intro-copy p,
+  html body.group-therapy-page .group-intro-copy p{
+    max-width:none!important;
+  }
+}
