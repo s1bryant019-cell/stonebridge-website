@@ -1,5 +1,5 @@
 (function () {
-  var VERSION = '20260924headerfix2';
+  var VERSION = '20260924headerfix3';
 
   function pageName() {
     var path = (window.location.pathname || '').split('/').pop().toLowerCase();
@@ -32,7 +32,7 @@
       '<header class="site-header compact-site-header sb-global-header">',
       '  <div class="container nav">',
       '    <a class="brand-link" href="index.html" aria-label="Stonebridge Psychological Group home">',
-      '      <img class="sb-header-logo" src="stonebridge-header-logo.png?v=' + VERSION + '" alt="Stonebridge Psychological Group" width="640" height="128" fetchpriority="high" decoding="async">',
+      '      <img class="sb-header-logo" src="stonebridge-header-logo.png?v=' + VERSION + '" alt="Stonebridge Psychological Group" width="310" height="62" fetchpriority="high" decoding="async">',
       '    </a>',
       '    <button class="mobile-toggle" type="button" aria-label="Open main menu" aria-expanded="false">Menu</button>',
       '    <div class="menu-wrap">',
