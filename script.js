@@ -437,7 +437,6 @@
       'adolescent-therapy-illinois',
       'trauma-therapy-illinois'
     ];
-
     if (eligible.indexOf(page) === -1) return;
     if (document.querySelector('.sb-mobile-consultation-cta')) return;
 
@@ -477,4 +476,84 @@
   if (document.body) init();
   else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
+})();
+
+(function () {
+  var page = (window.location.pathname || '').split('/').pop().toLowerCase() || 'index.html';
+  if (page !== 'contact.html') return;
+  if (window.__stonebridgeGoogleAdsConsultationTrackingInstalled) return;
+  if (typeof window.fetch !== 'function') return;
+
+  window.__stonebridgeGoogleAdsConsultationTrackingInstalled = true;
+
+  var GOOGLE_ADS_ID = 'AW-18474959338';
+  var GOOGLE_ADS_SEND_TO = 'AW-18474959338/oiH4CNOsuYYdEOqDxulE';
+  var originalFetch = window.fetch;
+
+  function sanitizedMeasurementLocation() {
+    try {
+      var url = new URL(window.location.href);
+      var allowedParams = ['gclid', 'gbraid', 'wbraid'];
+      Array.from(url.searchParams.keys()).forEach(function (key) {
+        if (allowedParams.indexOf(key) === -1) url.searchParams.delete(key);
+      });
+      url.hash = '';
+      return url.toString();
+    } catch (error) {
+      return window.location.origin + window.location.pathname;
+    }
+  }
+
+  function fireSuccessfulConsultationConversion() {
+    if (window.__stonebridgeConsultationConversionSent) return;
+    window.__stonebridgeConsultationConversionSent = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+
+    if (!document.getElementById('stonebridge-google-ads-tag')) {
+      var tag = document.createElement('script');
+      tag.id = 'stonebridge-google-ads-tag';
+      tag.async = true;
+      tag.referrerPolicy = 'no-referrer';
+      tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GOOGLE_ADS_ID);
+      document.head.appendChild(tag);
+    }
+
+    window.gtag('set', 'allow_ad_personalization_signals', false);
+    window.gtag('js', new Date());
+    window.gtag('config', GOOGLE_ADS_ID, {
+      page_location: sanitizedMeasurementLocation(),
+      page_referrer: ''
+    });
+    window.gtag('event', 'conversion', {
+      send_to: GOOGLE_ADS_SEND_TO
+    });
+  }
+
+  window.fetch = function (input, init) {
+    var requestUrl = typeof input === 'string' ? input : input && input.url;
+    var requestMethod = init && init.method
+      ? String(init.method).toUpperCase()
+      : input && input.method
+        ? String(input.method).toUpperCase()
+        : 'GET';
+
+    return originalFetch.apply(this, arguments).then(function (response) {
+      var requestPath = '';
+      try {
+        requestPath = new URL(requestUrl, window.location.href).pathname;
+      } catch (error) {
+        requestPath = '';
+      }
+
+      if (requestMethod === 'POST' && requestPath === '/api/contact' && response && response.ok) {
+        fireSuccessfulConsultationConversion();
+      }
+
+      return response;
+    });
+  };
 })();
