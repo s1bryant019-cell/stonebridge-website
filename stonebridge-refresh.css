@@ -83,3 +83,15 @@ body.sbx-site a:focus-visible,body.sbx-site button:focus-visible,body.sbx-site i
  .sbx-shell,.sbx-hero-inner{width:min(100% - 32px,1120px)}body.sbx-site:not(.sbx-founder-page) h1{font-size:clamp(2.55rem,13vw,3.7rem)}body.sbx-site:not(.sbx-founder-page) h2{font-size:clamp(1.9rem,9vw,2.7rem)}.sbx-section{padding:46px 0}.sbx-hero-copy>p{font-size:.98rem}.sbx-actions .btn{width:100%}.sbx-clinician-card-copy,.sbx-service-pillar,.sbx-path-grid article,.sbx-form{padding:22px}.sbx-footer-grid{grid-template-columns:1fr}.sbx-footer .footer-bottom{flex-direction:column}.sbx-fee-row>div{grid-template-columns:1fr}.sbx-fee-row small{grid-column:1}.sbx-code{margin-bottom:4px}.sbx-writing-mini-head{grid-template-columns:1fr}.sbx-cta-inner{padding:28px 0}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+/* Founder profile: keep the practical rail from crowding medium desktop widths. */
+@media (min-width:1100px) and (max-width:1359px){
+  .sbx-founder-page .founder-sticky-rail-slot{display:none!important}
+  .sbx-founder-page .founder-sticky-region::after{display:none!important}
+  .sbx-founder-page .founder-sticky-region .founder-wide-shell{
+    width:min(1180px,calc(100% - 72px))!important;
+    max-width:none!important;
+    padding-right:0!important;
+  }
+  .sbx-founder-page .founder-availability{display:block!important}
+}
