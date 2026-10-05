@@ -18,6 +18,64 @@
   <link id="stonebridge-brand-sync" rel="stylesheet" href="stonebridge-brand-sync.css?v=20260924headerfix3">
   <link id="stonebridge-hotfix" rel="stylesheet" href="stonebridge-hotfix.css?v=20260924headerfix3">
   <link rel="stylesheet" href="paid-search-landing.css?v=20260923lp2">
+  <style id="stonebridge-bcbs-layout-refine-20261005">
+    @media(min-width:901px){
+      .paid-search-bcbs .paid-hero-copy,
+      .paid-search-bcbs .sb-utility-strip__inner{
+        width:min(1220px,calc(100% - 64px));
+      }
+      .paid-search-bcbs .paid-process,
+      .paid-search-bcbs .paid-faqs{
+        padding-top:36px;
+        padding-bottom:40px;
+      }
+      .paid-search-bcbs .paid-process-head,
+      .paid-search-bcbs .paid-faqs-head{
+        display:block;
+        padding-bottom:16px;
+      }
+      .paid-search-bcbs .paid-faqs-head{
+        margin-bottom:10px;
+      }
+      .paid-search-bcbs .paid-process-head h2,
+      .paid-search-bcbs .paid-faqs-head h2{
+        max-width:none;
+        margin-top:7px;
+        font-size:clamp(2.2rem,2.65vw,2.9rem);
+        line-height:1.02;
+        white-space:nowrap;
+      }
+      .paid-search-bcbs .paid-faqs-head p{
+        max-width:720px;
+        margin:8px 0 0;
+      }
+      .paid-search-bcbs .paid-faq-list summary{
+        min-height:47px;
+      }
+      .paid-search-bcbs .paid-faq-list details p{
+        padding-bottom:14px;
+      }
+    }
+    @media(max-width:900px){
+      .paid-search-bcbs .paid-process-head,
+      .paid-search-bcbs .paid-faqs-head{
+        grid-template-columns:1fr;
+        gap:10px;
+        padding-bottom:18px;
+      }
+    }
+    @media(max-width:760px){
+      .paid-search-bcbs .paid-process,
+      .paid-search-bcbs .paid-faqs{
+        padding-top:34px;
+        padding-bottom:36px;
+      }
+      .paid-search-bcbs .paid-process-head h2,
+      .paid-search-bcbs .paid-faqs-head h2{
+        white-space:normal;
+      }
+    }
+  </style>
 </head>
 <body class="paid-search-page paid-search-bcbs" data-landing-source="BCBS Landing Page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -38,7 +96,6 @@
         <div class="paid-kicker">BCBS Illinois · Online psychotherapy</div>
         <h1 id="paid-title">Online Therapy in Illinois with BCBS Coverage</h1>
         <p>Accepting new clients for online therapy across Illinois. Stonebridge works with adults and adolescents seeking support for anxiety, trauma, stress, relationships, life transitions, and other outpatient concerns. Applicable BCBS Illinois commercial plans are reviewed before treatment begins.</p>
-        <p class="paid-final-meta">Free 10–15 minute consultation · Illinois telehealth · Accepting new clients</p>
         <div class="paid-hero-actions">
           <a class="btn btn-primary" data-consultation-link data-conversion-event="consultation_cta_click" href="contact.html#inquiry-form">Request a Consultation</a>
         </div>
@@ -133,7 +190,6 @@
             <div class="paid-label">How it starts</div>
             <h2 id="process-title">Consultation first. Fit matters.</h2>
           </div>
-          <p></p>
         </div>
         <div class="paid-process-grid">
           <article class="paid-process-step">
