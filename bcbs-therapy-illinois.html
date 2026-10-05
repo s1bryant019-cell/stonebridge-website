@@ -19,23 +19,59 @@
   <link id="stonebridge-hotfix" rel="stylesheet" href="stonebridge-hotfix.css?v=20260924headerfix3">
   <link rel="stylesheet" href="paid-search-landing.css?v=20260923lp2">
   <style id="stonebridge-bcbs-layout-refine-20261005">
+    .paid-search-bcbs .paid-clinicians-head,
+    .paid-search-bcbs .paid-process-head,
+    .paid-search-bcbs .paid-faqs-head{
+      display:block;
+    }
+    .paid-search-bcbs .paid-clinicians-head p,
+    .paid-search-bcbs .paid-faqs-head p{
+      max-width:760px;
+      margin:9px 0 0;
+    }
+    .paid-search-bcbs .paid-final-cta-inner{
+      display:block;
+    }
+    .paid-search-bcbs .paid-final-cta h2{
+      max-width:none;
+    }
+    .paid-search-bcbs .paid-final-cta .btn{
+      margin-top:20px;
+    }
     @media(min-width:901px){
       .paid-search-bcbs .paid-hero-copy,
       .paid-search-bcbs .sb-utility-strip__inner{
         width:min(1220px,calc(100% - 64px));
       }
-      .paid-search-bcbs .paid-process,
+      .paid-search-bcbs .paid-clinicians{
+        padding-top:42px;
+        padding-bottom:44px;
+      }
+      .paid-search-bcbs .paid-clinicians-head{
+        padding-bottom:18px;
+      }
+      .paid-search-bcbs .paid-clinicians-head h2{
+        max-width:none;
+        margin-top:7px;
+        font-size:clamp(2.2rem,2.45vw,2.7rem);
+        line-height:1.02;
+      }
+      .paid-search-bcbs .paid-clinician{
+        padding-top:24px;
+      }
+      .paid-search-bcbs .paid-process{
+        padding-top:34px;
+        padding-bottom:18px;
+      }
       .paid-search-bcbs .paid-faqs{
-        padding-top:36px;
-        padding-bottom:40px;
+        padding-top:18px;
+        padding-bottom:34px;
       }
-      .paid-search-bcbs .paid-process-head,
-      .paid-search-bcbs .paid-faqs-head{
-        display:block;
-        padding-bottom:16px;
+      .paid-search-bcbs .paid-process-head{
+        padding-bottom:14px;
       }
       .paid-search-bcbs .paid-faqs-head{
-        margin-bottom:10px;
+        margin-bottom:8px;
       }
       .paid-search-bcbs .paid-process-head h2,
       .paid-search-bcbs .paid-faqs-head h2{
@@ -45,34 +81,49 @@
         line-height:1.02;
         white-space:nowrap;
       }
-      .paid-search-bcbs .paid-faqs-head p{
-        max-width:720px;
-        margin:8px 0 0;
-      }
       .paid-search-bcbs .paid-faq-list summary{
         min-height:47px;
       }
       .paid-search-bcbs .paid-faq-list details p{
         padding-bottom:14px;
       }
+      .paid-search-bcbs .paid-final-cta-inner{
+        min-height:0;
+        padding:40px 0 42px;
+      }
+      .paid-search-bcbs .paid-final-cta h2{
+        font-size:clamp(2.35rem,2.9vw,3.05rem);
+        line-height:1.02;
+      }
+      .paid-search-bcbs .paid-final-cta p{
+        max-width:780px;
+        margin-top:10px;
+      }
+    }
+    @media(min-width:1180px){
+      .paid-search-bcbs .paid-clinicians-head h2,
+      .paid-search-bcbs .paid-final-cta h2{
+        white-space:nowrap;
+      }
     }
     @media(max-width:900px){
-      .paid-search-bcbs .paid-process-head,
-      .paid-search-bcbs .paid-faqs-head{
-        grid-template-columns:1fr;
-        gap:10px;
+      .paid-search-bcbs .paid-clinicians-head,
+      .paid-search-bcbs .paid-process-head{
         padding-bottom:18px;
+      }
+      .paid-search-bcbs .paid-faqs-head{
+        margin-bottom:12px;
       }
     }
     @media(max-width:760px){
+      .paid-search-bcbs .paid-clinicians,
       .paid-search-bcbs .paid-process,
       .paid-search-bcbs .paid-faqs{
         padding-top:34px;
         padding-bottom:36px;
       }
-      .paid-search-bcbs .paid-process-head h2,
-      .paid-search-bcbs .paid-faqs-head h2{
-        white-space:normal;
+      .paid-search-bcbs .paid-final-cta .btn{
+        margin-top:18px;
       }
     }
   </style>
