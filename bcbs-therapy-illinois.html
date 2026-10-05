@@ -29,6 +29,99 @@
       max-width:760px;
       margin:9px 0 0;
     }
+    .paid-search-bcbs .paid-focus{
+      margin-top:28px;
+      padding-top:26px;
+      border-top:1px solid var(--paid-line);
+    }
+    .paid-search-bcbs .paid-focus h2{
+      margin:7px 0 0;
+      color:var(--paid-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(2.1rem,2.45vw,2.7rem);
+      font-weight:600;
+      line-height:1.02;
+      letter-spacing:-.04em;
+    }
+    .paid-search-bcbs .paid-focus-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      margin-top:20px;
+      border-top:1px solid var(--paid-line);
+    }
+    .paid-search-bcbs .paid-focus-clinician{
+      min-width:0;
+      padding:20px 30px 0 0;
+    }
+    .paid-search-bcbs .paid-focus-clinician + .paid-focus-clinician{
+      padding-left:30px;
+      padding-right:0;
+      border-left:1px solid var(--paid-line);
+    }
+    .paid-search-bcbs .paid-focus-clinician > h3{
+      margin:0 0 8px;
+      color:var(--paid-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.45rem;
+      font-weight:600;
+      line-height:1.08;
+    }
+    .paid-search-bcbs .paid-focus-item{
+      display:grid;
+      grid-template-columns:30px minmax(0,1fr);
+      gap:12px;
+      padding:13px 0 14px;
+      border-bottom:1px solid var(--paid-line);
+    }
+    .paid-search-bcbs .paid-focus-number{
+      padding-top:3px;
+      color:var(--paid-gold);
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.08em;
+    }
+    .paid-search-bcbs .paid-focus-item h4{
+      margin:0;
+      color:var(--paid-navy-deep);
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:1.18rem;
+      font-weight:600;
+      line-height:1.1;
+    }
+    .paid-search-bcbs .paid-focus-item p{
+      margin:5px 0 0;
+      color:var(--paid-muted);
+      font-size:.84rem;
+      line-height:1.56;
+    }
+    .paid-search-bcbs .paid-focus-also{
+      padding-top:14px;
+    }
+    .paid-search-bcbs .paid-focus-also strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--paid-gold);
+      font-size:.64rem;
+      font-weight:800;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+    .paid-search-bcbs .paid-focus-also ul{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:0 22px;
+      margin:0;
+      padding:0;
+      list-style:none;
+      border-top:1px solid var(--paid-line);
+    }
+    .paid-search-bcbs .paid-focus-also li{
+      padding:8px 0;
+      border-bottom:1px solid var(--paid-line);
+      color:var(--paid-muted);
+      font-size:.82rem;
+      line-height:1.42;
+    }
     .paid-search-bcbs .paid-final-cta-inner{
       display:block;
     }
@@ -111,6 +204,18 @@
       .paid-search-bcbs .paid-process-head{
         padding-bottom:18px;
       }
+      .paid-search-bcbs .paid-focus-grid{
+        grid-template-columns:1fr;
+      }
+      .paid-search-bcbs .paid-focus-clinician,
+      .paid-search-bcbs .paid-focus-clinician + .paid-focus-clinician{
+        padding:20px 0 0;
+        border-left:0;
+      }
+      .paid-search-bcbs .paid-focus-clinician + .paid-focus-clinician{
+        margin-top:22px;
+        border-top:1px solid var(--paid-line);
+      }
       .paid-search-bcbs .paid-process{
         padding-bottom:0;
       }
@@ -125,6 +230,13 @@
       .paid-search-bcbs .paid-clinicians{
         padding-top:34px;
         padding-bottom:36px;
+      }
+      .paid-search-bcbs .paid-focus{
+        margin-top:20px;
+        padding-top:22px;
+      }
+      .paid-search-bcbs .paid-focus-also ul{
+        grid-template-columns:1fr;
       }
       .paid-search-bcbs .paid-process{
         padding-top:34px;
@@ -242,6 +354,87 @@
               <a data-preserve-attribution data-conversion-event="clinician_profile_click" href="team-jasmine-wilson.html">Read full profile →</a>
             </div>
           </article>
+        </div>
+
+        <div class="paid-focus" aria-labelledby="focus-title">
+          <div class="paid-label">Clinical focus</div>
+          <h2 id="focus-title">Common areas we work with.</h2>
+          <div class="paid-focus-grid">
+            <section class="paid-focus-clinician" aria-labelledby="bryant-focus-title">
+              <h3 id="bryant-focus-title">Stephen W. Bryant, PsyD, LCPC</h3>
+              <article class="paid-focus-item">
+                <div class="paid-focus-number">01</div>
+                <div>
+                  <h4>Trauma and complex stress</h4>
+                  <p>Trauma-related distress, dissociation, emotional regulation, and protective patterns.</p>
+                </div>
+              </article>
+              <article class="paid-focus-item">
+                <div class="paid-focus-number">02</div>
+                <div>
+                  <h4>Substance use and co-occurring concerns</h4>
+                  <p>Substance use, recovery and relapse patterns, and co-occurring concerns. Abstinence is not required to begin therapy.</p>
+                </div>
+              </article>
+              <article class="paid-focus-item">
+                <div class="paid-focus-number">03</div>
+                <div>
+                  <h4>Complex patterns and treatment histories</h4>
+                  <p>Persistent emotional or relationship patterns, including when prior treatment has not fully resolved what feels stuck.</p>
+                </div>
+              </article>
+              <div class="paid-focus-also">
+                <strong>Also commonly works with</strong>
+                <ul>
+                  <li>Anxiety</li>
+                  <li>Depression</li>
+                  <li>Grief and loss</li>
+                  <li>Identity and self-worth</li>
+                  <li>Relationship concerns</li>
+                  <li>Life transitions</li>
+                  <li>Couples and family concerns</li>
+                  <li>Parent support</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="paid-focus-clinician" aria-labelledby="jasmine-focus-title">
+              <h3 id="jasmine-focus-title">Jasmine Wilson, LPC</h3>
+              <article class="paid-focus-item">
+                <div class="paid-focus-number">01</div>
+                <div>
+                  <h4>Trauma and complex stress</h4>
+                  <p>Trauma-related distress, emotional reactivity, avoidance, shame, and protective patterns.</p>
+                </div>
+              </article>
+              <article class="paid-focus-item">
+                <div class="paid-focus-number">02</div>
+                <div>
+                  <h4>Anxiety, depression, and regulation</h4>
+                  <p>Persistent worry, low mood, irritability, shutdown, overwhelm, and difficulty recovering after stress.</p>
+                </div>
+              </article>
+              <article class="paid-focus-item">
+                <div class="paid-focus-number">03</div>
+                <div>
+                  <h4>Life transitions, identity, and self-worth</h4>
+                  <p>Changes in school, work, relationships, family roles, independence, identity, and direction.</p>
+                </div>
+              </article>
+              <div class="paid-focus-also">
+                <strong>Also commonly works with</strong>
+                <ul>
+                  <li>Grief and loss</li>
+                  <li>ADHD-related concerns</li>
+                  <li>Relationship stress</li>
+                  <li>Family stress</li>
+                  <li>Parenting concerns</li>
+                  <li>Behavioral concerns</li>
+                  <li>Substance-use concerns when harm reduction is clinically appropriate</li>
+                </ul>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </section>
