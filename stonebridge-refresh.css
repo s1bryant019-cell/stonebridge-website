@@ -95,3 +95,17 @@ body.sbx-site a:focus-visible,body.sbx-site button:focus-visible,body.sbx-site i
   }
   .sbx-founder-page .founder-availability{display:block!important}
 }
+
+/* When the founder rail is visible, reserve its lane for the clinical-focus section too. */
+@media (min-width:1360px){
+  .sbx-founder-page .founder-sticky-region > section > .cp-shell{
+    position:relative;
+    z-index:6;
+    width:min(1420px,calc(100% - 56px))!important;
+    max-width:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    box-sizing:border-box;
+    padding-right:348px!important;
+  }
+}
