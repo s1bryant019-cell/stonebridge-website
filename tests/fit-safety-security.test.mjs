@@ -4,23 +4,22 @@ import { readFile } from "node:fs/promises";
 
 const fitHtml = await readFile(new URL("../fit-safety-check.html", import.meta.url), "utf8");
 const fitJs = await readFile(new URL("../fit-safety-check.js", import.meta.url), "utf8");
-const contactApi = await readFile(new URL("../api/contact.js", import.meta.url), "utf8");
-const fitApi = await readFile(new URL("../api/fit-safety-check.js", import.meta.url), "utf8");
-const secureIntake = await readFile(new URL("../api/_secure-intake.js", import.meta.url), "utf8");
+const contactHtml = await readFile(new URL("../contact.html", import.meta.url), "utf8");
+const newClientsHtml = await readFile(new URL("../new-clients.html", import.meta.url), "utf8");
+const vercelJson = JSON.parse(await readFile(new URL("../vercel.json", import.meta.url), "utf8"));
+const packageJson = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
 
-function exportedFunctionSource(name) {
-  const start = secureIntake.indexOf(`export function ${name}`);
-  assert.notEqual(start, -1, `missing exported function: ${name}`);
-  const next = secureIntake.indexOf("\nexport ", start + 1);
-  return secureIntake.slice(start, next === -1 ? secureIntake.length : next);
-}
+test("Fit & Safety Check contains no identity fields", () => {
+  assert.doesNotMatch(fitHtml, /name="(?:fullName|dateOfBirth|email|mobile|phone)"/i);
+  assert.doesNotMatch(fitHtml, /data-screen-step="identity"/i);
+});
 
-function asyncExportedFunctionSource(name) {
-  const start = secureIntake.indexOf(`export async function ${name}`);
-  assert.notEqual(start, -1, `missing exported async function: ${name}`);
-  const next = secureIntake.indexOf("\nexport ", start + 1);
-  return secureIntake.slice(start, next === -1 ? secureIntake.length : next);
-}
+test("Fit & Safety Check runs routing locally in the browser", () => {
+  assert.match(fitJs, /import \{ evaluateRouting \} from "\.\/lib\/fit-safety-routing\.mjs"/);
+  assert.match(fitJs, /evaluateRouting\(routingInput\(\)\)/);
+  assert.doesNotMatch(fitJs, /fetch\s*\(/);
+  assert.doesNotMatch(fitJs, /XMLHttpRequest|sendBeacon|WebSocket/i);
+});
 
 test("Fit & Safety Check does not execute analytics, advertising, or session replay code", () => {
   const source = fitHtml + "\n" + fitJs;
@@ -37,60 +36,38 @@ test("Fit & Safety Check does not propagate marketing query identifiers", () => 
   assert.doesNotMatch(fitJs, /URLSearchParams|location\.search|location\.hash/i);
 });
 
-test("TherapyPortal handoff is a fixed destination rather than a response-derived URL", () => {
+test("TherapyPortal handoff is a fixed destination", () => {
   assert.match(fitJs, /https:\/\/www\.therapyportal\.com\/p\/stonebridge60634\//);
+  assert.match(fitJs, /Fit &amp; Safety Check completed/);
   assert.doesNotMatch(fitJs, /therapyportal[^\n]+(routingState|reasonCodes|email|dateOfBirth|mobile)/i);
 });
 
-test("preview synthetic-identity protection is explicit and production cannot be treated as preview", () => {
-  const fn = exportedFunctionSource("isSyntheticPreviewSubmission");
-  assert.match(fn, /env === "production"\) return false/);
-  assert.match(fn, /\^\(test\|preview\)\\b/i);
-  assert.match(fn, /@example\\\.com\$/i);
+test("administrative and clinical results use phone rather than transmitting answers", () => {
+  assert.match(fitJs, /tel:\+17734171688/);
+  assert.doesNotMatch(fitJs, /\/api\/contact|\/api\/fit-safety-check/);
 });
 
-test("production PHI workflow fails closed until deliberately approved", () => {
-  const fn = exportedFunctionSource("productionPhiGateReady");
-  assert.match(fn, /VERCEL_ENV/);
-  assert.match(fn, /!== "production"\) return true/);
-  assert.match(fn, /PHI_WORKFLOW_APPROVED === "true"/);
+test("consultation page is phone-only and contains no clinical submission form", () => {
+  assert.match(contactHtml, /href="tel:\+17734171688"/);
+  assert.doesNotMatch(contactHtml, /id="consultation-form"|name="reason"|\/api\/contact/i);
 });
 
-test("contact and Fit & Safety APIs both enforce preview and production security gates", () => {
-  for (const source of [contactApi, fitApi]) {
-    assert.match(source, /isSyntheticPreviewSubmission/);
-    assert.match(source, /VERCEL_ENV/);
-    assert.match(source, /productionPhiGateReady\(\)/);
-    assert.match(source, /secureStoreConfigured\(\)/);
-    assert.match(source, /retentionConfigured\(\)/);
-    assert.match(source, /sameOriginRequest\(req\)/);
+test("new-client page offers phone-based voluntary consultation", () => {
+  assert.match(newClientsHtml, /href="tel:\+17734171688"/);
+});
+
+test("sensitive screen retains no-store, no-referrer, and noindex headers", () => {
+  for (const source of ["/fit-safety-check", "/fit-safety-check.html"]) {
+    const rule = vercelJson.headers.find((entry) => entry.source === source);
+    assert.ok(rule, `missing header rule: ${source}`);
+    assert.ok(rule.headers.some((h) => h.key === "Cache-Control" && h.value.includes("no-store")));
+    assert.ok(rule.headers.some((h) => h.key === "Referrer-Policy" && h.value === "no-referrer"));
+    assert.ok(rule.headers.some((h) => h.key === "X-Robots-Tag" && h.value.includes("noindex")));
   }
 });
 
-test("Resend notification template is generic-only and does not interpolate client payload", () => {
-  const fn = asyncExportedFunctionSource("sendGenericSecureQueueNotice");
-  assert.match(fn, /subject: "New secure Stonebridge website item"/);
-  assert.match(fn, /No client information is included in this email/);
-  assert.doesNotMatch(fn, /\$\{[^}]*(fullName|name|dateOfBirth|email|phone|mobile|reason|service|routing)/i);
-});
-
-test("secure intake storage is Vercel-native and contains no Supabase dependency", () => {
-  assert.match(secureIntake, /from "@vercel\/blob"/);
-  assert.match(secureIntake, /access: "private"/);
-  assert.match(secureIntake, /aes-256-gcm/);
-  assert.match(secureIntake, /createHmac\("sha256"/);
-  assert.doesNotMatch(secureIntake, /SUPABASE_|supabase/i);
-});
-
-test("staff review is restricted to protected Stonebridge Vercel hosts", () => {
-  const fn = exportedFunctionSource("staffReviewHostAllowed");
-  assert.match(fn, /stonebridge-website/);
-  assert.match(fn, /vercel\\\.app/);
-});
-
-test("secure storage requires Vercel Blob token and separate encryption/matching keys", () => {
-  const fn = exportedFunctionSource("secureStoreConfigured");
-  assert.match(fn, /BLOB_READ_WRITE_TOKEN/);
-  assert.match(fn, /INTAKE_ENCRYPTION_KEY/);
-  assert.match(fn, /INTAKE_MATCHING_KEY/);
+test("there is no secure intake API, cron, or runtime storage dependency", () => {
+  assert.equal(packageJson.dependencies && Object.keys(packageJson.dependencies).length, 0);
+  assert.ok(!("crons" in vercelJson));
+  assert.ok(!vercelJson.rewrites.some((entry) => /intake-review|api\/fit-safety|api\/contact/.test(entry.source)));
 });
