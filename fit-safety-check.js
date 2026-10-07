@@ -18,6 +18,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
   var result=document.getElementById("screen-result");
   var cssrsFollowups=document.getElementById("cssrs-active-followups");
   var cssrsRecent=document.getElementById("cssrs-recent-behavior");
+  var layout=document.querySelector(".screen-template-layout");
   var currentIndex=0;
   var completed=false;
 
@@ -227,25 +228,28 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
 
   function resultHtml(state){
     if(state==="direct_request_eligible"){
-      return '<h2>You’re ready to request an appointment.</h2>'+
-        '<p>Based on this brief check, you can continue to TherapyPortal and request a first appointment. Your request will remain pending until Stonebridge reviews it.</p>'+
-        '<p>If TherapyPortal offers a message field, enter <strong>Fit &amp; Safety Check completed</strong>.</p>'+
+      return '<div class="screen-result-label">Next step</div>'+
+        '<h2>You can request an appointment.</h2>'+
+        '<p>Continue to TherapyPortal to choose an available intake time. Your request will remain pending until Stonebridge reviews it.</p>'+
+        '<p class="screen-result-note">If TherapyPortal offers a message field, enter <strong>Fit &amp; Safety Check completed</strong>.</p>'+
         '<div class="screen-result-actions"><a class="access-btn" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Request an Appointment</a><a class="access-btn access-btn--secondary" href="contact.html#inquiry-form">Speak With Stonebridge First</a></div>';
     }
 
     if(state==="administrative_resolution_required"){
-      return '<h2>Let’s clarify one detail first.</h2>'+
-        '<p>Based on your answers, Stonebridge would like to clarify one administrative detail before you request an appointment. This does not mean you cannot receive care here.</p>'+
+      return '<div class="screen-result-label">Next step</div>'+
+        '<h2>One quick clarification first.</h2>'+
+        '<p>Stonebridge would like to clarify one administrative detail before you request an appointment. This does not mean you cannot receive care here.</p>'+
         '<div class="screen-result-actions"><a class="access-btn" href="contact.html#inquiry-form">Schedule a Consultation</a><a class="access-btn access-btn--secondary" href="new-clients.html">New Client Options</a></div>';
     }
 
     if(state==="clinical_review_required"){
-      return '<h2>Let’s have a brief conversation first.</h2>'+
-        '<p>Based on your answers, we’d like to speak with you before you request a first appointment. This does not mean Stonebridge cannot provide care; we just want to make sure we understand what you need and the best way to begin.</p>'+
+      return '<div class="screen-result-label">Next step</div>'+
+        '<h2>Let’s talk first.</h2>'+
+        '<p>Based on your answers, we’d like a brief conversation before you request a first appointment. This does not mean Stonebridge cannot provide care.</p>'+
         '<div class="screen-result-actions"><a class="access-btn" href="contact.html#inquiry-form">Schedule a Consultation</a><a class="access-btn access-btn--secondary" href="new-clients.html">New Client Options</a></div>';
     }
 
-    return '<div class="screen-result--urgent"><h2>Please use immediate crisis or emergency support.</h2>'+
+    return '<div class="screen-result--urgent"><div class="screen-result-label">Immediate support</div><h2>Please use immediate crisis or emergency support.</h2>'+
       '<p>Your answers indicate a circumstance in which you should not wait for an ordinary Stonebridge consultation or appointment request. Stonebridge is not an emergency or crisis service and this website is not monitored in real time.</p>'+
       '<p><strong>Call 911 or go to the nearest emergency department for a medical or psychiatric emergency. If you believe you may harm yourself or someone else, or feel unable to remain safe, call 911, go to an emergency department, call or text 988, or use local crisis services.</strong></p>'+
       '<div class="screen-result-actions"><a class="access-btn" href="tel:988">Call 988</a><a class="access-btn access-btn--secondary" href="tel:911">Call 911</a></div></div>';
@@ -257,6 +261,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
     clearErrors();
     var routing=evaluateRouting(routingInput());
     form.hidden=true;
+    if(layout) layout.classList.add("is-complete");
     result.className="screen-result"+(routing.state==="urgent_pathway"?" screen-result--urgent":"");
     result.innerHTML=resultHtml(routing.state);
     result.hidden=false;
