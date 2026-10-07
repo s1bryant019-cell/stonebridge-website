@@ -125,7 +125,7 @@
     }
     return true;
   }
-  function render(){
+  function render(focusHeading){
     syncConditionalFields();
     var visible=visibleSections();
     if(currentIndex>=visible.length) currentIndex=visible.length-1;
@@ -139,7 +139,11 @@
     progressText.textContent="Step "+(currentIndex+1)+" of "+visible.length;
     progressFill.style.width=Math.round(((currentIndex+1)/visible.length)*100)+"%";
     clearErrors();
-    current.querySelector("h2").focus && current.querySelector("h2").setAttribute("tabindex","-1");
+    var heading=current.querySelector("h2");
+    if(heading){
+      heading.setAttribute("tabindex","-1");
+      if(focusHeading) heading.focus({preventScroll:true});
+    }
   }
 
   form.querySelectorAll("[data-exclusive-group]").forEach(function(group){
@@ -163,13 +167,13 @@
     var visible=visibleSections();
     if(!validateSection(visible[currentIndex])) return;
     currentIndex+=1;
-    render();
+    render(true);
     visibleSections()[currentIndex].scrollIntoView({behavior:"auto",block:"start"});
   });
 
   back.addEventListener("click",function(){
     currentIndex=Math.max(0,currentIndex-1);
-    render();
+    render(true);
     visibleSections()[currentIndex].scrollIntoView({behavior:"auto",block:"start"});
   });
 
