@@ -21,7 +21,7 @@ TherapyNotes/TherapyPortal remains the scheduling and clinical system of record.
 
 When the browser displays the direct-request result, the prospective client may continue to TherapyPortal and submit a pending first-appointment request.
 
-The result asks the client to enter **Fit & Safety Check completed** in TherapyPortal's message field when that field is available. This is operational evidence only; it is not cryptographic verification and does not replace Stonebridge's final review.
+The result asks the client to enter **Stonebridge new-client check completed** in TherapyPortal's message field when that field is available. This is operational evidence only; it is not cryptographic verification and does not replace Stonebridge's final review.
 
 Staff should:
 
