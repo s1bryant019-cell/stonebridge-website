@@ -61,6 +61,19 @@ Current intensive behavioral-health treatment; discharge from such treatment wit
 
 Thirty days is a Stonebridge operational routing threshold, not a clinical standard and not a statement that day 31 is inherently different from day 30.
 
+Current acute need for crisis stabilization, detox/withdrawal management, close monitoring, intensive support, or another level of care beyond routine outpatient telehealth requires clinical review or urgent handling as appropriate.
+
+## C-SSRS routing boundary
+
+The website embeds the official C-SSRS core questions from the Self-Report – Recent screener; it does not claim to reproduce the complete published instrument when explanatory/example language is omitted.
+
+- Passive death wish alone has no automatic Stonebridge routing consequence.
+- Active suicidal ideation beyond passive death wish requires clinical review at minimum.
+- Current suicide intent or plan invokes `urgent_pathway`.
+- Suicidal behavior within the prior 3 months invokes `urgent_pathway`.
+
+Stonebridge's routing policy does not convert the website into a comprehensive suicide-risk assessment.
+
 ## Group Therapy / The Lobby
 
 Group Therapy retains its existing cohort-screening and placement workflow. Selecting Group Therapy in the general Fit & Safety Check does not create direct TherapyPortal intake-request eligibility.
@@ -69,7 +82,7 @@ Group Therapy retains its existing cohort-screening and placement workflow. Sele
 
 Stonebridge is not an emergency or crisis service.
 
-When the approved emergency override is met, the website displays the established emergency/crisis instructions immediately and does not instruct the person to wait for a consultation or routine review.
+When the approved emergency override is met, including current suicide intent/plan, recent suicidal behavior within the approved C-SSRS window, immediate inability to remain safe, or approved urgent risk-to-others triggers, the website displays the established emergency/crisis instructions immediately and does not instruct the person to wait for a consultation or routine review.
 
 Website submissions are not monitored in real time.
 
