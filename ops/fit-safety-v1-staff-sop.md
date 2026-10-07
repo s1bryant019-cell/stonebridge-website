@@ -38,7 +38,7 @@ The routine approval step should remain brief and should not become a second int
 
 Consultation remains voluntary and is also used when the browser displays an administrative or clinical-review result.
 
-The consultation page provides a limited non-clinical contact-request form and also offers the practice phone number. The form collects only contact information and preferred callback timing; it does not collect clinical history, diagnosis, screening answers, date of birth, insurance information, or a reason-for-therapy narrative.
+The consultation page provides a limited non-clinical contact-request form and also offers the practice phone number. The form collects only contact information, optional clinician preference, and preferred callback timing; it does not collect clinical history, diagnosis, screening answers, date of birth, insurance information, or a reason-for-therapy narrative.
 
 Submitting the form opens the prospective client's email application with the contact details addressed to Stonebridge. The information is not posted to a Stonebridge/Vercel endpoint. Staff should use the contact information only to arrange the consultation and should move any clinical content discussed afterward into Stonebridge's existing approved clinical/administrative systems.
 
