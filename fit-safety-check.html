@@ -9,8 +9,9 @@
   <meta name="description" content="Stonebridge new-client Fit & Safety Check.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260924rhythm2">
-  <link rel="stylesheet" href="new-client-access.css?v=20261007polish1">
+  <link rel="stylesheet" href="new-client-access.css?v=20261007template1">
   <link id="stonebridge-brand-sync" rel="stylesheet" href="stonebridge-brand-sync.css?v=20260924headerfix3">
+  <link id="stonebridge-hotfix" rel="stylesheet" href="stonebridge-hotfix.css?v=20260924headerfix3">
 </head>
 <body class="fit-safety-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -29,17 +30,18 @@
           <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Portal</a>
         </nav>
-        <div class="header-cta"><a class="btn btn-primary" href="new-clients.html">New Clients</a></div>
+        <div class="header-cta"><a class="btn btn-primary" href="contact.html#inquiry-form">Request a Consultation</a></div>
       </div>
     </div>
   </header>
 
   <main id="main-content">
     <section class="access-hero sb-standard-hero">
-      <div class="access-shell">
-        <p class="access-kicker">New-client screening</p>
+      <div class="access-hero-copy sb-standard-hero-copy">
+        <div class="access-hero-rule"></div>
+        <div class="access-kicker">New-client screening</div>
         <h1>Fit &amp; Safety Check</h1>
-        <p>A brief check to determine whether you can request an appointment now or whether Stonebridge should speak with you first.</p>
+        <p>A brief screening step before an ordinary first-appointment request.</p>
       </div>
       <figure class="access-hero-media sb-standard-hero-media">
         <picture>
@@ -49,16 +51,32 @@
       </figure>
     </section>
 
-    <section class="access-main">
-      <div class="access-shell screen-shell">
-        <div class="screen-emergency" role="note">
-          <strong>Do not use this form for an emergency.</strong>
-          <p>If you are experiencing a medical or psychiatric emergency, believe you may harm yourself or someone else, or feel unable to remain safe, call <a href="tel:911">911</a>, go to the nearest emergency department, call or text <a href="tel:988">988</a>, or use local crisis services.</p>
-        </div>
+    <section class="sb-utility-strip sb-utility-strip--beige" aria-label="Page information">
+      <div class="sb-utility-strip__inner">
+        <span class="sb-utility-strip__item">Brief screening</span>
+        <span class="sb-utility-strip__item">Browser-only responses</span>
+        <span class="sb-utility-strip__item">Illinois telehealth</span>
+      </div>
+    </section>
 
-        <p class="screen-intro">Answer only what is asked here. Your answers stay in this browser and are not sent to Stonebridge or stored by this website.</p>
+    <section class="access-template-section fit-template-section">
+      <div class="access-template-shell">
+        <div class="screen-template-layout">
+          <aside class="screen-template-context" aria-label="Screening information">
+            <div class="access-template-label">Before you begin</div>
+            <h2>A brief check, not an intake.</h2>
+            <p>Answer only what is asked here. Your responses stay in this browser and are not sent to Stonebridge or stored by this website.</p>
 
-        <form id="fit-safety-form" class="screen-card" novalidate>
+            <div class="screen-emergency" role="note">
+              <strong>Do not use this form for an emergency.</strong>
+              <p>If you are experiencing a medical or psychiatric emergency, believe you may harm yourself or someone else, or feel unable to remain safe, call <a href="tel:911">911</a>, go to the nearest emergency department, call or text <a href="tel:988">988</a>, or use local crisis services.</p>
+            </div>
+
+            <p class="screen-template-privacy"><a href="privacy-information.html">Privacy &amp; Information Use</a></p>
+          </aside>
+
+          <div class="screen-template-form">
+            <form id="fit-safety-form" class="screen-card" novalidate>
           <div id="screen-error-summary" class="screen-error-summary" role="alert" tabindex="-1" hidden>
             <h3>Review the highlighted items.</h3>
             <ul id="screen-error-list"></ul>
@@ -264,16 +282,61 @@
         </form>
 
         <section id="screen-result" class="screen-result" tabindex="-1" hidden aria-live="polite"></section>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="access-footer">
-    <div class="access-shell access-footer-inner">
-      <span>© 2026 Stonebridge Psychological Group.</span>
-      <span>This screening page is not monitored in real time and does not send your answers to Stonebridge. <a href="privacy-information.html">Privacy &amp; Information Use</a></span>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">STONEBRIDGE</div>
+        <div class="footer-sub">Psychological Group</div>
+        <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
+      </div>
+
+      <div>
+        <div class="footer-title">Care</div>
+        <div class="footer-links">
+          <a href="services.html">Services</a>
+          <a href="fees-insurance.html">Fees &amp; Insurance</a>
+          <a href="new-clients.html">New Clients</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Practice</div>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+            <a href="team-founder.html">Founder</a>
+          <a href="for-clinicians.html">Professionals</a>
+          <a href="portal.html">Client Portal</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <span>Serving Illinois via telehealth</span>
+          <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>
+          <a href="tel:+17734171688">(773) 417-1688</a>
+          <a href="https://www.linkedin.com/company/stonebridge-psychological-group/" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on LinkedIn">LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-logo-right">
+        <picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-small">© 2026 Stonebridge Psychological Group. All rights reserved.</div>
+      <div class="footer-small"><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
     </div>
   </footer>
-  <script type="module" src="fit-safety-check.js?v=20261007polish1"></script>
+  <script src="script-core.js?v=20260924headerfix3"></script>
+  <script type="module" src="fit-safety-check.js?v=20261007template1"></script>
 </body>
 </html>
