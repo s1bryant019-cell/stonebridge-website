@@ -4,6 +4,8 @@
 
 This SOP supports the Stonebridge new-client screening workflow. It does not replace clinical judgment, emergency procedures, informed consent, or TherapyNotes documentation standards.
 
+Stonebridge does not use open booking for a first therapy appointment. Every new client must be screened before a first-appointment request is approved. A prospective client may begin with the Fit & Safety Check or with a voluntary consultation. When routing or consultation identifies an administrative, clinical, or urgent issue, that issue is resolved through the appropriate pathway before ordinary approval.
+
 ## Routing states
 
 - `direct_request_eligible`: the person may submit a pending first-appointment request in TherapyPortal.
@@ -17,28 +19,35 @@ Direct-request eligibility expires 14 calendar days after submission.
 
 The 14-day interval is an operational verification rule, not a clinical standard.
 
+## Consultation standard
+
+Consultation is available by preference and when administrative or clinical clarification is needed; it is not a universal prerequisite for every new client. A consultation is not psychotherapy, diagnosis, formal evaluation, or crisis care.
+
+When a voluntary consultation is used as the screening pathway, staff must document the screened disposition in the approved workflow before a first-appointment request is approved. If the consultation reveals an administrative, clinical, or urgent issue, use the corresponding routing pathway rather than treating the consultation itself as automatic clearance.
+
 ## TherapyPortal verification workflow
 
 For every prospective new-client TherapyPortal appointment request:
 
 1. Leave the request pending while verification occurs.
-2. Search the approved secure intake system for a non-expired `direct_request_eligible` record.
+2. Verify current screening evidence in the approved workflow. For a Fit & Safety Check, this is a non-expired `direct_request_eligible` record. For a voluntary consultation, this is a documented screened-eligible disposition entered by authorized staff after the consultation.
 3. Use email address + date of birth as the primary matching pair.
 4. Use name and mobile number as corroborating information when needed.
 5. Confirm that the requested appointment is an appropriate new-client intake request and that the requested clinician/service is available for that type of new client.
-6. Approve the pending TherapyPortal request when verification is established.
+6. Approve the pending TherapyPortal request only after verification is established.
 7. TherapyNotes/TherapyPortal remains the scheduling system of record and controls final appointment confirmation.
 
 The routine verification step should remain brief. It should not ordinarily become a second phone screen, detailed clinical interview, insurance investigation, or case staffing.
 
 ## Unmatched TherapyPortal request
 
-If there is no current matching direct-request eligibility record:
+If there is no current matching screening-verification record:
 
 1. Keep the TherapyPortal request pending.
-2. Direct the prospective client to the Stonebridge new-client pathway and Fit & Safety Check.
-3. Match the completed screening afterward.
-4. Proceed according to its routing result.
+2. Direct the prospective client to the Stonebridge new-client pathway.
+3. The client may complete the Fit & Safety Check or choose a voluntary consultation.
+4. Document or match the completed screening afterward.
+5. Proceed according to its routing result or documented consultation disposition.
 
 A mismatch means verification has not been established. It does not automatically mean the person is rejected or inappropriate for care.
 
