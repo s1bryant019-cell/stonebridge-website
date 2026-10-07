@@ -100,7 +100,7 @@ The v1 website does not persist urgent-pathway submissions until Stonebridge fin
 ## Privacy and system boundaries
 
 - TherapyNotes/TherapyPortal remains the clinical and scheduling system of record.
-- The website screening datastore exists only for limited routing, matching, and review operations.
+- The website uses a private Vercel Blob store only for limited routing, matching, and review operations. Records are encrypted by the application before storage and are not the clinical system of record.
 - Do not copy screening information into ordinary email, spreadsheets, personal notes, or unapproved systems.
 - Generic email notifications may state only that a secure item is waiting for authorized review; they must not contain identifying or clinical information.
 - Do not place PHI, screening answers, or routing states in URLs.
@@ -111,10 +111,10 @@ The v1 website does not persist urgent-pathway submissions until Stonebridge fin
 Do not set `PHI_WORKFLOW_APPROVED=true` in production until Stonebridge has documented all of the following:
 
 - the production Vercel account/project is covered by the required agreement(s) and configured for the intended PHI workflow;
-- the production datastore is an approved HIPAA-configured project with the required agreement(s);
-- staff access is restricted to authorized users with appropriate MFA/access controls;
+- the private Vercel Blob store is connected to the production project under the same approved Vercel HIPAA/BAA account scope;
+- staff review is performed only through the protected Stonebridge Vercel project domain and is restricted to authorized Vercel team users with appropriate MFA/access controls;
 - retention/deletion settings are approved and `INTAKE_RECORD_RETENTION_DAYS` is configured;
-- application, platform, database, and error logs have been reviewed for minimum-necessary handling and do not record submitted clinical payloads;
+- application, platform, Blob storage, and error logs have been reviewed for minimum-necessary handling and do not record submitted clinical payloads;
 - backup, audit, incident-response, and access-revocation expectations are documented;
 - preview/test environments use synthetic data only;
 - the current Fit & Safety routing rules and emergency override have been clinically approved.
