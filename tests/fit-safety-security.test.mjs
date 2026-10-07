@@ -73,3 +73,24 @@ test("Resend notification template is generic-only and does not interpolate clie
   assert.match(fn, /No client information is included in this email/);
   assert.doesNotMatch(fn, /\$\{[^}]*(fullName|name|dateOfBirth|email|phone|mobile|reason|service|routing)/i);
 });
+
+test("secure intake storage is Vercel-native and contains no Supabase dependency", () => {
+  assert.match(secureIntake, /from "@vercel\/blob"/);
+  assert.match(secureIntake, /access: "private"/);
+  assert.match(secureIntake, /aes-256-gcm/);
+  assert.match(secureIntake, /createHmac\("sha256"/);
+  assert.doesNotMatch(secureIntake, /SUPABASE_|supabase/i);
+});
+
+test("staff review is restricted to protected Stonebridge Vercel hosts", () => {
+  const fn = exportedFunctionSource("staffReviewHostAllowed");
+  assert.match(fn, /stonebridge-website/);
+  assert.match(fn, /vercel\\\.app/);
+});
+
+test("secure storage requires Vercel Blob token and separate encryption/matching keys", () => {
+  const fn = exportedFunctionSource("secureStoreConfigured");
+  assert.match(fn, /BLOB_READ_WRITE_TOKEN/);
+  assert.match(fn, /INTAKE_ENCRYPTION_KEY/);
+  assert.match(fn, /INTAKE_MATCHING_KEY/);
+});
