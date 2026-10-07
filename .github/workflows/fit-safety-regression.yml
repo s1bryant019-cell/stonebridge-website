@@ -10,8 +10,9 @@ on:
     paths:
       - "fit-safety-check.html"
       - "fit-safety-check.js"
-      - "api/fit-safety-check.js"
-      - "api/contact.js"
+      - "contact.html"
+      - "new-clients.html"
+      - "privacy-information.html"
       - "vercel.json"
       - "lib/fit-safety-routing.mjs"
       - "tests/**"
