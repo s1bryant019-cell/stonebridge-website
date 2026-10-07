@@ -25,8 +25,11 @@
     }
   }
 
-  function fireGoogleAdsConsultationConversion(){
-    if(window.__stonebridgeConsultationConversionSent) return;
+  function fireGoogleAdsConsultationConversion(callback){
+    if(window.__stonebridgeConsultationConversionSent){
+      if(typeof callback==="function") callback();
+      return;
+    }
     window.__stonebridgeConsultationConversionSent=true;
 
     window.dataLayer=window.dataLayer||[];
@@ -47,7 +50,11 @@
       page_location:sanitizedMeasurementLocation(),
       page_referrer:""
     });
-    window.gtag("event","conversion",{send_to:GOOGLE_ADS_SEND_TO});
+    window.gtag("event","conversion",{
+      send_to:GOOGLE_ADS_SEND_TO,
+      event_callback:callback,
+      event_timeout:800
+    });
   }
 
   function clearErrors(){
@@ -124,10 +131,14 @@
       "&body="+encodeURIComponent(body);
 
     submit.disabled=true;
-    fireGoogleAdsConsultationConversion();
-    window.setTimeout(function(){
+    var launched=false;
+    function launchEmail(){
+      if(launched) return;
+      launched=true;
       window.location.href=href;
       submit.disabled=false;
-    },120);
+    }
+    fireGoogleAdsConsultationConversion(launchEmail);
+    window.setTimeout(launchEmail,900);
   });
 })();
