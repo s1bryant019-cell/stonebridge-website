@@ -800,3 +800,64 @@ body.fit-safety-page{
   grid-column:2;
   min-width:0;
 }
+
+
+/* Fit & Safety completion state — 2026-10-07 */
+.fit-safety-page .screen-template-layout.is-complete{
+  display:block;
+}
+.fit-safety-page .screen-template-layout.is-complete .screen-template-context{
+  display:none;
+}
+.fit-safety-page .screen-template-layout.is-complete .screen-template-form{
+  width:min(760px,100%);
+  margin:0 auto;
+}
+.fit-safety-page .screen-template-layout.is-complete .screen-result{
+  padding:30px 32px 32px;
+  border:1px solid rgba(33,49,66,.14);
+  border-radius:10px;
+  background:#fffdf9;
+  box-shadow:0 8px 24px rgba(16,47,77,.045);
+}
+.fit-safety-page .screen-result-label{
+  margin-bottom:9px;
+  color:#78613f;
+  font-family:"Inter",sans-serif;
+  font-size:.67rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  line-height:1.35;
+  text-transform:uppercase;
+}
+.fit-safety-page .screen-template-layout.is-complete .screen-result h2{
+  max-width:22ch;
+  margin:0;
+  font-size:clamp(2rem,2.8vw,2.55rem);
+  line-height:1.04;
+}
+.fit-safety-page .screen-template-layout.is-complete .screen-result p{
+  max-width:38rem;
+  margin:12px 0 0;
+  font-size:.92rem;
+  line-height:1.58;
+}
+.fit-safety-page .screen-result-note{
+  color:#6b645c;
+  font-size:.82rem!important;
+}
+.fit-safety-page .screen-template-layout.is-complete .screen-result-actions{
+  margin-top:20px;
+}
+.fit-safety-page .screen-template-layout.is-complete .screen-result--urgent{
+  padding:26px 28px;
+  border:1px solid rgba(129,72,63,.34);
+  border-left:3px solid #81483f;
+  background:#f8efec;
+}
+
+@media(max-width:720px){
+  .fit-safety-page .screen-template-layout.is-complete .screen-result{
+    padding:24px 20px 26px;
+  }
+}
