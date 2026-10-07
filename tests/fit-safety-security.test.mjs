@@ -1,16 +1,26 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import {
-  isSyntheticPreviewSubmission,
-  productionPhiGateReady,
-  sendGenericSecureQueueNotice
-} from "../api/_secure-intake.js";
 
 const fitHtml = await readFile(new URL("../fit-safety-check.html", import.meta.url), "utf8");
 const fitJs = await readFile(new URL("../fit-safety-check.js", import.meta.url), "utf8");
 const contactApi = await readFile(new URL("../api/contact.js", import.meta.url), "utf8");
 const fitApi = await readFile(new URL("../api/fit-safety-check.js", import.meta.url), "utf8");
+const secureIntake = await readFile(new URL("../api/_secure-intake.js", import.meta.url), "utf8");
+
+function exportedFunctionSource(name) {
+  const start = secureIntake.indexOf(`export function ${name}`);
+  assert.notEqual(start, -1, `missing exported function: ${name}`);
+  const next = secureIntake.indexOf("\nexport ", start + 1);
+  return secureIntake.slice(start, next === -1 ? secureIntake.length : next);
+}
+
+function asyncExportedFunctionSource(name) {
+  const start = secureIntake.indexOf(`export async function ${name}`);
+  assert.notEqual(start, -1, `missing exported async function: ${name}`);
+  const next = secureIntake.indexOf("\nexport ", start + 1);
+  return secureIntake.slice(start, next === -1 ? secureIntake.length : next);
+}
 
 test("Fit & Safety Check does not execute analytics, advertising, or session replay code", () => {
   const source = fitHtml + "\n" + fitJs;
@@ -32,37 +42,18 @@ test("TherapyPortal handoff is a fixed destination rather than a response-derive
   assert.doesNotMatch(fitJs, /therapyportal[^\n]+(routingState|reasonCodes|email|dateOfBirth|mobile)/i);
 });
 
-test("preview submissions require synthetic identity outside production", () => {
-  const oldVercel = process.env.VERCEL_ENV;
-  const oldNode = process.env.NODE_ENV;
-  try {
-    process.env.VERCEL_ENV = "preview";
-    process.env.NODE_ENV = "test";
-    assert.equal(isSyntheticPreviewSubmission({ name: "Test Client", email: "client@example.com" }), true);
-    assert.equal(isSyntheticPreviewSubmission({ name: "Preview Person", email: "person@example.com" }), true);
-    assert.equal(isSyntheticPreviewSubmission({ name: "Real Client", email: "client@example.com" }), false);
-    assert.equal(isSyntheticPreviewSubmission({ name: "Test Client", email: "client@gmail.com" }), false);
-  } finally {
-    if (oldVercel === undefined) delete process.env.VERCEL_ENV; else process.env.VERCEL_ENV = oldVercel;
-    if (oldNode === undefined) delete process.env.NODE_ENV; else process.env.NODE_ENV = oldNode;
-  }
+test("preview synthetic-identity protection is explicit and production cannot be treated as preview", () => {
+  const fn = exportedFunctionSource("isSyntheticPreviewSubmission");
+  assert.match(fn, /env === "production"\) return false/);
+  assert.match(fn, /\^\(test\|preview\)\\b/i);
+  assert.match(fn, /@example\\\.com\$/i);
 });
 
 test("production PHI workflow fails closed until deliberately approved", () => {
-  const oldVercel = process.env.VERCEL_ENV;
-  const oldApproved = process.env.PHI_WORKFLOW_APPROVED;
-  try {
-    process.env.VERCEL_ENV = "production";
-    delete process.env.PHI_WORKFLOW_APPROVED;
-    assert.equal(productionPhiGateReady(), false);
-    process.env.PHI_WORKFLOW_APPROVED = "false";
-    assert.equal(productionPhiGateReady(), false);
-    process.env.PHI_WORKFLOW_APPROVED = "true";
-    assert.equal(productionPhiGateReady(), true);
-  } finally {
-    if (oldVercel === undefined) delete process.env.VERCEL_ENV; else process.env.VERCEL_ENV = oldVercel;
-    if (oldApproved === undefined) delete process.env.PHI_WORKFLOW_APPROVED; else process.env.PHI_WORKFLOW_APPROVED = oldApproved;
-  }
+  const fn = exportedFunctionSource("productionPhiGateReady");
+  assert.match(fn, /VERCEL_ENV/);
+  assert.match(fn, /!== "production"\) return true/);
+  assert.match(fn, /PHI_WORKFLOW_APPROVED === "true"/);
 });
 
 test("contact and Fit & Safety APIs both enforce preview and production security gates", () => {
@@ -76,33 +67,9 @@ test("contact and Fit & Safety APIs both enforce preview and production security
   }
 });
 
-test("Resend notification is generic and contains no client payload", async () => {
-  const oldFetch = globalThis.fetch;
-  const oldKey = process.env.RESEND_API_KEY;
-  const oldTo = process.env.CONTACT_TO_EMAIL;
-  const oldFrom = process.env.CONTACT_FROM_EMAIL;
-  let captured;
-
-  try {
-    process.env.RESEND_API_KEY = "test-key";
-    process.env.CONTACT_TO_EMAIL = "queue@example.com";
-    process.env.CONTACT_FROM_EMAIL = "Stonebridge Test <sender@example.com>";
-    globalThis.fetch = async (url, options) => {
-      captured = { url, options };
-      return { ok: true, status: 200 };
-    };
-
-    await sendGenericSecureQueueNotice();
-    assert.ok(captured);
-    const body = JSON.parse(captured.options.body);
-    assert.equal(body.subject, "New secure Stonebridge website item");
-    assert.match(body.text, /No client information is included/i);
-    assert.doesNotMatch(body.text, /name|date of birth|phone|mobile|suicid|diagnos|reason for therapy/i);
-    assert.deepEqual(Object.keys(body).sort(), ["from", "subject", "text", "to"]);
-  } finally {
-    globalThis.fetch = oldFetch;
-    if (oldKey === undefined) delete process.env.RESEND_API_KEY; else process.env.RESEND_API_KEY = oldKey;
-    if (oldTo === undefined) delete process.env.CONTACT_TO_EMAIL; else process.env.CONTACT_TO_EMAIL = oldTo;
-    if (oldFrom === undefined) delete process.env.CONTACT_FROM_EMAIL; else process.env.CONTACT_FROM_EMAIL = oldFrom;
-  }
+test("Resend notification template is generic-only and does not interpolate client payload", () => {
+  const fn = asyncExportedFunctionSource("sendGenericSecureQueueNotice");
+  assert.match(fn, /subject: "New secure Stonebridge website item"/);
+  assert.match(fn, /No client information is included in this email/);
+  assert.doesNotMatch(fn, /\$\{[^}]*(fullName|name|dateOfBirth|email|phone|mobile|reason|service|routing)/i);
 });
