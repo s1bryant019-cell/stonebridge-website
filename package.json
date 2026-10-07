@@ -1,6 +1,4 @@
 {
   "private": true,
-  "dependencies": {
-    "resend": "latest"
-  }
+  "dependencies": {}
 }
