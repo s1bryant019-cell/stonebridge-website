@@ -194,6 +194,13 @@ export default async function handler(req, res) {
     const routing = evaluateRouting(body);
     const preview = isSyntheticPreviewSubmission({ name, email });
 
+    if ((process.env.VERCEL_ENV || "") !== "production" && !preview) {
+      return res.status(400).json({
+        error:
+          "Preview accepts synthetic test identities only. Use a name beginning with Test or Preview and an @example.com email address."
+      });
+    }
+
     if (!preview) {
       if (!productionPhiGateReady()) {
         return res.status(503).json({
