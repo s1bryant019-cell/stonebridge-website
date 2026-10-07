@@ -1,6 +1,8 @@
 {
   "private": true,
-  "dependencies": {
-    "resend": "latest"
-  }
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:routing": "node --test tests/fit-safety-routing.test.mjs"
+  },
+  "dependencies": {}
 }
