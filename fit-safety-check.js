@@ -36,7 +36,6 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
   var sections=Array.prototype.slice.call(form.querySelectorAll("[data-screen-step]"));
   var back=document.getElementById("screen-back");
   var next=document.getElementById("screen-next");
-  var submit=document.getElementById("screen-submit");
   var progressText=document.getElementById("screen-progress-text");
   var progressFill=document.getElementById("screen-progress-fill");
   var errorSummary=document.getElementById("screen-error-summary");
@@ -45,6 +44,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
   var cssrsFollowups=document.getElementById("cssrs-active-followups");
   var cssrsRecent=document.getElementById("cssrs-recent-behavior");
   var currentIndex=0;
+  var completed=false;
 
   function selected(name){
     var el=form.querySelector('[name="'+name+'"]:checked');
@@ -132,6 +132,8 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
       requireRadio(errors,"currentAcuity","Choose an answer.");
     }else if(key==="administrative"){
       requireCheckbox(errors,"adminIssues","Choose at least one answer.");
+    }else if(key==="risk-others"){
+      requireCheckbox(errors,"riskOthers","Choose at least one answer.");
     }else if(key==="cssrs"){
       requireRadio(errors,"cssrsQ1","Choose an answer.");
       requireRadio(errors,"cssrsQ2","Choose an answer.");
@@ -142,8 +144,6 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
       }
       requireRadio(errors,"cssrsQ6","Choose an answer.");
       if(selected("cssrsQ6")==="yes") requireRadio(errors,"cssrsQ6Recent","Choose an answer.");
-    }else if(key==="risk-others"){
-      requireCheckbox(errors,"riskOthers","Choose at least one answer.");
     }else if(key==="conjoint"){
       requireRadio(errors,"conjointSafety","Choose an answer.");
     }
@@ -163,6 +163,24 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
     return true;
   }
 
+  function sectionComplete(section){
+    syncConditionalFields();
+    var key=section.getAttribute("data-screen-step");
+    if(key==="service") return Boolean(service());
+    if(key==="jurisdiction") return Boolean(selected("illinoisTelehealth"));
+    if(key==="acuity") return checkedValues("recentCare").length>0 && Boolean(selected("immediateEmergency")) && Boolean(selected("currentAcuity"));
+    if(key==="administrative") return checkedValues("adminIssues").length>0;
+    if(key==="risk-others") return checkedValues("riskOthers").length>0;
+    if(key==="conjoint") return Boolean(selected("conjointSafety"));
+    if(key==="cssrs"){
+      if(!selected("cssrsQ1") || !selected("cssrsQ2") || !selected("cssrsQ6")) return false;
+      if(selected("cssrsQ2")==="yes" && (!selected("cssrsQ3") || !selected("cssrsQ4") || !selected("cssrsQ5"))) return false;
+      if(selected("cssrsQ6")==="yes" && !selected("cssrsQ6Recent")) return false;
+      return true;
+    }
+    return false;
+  }
+
   function render(focusHeading){
     syncConditionalFields();
     var visible=visibleSections();
@@ -171,9 +189,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
     var current=visible[currentIndex];
     current.hidden=false;
     back.hidden=currentIndex===0;
-    var final=currentIndex===visible.length-1;
-    next.hidden=final;
-    submit.hidden=!final;
+    next.hidden=currentIndex===visible.length-1;
     progressText.textContent="Step "+(currentIndex+1)+" of "+visible.length;
     progressFill.style.width=Math.round(((currentIndex+1)/visible.length)*100)+"%";
     clearErrors();
@@ -196,10 +212,6 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
         none.checked=false;
       }
     });
-  });
-
-  form.addEventListener("change",function(event){
-    if(event.target.name==="cssrsQ2" || event.target.name==="cssrsQ6") syncConditionalFields();
   });
 
   next.addEventListener("click",function(){
@@ -240,24 +252,22 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
 
   function resultHtml(state){
     if(state==="direct_request_eligible"){
-      return '<h2>You may request a first appointment.</h2>'+
-        '<p>Nothing in this brief check indicates that Stonebridge needs to speak with you before you request an initial appointment. This is not a clinical clearance, acceptance for treatment, or confirmed appointment.</p>'+
-        '<p>Continue to TherapyPortal to submit a pending first-appointment request. If TherapyPortal offers a message field, please enter <strong>Fit &amp; Safety Check completed</strong>. Stonebridge reviews pending requests before confirmation.</p>'+
-        '<div class="screen-result-actions"><a class="access-btn" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Request an Appointment in TherapyPortal</a><a class="access-btn access-btn--secondary" href="tel:+17734171688">Call Stonebridge First</a></div>';
+      return '<h2>You’re ready to request an appointment.</h2>'+
+        '<p>Based on this brief check, you can continue to TherapyPortal and request a first appointment. Your request will remain pending until Stonebridge reviews it.</p>'+
+        '<p>If TherapyPortal offers a message field, enter <strong>Fit &amp; Safety Check completed</strong>.</p>'+
+        '<div class="screen-result-actions"><a class="access-btn" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Request an Appointment</a><a class="access-btn access-btn--secondary" href="contact.html#inquiry-form">Speak With Stonebridge First</a></div>';
     }
 
     if(state==="administrative_resolution_required"){
-      return '<h2>We need to clarify an administrative detail first.</h2>'+
-        '<p>Your answers indicate that Stonebridge should clarify a service, jurisdiction, legal/forensic, consent, or similar administrative issue before an ordinary appointment request.</p>'+
-        '<p>No screening answers have been sent to Stonebridge. Please call <a href="tel:+17734171688">(773) 417-1688</a> to discuss the next step.</p>'+
-        '<div class="screen-result-actions"><a class="access-btn" href="tel:+17734171688">Call Stonebridge</a><a class="access-btn access-btn--secondary" href="new-clients.html">New Client Options</a></div>';
+      return '<h2>Let’s clarify one detail first.</h2>'+
+        '<p>Based on your answers, Stonebridge would like to clarify one administrative detail before you request an appointment. This does not mean you cannot receive care here.</p>'+
+        '<div class="screen-result-actions"><a class="access-btn" href="contact.html#inquiry-form">Schedule a Consultation</a><a class="access-btn access-btn--secondary" href="new-clients.html">New Client Options</a></div>';
     }
 
     if(state==="clinical_review_required"){
-      return '<h2>We would like to speak with you first.</h2>'+
-        '<p>Your answers indicate that Stonebridge should use clinical judgment before an ordinary first-appointment request. This is not a diagnosis or rejection.</p>'+
-        '<p>No screening answers have been sent to Stonebridge. Please call <a href="tel:+17734171688">(773) 417-1688</a> to discuss the next step.</p>'+
-        '<div class="screen-result-actions"><a class="access-btn" href="tel:+17734171688">Call Stonebridge</a><a class="access-btn access-btn--secondary" href="new-clients.html">New Client Options</a></div>';
+      return '<h2>Let’s have a brief conversation first.</h2>'+
+        '<p>Based on your answers, we’d like to speak with you before you request a first appointment. This does not mean Stonebridge cannot provide care; we just want to make sure we understand what you need and the best way to begin.</p>'+
+        '<div class="screen-result-actions"><a class="access-btn" href="contact.html#inquiry-form">Schedule a Consultation</a><a class="access-btn access-btn--secondary" href="new-clients.html">New Client Options</a></div>';
     }
 
     return '<div class="screen-result--urgent"><h2>Please use immediate crisis or emergency support.</h2>'+
@@ -266,19 +276,36 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
       '<div class="screen-result-actions"><a class="access-btn" href="tel:988">Call 988</a><a class="access-btn access-btn--secondary" href="tel:911">Call 911</a></div></div>';
   }
 
-  form.addEventListener("submit",function(event){
-    event.preventDefault();
-    var visible=visibleSections();
-    if(!validateSection(visible[currentIndex])) return;
-
+  function completeCheck(){
+    if(completed) return;
+    completed=true;
     clearErrors();
-
     var routing=evaluateRouting(routingInput());
     form.hidden=true;
     result.className="screen-result"+(routing.state==="urgent_pathway"?" screen-result--urgent":"");
     result.innerHTML=resultHtml(routing.state);
     result.hidden=false;
     result.focus();
+    result.scrollIntoView({behavior:"auto",block:"center"});
+  }
+
+  form.addEventListener("change",function(event){
+    if(event.target.name==="cssrsQ2" || event.target.name==="cssrsQ6") syncConditionalFields();
+
+    window.setTimeout(function(){
+      var visible=visibleSections();
+      var current=visible[currentIndex];
+      var isFinal=currentIndex===visible.length-1;
+      if(isFinal && sectionComplete(current)) completeCheck();
+    },0);
+  });
+
+  form.addEventListener("submit",function(event){
+    event.preventDefault();
+    var visible=visibleSections();
+    var current=visible[currentIndex];
+    if(!validateSection(current)) return;
+    completeCheck();
   });
 
   render(false);
