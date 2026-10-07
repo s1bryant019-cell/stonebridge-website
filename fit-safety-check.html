@@ -50,7 +50,7 @@
           <p>If you are experiencing a medical or psychiatric emergency, believe you may harm yourself or someone else, or feel unable to remain safe, call <a href="tel:911">911</a>, go to the nearest emergency department, call or text <a href="tel:988">988</a>, or use local crisis services.</p>
         </div>
 
-        <p class="screen-intro">Please answer only what is asked here. Stonebridge intentionally does not collect a broad clinical history through this screening form.</p>
+        <p class="screen-intro">Please answer only what is asked here. Your answers are evaluated only in this browser and are not sent to Stonebridge or stored by this website. Stonebridge intentionally does not collect a broad clinical history through this screening form.</p>
 
         <form id="fit-safety-form" class="screen-card" novalidate>
           <div id="screen-error-summary" class="screen-error-summary" role="alert" tabindex="-1" hidden>
@@ -62,39 +62,6 @@
             <span id="screen-progress-text">Step 1</span>
             <div class="screen-progress-bar" aria-hidden="true"><span id="screen-progress-fill"></span></div>
           </div>
-
-          <div class="honeypot" aria-hidden="true">
-            <label for="screen-website">Website</label>
-            <input id="screen-website" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
-
-          <section class="screen-section" data-screen-step="identity">
-            <h2>First, a few details for matching.</h2>
-            <p>These fields allow Stonebridge staff to match this check with a later TherapyPortal appointment request.</p>
-            <div class="screen-grid">
-              <div class="screen-field">
-                <label for="screen-name">Full name <span class="screen-required" aria-hidden="true">*</span></label>
-                <input id="screen-name" name="fullName" autocomplete="name" maxlength="120" required>
-                <p class="screen-field-error" data-error-for="fullName" hidden></p>
-              </div>
-              <div class="screen-field">
-                <label for="screen-dob">Date of birth <span class="screen-required" aria-hidden="true">*</span></label>
-                <input id="screen-dob" name="dateOfBirth" type="date" autocomplete="bday" required>
-                <p class="screen-field-error" data-error-for="dateOfBirth" hidden></p>
-              </div>
-              <div class="screen-field">
-                <label for="screen-email">Email <span class="screen-required" aria-hidden="true">*</span></label>
-                <input id="screen-email" name="email" type="email" autocomplete="email" maxlength="254" required>
-                <p class="screen-field-error" data-error-for="email" hidden></p>
-              </div>
-              <div class="screen-field">
-                <label for="screen-mobile">Mobile phone <span class="screen-required" aria-hidden="true">*</span></label>
-                <input id="screen-mobile" name="mobile" type="tel" autocomplete="tel" maxlength="50" required>
-                <p class="screen-field-error" data-error-for="mobile" hidden></p>
-              </div>
-            </div>
-          </section>
-
           <section class="screen-section" data-screen-step="service" hidden>
             <h2>What type of care are you looking for?</h2>
             <p>Choose the option that best fits the service you are seeking.</p>
@@ -299,9 +266,9 @@
   <footer class="access-footer">
     <div class="access-shell access-footer-inner">
       <span>© 2026 Stonebridge Psychological Group.</span>
-      <span>This screening page is not monitored in real time. <a href="privacy-information.html">Privacy &amp; Information Use</a></span>
+      <span>This screening page is not monitored in real time and does not send your answers to Stonebridge. <a href="privacy-information.html">Privacy &amp; Information Use</a></span>
     </div>
   </footer>
-  <script src="fit-safety-check.js?v=20261007prod"></script>
+  <script type="module" src="fit-safety-check.js?v=20261007local"></script>
 </body>
 </html>
