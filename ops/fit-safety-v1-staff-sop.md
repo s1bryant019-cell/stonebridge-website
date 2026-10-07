@@ -1,62 +1,53 @@
-# Fit & Safety Check v1 — Staff Verification and Launch SOP
+# Fit & Safety Check v1 — Staff Workflow
 
 ## Purpose
 
 This SOP supports the Stonebridge new-client screening workflow. It does not replace clinical judgment, emergency procedures, informed consent, or TherapyNotes documentation standards.
 
-Stonebridge does not use open booking for a first therapy appointment. Every new client must be screened before a first-appointment request is approved. A prospective client may begin with the Fit & Safety Check or with a voluntary consultation. When routing or consultation identifies an administrative, clinical, or urgent issue, that issue is resolved through the appropriate pathway before ordinary approval.
+Stonebridge does not use open booking for a first therapy appointment. Every new client remains subject to Stonebridge review before a pending TherapyPortal request is approved.
 
-## Routing states
+## Website screening boundary
 
-- `direct_request_eligible`: the person may submit a pending first-appointment request in TherapyPortal.
-- `administrative_resolution_required`: staff resolves a policy, jurisdiction, service-scope, legal/forensic, or consent-authority question first.
-- `clinical_review_required`: clinician/clinical leadership judgment is required before an ordinary first-appointment request is approved.
-- `urgent_pathway`: the website immediately displays Stonebridge's established emergency/crisis instructions. The person is not told to wait for routine Stonebridge review.
+The Fit & Safety Check runs entirely in the prospective client's browser.
 
-## Direct-request eligibility
+- The website does not collect name, date of birth, email, mobile number, or other identity fields as part of the screen.
+- Screening answers are not submitted to Stonebridge or stored by the website.
+- The browser displays one of four routing states: direct request, administrative resolution, clinical review, or urgent pathway.
+- The website does not create a screening record or a 14-day eligibility record.
 
-Direct-request eligibility expires 14 calendar days after submission.
+TherapyNotes/TherapyPortal remains the scheduling and clinical system of record.
 
-The 14-day interval is an operational verification rule, not a clinical standard.
+## Direct-request pathway
 
-## Consultation standard
+When the browser displays the direct-request result, the prospective client may continue to TherapyPortal and submit a pending first-appointment request.
 
-Consultation is available by preference and when administrative or clinical clarification is needed; it is not a universal prerequisite for every new client. A consultation is not psychotherapy, diagnosis, formal evaluation, or crisis care.
+The result asks the client to enter **Fit & Safety Check completed** in TherapyPortal's message field when that field is available. This is operational evidence only; it is not cryptographic verification and does not replace Stonebridge's final review.
 
-When a voluntary consultation is used as the screening pathway, staff must document the screened disposition in the approved workflow before a first-appointment request is approved. If the consultation reveals an administrative, clinical, or urgent issue, use the corresponding routing pathway rather than treating the consultation itself as automatic clearance.
+Staff should:
 
-## TherapyPortal verification workflow
+1. Leave the TherapyPortal request pending while reviewing it.
+2. Confirm that the request is for an appropriate new-client intake/service and that the requested clinician/service is accepting that type of new client.
+3. Note the client's screening-completion message when present.
+4. If screening completion is unclear, direct the client to the Stonebridge new-client pathway or speak with the client by phone before approval.
+5. Approve the pending TherapyPortal request only after Stonebridge is satisfied that the required screening step has occurred.
+6. TherapyNotes/TherapyPortal controls final appointment confirmation.
 
-For every prospective new-client TherapyPortal appointment request:
+The routine approval step should remain brief and should not become a second intake interview unless a genuine concern requires further review.
 
-1. Leave the request pending while verification occurs.
-2. Verify current screening evidence in the approved workflow. For a Fit & Safety Check, this is a non-expired `direct_request_eligible` record. For a voluntary consultation, this is a documented screened-eligible disposition entered by authorized staff after the consultation.
-3. Use email address + date of birth as the primary matching pair.
-4. Use name and mobile number as corroborating information when needed.
-5. Confirm that the requested appointment is an appropriate new-client intake request and that the requested clinician/service is available for that type of new client.
-6. Approve the pending TherapyPortal request only after verification is established.
-7. TherapyNotes/TherapyPortal remains the scheduling system of record and controls final appointment confirmation.
+## Consultation pathway
 
-The routine verification step should remain brief. It should not ordinarily become a second phone screen, detailed clinical interview, insurance investigation, or case staffing.
+Consultation remains voluntary and is also used when the browser displays an administrative or clinical-review result.
 
-## Unmatched TherapyPortal request
+The public website does not collect consultation details. The client is directed to call Stonebridge at (773) 417-1688.
 
-If there is no current matching screening-verification record:
-
-1. Keep the TherapyPortal request pending.
-2. Direct the prospective client to the Stonebridge new-client pathway.
-3. The client may complete the Fit & Safety Check or choose a voluntary consultation.
-4. Document or match the completed screening afterward.
-5. Proceed according to its routing result or documented consultation disposition.
-
-A mismatch means verification has not been established. It does not automatically mean the person is rejected or inappropriate for care.
+Information learned during a phone consultation should be handled within Stonebridge's existing approved clinical/administrative systems and documentation practices, not copied into the public website, ordinary email, personal notes, or unapproved systems.
 
 ## Administrative resolution
 
 Administrative review begins first when staff can resolve the issue through policy, documentation, jurisdiction, consent authority, service scope, or understanding the requested role.
 
 After resolution, the person may:
-- return to direct appointment requesting;
+- return to the ordinary TherapyPortal request pathway;
 - move to clinical review; or
 - be informed that Stonebridge cannot provide the requested service.
 
@@ -93,30 +84,14 @@ Stonebridge is not an emergency or crisis service.
 
 When the approved emergency override is met, including current suicide intent/plan, recent suicidal behavior within the approved C-SSRS window, immediate inability to remain safe, or approved urgent risk-to-others triggers, the website displays the established emergency/crisis instructions immediately and does not instruct the person to wait for a consultation or routine review.
 
-Website submissions are not monitored in real time.
-
-The v1 website does not persist urgent-pathway submissions until Stonebridge finalizes the minimum necessary internal urgent-event handling protocol.
+The Fit & Safety page is not monitored in real time and does not transmit the urgent response to Stonebridge.
 
 ## Privacy and system boundaries
 
-- TherapyNotes/TherapyPortal remains the clinical and scheduling system of record.
-- The website uses a private Vercel Blob store only for limited routing, matching, and review operations. Records are encrypted by the application before storage and are not the clinical system of record.
-- Do not copy screening information into ordinary email, spreadsheets, personal notes, or unapproved systems.
-- Generic email notifications may state only that a secure item is waiting for authorized review; they must not contain identifying or clinical information.
-- Do not place PHI, screening answers, or routing states in URLs.
+- Vercel hosts the public/static website only.
+- Fit & Safety answers are evaluated in browser memory and discarded when the page is left or refreshed.
+- No screening answer, routing state, or identity field is posted to a Stonebridge/Vercel API.
+- TherapyNotes/TherapyPortal receives identifiable information for the appointment-request workflow.
+- The public consultation pathway is phone-based.
+- Do not place screening answers or routing states in URLs.
 - Do not add advertising analytics, session replay, or marketing conversion tracking to the Fit & Safety Check.
-
-## Production launch gates
-
-Do not set `PHI_WORKFLOW_APPROVED=true` in production until Stonebridge has documented all of the following:
-
-- the production Vercel account/project is covered by the required agreement(s) and configured for the intended PHI workflow;
-- the private Vercel Blob store is connected to the production project under the same approved Vercel HIPAA/BAA account scope;
-- staff review is performed only through the protected Stonebridge Vercel project domain and is restricted to authorized Vercel team users with appropriate MFA/access controls;
-- retention/deletion settings are approved and `INTAKE_RECORD_RETENTION_DAYS` is configured;
-- application, platform, Blob storage, and error logs have been reviewed for minimum-necessary handling and do not record submitted clinical payloads;
-- backup, audit, incident-response, and access-revocation expectations are documented;
-- preview/test environments use synthetic data only;
-- the current Fit & Safety routing rules and emergency override have been clinically approved.
-
-A vendor's marketing statement or availability of a BAA is not, by itself, proof that the deployed Stonebridge workflow is compliant.
