@@ -894,3 +894,13 @@ body.fit-safety-page{
   border-color:rgba(22,59,97,.20);
   background:#fffdf9;
 }
+
+
+/* Combined safety question numbering — 2026-10-07 */
+.fit-safety-page .safety-question-number{
+  display:inline;
+  margin-right:.18em;
+  color:#78613f;
+  font-weight:800;
+  font-variant-numeric:tabular-nums;
+}
