@@ -18,6 +18,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
   var result=document.getElementById("screen-result");
   var cssrsFollowups=document.getElementById("cssrs-active-followups");
   var cssrsRecent=document.getElementById("cssrs-recent-behavior");
+  var safetySection=form.querySelector('[data-screen-step="safety"]');
   var layout=document.querySelector(".screen-template-layout");
   var currentIndex=0;
   var completed=false;
@@ -45,6 +46,20 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
     });
   }
 
+  function syncSafetyQuestionNumbers(){
+    if(!safetySection || safetySection.hidden) return;
+    var visibleQuestions=Array.prototype.slice.call(
+      safetySection.querySelectorAll("[data-safety-question]")
+    ).filter(function(fieldset){
+      return !fieldset.closest("[hidden]");
+    });
+
+    visibleQuestions.forEach(function(fieldset,index){
+      var number=fieldset.querySelector(".safety-question-number");
+      if(number) number.textContent=(index+1)+". ";
+    });
+  }
+
   function syncConditionalFields(){
     var active=selected("cssrsQ2")==="yes";
     cssrsFollowups.hidden=!active;
@@ -59,6 +74,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
     if(!recent){
       form.querySelectorAll('[name="cssrsQ6Recent"]').forEach(function(el){el.checked=false;});
     }
+    syncSafetyQuestionNumbers();
   }
 
   function clearErrors(){
@@ -108,9 +124,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
       requireRadio(errors,"currentAcuity","Choose an answer.");
     }else if(key==="administrative"){
       requireCheckbox(errors,"adminIssues","Choose at least one answer.");
-    }else if(key==="risk-others"){
-      requireCheckbox(errors,"riskOthers","Choose at least one answer.");
-    }else if(key==="cssrs"){
+    }else if(key==="safety"){
       requireRadio(errors,"cssrsQ1","Choose an answer.");
       requireRadio(errors,"cssrsQ2","Choose an answer.");
       if(selected("cssrsQ2")==="yes"){
@@ -120,6 +134,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
       }
       requireRadio(errors,"cssrsQ6","Choose an answer.");
       if(selected("cssrsQ6")==="yes") requireRadio(errors,"cssrsQ6Recent","Choose an answer.");
+      requireRadio(errors,"riskOthers","Choose an answer.");
     }else if(key==="conjoint"){
       requireRadio(errors,"conjointSafety","Choose an answer.");
     }
@@ -146,12 +161,12 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
     if(key==="jurisdiction") return Boolean(selected("illinoisTelehealth"));
     if(key==="acuity") return checkedValues("recentCare").length>0 && Boolean(selected("immediateEmergency")) && Boolean(selected("currentAcuity"));
     if(key==="administrative") return checkedValues("adminIssues").length>0;
-    if(key==="risk-others") return checkedValues("riskOthers").length>0;
     if(key==="conjoint") return Boolean(selected("conjointSafety"));
-    if(key==="cssrs"){
+    if(key==="safety"){
       if(!selected("cssrsQ1") || !selected("cssrsQ2") || !selected("cssrsQ6")) return false;
       if(selected("cssrsQ2")==="yes" && (!selected("cssrsQ3") || !selected("cssrsQ4") || !selected("cssrsQ5"))) return false;
       if(selected("cssrsQ6")==="yes" && !selected("cssrsQ6Recent")) return false;
+      if(!selected("riskOthers")) return false;
       return true;
     }
     return false;
@@ -169,6 +184,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
     progressText.textContent="Step "+(currentIndex+1)+" of "+visible.length;
     progressFill.style.width=Math.round(((currentIndex+1)/visible.length)*100)+"%";
     clearErrors();
+    syncSafetyQuestionNumbers();
 
     var heading=current.querySelector("h2");
     if(heading){
@@ -221,7 +237,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
         q6:selected("cssrsQ6"),
         q6Recent:selected("cssrsQ6Recent")
       },
-      riskOthers:checkedValues("riskOthers"),
+      riskOthers:selected("riskOthers") ? [selected("riskOthers")] : [],
       conjointSafety:selected("conjointSafety")
     };
   }

@@ -9,7 +9,7 @@
   <meta name="description" content="A brief Stonebridge new-client check before requesting an appointment.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260924rhythm2">
-  <link rel="stylesheet" href="new-client-access.css?v=20261007soft1">
+  <link rel="stylesheet" href="new-client-access.css?v=20261007safety2">
   <link id="stonebridge-brand-sync" rel="stylesheet" href="stonebridge-brand-sync.css?v=20260924headerfix3">
   <link id="stonebridge-hotfix" rel="stylesheet" href="stonebridge-hotfix.css?v=20260924headerfix3">
 </head>
@@ -173,28 +173,12 @@
             </fieldset>
           </section>
 
-          <section class="screen-section" data-screen-step="risk-others" hidden>
-            <h2>Immediate safety</h2>
-            <p>These are brief current-safety questions only. They are not a full risk assessment.</p>
-            <fieldset class="screen-field screen-field--full">
-              <legend class="screen-legend">Does any of the following apply right now? Select all that apply. <span class="screen-required" aria-hidden="true">*</span></legend>
-              <div class="screen-options" data-exclusive-group="riskOthers">
-                <label class="screen-option"><input type="checkbox" name="riskOthers" value="intent"><span>I currently intend to harm another person.</span></label>
-                <label class="screen-option"><input type="checkbox" name="riskOthers" value="planning_or_preparation"><span>I am currently planning or preparing to harm another person.</span></label>
-                <label class="screen-option"><input type="checkbox" name="riskOthers" value="specific_person"><span>There is a specific person I am currently considering harming.</span></label>
-                <label class="screen-option"><input type="checkbox" name="riskOthers" value="concern_may_act"><span>I am concerned that I may act on thoughts of harming another person.</span></label>
-                <label class="screen-option"><input type="checkbox" name="riskOthers" value="none" data-exclusive-none><span>None of these apply.</span></label>
-              </div>
-              <p class="screen-field-error" data-error-for="riskOthers" hidden></p>
-            </fieldset>
-          </section>
+          <section class="screen-section" data-screen-step="safety" hidden>
+            <h2>A few safety questions</h2>
+            <p>These questions help determine whether you can continue directly to an appointment request or whether Stonebridge should speak with you first. The suicide questions use the official C-SSRS wording.</p>
 
-          <section class="screen-section" data-screen-step="cssrs" hidden>
-            <h2>A few standard safety questions</h2>
-            <p>Stonebridge uses a small set of official C-SSRS questions here. The wording below is kept as published; your answers are used only to determine the appropriate next scheduling step.</p>
-
-            <fieldset class="screen-field screen-field--full">
-              <legend class="screen-legend">1. In the past month, have you wished you were dead or wished you could go to sleep and not wake up? <span class="screen-required" aria-hidden="true">*</span></legend>
+            <fieldset class="screen-field screen-field--full" data-safety-question>
+              <legend class="screen-legend"><span class="safety-question-number" aria-hidden="true"></span>In the past month, have you wished you were dead or wished you could go to sleep and not wake up? <span class="screen-required" aria-hidden="true">*</span></legend>
               <div class="screen-options">
                 <label class="screen-option"><input type="radio" name="cssrsQ1" value="yes"><span>Yes</span></label>
                 <label class="screen-option"><input type="radio" name="cssrsQ1" value="no"><span>No</span></label>
@@ -202,8 +186,8 @@
               <p class="screen-field-error" data-error-for="cssrsQ1" hidden></p>
             </fieldset>
 
-            <fieldset class="screen-field screen-field--full" style="margin-top:22px">
-              <legend class="screen-legend">2. In the past month, have you actually had any thoughts of killing yourself? <span class="screen-required" aria-hidden="true">*</span></legend>
+            <fieldset class="screen-field screen-field--full" data-safety-question style="margin-top:22px">
+              <legend class="screen-legend"><span class="safety-question-number" aria-hidden="true"></span>In the past month, have you actually had any thoughts of killing yourself? <span class="screen-required" aria-hidden="true">*</span></legend>
               <div class="screen-options">
                 <label class="screen-option"><input type="radio" name="cssrsQ2" value="yes"><span>Yes</span></label>
                 <label class="screen-option"><input type="radio" name="cssrsQ2" value="no"><span>No</span></label>
@@ -212,8 +196,8 @@
             </fieldset>
 
             <div id="cssrs-active-followups" hidden>
-              <fieldset class="screen-field screen-field--full" style="margin-top:22px">
-                <legend class="screen-legend">3. Have you thought about how you might do this? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <fieldset class="screen-field screen-field--full" data-safety-question style="margin-top:22px">
+                <legend class="screen-legend"><span class="safety-question-number" aria-hidden="true"></span>Have you thought about how you might do this? <span class="screen-required" aria-hidden="true">*</span></legend>
                 <div class="screen-options">
                   <label class="screen-option"><input type="radio" name="cssrsQ3" value="yes"><span>Yes</span></label>
                   <label class="screen-option"><input type="radio" name="cssrsQ3" value="no"><span>No</span></label>
@@ -221,8 +205,8 @@
                 <p class="screen-field-error" data-error-for="cssrsQ3" hidden></p>
               </fieldset>
 
-              <fieldset class="screen-field screen-field--full" style="margin-top:22px">
-                <legend class="screen-legend">4. Have you had any intention of acting on these thoughts of killing yourself, as opposed to you have the thoughts, but you definitely would not act on them? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <fieldset class="screen-field screen-field--full" data-safety-question style="margin-top:22px">
+                <legend class="screen-legend"><span class="safety-question-number" aria-hidden="true"></span>Have you had any intention of acting on these thoughts of killing yourself, as opposed to you have the thoughts, but you definitely would not act on them? <span class="screen-required" aria-hidden="true">*</span></legend>
                 <div class="screen-options">
                   <label class="screen-option"><input type="radio" name="cssrsQ4" value="yes"><span>Yes</span></label>
                   <label class="screen-option"><input type="radio" name="cssrsQ4" value="no"><span>No</span></label>
@@ -230,8 +214,8 @@
                 <p class="screen-field-error" data-error-for="cssrsQ4" hidden></p>
               </fieldset>
 
-              <fieldset class="screen-field screen-field--full" style="margin-top:22px">
-                <legend class="screen-legend">5. Have you started to work out, or actually worked out, the specific details of how to kill yourself and did you actually intend to carry out the details of your plan? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <fieldset class="screen-field screen-field--full" data-safety-question style="margin-top:22px">
+                <legend class="screen-legend"><span class="safety-question-number" aria-hidden="true"></span>Have you started to work out, or actually worked out, the specific details of how to kill yourself and did you actually intend to carry out the details of your plan? <span class="screen-required" aria-hidden="true">*</span></legend>
                 <div class="screen-options">
                   <label class="screen-option"><input type="radio" name="cssrsQ5" value="yes"><span>Yes</span></label>
                   <label class="screen-option"><input type="radio" name="cssrsQ5" value="no"><span>No</span></label>
@@ -240,8 +224,8 @@
               </fieldset>
             </div>
 
-            <fieldset class="screen-field screen-field--full" style="margin-top:22px">
-              <legend class="screen-legend">6. Have you ever done anything, started to do anything, or prepared to do anything to end your life? <span class="screen-required" aria-hidden="true">*</span></legend>
+            <fieldset class="screen-field screen-field--full" data-safety-question style="margin-top:22px">
+              <legend class="screen-legend"><span class="safety-question-number" aria-hidden="true"></span>Have you ever done anything, started to do anything, or prepared to do anything to end your life? <span class="screen-required" aria-hidden="true">*</span></legend>
               <div class="screen-options">
                 <label class="screen-option"><input type="radio" name="cssrsQ6" value="yes"><span>Yes</span></label>
                 <label class="screen-option"><input type="radio" name="cssrsQ6" value="no"><span>No</span></label>
@@ -249,8 +233,8 @@
               <p class="screen-field-error" data-error-for="cssrsQ6" hidden></p>
             </fieldset>
 
-            <fieldset id="cssrs-recent-behavior" class="screen-field screen-field--full" style="margin-top:22px" hidden>
-              <legend class="screen-legend">Did this occur within the past 3 months? <span class="screen-required" aria-hidden="true">*</span></legend>
+            <fieldset id="cssrs-recent-behavior" class="screen-field screen-field--full" data-safety-question style="margin-top:22px" hidden>
+              <legend class="screen-legend"><span class="safety-question-number" aria-hidden="true"></span>Did this occur within the past 3 months? <span class="screen-required" aria-hidden="true">*</span></legend>
               <div class="screen-options">
                 <label class="screen-option"><input type="radio" name="cssrsQ6Recent" value="yes"><span>Yes</span></label>
                 <label class="screen-option"><input type="radio" name="cssrsQ6Recent" value="no"><span>No</span></label>
@@ -258,7 +242,16 @@
               <p class="screen-field-error" data-error-for="cssrsQ6Recent" hidden></p>
             </fieldset>
 
-            <p class="screen-source">Official C-SSRS core questions from the Self-Report – Recent screener, Columbia Lighthouse Project. <a href="https://cssrs.columbia.edu/documents/self-report-screener-recent/" rel="noopener noreferrer">View the full official instrument</a>. Stonebridge applies its own access-routing policy to the responses; this website is not performing a comprehensive suicide-risk assessment.</p>
+            <fieldset class="screen-field screen-field--full" data-safety-question style="margin-top:22px">
+              <legend class="screen-legend"><span class="safety-question-number" aria-hidden="true"></span>Right now, are you concerned that you may actually harm another person? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options">
+                <label class="screen-option"><input type="radio" name="riskOthers" value="no"><span>No</span></label>
+                <label class="screen-option"><input type="radio" name="riskOthers" value="yes"><span>Yes</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="riskOthers" hidden></p>
+            </fieldset>
+
+            <p class="screen-source">Suicide questions above use the official C-SSRS core questions from the Self-Report – Recent screener, Columbia Lighthouse Project. <a href="https://cssrs.columbia.edu/documents/self-report-screener-recent/" rel="noopener noreferrer">View the full official instrument</a>. Stonebridge applies its own access-routing policy to the responses; this website is not performing a comprehensive suicide-risk assessment.</p>
           </section>
 
           <section class="screen-section" data-screen-step="conjoint" hidden>
@@ -337,6 +330,6 @@
     </div>
   </footer>
   <script src="script-core.js?v=20260924headerfix3"></script>
-  <script type="module" src="fit-safety-check.js?v=20261007soft1"></script>
+  <script type="module" src="fit-safety-check.js?v=20261007safety2"></script>
 </body>
 </html>

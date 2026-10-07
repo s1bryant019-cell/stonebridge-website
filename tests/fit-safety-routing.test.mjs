@@ -19,7 +19,7 @@ function baseline(overrides = {}) {
       q6: "no",
       q6Recent: ""
     },
-    riskOthers: ["none"],
+    riskOthers: ["no"],
     conjointSafety: "",
     ...overrides
   };
@@ -45,7 +45,7 @@ expectState(
 );
 
 expectState(
-  "passive death wish alone has no automatic routing consequence",
+  "passive suicidal ideation/death wish alone remains direct-request eligible",
   baseline({ cssrs: { q1: "yes" } }),
   ROUTING_STATES.DIRECT
 );
@@ -149,20 +149,17 @@ for (const issue of [
 }
 
 expectState(
-  "specific-person risk to others requires clinical review",
-  baseline({ riskOthers: ["specific_person"] }),
+  "current concern about harming another person requires clinical review",
+  baseline({ riskOthers: ["yes"] }),
   ROUTING_STATES.CLINICAL,
   "risk_to_others_review"
 );
 
-for (const issue of ["intent", "planning_or_preparation", "concern_may_act"]) {
-  expectState(
-    `meaningful current risk-to-others trigger ${issue} invokes urgent pathway`,
-    baseline({ riskOthers: [issue] }),
-    ROUTING_STATES.URGENT,
-    "risk_to_others_emergency_override"
-  );
-}
+expectState(
+  "no current concern about harming another person has no routing consequence",
+  baseline({ riskOthers: ["no"] }),
+  ROUTING_STATES.DIRECT
+);
 
 expectState(
   "couples safety concern requires clinical review",
@@ -221,7 +218,7 @@ expectState(
     recentCare: ["current_intensive"],
     adminIssues: ["consent_authority"],
     cssrs: { q2: "yes", q3: "yes", q4: "yes", q5: "no" },
-    riskOthers: ["specific_person"]
+    riskOthers: ["yes"]
   }),
   ROUTING_STATES.URGENT
 );
@@ -231,15 +228,15 @@ test("multiple simultaneous triggers retain all applicable reason codes", () => 
     illinoisTelehealth: "no",
     recentCare: ["discharged_30_days"],
     adminIssues: ["formal_evaluation"],
-    riskOthers: ["intent"]
+    riskOthers: ["yes"]
   }));
 
-  assert.equal(result.state, ROUTING_STATES.URGENT);
+  assert.equal(result.state, ROUTING_STATES.CLINICAL);
   for (const reason of [
     "jurisdiction",
     "recent_higher_acuity_care",
     "administrative_scope_or_consent",
-    "risk_to_others_emergency_override"
+    "risk_to_others_review"
   ]) {
     assert.ok(result.reasonCodes.includes(reason), `missing reason code: ${reason}`);
   }

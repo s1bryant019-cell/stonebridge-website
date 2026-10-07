@@ -40,8 +40,29 @@ test("Fit & Safety Check does not propagate marketing query identifiers", () => 
 
 test("TherapyPortal handoff is a fixed destination", () => {
   assert.match(fitJs, /https:\/\/www\.therapyportal\.com\/p\/stonebridge60634\//);
-  assert.match(fitJs, /Fit &amp; Safety Check completed/);
+  assert.match(fitJs, /Stonebridge new-client check completed/);
   assert.doesNotMatch(fitJs, /therapyportal[^\n]+(routingState|reasonCodes|email|dateOfBirth|mobile)/i);
+});
+
+
+test("SI and HI are combined into one safety step with one HI question", () => {
+  assert.match(fitHtml, /data-screen-step="safety"/);
+  assert.doesNotMatch(fitHtml, /data-screen-step="risk-others"/);
+  assert.match(fitHtml, /name="riskOthers" value="yes"/);
+  assert.match(fitHtml, /name="riskOthers" value="no"/);
+  assert.equal((fitHtml.match(/name="riskOthers"/g) || []).length, 2);
+});
+
+test("visible safety question numbers are generated sequentially", () => {
+  assert.doesNotMatch(fitHtml, /<legend[^>]*>\s*[1-9]\./);
+  assert.match(fitHtml, /safety-question-number/);
+  assert.match(fitJs, /syncSafetyQuestionNumbers/);
+  assert.match(fitJs, /number\.textContent=\(index\+1\)\+"\. "/);
+});
+
+test("passive SI remains direct while active SI requires review", () => {
+  assert.match(fitJs, /cssrsQ1/);
+  assert.match(fitJs, /cssrsQ2/);
 });
 
 test("administrative and clinical results do not transmit screening answers", () => {

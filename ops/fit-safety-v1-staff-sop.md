@@ -67,10 +67,11 @@ Current acute need for crisis stabilization, detox/withdrawal management, close 
 
 The website embeds the official C-SSRS core questions from the Self-Report – Recent screener; it does not claim to reproduce the complete published instrument when explanatory/example language is omitted.
 
-- Passive death wish alone has no automatic Stonebridge routing consequence.
-- Active suicidal ideation beyond passive death wish requires clinical review at minimum.
+- Passive death wish/passive suicidal ideation alone has no automatic Stonebridge routing consequence.
+- Active suicidal ideation beyond passive death wish requires clinical review before direct scheduling.
 - Current suicide intent or plan invokes `urgent_pathway`.
 - Suicidal behavior within the prior 3 months invokes `urgent_pathway`.
+- The website asks one brief current question about possible harm to another person. A yes response requires clinical review; urgent handling is reserved for the separate immediate-emergency override.
 
 Stonebridge's routing policy does not convert the website into a comprehensive suicide-risk assessment.
 
