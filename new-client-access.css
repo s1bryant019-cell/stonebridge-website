@@ -782,3 +782,21 @@ body.fit-safety-page{
     text-align:center;
   }
 }
+
+
+/* Screening option wrap alignment — 2026-10-07 */
+.fit-safety-page .screen-field label.screen-option{
+  display:grid;
+  grid-template-columns:18px minmax(0,1fr);
+  align-items:start;
+  column-gap:10px;
+}
+.fit-safety-page .screen-field label.screen-option input[type="checkbox"],
+.fit-safety-page .screen-field label.screen-option input[type="radio"]{
+  grid-column:1;
+  margin:1px 0 0;
+}
+.fit-safety-page .screen-field label.screen-option span{
+  grid-column:2;
+  min-width:0;
+}
