@@ -1,0 +1,33 @@
+name: Fit & Safety Regression
+
+on:
+  push:
+    branches:
+      - feature/fit-safety-v1
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "fit-safety-check.html"
+      - "fit-safety-check.js"
+      - "api/fit-safety-check.js"
+      - "api/contact.js"
+      - "api/_secure-intake.js"
+      - "lib/fit-safety-routing.mjs"
+      - "tests/**"
+      - "package.json"
+      - ".github/workflows/fit-safety-regression.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm test
