@@ -1598,25 +1598,74 @@ body.contact-page .contact-form-submit .btn{
 
     <section class="contact-form-section" id="inquiry-form">
       <div class="contact-shell">
-        <div class="contact-form" aria-labelledby="consultation-phone-title">
+        <form class="contact-form" id="consultation-request-form" novalidate aria-labelledby="consultation-request-title">
           <div class="contact-form-content">
             <div class="contact-form-head">
-              <div class="form-eyebrow">Consultation</div>
-              <h2 id="consultation-phone-title">Let’s schedule a brief conversation.</h2>
-              <p>Call <a href="tel:+17734171688">(773) 417-1688</a> to schedule a brief consultation. We can clarify fit, answer questions, and determine the appropriate next step.</p>
+              <div class="form-eyebrow">Consultation request</div>
+              <h2 id="consultation-request-title">Reach out to schedule a brief conversation.</h2>
+              <p>Send Stonebridge your contact information and we’ll follow up to arrange the consultation. Please do not include clinical details here.</p>
+              <p class="contact-required-note"><span><span aria-hidden="true">*</span> Required</span></p>
             </div>
+
+            <div class="contact-error-summary" id="consultation-error-summary" role="alert" tabindex="-1" hidden>
+              <h3>Review the highlighted fields.</h3>
+              <ul id="consultation-error-list"></ul>
+            </div>
+
+            <div class="contact-form-grid contact-form-grid--compact">
+              <div class="contact-field">
+                <label for="consultation-name">Full name <span class="required-mark" aria-hidden="true">*</span></label>
+                <input id="consultation-name" type="text" name="fullName" autocomplete="name" maxlength="120" required aria-describedby="consultation-name-error">
+                <p class="field-error" id="consultation-name-error" hidden></p>
+              </div>
+
+              <div class="contact-field">
+                <label for="consultation-email">Email <span class="required-mark" aria-hidden="true">*</span></label>
+                <input id="consultation-email" type="email" name="email" autocomplete="email" maxlength="254" required aria-describedby="consultation-email-error">
+                <p class="field-error" id="consultation-email-error" hidden></p>
+              </div>
+
+              <div class="contact-field">
+                <label class="field-label-row" for="consultation-phone">
+                  <span>Phone</span>
+                  <span class="field-optional">Optional</span>
+                </label>
+                <input id="consultation-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="50">
+              </div>
+
+              <div class="contact-field">
+                <label class="field-label-row" for="consultation-preferred-contact">
+                  <span>Preferred contact method</span>
+                  <span class="field-optional">Optional</span>
+                </label>
+                <select id="consultation-preferred-contact" name="preferredContact">
+                  <option value="">No preference</option>
+                  <option value="Email">Email</option>
+                  <option value="Phone">Phone</option>
+                </select>
+              </div>
+
+              <div class="contact-field contact-field-full contact-field-availability">
+                <label class="field-label-row" for="consultation-availability">
+                  <span>Best times to reach you</span>
+                  <span class="field-optional">Optional</span>
+                </label>
+                <input id="consultation-availability" type="text" name="availability" maxlength="300" placeholder="For example: weekday mornings or Tuesday after 5 PM">
+              </div>
+            </div>
+
+            <p class="contact-brief-privacy">This form does not ask for clinical information. When you submit, your email application will open with these contact details addressed to Stonebridge; nothing is posted through the Stonebridge website.</p>
 
             <div class="contact-form-footer">
               <p class="contact-crisis-guidance">Stonebridge is not an emergency or crisis service. If you are experiencing a medical or psychiatric emergency, believe you may harm yourself or someone else, or feel unable to remain safe, call 911, go to the nearest emergency department, call or text 988, or use local crisis services.</p>
               <div class="contact-form-submit">
-                <a class="btn btn-primary" href="tel:+17734171688">Call to Schedule</a>
+                <button class="btn btn-primary" id="consultation-submit-button" type="submit">Send Consultation Request</button>
               </div>
             </div>
 
-            <p style="margin-top:1.25rem">Ready to request an appointment instead? <a href="fit-safety-check.html">Complete the Fit &amp; Safety Check</a>.</p>
-            <p>For general non-clinical questions, you may email <a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a>. Do not send clinical details by ordinary email.</p>
+            <p style="margin-top:1rem">Prefer to call? <a href="tel:+17734171688">(773) 417-1688</a></p>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   </main>
@@ -1736,7 +1785,7 @@ body.contact-page .contact-form-submit .btn{
     })();
   </script>
 
-  <script src="script.js?v=20260924headerfix3"></script>
+  <script src="script.js?v=20260924headerfix3"></script>\n  <script src="consultation-request.js?v=20261007a"></script>
 
 </body>
 </html>
