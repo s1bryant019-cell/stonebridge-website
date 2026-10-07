@@ -72,6 +72,18 @@ export default async function handler(req, res) {
       });
     }
 
+    // Emergency/crisis routing must never depend on datastore or PHI-workflow
+    // configuration. The urgent response is returned immediately and is not
+    // persisted or sent through the routine consultation/review workflow.
+    if (routing.state === "urgent_pathway") {
+      return res.status(200).json({
+        ok: true,
+        routingState: "urgent_pathway",
+        expiresAt: null,
+        preview
+      });
+    }
+
     if (!preview) {
       if (!productionPhiGateReady()) {
         return res.status(503).json({
