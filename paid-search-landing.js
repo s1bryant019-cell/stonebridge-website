@@ -33,7 +33,7 @@
     link.setAttribute("href",url.pathname.replace(/^\//,"")+url.search+url.hash);
   }
 
-  document.querySelectorAll("[data-consultation-link]").forEach(function(link){
+  document.querySelectorAll("[data-new-client-link]").forEach(function(link){
     decorateLink(link,true);
   });
 
