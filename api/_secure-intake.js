@@ -1,9 +1,14 @@
+import crypto from "node:crypto";
+import { del, get, list, put } from "@vercel/blob";
+
 const ROUTING_STATES = new Set([
   "direct_request_eligible",
   "administrative_resolution_required",
   "clinical_review_required",
   "urgent_pathway"
 ]);
+
+const STORE_PREFIX = "secure-intake";
 
 export function normalize(value, maxLength = 500) {
   return String(value ?? "")
@@ -64,8 +69,27 @@ export function productionPhiGateReady() {
   return process.env.PHI_WORKFLOW_APPROVED === "true";
 }
 
+function decodeKey(name) {
+  const raw = normalize(process.env[name] || "", 500);
+  if (!raw) return null;
+  let key;
+  if (/^[0-9a-f]{64}$/i.test(raw)) key = Buffer.from(raw, "hex");
+  else {
+    try {
+      key = Buffer.from(raw, "base64");
+    } catch {
+      return null;
+    }
+  }
+  return key.length === 32 ? key : null;
+}
+
 export function secureStoreConfigured() {
-  return Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+  return Boolean(
+    process.env.BLOB_READ_WRITE_TOKEN &&
+    decodeKey("INTAKE_ENCRYPTION_KEY") &&
+    decodeKey("INTAKE_MATCHING_KEY")
+  );
 }
 
 function retentionDays() {
@@ -85,36 +109,191 @@ export function calculateDeleteAt(from = new Date()) {
   return date.toISOString();
 }
 
-export async function insertSecureRecord(table, record) {
-  if (!secureStoreConfigured()) {
-    throw new Error("SECURE_STORE_NOT_CONFIGURED");
-  }
-  if (!retentionConfigured()) {
-    throw new Error("RETENTION_NOT_CONFIGURED");
-  }
+function identityHash(email, dateOfBirth) {
+  const key = decodeKey("INTAKE_MATCHING_KEY");
+  if (!key) throw new Error("MATCHING_KEY_NOT_CONFIGURED");
+  const normalized = normalize(email, 254).toLowerCase() + "|" + normalize(dateOfBirth, 10);
+  return crypto.createHmac("sha256", key).update(normalized).digest("hex");
+}
 
-  const base = process.env.SUPABASE_URL.replace(/\/$/, "");
-  const response = await fetch(`${base}/rest/v1/${encodeURIComponent(table)}`, {
-    method: "POST",
-    headers: {
-      apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-      Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
-      "Content-Type": "application/json",
-      Prefer: "return=minimal"
-    },
-    body: JSON.stringify({
-      ...record,
-      delete_at: record.delete_at || calculateDeleteAt(new Date())
-    })
+function encryptRecord(record) {
+  const key = decodeKey("INTAKE_ENCRYPTION_KEY");
+  if (!key) throw new Error("ENCRYPTION_KEY_NOT_CONFIGURED");
+  const iv = crypto.randomBytes(12);
+  const cipher = crypto.createCipheriv("aes-256-gcm", key, iv);
+  const plaintext = Buffer.from(JSON.stringify(record), "utf8");
+  const ciphertext = Buffer.concat([cipher.update(plaintext), cipher.final()]);
+  const tag = cipher.getAuthTag();
+  return JSON.stringify({
+    v: 1,
+    alg: "A256GCM",
+    iv: iv.toString("base64"),
+    tag: tag.toString("base64"),
+    data: ciphertext.toString("base64")
+  });
+}
+
+function decryptRecord(envelopeText) {
+  const key = decodeKey("INTAKE_ENCRYPTION_KEY");
+  if (!key) throw new Error("ENCRYPTION_KEY_NOT_CONFIGURED");
+  const envelope = JSON.parse(envelopeText);
+  if (envelope?.v !== 1 || envelope?.alg !== "A256GCM") {
+    throw new Error("UNSUPPORTED_SECURE_RECORD");
+  }
+  const decipher = crypto.createDecipheriv(
+    "aes-256-gcm",
+    key,
+    Buffer.from(envelope.iv, "base64")
+  );
+  decipher.setAuthTag(Buffer.from(envelope.tag, "base64"));
+  const plaintext = Buffer.concat([
+    decipher.update(Buffer.from(envelope.data, "base64")),
+    decipher.final()
+  ]);
+  return JSON.parse(plaintext.toString("utf8"));
+}
+
+function recordIdentity(record) {
+  return {
+    email: record.email || "",
+    dateOfBirth: record.date_of_birth || record.dateOfBirth || ""
+  };
+}
+
+function securePath(collection, record) {
+  const identity = recordIdentity(record);
+  if (!identity.email || !identity.dateOfBirth) throw new Error("SECURE_RECORD_IDENTITY_REQUIRED");
+  const match = identityHash(identity.email, identity.dateOfBirth);
+  const submitted = new Date(record.submitted_at || Date.now()).toISOString().replace(/[:.]/g, "-");
+  const id = normalize(record.id || crypto.randomUUID(), 80).replace(/[^a-zA-Z0-9_-]/g, "");
+  return `${STORE_PREFIX}/${collection}/${match}/${submitted}-${id}.json.enc`;
+}
+
+async function readBlobText(url) {
+  const result = await get(url, {
+    access: "private",
+    token: process.env.BLOB_READ_WRITE_TOKEN
+  });
+  if (!result) throw new Error("SECURE_RECORD_NOT_FOUND");
+  return new Response(result.stream).text();
+}
+
+async function readBlobRecord(blob) {
+  const text = await readBlobText(blob.url);
+  const record = decryptRecord(text);
+  return { ...record, _pathname: blob.pathname, _url: blob.url };
+}
+
+async function listAll(prefix, max = 1000) {
+  const blobs = [];
+  let cursor;
+  do {
+    const page = await list({
+      prefix,
+      limit: Math.min(250, max - blobs.length),
+      cursor,
+      token: process.env.BLOB_READ_WRITE_TOKEN
+    });
+    blobs.push(...page.blobs);
+    cursor = page.hasMore ? page.cursor : undefined;
+  } while (cursor && blobs.length < max);
+  return blobs;
+}
+
+export async function insertSecureRecord(collection, record) {
+  if (!secureStoreConfigured()) throw new Error("SECURE_STORE_NOT_CONFIGURED");
+  if (!retentionConfigured()) throw new Error("RETENTION_NOT_CONFIGURED");
+
+  const stored = {
+    ...record,
+    delete_at: record.delete_at || calculateDeleteAt(new Date())
+  };
+  const pathname = securePath(collection, stored);
+
+  await put(pathname, encryptRecord(stored), {
+    access: "private",
+    addRandomSuffix: false,
+    allowOverwrite: false,
+    contentType: "application/octet-stream",
+    token: process.env.BLOB_READ_WRITE_TOKEN
   });
 
-  if (!response.ok) {
-    console.error("Secure intake datastore insert failed", {
-      table,
-      status: response.status
-    });
-    throw new Error("SECURE_STORE_WRITE_FAILED");
+  return pathname;
+}
+
+export async function listMatchingSecureRecords(collection, email, dateOfBirth) {
+  if (!secureStoreConfigured()) throw new Error("SECURE_STORE_NOT_CONFIGURED");
+  const match = identityHash(email, dateOfBirth);
+  const blobs = await listAll(`${STORE_PREFIX}/${collection}/${match}/`, 100);
+  const records = [];
+  for (const blob of blobs) {
+    try {
+      records.push(await readBlobRecord(blob));
+    } catch (error) {
+      console.error("Secure intake record read failed", { code: error?.message || "UNKNOWN" });
+    }
   }
+  return records.sort((a, b) => String(b.submitted_at).localeCompare(String(a.submitted_at)));
+}
+
+export async function listSecureQueue(collection, max = 250) {
+  if (!secureStoreConfigured()) throw new Error("SECURE_STORE_NOT_CONFIGURED");
+  const blobs = await listAll(`${STORE_PREFIX}/${collection}/`, max);
+  const records = [];
+  for (const blob of blobs) {
+    try {
+      const record = await readBlobRecord(blob);
+      if (record.operational_status !== "resolved") records.push(record);
+    } catch (error) {
+      console.error("Secure intake queue read failed", { code: error?.message || "UNKNOWN" });
+    }
+  }
+  return records
+    .sort((a, b) => String(b.submitted_at).localeCompare(String(a.submitted_at)))
+    .slice(0, max);
+}
+
+export async function resolveSecureRecord(pathname) {
+  if (!secureStoreConfigured()) throw new Error("SECURE_STORE_NOT_CONFIGURED");
+  const safePath = normalize(pathname, 700);
+  if (!safePath.startsWith(`${STORE_PREFIX}/`)) throw new Error("INVALID_SECURE_RECORD_PATH");
+  const blobs = await listAll(safePath, 2);
+  const blob = blobs.find((item) => item.pathname === safePath);
+  if (!blob) throw new Error("SECURE_RECORD_NOT_FOUND");
+  const current = await readBlobRecord(blob);
+  const updated = {
+    ...current,
+    _pathname: undefined,
+    _url: undefined,
+    operational_status: "resolved",
+    resolved_at: new Date().toISOString()
+  };
+  await put(safePath, encryptRecord(updated), {
+    access: "private",
+    addRandomSuffix: false,
+    allowOverwrite: true,
+    contentType: "application/octet-stream",
+    token: process.env.BLOB_READ_WRITE_TOKEN
+  });
+}
+
+export async function deleteExpiredSecureRecords(now = new Date()) {
+  if (!secureStoreConfigured()) throw new Error("SECURE_STORE_NOT_CONFIGURED");
+  const blobs = await listAll(`${STORE_PREFIX}/`, 2000);
+  const expiredUrls = [];
+  for (const blob of blobs) {
+    try {
+      const record = await readBlobRecord(blob);
+      const deleteAt = Date.parse(record.delete_at || "");
+      if (Number.isFinite(deleteAt) && deleteAt <= now.getTime()) expiredUrls.push(blob.url);
+    } catch (error) {
+      console.error("Secure intake retention read failed", { code: error?.message || "UNKNOWN" });
+    }
+  }
+  if (expiredUrls.length) {
+    await del(expiredUrls, { token: process.env.BLOB_READ_WRITE_TOKEN });
+  }
+  return expiredUrls.length;
 }
 
 export async function sendGenericSecureQueueNotice() {
@@ -138,7 +317,7 @@ export async function sendGenericSecureQueueNotice() {
       subject: "New secure Stonebridge website item",
       text:
         "A new item is waiting in Stonebridge's secure intake workflow. " +
-        "Open the approved secure system to review it. No client information is included in this email."
+        "Open the protected Stonebridge staff review page to review it. No client information is included in this email."
     })
   });
 
@@ -147,6 +326,11 @@ export async function sendGenericSecureQueueNotice() {
       status: response.status
     });
   }
+}
+
+export function staffReviewHostAllowed(req) {
+  const host = normalize(req.headers?.host || "", 255).toLowerCase().split(":")[0];
+  return /^stonebridge-website(?:-[a-z0-9-]+)?\.vercel\.app$/.test(host);
 }
 
 export function assertRoutingState(state) {
