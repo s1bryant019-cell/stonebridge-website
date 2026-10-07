@@ -42,18 +42,19 @@ test("TherapyPortal handoff is a fixed destination", () => {
   assert.doesNotMatch(fitJs, /therapyportal[^\n]+(routingState|reasonCodes|email|dateOfBirth|mobile)/i);
 });
 
-test("administrative and clinical results use phone rather than transmitting answers", () => {
-  assert.match(fitJs, /tel:\+17734171688/);
+test("administrative and clinical results do not transmit screening answers", () => {
+  assert.match(fitJs, /contact\.html#inquiry-form/);
   assert.doesNotMatch(fitJs, /\/api\/contact|\/api\/fit-safety-check/);
 });
 
-test("consultation page is phone-only and contains no clinical submission form", () => {
-  assert.match(contactHtml, /href="tel:\+17734171688"/);
-  assert.doesNotMatch(contactHtml, /id="consultation-form"|name="reason"|\/api\/contact/i);
+test("consultation page has a non-clinical contact form with no Vercel submission", () => {
+  assert.match(contactHtml, /id="consultation-request-form"/);
+  assert.match(contactHtml, /consultation-request\.js/);
+  assert.doesNotMatch(contactHtml, /name="reason"|name="dateOfBirth"|name="insurancePreference"|\/api\/contact/i);
 });
 
-test("new-client page offers phone-based voluntary consultation", () => {
-  assert.match(newClientsHtml, /href="tel:\+17734171688"/);
+test("new-client page offers the voluntary consultation route", () => {
+  assert.match(newClientsHtml, /href="contact\.html#inquiry-form"/);
 });
 
 test("sensitive screen retains no-store, no-referrer, and noindex headers", () => {
