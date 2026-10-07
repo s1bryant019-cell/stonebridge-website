@@ -1576,7 +1576,7 @@ body.contact-page .contact-form-submit .btn{
           <div class="contact-hero-rule"></div>
           <div class="contact-kicker">New Clients</div>
           <h1 id="contact-page-title">New client consultation request</h1>
-          <p>Complete the brief form below. We’ll review fit and availability and follow up within 1–2 business days.</p>
+          <p>Use this form if you would like to speak with Stonebridge before requesting an appointment, or if the new-client screening pathway directed you here. We typically follow up within 1–2 business days.</p>
         </div>
 
         <figure class="contact-page-hero-media sb-standard-hero-media">
@@ -1591,7 +1591,7 @@ body.contact-page .contact-form-submit .btn{
     <section class="sb-utility-strip sb-utility-strip--beige" aria-label="Consultation information">
       <div class="sb-utility-strip__inner">
         <span class="sb-utility-strip__item">Accepting new clients</span>
-        <span class="sb-utility-strip__item">Free 10–15 minute consultation</span>
+        <span class="sb-utility-strip__item">Free consultation available</span>
         <span class="sb-utility-strip__item">Illinois telehealth</span>
       </div>
     </section>
@@ -1734,7 +1734,7 @@ body.contact-page .contact-form-submit .btn{
 
           <section class="contact-success" id="form-success" tabindex="-1" aria-live="polite" hidden>
             <h2 id="success-title">Request received</h2>
-            <p>Stonebridge has received your consultation request.</p>
+            <p id="contact-success-detail">Stonebridge has received your consultation request.</p>
             <p>We typically review requests within 1–2 business days and will follow up about fit, availability, and next steps.</p>
             <p>Your request is not a confirmed appointment.</p>
             <a class="contact-success-link" href="index.html">Return to Stonebridge</a>
@@ -1766,7 +1766,7 @@ body.contact-page .contact-form-submit .btn{
         <div class="footer-links">
           <a href="services.html">Services</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
-          <a href="contact.html">New Clients</a>
+          <a href="new-clients.html">New Clients</a>
         </div>
       </div>
 
@@ -2081,7 +2081,7 @@ body.contact-page .contact-form-submit .btn{
       function showDeliveryError(message){
         var errors=[{
           key:'email',
-          message:message || 'The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.'
+          message:message || 'The form could not be submitted securely. Please call (773) 417-1688. You may email info@stonebridgepsychgroup.com for general assistance, but do not include clinical details.'
         }];
         if(errorSummary && errorList){
           errorList.innerHTML='';
@@ -2147,11 +2147,15 @@ body.contact-page .contact-form-submit .btn{
 
           if(content)content.hidden=true;
           if(success){
+            var successDetail=document.getElementById('contact-success-detail');
+            if(result.preview && successDetail){
+              successDetail.textContent='Preview test mode: this synthetic submission was evaluated but was not stored or sent to Stonebridge.';
+            }
             success.hidden=false;
             success.focus();
           }
         }catch(error){
-          showDeliveryError('The form could not be sent. Please email info@stonebridgepsychgroup.com or call (773) 417-1688.');
+          showDeliveryError('The form could not be submitted securely. Please call (773) 417-1688. You may email info@stonebridgepsychgroup.com for general assistance, but do not include clinical details.');
         }finally{
           if(submitButton){
             submitButton.disabled=false;
