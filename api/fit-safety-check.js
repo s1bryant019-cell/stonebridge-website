@@ -45,6 +45,12 @@ function evaluateRouting(body) {
     administrative = true;
     reasons.push("service_scope");
   }
+  // Group Therapy/The Lobby uses a separate cohort-screening and placement
+  // workflow rather than the ordinary TherapyPortal intake-request handoff.
+  if (service === "group") {
+    administrative = true;
+    reasons.push("group_enrollment_pathway");
+  }
 
   const illinoisTelehealth = normalize(body.illinoisTelehealth, 20);
   if (illinoisTelehealth !== "yes") {
