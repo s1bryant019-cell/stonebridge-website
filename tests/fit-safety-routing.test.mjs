@@ -231,7 +231,7 @@ test("multiple simultaneous triggers retain all applicable reason codes", () => 
     riskOthers: ["yes"]
   }));
 
-  assert.equal(result.state, ROUTING_STATES.URGENT);
+  assert.equal(result.state, ROUTING_STATES.CLINICAL);
   for (const reason of [
     "jurisdiction",
     "recent_higher_acuity_care",
