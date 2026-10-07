@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Fit &amp; Safety Check | Stonebridge Psychological Group</title>
+  <meta name="description" content="Stonebridge new-client Fit & Safety Check.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260924rhythm2">
+  <link rel="stylesheet" href="new-client-access.css?v=20261006a">
+</head>
+<body class="fit-safety-page">
+  <a class="access-skip" href="#main-content">Skip to main content</a>
+  <header class="access-header">
+    <div class="access-header-inner">
+      <a class="access-brand" href="index.html" aria-label="Stonebridge Psychological Group home">
+        <strong>STONEBRIDGE</strong><span>Psychological Group</span>
+      </a>
+      <nav class="access-nav" aria-label="Screening navigation">
+        <a href="new-clients.html">New Client Options</a>
+        <a href="privacy-information.html">Privacy &amp; Information Use</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="access-hero">
+      <div class="access-shell">
+        <p class="access-kicker">New-client screening</p>
+        <h1>Fit &amp; Safety Check</h1>
+        <p>This brief check helps Stonebridge determine whether you can proceed directly to a first-appointment request or whether we need to clarify something first. It is not a diagnosis, comprehensive assessment, or guarantee of acceptance for treatment.</p>
+      </div>
+    </section>
+
+    <section class="access-main">
+      <div class="access-shell screen-shell">
+        <div class="screen-emergency" role="note">
+          <strong>Do not use this form for an emergency.</strong>
+          <p>If you are experiencing a medical or psychiatric emergency, believe you may harm yourself or someone else, or feel unable to remain safe, call <a href="tel:911">911</a>, go to the nearest emergency department, call or text <a href="tel:988">988</a>, or use local crisis services.</p>
+        </div>
+
+        <p class="screen-intro">Please answer only what is asked here. Stonebridge intentionally does not collect a broad clinical history through this screening form.</p>
+
+        <form id="fit-safety-form" class="screen-card" novalidate>
+          <div id="screen-error-summary" class="screen-error-summary" role="alert" tabindex="-1" hidden>
+            <h3>Review the highlighted items.</h3>
+            <ul id="screen-error-list"></ul>
+          </div>
+
+          <div class="screen-progress" aria-live="polite">
+            <span id="screen-progress-text">Step 1</span>
+            <div class="screen-progress-bar" aria-hidden="true"><span id="screen-progress-fill"></span></div>
+          </div>
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="screen-website">Website</label>
+            <input id="screen-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <section class="screen-section" data-screen-step="identity">
+            <h2>First, a few details for matching.</h2>
+            <p>These fields allow Stonebridge staff to match this check with a later TherapyPortal appointment request.</p>
+            <div class="screen-grid">
+              <div class="screen-field">
+                <label for="screen-name">Full name <span class="screen-required" aria-hidden="true">*</span></label>
+                <input id="screen-name" name="fullName" autocomplete="name" maxlength="120" required>
+                <p class="screen-field-error" data-error-for="fullName" hidden></p>
+              </div>
+              <div class="screen-field">
+                <label for="screen-dob">Date of birth <span class="screen-required" aria-hidden="true">*</span></label>
+                <input id="screen-dob" name="dateOfBirth" type="date" autocomplete="bday" required>
+                <p class="screen-field-error" data-error-for="dateOfBirth" hidden></p>
+              </div>
+              <div class="screen-field">
+                <label for="screen-email">Email <span class="screen-required" aria-hidden="true">*</span></label>
+                <input id="screen-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+                <p class="screen-field-error" data-error-for="email" hidden></p>
+              </div>
+              <div class="screen-field">
+                <label for="screen-mobile">Mobile phone <span class="screen-required" aria-hidden="true">*</span></label>
+                <input id="screen-mobile" name="mobile" type="tel" autocomplete="tel" maxlength="50" required>
+                <p class="screen-field-error" data-error-for="mobile" hidden></p>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen-section" data-screen-step="service" hidden>
+            <h2>What type of care are you looking for?</h2>
+            <p>Choose the option that best fits the service you are seeking.</p>
+            <div class="screen-field screen-field--full">
+              <label for="screen-service">Service <span class="screen-required" aria-hidden="true">*</span></label>
+              <select id="screen-service" name="service" required>
+                <option value="">Select one</option>
+                <option value="adult_individual">Adult individual therapy</option>
+                <option value="adolescent_individual">Adolescent individual therapy</option>
+                <option value="couples">Couples therapy</option>
+                <option value="family">Family therapy</option>
+                <option value="parent_support">Parent support</option>
+                <option value="group">Group therapy</option>
+                <option value="not_sure">I'm not sure</option>
+                <option value="other">Something else</option>
+              </select>
+              <p class="screen-field-error" data-error-for="service" hidden></p>
+            </div>
+          </section>
+
+          <section class="screen-section" data-screen-step="jurisdiction" hidden>
+            <h2>Telehealth location</h2>
+            <p>Stonebridge currently provides psychotherapy by telehealth to clients physically located in Illinois at the time of care.</p>
+            <fieldset class="screen-field screen-field--full">
+              <legend class="screen-legend">Will you be physically located in Illinois for your therapy appointments? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options">
+                <label class="screen-option"><input type="radio" name="illinoisTelehealth" value="yes"><span>Yes</span></label>
+                <label class="screen-option"><input type="radio" name="illinoisTelehealth" value="no"><span>No</span></label>
+                <label class="screen-option"><input type="radio" name="illinoisTelehealth" value="unsure"><span>I'm not sure</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="illinoisTelehealth" hidden></p>
+            </fieldset>
+          </section>
+
+          <section class="screen-section" data-screen-step="acuity" hidden>
+            <h2>Current or very recent level of care</h2>
+            <p>We only need to know about care that may affect whether routine outpatient telehealth is the right next step now.</p>
+
+            <fieldset class="screen-field screen-field--full">
+              <legend class="screen-legend">Does any of the following apply? Select all that apply. <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options" data-exclusive-group="recentCare">
+                <label class="screen-option"><input type="checkbox" name="recentCare" value="current_intensive"><span>I am currently participating in inpatient psychiatric care, residential treatment, PHP, IOP, detoxification, crisis stabilization, or comparable intensive behavioral-health treatment.</span></label>
+                <label class="screen-option"><input type="checkbox" name="recentCare" value="discharged_30_days"><span>I was discharged from one of those levels of care within the previous 30 calendar days.</span></label>
+                <label class="screen-option"><input type="checkbox" name="recentCare" value="emergency_evaluation_30_days"><span>I had a psychiatric emergency or behavioral-health crisis evaluation within the previous 30 calendar days, even if I was not admitted.</span></label>
+                <label class="screen-option"><input type="checkbox" name="recentCare" value="unsure"><span>I'm not sure whether recent/current care fits one of these categories.</span></label>
+                <label class="screen-option"><input type="checkbox" name="recentCare" value="none" data-exclusive-none><span>None of these apply.</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="recentCare" hidden></p>
+              <p class="screen-help">Thirty days is a Stonebridge operational routing threshold, not a clinical standard.</p>
+            </fieldset>
+
+            <fieldset class="screen-field screen-field--full" style="margin-top:22px">
+              <legend class="screen-legend">Are you experiencing a medical or psychiatric emergency right now, do you believe you may harm yourself or someone else, or do you feel unable to remain safe? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options">
+                <label class="screen-option"><input type="radio" name="immediateEmergency" value="no"><span>No</span></label>
+                <label class="screen-option"><input type="radio" name="immediateEmergency" value="yes"><span>Yes</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="immediateEmergency" hidden></p>
+            </fieldset>
+
+            <fieldset class="screen-field screen-field--full" style="margin-top:22px">
+              <legend class="screen-legend">Apart from an immediate emergency, do you currently need—or think you may need—crisis stabilization, detox/withdrawal management, close monitoring, intensive support, or another level of care more intensive than routine outpatient telehealth therapy? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options">
+                <label class="screen-option"><input type="radio" name="currentAcuity" value="no"><span>No</span></label>
+                <label class="screen-option"><input type="radio" name="currentAcuity" value="yes"><span>Yes</span></label>
+                <label class="screen-option"><input type="radio" name="currentAcuity" value="unsure"><span>I'm not sure</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="currentAcuity" hidden></p>
+            </fieldset>
+          </section>
+
+          <section class="screen-section" data-screen-step="administrative" hidden>
+            <h2>Legal, consent, or role questions</h2>
+            <p>We are not asking whether legal circumstances exist in your life. We only need to know whether they affect Stonebridge's requested role or authority to provide treatment.</p>
+            <fieldset class="screen-field screen-field--full">
+              <legend class="screen-legend">Does any of the following affect this request? Select all that apply. <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options" data-exclusive-group="adminIssues">
+                <label class="screen-option"><input type="checkbox" name="adminIssues" value="formal_evaluation"><span>Stonebridge is being asked to perform a court, custody, forensic, fitness, disability, or other formal evaluation.</span></label>
+                <label class="screen-option"><input type="checkbox" name="adminIssues" value="mandated_treatment"><span>The treatment is required or mandated by a court, probation/parole authority, employer, school, or another organization.</span></label>
+                <label class="screen-option"><input type="checkbox" name="adminIssues" value="legal_reporting"><span>A Stonebridge clinician is expected to testify, provide a legal opinion, prepare a court report, or create documentation primarily for a legal proceeding.</span></label>
+                <label class="screen-option"><input type="checkbox" name="adminIssues" value="consent_authority"><span>There is uncertainty, disagreement, a custody arrangement, guardianship, court order, or another issue affecting who may legally consent to or authorize treatment.</span></label>
+                <label class="screen-option"><input type="checkbox" name="adminIssues" value="none" data-exclusive-none><span>None of these apply.</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="adminIssues" hidden></p>
+            </fieldset>
+          </section>
+
+          <section class="screen-section" data-screen-step="cssrs" hidden>
+            <h2>Suicide screening</h2>
+            <p>The following is the official C-SSRS Self-Report – Recent screening module. It is used here only to determine whether Stonebridge needs to speak with you before an ordinary appointment request.</p>
+
+            <fieldset class="screen-field screen-field--full">
+              <legend class="screen-legend">1. In the past month, have you wished you were dead or wished you could go to sleep and not wake up? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options">
+                <label class="screen-option"><input type="radio" name="cssrsQ1" value="yes"><span>Yes</span></label>
+                <label class="screen-option"><input type="radio" name="cssrsQ1" value="no"><span>No</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="cssrsQ1" hidden></p>
+            </fieldset>
+
+            <fieldset class="screen-field screen-field--full" style="margin-top:22px">
+              <legend class="screen-legend">2. In the past month, have you actually had any thoughts of killing yourself? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options">
+                <label class="screen-option"><input type="radio" name="cssrsQ2" value="yes"><span>Yes</span></label>
+                <label class="screen-option"><input type="radio" name="cssrsQ2" value="no"><span>No</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="cssrsQ2" hidden></p>
+            </fieldset>
+
+            <div id="cssrs-active-followups" hidden>
+              <fieldset class="screen-field screen-field--full" style="margin-top:22px">
+                <legend class="screen-legend">3. Have you thought about how you might do this? <span class="screen-required" aria-hidden="true">*</span></legend>
+                <div class="screen-options">
+                  <label class="screen-option"><input type="radio" name="cssrsQ3" value="yes"><span>Yes</span></label>
+                  <label class="screen-option"><input type="radio" name="cssrsQ3" value="no"><span>No</span></label>
+                </div>
+                <p class="screen-field-error" data-error-for="cssrsQ3" hidden></p>
+              </fieldset>
+
+              <fieldset class="screen-field screen-field--full" style="margin-top:22px">
+                <legend class="screen-legend">4. Have you had any intention of acting on these thoughts of killing yourself, as opposed to having the thoughts but definitely not acting on them? <span class="screen-required" aria-hidden="true">*</span></legend>
+                <div class="screen-options">
+                  <label class="screen-option"><input type="radio" name="cssrsQ4" value="yes"><span>Yes</span></label>
+                  <label class="screen-option"><input type="radio" name="cssrsQ4" value="no"><span>No</span></label>
+                </div>
+                <p class="screen-field-error" data-error-for="cssrsQ4" hidden></p>
+              </fieldset>
+
+              <fieldset class="screen-field screen-field--full" style="margin-top:22px">
+                <legend class="screen-legend">5. Have you started to work out, or actually worked out, the specific details of how to kill yourself and did you actually intend to carry out the details of your plan? <span class="screen-required" aria-hidden="true">*</span></legend>
+                <div class="screen-options">
+                  <label class="screen-option"><input type="radio" name="cssrsQ5" value="yes"><span>Yes</span></label>
+                  <label class="screen-option"><input type="radio" name="cssrsQ5" value="no"><span>No</span></label>
+                </div>
+                <p class="screen-field-error" data-error-for="cssrsQ5" hidden></p>
+              </fieldset>
+            </div>
+
+            <fieldset class="screen-field screen-field--full" style="margin-top:22px">
+              <legend class="screen-legend">6. Have you ever done anything, started to do anything, or prepared to do anything to end your life? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options">
+                <label class="screen-option"><input type="radio" name="cssrsQ6" value="yes"><span>Yes</span></label>
+                <label class="screen-option"><input type="radio" name="cssrsQ6" value="no"><span>No</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="cssrsQ6" hidden></p>
+            </fieldset>
+
+            <fieldset id="cssrs-recent-behavior" class="screen-field screen-field--full" style="margin-top:22px" hidden>
+              <legend class="screen-legend">Did this occur within the past 3 months? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options">
+                <label class="screen-option"><input type="radio" name="cssrsQ6Recent" value="yes"><span>Yes</span></label>
+                <label class="screen-option"><input type="radio" name="cssrsQ6Recent" value="no"><span>No</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="cssrsQ6Recent" hidden></p>
+            </fieldset>
+
+            <p class="screen-source">C-SSRS Self-Report – Recent, Columbia Lighthouse Project. <a href="https://cssrs.columbia.edu/documents/self-report-screener-recent/" rel="noopener noreferrer">View the official source</a>. Stonebridge applies its own access-routing policy to the screening responses; this website is not performing a comprehensive suicide-risk assessment.</p>
+          </section>
+
+          <section class="screen-section" data-screen-step="risk-others" hidden>
+            <h2>Current concern about harming someone else</h2>
+            <p>This is not a violence-risk assessment. We only need to identify current circumstances that should be clarified before ordinary outpatient scheduling.</p>
+            <fieldset class="screen-field screen-field--full">
+              <legend class="screen-legend">Does any of the following apply right now? Select all that apply. <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options" data-exclusive-group="riskOthers">
+                <label class="screen-option"><input type="checkbox" name="riskOthers" value="intent"><span>I currently intend to harm another person.</span></label>
+                <label class="screen-option"><input type="checkbox" name="riskOthers" value="planning_or_preparation"><span>I am currently planning or preparing to harm another person.</span></label>
+                <label class="screen-option"><input type="checkbox" name="riskOthers" value="specific_person"><span>There is a specific person I am currently considering harming.</span></label>
+                <label class="screen-option"><input type="checkbox" name="riskOthers" value="concern_may_act"><span>I am concerned that I may act on thoughts of harming another person.</span></label>
+                <label class="screen-option"><input type="checkbox" name="riskOthers" value="none" data-exclusive-none><span>None of these apply.</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="riskOthers" hidden></p>
+            </fieldset>
+          </section>
+
+          <section class="screen-section" data-screen-step="conjoint" hidden>
+            <h2>Safety and meeting together</h2>
+            <p>This question appears only for couples or family therapy and is not a domestic-violence assessment.</p>
+            <fieldset class="screen-field screen-field--full">
+              <legend class="screen-legend">Is there a current concern involving violence, coercion, intimidation, fear, or another relationship-safety issue that Stonebridge should clarify before determining whether meeting together is appropriate? <span class="screen-required" aria-hidden="true">*</span></legend>
+              <div class="screen-options">
+                <label class="screen-option"><input type="radio" name="conjointSafety" value="no"><span>No</span></label>
+                <label class="screen-option"><input type="radio" name="conjointSafety" value="yes"><span>Yes</span></label>
+                <label class="screen-option"><input type="radio" name="conjointSafety" value="unsure"><span>I'm not sure</span></label>
+              </div>
+              <p class="screen-field-error" data-error-for="conjointSafety" hidden></p>
+            </fieldset>
+          </section>
+
+          <div class="screen-actions">
+            <button id="screen-back" class="screen-back" type="button" hidden>Back</button>
+            <button id="screen-next" class="access-btn" type="button">Continue</button>
+            <button id="screen-submit" class="access-btn" type="submit" hidden>Complete Check</button>
+          </div>
+        </form>
+
+        <section id="screen-result" class="screen-result" tabindex="-1" hidden aria-live="polite"></section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="access-footer">
+    <div class="access-shell access-footer-inner">
+      <span>© 2026 Stonebridge Psychological Group.</span>
+      <span>This screening page is not monitored in real time. <a href="privacy-information.html">Privacy &amp; Information Use</a></span>
+    </div>
+  </footer>
+
+  <script src="fit-safety-check.js?v=20261006a"></script>
+</body>
+</html>
