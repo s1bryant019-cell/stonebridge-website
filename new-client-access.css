@@ -861,3 +861,36 @@ body.fit-safety-page{
     padding:24px 20px 26px;
   }
 }
+
+
+/* Softer screening option presentation — 2026-10-07 */
+.fit-safety-page .screen-field label.screen-option{
+  align-items:center;
+  min-height:44px;
+  padding:9px 12px;
+  border-color:rgba(33,49,66,.11);
+  background:rgba(255,253,249,.78);
+}
+.fit-safety-page .screen-field label.screen-option input[type="checkbox"],
+.fit-safety-page .screen-field label.screen-option input[type="radio"]{
+  align-self:center;
+  margin:0;
+}
+.fit-safety-page .screen-field label.screen-option span{
+  align-self:center;
+  font-weight:500;
+  line-height:1.42;
+  color:#34424d;
+}
+.fit-safety-page .screen-legend{
+  color:#34424d;
+  font-weight:650;
+  line-height:1.48;
+}
+.fit-safety-page .screen-section>p{
+  color:#667079;
+}
+.fit-safety-page .screen-field label.screen-option:hover{
+  border-color:rgba(22,59,97,.20);
+  background:#fffdf9;
+}

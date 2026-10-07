@@ -231,7 +231,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
       return '<div class="screen-result-label">Next step</div>'+
         '<h2>You can request an appointment.</h2>'+
         '<p>Continue to TherapyPortal to choose an available intake time. Your request will remain pending until Stonebridge reviews it.</p>'+
-        '<p class="screen-result-note">If TherapyPortal offers a message field, enter <strong>Fit &amp; Safety Check completed</strong>.</p>'+
+        '<p class="screen-result-note">If TherapyPortal offers a message field, enter <strong>Stonebridge new-client check completed</strong>.</p>'+
         '<div class="screen-result-actions"><a class="access-btn" href="https://www.therapyportal.com/p/stonebridge60634/" target="_blank" rel="noopener noreferrer">Request an Appointment</a><a class="access-btn access-btn--secondary" href="contact.html#inquiry-form">Speak With Stonebridge First</a></div>';
     }
 
