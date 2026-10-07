@@ -12,7 +12,7 @@ on:
       - "fit-safety-check.js"
       - "api/fit-safety-check.js"
       - "api/contact.js"
-      - "api/_secure-intake.js"\n      - "api/intake-review.js"\n      - "api/intake-retention.js"\n      - "intake-review.html"\n      - "intake-review.js"\n      - "vercel.json"
+      - "vercel.json"
       - "lib/fit-safety-routing.mjs"
       - "tests/**"
       - "package.json"
