@@ -6,6 +6,8 @@ const fitHtml = await readFile(new URL("../fit-safety-check.html", import.meta.u
 const fitJs = await readFile(new URL("../fit-safety-check.js", import.meta.url), "utf8");
 const contactHtml = await readFile(new URL("../contact.html", import.meta.url), "utf8");
 const newClientsHtml = await readFile(new URL("../new-clients.html", import.meta.url), "utf8");
+const consultationJs = await readFile(new URL("../consultation-request.js", import.meta.url), "utf8");
+const newClientAccessJs = await readFile(new URL("../new-client-access.js", import.meta.url), "utf8");
 const vercelJson = JSON.parse(await readFile(new URL("../vercel.json", import.meta.url), "utf8"));
 const packageJson = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
 
@@ -50,7 +52,24 @@ test("administrative and clinical results do not transmit screening answers", ()
 test("consultation page has a non-clinical contact form with no Vercel submission", () => {
   assert.match(contactHtml, /id="consultation-request-form"/);
   assert.match(contactHtml, /consultation-request\.js/);
+  assert.match(contactHtml, /id="consultation-clinician"/);
   assert.doesNotMatch(contactHtml, /name="reason"|name="dateOfBirth"|name="insurancePreference"|\/api\/contact/i);
+});
+
+test("consultation form restores the existing Google Ads conversion action", () => {
+  assert.match(consultationJs, /AW-18474959338/);
+  assert.match(consultationJs, /AW-18474959338\/oiH4CNOsuYYdEOqDxulE/);
+  assert.match(consultationJs, /gtag\("event","conversion"/);
+  assert.match(consultationJs, /allow_ad_personalization_signals",false/);
+  assert.doesNotMatch(consultationJs, /fullName.*gtag|email.*gtag|phone.*gtag|clinician.*gtag/is);
+});
+
+test("Google click IDs may continue to consultation but not the sensitive Fit & Safety screen", () => {
+  assert.match(newClientAccessJs, /gclid/);
+  assert.match(newClientAccessJs, /gbraid/);
+  assert.match(newClientAccessJs, /wbraid/);
+  assert.match(newClientAccessJs, /a\[href\^="contact\.html"\]/);
+  assert.doesNotMatch(newClientAccessJs, /fit-safety-check[^\n]*(gclid|gbraid|wbraid)/i);
 });
 
 test("new-client page offers the voluntary consultation route", () => {
