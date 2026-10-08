@@ -277,6 +277,7 @@ import { evaluateRouting } from "./lib/fit-safety-routing.mjs";
     clearErrors();
     var routing=evaluateRouting(routingInput());
     form.hidden=true;
+    document.body.classList.add("is-screen-complete");
     if(layout) layout.classList.add("is-complete");
     result.className="screen-result"+(routing.state==="urgent_pathway"?" screen-result--urgent":"");
     result.innerHTML=resultHtml(routing.state);
