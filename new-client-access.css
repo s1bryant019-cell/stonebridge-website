@@ -1020,3 +1020,63 @@ body.fit-safety-page{
     max-width:120px;
   }
 }
+
+
+/* Compact new-client landing layout — 2026-10-08 */
+.new-client-access-page .access-template-section{
+  padding:38px 0 42px;
+}
+.new-client-access-page .access-template-layout{
+  grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);
+  gap:38px;
+}
+.new-client-access-page .access-template-intro{
+  top:92px;
+}
+.new-client-access-page .access-template-intro h2{
+  margin-top:9px;
+}
+.new-client-access-page .access-path-row{
+  padding:15px 0 17px;
+}
+.new-client-access-page .access-path-row h3{
+  margin:5px 0 6px;
+  font-size:1.58rem;
+}
+.new-client-access-page .access-path-row p{
+  margin-bottom:12px;
+  line-height:1.52;
+}
+.new-client-access-page .access-path-row .btn{
+  min-height:40px;
+  padding:0 16px;
+}
+.new-client-access-page .access-template-note--rail{
+  margin-top:24px;
+  padding:16px 0 0;
+  border-top:1px solid rgba(33,49,66,.14);
+  color:#667079;
+  font-size:.76rem;
+  line-height:1.52;
+}
+.new-client-access-page .access-template-note--rail strong{
+  display:block;
+  margin-bottom:4px;
+  color:#213142;
+}
+@media(max-width:1080px){
+  .new-client-access-page .access-template-layout{
+    gap:24px;
+  }
+  .new-client-access-page .access-template-note--rail{
+    max-width:620px;
+  }
+}
+@media(max-width:720px){
+  .new-client-access-page .access-template-section{
+    padding:30px 0 34px;
+  }
+  .new-client-access-page .access-template-note--rail{
+    margin-top:18px;
+  }
+}
