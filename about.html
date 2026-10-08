@@ -1294,6 +1294,61 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+
+<style id="stonebridge-about-heading-widths-20261008">
+/* About-page heading width and centered founding statement. */
+.about-page .about-principles-heading,
+.about-page .about-client-heading{
+  width:100%;
+  max-width:none;
+}
+.about-page .about-principles-heading h2,
+.about-page .about-client-heading h2{
+  width:100%;
+  max-width:none;
+  text-wrap:balance;
+}
+
+.about-page .about-founding-principle-inner{
+  display:block;
+  width:min(980px,calc(100% - 64px));
+  margin:0 auto;
+  padding:48px 0 50px;
+  text-align:center;
+}
+.about-page .about-founding-principle .about-story-label{
+  display:block;
+  padding:0;
+  margin:0 0 12px;
+  text-align:center;
+}
+.about-page .about-founding-principle blockquote{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+.about-page .about-founding-principle p{
+  max-width:720px;
+  margin:14px auto 0;
+  text-align:center;
+}
+
+@media(max-width:900px){
+  .about-page .about-founding-principle-inner{
+    width:min(100% - 48px,900px);
+  }
+}
+@media(max-width:760px){
+  .about-page .about-founding-principle-inner{
+    width:min(100% - 40px,900px);
+    padding:40px 0 42px;
+  }
+  .about-page .about-principles-heading h2,
+  .about-page .about-client-heading h2{
+    max-width:none;
+  }
+}
+</style>
 </head>
 
 <body class="about-page" data-static-hero-system="true">
