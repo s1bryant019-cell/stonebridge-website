@@ -7,6 +7,10 @@
   var summary=document.getElementById("consultation-error-summary");
   var list=document.getElementById("consultation-error-list");
   var submit=document.getElementById("consultation-submit-button");
+  var content=form.querySelector(".contact-form-content");
+  var success=document.getElementById("consultation-success");
+  var inFlight=false;
+  var completed=false;
 
   var GOOGLE_ADS_ID="AW-18474959338";
   var GOOGLE_ADS_SEND_TO="AW-18474959338/oiH4CNOsuYYdEOqDxulE";
@@ -25,11 +29,17 @@
     }
   }
 
-  function fireGoogleAdsConsultationConversion(callback){
-    if(window.__stonebridgeConsultationConversionSent){
-      if(typeof callback==="function") callback();
-      return;
-    }
+  function clickIds(){
+    var result={};
+    var params=new URLSearchParams(window.location.search);
+    ["gclid","gbraid","wbraid"].forEach(function(key){
+      result[key]=params.get(key)||"";
+    });
+    return result;
+  }
+
+  function fireGoogleAdsConsultationConversion(){
+    if(window.__stonebridgeConsultationConversionSent) return;
     window.__stonebridgeConsultationConversionSent=true;
 
     window.dataLayer=window.dataLayer||[];
@@ -47,18 +57,17 @@
     window.gtag("set","allow_ad_personalization_signals",false);
     window.gtag("js",new Date());
     window.gtag("config",GOOGLE_ADS_ID,{
+      send_page_view:false,
       page_location:sanitizedMeasurementLocation(),
       page_referrer:""
     });
-    window.gtag("event","conversion",{
-      send_to:GOOGLE_ADS_SEND_TO,
-      event_callback:callback,
-      event_timeout:800
-    });
+    // Never pass form contents, user_data, or enhanced-conversion fields to Google.
+    window.gtag("event","conversion",{send_to:GOOGLE_ADS_SEND_TO});
   }
 
   function clearErrors(){
     summary.hidden=true;
+    summary.querySelector("h3").textContent="Review the highlighted fields.";
     list.innerHTML="";
     form.querySelectorAll(".field-error").forEach(function(el){
       el.hidden=true;
@@ -84,8 +93,18 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
-  form.addEventListener("submit",function(event){
+  function showSubmissionError(){
+    summary.querySelector("h3").textContent="Request not confirmed.";
+    var li=document.createElement("li");
+    li.textContent="We could not confirm delivery. Please try again or call Stonebridge at (773) 417-1688.";
+    list.appendChild(li);
+    summary.hidden=false;
+    summary.focus();
+  }
+
+  form.addEventListener("submit",async function(event){
     event.preventDefault();
+    if(inFlight || completed) return;
     clearErrors();
 
     var name=document.getElementById("consultation-name").value.trim();
@@ -111,34 +130,43 @@
       return;
     }
 
-    var body=[
-      "Hello Stonebridge,",
-      "",
-      "I'd like to schedule a brief consultation.",
-      "",
-      "Name: "+name,
-      "Email: "+email,
-      "Phone: "+(phone || "Not provided"),
-      "Preferred contact: "+(preferred || "No preference"),
-      "Clinician preference: "+(clinician || "No preference — help me determine fit"),
-      "Best times to reach me: "+(availability || "Not provided"),
-      "",
-      "Please contact me to arrange a consultation."
-    ].join("\n");
-
-    var href="mailto:info@stonebridgepsychgroup.com?subject="+
-      encodeURIComponent("Consultation request from "+name)+
-      "&body="+encodeURIComponent(body);
-
+    inFlight=true;
     submit.disabled=true;
-    var launched=false;
-    function launchEmail(){
-      if(launched) return;
-      launched=true;
-      window.location.href=href;
-      submit.disabled=false;
+    submit.textContent="Sending request…";
+
+    try{
+      var response=await fetch("/api/consultation-request",{
+        method:"POST",
+        credentials:"same-origin",
+        cache:"no-store",
+        headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body:JSON.stringify({
+          fullName:name,
+          email:email,
+          phone:phone,
+          preferredContact:preferred,
+          preferredClinician:clinician,
+          availability:availability,
+          website:form.elements.website.value,
+          ...clickIds()
+        })
+      });
+      var receipt=await response.json();
+      if(!response.ok || receipt.delivered!==true) throw new Error("Unconfirmed delivery");
+
+      completed=true;
+      content.hidden=true;
+      success.hidden=false;
+      success.focus();
+      fireGoogleAdsConsultationConversion();
+    }catch(error){
+      showSubmissionError();
+    }finally{
+      inFlight=false;
+      if(!completed){
+        submit.disabled=false;
+        submit.textContent="Send Consultation Request";
+      }
     }
-    fireGoogleAdsConsultationConversion(launchEmail);
-    window.setTimeout(launchEmail,900);
   });
 })();
