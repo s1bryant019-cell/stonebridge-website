@@ -451,12 +451,14 @@
         var value = currentParams.get(key);
         if (value) paidParams.set(key, value);
       });
-      cta.href = 'new-clients.html?' + paidParams.toString();
+      cta.href = 'contact.html?' + paidParams.toString() + '#inquiry-form';
+      cta.textContent = 'Request a Consultation';
+      cta.setAttribute('aria-label', 'Request a Consultation');
     } else {
       cta.href = 'new-clients.html';
+      cta.textContent = 'New Clients';
+      cta.setAttribute('aria-label', 'New Clients');
     }
-    cta.textContent = 'New Clients';
-    cta.setAttribute('aria-label', 'New Clients');
     document.body.appendChild(cta);
     document.body.classList.add('sb-has-mobile-consultation-cta');
     syncMobileConsultationCTAVisibility(cta);
