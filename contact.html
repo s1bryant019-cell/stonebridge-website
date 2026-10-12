@@ -1523,6 +1523,43 @@ body.contact-page .contact-form-submit .btn{
     width:100%!important;
   }
 }
+/* Keep the first three fields immediate; reveal preferences only on request. */
+body.contact-page .contact-form-optional{
+  grid-column:1 / -1;
+  min-width:0;
+  padding-top:10px;
+  border-top:1px solid var(--contact-line);
+}
+body.contact-page .contact-form-optional summary{
+  cursor:pointer;
+  color:var(--contact-navy);
+  font-family:"Inter",sans-serif;
+  font-size:.84rem;
+  font-weight:700;
+  line-height:1.5;
+  padding:9px 0;
+}
+body.contact-page .contact-form-optional summary:focus-visible{
+  outline:3px solid var(--contact-navy);
+  outline-offset:3px;
+}
+body.contact-page .contact-optional-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px 18px;
+  margin-top:12px;
+}
+body.contact-page .contact-optional-grid .contact-field-availability{
+  grid-column:auto!important;
+}
+@media(min-width:761px) and (max-width:1099px){
+  body.contact-page .contact-optional-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.contact-page .contact-optional-grid .contact-field-availability{grid-column:1 / -1!important}
+}
+@media(max-width:760px){
+  body.contact-page .contact-optional-grid{grid-template-columns:1fr;gap:15px}
+  body.contact-page .contact-optional-grid .contact-field-availability{grid-column:auto!important}
+}
 </style>
 
 </head>
@@ -1633,8 +1670,11 @@ body.contact-page .contact-form-submit .btn{
                 <input id="consultation-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="50">
               </div>
 
-              <div class="contact-field">
-                <label class="field-label-row" for="consultation-preferred-contact">
+              <details class="contact-form-optional">
+                <summary>Additional preferences (optional)</summary>
+                <div class="contact-optional-grid">
+                  <div class="contact-field">
+                    <label class="field-label-row" for="consultation-preferred-contact">
                   <span>Preferred contact method</span>
                   <span class="field-optional">Optional</span>
                 </label>
@@ -1663,10 +1703,17 @@ body.contact-page .contact-form-submit .btn{
                   <span class="field-optional">Optional</span>
                 </label>
                 <input id="consultation-availability" type="text" name="availability" maxlength="300" placeholder="For example: weekday mornings or Tuesday after 5 PM">
-              </div>
+                  </div>
+                </div>
+              </details>
             </div>
 
-            <p class="contact-brief-privacy">This form does not ask for clinical information. When you submit, your email application will open with these contact details addressed to Stonebridge; nothing is posted through the Stonebridge website.</p>
+            <div class="contact-honeypot" aria-hidden="true">
+              <label for="consultation-website">Leave this field blank</label>
+              <input id="consultation-website" type="text" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="contact-brief-privacy">Your contact information and any optional preferences are submitted securely to Stonebridge for consultation follow-up. Please do not include clinical details. <a href="privacy-information.html">Privacy &amp; Information Use</a>.</p>
 
             <div class="contact-form-footer">
               <p class="contact-crisis-guidance">Stonebridge is not an emergency or crisis service. If you are experiencing a medical or psychiatric emergency, believe you may harm yourself or someone else, or feel unable to remain safe, call 911, go to the nearest emergency department, call or text 988, or use local crisis services.</p>
@@ -1676,6 +1723,10 @@ body.contact-page .contact-form-submit .btn{
             </div>
 
             <p style="margin-top:1rem">Prefer to call? <a href="tel:+17734171688">(773) 417-1688</a></p>
+          </div>
+          <div class="contact-success" id="consultation-success" role="status" aria-live="polite" tabindex="-1" hidden>
+            <h2>Request received.</h2>
+            <p>Stonebridge will contact you to arrange your consultation.</p>
           </div>
         </form>
       </div>
@@ -1797,7 +1848,7 @@ body.contact-page .contact-form-submit .btn{
     })();
   </script>
 
-  <script src="script.js?v=20260924headerfix3"></script>\n  <script src="consultation-request.js?v=20261007b"></script>
+  <script src="script.js?v=20260924headerfix3"></script>\n  <script src="consultation-request.js?v=20261012a"></script>
 
 </body>
 </html>
