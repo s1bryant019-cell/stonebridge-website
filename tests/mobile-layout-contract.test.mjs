@@ -19,7 +19,7 @@ test("brief check keeps its safety notes and gains compact mobile spacing", () =
   const css = file("new-client-access.css");
   assert.match(html, /class="screen-emergency"/);
   assert.match(html, /id="fit-safety-form"/);
-  assert.match(html, /new-client-access\.css\?v=20261013mobile1/);
+  assert.match(html, /new-client-access\.css\?v=20261013mobile2/);
   assert.match(css, /\.fit-safety-page \.screen-template-context \.screen-emergency\s*\{/);
   assert.match(css, /\.fit-safety-page \.screen-template-privacy\s*\{/);
 });
@@ -38,4 +38,29 @@ test("paid landing pages share the mobile hero adjustment without changing their
 test("narrow home headline and consultation form anchor have scoped overrides", () => {
   assert.match(file("home-current.html"), /@media\(max-width:480px\)\{\s*\.home-recognition-nowrap\{white-space:normal\}/);
   assert.match(file("contact.html"), /body\.contact-page #inquiry-form\{scroll-margin-top:84px\}/);
+});
+
+test("phone New Client options lead before the full retained crisis advisory", () => {
+  const css = file("new-client-access.css");
+  const fix = css.slice(css.indexOf("Mobile entry priority — 2026-10-13"));
+  assert.match(fix, /\.new-client-access-page \.access-template-intro\{display:contents\}/);
+  assert.match(fix, /\.new-client-access-page \.access-path-list\{grid-row:3\}/);
+  assert.match(fix, /\.new-client-access-page \.access-template-note--rail\{\s*grid-row:4;/);
+  const page = file("new-clients.html");
+  assert.match(page, /Emergency or crisis care:/);
+  assert.match(page, /href="fit-safety-check\.html"/);
+  assert.match(page, /href="contact\.html#inquiry-form"/);
+});
+test("phone Brief Check keeps urgent-help and privacy text above the untouched form", () => {
+  const css = file("new-client-access.css");
+  const fix = css.slice(css.indexOf("Mobile entry priority — 2026-10-13"));
+  assert.match(fix, /\.fit-safety-page \.screen-template-context h2\{display:none\}/);
+  assert.match(fix, /\.fit-safety-page \.access-hero,\s*\.fit-safety-page \.access-hero-copy\{\s*min-height:clamp\(240px/);
+  const screen = file("fit-safety-check.html");
+  const noteAt = screen.indexOf('class="screen-emergency"');
+  const privacyAt = screen.indexOf('class="screen-template-privacy"');
+  const formAt = screen.indexOf('id="fit-safety-form"');
+  assert.ok(noteAt >= 0 && privacyAt > noteAt && formAt > privacyAt);
+  assert.match(screen, /call or text/);
+  assert.match(screen, /id="screen-progress-text"/);
 });
