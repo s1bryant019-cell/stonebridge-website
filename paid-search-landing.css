@@ -662,3 +662,16 @@ body.paid-search-page{
 @media(prefers-reduced-motion:reduce){
   .paid-search-page *{scroll-behavior:auto!important}
 }
+
+
+/* Mobile hero proportion — 2026-10-13; preserves artwork, typography and CTAs. */
+@media(max-width:760px){
+  .paid-search-page .paid-hero,
+  .paid-search-page .paid-hero-copy{
+    min-height:430px;
+  }
+  .paid-search-page .paid-hero-copy{
+    padding:34px 0 36px;
+    justify-content:center;
+  }
+}
