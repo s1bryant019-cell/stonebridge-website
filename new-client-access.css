@@ -1127,3 +1127,65 @@ body.fit-safety-page{
     padding-top:10px;
   }
 }
+
+
+/* Mobile entry priority — 2026-10-13. New Client choices and screening intro only.
+   No desktop styles, crisis wording, form data, or routing changed. */
+@media(max-width:720px){
+  /* Keep the first actionable path closer to the top of a phone screen. */
+  .new-client-access-page .access-hero,
+  .new-client-access-page .access-hero-copy{
+    min-height:clamp(290px,35svh,330px);
+  }
+  .new-client-access-page .access-hero-copy{padding:24px 0 26px}
+  .new-client-access-page .access-hero-rule{margin-bottom:12px}
+  .new-client-access-page .access-hero-copy h1{
+    font-size:clamp(2.32rem,9.4vw,2.9rem);
+  }
+  .new-client-access-page .access-hero-copy>p{
+    margin-top:12px;
+    font-size:.92rem;
+    line-height:1.48;
+  }
+  .new-client-access-page .access-template-layout{row-gap:0}
+  /* Display contents only on mobile: desktop sidebar and hero are untouched.
+     The full crisis guidance remains visible after both choices. */
+  .new-client-access-page .access-template-intro{display:contents}
+  .new-client-access-page .access-template-label{grid-row:1}
+  .new-client-access-page .access-template-intro h2{
+    grid-row:2;
+    margin:8px 0 12px;
+    font-size:clamp(1.9rem,8vw,2.3rem);
+  }
+  .new-client-access-page .access-path-list{grid-row:3}
+  .new-client-access-page .access-template-note--rail{
+    grid-row:4;
+    margin-top:18px;
+    padding-top:15px;
+  }
+  /* Shorter screening introduction without hiding privacy or urgent-help copy. */
+  .fit-safety-page .access-hero,
+  .fit-safety-page .access-hero-copy{
+    min-height:clamp(240px,30svh,280px);
+  }
+  .fit-safety-page .access-hero-copy{padding:18px 0 21px}
+  .fit-safety-page .access-hero-rule{margin-bottom:10px}
+  .fit-safety-page .access-hero-copy h1{
+    font-size:clamp(2.45rem,9vw,2.9rem);
+  }
+  .fit-safety-page .access-hero-copy>p{
+    margin-top:12px;
+    font-size:.92rem;
+    line-height:1.5;
+  }
+  .fit-safety-page .fit-template-section{padding-top:18px}
+  /* This heading repeats the hero introduction; the substantive explanation,
+     emergency contacts and privacy link stay displayed above the form. */
+  .fit-safety-page .screen-template-context h2{display:none}
+  .fit-safety-page .screen-template-context>p{margin-top:7px}
+  .fit-safety-page .screen-progress{
+    margin-bottom:12px;
+    padding:10px 0 12px;
+  }
+  .fit-safety-page .screen-section>p{margin-bottom:12px}
+}
