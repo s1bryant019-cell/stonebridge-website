@@ -30,7 +30,7 @@ test("paid landing pages share the mobile hero adjustment without changing their
   assert.match(css, /\.paid-search-page \.paid-hero-copy\s*\{\s*padding:34px 0 36px;/);
   for (const page of ["adolescent-therapy-illinois.html", "bcbs-therapy-illinois.html", "trauma-therapy-illinois.html"]) {
     const html = file(page);
-    assert.match(html, /paid-search-landing\.css\?v=20261013mobile2/);
+    assert.match(html, /paid-search-landing\.css\?v=20261013mobile1/);
     assert.match(html, /data-new-client-link/);
   }
 });
