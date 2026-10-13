@@ -1,0 +1,41 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+
+const file = (name) => readFileSync(new URL("../" + name, import.meta.url), "utf8");
+
+test("New Clients mobile grid stays single-column after the compact desktop override", () => {
+  const css = file("new-client-access.css");
+  const compactAt = css.indexOf("Compact new-client landing layout");
+  const fixAt = css.indexOf("Mobile layout stability — 2026-10-13");
+  assert.ok(compactAt >= 0 && fixAt > compactAt, "The mobile correction must follow the compact desktop layout");
+  const fix = css.slice(fixAt);
+  assert.match(fix, /@media\(max-width:1080px\)[\s\S]*?\.new-client-access-page \.access-template-layout\s*\{\s*grid-template-columns:minmax\(0,1fr\)/);
+  assert.match(fix, /\.new-client-access-page \.access-path-row \.btn\{min-height:44px\}/);
+});
+
+test("brief check keeps its safety notes and gains compact mobile spacing", () => {
+  const html = file("fit-safety-check.html");
+  const css = file("new-client-access.css");
+  assert.match(html, /class="screen-emergency"/);
+  assert.match(html, /id="fit-safety-form"/);
+  assert.match(html, /new-client-access\.css\?v=20261013mobile1/);
+  assert.match(css, /\.fit-safety-page \.screen-template-context \.screen-emergency\s*\{/);
+  assert.match(css, /\.fit-safety-page \.screen-template-privacy\s*\{/);
+});
+
+test("paid landing pages share the mobile hero adjustment without changing their CTAs", () => {
+  const css = file("paid-search-landing.css");
+  assert.match(css, /Mobile hero proportion — 2026-10-13/);
+  assert.match(css, /\.paid-search-page \.paid-hero-copy\s*\{\s*padding:34px 0 36px;/);
+  for (const page of ["adolescent-therapy-illinois.html", "bcbs-therapy-illinois.html", "trauma-therapy-illinois.html"]) {
+    const html = file(page);
+    assert.match(html, /paid-search-landing\.css\?v=20261013mobile1/);
+    assert.match(html, /data-new-client-link/);
+  }
+});
+
+test("narrow home headline and consultation form anchor have scoped overrides", () => {
+  assert.match(file("home-current.html"), /@media\(max-width:480px\)\{\s*\.home-recognition-nowrap\{white-space:normal\}/);
+  assert.match(file("contact.html"), /body\.contact-page #inquiry-form\{scroll-margin-top:84px\}/);
+});

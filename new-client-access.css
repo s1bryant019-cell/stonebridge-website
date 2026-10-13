@@ -1080,3 +1080,50 @@ body.fit-safety-page{
     margin-top:18px;
   }
 }
+
+
+/* Mobile layout stability — 2026-10-13. Scope: New Clients and Brief Check only. */
+/* Reassert single-column layout after the later desktop compact override. */
+@media(max-width:1080px){
+  .new-client-access-page .access-template-layout{
+    grid-template-columns:minmax(0,1fr);
+  }
+}
+@media(max-width:720px){
+  .new-client-access-page .access-hero,
+  .new-client-access-page .access-hero-copy{
+    min-height:clamp(340px,52svh,410px);
+  }
+  .new-client-access-page .access-template-layout{gap:20px}
+  .new-client-access-page .access-path-row{
+    grid-template-columns:32px minmax(0,1fr);
+    gap:10px;
+    padding:18px 0;
+  }
+  .new-client-access-page .access-path-row .btn{min-height:44px}
+  .new-client-access-page .access-template-note--rail{
+    font-size:.85rem;
+    line-height:1.55;
+  }
+  .fit-safety-page .access-hero,
+  .fit-safety-page .access-hero-copy{
+    min-height:clamp(260px,42svh,320px);
+  }
+  .fit-safety-page .fit-template-section{padding:24px 0 40px}
+  .fit-safety-page .screen-template-layout{gap:20px}
+  .fit-safety-page .screen-template-context h2{
+    font-size:clamp(1.85rem,8vw,2.35rem);
+  }
+  .fit-safety-page .screen-template-context>p{
+    margin-top:8px;
+    line-height:1.52;
+  }
+  .fit-safety-page .screen-template-context .screen-emergency{
+    margin-top:12px;
+    padding-top:12px;
+  }
+  .fit-safety-page .screen-template-privacy{
+    margin-top:10px!important;
+    padding-top:10px;
+  }
+}
