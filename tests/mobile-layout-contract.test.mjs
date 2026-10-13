@@ -31,7 +31,7 @@ test("paid landing pages share the mobile hero adjustment without changing their
   for (const page of ["adolescent-therapy-illinois.html", "bcbs-therapy-illinois.html", "trauma-therapy-illinois.html"]) {
     const html = file(page);
     assert.match(html, /paid-search-landing\.css\?v=20261013mobile1/);
-    assert.match(html, /href="contact\.html/);
+    assert.match(html, /data-new-client-link/);
   }
 });
 
