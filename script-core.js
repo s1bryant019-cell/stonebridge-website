@@ -799,43 +799,71 @@
 
 
   function initPsychologyTodayFooterSeal() {
-    // Keep third-party embeds away from consultation and safety-screening forms.
-    var page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    if (page === 'contact.html' || page === 'fit-safety-check.html') return;
-
     var footer = document.querySelector('footer.home-footer, footer.site-footer');
-    if (!footer || footer.querySelector('.sx-verified-seal')) return;
+    if (!footer || footer.querySelector('.sx-verified-seal, .sb-psychology-today-footer-seal')) return;
 
-    var bottom = footer.querySelector('.home-footer-bottom, .footer-bottom');
-    if (!bottom) return;
+    // Preserve the existing footer structure. Place the seal with Stonebridge's logo.
+    var logo = footer.querySelector('.home-footer-logo, .footer-logo-right');
+    var placement = logo || footer.querySelector('.home-footer-bottom, .footer-bottom');
+    if (!placement) return;
 
-    var holder = document.createElement('span');
-    holder.className = 'sb-psychology-today-footer-seal';
-    holder.style.cssText = 'display:inline-flex;flex-direction:column;align-items:center;gap:4px;flex:0 0 auto;max-width:100%;';
+    var styleId = 'stonebridge-pt-footer-placement';
+    if (!document.getElementById(styleId)) {
+      var style = document.createElement('style');
+      style.id = styleId;
+      style.textContent = [
+        '.site-footer .footer-logo-right.sb-pt-logo-container{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:12px!important;min-width:0}',
+        '.site-footer .footer-logo-right.sb-pt-logo-container picture{display:block;max-width:220px;width:100%}',
+        '.site-footer .footer-logo-right.sb-pt-logo-container img{display:block;max-width:220px;width:100%;height:auto}',
+        '.home-footer .home-footer-logo.sb-pt-logo-container{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-width:0}',
+        '.home-footer .home-footer-logo.sb-pt-logo-container picture{display:block;max-width:220px;width:100%}',
+        '.home-footer .home-footer-logo.sb-pt-logo-container img{display:block;max-width:220px;width:100%;height:auto}',
+        '.sb-psychology-today-footer-seal.sb-pt-shared-seal{display:flex;flex:0 0 auto;flex-direction:column;align-items:center;justify-content:center;gap:5px;max-width:100%;min-height:28px}',
+        '.sb-psychology-today-footer-seal.sb-pt-shared-seal .sb-pt-caption{display:inline-block;font-family:Inter,Arial,sans-serif;font-size:.69rem;line-height:1.5;font-weight:500;color:inherit;text-align:center;text-decoration:none}',
+        '.sb-psychology-today-footer-seal.sb-pt-shared-seal .sb-pt-caption:hover{text-decoration:underline;text-underline-offset:2px}',
+        '.sb-psychology-today-footer-seal.sb-pt-shared-seal .sb-pt-caption:focus-visible{outline:2px solid currentColor;outline-offset:3px}',
+        '@media(max-width:1180px){.home-footer .home-footer-logo.sb-pt-logo-container{grid-column:1 / -1;justify-self:start}}',
+        '@media(max-width:700px){.site-footer .footer-logo-right.sb-pt-logo-container{align-items:flex-start!important}.site-footer .footer-logo-right.sb-pt-logo-container .sb-pt-shared-seal{align-items:flex-start}.home-footer .home-footer-logo.sb-pt-logo-container{align-items:flex-start}.home-footer .home-footer-logo.sb-pt-logo-container>picture{display:none!important}.home-footer .home-footer-logo.sb-pt-logo-container .sb-pt-shared-seal{align-items:flex-start}.sb-psychology-today-footer-seal.sb-pt-shared-seal .sb-pt-caption{text-align:left}}'
+      ].join('\\n');
+      document.head.appendChild(style);
+    }
 
-    var link = document.createElement('a');
-    link.href = 'https://www.psychologytoday.com/profile/1052502';
-    link.className = 'sx-verified-seal';
-    link.setAttribute('aria-label', 'View Dr. Stephen W. Bryant\'s verified Psychology Today profile');
-    holder.appendChild(link);
-    bottom.insertBefore(holder, bottom.lastElementChild);
+    if (logo) logo.classList.add('sb-pt-logo-container');
 
-    // Official Psychology Today seal, badge 13 (small, neutral).
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://member.psychologytoday.com/verified-seal.js';
-    script.setAttribute('data-badge', '13');
-    script.setAttribute('data-id', '1052502');
-    script.setAttribute('data-code', 'aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMy9wcm9maWxlLzEwNTI1MDI/Y2FsbGJhY2s9c3hjYWxsYmFjaw==');
-    // Keep the official seal script adjacent to its anchor.
-    holder.appendChild(script);
+    var holder = document.createElement('div');
+    holder.className = 'sb-psychology-today-footer-seal sb-pt-shared-seal';
 
-    // A visible, linked label also works if the vendor script is blocked.
-    var profileLink = document.createElement('a');
-    profileLink.href = link.href;
-    profileLink.textContent = 'Verified by Psychology Today';
-    profileLink.style.cssText = 'font-size:.72rem;line-height:1.4;font-weight:600;text-align:center;text-decoration:underline;text-underline-offset:2px;';
-    holder.appendChild(profileLink);
+    var url = 'https://www.psychologytoday.com/profile/1052502';
+    var page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    // The safety check has a strict no-third-party CSP; do not load external
+    // verification scripts on any consultation or clinical screening forms.
+    var privateForm = page === 'contact.html' || page === 'contact' ||
+      page === 'fit-safety-check.html' || page === 'fit-safety-check';
+
+    if (!privateForm) {
+      // Official Psychology Today seal embed (small, neutral, badge 13).
+      var sealLink = document.createElement('a');
+      sealLink.href = url;
+      sealLink.className = 'sx-verified-seal';
+      sealLink.setAttribute('aria-label', 'View Dr. Stephen W. Bryant\'s verified Psychology Today profile');
+      holder.appendChild(sealLink);
+
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://member.psychologytoday.com/verified-seal.js';
+      script.setAttribute('data-badge', '13');
+      script.setAttribute('data-id', '1052502');
+      script.setAttribute('data-code', 'aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMy9wcm9maWxlLzEwNTI1MDI/Y2FsbGJhY2s9c3hjYWxsYmFjaw==');
+      holder.appendChild(script);
+    }
+
+    // Retain an accessible text link when the remote seal cannot load.
+    var caption = document.createElement('a');
+    caption.href = url;
+    caption.className = 'sb-pt-caption';
+    caption.textContent = 'Verified by Psychology Today';
+    holder.appendChild(caption);
+    placement.appendChild(holder);
   }
 
   function init() {
