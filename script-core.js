@@ -797,7 +797,41 @@
     });
   }
 
+
+  function initPsychologyTodayFooterSeal() {
+    // Keep third-party embeds away from consultation and safety-screening forms.
+    var page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    if (page === 'contact.html' || page === 'fit-safety-check.html') return;
+
+    var footer = document.querySelector('footer.home-footer, footer.site-footer');
+    if (!footer || footer.querySelector('.sx-verified-seal')) return;
+
+    var bottom = footer.querySelector('.home-footer-bottom, .footer-bottom');
+    if (!bottom) return;
+
+    var holder = document.createElement('span');
+    holder.className = 'sb-psychology-today-footer-seal';
+    holder.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;';
+
+    var link = document.createElement('a');
+    link.href = 'https://www.psychologytoday.com/profile/1052502';
+    link.className = 'sx-verified-seal';
+    link.setAttribute('aria-label', 'View Dr. Stephen W. Bryant\'s verified Psychology Today profile');
+    holder.appendChild(link);
+    bottom.insertBefore(holder, bottom.lastElementChild);
+
+    // Official Psychology Today seal, badge 13 (small, neutral).
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://member.psychologytoday.com/verified-seal.js';
+    script.setAttribute('data-badge', '13');
+    script.setAttribute('data-id', '1052502');
+    script.setAttribute('data-code', 'aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMy9wcm9maWxlLzEwNTI1MDI/Y2FsbGJhY2s9c3hjYWxsYmFjaw==');
+    document.body.appendChild(script);
+  }
+
   function init() {
+    initPsychologyTodayFooterSeal();
     addRevisionStyles();
     normalizeCareersNavigation();
     normalizePrivacyFooter();
