@@ -38,6 +38,6 @@
   });
 
   document.querySelectorAll("[data-preserve-attribution]").forEach(function(link){
-    decorateLink(link,false);
+    decorateLink(link,link.hasAttribute("data-preserve-source"));
   });
 })();
