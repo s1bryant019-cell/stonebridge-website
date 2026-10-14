@@ -1,29 +1,20 @@
-name: Fit & Safety Regression
+name: Sitewide Regression
 
 on:
   push:
     branches:
-      - feature/fit-safety-v1
+      - main
   pull_request:
     branches:
       - main
-    paths:
-      - "fit-safety-check.html"
-      - "fit-safety-check.js"
-      - "contact.html"
-      - "new-clients.html"
-      - "privacy-information.html"
-      - "vercel.json"
-      - "lib/fit-safety-routing.mjs"
-      - "tests/**"
-      - "package.json"
-      - ".github/workflows/fit-safety-regression.yml"
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
   test:
+    name: Patient access, safety, consultation and SEO contracts
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
