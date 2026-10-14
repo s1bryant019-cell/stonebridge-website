@@ -123,14 +123,8 @@
   }
 
   function normalizeConsultationCtas() {
-    document.querySelectorAll('.header-cta a').forEach(function (link) {
-      // The BCBS paid page intentionally uses an appointment-first CTA.
-      if (document.body && document.body.classList.contains('paid-search-bcbs')) return;
-      link.textContent = 'Request a Consultation';
-      if ((link.getAttribute('href') || '').indexOf('contact.html') !== -1) {
-        link.setAttribute('href', 'contact.html#inquiry-form');
-      }
-    });
+    // Patient appointment headers are now managed centrally in script.js.
+    // Do not rewrite them as consultations here.
 
     var consultationLabels = [
       'begin a fit review',
