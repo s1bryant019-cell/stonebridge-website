@@ -507,3 +507,39 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
     max-height:62px!important;
   }
 }
+
+/* Stonebridge Psychology Today official verified-seal footer placement 2026-10-14 */
+.site-footer .footer-logo-right.sb-pt-seal-static{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:13px!important;
+}
+.site-footer .footer-logo-right.sb-pt-seal-static > picture {
+  width:100%;
+  max-width:220px;
+  display:block!important;
+}
+.site-footer .footer-logo-right.sb-pt-seal-static .sb-psychology-today-footer-seal{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  width:max-content;
+  max-width:100%;
+  min-height:28px;
+}
+.site-footer .footer-logo-right.sb-pt-seal-static .sb-pt-caption{
+  font:500 .69rem/1.5 "Inter",Arial,sans-serif;
+  color:var(--sb-brand-muted,#5d5a55);
+  text-align:center;
+  text-decoration:none;
+}
+.site-footer .footer-logo-right.sb-pt-seal-static .sb-pt-caption:hover{text-decoration:underline;text-underline-offset:2px}
+.site-footer .footer-logo-right.sb-pt-seal-static .sb-pt-caption:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media(max-width:700px){
+  .site-footer .footer-logo-right.sb-pt-seal-static{align-items:flex-start!important;}
+  .site-footer .footer-logo-right.sb-pt-seal-static .sb-psychology-today-footer-seal{align-items:flex-start}
+  .site-footer .footer-logo-right.sb-pt-seal-static .sb-pt-caption{text-align:left}
+}
