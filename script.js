@@ -461,7 +461,7 @@
   }
 
   function init() {
-    ensureStylesheet('stonebridge-brand-sync', 'stonebridge-brand-sync.css?v=20261014access3');
+    ensureStylesheet('stonebridge-brand-sync', 'stonebridge-brand-sync.css?v=20261014access4');
     ensureStylesheet('stonebridge-hotfix', 'stonebridge-hotfix.css?v=' + VERSION);
     normalizeHeader();
     normalizeFounderImages();
