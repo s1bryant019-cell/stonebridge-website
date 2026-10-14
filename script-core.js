@@ -686,7 +686,11 @@
     }
 
     var finalCta = page.querySelector('.clinicians-cta .btn');
-    if (finalCta) finalCta.textContent = 'Request a Consultation';
+    if (finalCta) {
+      finalCta.textContent = 'Request an Appointment';
+      finalCta.href = 'https://www.therapyportal.com/p/stonebridge60634/';
+      finalCta.rel = 'noreferrer';
+    }
   }
 
   function initAboutPage() {
