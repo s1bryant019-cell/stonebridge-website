@@ -24,23 +24,26 @@ test("brief check keeps its safety notes and gains compact mobile spacing", () =
   assert.match(css, /\.fit-safety-page \.screen-template-privacy\s*\{/);
 });
 
-test("paid landing pages share the mobile hero adjustment without changing their CTAs", () => {
+test("paid landing pages keep compact mobile heroes and appointment-first links", () => {
   const css = file("paid-search-landing.css");
   assert.match(css, /Mobile hero proportion — 2026-10-13/);
   assert.match(css, /\.paid-search-page \.paid-hero-copy\s*\{\s*padding:34px 0 36px;/);
+  const portal = 'href="https://www.therapyportal.com/p/stonebridge60634/"';
   for (const page of ["adolescent-therapy-illinois.html", "bcbs-therapy-illinois.html", "trauma-therapy-illinois.html"]) {
     const html = file(page);
+    const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
     assert.match(html, /paid-search-landing\.css\?v=20261013mobile1/);
-    assert.match(html, /data-new-client-link/);
+    assert.ok(main.includes(portal), `${page} should have a direct portal appointment link`);
+    assert.match(main, /Request an Appointment/);
+    assert.doesNotMatch(main, /href="fit-safety-check\.html"/);
   }
 });
-
 test("narrow home headline and consultation form anchor have scoped overrides", () => {
   assert.match(file("home-current.html"), /@media\(max-width:480px\)\{\s*\.home-recognition-nowrap\{white-space:normal\}/);
   assert.match(file("contact.html"), /body\.contact-page #inquiry-form\{scroll-margin-top:84px\}/);
 });
 
-test("phone New Client options lead before the full retained crisis advisory", () => {
+test("phone New Clients page puts direct appointments ahead of the retained crisis advisory", () => {
   const css = file("new-client-access.css");
   const fix = css.slice(css.indexOf("Mobile entry priority — 2026-10-13"));
   assert.match(fix, /\.new-client-access-page \.access-template-intro\{display:contents\}/);
@@ -48,8 +51,10 @@ test("phone New Client options lead before the full retained crisis advisory", (
   assert.match(fix, /\.new-client-access-page \.access-template-note--rail\{\s*grid-row:4;/);
   const page = file("new-clients.html");
   assert.match(page, /Emergency or crisis care:/);
-  assert.match(page, /href="fit-safety-check\.html"/);
+  assert.ok(page.includes('href="https://www.therapyportal.com/p/stonebridge60634/"'));
+  assert.match(page, /Request an Appointment/);
   assert.match(page, /href="contact\.html#inquiry-form"/);
+  assert.doesNotMatch(page, /href="fit-safety-check\.html"/);
 });
 test("phone Brief Check keeps urgent-help and privacy text above the untouched form", () => {
   const css = file("new-client-access.css");
