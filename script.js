@@ -341,7 +341,7 @@
     }
     var script = document.createElement('script');
     script.id = 'stonebridge-script-core';
-    script.src = 'script-core.js?v=' + VERSION;
+    script.src = 'script-core.js?v=20261014ptseal1';
     script.async = false;
     if (typeof onReady === 'function') {
       script.addEventListener('load', onReady, { once: true });
