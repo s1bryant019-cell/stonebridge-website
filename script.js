@@ -452,8 +452,16 @@
         if (value) paidParams.set(key, value);
       });
       var isBcbsPaid = page === 'bcbs-therapy-illinois.html' || page === 'bcbs-therapy-illinois';
-      cta.href = (isBcbsPaid ? 'fit-safety-check.html?' : 'contact.html?') + paidParams.toString() + (isBcbsPaid ? '' : '#inquiry-form');
-      cta.textContent = isBcbsPaid ? 'Request an Intake Appointment' : 'Request a Consultation';
+      if (isBcbsPaid) {
+        // Appointment requests are pending Stonebridge approval in TherapyPortal.
+        // Never forward ad click IDs or other URL parameters to the external portal.
+        cta.href = 'https://www.therapyportal.com/p/stonebridge60634/';
+        cta.textContent = 'Request an Appointment';
+        cta.rel = 'noreferrer';
+      } else {
+        cta.href = 'contact.html?' + paidParams.toString() + '#inquiry-form';
+        cta.textContent = 'Request a Consultation';
+      }
       cta.setAttribute('aria-label', cta.textContent);
     } else {
       cta.href = 'new-clients.html';
