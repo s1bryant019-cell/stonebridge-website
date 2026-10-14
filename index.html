@@ -343,6 +343,114 @@
 }
 </style>
 
+<style id="stonebridge-home-footer-layout-20261014">
+/* Scope: homepage footer only. Preserve all approved copy, links and brand assets. */
+.home-footer .home-footer-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,.72fr) minmax(0,.92fr) minmax(0,1.2fr) minmax(0,220px);
+  column-gap:clamp(20px,2.3vw,38px);
+  row-gap:30px;
+  align-items:start;
+  padding:52px 0 38px;
+}
+.home-footer .home-footer-brandmarks{
+  display:flex!important;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  min-width:0;
+}
+.home-footer .home-footer-brandmarks picture{
+  display:block;
+  width:100%;
+  max-width:220px;
+}
+.home-footer .home-footer-brandmarks img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:220px;
+}
+.home-footer .sb-psychology-today-footer-seal{
+  display:flex!important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  gap:6px;
+  max-width:100%;
+}
+.home-footer .sb-psychology-today-footer-seal .sb-pt-caption{
+  display:inline-block;
+  color:var(--sb-brand-muted,#5D5A55);
+  font-family:"Inter",sans-serif;
+  font-size:.68rem;
+  font-weight:500;
+  line-height:1.4;
+  text-align:center;
+  text-decoration:none;
+}
+.home-footer .sb-psychology-today-footer-seal .sb-pt-caption:hover{
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.home-footer .home-footer-bottom{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  column-gap:32px;
+  min-height:0;
+  padding:19px 0 22px;
+  line-height:1.5;
+}
+.home-footer .home-footer-bottom > div:last-child{text-align:right}
+@media(max-width:1100px) and (min-width:701px){
+  .home-footer .home-footer-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-areas:"brand marks" "care practice" "contact contact";
+    column-gap:40px;
+    row-gap:28px;
+    padding:44px 0 34px;
+  }
+  .home-footer .home-footer-brand-column{grid-area:brand}
+  .home-footer .home-footer-care-column{grid-area:care}
+  .home-footer .home-footer-practice-column{grid-area:practice}
+  .home-footer .home-footer-contact-column{grid-area:contact}
+  .home-footer .home-footer-brandmarks{grid-area:marks;align-items:flex-end}
+  .home-footer .home-footer-brandmarks picture{margin-left:auto}
+  .home-footer .sb-psychology-today-footer-seal{align-items:center}
+}
+@media(max-width:700px){
+  .home-footer .home-container{width:calc(100% - 40px)}
+  .home-footer .home-footer-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-areas:"brand brand" "care practice" "contact contact" "marks marks";
+    column-gap:20px;
+    row-gap:27px;
+    padding:38px 0 27px;
+  }
+  .home-footer .home-footer-brand-column{grid-area:brand}
+  .home-footer .home-footer-care-column{grid-area:care}
+  .home-footer .home-footer-practice-column{grid-area:practice}
+  .home-footer .home-footer-contact-column{grid-area:contact}
+  .home-footer .home-footer-brandmarks{grid-area:marks;align-items:flex-start;gap:0}
+  .home-footer .home-footer-brandmarks picture{display:none}
+  .home-footer .home-footer-copy{max-width:34ch;margin-top:13px}
+  .home-footer .home-footer-links{gap:9px}
+  .home-footer .home-footer-links a,
+  .home-footer .home-footer-links span{font-size:.875rem;line-height:1.5;overflow-wrap:anywhere}
+  .home-footer .sb-psychology-today-footer-seal{align-items:flex-start}
+  .home-footer .sb-psychology-today-footer-seal .sb-pt-caption{text-align:left}
+  .home-footer .home-footer-bottom{
+    grid-template-columns:minmax(0,1fr);
+    row-gap:9px;
+    padding:18px 0 22px;
+    font-size:.73rem;
+  }
+  .home-footer .home-footer-bottom > div:last-child{text-align:left;overflow-wrap:anywhere}
+}
+</style>
+
 </head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -512,12 +620,12 @@
 
   <footer class="home-footer">
     <div class="home-container home-footer-grid">
-      <div>
+      <div class="home-footer-brand-column">
         <div class="home-footer-brand">STONEBRIDGE</div>
         <div class="home-footer-sub">Psychological Group</div>
         <p class="home-footer-copy">Thoughtful online care for Illinois clients.</p>
       </div>
-      <div>
+      <div class="home-footer-care-column">
         <div class="home-footer-title">Care</div>
         <div class="home-footer-links">
           <a href="services.html">Services</a>
@@ -525,7 +633,7 @@
           <a href="new-clients.html">New Clients</a>
         </div>
       </div>
-      <div>
+      <div class="home-footer-practice-column">
         <div class="home-footer-title">Practice</div>
         <div class="home-footer-links">
           <a href="about.html">About</a>
@@ -536,7 +644,7 @@
           <a href="privacy-information.html">Privacy &amp; Information Use</a>
         </div>
       </div>
-      <div>
+      <div class="home-footer-contact-column">
         <div class="home-footer-title">Contact</div>
         <div class="home-footer-links">
           <span>Serving Illinois via telehealth</span>
@@ -546,22 +654,23 @@
           <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
       </div>
-      <div class="home-footer-logo">
+      <div class="home-footer-logo home-footer-brandmarks">
         <picture>
           <source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="220px">
           <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" width="800" height="340" loading="lazy" decoding="async">
         </picture>
+      <div class="sb-psychology-today-footer-seal">
+        <!-- Official professional verification provided by Psychology Today -->
+        <a href="https://www.psychologytoday.com/profile/1052502" class="sx-verified-seal" aria-label="View Dr. Stephen W. Bryant's verified Psychology Today profile"></a>
+        <script type="text/javascript" src="https://member.psychologytoday.com/verified-seal.js" data-badge="13" data-id="1052502" data-code="aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMy9wcm9maWxlLzEwNTI1MDI/Y2FsbGJhY2s9c3hjYWxsYmFjaw=="></script>
+        <a href="https://www.psychologytoday.com/profile/1052502" class="sb-pt-caption">Verified by Psychology Today</a>
+        <!-- End Verification -->
+      </div>
       </div>
     </div>
     <div class="home-container home-footer-bottom">
       <div>© 2026 Stonebridge Psychological Group. All rights reserved.</div>
-      <div class="sb-psychology-today-footer-seal" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;flex:0 0 auto;max-width:100%;">
-        <!-- Official professional verification provided by Psychology Today -->
-        <a href="https://www.psychologytoday.com/profile/1052502" class="sx-verified-seal" aria-label="View Dr. Stephen W. Bryant's verified Psychology Today profile"></a>
-        <script type="text/javascript" src="https://member.psychologytoday.com/verified-seal.js" data-badge="13" data-id="1052502" data-code="aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMy9wcm9maWxlLzEwNTI1MDI/Y2FsbGJhY2s9c3hjYWxsYmFjaw=="></script>
-        <a href="https://www.psychologytoday.com/profile/1052502" style="font-size:.72rem;line-height:1.4;font-weight:600;text-align:center;text-decoration:underline;text-underline-offset:2px;">Verified by Psychology Today</a>
-        <!-- End Verification -->
-      </div>
+
       <div><a href="mailto:info@stonebridgepsychgroup.com">info@stonebridgepsychgroup.com</a> · <a href="tel:+17734171688">(773) 417-1688</a></div>
     </div>
   </footer>
