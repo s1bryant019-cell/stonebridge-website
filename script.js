@@ -363,7 +363,7 @@
     }
     var script = document.createElement('script');
     script.id = 'stonebridge-script-core';
-    script.src = 'script-core.js?v=20261014access1';
+    script.src = 'script-core.js?v=20261014access3';
     script.async = false;
     if (typeof onReady === 'function') {
       script.addEventListener('load', onReady, { once: true });
@@ -461,7 +461,7 @@
   }
 
   function init() {
-    ensureStylesheet('stonebridge-brand-sync', 'stonebridge-brand-sync.css?v=' + VERSION);
+    ensureStylesheet('stonebridge-brand-sync', 'stonebridge-brand-sync.css?v=20261014access3');
     ensureStylesheet('stonebridge-hotfix', 'stonebridge-hotfix.css?v=' + VERSION);
     normalizeHeader();
     normalizeFounderImages();
