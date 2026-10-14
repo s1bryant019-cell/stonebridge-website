@@ -203,5 +203,17 @@
       "source": "/fit-safety-check",
       "destination": "/fit-safety-check.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/fit-safety-check.html",
+      "destination": "/new-clients.html",
+      "permanent": false
+    },
+    {
+      "source": "/fit-safety-check",
+      "destination": "/new-clients.html",
+      "permanent": false
+    }
   ]
 }
