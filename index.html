@@ -451,6 +451,37 @@
 }
 </style>
 
+
+<style id="stonebridge-home-final-desktop-layout-20261014">
+/* Homepage closing CTA: distribute the existing content across desktop space only. */
+@media (min-width: 901px) {
+  .home-final {
+    min-height: 306px;
+  }
+  .home-final .home-final-inner {
+    width: min(1180px, calc(100% - 88px));
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr) auto;
+    align-items: center;
+    column-gap: clamp(26px, 3.25vw, 52px);
+    padding: 44px 0 !important;
+    text-align: left;
+  }
+  .home-final .home-final-title {
+    margin: 0;
+  }
+  .home-final .home-final-inner p {
+    max-width: 430px;
+    margin: 0 !important;
+  }
+  .home-final .home-final-inner .home-primary-btn {
+    margin-top: 0 !important;
+    justify-self: end;
+    white-space: nowrap;
+  }
+}
+</style>
+
 </head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
