@@ -832,6 +832,10 @@
 
     var holder = document.createElement('div');
     holder.className = 'sb-psychology-today-footer-seal sb-pt-shared-seal';
+    // The official widget must execute while its host is connected to the
+    // document. Loading its script inside a detached container can leave
+    // the seal anchor empty on pages using the shared footer.
+    placement.appendChild(holder);
 
     var url = 'https://www.psychologytoday.com/profile/1052502';
     var page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
@@ -863,7 +867,6 @@
     caption.className = 'sb-pt-caption';
     caption.textContent = 'Verified by Psychology Today';
     holder.appendChild(caption);
-    placement.appendChild(holder);
   }
 
   function init() {
