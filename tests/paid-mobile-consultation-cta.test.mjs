@@ -6,14 +6,15 @@ import { runInNewContext } from "node:vm";
 const source = readFileSync(new URL("../script.js", import.meta.url), "utf8");
 const begin = source.indexOf("  function ensureMobileConsultationCTA() {");
 const end = source.indexOf("\n  function init() {", begin);
-assert.ok(begin >= 0 && end > begin, "Expected existing mobile CTA function");
+assert.ok(begin >= 0 && end > begin, "Expected central mobile CTA function");
 
-function renderCTA({ path = "/bcbs-therapy-illinois", landingSource = "", search = "" } = {}) {
+const PORTAL = "https://www.therapyportal.com/p/stonebridge60634/";
+
+function renderCTA({ path = "/bcbs-therapy-illinois", search = "", existing = false } = {}) {
   const created = [];
   const classes = [];
-  let syncCalled = false;
+  const existingElement = existing ? { href: "already-added" } : null;
   const body = {
-    getAttribute(name) { return name === "data-landing-source" ? landingSource : null; },
     appendChild(element) { created.push(element); },
     classList: { add(name) { classes.push(name); } }
   };
@@ -21,7 +22,7 @@ function renderCTA({ path = "/bcbs-therapy-illinois", landingSource = "", search
     body,
     querySelector(selector) {
       assert.equal(selector, ".sb-mobile-consultation-cta");
-      return null;
+      return existingElement;
     },
     createElement(tag) {
       assert.equal(tag, "a");
@@ -33,76 +34,67 @@ function renderCTA({ path = "/bcbs-therapy-illinois", landingSource = "", search
   const window = { location: { pathname: path, search } };
   const code = source.slice(begin, end) + "\nensureMobileConsultationCTA();";
   runInNewContext(code, {
-    window,
-    document,
-    URLSearchParams,
-    pageName() { return path.split("/").pop().toLowerCase() || "index.html"; },
-    syncMobileConsultationCTAVisibility(element) {
-      syncCalled = true;
-      assert.equal(element, created[0]);
-    }
+    window, document,
+    pageName() { return path.split("/").pop().toLowerCase() || "index.html"; }
   });
-  return { created, classes, syncCalled };
+  return { created, classes };
 }
 
-test("paid BCBS sticky CTA goes directly to consultation section preserving every attribution field", () => {
-  const values = {
-    utm_source: "google",
-    utm_medium: "cpc",
-    utm_campaign: "BCBS Illinois Therapy",
-    utm_term: "therapist & insurance",
-    utm_content: "ad_variant_1",
-    gclid: "GCLID123",
-    gbraid: "GBRAID456",
-    wbraid: "WBRAID789"
-  };
+function expectPortalCTA(result) {
+  assert.equal(result.created.length, 1);
+  const link = result.created[0];
+  assert.equal(link.className, "sb-mobile-consultation-cta");
+  assert.equal(link.href, PORTAL);
+  assert.equal(link.textContent, "Request an Appointment");
+  assert.equal(link["aria-label"], "Request an Appointment");
+  assert.equal(link.rel, "noreferrer");
+  assert.ok(result.classes.includes("sb-has-mobile-consultation-cta"));
+}
+
+test("BCBS mobile CTA requests an appointment directly, without leaking ad IDs or form data", () => {
   const result = renderCTA({
     path: "/bcbs-therapy-illinois",
-    landingSource: "BCBS Landing Page",
-    search: "?" + new URLSearchParams({ ...values, email: "never-propagate@example.test" })
+    search: "?utm_source=google&utm_medium=cpc&gclid=click-123&email=secret%40example.test"
   });
-  assert.equal(result.created.length, 1);
-  const cta = result.created[0];
-  assert.equal(cta.textContent, "Request a Consultation");
-  assert.equal(cta["aria-label"], "Request a Consultation");
-  assert.equal(cta.className, "sb-mobile-consultation-cta");
-  const url = new URL(cta.href, "https://stonebridgepsychgroup.com/");
-  assert.equal(url.pathname, "/contact.html");
-  assert.equal(url.hash, "#inquiry-form");
-  assert.equal(url.searchParams.get("source"), "BCBS Landing Page");
-  for (const [key, value] of Object.entries(values)) {
-    assert.equal(url.searchParams.get(key), value);
-  }
-  assert.equal(url.searchParams.has("email"), false);
-  assert.equal(result.syncCalled, true);
-  assert.ok(result.classes.includes("sb-has-mobile-consultation-cta"));
+  expectPortalCTA(result);
+  assert.ok(!result.created[0].href.includes("click-123"));
+  assert.ok(!result.created[0].href.includes("secret"));
 });
 
-test("other paid landing pages use the same direct consultation flow", () => {
-  for (const [page, source] of [
-    ["adolescent-therapy-illinois.html", "Adolescent Therapy Landing Page"],
-    ["trauma-therapy-illinois", "Trauma Therapy Landing Page"]
+test("all paid mobile landing paths use the same fixed appointment portal", () => {
+  for (const path of [
+    "/bcbs-therapy-illinois.html", "/bcbs-therapy-illinois",
+    "/adolescent-therapy-illinois.html", "/adolescent-therapy-illinois",
+    "/trauma-therapy-illinois.html", "/trauma-therapy-illinois"
   ]) {
-    const { created } = renderCTA({ path: "/" + page, landingSource: source, search: "?gclid=123" });
-    assert.equal(created[0].textContent, "Request a Consultation");
-    assert.ok(created[0].href.startsWith("contact.html?"));
-    assert.ok(created[0].href.endsWith("#inquiry-form"));
-    assert.equal(new URL(created[0].href, "https://stonebridgepsychgroup.com").searchParams.get("source"), source);
+    expectPortalCTA(renderCTA({ path, search: "?gclid=123&gbraid=456&wbraid=789" }));
   }
 });
 
-test("non-paid eligible pages keep existing New Clients sticky CTA", () => {
-  for (const page of ["/index.html", "/services.html", "/bcbs-therapy-illinois"]) {
-    const { created } = renderCTA({ path: page });
-    assert.equal(created.length, 1);
-    assert.equal(created[0].href, "new-clients.html");
-    assert.equal(created[0].textContent, "New Clients");
-    assert.equal(created[0]["aria-label"], "New Clients");
+test("ordinary psychotherapy pages and both New Clients URL forms use the same appointment CTA", () => {
+  for (const path of [
+    "/", "/index.html", "/about.html", "/team.html", "/team-founder.html",
+    "/team-jasmine-wilson.html", "/services.html", "/individual-therapy.html",
+    "/couples-therapy.html", "/family-therapy.html", "/parent-support.html",
+    "/fees-insurance.html", "/new-clients.html", "/new-clients"
+  ]) {
+    expectPortalCTA(renderCTA({ path }));
   }
 });
 
-test("non-eligible pages do not receive a sticky CTA", () => {
-  const { created, syncCalled } = renderCTA({ path: "/contact.html", landingSource: "Paid" });
-  assert.equal(created.length, 0);
-  assert.equal(syncCalled, false);
+test("group, assessment, contact and other exception pages do not gain a general appointment sticky CTA", () => {
+  for (const path of [
+    "/group-therapy.html", "/assessment.html", "/forensic.html",
+    "/contact.html", "/for-clinicians.html", "/careers.html",
+    "/portal.html", "/privacy-information.html", "/fit-safety-check.html"
+  ]) {
+    const result = renderCTA({ path });
+    assert.equal(result.created.length, 0, `Unexpected sticky CTA on ${path}`);
+  }
+});
+
+test("existing sticky CTA is never duplicated", () => {
+  const result = renderCTA({ path: "/index.html", existing: true });
+  assert.equal(result.created.length, 0);
+  assert.equal(result.classes.length, 0);
 });
