@@ -49,12 +49,12 @@ test("home canonical resolves to the root URL in both homepage files", () => {
 
 test("sitemap lists canonical indexable paths without duplicates or stale modification dates", () => {
   const xml = read("sitemap.xml");
-  const entries = [...xml.matchAll(/<url>\\s*<loc>([^<]+)<\\/loc>\\s*<lastmod>([^<]+)<\\/lastmod>\\s*<\\/url>/g)]
+  const entries = [...xml.matchAll(/<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>\s*<\/url>/g)]
     .map(m => ({ url: m[1], lastmod: m[2] }));
   assert.equal(entries.length, 21);
   assert.equal(new Set(entries.map(e => e.url)).size, entries.length);
   for (const entry of entries) {
-    assert.match(entry.lastmod, /^\\d{4}-\\d{2}-\\d{2}$/);
+    assert.match(entry.lastmod, /^\d{4}-\d{2}-\d{2}$/);
     assert.ok(Date.parse(entry.lastmod) <= Date.now(), `future sitemap date: ${entry.url}`);
   }
   const urls = entries.map(e => e.url);
@@ -87,17 +87,17 @@ test("general patient pages request appointments through the fixed TherapyPortal
     const html = read(page);
     assert.ok(html.includes('href="' + PORTAL + '"'), `no appointment portal link: ${page}`);
     assert.match(html, /Request an Appointment/);
-    assert.doesNotMatch(html, /href="fit-safety-check\\.html"/);
+    assert.doesNotMatch(html, /href="fit-safety-check\.html"/);
   }
-  assert.match(read("new-clients.html"), /href="contact\\.html#inquiry-form"/);
+  assert.match(read("new-clients.html"), /href="contact\.html#inquiry-form"/);
 });
 
 test("specialized consultation and assessment routes remain separate", () => {
   const group = read("group-therapy.html");
   assert.match(group, /Request a Group Consultation/);
-  assert.match(group, /contact\\.html\\?service=teen-group#inquiry-form/);
+  assert.match(group, /contact\.html\?service=teen-group#inquiry-form/);
   const assessment = read("assessment.html");
-  assert.doesNotMatch(assessment, /href="https:\/\/www\\.therapyportal\\.com\/p\/stonebridge60634\//);
+  assert.doesNotMatch(assessment, /href="https:\/\/www\.therapyportal\.com\/p\/stonebridge60634\//);
   assert.match(assessment, /Psychological%20Assessment%20Inquiry/);
   const forensic = metadata("forensic.html");
   assert.equal(forensic.canonicals.length, 1);
