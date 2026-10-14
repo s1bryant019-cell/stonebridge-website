@@ -622,3 +622,12 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
     gap:9px;
   }
 }
+
+/* The persistent appointment CTA replaces redundant mobile menu/header buttons.
+   Group consultations remain a separate workflow. */
+@media(max-width:760px){
+  body:not(.group-therapy-page) .site-header .header-cta,
+  body:not(.group-therapy-page) .home-site-header .header-cta{
+    display:none!important;
+  }
+}
