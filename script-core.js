@@ -824,7 +824,7 @@
         '.sb-psychology-today-footer-seal.sb-pt-shared-seal .sb-pt-caption:focus-visible{outline:2px solid currentColor;outline-offset:3px}',
         '@media(max-width:1180px){.home-footer .home-footer-logo.sb-pt-logo-container{grid-column:1 / -1;justify-self:start}}',
         '@media(max-width:700px){.site-footer .footer-logo-right.sb-pt-logo-container{align-items:flex-start!important}.site-footer .footer-logo-right.sb-pt-logo-container .sb-pt-shared-seal{align-items:flex-start}.home-footer .home-footer-logo.sb-pt-logo-container{align-items:flex-start}.home-footer .home-footer-logo.sb-pt-logo-container>picture{display:none!important}.home-footer .home-footer-logo.sb-pt-logo-container .sb-pt-shared-seal{align-items:flex-start}.sb-psychology-today-footer-seal.sb-pt-shared-seal .sb-pt-caption{text-align:left}}'
-      ].join('\\n');
+      ].join('\n');
       document.head.appendChild(style);
     }
 
