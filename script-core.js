@@ -811,7 +811,7 @@
 
     var holder = document.createElement('span');
     holder.className = 'sb-psychology-today-footer-seal';
-    holder.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;';
+    holder.style.cssText = 'display:inline-flex;flex-direction:column;align-items:center;gap:4px;flex:0 0 auto;max-width:100%;';
 
     var link = document.createElement('a');
     link.href = 'https://www.psychologytoday.com/profile/1052502';
@@ -827,7 +827,15 @@
     script.setAttribute('data-badge', '13');
     script.setAttribute('data-id', '1052502');
     script.setAttribute('data-code', 'aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMy9wcm9maWxlLzEwNTI1MDI/Y2FsbGJhY2s9c3hjYWxsYmFjaw==');
-    document.body.appendChild(script);
+    // Keep the official seal script adjacent to its anchor.
+    holder.appendChild(script);
+
+    // A visible, linked label also works if the vendor script is blocked.
+    var profileLink = document.createElement('a');
+    profileLink.href = link.href;
+    profileLink.textContent = 'Verified by Psychology Today';
+    profileLink.style.cssText = 'font-size:.72rem;line-height:1.4;font-weight:600;text-align:center;text-decoration:underline;text-underline-offset:2px;';
+    holder.appendChild(profileLink);
   }
 
   function init() {
