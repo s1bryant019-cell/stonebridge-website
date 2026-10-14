@@ -451,9 +451,10 @@
         var value = currentParams.get(key);
         if (value) paidParams.set(key, value);
       });
-      cta.href = 'contact.html?' + paidParams.toString() + '#inquiry-form';
-      cta.textContent = 'Request a Consultation';
-      cta.setAttribute('aria-label', 'Request a Consultation');
+      var isBcbsPaid = page === 'bcbs-therapy-illinois.html' || page === 'bcbs-therapy-illinois';
+      cta.href = (isBcbsPaid ? 'fit-safety-check.html?' : 'contact.html?') + paidParams.toString() + (isBcbsPaid ? '' : '#inquiry-form');
+      cta.textContent = isBcbsPaid ? 'Request an Intake Appointment' : 'Request a Consultation';
+      cta.setAttribute('aria-label', cta.textContent);
     } else {
       cta.href = 'new-clients.html';
       cta.textContent = 'New Clients';
@@ -461,7 +462,10 @@
     }
     document.body.appendChild(cta);
     document.body.classList.add('sb-has-mobile-consultation-cta');
-    syncMobileConsultationCTAVisibility(cta);
+    // BCBS intake CTA stays visible throughout the paid mobile experience.
+    if (page !== 'bcbs-therapy-illinois.html' && page !== 'bcbs-therapy-illinois') {
+      syncMobileConsultationCTAVisibility(cta);
+    }
   }
 
   function init() {
