@@ -442,7 +442,7 @@
       'index.html', 'about.html', 'team.html', 'team-founder.html', 'team-jasmine-wilson.html',
       'services.html', 'individual-therapy.html', 'couples-therapy.html',
       'family-therapy.html', 'parent-support.html', 'fees-insurance.html',
-      'new-clients.html', 'psychotherapy.html',
+      'new-clients.html', 'new-clients', 'psychotherapy.html',
       'bcbs-therapy-illinois.html', 'bcbs-therapy-illinois',
       'adolescent-therapy-illinois.html', 'adolescent-therapy-illinois',
       'trauma-therapy-illinois.html', 'trauma-therapy-illinois'
