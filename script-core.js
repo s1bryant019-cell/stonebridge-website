@@ -124,6 +124,8 @@
 
   function normalizeConsultationCtas() {
     document.querySelectorAll('.header-cta a').forEach(function (link) {
+      // The BCBS paid page intentionally uses an appointment-first CTA.
+      if (document.body && document.body.classList.contains('paid-search-bcbs')) return;
       link.textContent = 'Request a Consultation';
       if ((link.getAttribute('href') || '').indexOf('contact.html') !== -1) {
         link.setAttribute('href', 'contact.html#inquiry-form');
