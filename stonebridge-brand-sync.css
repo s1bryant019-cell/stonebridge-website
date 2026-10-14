@@ -601,13 +601,13 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
   body.home-redesign .home-final,
   body.about-page .about-cta,
   body.services-page .services-cta,
-  body.individual-therapy-page .individual-cta,
-  body.couples-therapy-page .couples-cta,
-  body.family-therapy-page .family-cta,
+  body.individual-page .individual-cta,
+  body.couples-page .couples-cta,
+  body.family-page .family-cta,
   body.parent-support-page .parent-cta,
   body.sbx-founder-page .founder-final-band,
   body.clinician-profile-page .cp-final,
-  body.fees-insurance-page .fees-cta{
+  body.fees-page .fees-cta{
     display:none!important;
   }
   body.team-page .team-consultation-actions{
