@@ -543,3 +543,19 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
   .site-footer .footer-logo-right.sb-pt-seal-static .sb-psychology-today-footer-seal{align-items:flex-start}
   .site-footer .footer-logo-right.sb-pt-seal-static .sb-pt-caption{text-align:left}
 }
+
+/* Keep the official verified seal at its intrinsic dimensions inside the logo column. */
+.site-footer .sb-psychology-today-footer-seal img,
+.home-footer .sb-psychology-today-footer-seal img{
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  opacity:1!important;
+}
+.site-footer .sb-psychology-today-footer-seal .sx-verified-seal,
+.home-footer .sb-psychology-today-footer-seal .sx-verified-seal{
+  display:inline-block;
+  max-width:100%;
+}
