@@ -559,3 +559,66 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
   display:inline-block;
   max-width:100%;
 }
+
+/* Sitewide patient-access hierarchy, scoped responsive reductions — 2026-10-14 */
+.profile-subpage-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px 18px;
+}
+.profile-consultation-link{
+  display:inline-block;
+  font-size:.83rem;
+  font-weight:600;
+  line-height:1.5;
+  color:inherit;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.profile-consultation-link:focus-visible,
+.fees-access-consultation:focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:3px;
+}
+.fees-access-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px 18px;
+}
+.fees-access-consultation{
+  font-size:.82rem;
+  font-weight:600;
+  line-height:1.5;
+  color:inherit;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+@media (max-width:760px){
+  /* On phones the persistent Request an Appointment action replaces
+     duplicated closing CTAs. Keep informational content and navigation. */
+  body.home-redesign .home-final,
+  body.about-page .about-cta,
+  body.services-page .services-cta,
+  body.individual-therapy-page .individual-cta,
+  body.couples-therapy-page .couples-cta,
+  body.family-therapy-page .family-cta,
+  body.parent-support-page .parent-cta,
+  body.sbx-founder-page .founder-final-band,
+  body.clinician-profile-page .cp-final,
+  body.fees-insurance-page .fees-cta{
+    display:none!important;
+  }
+  body.team-page .team-consultation-actions{
+    display:none!important;
+  }
+  body.sbx-founder-page .founder-availability-actions .btn[href*="therapyportal.com"]{
+    display:none!important;
+  }
+  .profile-subpage-actions{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:9px;
+  }
+}
