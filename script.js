@@ -44,7 +44,7 @@
       navLink('for-clinicians.html','Professionals','professionals',active),
       navLink('portal.html','Portal','portal',active),
       '      </nav>',
-      '      <div class="header-cta"><a class="btn btn-primary" href="new-clients.html">New Clients</a></div>',
+      '      <div class="header-cta"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" rel="noreferrer">Request an Appointment</a></div>',
       '    </div>',
       '  </div>',
       '</header>'
@@ -65,21 +65,43 @@
     });
   }
 
+  function configureHeaderAccess(header) {
+    if (!header) return;
+    var page = pageName();
+    // Professional, assessment, and existing-client pages do not use a
+    // general psychotherapy booking CTA. The Lobby follows its own inquiry path.
+    var contextualOnly = [
+      'contact.html', 'assessment.html', 'forensic.html', 'for-clinicians.html',
+      'careers.html', 'portal.html', 'privacy-information.html'
+    ];
+    if (contextualOnly.indexOf(page) !== -1) {
+      header.querySelectorAll('.header-cta, .home-header-cta').forEach(function (node) { node.remove(); });
+      return;
+    }
+    var group = page === 'group-therapy.html';
+    header.querySelectorAll('.header-cta a, .home-header-cta a').forEach(function (link) {
+      link.textContent = group ? 'Request a Group Consultation' : 'Request an Appointment';
+      link.href = group ? 'contact.html?service=teen-group#inquiry-form' : 'https://www.therapyportal.com/p/stonebridge60634/';
+      if (!group) link.setAttribute('rel', 'noreferrer');
+      else link.removeAttribute('rel');
+      link.removeAttribute('data-new-client-link');
+      link.removeAttribute('data-conversion-event');
+    });
+  }
+
   function normalizeHeader() {
     var existing = document.querySelector('.site-header, .home-site-header');
     if (!existing) return;
-
     if (existing.classList.contains('sb-global-header')) {
       removeDuplicateConsultationNav(existing);
-      suppressContactHeaderCTA(existing);
+      configureHeaderAccess(existing);
       return;
     }
-
     var wrapper = document.createElement('div');
     wrapper.innerHTML = canonicalHeader();
     var replacement = wrapper.firstElementChild;
     removeDuplicateConsultationNav(replacement);
-    suppressContactHeaderCTA(replacement);
+    configureHeaderAccess(replacement);
     existing.replaceWith(replacement);
   }
 
@@ -341,7 +363,7 @@
     }
     var script = document.createElement('script');
     script.id = 'stonebridge-script-core';
-    script.src = 'script-core.js?v=20261014bcbscta1';
+    script.src = 'script-core.js?v=20261014access1';
     script.async = false;
     if (typeof onReady === 'function') {
       script.addEventListener('load', onReady, { once: true });
@@ -417,63 +439,25 @@
   function ensureMobileConsultationCTA() {
     var page = pageName();
     var eligible = [
-      'index.html',
-      'about.html',
-      'assessment.html',
-      'couples-therapy.html',
-      'family-therapy.html',
-      'fees-insurance.html',
-      'group-therapy.html',
-      'individual-therapy.html',
-      'parent-support.html',
-      'services.html',
-      'team.html',
-      'team-founder.html',
-      'team-jasmine-wilson.html',
-      'bcbs-therapy-illinois.html',
-      'adolescent-therapy-illinois.html',
-      'trauma-therapy-illinois.html',
-      'bcbs-therapy-illinois',
-      'adolescent-therapy-illinois',
-      'trauma-therapy-illinois'
+      'index.html', 'about.html', 'team.html', 'team-founder.html', 'team-jasmine-wilson.html',
+      'services.html', 'individual-therapy.html', 'couples-therapy.html',
+      'family-therapy.html', 'parent-support.html', 'fees-insurance.html',
+      'new-clients.html', 'psychotherapy.html',
+      'bcbs-therapy-illinois.html', 'bcbs-therapy-illinois',
+      'adolescent-therapy-illinois.html', 'adolescent-therapy-illinois',
+      'trauma-therapy-illinois.html', 'trauma-therapy-illinois'
     ];
-    if (eligible.indexOf(page) === -1) return;
-    if (document.querySelector('.sb-mobile-consultation-cta')) return;
-
+    if (eligible.indexOf(page) === -1 || document.querySelector('.sb-mobile-consultation-cta')) return;
     var cta = document.createElement('a');
     cta.className = 'sb-mobile-consultation-cta';
-    var landingSource = document.body ? document.body.getAttribute('data-landing-source') : '';
-    if (landingSource) {
-      var paidParams = new URLSearchParams();
-      paidParams.set('source', landingSource);
-      var currentParams = new URLSearchParams(window.location.search);
-      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid'].forEach(function (key) {
-        var value = currentParams.get(key);
-        if (value) paidParams.set(key, value);
-      });
-      var isBcbsPaid = page === 'bcbs-therapy-illinois.html' || page === 'bcbs-therapy-illinois';
-      if (isBcbsPaid) {
-        // Appointment requests are pending Stonebridge approval in TherapyPortal.
-        // Never forward ad click IDs or other URL parameters to the external portal.
-        cta.href = 'https://www.therapyportal.com/p/stonebridge60634/';
-        cta.textContent = 'Request an Appointment';
-        cta.rel = 'noreferrer';
-      } else {
-        cta.href = 'contact.html?' + paidParams.toString() + '#inquiry-form';
-        cta.textContent = 'Request a Consultation';
-      }
-      cta.setAttribute('aria-label', cta.textContent);
-    } else {
-      cta.href = 'new-clients.html';
-      cta.textContent = 'New Clients';
-      cta.setAttribute('aria-label', 'New Clients');
-    }
+    cta.href = 'https://www.therapyportal.com/p/stonebridge60634/';
+    cta.rel = 'noreferrer';
+    cta.textContent = 'Request an Appointment';
+    cta.setAttribute('aria-label', 'Request an Appointment');
+    // Never forward advertising identifiers or healthcare information to TherapyPortal.
     document.body.appendChild(cta);
     document.body.classList.add('sb-has-mobile-consultation-cta');
-    // BCBS intake CTA stays visible throughout the paid mobile experience.
-    if (page !== 'bcbs-therapy-illinois.html' && page !== 'bcbs-therapy-illinois') {
-      syncMobileConsultationCTAVisibility(cta);
-    }
+    // Persistent and predictable: never dynamically suppress based on other CTAs.
   }
 
   function init() {
