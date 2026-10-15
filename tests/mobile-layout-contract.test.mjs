@@ -34,7 +34,15 @@ test("paid landing pages keep compact mobile heroes and appointment-first links"
     const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
     assert.match(html, /paid-search-landing\.css\?v=20261013mobile1/);
     assert.ok(main.includes(portal), `${page} should have a direct portal appointment link`);
-    assert.match(main, /Request an Appointment/);
+    if (page === "bcbs-therapy-illinois.html") {
+      assert.match(main, /See Available Appointments/);
+      assert.match(main, /Your request remains pending until Stonebridge reviews and confirms it/);
+      assert.match(main, /Prefer to speak first\? Request a free consultation\./);
+      assert.doesNotMatch(main, /class="btn btn-primary"[^>]*>Request an Appointment<\/a>/);
+      assert.match(html, /\.paid-search-bcbs \.paid-final-cta\{display:none!important\}/);
+    } else {
+      assert.match(main, /Request an Appointment/);
+    }
     assert.doesNotMatch(main, /href="fit-safety-check\.html"/);
   }
 });
