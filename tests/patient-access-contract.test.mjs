@@ -108,7 +108,8 @@ test("clinician practical rails have direct named appointment requests with conf
     assert.ok(aside.includes('class="' + rail + '-cta" href="' + PORTAL + 'appointments/availability/"'), `direct appointment rail link missing: ${page}`);
     assert.ok(aside.includes('Request an Appointment with ' + name), `clinician name missing from rail CTA: ${page}`);
     assert.match(aside, /Requests remain pending until clinician fit and availability are confirmed/);
-    assert.ok(html.includes('.' + slot + '{\\n    display:none!important;'), `original mobile rail hiding must stay intact: ${page}`);
+    const mobileStyle = html.slice(html.indexOf("@media(max-width:1099px){"));
+    assert.ok(mobileStyle.includes("." + slot + "{") && mobileStyle.includes("display:none!important;"), `original mobile rail hiding must stay intact: ${page}`);
   }
 });
 
