@@ -82,7 +82,7 @@
     var bcbsLanding = page === 'bcbs-therapy-illinois.html' || page === 'bcbs-therapy-illinois';
     header.querySelectorAll('.header-cta a, .home-header-cta a').forEach(function (link) {
       link.textContent = group ? 'Request a Group Consultation' : bcbsLanding ? 'See Available Appointments' : 'Request an Appointment';
-      link.href = group ? 'contact.html?service=teen-group#inquiry-form' : 'https://www.therapyportal.com/p/stonebridge60634/';
+      link.href = group ? 'contact.html?service=teen-group#inquiry-form' : bcbsLanding ? 'https://www.therapyportal.com/p/stonebridge60634/appointments/availability/' : 'https://www.therapyportal.com/p/stonebridge60634/';
       if (!group) link.setAttribute('rel', 'noreferrer');
       else link.removeAttribute('rel');
       link.removeAttribute('data-new-client-link');
@@ -452,7 +452,7 @@
     if (eligible.indexOf(page) === -1 || document.querySelector('.sb-mobile-consultation-cta')) return;
     var cta = document.createElement('a');
     cta.className = 'sb-mobile-consultation-cta';
-    cta.href = 'https://www.therapyportal.com/p/stonebridge60634/';
+    cta.href = bcbsLanding ? 'https://www.therapyportal.com/p/stonebridge60634/appointments/availability/' : 'https://www.therapyportal.com/p/stonebridge60634/';
     cta.rel = 'noreferrer';
     cta.textContent = bcbsLanding ? 'See Available Appointments' : 'Request an Appointment';
     cta.setAttribute('aria-label', cta.textContent);
