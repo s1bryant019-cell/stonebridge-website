@@ -89,10 +89,7 @@ test("general patient pages link directly to available appointments, preserving 
     const destination = PORTAL + "appointments/availability/";
     assert.ok(html.includes('href="' + destination + '"'), `no availability link: ${page}`);
     assert.match(html, /See Available Appointments/);
-    assert.doesNotMatch(html, /href="' + PORTAL.replace(/[.*+?^${}()|[\]\\]/g, "\\    const bcbs = page === "bcbs-therapy-illinois.html";
-    const destination = bcbs ? PORTAL + "appointments/availability/" : PORTAL;
-    assert.ok(html.includes('href="' + destination + '"'), `no appointment portal link: ${page}`);
-    assert.match(html, bcbs ? /See Available Appointments/ : /Request an Appointment/);") + '"/);
+    assert.ok(!html.includes('href="' + PORTAL + '"'), `unexpected general portal link in ${page}`);
     assert.doesNotMatch(html, /href="fit-safety-check\.html"/);
   }
   assert.match(read("new-clients.html"), /href="contact\.html#inquiry-form"/);
