@@ -97,6 +97,22 @@ test("general patient pages link directly to available appointments, preserving 
   assert.match(read("group-therapy.html"), /Request a Group Consultation/);
 });
 
+test("clinician practical rails have direct named appointment requests with confirmation language", () => {
+  for (const [page, rail, name, slot] of [
+    ["team-jasmine-wilson.html", "jasmine-profile-rail", "Jasmine", "jasmine-sticky-rail-slot"],
+    ["team-founder.html", "founder-profile-rail", "Dr. Bryant", "founder-sticky-rail-slot"]
+  ]) {
+    const html = read(page);
+    const aside = html.match(new RegExp('<aside class="' + rail + '"[\\s\\S]*?<\\/aside>'))?.[0];
+    assert.ok(aside, `profile rail missing: ${page}`);
+    assert.ok(aside.includes('class="' + rail + '-cta" href="' + PORTAL + 'appointments/availability/"'), `direct appointment rail link missing: ${page}`);
+    assert.ok(aside.includes('Request an Appointment with ' + name), `clinician name missing from rail CTA: ${page}`);
+    assert.match(aside, /Requests remain pending until clinician fit and availability are confirmed/);
+    const mobileStyle = html.slice(html.indexOf("@media(max-width:1099px){"));
+    assert.ok(mobileStyle.includes("." + slot + "{") && mobileStyle.includes("display:none!important;"), `original mobile rail hiding must stay intact: ${page}`);
+  }
+});
+
 test("specialized consultation and assessment routes remain separate", () => {
   const group = read("group-therapy.html");
   assert.match(group, /Request a Group Consultation/);
