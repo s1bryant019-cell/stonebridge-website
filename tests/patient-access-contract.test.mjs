@@ -76,22 +76,25 @@ test("sitemap lists canonical indexable paths without duplicates or stale modifi
   }
 });
 
-test("general patient pages request appointments through the fixed TherapyPortal URL", () => {
+test("general patient pages link directly to available appointments, preserving consultation and specialized paths", () => {
   for (const page of [
-    "index.html", "home-current.html", "services.html",
+    "index.html", "home-current.html", "about.html", "team.html",
+    "team-founder.html", "team-jasmine-wilson.html", "services.html",
     "individual-therapy.html", "couples-therapy.html", "family-therapy.html",
     "parent-support.html", "new-clients.html",
     "bcbs-therapy-illinois.html", "adolescent-therapy-illinois.html",
     "trauma-therapy-illinois.html"
   ]) {
     const html = read(page);
-    const bcbs = page === "bcbs-therapy-illinois.html";
-    const destination = bcbs ? PORTAL + "appointments/availability/" : PORTAL;
-    assert.ok(html.includes('href="' + destination + '"'), `no appointment portal link: ${page}`);
-    assert.match(html, bcbs ? /See Available Appointments/ : /Request an Appointment/);
+    const destination = PORTAL + "appointments/availability/";
+    assert.ok(html.includes('href="' + destination + '"'), `no availability link: ${page}`);
+    assert.match(html, /See Available Appointments/);
+    assert.ok(!html.includes('href="' + PORTAL + '"'), `unexpected general portal link in ${page}`);
     assert.doesNotMatch(html, /href="fit-safety-check\.html"/);
   }
   assert.match(read("new-clients.html"), /href="contact\.html#inquiry-form"/);
+  assert.match(read("portal.html"), /href="https:\/\/www\.therapyportal\.com\/p\/stonebridge60634\/"/);
+  assert.match(read("group-therapy.html"), /Request a Group Consultation/);
 });
 
 test("specialized consultation and assessment routes remain separate", () => {

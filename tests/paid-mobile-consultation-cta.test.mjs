@@ -9,7 +9,7 @@ const end = source.indexOf("\n  function init() {", begin);
 assert.ok(begin >= 0 && end > begin, "Expected central mobile CTA function");
 
 const PORTAL = "https://www.therapyportal.com/p/stonebridge60634/";
-const BCBS_AVAILABILITY = PORTAL + "appointments/availability/";
+const AVAILABILITY = PORTAL + "appointments/availability/";
 
 function renderCTA({ path = "/bcbs-therapy-illinois", search = "", existing = false } = {}) {
   const created = [];
@@ -41,7 +41,7 @@ function renderCTA({ path = "/bcbs-therapy-illinois", search = "", existing = fa
   return { created, classes };
 }
 
-function expectPortalCTA(result, label = "Request an Appointment", url = PORTAL) {
+function expectPortalCTA(result, label = "See Available Appointments", url = AVAILABILITY) {
   assert.equal(result.created.length, 1);
   const link = result.created[0];
   assert.equal(link.className, "sb-mobile-consultation-cta");
@@ -57,24 +57,22 @@ test("BCBS mobile CTA requests an appointment directly, without leaking ad IDs o
     path: "/bcbs-therapy-illinois",
     search: "?utm_source=google&utm_medium=cpc&gclid=click-123&email=secret%40example.test"
   });
-  expectPortalCTA(result, "See Available Appointments", BCBS_AVAILABILITY);
+  expectPortalCTA(result);
   assert.ok(!result.created[0].href.includes("click-123"));
   assert.ok(!result.created[0].href.includes("secret"));
 });
 
-test("all paid mobile landing paths use the same fixed appointment portal", () => {
+test("all paid mobile landing paths use the direct appointment-availability screen", () => {
   for (const path of [
     "/bcbs-therapy-illinois.html", "/bcbs-therapy-illinois",
     "/adolescent-therapy-illinois.html", "/adolescent-therapy-illinois",
     "/trauma-therapy-illinois.html", "/trauma-therapy-illinois"
   ]) {
-    const label = path.includes("bcbs-therapy-illinois") ? "See Available Appointments" : "Request an Appointment";
-    expectPortalCTA(renderCTA({ path, search: "?gclid=123&gbraid=456&wbraid=789" }), label,
-      path.includes("bcbs-therapy-illinois") ? BCBS_AVAILABILITY : PORTAL);
+    expectPortalCTA(renderCTA({ path, search: "?gclid=123&gbraid=456&wbraid=789" }));
   }
 });
 
-test("ordinary psychotherapy pages and both New Clients URL forms use the same appointment CTA", () => {
+test("ordinary psychotherapy pages and both New Clients URL forms open appointment availability", () => {
   for (const path of [
     "/", "/index.html", "/about.html", "/team.html", "/team-founder.html",
     "/team-jasmine-wilson.html", "/services.html", "/individual-therapy.html",

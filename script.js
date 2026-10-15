@@ -44,7 +44,7 @@
       navLink('for-clinicians.html','Professionals','professionals',active),
       navLink('portal.html','Portal','portal',active),
       '      </nav>',
-      '      <div class="header-cta"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/" rel="noreferrer">Request an Appointment</a></div>',
+      '      <div class="header-cta"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a></div>',
       '    </div>',
       '  </div>',
       '</header>'
@@ -79,10 +79,9 @@
       return;
     }
     var group = page === 'group-therapy.html';
-    var bcbsLanding = page === 'bcbs-therapy-illinois.html' || page === 'bcbs-therapy-illinois';
     header.querySelectorAll('.header-cta a, .home-header-cta a').forEach(function (link) {
-      link.textContent = group ? 'Request a Group Consultation' : bcbsLanding ? 'See Available Appointments' : 'Request an Appointment';
-      link.href = group ? 'contact.html?service=teen-group#inquiry-form' : bcbsLanding ? 'https://www.therapyportal.com/p/stonebridge60634/appointments/availability/' : 'https://www.therapyportal.com/p/stonebridge60634/';
+      link.textContent = group ? 'Request a Group Consultation' : 'See Available Appointments';
+      link.href = group ? 'contact.html?service=teen-group#inquiry-form' : 'https://www.therapyportal.com/p/stonebridge60634/appointments/availability/';
       if (!group) link.setAttribute('rel', 'noreferrer');
       else link.removeAttribute('rel');
       link.removeAttribute('data-new-client-link');
@@ -439,7 +438,6 @@
 
   function ensureMobileConsultationCTA() {
     var page = pageName();
-    var bcbsLanding = page === 'bcbs-therapy-illinois.html' || page === 'bcbs-therapy-illinois';
     var eligible = [
       'index.html', 'about.html', 'team.html', 'team-founder.html', 'team-jasmine-wilson.html',
       'services.html', 'individual-therapy.html', 'couples-therapy.html',
@@ -452,9 +450,9 @@
     if (eligible.indexOf(page) === -1 || document.querySelector('.sb-mobile-consultation-cta')) return;
     var cta = document.createElement('a');
     cta.className = 'sb-mobile-consultation-cta';
-    cta.href = bcbsLanding ? 'https://www.therapyportal.com/p/stonebridge60634/appointments/availability/' : 'https://www.therapyportal.com/p/stonebridge60634/';
+    cta.href = 'https://www.therapyportal.com/p/stonebridge60634/appointments/availability/';
     cta.rel = 'noreferrer';
-    cta.textContent = bcbsLanding ? 'See Available Appointments' : 'Request an Appointment';
+    cta.textContent = 'See Available Appointments';
     cta.setAttribute('aria-label', cta.textContent);
     // Never forward advertising identifiers or healthcare information to TherapyPortal.
     document.body.appendChild(cta);

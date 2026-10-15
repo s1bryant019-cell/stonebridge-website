@@ -28,14 +28,12 @@ test("paid landing pages keep compact mobile heroes and appointment-first links"
   const css = file("paid-search-landing.css");
   assert.match(css, /Mobile hero proportion — 2026-10-13/);
   assert.match(css, /\.paid-search-page \.paid-hero-copy\s*\{\s*padding:34px 0 36px;/);
-  const portal = 'href="https://www.therapyportal.com/p/stonebridge60634/"';
+  const availability = 'href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/"';
   for (const page of ["adolescent-therapy-illinois.html", "bcbs-therapy-illinois.html", "trauma-therapy-illinois.html"]) {
     const html = file(page);
     const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
     assert.match(html, /paid-search-landing\.css\?v=20261013mobile1/);
-    const expectedLink = page === "bcbs-therapy-illinois.html"
-      ? 'href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/"' : portal;
-    assert.ok(main.includes(expectedLink), `${page} should link to its appointment entry point`);
+    assert.ok(main.includes(availability), `${page} should link directly to appointment availability`);
     if (page === "bcbs-therapy-illinois.html") {
       assert.match(main, /See Available Appointments/);
       assert.match(html, /script\.js\?v=20261015bcbsavail1/);
@@ -44,9 +42,8 @@ test("paid landing pages keep compact mobile heroes and appointment-first links"
       assert.match(main, /Prefer to speak first\? Request a free consultation\./);
       assert.doesNotMatch(main, /class="btn btn-primary"[^>]*>Request an Appointment<\/a>/);
       assert.match(html, /\.paid-search-bcbs \.paid-final-cta\{display:none!important\}/);
-    } else {
-      assert.match(main, /Request an Appointment/);
     }
+    assert.match(main, /See Available Appointments/);
     assert.doesNotMatch(main, /href="fit-safety-check\.html"/);
   }
 });
@@ -63,8 +60,8 @@ test("phone New Clients page puts direct appointments ahead of the retained cris
   assert.match(fix, /\.new-client-access-page \.access-template-note--rail\{\s*grid-row:4;/);
   const page = file("new-clients.html");
   assert.match(page, /Emergency or crisis care:/);
-  assert.ok(page.includes('href="https://www.therapyportal.com/p/stonebridge60634/"'));
-  assert.match(page, /Request an Appointment/);
+  assert.ok(page.includes('href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/"'));
+  assert.match(page, /See Available Appointments/);
   assert.match(page, /href="contact\.html#inquiry-form"/);
   assert.doesNotMatch(page, /href="fit-safety-check\.html"/);
 });
