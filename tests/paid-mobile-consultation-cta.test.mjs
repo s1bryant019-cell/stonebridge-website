@@ -9,6 +9,7 @@ const end = source.indexOf("\n  function init() {", begin);
 assert.ok(begin >= 0 && end > begin, "Expected central mobile CTA function");
 
 const PORTAL = "https://www.therapyportal.com/p/stonebridge60634/";
+const BCBS_AVAILABILITY = PORTAL + "appointments/availability/";
 
 function renderCTA({ path = "/bcbs-therapy-illinois", search = "", existing = false } = {}) {
   const created = [];
@@ -40,11 +41,11 @@ function renderCTA({ path = "/bcbs-therapy-illinois", search = "", existing = fa
   return { created, classes };
 }
 
-function expectPortalCTA(result, label = "Request an Appointment") {
+function expectPortalCTA(result, label = "Request an Appointment", url = PORTAL) {
   assert.equal(result.created.length, 1);
   const link = result.created[0];
   assert.equal(link.className, "sb-mobile-consultation-cta");
-  assert.equal(link.href, PORTAL);
+  assert.equal(link.href, url);
   assert.equal(link.textContent, label);
   assert.equal(link["aria-label"], label);
   assert.equal(link.rel, "noreferrer");
@@ -56,7 +57,7 @@ test("BCBS mobile CTA requests an appointment directly, without leaking ad IDs o
     path: "/bcbs-therapy-illinois",
     search: "?utm_source=google&utm_medium=cpc&gclid=click-123&email=secret%40example.test"
   });
-  expectPortalCTA(result, "See Available Appointments");
+  expectPortalCTA(result, "See Available Appointments", BCBS_AVAILABILITY);
   assert.ok(!result.created[0].href.includes("click-123"));
   assert.ok(!result.created[0].href.includes("secret"));
 });
@@ -68,7 +69,8 @@ test("all paid mobile landing paths use the same fixed appointment portal", () =
     "/trauma-therapy-illinois.html", "/trauma-therapy-illinois"
   ]) {
     const label = path.includes("bcbs-therapy-illinois") ? "See Available Appointments" : "Request an Appointment";
-    expectPortalCTA(renderCTA({ path, search: "?gclid=123&gbraid=456&wbraid=789" }), label);
+    expectPortalCTA(renderCTA({ path, search: "?gclid=123&gbraid=456&wbraid=789" }), label,
+      path.includes("bcbs-therapy-illinois") ? BCBS_AVAILABILITY : PORTAL);
   }
 });
 
