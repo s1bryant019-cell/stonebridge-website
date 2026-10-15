@@ -33,9 +33,13 @@ test("paid landing pages keep compact mobile heroes and appointment-first links"
     const html = file(page);
     const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
     assert.match(html, /paid-search-landing\.css\?v=20261013mobile1/);
-    assert.ok(main.includes(portal), `${page} should have a direct portal appointment link`);
+    const expectedLink = page === "bcbs-therapy-illinois.html"
+      ? 'href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/"' : portal;
+    assert.ok(main.includes(expectedLink), `${page} should link to its appointment entry point`);
     if (page === "bcbs-therapy-illinois.html") {
       assert.match(main, /See Available Appointments/);
+      assert.match(html, /script\.js\?v=20261015bcbsavail1/);
+      assert.match(html, /href="https:\/\/www\.therapyportal\.com\/p\/stonebridge60634\/appointments\/availability\/"/);
       assert.match(main, /Your request remains pending until Stonebridge reviews and confirms it/);
       assert.match(main, /Prefer to speak first\? Request a free consultation\./);
       assert.doesNotMatch(main, /class="btn btn-primary"[^>]*>Request an Appointment<\/a>/);
