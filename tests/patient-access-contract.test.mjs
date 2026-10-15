@@ -85,8 +85,10 @@ test("general patient pages request appointments through the fixed TherapyPortal
     "trauma-therapy-illinois.html"
   ]) {
     const html = read(page);
-    assert.ok(html.includes('href="' + PORTAL + '"'), `no appointment portal link: ${page}`);
-    assert.match(html, /Request an Appointment/);
+    const bcbs = page === "bcbs-therapy-illinois.html";
+    const destination = bcbs ? PORTAL + "appointments/availability/" : PORTAL;
+    assert.ok(html.includes('href="' + destination + '"'), `no appointment portal link: ${page}`);
+    assert.match(html, bcbs ? /See Available Appointments/ : /Request an Appointment/);
     assert.doesNotMatch(html, /href="fit-safety-check\.html"/);
   }
   assert.match(read("new-clients.html"), /href="contact\.html#inquiry-form"/);
