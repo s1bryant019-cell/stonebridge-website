@@ -560,79 +560,139 @@
 }
 </style>
 <style id="stonebridge-home-integrated-perspective-founder-desktop-20261016">
-/* Desktop-only: the perspective introduces the founder; neither competes with the other. */
+/* Desktop-only: join the existing philosophy and founder sections with one soft photographic fade. */
 @media (min-width:1101px){
   body.home-redesign .home-perspective-founder-composition{
-    background:#FAF5EF;
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    background:#0F2A45;
+    border-bottom:1px solid rgba(15,42,69,.14);
   }
   body.home-redesign .home-perspective-founder-composition .home-perspective{
-    padding:38px 0 76px!important;
-    border:0!important;
-    background:linear-gradient(180deg,
-      #0F2A45 0%,
-      #0F2A45 68%,
-      #FAF5EF 100%
-    )!important;
+    padding:34px 0 7px!important;
+    background:transparent!important;
+    border-bottom:0!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-perspective-inner{
-    width:min(1100px,calc(100% - 88px))!important;
-    margin:0 auto;
-    text-align:center!important;
+    position:relative;
+    z-index:2;
+    width:min(1260px,calc(100% - 96px))!important;
+    text-align:left!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-perspective .home-eyebrow{
-    margin:0 0 12px!important;
+    margin-bottom:10px!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-perspective .home-founder-quote{
-    max-width:1100px!important;
-    margin:0 auto!important;
-    font-size:clamp(2.05rem,2.45vw,2.65rem)!important;
-    line-height:1.13!important;
-    letter-spacing:-.025em!important;
+    max-width:min(56%,680px)!important;
+    margin:0!important;
+    font-size:clamp(1.96rem,2.2vw,2.45rem)!important;
+    line-height:1.12!important;
     text-wrap:balance;
   }
   body.home-redesign .home-perspective-founder-composition .home-perspective-copy{
-    max-width:680px;
-    margin:12px auto 0!important;
-    font-size:.92rem;
-    line-height:1.5;
+    max-width:535px;
+    margin:12px 0 0!important;
+    font-size:.91rem;
+    line-height:1.55;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-profile{
-    padding:8px 0 42px!important;
-    background:#FAF5EF!important;
+    padding:0!important;
+    background:transparent!important;
     border-bottom:0!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-grid{
-    display:grid;
-    width:min(1120px,calc(100% - 88px));
+    width:min(1260px,calc(100% - 96px));
     min-height:0!important;
     margin:0 auto;
-    grid-template-columns:minmax(0,42%) minmax(0,1fr);
-    column-gap:clamp(32px,4vw,64px);
-    align-items:center!important;
+    display:block!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-portrait{
-    position:static;
-    min-width:0;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-media{
-    height:300px!important;
-    min-height:0!important;
-    border-radius:8px;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    z-index:0;
+    width:49%;
+    height:100%;
+    margin:0;
     overflow:hidden;
   }
+  body.home-redesign .home-perspective-founder-composition .home-founder-portrait::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:linear-gradient(90deg,
+      #0F2A45 0%,
+      rgba(15,42,69,.91) 10%,
+      rgba(15,42,69,.61) 27%,
+      rgba(15,42,69,.18) 46%,
+      rgba(15,42,69,0) 70%);
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-media{
+    width:100%;
+    height:100%!important;
+    min-height:0!important;
+  }
   body.home-redesign .home-perspective-founder-composition .home-founder-media img{
+    display:block;
+    width:100%;
+    height:100%;
     object-fit:cover;
-    object-position:center 42%;
+    object-position:center 45%;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-photo-caption{
+    position:absolute;
+    right:22px;
+    bottom:15px;
+    z-index:2;
+    margin:0!important;
+    padding:5px 9px;
+    border-radius:3px;
+    background:rgba(250,245,239,.88);
+    color:#0F2A45!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-copy{
-    padding:12px 0!important;
-    align-self:center!important;
+    position:relative;
+    z-index:2;
+    box-sizing:border-box;
+    width:51%;
+    max-width:615px;
+    padding:14px 0 30px!important;
+    margin:15px 0 0;
+    border-top:1px solid rgba(255,250,242,.22);
+    align-self:flex-start!important;
+    justify-content:flex-start;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-copy .home-eyebrow{
+    margin:0 0 10px!important;
+    color:#D3B57F!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-heading{
+    color:#FFFAF2!important;
+    font-size:clamp(1.95rem,2.35vw,2.5rem)!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-role{
+    margin-top:7px!important;
+    color:rgba(255,250,242,.92)!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-summary{
-    margin-top:14px!important;
+    max-width:520px!important;
+    margin:10px 0 0!important;
+    color:rgba(255,250,242,.86)!important;
+    font-size:.88rem!important;
+    line-height:1.52!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-link{
-    margin-top:16px!important;
+    margin-top:12px!important;
+    color:#FFFAF2!important;
+    text-decoration-color:rgba(255,250,242,.6);
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-link:focus-visible{
+    outline:3px solid #D3B57F;
+    outline-offset:4px;
   }
 }
 </style>
