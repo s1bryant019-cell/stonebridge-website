@@ -2716,20 +2716,34 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <style id="stonebridge-group-desktop-clarity-20261016">
 /* Desktop-only refinements. Approved mobile and tablet compositions remain unchanged. */
 @media (min-width:1101px){
-  /* Give the opening message a calm, uninterrupted reading surface. */
+  /* Keep a quiet navy reading area, fading naturally into the full-width photograph. */
   html body.group-therapy-page[data-static-hero-system] .group-hero.sb-standard-hero{
     min-height:480px!important;
     background:var(--group-navy-deep)!important;
   }
   html body.group-therapy-page[data-static-hero-system] .group-hero.sb-standard-hero::before{
-    display:none!important;
+    display:block!important;
+    background:
+      linear-gradient(90deg,
+        rgba(16,47,77,1) 0%,
+        rgba(16,47,77,.98) 32%,
+        rgba(16,47,77,.84) 46%,
+        rgba(16,47,77,.48) 62%,
+        rgba(16,47,77,.14) 80%,
+        rgba(16,47,77,.06) 100%
+      ),
+      linear-gradient(180deg,
+        rgba(16,47,77,.10) 0%,
+        rgba(16,47,77,0) 56%,
+        rgba(16,47,77,.16) 100%
+      )!important;
   }
   html body.group-therapy-page[data-static-hero-system] .group-hero.sb-standard-hero .group-hero-media.sb-standard-hero-media{
     top:0!important;
     right:0!important;
     bottom:0!important;
-    left:auto!important;
-    width:48%!important;
+    left:0!important;
+    width:100%!important;
     height:100%!important;
     min-height:480px!important;
   }
