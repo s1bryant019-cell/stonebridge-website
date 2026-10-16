@@ -561,7 +561,20 @@
 </style>
 <style id="stonebridge-home-integrated-perspective-founder-desktop-20261016">
 /* Desktop-only: join the existing philosophy and founder sections with one soft photographic fade. */
+/* Desktop alternatives are hidden by default so tablet/mobile keep their approved text. */
+.home-perspective-founder-composition .home-perspective-copy-desktop,
+.home-perspective-founder-composition .home-founder-eyebrow-desktop{
+  display:none;
+}
 @media (min-width:1101px){
+  body.home-redesign .home-perspective-founder-composition .home-perspective-copy-default,
+  body.home-redesign .home-perspective-founder-composition .home-founder-eyebrow-default{
+    display:none;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-perspective-copy-desktop,
+  body.home-redesign .home-perspective-founder-composition .home-founder-eyebrow-desktop{
+    display:inline;
+  }
   body.home-redesign .home-perspective-founder-composition{
     position:relative;
     isolation:isolate;
@@ -581,7 +594,7 @@
     text-align:left!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-perspective .home-eyebrow{
-    margin-bottom:10px!important;
+    margin-bottom:16px!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-perspective .home-founder-quote{
     max-width:min(56%,680px)!important;
@@ -591,8 +604,8 @@
     text-wrap:balance;
   }
   body.home-redesign .home-perspective-founder-composition .home-perspective-copy{
-    max-width:535px;
-    margin:14px 0 0!important;
+    max-width:590px;
+    margin:22px 0 0!important;
     color:rgba(255,250,242,.94)!important;
     font-size:1rem;
     line-height:1.58;
@@ -654,14 +667,14 @@
     box-sizing:border-box;
     width:51%;
     max-width:615px;
-    padding:14px 0 30px!important;
-    margin:21px 0 0;
-    border-top:1px solid rgba(255,250,242,.22);
+    padding:0 0 32px!important;
+    margin:52px 0 0;
+    border-top:0;
     align-self:flex-start!important;
     justify-content:flex-start;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-copy .home-eyebrow{
-    margin:0 0 10px!important;
+    margin:0 0 14px!important;
     color:#D3B57F!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-heading{
@@ -669,21 +682,18 @@
     font-size:clamp(1.85rem,2vw,2.15rem)!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-role{
-    margin-top:7px!important;
+    margin-top:6px!important;
     color:rgba(255,250,242,.92)!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-role-extra{
     display:none;
   }
+  /* Detailed clinical focus already appears on Dr. Bryant's full profile. */
   body.home-redesign .home-perspective-founder-composition .home-founder-summary{
-    max-width:520px!important;
-    margin:10px 0 0!important;
-    color:rgba(255,250,242,.86)!important;
-    font-size:.88rem!important;
-    line-height:1.52!important;
+    display:none!important;
   }
   body.home-redesign .home-perspective-founder-composition .home-founder-link{
-    margin-top:12px!important;
+    margin-top:22px!important;
     color:#FFFAF2!important;
     text-decoration-color:rgba(255,250,242,.6);
   }
@@ -831,7 +841,7 @@
       <div class="home-perspective-inner">
         <p class="home-eyebrow">The Stonebridge perspective</p>
         <h2 class="home-founder-quote" id="perspective-title">“We do not choose every part of the story we inherit. We can still become more intentional authors of how we live it.”</h2>
-        <p class="home-perspective-copy">Stonebridge provides clinically grounded psychotherapy within a clear and relational setting.</p>
+        <p class="home-perspective-copy"><span class="home-perspective-copy-default">Stonebridge provides clinically grounded psychotherapy within a clear and relational setting.</span><span class="home-perspective-copy-desktop">Clinically grounded, relational psychotherapy for adolescents, adults, couples, and families across Illinois.</span></p>
       </div>
     </section>
 
@@ -844,7 +854,7 @@
           <p class="home-founder-photo-caption">Dr. Stephen W. Bryant · Founder</p>
         </div>
         <div class="home-founder-copy">
-          <p class="home-eyebrow">Founder · Illinois telehealth</p>
+          <p class="home-eyebrow"><span class="home-founder-eyebrow-default">Founder · Illinois telehealth</span><span class="home-founder-eyebrow-desktop">Founder</span></p>
           <h2 class="home-founder-heading" id="founder-title">Dr. Stephen W. Bryant</h2>
           <p class="home-founder-role">PsyD, LCPC · Psychotherapist<span class="home-founder-role-extra"> · Founder</span></p>
           <p class="home-founder-summary">Relational psychotherapy for adolescents, adults, couples, and families, with particular depth in trauma, substance use, mood and anxiety concerns, and recurring relationship patterns.</p>
