@@ -462,7 +462,7 @@
 
   function init() {
     ensureStylesheet('stonebridge-brand-sync', 'stonebridge-brand-sync.css?v=20261014access4');
-    ensureStylesheet('stonebridge-hotfix', 'stonebridge-hotfix.css?v=' + VERSION);
+    ensureStylesheet('stonebridge-hotfix', 'stonebridge-hotfix.css?v=20261016hero-phase-fix1');
     normalizeHeader();
     normalizeFounderImages();
     ensureMobileConsultationCTA();
