@@ -1120,6 +1120,12 @@ body.services-page .services-hero-description-desktop { display:none; }
   body.services-page .services-hero-title-desktop,
   body.services-page .services-hero-description-desktop { display:inline; }
 
+  /* 14px more above and below than the shared 34px desktop hero padding.
+     Keep the existing minimum height: the hero grows only if content needs it. */
+  html body.services-page[data-static-hero-system] .services-hero.sb-standard-hero .services-hero-copy.sb-standard-hero-copy {
+    padding:48px 0!important;
+  }
+
   /* Preserve the full-bleed office photograph and its existing object positioning.
      Build a steadier deep navy text field without closing off the architecture at right. */
   html body.services-page[data-static-hero-system] .services-hero.sb-standard-hero::before {
