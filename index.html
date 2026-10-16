@@ -484,7 +484,11 @@
 
 <style id="stonebridge-home-desktop-hero-fade-20261016">
 /* Homepage hero only. Keep the approved grid, image, copy, and smaller-screen layouts. */
+/* Keep the approved tablet/mobile hero copy unchanged. */
+body.home-redesign .home-hero-lede-desktop{display:none;}
 @media (min-width:1101px){
+  body.home-redesign .home-hero-lede-default{display:none;}
+  body.home-redesign .home-hero-lede-desktop{display:inline;}
   body.home-redesign .home-hero{
     background:#0F2A45!important;
   }
@@ -493,7 +497,12 @@
     overflow:hidden;
     isolation:isolate;
   }
-  /* Preserve the original 48% photo column and its approved room framing. */
+  /* Advance the existing room photograph ~72-104px toward the center without changing grid tracks or hero height. */
+  body.home-redesign .home-hero-media{
+    position:relative;
+    left:calc(-1 * clamp(72px,5vw,104px));
+    width:calc(100% + clamp(72px,5vw,104px));
+  }
   body.home-redesign .home-hero-grid::after{
     content:"";
     position:absolute;
@@ -502,11 +511,12 @@
     pointer-events:none;
     background:linear-gradient(90deg,
       #0F2A45 0%,
-      #0F2A45 43%,
-      rgba(15,42,69,.96) 52%,
-      rgba(15,42,69,.55) 62%,
-      rgba(15,42,69,.13) 73%,
-      rgba(15,42,69,0) 84%
+      #0F2A45 39%,
+      rgba(15,42,69,.98) 46%,
+      rgba(15,42,69,.74) 56%,
+      rgba(15,42,69,.28) 66%,
+      rgba(15,42,69,.02) 78%,
+      rgba(15,42,69,0) 85%
     );
   }
   body.home-redesign .home-hero-copy{
@@ -736,7 +746,7 @@
           <div class="home-hero-rule"></div>
           <p class="home-eyebrow">Online psychotherapy in Illinois</p>
           <h1 id="home-hero-title"><span class="home-hero-line">A steadier place to</span> <span class="home-hero-line">begin therapy.</span></h1>
-          <p class="home-hero-lede">Outpatient care for people who feel overwhelmed, disconnected, or unsure how to change what is no longer working.</p>
+          <p class="home-hero-lede"><span class="home-hero-lede-default">Outpatient care for people who feel overwhelmed, disconnected, or unsure how to change what is no longer working.</span><span class="home-hero-lede-desktop">For people feeling overwhelmed, disconnected, or stuck in patterns they want to change.</span></p>
           <div class="home-hero-actions">
             <a class="home-hero-action home-hero-action--primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a>
             <a class="home-hero-action home-hero-action--secondary" href="team.html#clinicians">Meet the Clinicians</a>
