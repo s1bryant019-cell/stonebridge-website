@@ -2713,6 +2713,71 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+<style id="stonebridge-group-desktop-clarity-20261016">
+/* Desktop-only refinements. Approved mobile and tablet compositions remain unchanged. */
+@media (min-width:1101px){
+  /* Give the opening message a calm, uninterrupted reading surface. */
+  html body.group-therapy-page[data-static-hero-system] .group-hero.sb-standard-hero{
+    min-height:480px!important;
+    background:var(--group-navy-deep)!important;
+  }
+  html body.group-therapy-page[data-static-hero-system] .group-hero.sb-standard-hero::before{
+    display:none!important;
+  }
+  html body.group-therapy-page[data-static-hero-system] .group-hero.sb-standard-hero .group-hero-media.sb-standard-hero-media{
+    top:0!important;
+    right:0!important;
+    bottom:0!important;
+    left:auto!important;
+    width:48%!important;
+    height:100%!important;
+    min-height:480px!important;
+  }
+  html body.group-therapy-page[data-static-hero-system] .group-hero.sb-standard-hero .group-hero-copy.sb-standard-hero-copy{
+    width:min(1220px,calc(100% - 72px))!important;
+    min-height:480px!important;
+    padding:40px 0!important;
+  }
+  html body.group-therapy-page[data-static-hero-system] .group-hero.sb-standard-hero .group-hero-copy > p{
+    max-width:30rem!important;
+  }
+
+  /* Keep The Lobby's integrated photograph and information; reduce its footprint. */
+  .group-therapy-page .lobby-showcase-copy{
+    width:min(68%,calc(50vw + 90px));
+    min-height:0;
+    padding-top:26px;
+    padding-right:34px;
+    padding-bottom:24px;
+  }
+  .group-therapy-page .lobby-showcase-copy .group-feature-label{margin-bottom:8px;}
+  .group-therapy-page .lobby-showcase-brand{
+    width:min(100%,13.5rem);
+    margin-bottom:8px;
+  }
+  .group-therapy-page .lobby-showcase-title{
+    max-width:18ch;
+    margin-bottom:10px;
+    font-size:clamp(2.15rem,2.5vw,2.6rem);
+  }
+  .group-therapy-page .lobby-showcase-intro{
+    max-width:39rem;
+    line-height:1.55;
+  }
+  .group-therapy-page .lobby-showcase-quote{
+    max-width:39rem;
+    margin-top:12px;
+    padding-top:10px;
+    font-size:clamp(1.23rem,1.4vw,1.36rem);
+  }
+  .group-therapy-page .lobby-showcase-facts{
+    margin-top:15px;
+    padding-top:10px;
+  }
+  .group-therapy-page .lobby-showcase-support{margin-top:10px;}
+  .group-therapy-page .lobby-showcase-actions{margin-top:12px;}
+}
+</style>
 </head>
 <body class="group-therapy-page" data-static-hero-system="true">
 <a class="skip-link" href="#main-content">Skip to main content</a>
