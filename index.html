@@ -507,15 +507,16 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
     min-height:0!important;
     overflow:hidden;
   }
-  /* Preserve the approved crop: original 52% grid boundary minus the prior image extension. */
+  /* Restore the approved 48% image composition; anchor it to the far-right edge.
+     A full-width media layer stays behind the separate, unchanged navy overlay. */
   body.home-redesign .home-hero-media picture{
     position:absolute;
     top:0;
     right:0;
     bottom:0;
-    left:calc(52% - clamp(72px,5vw,104px));
+    left:auto;
     display:block;
-    width:auto;
+    width:48%;
     height:100%;
   }
   body.home-redesign .home-hero-media picture img{
