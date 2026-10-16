@@ -1942,6 +1942,50 @@ body.team-page .team-consultation{
   }
 }
 </style>
+<style id="stonebridge-team-desktop-hero-refinement-20261016">
+/* Preserve the approved mobile and tablet hero copy. */
+body.team-page .team-hero-lede-desktop{display:none;}
+@media (min-width:1101px){
+  body.team-page .team-page-hero .team-hero-lede-default{display:none;}
+  body.team-page .team-page-hero .team-hero-lede-desktop{display:inline;}
+
+  /* Accommodate the established 40x2px gold rule without crowding the text. */
+  html body.team-page[data-static-hero-system] .team-page-hero.sb-standard-hero{
+    min-height:348px!important;
+    height:auto!important;
+  }
+  body.team-page .team-page-hero-compact .team-page-hero-copy{
+    min-height:348px!important;
+    height:auto!important;
+    padding:40px 0!important;
+  }
+  body.team-page .team-page-hero-compact .team-page-hero-copy .team-page-hero-rule{
+    display:block!important;
+    flex:0 0 2px;
+    width:40px!important;
+    height:2px!important;
+    margin:0 0 20px!important;
+    padding:0!important;
+    background:#d3b57f!important;
+  }
+
+  /* Maintain the existing photograph and crop. Stabilize navy beneath the text. */
+  html body.team-page[data-static-hero-system] .team-page-hero.sb-standard-hero::before{
+    background:
+      linear-gradient(90deg,
+        rgba(16,47,77,.94) 0%,
+        rgba(16,47,77,.88) 28%,
+        rgba(16,47,77,.70) 44%,
+        rgba(16,47,77,.43) 61%,
+        rgba(16,47,77,.18) 82%,
+        rgba(16,47,77,.06) 100%),
+      linear-gradient(180deg,
+        rgba(16,47,77,.05) 0%,
+        rgba(16,47,77,0) 58%,
+        rgba(16,47,77,.10) 100%)!important;
+  }
+}
+</style>
 </head>
 
 <body class="team-page" data-static-hero-system="true">
@@ -1992,7 +2036,7 @@ body.team-page .team-consultation{
           <div class="team-page-hero-rule"></div>
           <div class="team-kicker">Team</div>
           <h1>A small team, chosen with care.</h1>
-          <p>Stonebridge clinicians provide relational, clinically grounded psychotherapy for adolescents, adults, couples, and families throughout Illinois.</p>
+          <p><span class="team-hero-lede-default">Stonebridge clinicians provide relational, clinically grounded psychotherapy for adolescents, adults, couples, and families throughout Illinois.</span><span class="team-hero-lede-desktop">Choosing a therapist is personal. Understanding each clinician’s approach can help you consider who may be a good fit.</span></p>
           <div class="team-page-hero-actions">
             
             <a class="btn btn-secondary" href="#clinicians">Meet the Clinicians</a>
