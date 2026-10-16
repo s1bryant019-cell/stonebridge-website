@@ -559,6 +559,144 @@
   }
 }
 </style>
+<style id="stonebridge-home-integrated-perspective-founder-desktop-20261016">
+/* Desktop-only: join the existing philosophy and founder sections with one soft photographic fade. */
+@media (min-width:1101px){
+  body.home-redesign .home-perspective-founder-composition{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    background:#0F2A45;
+    border-bottom:1px solid rgba(15,42,69,.14);
+  }
+  body.home-redesign .home-perspective-founder-composition .home-perspective{
+    padding:42px 0 8px!important;
+    background:transparent!important;
+    border-bottom:0!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-perspective-inner{
+    position:relative;
+    z-index:2;
+    width:min(1180px,calc(100% - 88px))!important;
+    text-align:left!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-perspective .home-eyebrow{
+    margin-bottom:12px!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-perspective .home-founder-quote{
+    max-width:min(48%,590px)!important;
+    margin:0!important;
+    font-size:clamp(2.05rem,2.55vw,2.65rem)!important;
+    line-height:1.08!important;
+    text-wrap:balance;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-perspective-copy{
+    max-width:490px;
+    margin:13px 0 0!important;
+    font-size:.91rem;
+    line-height:1.55;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-profile{
+    padding:0!important;
+    background:transparent!important;
+    border-bottom:0!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-grid{
+    width:min(1180px,calc(100% - 88px));
+    min-height:0!important;
+    margin:0 auto;
+    display:block!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-portrait{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    z-index:0;
+    width:57%;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-portrait::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:linear-gradient(90deg,
+      #0F2A45 0%,
+      rgba(15,42,69,.96) 12%,
+      rgba(15,42,69,.68) 29%,
+      rgba(15,42,69,.22) 47%,
+      rgba(15,42,69,0) 70%);
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-media{
+    width:100%;
+    height:100%!important;
+    min-height:0!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-media img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 42%;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-photo-caption{
+    position:absolute;
+    right:22px;
+    bottom:15px;
+    z-index:2;
+    margin:0!important;
+    padding:5px 9px;
+    border-radius:3px;
+    background:rgba(250,245,239,.88);
+    color:#0F2A45!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-copy{
+    position:relative;
+    z-index:2;
+    box-sizing:border-box;
+    width:46%;
+    max-width:545px;
+    padding:17px 0 42px!important;
+    margin:18px 0 0;
+    border-top:1px solid rgba(255,250,242,.22);
+    align-self:flex-start!important;
+    justify-content:flex-start;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-copy .home-eyebrow{
+    margin:0 0 10px!important;
+    color:#D3B57F!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-heading{
+    color:#FFFAF2!important;
+    font-size:clamp(2.15rem,2.75vw,2.85rem)!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-role{
+    margin-top:7px!important;
+    color:rgba(255,250,242,.92)!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-summary{
+    max-width:520px!important;
+    margin:12px 0 0!important;
+    color:rgba(255,250,242,.88)!important;
+    font-size:.92rem!important;
+    line-height:1.58!important;
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-link{
+    margin-top:14px!important;
+    color:#FFFAF2!important;
+    text-decoration-color:rgba(255,250,242,.6);
+  }
+  body.home-redesign .home-perspective-founder-composition .home-founder-link:focus-visible{
+    outline:3px solid #D3B57F;
+    outline-offset:4px;
+  }
+}
+</style>
+
 </head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -691,6 +829,7 @@
       </div>
     </section>
 
+    <div class="home-perspective-founder-composition">
     <section class="home-perspective" aria-labelledby="perspective-title">
       <div class="home-perspective-inner">
         <p class="home-eyebrow">The Stonebridge perspective</p>
@@ -716,6 +855,7 @@
         </div>
       </div>
     </section>
+    </div>
 
     <section class="home-final" aria-labelledby="final-title">
       <div class="home-final-inner">
