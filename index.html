@@ -497,19 +497,23 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
     overflow:hidden;
     isolation:isolate;
   }
-  /* Keep the media grid cell flush right; extend only the picture left to preserve the art-directed crop. */
+  /* Desktop full-hero media layer: grid-column offsets cannot expose the right edge. */
   body.home-redesign .home-hero-media{
-    position:relative;
-    left:auto;
+    position:absolute;
+    inset:0;
+    z-index:0;
     width:100%;
-    overflow:visible;
+    height:100%;
+    min-height:0!important;
+    overflow:hidden;
   }
+  /* Preserve the approved crop: original 52% grid boundary minus the prior image extension. */
   body.home-redesign .home-hero-media picture{
     position:absolute;
     top:0;
     right:0;
     bottom:0;
-    left:calc(-1 * clamp(72px,5vw,104px));
+    left:calc(52% - clamp(72px,5vw,104px));
     display:block;
     width:auto;
     height:100%;
@@ -519,6 +523,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
     width:100%;
     height:100%;
     object-fit:cover;
+    object-position:center;
   }
   body.home-redesign .home-hero-grid::after{
     content:"";
