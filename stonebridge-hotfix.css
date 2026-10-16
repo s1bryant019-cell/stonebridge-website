@@ -120,7 +120,8 @@ body.home-redesign .hero-utility-strip-separator{
   text-underline-offset:4px;
 }
 
-@media(min-width:1025px){
+@media(min-width:1025px) and (max-width:1100px){
+  /* Legacy 1025–1100px layout only. At 1101px+ use the approved homepage desktop hero rules in index.html. */
   body.home-redesign .home-hero-grid{
     min-height:0!important;
     grid-template-columns:minmax(0,45%) minmax(0,55%)!important;
