@@ -1110,6 +1110,34 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+<style id="stonebridge-services-desktop-hero-refinement-20261016">
+/* Desktop-only Services hero editorial refinement; retain the approved artwork and responsive system. */
+body.services-page .services-hero-title-desktop,
+body.services-page .services-hero-description-desktop { display:none; }
+@media (min-width:1101px) {
+  body.services-page .services-hero-title-default,
+  body.services-page .services-hero-description-default { display:none; }
+  body.services-page .services-hero-title-desktop,
+  body.services-page .services-hero-description-desktop { display:inline; }
+
+  /* Preserve the full-bleed office photograph and its existing object positioning.
+     Build a steadier deep navy text field without closing off the architecture at right. */
+  html body.services-page[data-static-hero-system] .services-hero.sb-standard-hero::before {
+    background:
+      linear-gradient(90deg,
+        rgba(16,47,77,.95) 0%,
+        rgba(16,47,77,.92) 27%,
+        rgba(16,47,77,.78) 44%,
+        rgba(16,47,77,.48) 62%,
+        rgba(16,47,77,.18) 82%,
+        rgba(16,47,77,.06) 100%),
+      linear-gradient(180deg,
+        rgba(16,47,77,.08) 0%,
+        rgba(16,47,77,.01) 58%,
+        rgba(16,47,77,.12) 100%)!important;
+  }
+}
+</style>
 </head>
 <body class="services-page" data-static-hero-system="true">
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1140,8 +1168,8 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <div class="services-hero-copy sb-standard-hero-copy">
 <div class="services-hero-rule"></div>
 <div class="services-kicker">Services</div>
-<h1>Therapy for individuals, couples, families, parents, and groups.</h1>
-<p>Stonebridge provides outpatient telehealth care for Illinois adults and adolescents, couples, families, and parents, with groups organized around a defined clinical purpose.</p>
+<h1><span class="services-hero-title-default">Therapy for individuals, couples, families, parents, and groups.</span><span class="services-hero-title-desktop">Therapy for individuals, couples, and families.</span></h1>
+<p><span class="services-hero-description-default">Stonebridge provides outpatient telehealth care for Illinois adults and adolescents, couples, families, and parents, with groups organized around a defined clinical purpose.</span><span class="services-hero-description-desktop">Outpatient telehealth across Illinois for adults and adolescents, with support for parents and clinically focused groups.</span></p>
 <div class="services-hero-actions">
 
 <a class="btn btn-secondary" href="#services-offered">View Service Options</a>
