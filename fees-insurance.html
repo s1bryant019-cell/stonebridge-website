@@ -1290,6 +1290,15 @@ body.fees-page .fees-hero-title-desktop { display:none; }
 }
 .fees-page .fees-pending-status strong { color:var(--fees-ink); }
 .fees-page .fees-good-faith-note { margin-top:12px!important; }
+/* Align both explanatory notes with the full width of the desktop fee-table column. */
+@media (min-width:1101px) {
+  body.fees-page #fee-schedule .fees-table-note {
+    width:100%;
+    max-width:none;
+    min-width:0;
+    box-sizing:border-box;
+  }
+}
 .fees-page .fees-payment-copy a,
 .fees-page .fees-table-note a,
 .fees-page .fees-policy-content a {
