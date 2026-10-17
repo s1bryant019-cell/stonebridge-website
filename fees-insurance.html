@@ -1322,6 +1322,153 @@ body.fees-page .fees-hero-title-desktop { display:none; }
   .fees-page .fees-payment-row .fees-pending-status { margin-top:12px; }
 }
 </style>
+<style id="stonebridge-fees-practical-typography-20261017">
+/* Practical financial information: one consistent, legible typographic hierarchy. */
+body.fees-page .fees-payment-row h3,
+body.fees-page .fees-policy-heading h3 {
+  font-family:"Inter",sans-serif!important;
+  font-size:.98rem!important;
+  font-weight:650!important;
+  letter-spacing:-.012em!important;
+  line-height:1.42!important;
+}
+body.fees-page .fees-payment-row p,
+body.fees-page .fees-policy-content li {
+  font-size:.97rem!important;
+  line-height:1.64!important;
+}
+body.fees-page .fees-pending-list {
+  font-size:.95rem!important;
+  line-height:1.58!important;
+}
+body.fees-page .fees-small-note {
+  font-size:.875rem!important;
+  line-height:1.6!important;
+}
+body.fees-page .fees-rate-context p {
+  max-width:none;
+  font-size:.95rem!important;
+  line-height:1.62!important;
+}
+body.fees-page .fee-table td {
+  font-size:.93rem!important;
+  line-height:1.52!important;
+}
+body.fees-page .fee-table th { font-size:.72rem!important; }
+body.fees-page #fee-schedule .fees-table-note {
+  font-size:.92rem!important;
+  line-height:1.62!important;
+}
+body.fees-page #fee-schedule .fees-table-note > strong {
+  display:block;
+  margin-bottom:5px;
+  font-family:"Inter",sans-serif;
+  font-size:.94rem;
+  font-weight:700;
+  line-height:1.45;
+  color:var(--fees-ink);
+}
+body.fees-page .fees-access-actions .fees-access-consultation {
+  display:inline-flex!important;
+  align-items:center;
+  max-width:100%;
+  min-height:44px;
+  padding:8px 0;
+  font-size:.95rem!important;
+  font-weight:600!important;
+  line-height:1.45!important;
+  white-space:normal;
+  text-underline-offset:3px;
+}
+/* Professional fees follow patient policies as a quieter related-services path. */
+body.fees-page .fees-policy-list + .fees-professional-note {
+  display:flex!important;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:9px 18px!important;
+  margin-top:14px!important;
+  padding:10px 0 0!important;
+  border-top:0!important;
+}
+body.fees-page .fees-policy-list + .fees-professional-note strong {
+  font-family:"Inter",sans-serif!important;
+  font-size:.94rem!important;
+  font-weight:700!important;
+  line-height:1.5!important;
+}
+body.fees-page .fees-policy-list + .fees-professional-note p {
+  flex:1 1 300px;
+  font-size:.92rem!important;
+  line-height:1.58!important;
+}
+body.fees-page .fees-policy-list + .fees-professional-note .btn {
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:flex-start!important;
+  width:auto!important;
+  max-width:100%;
+  min-height:44px;
+  margin:0!important;
+  padding:6px 0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#163b61!important;
+  font-family:"Inter",sans-serif!important;
+  font-size:.92rem!important;
+  font-weight:650!important;
+  text-decoration:underline!important;
+  text-underline-offset:3px;
+  white-space:normal;
+}
+/* Keep the editorial serif for major section headings; temper their scale. */
+@media (min-width:901px) {
+  body.fees-page .fees-section .fees-relational-intro h2 {
+    max-width:none!important;
+    font-size:2rem!important;
+    line-height:1.12!important;
+  }
+  /* On intermediate desktops, use the available table width rather than a vacant heading rail. */
+}
+@media (min-width:901px) and (max-width:1280px) {
+  body.fees-page #fee-schedule .fees-shell.fees-relational-layout {
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:22px!important;
+  }
+  body.fees-page #fee-schedule .fees-relational-intro,
+  body.fees-page #fee-schedule .fees-fee-content,
+  body.fees-page #fee-schedule .fees-table-note {
+    grid-column:1 / -1!important;
+    min-width:0;
+    width:100%;
+    max-width:none!important;
+  }
+  body.fees-page #fee-schedule .fees-table-note { margin-top:0!important; }
+}
+@media (max-width:900px) {
+  body.fees-page .fees-section .fees-relational-intro h2 {
+    max-width:none!important;
+    font-size:clamp(1.85rem,7.3vw,2.125rem)!important;
+    line-height:1.13!important;
+  }
+  body.fees-page .fee-table td:nth-child(2) {
+    font-size:.91rem!important;
+    line-height:1.5!important;
+  }
+  body.fees-page .fee-table td:nth-child(3) {
+    font-size:1.28rem!important;
+    line-height:1.2!important;
+  }
+  body.fees-page .fee-table td::before { font-size:.68rem!important; }
+  body.fees-page .fee-code { font-size:.75rem!important; }
+  body.fees-page .fees-policy-list + .fees-professional-note {
+    align-items:flex-start;
+  }
+  body.fees-page .fees-policy-list + .fees-professional-note p {
+    flex-basis:100%;
+  }
+}
+</style>
 </head>
 
 <body class="fees-page" data-static-hero-system="true">
@@ -1473,14 +1620,10 @@ body.fees-page .fees-hero-title-desktop { display:none; }
           </div>
         </div>
 
-        <p class="fees-table-note">The published care coordination / clinical administration rate may apply to clinically necessary work outside a standard session. <a href="contact.html#inquiry-form">Ask whether a charge applies and how it would be calculated</a> before requesting this work.</p>
+        <p class="fees-table-note"><strong>Additional clinical-administration charges.</strong> The published care coordination / clinical administration rate may apply to clinically necessary work outside a standard session. <a href="contact.html#inquiry-form">Ask whether a charge applies and how it would be calculated</a> before requesting this work.</p>
         <p class="fees-table-note fees-good-faith-note"><strong>Good Faith Estimates.</strong> If you are uninsured or choose not to use insurance, you have the right to receive a written Good Faith Estimate of expected charges under applicable federal rules. Stonebridge provides estimates when required, including for qualifying services scheduled at least three business days in advance. You may also request an estimate before scheduling. <a href="https://www.cms.gov/initiatives/your-patient-rights/medical-bill-rights/know-your-rights/without-insurance" target="_blank" rel="noopener noreferrer">Learn about Good Faith Estimates (CMS)</a>.</p>
 
-        <div class="fees-professional-note">
-          <strong>Professional services</strong>
-          <p>Consultation, external supervision, assessment-report support, scholarly review, and professional education follow a separate service and fee schedule.</p>
-          <a class="btn btn-secondary" href="for-clinicians.html#professional-fees">View Professional Fees</a>
-        </div>
+
       </div>
     </section>
 
@@ -1501,6 +1644,11 @@ body.fees-page .fees-hero-title-desktop { display:none; }
               </ul>
             </div>
           </article>
+        </div>
+        <div class="fees-professional-note">
+          <strong>Professional services</strong>
+          <p>Consultation, external supervision, assessment-report support, scholarly review, and professional education follow a separate service and fee schedule.</p>
+          <a class="btn btn-secondary" href="for-clinicians.html#professional-fees">View Professional Fees</a>
         </div>
       </div>
     </section>
