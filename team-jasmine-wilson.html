@@ -830,6 +830,152 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 }
 </style>
 
+<style id="stonebridge-jasmine-desktop-rail-refinement-20261017">
+/* Jasmine's right-hand rail only: maintain the right anchor and page grid. */
+@media (min-width:1100px) {
+  html body.clinician-profile-page .jasmine-profile-rail {
+    width:282px;
+    padding:18px 18px 20px 20px;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-heading {
+    margin:0;
+    padding:0;
+    border:0;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-portrait {
+    width:140px;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-portrait img {
+    width:140px;
+    height:170px;
+    display:block;
+    object-fit:cover;
+    object-position:center 28%;
+    border:0;
+    border-radius:10px;
+    background:transparent;
+    box-shadow:none;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-portrait figcaption {
+    margin-top:13px;
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:1.375rem;
+    font-weight:650;
+    letter-spacing:-.015em;
+    line-height:1.1;
+    color:#102f4d;
+  }
+  /* Identity and service status belong together. */
+  html body.clinician-profile-page .jasmine-profile-rail-status {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+    margin:16px 0 0;
+    padding:0 0 17px;
+    border-bottom:1px solid rgba(33,49,66,.14);
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-status span {
+    font-family:"Inter",sans-serif;
+    font-size:.84rem;
+    font-weight:650;
+    line-height:1.42;
+  }
+  /* Clinical context remains one quiet, internally spaced group. */
+  html body.clinician-profile-page .jasmine-profile-rail-summary {
+    gap:16px;
+    margin:16px 0 0;
+    padding:0;
+    border:0;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-label {
+    margin-bottom:6px;
+    font-family:"Inter",sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    line-height:1.35;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-summary-row p {
+    font-family:"Inter",sans-serif;
+    font-size:.875rem;
+    font-weight:400;
+    line-height:1.5;
+  }
+  /* Distinguish the financial information from clinical focus. */
+  html body.clinician-profile-page .jasmine-profile-rail-payment {
+    margin-top:4px;
+    padding-top:20px;
+    border-top:1px solid rgba(33,49,66,.14);
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-payment .jasmine-profile-rail-subtle {
+    margin-top:6px;
+    color:#566574;
+    font-size:.8125rem;
+    line-height:1.5;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-payment a {
+    min-height:36px;
+    margin-top:7px;
+    padding:6px 0;
+    font-family:"Inter",sans-serif;
+    font-size:.875rem;
+    font-weight:650;
+    line-height:1.45;
+  }
+  /* The schedule and appointment path are the third major group. */
+  html body.clinician-profile-page .jasmine-profile-rail-availability {
+    margin-top:22px;
+    padding-top:20px;
+    border-top:1px solid rgba(33,49,66,.14);
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-availability > .jasmine-profile-rail-label {
+    margin-bottom:10px;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-hours {
+    gap:8px;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-hours > div {
+    grid-template-columns:36px minmax(0,1fr);
+    gap:8px;
+    align-items:start;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-hours strong,
+  html body.clinician-profile-page .jasmine-profile-rail-hours span {
+    font-family:"Inter",sans-serif;
+    font-size:.85rem;
+    line-height:1.48;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-hours strong {
+    font-weight:650;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-cta {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    width:100%;
+    min-height:44px;
+    margin-top:18px;
+    padding:7px 0;
+    border-bottom:1px solid rgba(16,47,77,.34);
+    font-family:"Inter",sans-serif;
+    font-size:.875rem;
+    font-weight:650;
+    line-height:1.4;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-cta span {
+    flex:0 0 auto;
+    margin-left:auto;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-note {
+    margin:10px 0 0;
+    color:#5b6975;
+    font-family:"Inter",sans-serif;
+    font-size:.8125rem;
+    font-style:italic;
+    line-height:1.5;
+  }
+}
+</style>
 </head>
 
 <body class="clinician-profile-page" data-static-hero-system="true">
@@ -1194,18 +1340,20 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     }
 
     var regionRect=region.getBoundingClientRect();
-    var railHeight=rail.offsetHeight;
-    var shouldStart=regionRect.top<=fixedTop;
-    var shouldEnd=regionRect.bottom<=fixedTop+railHeight+endGap;
-
-    rail.classList.toggle('is-fixed',shouldStart&&!shouldEnd);
-    rail.classList.toggle('is-ended',shouldStart&&shouldEnd);
-
     if(heroPortrait){
       var heroRect=heroPortrait.getBoundingClientRect();
       var heroVisible=heroRect.bottom>0 && heroRect.top<window.innerHeight;
       rail.classList.toggle('show-rail-portrait',!heroVisible);
     }
+
+    var railHeight=rail.offsetHeight;
+    // Never pin a tall profile so its appointment link becomes unreachable
+    // on shorter desktop viewports. Let the page scroll it naturally instead.
+    var canPin=railHeight<=window.innerHeight-fixedTop-18;
+    var shouldStart=regionRect.top<=fixedTop;
+    var shouldEnd=regionRect.bottom<=fixedTop+railHeight+endGap;
+    rail.classList.toggle('is-fixed',canPin&&shouldStart&&!shouldEnd);
+    rail.classList.toggle('is-ended',canPin&&shouldStart&&shouldEnd);
   }
 
   updateJasmineRail();
