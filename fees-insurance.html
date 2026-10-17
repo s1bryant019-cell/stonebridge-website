@@ -1207,10 +1207,30 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </style>
 <style id="stonebridge-fees-desktop-hero-refinement-20261017">
 /* A targeted desktop-only refinement; original copy and CTA treatments stay on mobile/tablet. */
-body.fees-page .fees-hero-support-desktop { display:none; }
+body.fees-page .fees-hero-support-desktop,
+body.fees-page .fees-hero-title-desktop { display:none; }
 @media (min-width:1101px) {
-  body.fees-page .fees-hero-support-default { display:none; }
-  body.fees-page .fees-hero-support-desktop { display:inline; }
+  body.fees-page .fees-hero-support-default,
+  body.fees-page .fees-hero-title-default { display:none; }
+  body.fees-page .fees-hero-support-desktop,
+  body.fees-page .fees-hero-title-desktop { display:inline; }
+
+  /* Keep the hero's visual presence while letting the reduced copy breathe. */
+  html body.fees-page[data-static-hero-system] .fees-hero.sb-standard-hero,
+  html body.fees-page[data-static-hero-system] .fees-hero.sb-standard-hero .fees-hero-copy.sb-standard-hero-copy {
+    min-height:390px!important;
+  }
+  html body.fees-page[data-static-hero-system] .fees-hero.sb-standard-hero .fees-hero-copy.sb-standard-hero-copy > h1 {
+    max-width:22ch!important;
+    margin-top:18px!important;
+    line-height:1.10!important;
+  }
+  html body.fees-page[data-static-hero-system] .fees-hero.sb-standard-hero .fees-hero-copy.sb-standard-hero-copy > p {
+    margin-top:22px!important;
+  }
+  body.fees-page .fees-hero-actions {
+    margin-top:22px!important;
+  }
 
   /* A stable navy reading area; do not alter the bridge photo or its crop. */
   html body.fees-page[data-static-hero-system] .fees-hero.sb-standard-hero::before {
@@ -1298,8 +1318,8 @@ body.fees-page .fees-hero-support-desktop { display:none; }
       <div class="fees-hero-copy sb-standard-hero-copy">
         <div class="fees-hero-rule"></div>
         <div class="fees-kicker">Fees &amp; Insurance</div>
-        <h1>Clear financial expectations before care begins.</h1>
-        <p><span class="fees-hero-support-default">Stonebridge reviews insurance, private-pay fees, and expected client responsibility before treatment begins.</span><span class="fees-hero-support-desktop">We review insurance coverage, private-pay fees, and estimated out-of-pocket costs with you before treatment.</span></p>
+        <h1><span class="fees-hero-title-default">Clear financial expectations before care begins.</span><span class="fees-hero-title-desktop">Understand costs<br>before care begins.</span></h1>
+        <p><span class="fees-hero-support-default">Stonebridge reviews insurance, private-pay fees, and expected client responsibility before treatment begins.</span><span class="fees-hero-support-desktop">We review insurance, private-pay fees, and estimated out-of-pocket costs with you.</span></p>
         <div class="fees-hero-actions">
           <a class="btn btn-primary" href="#payment-options">Payment Options</a>
           <a class="btn btn-secondary" href="#fee-schedule">View Fee Schedule</a>
