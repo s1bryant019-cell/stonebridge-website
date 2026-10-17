@@ -1272,6 +1272,47 @@ body.fees-page .fees-hero-title-desktop { display:none; }
   }
 }
 </style>
+<style id="stonebridge-fees-insurance-status-layout-20261017">
+/* Insurance participation uses the existing fee-payment row system on every viewport. */
+.fees-page .fees-pending-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:5px 24px;
+  margin:2px 0 5px;
+  padding-left:18px;
+  color:var(--fees-muted);
+  font:400 .91rem/1.55 "Inter",sans-serif;
+}
+.fees-page .fees-pending-list li { min-width:0; overflow-wrap:break-word; }
+.fees-page .fees-payment-row .fees-pending-status {
+  margin-top:6px;
+  line-height:1.62;
+}
+.fees-page .fees-pending-status strong { color:var(--fees-ink); }
+.fees-page .fees-good-faith-note { margin-top:12px!important; }
+.fees-page .fees-payment-copy a,
+.fees-page .fees-table-note a,
+.fees-page .fees-policy-content a {
+  color:#163b61;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.fees-page .fees-payment-copy a:focus-visible,
+.fees-page .fees-table-note a:focus-visible,
+.fees-page .fees-policy-content a:focus-visible {
+  outline:2px solid #163b61;
+  outline-offset:3px;
+}
+@media (max-width:900px) {
+  .fees-page .fees-pending-list {
+    grid-template-columns:minmax(0,1fr);
+    gap:6px;
+    margin:10px 0;
+    padding-left:20px;
+  }
+  .fees-page .fees-payment-row .fees-pending-status { margin-top:12px; }
+}
+</style>
 </head>
 
 <body class="fees-page" data-static-hero-system="true">
@@ -1348,24 +1389,41 @@ body.fees-page .fees-hero-title-desktop { display:none; }
 
         <div class="fees-payment-list">
           <article class="fees-payment-row">
-            <h3>Accepted insurance</h3>
+            <h3>Currently accepted insurance</h3>
             <div class="fees-payment-copy">
               <p><strong>Aetna</strong></p>
               <p><strong>Blue Cross Blue Shield of Illinois</strong></p>
               <p><strong>Medicaid FFS</strong></p>
               <p><strong>Guidehealth Behavioral Health Network - Advocate Medical Group West (Site 099)</strong></p>
-              <p class="fees-small-note">Coverage and network eligibility are confirmed before billing begins.</p>
+              <p class="fees-small-note">Participation varies by clinician, service, and specific plan. Stonebridge verifies eligibility before billing, but verification does not guarantee payment. Blue Cross Community Health Plans (BCCHP) is separate from BCBSIL participation; its status appears below.</p>
+            </div>
+          </article>
+
+          <article class="fees-payment-row">
+            <h3>Credentialing in progress</h3>
+            <div class="fees-payment-copy">
+              <p>Stonebridge is pursuing participation with the following plans and networks:</p>
+              <ul class="fees-pending-list">
+                <li>Blue Cross Community Health Plans (BCCHP)</li>
+                <li>Cigna Health Plans</li>
+                <li>Evernorth</li>
+                <li>Endeavor Health</li>
+                <li>TRICARE West</li>
+                <li>UnitedHealthcare</li>
+                <li>Duly Health and Care</li>
+              </ul>
+              <p class="fees-pending-status"><strong>Not currently active or billable as in-network.</strong> Credentialing or contracting does not guarantee future participation or an effective date. Status may vary by clinician, service, and plan. <a href="contact.html#inquiry-form">Ask about your coverage options</a> before scheduling.</p>
             </div>
           </article>
 
           <article class="fees-payment-row">
             <h3>Private pay and out-of-network benefits</h3>
-            <p>Private-pay clients are generally responsible for the standard fee. Limited reduced-fee arrangements may be available depending on clinician availability, service type, and practice capacity. Out-of-network reimbursement may also be available depending on your plan.</p>
+            <p>Private-pay clients are generally responsible for the standard fee. Limited reduced-fee arrangements may depend on clinician availability, service type, and practice capacity. Out-of-network reimbursement depends on your plan. <a href="contact.html#inquiry-form">Ask about payment options</a> before scheduling.</p>
           </article>
 
           <article class="fees-payment-row">
             <h3>Client responsibility</h3>
-            <p>Copays, deductibles, coinsurance, non-covered services, and missed appointments may apply. Benefits are verified before billing begins, but verification is not a guarantee of payment.</p>
+            <p>Depending on your coverage, you may be responsible for copays, deductibles, coinsurance, non-covered services, and applicable missed-appointment charges. Actual insured costs can differ from the standard fees below.</p>
           </article>
         </div>
       </div>
@@ -1411,7 +1469,8 @@ body.fees-page .fees-hero-title-desktop { display:none; }
           </div>
         </div>
 
-        <p class="fees-table-note">Care coordination or clinical administration may apply when clinically necessary work occurs outside a standard session. Questions about this fee can be discussed before services begin.</p>
+        <p class="fees-table-note">The published care coordination / clinical administration rate may apply to clinically necessary work outside a standard session. <a href="contact.html#inquiry-form">Ask whether a charge applies and how it would be calculated</a> before requesting this work.</p>
+        <p class="fees-table-note fees-good-faith-note">If you are uninsured or choose not to use insurance, you can request a written Good Faith Estimate of expected charges. <a href="https://www.cms.gov/initiatives/your-patient-rights/medical-bill-rights/know-your-rights/without-insurance" target="_blank" rel="noopener noreferrer">Learn about Good Faith Estimates (CMS)</a>.</p>
 
         <div class="fees-professional-note">
           <strong>Professional services</strong>
@@ -1426,17 +1485,6 @@ body.fees-page .fees-hero-title-desktop { display:none; }
         <div class="fees-policy-list">
           <article class="fees-policy">
             <div class="fees-policy-heading">
-              <div class="fees-label">Not currently accepted</div>
-              <h3>Other plans.</h3>
-            </div>
-            <div class="fees-policy-content">
-              <p>Blue Cross Community Health Plans / BCCHP and Cigna / Evernorth are not currently billable through Stonebridge.</p>
-              <p>Insurance participation can change. Contact Stonebridge to confirm current coverage before scheduling.</p>
-            </div>
-          </article>
-
-          <article class="fees-policy">
-            <div class="fees-policy-heading">
               <div class="fees-label">Appointments and payment</div>
               <h3>Appointment and cancellation policies.</h3>
             </div>
@@ -1445,7 +1493,7 @@ body.fees-page .fees-hero-title-desktop { display:none; }
                 <li>A free 10–15 minute consultation remains available before the first full clinical session when requested or when Stonebridge needs additional review before scheduling.</li>
                 <li>The initial diagnostic evaluation is the first full appointment.</li>
                 <li>At least 24 hours’ notice is requested for cancellation or rescheduling.</li>
-                <li>Late cancellations and missed appointments may be charged and cannot be billed to insurance.</li>
+                <li>Late cancellations and missed appointments may be charged and cannot be billed to insurance. <a href="contact.html#inquiry-form">Request the written cancellation policy and applicable fee</a> before scheduling.</li>
               </ul>
             </div>
           </article>
@@ -1457,7 +1505,7 @@ body.fees-page .fees-hero-title-desktop { display:none; }
       <div class="fees-cta-inner">
         <div>
           <h2>Ready to request an appointment?</h2>
-          <p>Stonebridge reviews applicable coverage and client responsibility before treatment begins. Have questions first? A free consultation is also available.</p>
+          <p>Review available appointments, or request a free consultation if you have questions about coverage, costs, or fit.</p>
         </div>
         <div class="fees-access-actions"><a class="btn btn-secondary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a><a class="fees-access-consultation" href="contact.html#inquiry-form">Questions first? Request a free consultation.</a></div>
       </div>
