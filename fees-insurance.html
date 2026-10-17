@@ -1206,15 +1206,8 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 }
 </style>
 <style id="stonebridge-fees-desktop-hero-refinement-20261017">
-/* A targeted desktop-only refinement; original copy and CTA treatments stay on mobile/tablet. */
-body.fees-page .fees-hero-support-desktop,
-body.fees-page .fees-hero-title-desktop { display:none; }
+/* Desktop composition retains its approved spacing, overlay, and image. */
 @media (min-width:1101px) {
-  body.fees-page .fees-hero-support-default,
-  body.fees-page .fees-hero-title-default { display:none; }
-  body.fees-page .fees-hero-support-desktop,
-  body.fees-page .fees-hero-title-desktop { display:inline; }
-
   /* Keep the hero's visual presence while letting the reduced copy breathe. */
   html body.fees-page[data-static-hero-system] .fees-hero.sb-standard-hero,
   html body.fees-page[data-static-hero-system] .fees-hero.sb-standard-hero .fees-hero-copy.sb-standard-hero-copy {
@@ -1468,6 +1461,32 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
     flex-basis:100%;
   }
 }
+
+/* Unified hero wording has a desktop editorial break but wraps naturally below 1101px. */
+@media (max-width:1100px) {
+  body.fees-page .fees-hero-line-break { display:none; }
+}
+/* Intermediate desktop: avoid nested narrow columns for insurance details. */
+@media (min-width:901px) and (max-width:1100px) {
+  body.fees-page #payment-options .fees-shell.fees-relational-layout {
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:24px!important;
+  }
+  body.fees-page #payment-options .fees-payment-row {
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:10px!important;
+  }
+  body.fees-page #payment-options .fees-pending-list {
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+}
+/* Mobile fee labels need to remain legible without changing the stacked rows. */
+@media (max-width:900px) {
+  body.fees-page .fee-table td::before {
+    font-size:.75rem!important;
+    letter-spacing:.08em!important;
+  }
+}
 </style>
 </head>
 
@@ -1515,11 +1534,11 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
       <div class="fees-hero-copy sb-standard-hero-copy">
         <div class="fees-hero-rule"></div>
         <div class="fees-kicker">Fees &amp; Insurance</div>
-        <h1><span class="fees-hero-title-default">Clear financial expectations before care begins.</span><span class="fees-hero-title-desktop">Understand costs<br>before care begins.</span></h1>
-        <p><span class="fees-hero-support-default">Stonebridge reviews insurance, private-pay fees, and expected client responsibility before treatment begins.</span><span class="fees-hero-support-desktop">We review insurance, private-pay fees, and estimated out-of-pocket costs with you.</span></p>
+        <h1>Understand costs<br class="fees-hero-line-break"> before care begins.</h1>
+        <p>We review insurance, private-pay fees, and estimated out-of-pocket costs with you.</p>
         <div class="fees-hero-actions">
-          <a class="btn btn-primary" href="#payment-options">Payment Options</a>
-          <a class="btn btn-secondary" href="#fee-schedule">View Fee Schedule</a>
+          <a class="btn btn-secondary" href="#payment-options">Payment Options</a>
+          <a class="btn btn-primary" href="#fee-schedule">View Fee Schedule</a>
         </div>
       </div>
 
