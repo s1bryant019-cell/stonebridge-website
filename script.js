@@ -68,10 +68,10 @@
   function configureHeaderAccess(header) {
     if (!header) return;
     var page = pageName();
-    // Professional, assessment, and existing-client pages do not use a
-    // general psychotherapy booking CTA. The Lobby follows its own inquiry path.
+    // Professional consultations retain their own inquiry path, while the
+    // Professionals page also offers the standard public appointment link.
     var contextualOnly = [
-      'contact.html', 'assessment.html', 'forensic.html', 'for-clinicians.html',
+      'contact.html', 'assessment.html', 'forensic.html',
       'careers.html', 'portal.html', 'privacy-information.html'
     ];
     if (contextualOnly.indexOf(page) !== -1) {
