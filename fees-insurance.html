@@ -1205,6 +1205,53 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
 }
 </style>
+<style id="stonebridge-fees-desktop-hero-refinement-20261017">
+/* A targeted desktop-only refinement; original copy and CTA treatments stay on mobile/tablet. */
+body.fees-page .fees-hero-support-desktop { display:none; }
+@media (min-width:1101px) {
+  body.fees-page .fees-hero-support-default { display:none; }
+  body.fees-page .fees-hero-support-desktop { display:inline; }
+
+  /* A stable navy reading area; do not alter the bridge photo or its crop. */
+  html body.fees-page[data-static-hero-system] .fees-hero.sb-standard-hero::before {
+    background:
+      linear-gradient(90deg,
+        rgba(16,47,77,.95) 0%,
+        rgba(16,47,77,.92) 29%,
+        rgba(16,47,77,.82) 41%,
+        rgba(16,47,77,.54) 56%,
+        rgba(16,47,77,.20) 76%,
+        rgba(16,47,77,.08) 100%),
+      linear-gradient(180deg,
+        rgba(16,47,77,.12) 0%,
+        rgba(16,47,77,.02) 58%,
+        rgba(16,47,77,.18) 100%)!important;
+  }
+  html body.fees-page[data-static-hero-system] .fees-hero.sb-standard-hero .fees-hero-copy.sb-standard-hero-copy > p {
+    max-width:32rem!important;
+  }
+
+  /* Both destinations remain in DOM/tab order; fee transparency gains visual priority. */
+  body.fees-page .fees-hero-actions > a[href="#payment-options"] {
+    background:rgba(255,255,255,.08)!important;
+    border-color:rgba(255,255,255,.42)!important;
+    color:#fffaf2!important;
+  }
+  body.fees-page .fees-hero-actions > a[href="#fee-schedule"] {
+    background:#f4eee4!important;
+    border-color:#f4eee4!important;
+    color:#102f4d!important;
+  }
+  body.fees-page .fees-hero-actions > a[href="#payment-options"]:hover {
+    background:rgba(255,255,255,.14)!important;
+    border-color:rgba(255,255,255,.72)!important;
+  }
+  body.fees-page .fees-hero-actions > a[href="#fee-schedule"]:hover {
+    background:#fffaf2!important;
+    border-color:#fffaf2!important;
+  }
+}
+</style>
 </head>
 
 <body class="fees-page" data-static-hero-system="true">
@@ -1252,7 +1299,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
         <div class="fees-hero-rule"></div>
         <div class="fees-kicker">Fees &amp; Insurance</div>
         <h1>Clear financial expectations before care begins.</h1>
-        <p>Stonebridge reviews insurance, private-pay fees, and expected client responsibility before treatment begins.</p>
+        <p><span class="fees-hero-support-default">Stonebridge reviews insurance, private-pay fees, and expected client responsibility before treatment begins.</span><span class="fees-hero-support-desktop">We review insurance coverage, private-pay fees, and estimated out-of-pocket costs with you before treatment.</span></p>
         <div class="fees-hero-actions">
           <a class="btn btn-primary" href="#payment-options">Payment Options</a>
           <a class="btn btn-secondary" href="#fee-schedule">View Fee Schedule</a>
