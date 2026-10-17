@@ -72,7 +72,7 @@
     // Professionals page also offers the standard public appointment link.
     var contextualOnly = [
       'contact.html', 'assessment.html', 'forensic.html',
-      'careers.html', 'portal.html', 'privacy-information.html'
+      'careers.html', 'privacy-information.html'
     ];
     if (contextualOnly.indexOf(page) !== -1) {
       header.querySelectorAll('.header-cta, .home-header-cta').forEach(function (node) { node.remove(); });
