@@ -4871,7 +4871,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     position:sticky!important;
     top:18px!important;
     z-index:18;
-    display:block!important;
+    display:none!important;
     width:100%;
     box-sizing:border-box;
     margin:0!important;
@@ -4879,6 +4879,11 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     border:0!important;
     background:#f7f1e9!important;
     pointer-events:none;
+  }
+  /* Only introduce the rail portrait after the hero portrait has left the viewport. */
+  html body.sbx-founder-page .founder-rail-column.show-rail-portrait > .founder-profile-rail-heading {
+    display:block!important;
+    animation:founderRailPortraitIn .24s ease-out both;
   }
   html body.sbx-founder-page .founder-profile-rail-portrait {
     width:100%;
@@ -5487,7 +5492,33 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 (function(){
   var rail=document.querySelector('.founder-rail-column > .founder-profile-rail');
   var heading=document.querySelector('.founder-rail-column > .founder-profile-rail-heading');
-  if(!rail||!heading) return;
+  var column=document.querySelector('.founder-rail-column');
+  var heroPortrait=document.querySelector('.profile-subpage-headshot');
+  if(!rail||!heading||!column) return;
+
+  function syncPortraitReveal(){
+    if(window.innerWidth<1100||!heroPortrait){
+      column.classList.remove('show-rail-portrait');
+      return;
+    }
+    var rect=heroPortrait.getBoundingClientRect();
+    var visible=rect.bottom>0&&rect.top<window.innerHeight;
+    column.classList.toggle('show-rail-portrait',!visible);
+  }
+
+  // IntersectionObserver observes the actual hero photograph; no scroll-driven
+  // CSS positioning or duplicate portrait while the hero remains visible.
+  if(heroPortrait&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      if(window.innerWidth<1100) return;
+      column.classList.toggle('show-rail-portrait',!entries[0].isIntersecting);
+    },{threshold:0}).observe(heroPortrait);
+  }else{
+    window.addEventListener('scroll',syncPortraitReveal,{passive:true});
+  }
+  syncPortraitReveal();
+  window.addEventListener('resize',syncPortraitReveal);
+  window.addEventListener('load',syncPortraitReveal);
 
   function sizeRail(){
     if(window.innerWidth<1100){
