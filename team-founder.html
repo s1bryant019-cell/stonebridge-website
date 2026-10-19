@@ -5591,7 +5591,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   var figure=heading&&heading.querySelector('figure');
   if(!rail||!heading) return;
 
-  function updateRail(){
+  function updateRail(force){
     if(window.innerWidth<1100){
       rail.classList.remove('show-rail-portrait');
       rail.style.removeProperty('--founder-whole-rail-top');
@@ -5600,8 +5600,11 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     }
     // Measure the complete portrait without expanding it first.
     // This avoids ResizeObserver updates on every animation frame.
-    var openHeight=Math.min(250,(figure?figure.offsetHeight:heading.scrollHeight)+14);
     var shouldShow=!!hero&&hero.getBoundingClientRect().bottom<=0;
+    // Scroll events that do not cross the portrait boundary must not trigger
+    // any geometry recalculation or restart an in-progress transition.
+    if(force!==true&&rail.classList.contains('show-rail-portrait')===shouldShow) return;
+    var openHeight=Math.min(250,(figure?figure.offsetHeight:heading.scrollHeight)+14);
     var detailsHeight=rail.offsetHeight-heading.offsetHeight;
     var targetHeight=detailsHeight+(shouldShow?openHeight:0);
     var targetTop=Math.min(18,window.innerHeight-targetHeight-18);
@@ -5619,11 +5622,11 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     rail.classList.toggle('show-rail-portrait',shouldShow);
   }
 
-  updateRail();
+  updateRail(true);
   window.addEventListener('scroll',updateRail,{passive:true});
-  window.addEventListener('resize',updateRail);
-  window.addEventListener('load',updateRail);
-  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(updateRail);
+  window.addEventListener('resize',function(){updateRail(true);});
+  window.addEventListener('load',function(){updateRail(true);});
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){updateRail(true);});
 })();
 </script>
 </body>
