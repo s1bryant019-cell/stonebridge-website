@@ -4843,13 +4843,12 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 /* Founder sidebar only; the site layout and tablet/mobile presentation are unchanged. */
 @media (min-width:1100px) {
   html body.sbx-founder-page .founder-profile-rail {
-    /* Browser-native sticky is smooth in both scroll directions. */
-    position:sticky!important;
-    top:var(--founder-rail-sticky-top,18px)!important;
+    /* The practical details scroll with the page, without a nested scroller. */
+    position:absolute!important;
+    top:248px!important;
     bottom:auto!important;
-    right:auto!important;
-    margin-left:auto!important;
-    margin-right:max(28px,calc((100vw - 1420px)/2))!important;
+    right:max(28px,calc((100vw - 1420px)/2))!important;
+    margin:0!important;
     height:auto!important;
     max-height:none!important;
     overflow:visible!important;
@@ -4857,9 +4856,18 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     padding:18px 18px 20px 20px;
   }
   html body.sbx-founder-page .founder-profile-rail-heading {
-    margin:0;
-    padding:0;
-    border:0;
+    /* The portrait and name have their own full-height sticky containing block. */
+    position:sticky!important;
+    display:block!important;
+    top:18px!important;
+    z-index:15;
+    width:282px;
+    box-sizing:border-box;
+    margin:0 max(28px,calc((100vw - 1420px)/2)) 0 auto!important;
+    padding:18px 18px 13px 20px!important;
+    border:0!important;
+    background:#f7f1e9;
+    pointer-events:none;
   }
   html body.sbx-founder-page .founder-profile-rail-portrait {
     width:100%;
@@ -5077,7 +5085,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </section>
 <div class="founder-sticky-region">
   <div class="founder-sticky-rail-slot">
-    <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
     <div class="founder-profile-rail-heading">
       <figure class="founder-profile-rail-portrait">
         <img src="dr-stephen-bryant-headshot-20260922.webp" alt="Dr. Stephen Bryant" width="900" height="1125" decoding="async">
@@ -5085,6 +5092,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       </figure>
     </div>
 
+        <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
     <div class="founder-profile-rail-status" aria-label="Practice status">
       <span>Accepting new clients</span>
       <span>Illinois telehealth</span>
@@ -5101,7 +5109,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       </div>
       <div class="founder-profile-rail-summary-row">
         <div class="founder-profile-rail-label">Approach</div>
-        <p>Exploratory · Relational · Psychodynamic</p>
+        <p>Relational · Psychodynamic</p>
       </div>
       <div class="founder-profile-rail-summary-row founder-profile-rail-payment">
         <div class="founder-profile-rail-label">Insurance &amp; payment</div>
@@ -5461,48 +5469,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </script>
 <script src="script.js?v=20261015sitewideavail1"></script>
 
-<script id="founder-rail-scroll-controller">
-(function(){
-  var rail=document.querySelector('.founder-profile-rail');
-  var region=document.querySelector('.founder-sticky-region');
-  var heroPortrait=document.querySelector('.profile-subpage-headshot');
-  if(!rail||!region) return;
 
-  function updateFounderRail(){
-    if(window.innerWidth<1100){
-      rail.classList.remove('is-fixed','is-ended','show-rail-portrait');
-      rail.style.removeProperty('--founder-rail-sticky-top');
-      return;
-    }
-
-    // Keep the existing transition between the hero portrait and sidebar portrait.
-    if(heroPortrait){
-      var heroRect=heroPortrait.getBoundingClientRect();
-      var heroVisible=heroRect.bottom>0 && heroRect.top<window.innerHeight;
-      rail.classList.toggle('show-rail-portrait',!heroVisible);
-    } else {
-      rail.classList.add('show-rail-portrait');
-    }
-
-    // A tall sidebar scrolls naturally until its lower content is in view,
-    // then the browser sticks its lower edge. No nested scrolling or JS follow.
-    var railHeight=rail.scrollHeight;
-    var top=Math.min(18,window.innerHeight-railHeight-18);
-    var value=top+'px';
-    if(rail.style.getPropertyValue('--founder-rail-sticky-top')!==value){
-      rail.style.setProperty('--founder-rail-sticky-top',value);
-    }
-  }
-
-  updateFounderRail();
-  window.addEventListener('scroll',updateFounderRail,{passive:true});
-  window.addEventListener('resize',updateFounderRail);
-  window.addEventListener('load',updateFounderRail);
-  if('ResizeObserver' in window){
-    new ResizeObserver(updateFounderRail).observe(rail);
-  }
-})();
-</script>
 
 </body>
 </html>
