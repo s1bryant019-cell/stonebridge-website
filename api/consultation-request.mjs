@@ -70,7 +70,8 @@ function validate(body) {
   if ([fullName, email, phone, preferredClinician, availability].some(x => /[\u0000-\u001f\u007f]/.test(x))) return null;
 
   return {
-    fullName, email, phone, preferredContact, preferredClinician, availability, service,
+    fullName, email, phone, preferredContact, preferredClinician, availability,
+    ...(service ? { service } : {}),
     attribution: {
       gclid: body.gclid || "",
       gbraid: body.gbraid || "",
