@@ -835,7 +835,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 @media (min-width:1100px) {
   html body.clinician-profile-page .jasmine-profile-rail {
     position:absolute!important;
-    top:18px!important;
+    top:var(--jasmine-rail-follow-top,18px)!important;
     bottom:auto!important;
     height:auto!important;
     max-height:none!important;
@@ -1338,14 +1338,16 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   var heroPortrait=document.querySelector('.profile-subpage-headshot--jasmine');
   if(!rail||!region) return;
 
-  // Let the complete sidebar move with the page, without an internal scrollbar.
-  // Preserve the portrait's existing entrance when the hero image leaves view.
+  // Follow the desktop page without an internal scrollbar or clipped content.
+  // Tall rails move naturally through the viewport until the bottom can remain visible.
   function updateJasmineRail(){
     rail.classList.remove('is-fixed','is-ended');
     if(window.innerWidth<1100){
       rail.classList.remove('show-rail-portrait');
+      rail.style.removeProperty('--jasmine-rail-follow-top');
       return;
     }
+
     if(heroPortrait){
       var heroRect=heroPortrait.getBoundingClientRect();
       var heroVisible=heroRect.bottom>0 && heroRect.top<window.innerHeight;
@@ -1353,6 +1355,18 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     } else {
       rail.classList.add('show-rail-portrait');
     }
+
+    var padding=18;
+    var railHeight=rail.offsetHeight;
+    var regionHeight=region.offsetHeight;
+    var regionTop=region.getBoundingClientRect().top;
+    // Short rails follow near the viewport top; taller rails follow near its
+    // bottom only after their upper content has passed by natural page scroll.
+    var viewportTop=railHeight<=window.innerHeight-2*padding
+      ? padding : window.innerHeight-railHeight-padding;
+    var maxTop=Math.max(padding,regionHeight-railHeight-padding);
+    var followTop=Math.min(maxTop,Math.max(padding,viewportTop-regionTop));
+    rail.style.setProperty('--jasmine-rail-follow-top',followTop+'px');
   }
 
   updateJasmineRail();
