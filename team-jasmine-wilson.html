@@ -834,9 +834,13 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 /* Jasmine's right-hand rail only: maintain the right anchor and page grid. */
 @media (min-width:1100px) {
   html body.clinician-profile-page .jasmine-profile-rail {
-    position:absolute!important;
-    top:var(--jasmine-rail-follow-top,18px)!important;
+    /* Browser-native sticky is smooth in both scroll directions. */
+    position:sticky!important;
+    top:var(--jasmine-rail-sticky-top,18px)!important;
     bottom:auto!important;
+    right:auto!important;
+    margin-left:auto!important;
+    margin-right:max(28px,calc((100vw - 1420px)/2))!important;
     height:auto!important;
     max-height:none!important;
     overflow:visible!important;
@@ -1338,18 +1342,14 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   var heroPortrait=document.querySelector('.profile-subpage-headshot--jasmine');
   if(!rail||!region) return;
 
-  // Remember the rail's page position so reversing scroll direction reveals
-  // its upper content again, rather than permanently pinning only its bottom.
-  var followOffset=18;
   function updateJasmineRail(){
-    rail.classList.remove('is-fixed','is-ended');
     if(window.innerWidth<1100){
-      rail.classList.remove('show-rail-portrait');
-      rail.style.removeProperty('--jasmine-rail-follow-top');
-      followOffset=18;
+      rail.classList.remove('is-fixed','is-ended','show-rail-portrait');
+      rail.style.removeProperty('--jasmine-rail-sticky-top');
       return;
     }
 
+    // Keep the existing transition between the hero portrait and sidebar portrait.
     if(heroPortrait){
       var heroRect=heroPortrait.getBoundingClientRect();
       var heroVisible=heroRect.bottom>0 && heroRect.top<window.innerHeight;
@@ -1358,32 +1358,23 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       rail.classList.add('show-rail-portrait');
     }
 
-    var padding=18;
-    var railHeight=rail.offsetHeight;
-    var regionTop=region.getBoundingClientRect().top;
-    var maxTop=Math.max(padding,region.offsetHeight-railHeight-padding);
-    followOffset=Math.min(maxTop,Math.max(padding,followOffset));
-
-    var visibleTop=regionTop+followOffset;
-    var bottomLimit=window.innerHeight-railHeight-padding;
-    if(railHeight<=window.innerHeight-2*padding){
-      // Short profile: stay near the top of the viewport.
-      followOffset=Math.min(maxTop,Math.max(padding,padding-regionTop));
-    } else if(visibleTop<bottomLimit){
-      // Scrolling down: follow only after the bottom reaches the viewport.
-      followOffset=Math.min(maxTop,Math.max(padding,bottomLimit-regionTop));
-    } else if(visibleTop>padding){
-      // Scrolling up: follow only after the portrait reaches the viewport top.
-      followOffset=Math.min(maxTop,Math.max(padding,padding-regionTop));
+    // A tall sidebar scrolls naturally until its lower content is in view,
+    // then the browser sticks its lower edge. No nested scrolling or JS follow.
+    var railHeight=rail.scrollHeight;
+    var top=Math.min(18,window.innerHeight-railHeight-18);
+    var value=top+'px';
+    if(rail.style.getPropertyValue('--jasmine-rail-sticky-top')!==value){
+      rail.style.setProperty('--jasmine-rail-sticky-top',value);
     }
-    // In between these edges, let normal PAGE scrolling reveal each section
-    // of the tall profile; no nested scrollbar and no truncated content.
-    rail.style.setProperty('--jasmine-rail-follow-top',followOffset+'px');
   }
 
   updateJasmineRail();
   window.addEventListener('scroll',updateJasmineRail,{passive:true});
   window.addEventListener('resize',updateJasmineRail);
+  window.addEventListener('load',updateJasmineRail);
+  if('ResizeObserver' in window){
+    new ResizeObserver(updateJasmineRail).observe(rail);
+  }
 })();
 </script>
 
