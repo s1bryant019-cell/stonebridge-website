@@ -4853,8 +4853,9 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     pointer-events:none;
   }
   html body.sbx-founder-page .founder-rail-column > .founder-profile-rail {
-    position:relative!important;
-    top:auto!important;
+    /* Details follow document scroll; the full list remains reachable. */
+    position:sticky!important;
+    top:var(--founder-details-sticky-top,auto)!important;
     right:auto!important;
     bottom:auto!important;
     width:100%;
@@ -5482,5 +5483,34 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
 
 
+<script id="founder-rail-details-sizing-20261019">
+(function(){
+  var rail=document.querySelector('.founder-rail-column > .founder-profile-rail');
+  var heading=document.querySelector('.founder-rail-column > .founder-profile-rail-heading');
+  if(!rail||!heading) return;
+
+  function sizeRail(){
+    if(window.innerWidth<1100){
+      rail.style.removeProperty('--founder-details-sticky-top');
+      return;
+    }
+    // Keep the upper identity separate from the available document scroll area.
+    // The lower details can scroll naturally until their end reaches the viewport.
+    var top=Math.min(heading.offsetHeight+18,window.innerHeight-rail.offsetHeight-18);
+    var value=top+'px';
+    if(rail.style.getPropertyValue('--founder-details-sticky-top')!==value){
+      rail.style.setProperty('--founder-details-sticky-top',value);
+    }
+  }
+  sizeRail();
+  window.addEventListener('resize',sizeRail);
+  window.addEventListener('load',sizeRail);
+  if('ResizeObserver' in window){
+    var observer=new ResizeObserver(sizeRail);
+    observer.observe(rail);
+    observer.observe(heading);
+  }
+})();
+</script>
 </body>
 </html>
