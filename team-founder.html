@@ -4842,48 +4842,41 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <style id="stonebridge-founder-desktop-rail-refinement-20261019">
 /* Founder sidebar only; the site layout and tablet/mobile presentation are unchanged. */
 @media (min-width:1100px) {
-  /* Full-height rail column: a sticky identity with details in normal page flow. */
-  html body.sbx-founder-page .founder-rail-column {
-    position:absolute;
-    top:18px;
-    bottom:18px;
-    right:max(28px,calc((100vw - 1420px)/2));
-    width:282px;
-    box-sizing:border-box;
-    pointer-events:none;
-  }
-  html body.sbx-founder-page .founder-rail-column > .founder-profile-rail {
-    /* Details follow document scroll; the full list remains reachable. */
+  /* Move the complete desktop profile as one uninterrupted native sticky element. */
+  html body.sbx-founder-page .founder-sticky-rail-slot > .founder-profile-rail {
     position:sticky!important;
-    top:var(--founder-details-sticky-top,auto)!important;
-    right:auto!important;
+    top:var(--founder-whole-rail-top,18px)!important;
     bottom:auto!important;
-    width:100%;
-    margin:0!important;
-    padding:0 18px 20px 20px;
+    right:auto!important;
+    margin-left:auto!important;
+    margin-right:max(28px,calc((100vw - 1420px)/2))!important;
     box-sizing:border-box;
+    width:282px;
     height:auto!important;
     max-height:none!important;
     overflow:visible!important;
+    padding:18px 18px 20px 20px;
     pointer-events:auto;
   }
-  html body.sbx-founder-page .founder-rail-column > .founder-profile-rail-heading {
-    position:sticky!important;
-    top:18px!important;
-    z-index:18;
-    display:none!important;
-    width:100%;
-    box-sizing:border-box;
-    margin:0!important;
-    padding:0 18px 14px 20px!important;
-    border:0!important;
-    background:#f7f1e9!important;
-    pointer-events:none;
-  }
-  /* Only introduce the rail portrait after the hero portrait has left the viewport. */
-  html body.sbx-founder-page .founder-rail-column.show-rail-portrait > .founder-profile-rail-heading {
+  /* Reserve portrait space to prevent a layout jump when the hero handoff occurs. */
+  html body.sbx-founder-page .founder-sticky-rail-slot > .founder-profile-rail > .founder-profile-rail-heading {
     display:block!important;
-    animation:founderRailPortraitIn .24s ease-out both;
+    position:static!important;
+    width:100%;
+    margin:0!important;
+    padding:0 0 14px!important;
+    border:0!important;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-5px);
+    transition:opacity .24s ease-out, transform .24s ease-out, visibility .24s;
+    animation:none!important;
+  }
+  html body.sbx-founder-page .founder-sticky-rail-slot > .founder-profile-rail.show-rail-portrait > .founder-profile-rail-heading {
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    animation:none!important;
   }
   html body.sbx-founder-page .founder-profile-rail-portrait {
     width:100%;
@@ -5101,17 +5094,15 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </section>
 <div class="founder-sticky-region">
   <div class="founder-sticky-rail-slot">
-    <div class="founder-rail-column">
+    <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
     <div class="founder-profile-rail-heading">
       <figure class="founder-profile-rail-portrait">
         <img src="dr-stephen-bryant-headshot-20260922.webp" alt="Dr. Stephen Bryant" width="900" height="1125" decoding="async">
         <figcaption>Dr. Stephen Bryant</figcaption>
       </figure>
     </div>
-    <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
-      
 
-      <div class="founder-profile-rail-status" aria-label="Practice status">
+    <div class="founder-profile-rail-status" aria-label="Practice status">
       <span>Accepting new clients</span>
       <span>Illinois telehealth</span>
     </div>
@@ -5153,7 +5144,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     <a class="founder-profile-rail-cta" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">Request an Appointment with Dr. Bryant <span aria-hidden="true">→</span></a>
     <p class="founder-profile-rail-note">Opens Stonebridge’s appointment availability. Requests remain pending until clinician fit and availability are confirmed.</p>
   </aside>
-  </div>
   </div>
 
   <section class="cp-section" id="patient-fit" aria-labelledby="founder-fit-title">
@@ -5488,59 +5478,40 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
 
 
-<script id="founder-rail-details-sizing-20261019">
+<script id="founder-whole-rail-controller-20261019">
 (function(){
-  var rail=document.querySelector('.founder-rail-column > .founder-profile-rail');
-  var heading=document.querySelector('.founder-rail-column > .founder-profile-rail-heading');
-  var column=document.querySelector('.founder-rail-column');
-  var heroPortrait=document.querySelector('.profile-subpage-headshot');
-  if(!rail||!heading||!column) return;
+  var rail=document.querySelector('.founder-sticky-rail-slot > .founder-profile-rail');
+  var hero=document.querySelector('.profile-subpage-headshot');
+  if(!rail) return;
 
-  function syncPortraitReveal(){
-    if(window.innerWidth<1100||!heroPortrait){
-      column.classList.remove('show-rail-portrait');
+  function revealPortrait(){
+    if(window.innerWidth<1100 || !hero){
+      rail.classList.remove('show-rail-portrait');
       return;
     }
-    var rect=heroPortrait.getBoundingClientRect();
-    var visible=rect.bottom>0&&rect.top<window.innerHeight;
-    column.classList.toggle('show-rail-portrait',!visible);
+    var rect=hero.getBoundingClientRect();
+    // Reveal only after the hero image has passed above the viewport.
+    rail.classList.toggle('show-rail-portrait', rect.bottom<=0);
   }
-
-  // IntersectionObserver observes the actual hero photograph; no scroll-driven
-  // CSS positioning or duplicate portrait while the hero remains visible.
-  if(heroPortrait&&'IntersectionObserver' in window){
-    new IntersectionObserver(function(entries){
-      if(window.innerWidth<1100) return;
-      column.classList.toggle('show-rail-portrait',!entries[0].isIntersecting);
-    },{threshold:0}).observe(heroPortrait);
-  }else{
-    window.addEventListener('scroll',syncPortraitReveal,{passive:true});
-  }
-  syncPortraitReveal();
-  window.addEventListener('resize',syncPortraitReveal);
-  window.addEventListener('load',syncPortraitReveal);
-
-  function sizeRail(){
+  function measureRail(){
     if(window.innerWidth<1100){
-      rail.style.removeProperty('--founder-details-sticky-top');
+      rail.style.removeProperty('--founder-whole-rail-top');
       return;
     }
-    // Keep the upper identity separate from the available document scroll area.
-    // The lower details can scroll naturally until their end reaches the viewport.
-    var top=Math.min(heading.offsetHeight+18,window.innerHeight-rail.offsetHeight-18);
+    // A tall profile scrolls naturally into view, then remains at its lower
+    // edge. A shorter profile stays 18px from the top. No internal scrollbar.
+    var top=Math.min(18,window.innerHeight-rail.offsetHeight-18);
     var value=top+'px';
-    if(rail.style.getPropertyValue('--founder-details-sticky-top')!==value){
-      rail.style.setProperty('--founder-details-sticky-top',value);
+    if(rail.style.getPropertyValue('--founder-whole-rail-top')!==value){
+      rail.style.setProperty('--founder-whole-rail-top',value);
     }
   }
-  sizeRail();
-  window.addEventListener('resize',sizeRail);
-  window.addEventListener('load',sizeRail);
-  if('ResizeObserver' in window){
-    var observer=new ResizeObserver(sizeRail);
-    observer.observe(rail);
-    observer.observe(heading);
-  }
+  revealPortrait();
+  measureRail();
+  window.addEventListener('scroll',revealPortrait,{passive:true});
+  window.addEventListener('resize',function(){revealPortrait();measureRail();});
+  window.addEventListener('load',function(){revealPortrait();measureRail();});
+  if('ResizeObserver' in window) new ResizeObserver(measureRail).observe(rail);
 })();
 </script>
 </body>
