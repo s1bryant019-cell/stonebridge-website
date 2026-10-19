@@ -78,7 +78,7 @@ test("succeeds only when secure provider explicitly confirms delivery", async t 
   assert.equal(deliveredPayload.attribution.gbraid, "bridge-456");
   assert.equal(deliveredPayload.attribution.wbraid, "web-789");
   assert.equal(deliveredPayload.email, "example@example.test");
-  assert.equal(deliveredPayload.service, "");
+  assert.equal(deliveredPayload.service, undefined);
 
   response = await POST(request({ ...valid, service: "teen-group" }));
   assert.equal(response.status, 200);
