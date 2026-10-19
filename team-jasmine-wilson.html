@@ -836,7 +836,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   html body.clinician-profile-page .jasmine-profile-rail {
     /* Keep the entire profile together; let the browser handle page scrolling. */
     position:sticky!important;
-    top:var(--jasmine-rail-whole-top,auto)!important;
+    top:var(--jasmine-whole-rail-top,18px)!important;
     bottom:auto!important;
     right:auto!important;
     margin-left:auto!important;
@@ -846,17 +846,32 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     overflow:visible!important;
     width:282px;
     padding:18px 18px 20px 20px;
+    transition:top .32s ease;
   }
-  html body.clinician-profile-page .jasmine-profile-rail-heading {
-    /* Identity belongs at the top of the same scrolling rail. */
+  /* No blank portrait reservation while Jasmine's hero photograph is visible. */
+  html body.clinician-profile-page .jasmine-sticky-rail-slot > .jasmine-profile-rail > .jasmine-profile-rail-heading {
     position:static!important;
     display:block!important;
-    width:auto!important;
+    width:100%;
+    height:auto!important;
+    max-height:0!important;
     margin:0!important;
-    padding:0 0 13px!important;
+    padding:0!important;
     border:0!important;
-    background:transparent!important;
-    pointer-events:auto;
+    overflow:hidden!important;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-5px);
+    transition:max-height .32s ease, padding .32s ease, opacity .24s ease-out, transform .24s ease-out, visibility .32s;
+    animation:none!important;
+  }
+  html body.clinician-profile-page .jasmine-sticky-rail-slot > .jasmine-profile-rail.show-rail-portrait > .jasmine-profile-rail-heading {
+    max-height:var(--jasmine-portrait-open-height,250px)!important;
+    padding:0 0 14px!important;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    animation:none!important;
   }
   html body.clinician-profile-page .jasmine-profile-rail-portrait {
     width:100%;
@@ -992,6 +1007,99 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     font-size:.8125rem;
     font-style:italic;
     line-height:1.5;
+  }
+  @media (prefers-reduced-motion:reduce) {
+    html body.clinician-profile-page .jasmine-sticky-rail-slot > .jasmine-profile-rail,
+    html body.clinician-profile-page .jasmine-sticky-rail-slot > .jasmine-profile-rail > .jasmine-profile-rail-heading {
+      transition:none!important;
+    }
+  }
+}
+</style>
+<style id="stonebridge-jasmine-compact-desktop-rail-20261019">
+/* The complete jasmine profile should fit a normal desktop viewport without
+   sacrificing the 140 × 170 portrait or introducing its own scroll area. */
+@media (min-width:1100px) {
+  html body.clinician-profile-page .jasmine-sticky-rail-slot > .jasmine-profile-rail {
+    padding:8px 15px 12px!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-heading {
+    padding:0 0 5px!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-portrait img {
+    margin-inline:auto!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-portrait figcaption {
+    margin-top:8px!important;
+    font-size:1.22rem!important;
+    line-height:1.12!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-status {
+    gap:3px!important;
+    margin:7px 0 0!important;
+    padding:0 0 8px!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-status span {
+    font-size:.77rem!important;
+    line-height:1.34!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-summary {
+    gap:8px!important;
+    margin:9px 0 0!important;
+    padding:0!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-label {
+    margin:0 0 3px!important;
+    font-size:.69rem!important;
+    line-height:1.3!important;
+    letter-spacing:.1em!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-summary-row p {
+    font-size:.80rem!important;
+    line-height:1.36!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-payment {
+    margin:1px 0 0!important;
+    padding:9px 0 0!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-payment a {
+    min-height:32px!important;
+    margin-top:3px!important;
+    padding:4px 0!important;
+    font-size:.80rem!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-availability {
+    margin:9px 0 0!important;
+    padding:9px 0 0!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-availability > .jasmine-profile-rail-label {
+    margin-bottom:7px!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-hours {
+    gap:3px!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-hours strong,
+  html body.clinician-profile-page .jasmine-profile-rail-hours span {
+    font-size:.80rem!important;
+    line-height:1.34!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-cta {
+    min-height:42px!important;
+    margin-top:10px!important;
+    padding:5px 0!important;
+    font-size:.80rem!important;
+    line-height:1.35!important;
+  }
+  html body.clinician-profile-page .jasmine-profile-rail-note {
+    margin:5px 0 0!important;
+    font-size:.75rem!important;
+    line-height:1.38!important;
+  }
+  /* Keep the supervision qualification legible alongside the compact insurance line. */
+  html body.clinician-profile-page .jasmine-profile-rail-payment .jasmine-profile-rail-subtle {
+    margin-top:4px!important;
+    font-size:.75rem!important;
+    line-height:1.38!important;
   }
 }
 </style>
@@ -1344,24 +1452,50 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
 
 
-<script id="jasmine-rail-height-controller">
+<script id="jasmine-whole-rail-controller-20261019">
 (function(){
-  var rail=document.querySelector('.jasmine-profile-rail');
-  if(!rail) return;
-  function update(){
+  var rail=document.querySelector('.jasmine-sticky-rail-slot > .jasmine-profile-rail');
+  var hero=document.querySelector('.profile-subpage-headshot--jasmine');
+  var heading=rail&&rail.querySelector('.jasmine-profile-rail-heading');
+  var figure=heading&&heading.querySelector('figure');
+  if(!rail||!heading) return;
+
+  function updateRail(force){
     if(window.innerWidth<1100){
-      rail.style.removeProperty('--jasmine-rail-whole-top');
+      rail.classList.remove('show-rail-portrait');
+      rail.style.removeProperty('--jasmine-whole-rail-top');
+      rail.style.removeProperty('--jasmine-portrait-open-height');
       return;
     }
-    // Only measure on resize or content-size change; never reposition during scroll.
-    // For tall rails, a negative sticky offset lets the full profile scroll into view.
-    var top=Math.min(18,window.innerHeight-rail.offsetHeight-18);
-    rail.style.setProperty('--jasmine-rail-whole-top',top+'px');
+    // Measure the complete portrait without expanding it first.
+    // This avoids ResizeObserver updates on every animation frame.
+    var shouldShow=!!hero&&hero.getBoundingClientRect().bottom<=0;
+    // Scroll events that do not cross the portrait boundary must not trigger
+    // any geometry recalculation or restart an in-progress transition.
+    if(force!==true&&rail.classList.contains('show-rail-portrait')===shouldShow) return;
+    var openHeight=Math.min(250,(figure?figure.offsetHeight:heading.scrollHeight)+14);
+    var detailsHeight=rail.offsetHeight-heading.offsetHeight;
+    var targetHeight=detailsHeight+(shouldShow?openHeight:0);
+    var targetTop=Math.min(18,window.innerHeight-targetHeight-18);
+    var heightValue=openHeight+'px';
+    var topValue=targetTop+'px';
+
+    // Set both animation endpoints together. The sidebar's top and the
+    // portrait's height now ease at the same rate, without fighting each other.
+    if(rail.style.getPropertyValue('--jasmine-portrait-open-height')!==heightValue){
+      rail.style.setProperty('--jasmine-portrait-open-height',heightValue);
+    }
+    if(rail.style.getPropertyValue('--jasmine-whole-rail-top')!==topValue){
+      rail.style.setProperty('--jasmine-whole-rail-top',topValue);
+    }
+    rail.classList.toggle('show-rail-portrait',shouldShow);
   }
-  update();
-  window.addEventListener('resize',update);
-  window.addEventListener('load',update);
-  if('ResizeObserver' in window) new ResizeObserver(update).observe(rail);
+
+  updateRail(true);
+  window.addEventListener('scroll',updateRail,{passive:true});
+  window.addEventListener('resize',function(){updateRail(true);});
+  window.addEventListener('load',function(){updateRail(true);});
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){updateRail(true);});
 })();
 </script>
 </body>
