@@ -834,13 +834,12 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 /* Jasmine's right-hand rail only: maintain the right anchor and page grid. */
 @media (min-width:1100px) {
   html body.clinician-profile-page .jasmine-profile-rail {
-    /* Browser-native sticky is smooth in both scroll directions. */
-    position:sticky!important;
-    top:var(--jasmine-rail-sticky-top,18px)!important;
+    /* The practical details scroll with the page, without a nested scroller. */
+    position:absolute!important;
+    top:248px!important;
     bottom:auto!important;
-    right:auto!important;
-    margin-left:auto!important;
-    margin-right:max(28px,calc((100vw - 1420px)/2))!important;
+    right:max(28px,calc((100vw - 1420px)/2))!important;
+    margin:0!important;
     height:auto!important;
     max-height:none!important;
     overflow:visible!important;
@@ -848,15 +847,25 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     padding:18px 18px 20px 20px;
   }
   html body.clinician-profile-page .jasmine-profile-rail-heading {
-    margin:0;
-    padding:0;
-    border:0;
+    /* The portrait and name have their own full-height sticky containing block. */
+    position:sticky!important;
+    display:block!important;
+    top:18px!important;
+    z-index:15;
+    width:282px;
+    box-sizing:border-box;
+    margin:0 max(28px,calc((100vw - 1420px)/2)) 0 auto!important;
+    padding:18px 18px 13px 20px!important;
+    border:0!important;
+    background:#f7f1e9;
+    pointer-events:none;
   }
   html body.clinician-profile-page .jasmine-profile-rail-portrait {
-    width:140px;
+    width:100%;
     margin:0 auto;
   }
   html body.clinician-profile-page .jasmine-profile-rail-portrait img {
+    margin-inline:auto;
     width:140px;
     height:170px;
     display:block;
@@ -1068,15 +1077,15 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
 <div class="jasmine-sticky-region">
   <div class="jasmine-sticky-rail-slot">
-    <aside class="jasmine-profile-rail" aria-label="Jasmine Wilson practical information">
-      <div class="jasmine-profile-rail-heading">
+    <div class="jasmine-profile-rail-heading">
         <figure class="jasmine-profile-rail-portrait">
           <img src="jasmine-wilson-headshot.png?v=20260921i" alt="Jasmine Wilson" width="1122" height="1402" decoding="async">
           <figcaption>Jasmine Wilson</figcaption>
         </figure>
       </div>
 
-      <div class="jasmine-profile-rail-status" aria-label="Practice status">
+          <aside class="jasmine-profile-rail" aria-label="Jasmine Wilson practical information">
+    <div class="jasmine-profile-rail-status" aria-label="Practice status">
         <span>Accepting new clients</span>
         <span>Illinois telehealth</span>
       </div>
@@ -1335,48 +1344,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </script>
 <script src="script.js?v=20261015sitewideavail1"></script>
 
-<script id="jasmine-rail-scroll-controller">
-(function(){
-  var rail=document.querySelector('.jasmine-profile-rail');
-  var region=document.querySelector('.jasmine-sticky-region');
-  var heroPortrait=document.querySelector('.profile-subpage-headshot--jasmine');
-  if(!rail||!region) return;
 
-  function updateJasmineRail(){
-    if(window.innerWidth<1100){
-      rail.classList.remove('is-fixed','is-ended','show-rail-portrait');
-      rail.style.removeProperty('--jasmine-rail-sticky-top');
-      return;
-    }
-
-    // Keep the existing transition between the hero portrait and sidebar portrait.
-    if(heroPortrait){
-      var heroRect=heroPortrait.getBoundingClientRect();
-      var heroVisible=heroRect.bottom>0 && heroRect.top<window.innerHeight;
-      rail.classList.toggle('show-rail-portrait',!heroVisible);
-    } else {
-      rail.classList.add('show-rail-portrait');
-    }
-
-    // A tall sidebar scrolls naturally until its lower content is in view,
-    // then the browser sticks its lower edge. No nested scrolling or JS follow.
-    var railHeight=rail.scrollHeight;
-    var top=Math.min(18,window.innerHeight-railHeight-18);
-    var value=top+'px';
-    if(rail.style.getPropertyValue('--jasmine-rail-sticky-top')!==value){
-      rail.style.setProperty('--jasmine-rail-sticky-top',value);
-    }
-  }
-
-  updateJasmineRail();
-  window.addEventListener('scroll',updateJasmineRail,{passive:true});
-  window.addEventListener('resize',updateJasmineRail);
-  window.addEventListener('load',updateJasmineRail);
-  if('ResizeObserver' in window){
-    new ResizeObserver(updateJasmineRail).observe(rail);
-  }
-})();
-</script>
 
 </body>
 </html>
