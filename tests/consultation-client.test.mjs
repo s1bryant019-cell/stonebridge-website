@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 
 const script = readFileSync(new URL("../consultation-request.js", import.meta.url), "utf8");
 
-function setup(reply) {
+function setup(reply, group = false) {
   let handler;
   const events = [];
   const scripts = [];
@@ -26,10 +26,11 @@ function setup(reply) {
     "consultation-phone": { value: "" },
     "consultation-preferred-contact": { value: "" },
     "consultation-clinician": { value: "" },
-    "consultation-availability": { value: "" }
+    "consultation-availability": { value: "" },
+    "consultation-service": { value: "" }
   };
   const form = {
-    elements: { website: { value: "" } },
+    elements: { website: { value: "" }, service: values["consultation-service"] },
     querySelector() { return content; },
     querySelectorAll() { return []; },
     addEventListener(type, fn) { if (type === "submit") handler = fn; }
@@ -40,6 +41,9 @@ function setup(reply) {
     "consultation-error-list": list,
     "consultation-submit-button": button,
     "consultation-success": success,
+    "contact-page-title": { textContent: "Schedule a consultation" },
+    "consultation-request-title": { textContent: "Reach out to schedule a brief conversation." },
+    "consultation-hero-intro": { textContent: "" },
     ...values
   };
   const document = {
@@ -50,7 +54,7 @@ function setup(reply) {
   const window = {
     location: {
       href: "https://stonebridgepsychgroup.com/contact.html?gclid=click123&gbraid=gb123&wbraid=wb123&email=private%40example.test",
-      search: "?gclid=click123&gbraid=gb123&wbraid=wb123&email=private%40example.test",
+      search: "?gclid=click123&gbraid=gb123&wbraid=wb123&email=private%40example.test" + (group ? "&service=teen-group" : ""),
       origin: "https://stonebridgepsychgroup.com",
       pathname: "/contact.html"
     },
@@ -64,7 +68,7 @@ function setup(reply) {
   };
   runInNewContext(script, { document, window, fetch, URL, URLSearchParams, Date, Promise, Error });
   const submit = () => handler({ preventDefault() {} });
-  return { submit, events, scripts, errors, content, success, summary, button, posts };
+  return { submit, events, scripts, errors, content, success, summary, button, posts, elements };
 }
 
 test("confirmed server delivery shows confirmation and fires Ads conversion with no PII", async () => {
@@ -118,4 +122,14 @@ test("network failure keeps form on site, permits retry, and never opens email a
   assert.equal(ui.button.textContent, "Send Consultation Request");
   assert.equal(ui.button.disabled, false);
   assert.equal(ui.events.length, 0);
+});
+
+test("The Lobby link keeps inquiry context without changing advertising conversion fields", async () => {
+  const ui = setup(async () => ({ ok: true, json: async () => ({ delivered: true }) }), true);
+  assert.equal(ui.elements["contact-page-title"].textContent, "Consultation for The Lobby");
+  assert.equal(ui.elements["consultation-request-title"].textContent, "Request a consultation about The Lobby.");
+  await ui.submit();
+  assert.equal(JSON.parse(ui.posts[0].options.body).service, "teen-group");
+  const conversion = ui.events.find(([name]) => name === "event");
+  assert.deepEqual(Object.keys(conversion[2]), ["send_to"]);
 });
