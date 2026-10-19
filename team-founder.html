@@ -4857,6 +4857,8 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     overflow:visible!important;
     padding:18px 18px 20px 20px;
     pointer-events:auto;
+    /* Follow the portrait expansion over the same duration, not in jumps. */
+    transition:top .32s ease;
   }
   /* At the hero, remove the hidden portrait's blank space completely.
      Expand this one section smoothly only after the hero photo leaves view. */
@@ -4877,7 +4879,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     animation:none!important;
   }
   html body.sbx-founder-page .founder-sticky-rail-slot > .founder-profile-rail.show-rail-portrait > .founder-profile-rail-heading {
-    max-height:250px!important;
+    max-height:var(--founder-portrait-open-height,250px)!important;
     padding:0 0 14px!important;
     opacity:1;
     visibility:visible;
@@ -5027,6 +5029,14 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     font-size:.8125rem;
     font-style:italic;
     line-height:1.5;
+  }
+  @media (prefers-reduced-motion:reduce) {
+    html body.sbx-founder-page .founder-sticky-rail-slot > .founder-profile-rail {
+      transition:none!important;
+    }
+    html body.sbx-founder-page .founder-sticky-rail-slot > .founder-profile-rail > .founder-profile-rail-heading {
+      transition:none!important;
+    }
   }
 }
 </style>
@@ -5577,36 +5587,43 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 (function(){
   var rail=document.querySelector('.founder-sticky-rail-slot > .founder-profile-rail');
   var hero=document.querySelector('.profile-subpage-headshot');
-  if(!rail) return;
+  var heading=rail&&rail.querySelector('.founder-profile-rail-heading');
+  var figure=heading&&heading.querySelector('figure');
+  if(!rail||!heading) return;
 
-  function revealPortrait(){
-    if(window.innerWidth<1100 || !hero){
-      rail.classList.remove('show-rail-portrait');
-      return;
-    }
-    var rect=hero.getBoundingClientRect();
-    // Reveal only after the hero image has passed above the viewport.
-    rail.classList.toggle('show-rail-portrait', rect.bottom<=0);
-  }
-  function measureRail(){
+  function updateRail(){
     if(window.innerWidth<1100){
+      rail.classList.remove('show-rail-portrait');
       rail.style.removeProperty('--founder-whole-rail-top');
+      rail.style.removeProperty('--founder-portrait-open-height');
       return;
     }
-    // A tall profile scrolls naturally into view, then remains at its lower
-    // edge. A shorter profile stays 18px from the top. No internal scrollbar.
-    var top=Math.min(18,window.innerHeight-rail.offsetHeight-18);
-    var value=top+'px';
-    if(rail.style.getPropertyValue('--founder-whole-rail-top')!==value){
-      rail.style.setProperty('--founder-whole-rail-top',value);
+    // Measure the complete portrait without expanding it first.
+    // This avoids ResizeObserver updates on every animation frame.
+    var openHeight=Math.min(250,(figure?figure.offsetHeight:heading.scrollHeight)+14);
+    var shouldShow=!!hero&&hero.getBoundingClientRect().bottom<=0;
+    var detailsHeight=rail.offsetHeight-heading.offsetHeight;
+    var targetHeight=detailsHeight+(shouldShow?openHeight:0);
+    var targetTop=Math.min(18,window.innerHeight-targetHeight-18);
+    var heightValue=openHeight+'px';
+    var topValue=targetTop+'px';
+
+    // Set both animation endpoints together. The sidebar's top and the
+    // portrait's height now ease at the same rate, without fighting each other.
+    if(rail.style.getPropertyValue('--founder-portrait-open-height')!==heightValue){
+      rail.style.setProperty('--founder-portrait-open-height',heightValue);
     }
+    if(rail.style.getPropertyValue('--founder-whole-rail-top')!==topValue){
+      rail.style.setProperty('--founder-whole-rail-top',topValue);
+    }
+    rail.classList.toggle('show-rail-portrait',shouldShow);
   }
-  revealPortrait();
-  measureRail();
-  window.addEventListener('scroll',revealPortrait,{passive:true});
-  window.addEventListener('resize',function(){revealPortrait();measureRail();});
-  window.addEventListener('load',function(){revealPortrait();measureRail();});
-  if('ResizeObserver' in window) new ResizeObserver(measureRail).observe(rail);
+
+  updateRail();
+  window.addEventListener('scroll',updateRail,{passive:true});
+  window.addEventListener('resize',updateRail);
+  window.addEventListener('load',updateRail);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(updateRail);
 })();
 </script>
 </body>
