@@ -4842,34 +4842,46 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 <style id="stonebridge-founder-desktop-rail-refinement-20261019">
 /* Founder sidebar only; the site layout and tablet/mobile presentation are unchanged. */
 @media (min-width:1100px) {
-  html body.sbx-founder-page .founder-profile-rail {
-    /* Keep the entire profile together; let the browser handle page scrolling. */
-    position:sticky!important;
-    top:var(--founder-rail-whole-top,auto)!important;
-    bottom:auto!important;
+  /* Full-height rail column: a sticky identity with details in normal page flow. */
+  html body.sbx-founder-page .founder-rail-column {
+    position:absolute;
+    top:18px;
+    bottom:18px;
+    right:max(28px,calc((100vw - 1420px)/2));
+    width:282px;
+    box-sizing:border-box;
+    pointer-events:none;
+  }
+  html body.sbx-founder-page .founder-rail-column > .founder-profile-rail {
+    position:relative!important;
+    top:auto!important;
     right:auto!important;
-    margin-left:auto!important;
-    margin-right:max(28px,calc((100vw - 1420px)/2))!important;
+    bottom:auto!important;
+    width:100%;
+    margin:0!important;
+    padding:0 18px 20px 20px;
+    box-sizing:border-box;
     height:auto!important;
     max-height:none!important;
     overflow:visible!important;
-    width:282px;
-    padding:18px 18px 20px 20px;
-  }
-  html body.sbx-founder-page .founder-profile-rail-heading {
-    /* Identity belongs at the top of the same scrolling rail. */
-    position:static!important;
-    display:block!important;
-    width:auto!important;
-    margin:0!important;
-    padding:0 0 13px!important;
-    border:0!important;
-    background:transparent!important;
     pointer-events:auto;
+  }
+  html body.sbx-founder-page .founder-rail-column > .founder-profile-rail-heading {
+    position:sticky!important;
+    top:18px!important;
+    z-index:18;
+    display:block!important;
+    width:100%;
+    box-sizing:border-box;
+    margin:0!important;
+    padding:0 18px 14px 20px!important;
+    border:0!important;
+    background:#f7f1e9!important;
+    pointer-events:none;
   }
   html body.sbx-founder-page .founder-profile-rail-portrait {
     width:100%;
-    margin:0;
+    margin:0 auto;
   }
   html body.sbx-founder-page .founder-profile-rail-portrait img {
     display:block;
@@ -5083,13 +5095,15 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </section>
 <div class="founder-sticky-region">
   <div class="founder-sticky-rail-slot">
-    <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
-      <div class="founder-profile-rail-heading">
+    <div class="founder-rail-column">
+    <div class="founder-profile-rail-heading">
       <figure class="founder-profile-rail-portrait">
         <img src="dr-stephen-bryant-headshot-20260922.webp" alt="Dr. Stephen Bryant" width="900" height="1125" decoding="async">
         <figcaption>Dr. Stephen Bryant</figcaption>
       </figure>
     </div>
+    <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
+      
 
       <div class="founder-profile-rail-status" aria-label="Practice status">
       <span>Accepting new clients</span>
@@ -5111,13 +5125,10 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
       </div>
       <div class="founder-profile-rail-summary-row founder-profile-rail-payment">
         <div class="founder-profile-rail-label">Insurance &amp; payment</div>
-        <ul class="founder-profile-rail-insurance" aria-label="Accepted insurance">
+        <ul class="founder-profile-rail-insurance" aria-label="Insurance highlights">
           <li>Aetna</li>
           <li>Blue Cross Blue Shield of Illinois</li>
-          <li>Medicaid FFS</li>
-          <li>Guidehealth / Advocate Medical Group West</li>
         </ul>
-        <p>Self-pay · Sliding scale available</p>
         <a href="fees-insurance.html">Fees &amp; Insurance <span aria-hidden="true">→</span></a>
       </div>
     </div>
@@ -5136,6 +5147,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     <a class="founder-profile-rail-cta" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">Request an Appointment with Dr. Bryant <span aria-hidden="true">→</span></a>
     <p class="founder-profile-rail-note">Opens Stonebridge’s appointment availability. Requests remain pending until clinician fit and availability are confirmed.</p>
   </aside>
+  </div>
   </div>
 
   <section class="cp-section" id="patient-fit" aria-labelledby="founder-fit-title">
@@ -5469,25 +5481,6 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
 
 
-<script id="founder-rail-height-controller">
-(function(){
-  var rail=document.querySelector('.founder-profile-rail');
-  if(!rail) return;
-  function update(){
-    if(window.innerWidth<1100){
-      rail.style.removeProperty('--founder-rail-whole-top');
-      return;
-    }
-    // Only measure on resize or content-size change; never reposition during scroll.
-    // For tall rails, a negative sticky offset lets the full profile scroll into view.
-    var top=Math.min(18,window.innerHeight-rail.offsetHeight-18);
-    rail.style.setProperty('--founder-rail-whole-top',top+'px');
-  }
-  update();
-  window.addEventListener('resize',update);
-  window.addEventListener('load',update);
-  if('ResizeObserver' in window) new ResizeObserver(update).observe(rail);
-})();
-</script>
+
 </body>
 </html>
