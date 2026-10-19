@@ -834,18 +834,14 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 /* Jasmine's right-hand rail only: maintain the right anchor and page grid. */
 @media (min-width:1100px) {
   html body.clinician-profile-page .jasmine-profile-rail {
+    position:absolute!important;
+    top:18px!important;
+    bottom:auto!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
     width:282px;
     padding:18px 18px 20px 20px;
-  }
-  /* The portrait transition remains visible as the rail becomes sticky.
-     On short desktops only, scroll the rail to reach its lower action. */
-  html body.clinician-profile-page .jasmine-profile-rail.is-fixed {
-    max-height:calc(100vh - 36px);
-    max-height:calc(100dvh - 36px);
-    overflow-y:auto;
-    overscroll-behavior:contain;
-    scrollbar-width:thin;
-    scrollbar-color:rgba(16,47,77,.34) transparent;
   }
   html body.clinician-profile-page .jasmine-profile-rail-heading {
     margin:0;
@@ -854,6 +850,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   }
   html body.clinician-profile-page .jasmine-profile-rail-portrait {
     width:140px;
+    margin:0 auto;
   }
   html body.clinician-profile-page .jasmine-profile-rail-portrait img {
     width:140px;
@@ -867,6 +864,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     box-shadow:none;
   }
   html body.clinician-profile-page .jasmine-profile-rail-portrait figcaption {
+    text-align:center;
     margin-top:13px;
     font-family:"EB Garamond",Georgia,serif;
     font-size:1.375rem;
@@ -1340,29 +1338,21 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
   var heroPortrait=document.querySelector('.profile-subpage-headshot--jasmine');
   if(!rail||!region) return;
 
-  var fixedTop=18;
-  var endGap=30;
-
+  // Let the complete sidebar move with the page, without an internal scrollbar.
+  // Preserve the portrait's existing entrance when the hero image leaves view.
   function updateJasmineRail(){
+    rail.classList.remove('is-fixed','is-ended');
     if(window.innerWidth<1100){
-      rail.classList.remove('is-fixed','is-ended','show-rail-portrait');
+      rail.classList.remove('show-rail-portrait');
       return;
     }
-
-    var regionRect=region.getBoundingClientRect();
     if(heroPortrait){
       var heroRect=heroPortrait.getBoundingClientRect();
       var heroVisible=heroRect.bottom>0 && heroRect.top<window.innerHeight;
       rail.classList.toggle('show-rail-portrait',!heroVisible);
+    } else {
+      rail.classList.add('show-rail-portrait');
     }
-
-    // Use the full content height, not the visible capped height of a
-    // fixed rail, when calculating the end of the sticky region.
-    var railHeight=rail.scrollHeight;
-    var shouldStart=regionRect.top<=fixedTop;
-    var shouldEnd=regionRect.bottom<=fixedTop+railHeight+endGap;
-    rail.classList.toggle('is-fixed',shouldStart&&!shouldEnd);
-    rail.classList.toggle('is-ended',shouldStart&&shouldEnd);
   }
 
   updateJasmineRail();
