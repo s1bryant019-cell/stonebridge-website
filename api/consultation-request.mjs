@@ -61,6 +61,8 @@ function validate(body) {
   const preferredContact = optionalString(body.preferredContact, 20);
   const preferredClinician = optionalString(body.preferredClinician, 120);
   const availability = optionalString(body.availability, 300);
+  const service = optionalString(body.service ?? "", 32);
+  if (!["", "teen-group"].includes(service)) return null;
   if (!fullName || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
   if ([phone, preferredContact, preferredClinician, availability].some(x => x === null)) return null;
   if (preferredContact && !["Email", "Phone"].includes(preferredContact)) return null;
@@ -69,6 +71,7 @@ function validate(body) {
 
   return {
     fullName, email, phone, preferredContact, preferredClinician, availability,
+    ...(service ? { service } : {}),
     attribution: {
       gclid: body.gclid || "",
       gbraid: body.gbraid || "",

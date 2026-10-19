@@ -4,6 +4,19 @@
   var form=document.getElementById("consultation-request-form");
   if(!form) return;
 
+  // Preserve only this approved, non-clinical inquiry context.
+  var service=new URLSearchParams(window.location.search).get("service")==="teen-group" ? "teen-group" : "";
+  var serviceInput=document.getElementById("consultation-service");
+  if(serviceInput) serviceInput.value=service;
+  if(service==="teen-group"){
+    var pageTitle=document.getElementById("contact-page-title");
+    var formTitle=document.getElementById("consultation-request-title");
+    var intro=document.getElementById("consultation-hero-intro");
+    if(pageTitle) pageTitle.textContent="Consultation for The Lobby";
+    if(formTitle) formTitle.textContent="Request a consultation about The Lobby.";
+    if(intro) intro.textContent="The Lobby is a teen telehealth group. Request a brief consultation to discuss fit and possible enrollment. An inquiry does not guarantee placement.";
+  }
+
   var summary=document.getElementById("consultation-error-summary");
   var list=document.getElementById("consultation-error-list");
   var submit=document.getElementById("consultation-submit-button");
@@ -147,6 +160,7 @@
           preferredContact:preferred,
           preferredClinician:clinician,
           availability:availability,
+          service:service,
           website:form.elements.website.value,
           ...clickIds()
         })
