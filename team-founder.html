@@ -4843,12 +4843,13 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 /* Founder sidebar only; the site layout and tablet/mobile presentation are unchanged. */
 @media (min-width:1100px) {
   html body.sbx-founder-page .founder-profile-rail {
-    /* The practical details scroll with the page, without a nested scroller. */
-    position:absolute!important;
-    top:248px!important;
+    /* Keep the entire profile together; let the browser handle page scrolling. */
+    position:sticky!important;
+    top:var(--founder-rail-whole-top,auto)!important;
     bottom:auto!important;
-    right:max(28px,calc((100vw - 1420px)/2))!important;
-    margin:0!important;
+    right:auto!important;
+    margin-left:auto!important;
+    margin-right:max(28px,calc((100vw - 1420px)/2))!important;
     height:auto!important;
     max-height:none!important;
     overflow:visible!important;
@@ -4856,18 +4857,15 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     padding:18px 18px 20px 20px;
   }
   html body.sbx-founder-page .founder-profile-rail-heading {
-    /* The portrait and name have their own full-height sticky containing block. */
-    position:sticky!important;
+    /* Identity belongs at the top of the same scrolling rail. */
+    position:static!important;
     display:block!important;
-    top:18px!important;
-    z-index:15;
-    width:282px;
-    box-sizing:border-box;
-    margin:0 max(28px,calc((100vw - 1420px)/2)) 0 auto!important;
-    padding:18px 18px 13px 20px!important;
+    width:auto!important;
+    margin:0!important;
+    padding:0 0 13px!important;
     border:0!important;
-    background:#f7f1e9;
-    pointer-events:none;
+    background:transparent!important;
+    pointer-events:auto;
   }
   html body.sbx-founder-page .founder-profile-rail-portrait {
     width:100%;
@@ -5085,15 +5083,15 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 </section>
 <div class="founder-sticky-region">
   <div class="founder-sticky-rail-slot">
-    <div class="founder-profile-rail-heading">
+    <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
+      <div class="founder-profile-rail-heading">
       <figure class="founder-profile-rail-portrait">
         <img src="dr-stephen-bryant-headshot-20260922.webp" alt="Dr. Stephen Bryant" width="900" height="1125" decoding="async">
         <figcaption>Dr. Stephen Bryant</figcaption>
       </figure>
     </div>
 
-        <aside class="founder-profile-rail" aria-label="Dr. Bryant practical information">
-    <div class="founder-profile-rail-status" aria-label="Practice status">
+      <div class="founder-profile-rail-status" aria-label="Practice status">
       <span>Accepting new clients</span>
       <span>Illinois telehealth</span>
     </div>
@@ -5471,5 +5469,25 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 
 
 
+<script id="founder-rail-height-controller">
+(function(){
+  var rail=document.querySelector('.founder-profile-rail');
+  if(!rail) return;
+  function update(){
+    if(window.innerWidth<1100){
+      rail.style.removeProperty('--founder-rail-whole-top');
+      return;
+    }
+    // Only measure on resize or content-size change; never reposition during scroll.
+    // For tall rails, a negative sticky offset lets the full profile scroll into view.
+    var top=Math.min(18,window.innerHeight-rail.offsetHeight-18);
+    rail.style.setProperty('--founder-rail-whole-top',top+'px');
+  }
+  update();
+  window.addEventListener('resize',update);
+  window.addEventListener('load',update);
+  if('ResizeObserver' in window) new ResizeObserver(update).observe(rail);
+})();
+</script>
 </body>
 </html>
