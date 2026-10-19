@@ -4858,21 +4858,27 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     padding:18px 18px 20px 20px;
     pointer-events:auto;
   }
-  /* Reserve portrait space to prevent a layout jump when the hero handoff occurs. */
+  /* At the hero, remove the hidden portrait's blank space completely.
+     Expand this one section smoothly only after the hero photo leaves view. */
   html body.sbx-founder-page .founder-sticky-rail-slot > .founder-profile-rail > .founder-profile-rail-heading {
     display:block!important;
     position:static!important;
     width:100%;
+    height:auto!important;
+    max-height:0!important;
     margin:0!important;
-    padding:0 0 14px!important;
+    padding:0!important;
     border:0!important;
+    overflow:hidden!important;
     opacity:0;
     visibility:hidden;
     transform:translateY(-5px);
-    transition:opacity .24s ease-out, transform .24s ease-out, visibility .24s;
+    transition:max-height .32s ease, padding .32s ease, opacity .24s ease-out, transform .24s ease-out, visibility .32s;
     animation:none!important;
   }
   html body.sbx-founder-page .founder-sticky-rail-slot > .founder-profile-rail.show-rail-portrait > .founder-profile-rail-heading {
+    max-height:250px!important;
+    padding:0 0 14px!important;
     opacity:1;
     visibility:visible;
     transform:none;
