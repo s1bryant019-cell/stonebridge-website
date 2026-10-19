@@ -4839,6 +4839,170 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 }
 </style>
 
+<style id="stonebridge-founder-desktop-rail-refinement-20261019">
+/* Founder sidebar only; the site layout and tablet/mobile presentation are unchanged. */
+@media (min-width:1100px) {
+  html body.sbx-founder-page .founder-profile-rail {
+    width:282px;
+    padding:18px 18px 20px 20px;
+  }
+  /* A sticky sidebar taller than the viewport must retain a reachable appointment link. */
+  html body.sbx-founder-page .founder-profile-rail.is-fixed {
+    max-height:calc(100vh - 36px);
+    max-height:calc(100dvh - 36px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(16,47,77,.34) transparent;
+  }
+  html body.sbx-founder-page .founder-profile-rail-heading {
+    margin:0;
+    padding:0;
+    border:0;
+  }
+  html body.sbx-founder-page .founder-profile-rail-portrait {
+    width:100%;
+  }
+  html body.sbx-founder-page .founder-profile-rail-portrait img {
+    display:block;
+    width:140px;
+    height:170px;
+    object-fit:cover;
+    object-position:center 28%;
+    border:0;
+    border-radius:10px;
+    background:transparent;
+    box-shadow:none;
+  }
+  html body.sbx-founder-page .founder-profile-rail-portrait figcaption {
+    max-width:232px;
+    margin-top:13px;
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:1.375rem;
+    font-weight:650;
+    letter-spacing:-.015em;
+    line-height:1.1;
+    white-space:normal;
+    color:#102f4d;
+  }
+  /* Name and practice status form the profile introduction. */
+  html body.sbx-founder-page .founder-profile-rail-status {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+    margin:16px 0 0;
+    padding:0 0 17px;
+    border-bottom:1px solid rgba(33,49,66,.14);
+  }
+  html body.sbx-founder-page .founder-profile-rail-status span {
+    font-family:"Inter",sans-serif;
+    font-size:.84rem;
+    font-weight:650;
+    line-height:1.42;
+  }
+  /* Clinical information is one readable cluster. */
+  html body.sbx-founder-page .founder-profile-rail-summary {
+    gap:16px;
+    margin:16px 0 0;
+    padding:0;
+    border:0;
+  }
+  html body.sbx-founder-page .founder-profile-rail-label {
+    margin-bottom:6px;
+    font-family:"Inter",sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    line-height:1.35;
+  }
+  html body.sbx-founder-page .founder-profile-rail-summary-row p {
+    font-family:"Inter",sans-serif;
+    font-size:.875rem;
+    font-weight:400;
+    line-height:1.5;
+  }
+  /* Insurance and self-pay details belong together without miniature text. */
+  html body.sbx-founder-page .founder-profile-rail-payment {
+    margin-top:4px;
+    padding-top:20px;
+    border-top:1px solid rgba(33,49,66,.14);
+  }
+  html body.sbx-founder-page .founder-profile-rail-insurance {
+    gap:5px;
+    margin:0 0 8px;
+  }
+  html body.sbx-founder-page .founder-profile-rail-insurance li {
+    padding-left:12px;
+    font-family:"Inter",sans-serif;
+    font-size:.875rem;
+    font-weight:400;
+    line-height:1.45;
+  }
+  html body.sbx-founder-page .founder-profile-rail-payment a {
+    display:inline-flex;
+    min-height:36px;
+    align-items:center;
+    margin-top:7px;
+    padding:6px 0;
+    font-family:"Inter",sans-serif;
+    font-size:.875rem;
+    font-weight:650;
+    line-height:1.45;
+  }
+  /* Availability and appointment request form the final action group. */
+  html body.sbx-founder-page .founder-profile-rail-availability {
+    margin-top:22px;
+    padding-top:20px;
+    border-top:1px solid rgba(33,49,66,.14);
+  }
+  html body.sbx-founder-page .founder-profile-rail-availability > .founder-profile-rail-label {
+    margin-bottom:10px;
+  }
+  html body.sbx-founder-page .founder-profile-rail-hours {
+    gap:8px;
+  }
+  html body.sbx-founder-page .founder-profile-rail-hours > div {
+    grid-template-columns:36px minmax(0,1fr);
+    gap:8px;
+    align-items:start;
+  }
+  html body.sbx-founder-page .founder-profile-rail-hours strong,
+  html body.sbx-founder-page .founder-profile-rail-hours span {
+    font-family:"Inter",sans-serif;
+    font-size:.85rem;
+    line-height:1.48;
+  }
+  html body.sbx-founder-page .founder-profile-rail-hours strong {
+    font-weight:650;
+  }
+  html body.sbx-founder-page .founder-profile-rail-cta {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    width:100%;
+    min-height:44px;
+    margin-top:18px;
+    padding:7px 0;
+    border-bottom:1px solid rgba(16,47,77,.34);
+    font-family:"Inter",sans-serif;
+    font-size:.875rem;
+    font-weight:650;
+    line-height:1.4;
+  }
+  html body.sbx-founder-page .founder-profile-rail-cta span {
+    flex:0 0 auto;
+    margin-left:auto;
+  }
+  html body.sbx-founder-page .founder-profile-rail-note {
+    margin:10px 0 0;
+    color:#5b6975;
+    font-family:"Inter",sans-serif;
+    font-size:.8125rem;
+    font-style:italic;
+    line-height:1.5;
+  }
+}
+</style>
 </head>
 <body class="sbx-site sbx-founder-page" data-static-hero-system="true"><a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header compact-site-header">
@@ -5310,18 +5474,20 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     }
 
     var regionRect=region.getBoundingClientRect();
-    var railHeight=rail.offsetHeight;
-    var shouldStart=regionRect.top<=fixedTop;
-    var shouldEnd=regionRect.bottom<=fixedTop+railHeight+endGap;
-
-    rail.classList.toggle('is-fixed',shouldStart&&!shouldEnd);
-    rail.classList.toggle('is-ended',shouldStart&&shouldEnd);
-
+    // Keep the portrait transition independent of how tall the rail is.
     if(heroPortrait){
       var heroRect=heroPortrait.getBoundingClientRect();
       var heroVisible=heroRect.bottom>0 && heroRect.top<window.innerHeight;
       rail.classList.toggle('show-rail-portrait',!heroVisible);
     }
+
+    // Fixed rails can scroll internally on shorter desktop viewports.
+    // Measure the full content height so the region's end boundary remains stable.
+    var railHeight=rail.scrollHeight;
+    var shouldStart=regionRect.top<=fixedTop;
+    var shouldEnd=regionRect.bottom<=fixedTop+railHeight+endGap;
+    rail.classList.toggle('is-fixed',shouldStart&&!shouldEnd);
+    rail.classList.toggle('is-ended',shouldStart&&shouldEnd);
   }
 
   updateFounderRail();
