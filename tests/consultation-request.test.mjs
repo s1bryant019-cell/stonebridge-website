@@ -40,6 +40,7 @@ test("rejects cross-origin, incomplete, and bot submissions without contacting g
     [request({ ...valid, email: "invalid" }), 422],
     [request({ ...valid, website: "bot-filled" }), 422],
     [request({ ...valid, preferredContact: "other" }), 422],
+    [request({ ...valid, service: "arbitrary-medical-details" }), 422],
     [request({ ...valid, availability: "a".repeat(301) }), 422]
   ]) {
     const response = await POST(item[0]);
@@ -77,6 +78,12 @@ test("succeeds only when secure provider explicitly confirms delivery", async t 
   assert.equal(deliveredPayload.attribution.gbraid, "bridge-456");
   assert.equal(deliveredPayload.attribution.wbraid, "web-789");
   assert.equal(deliveredPayload.email, "example@example.test");
+  assert.equal(deliveredPayload.service, "");
+
+  response = await POST(request({ ...valid, service: "teen-group" }));
+  assert.equal(response.status, 200);
+  assert.equal(deliveredPayload.service, "teen-group");
+
 
   globalThis.fetch = async () => new Response(JSON.stringify({ accepted: true }), { status: 202 });
   response = await POST(request());
