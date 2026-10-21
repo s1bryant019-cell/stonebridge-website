@@ -363,7 +363,9 @@
     }
     var script = document.createElement('script');
     script.id = 'stonebridge-script-core';
-    script.src = 'script-core.js?v=20261014access4';
+    script.src = pageName() === 'team-founder.html'
+      ? 'script-core.js?v=20261021foundercontentfix1'
+      : 'script-core.js?v=20261014access4';
     script.async = false;
     if (typeof onReady === 'function') {
       script.addEventListener('load', onReady, { once: true });
