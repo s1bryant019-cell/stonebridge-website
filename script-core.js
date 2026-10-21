@@ -559,25 +559,9 @@
       if (broaderCare) broaderCare.remove();
     }
 
-    var approach = main.querySelector('#therapy-style');
-    if (approach) {
-      approach.innerHTML = [
-        '<div class="founder-wide-shell therapy-method-layout">',
-          '<div class="therapy-method-intro">',
-            '<div class="section-label">Clinical approach</div>',
-            '<h2>How Dr. Bryant works.</h2>',
-          '</div>',
-          '<div>',
-            '<div class="therapy-method-list" aria-label="Psychotherapy approaches used by Dr. Bryant">',
-              '<article class="therapy-method-row"><div class="therapy-method-number">01</div><div><h3>Relational &amp; psychodynamic</h3><p>Recurring emotional and relationship patterns, identity, defenses, needs, and the therapeutic relationship.</p></div></article>',
-              '<article class="therapy-method-row"><div class="therapy-method-number">02</div><div><h3>Evidence-based skills &amp; behavior change</h3><p>CBT, ACT, DBT, and motivational interviewing are integrated when useful for regulation, avoidance, values, coping, and change.</p></div></article>',
-              '<article class="therapy-method-row"><div class="therapy-method-number">03</div><div><h3>Trauma, attachment &amp; systems</h3><p>Trauma-informed, attachment-based, and family-systems approaches connect symptoms with safety, development, relationships, and family patterns.</p></div></article>',
-            '</div>',
-            '<p class="therapy-method-note">These approaches are not applied as a fixed formula. Dr. Bryant develops an individualized formulation and draws from different methods when they support the purpose of therapy.</p>',
-          '</div>',
-        '</div>'
-      ].join('');
-    }
+    // The founder's clinical approach is authored in team-founder.html.
+    // Do not replace its approved content after page load.
+
   }
 
   function initProfessionalsPage() {
