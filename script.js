@@ -9,6 +9,7 @@
   function activeKey() {
     var page = pageName();
     if (page === 'about.html') return 'about';
+    if (page === 'new-clients.html' || page === 'new-clients') return 'new-clients';
     if (page === 'team.html' || page === 'team-founder.html' || page === 'team-jasmine-wilson.html') return 'team';
     if ([
       'services.html','psychotherapy.html','individual-therapy.html','couples-therapy.html',
@@ -37,10 +38,12 @@
       '    <button class="mobile-toggle" type="button" aria-label="Open main menu" aria-expanded="false">Menu</button>',
       '    <div class="menu-wrap">',
       '      <nav class="menu" aria-label="Primary navigation">',
-      navLink('about.html','About','about',active),
-      navLink('team.html','Team','team',active),
+      navLink('index.html','Home','home',active),
       navLink('services.html','Services','services',active),
+      navLink('team.html','Team','team',active),
+      navLink('new-clients.html','New Clients','new-clients',active),
       navLink('fees-insurance.html','Fees &amp; Insurance','fees',active),
+      navLink('about.html','About','about',active),
       navLink('for-clinicians.html','Professionals','professionals',active),
       navLink('portal.html','Portal','portal',active),
       '      </nav>',
@@ -89,11 +92,48 @@
     });
   }
 
+  function ensurePrimaryNav(header) {
+    if (!header) return;
+    var menu=header.querySelector('.menu');
+    if (!menu) return;
+
+    // The existing page headers already contain the services dropdown and
+    // mobile-menu behavior. Keep those nodes; only organize the main links.
+    var mainLinks=[
+      ['index.html','Home'],
+      ['services.html','Services'],
+      ['team.html','Team'],
+      ['new-clients.html','New Clients'],
+      ['fees-insurance.html','Fees & Insurance'],
+      ['about.html','About'],
+      ['for-clinicians.html','Professionals'],
+      ['portal.html','Portal']
+    ];
+    mainLinks.forEach(function(item){
+      var href=item[0],label=item[1];
+      var node=Array.from(menu.children).find(function(child){
+        if(child.matches('a[href="'+href+'"]')) return true;
+        return href==='services.html' && child.matches('.services-nav-dropdown');
+      });
+      if(!node){
+        node=document.createElement('a');
+        node.href=href;
+        node.textContent=label;
+        if(href==='new-clients.html' && (pageName()==='new-clients.html' || pageName()==='new-clients')){
+          node.className='active';
+          node.setAttribute('aria-current','page');
+        }
+      }
+      menu.appendChild(node);
+    });
+  }
+
   function normalizeHeader() {
     var existing = document.querySelector('.site-header, .home-site-header');
     if (!existing) return;
     if (existing.classList.contains('sb-global-header')) {
       removeDuplicateConsultationNav(existing);
+      ensurePrimaryNav(existing);
       configureHeaderAccess(existing);
       return;
     }
@@ -101,6 +141,7 @@
     wrapper.innerHTML = canonicalHeader();
     var replacement = wrapper.firstElementChild;
     removeDuplicateConsultationNav(replacement);
+    ensurePrimaryNav(replacement);
     configureHeaderAccess(replacement);
     existing.replaceWith(replacement);
   }
