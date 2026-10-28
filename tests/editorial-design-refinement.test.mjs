@@ -18,7 +18,7 @@ test("homepage corrects the desktop hierarchy while retaining mobile options and
     assert.match(html,/Prefer to speak first\? Request a free consultation\./);
     assert.match(html,/Aetna &amp; BCBSIL — Plan and Clinician Eligibility Varies/);
     assert.match(html,/class="home-hero-facts"/);
-    assert.match(html,/display:none\}\s*body\.home-redesign \.home-hero \.home-hero-support/);
+    assert.match(html,/body\.home-redesign \.home-hero \.home-hero-facts,\s*body\.home-redesign \.home-hero \.home-hero-support \{display:none\}/);
     assert.match(html,/body\.home-redesign \.site-header\.sb-global-header \.header-cta \{display:none\}/);
     assert.match(html,/sb-utility-strip--home-intro" aria-hidden="true"><\/div>/);
     assert.match(html,/height:24px/);
