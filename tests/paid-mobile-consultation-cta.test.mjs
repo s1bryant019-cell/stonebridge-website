@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../script.js", import.meta.url), "utf8");
-const begin = source.indexOf("  function ensureMobileConsultationCTA() {");
+const begin = source.indexOf("  function syncMobileConsultationCTAVisibility(cta) {");
 const end = source.indexOf("\n  function init() {", begin);
 assert.ok(begin >= 0 && end > begin, "Expected central mobile CTA function");
 
@@ -22,17 +22,33 @@ function renderCTA({ path = "/bcbs-therapy-illinois", search = "", existing = fa
   const document = {
     body,
     querySelector(selector) {
-      assert.equal(selector, ".sb-mobile-consultation-cta");
-      return existingElement;
+      if (selector === '.sb-mobile-consultation-cta') return existingElement;
+      if (selector === 'main') return { querySelectorAll() { return []; } };
+      if (selector === '.site-header') return null;
+      assert.fail('unexpected selector ' + selector);
     },
     createElement(tag) {
       assert.equal(tag, "a");
       return {
-        setAttribute(name, value) { this[name] = value; }
+        style: {},
+        setAttribute(name, value) { this[name] = value; },
+        removeAttribute(name) { delete this[name]; },
+        blur() {}
       };
     }
   };
-  const window = { location: { pathname: path, search } };
+  const window = {
+    location: { pathname: path, search },
+    matchMedia(query) { return { matches: query.includes('max-width'), addEventListener() {} }; },
+    addEventListener() {},
+    requestAnimationFrame(callback) { callback(); },
+    innerHeight: 780,
+    innerWidth: 390,
+    scrollY: 0,
+    getComputedStyle() { return { display: 'block', visibility: 'visible', opacity: '1', position: 'static' }; }
+  };
+  document.documentElement = { scrollTop: 0 };
+  document.activeElement = null;
   const code = source.slice(begin, end) + "\nensureMobileConsultationCTA();";
   runInNewContext(code, {
     window, document,
