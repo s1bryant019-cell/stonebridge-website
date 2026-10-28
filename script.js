@@ -415,68 +415,152 @@
     document.body.appendChild(script);
   }
 
+  // Keep the mobile shortcut only when a real in-page appointment action
+  // is not currently visible. Do not inspect the hidden header/menu CTAs.
   function syncMobileConsultationCTAVisibility(cta) {
     if (!cta) return;
 
-    var candidates = Array.prototype.filter.call(document.querySelectorAll('a'), function (link) {
-      if (link === cta) return false;
+    var appointmentUrl = 'https://www.therapyportal.com/p/stonebridge60634/appointments/availability/';
+    var mobile = window.matchMedia('(max-width: 760px)');
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var main = document.querySelector('main');
+    var candidates = [];
+    var observer = null;
+    var revealTimer = null;
+    var framePending = false;
 
-      var text = (link.textContent || '').trim().replace(/\s+/g, ' ').toLowerCase();
-      var href = (link.getAttribute('href') || '').toLowerCase();
-      var buttonLike = link.matches('.btn, .home-hero-action, .home-primary-btn, [class*="-cta"]');
+    // Keep position, color, sizing and safe-area spacing in the existing CSS.
+    // Only the transient visibility properties are controlled here.
+    cta.style.transition = reducedMotion.matches ? 'none' : 'opacity 180ms ease, transform 180ms ease';
 
-      return buttonLike &&
-        text.indexOf('new client') === 0 &&
-        href.indexOf('new-clients') !== -1;
-    });
-
-    if (!candidates.length) return;
-
-    function setSuppressed(suppressed) {
-      var shouldSuppress = suppressed && window.matchMedia('(max-width: 760px)').matches;
-      cta.style.display = shouldSuppress ? 'none' : '';
-      if (shouldSuppress) {
-        cta.setAttribute('aria-hidden', 'true');
-        cta.setAttribute('tabindex', '-1');
-      } else {
+    function setVisible(visible) {
+      cta.style.visibility = visible ? 'visible' : 'hidden';
+      cta.style.opacity = visible ? '1' : '0';
+      cta.style.pointerEvents = visible ? 'auto' : 'none';
+      cta.style.transform = visible ? 'none' : 'translateY(10px)';
+      if (visible) {
         cta.removeAttribute('aria-hidden');
         cta.removeAttribute('tabindex');
+        cta.removeAttribute('inert');
+      } else {
+        cta.setAttribute('aria-hidden', 'true');
+        cta.setAttribute('tabindex', '-1');
+        cta.setAttribute('inert', '');
+        if (document.activeElement === cta) cta.blur();
       }
     }
 
-    function isClearlyVisible(link) {
-      var style = window.getComputedStyle(link);
-      if (style.display === 'none' || style.visibility === 'hidden') return false;
+    function findCandidates() {
+      var updated = main ? Array.prototype.filter.call(main.querySelectorAll('a[href]'), function (link) {
+        // Exact existing booking destination. Include the named-clinician rail
+        // buttons but never the header, mobile menu or sticky link itself.
+        if (link === cta || link.closest('header, nav, footer, .sb-mobile-consultation-cta')) return false;
+        if (link.href !== appointmentUrl) return false;
+        return /appointment/i.test(link.textContent || '');
+      }) : [];
+
+      if (observer) {
+        candidates.forEach(function (link) {
+          if (updated.indexOf(link) === -1) observer.unobserve(link);
+        });
+        updated.forEach(function (link) {
+          if (candidates.indexOf(link) === -1) observer.observe(link);
+        });
+      }
+      candidates = updated;
+    }
+
+    function isActuallyVisible(link) {
+      if (!link.isConnected) return false;
+      for (var node = link; node && node.nodeType === 1; node = node.parentElement) {
+        if (node.hidden || node.inert || node.getAttribute('aria-hidden') === 'true') return false;
+        var style = window.getComputedStyle(node);
+        if (style.display === 'none' || style.visibility === 'hidden' ||
+            style.visibility === 'collapse' || Number(style.opacity) < 0.05) return false;
+      }
 
       var rect = link.getBoundingClientRect();
-      if (!rect.height || !rect.width) return false;
+      if (rect.width <= 0 || rect.height <= 0) return false;
 
-      var usableBottom = Math.max(0, window.innerHeight - 72);
-      var visibleTop = Math.max(0, rect.top);
-      var visibleBottom = Math.min(usableBottom, rect.bottom);
-      var visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      // Respect mobile browser chrome and the on-screen sticky site header.
+      var visual = window.visualViewport;
+      var top = visual ? Math.max(0, visual.offsetTop) : 0;
+      var bottom = visual ? Math.min(window.innerHeight, visual.offsetTop + visual.height) : window.innerHeight;
+      var header = document.querySelector('.site-header');
+      if (header) {
+        var headerStyle = window.getComputedStyle(header);
+        var headerRect = header.getBoundingClientRect();
+        if ((headerStyle.position === 'sticky' || headerStyle.position === 'fixed') &&
+            headerRect.top <= top + 1) top = Math.max(top, headerRect.bottom);
+      }
 
-      return visibleHeight / rect.height >= 0.55;
+      var visibleHeight = Math.min(bottom, rect.bottom) - Math.max(top, rect.top);
+      var visibleWidth = Math.min(window.innerWidth, rect.right) - Math.max(0, rect.left);
+      // A tiny clipped edge should not count as an available tap target.
+      return visibleHeight >= Math.min(8, rect.height * 0.2) &&
+             visibleWidth >= Math.min(16, rect.width * 0.2);
+    }
+
+    function shouldReveal() {
+      if (!mobile.matches) return false;
+      var scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (scrollTop <= 48) return false; // No sticky CTA before the visitor starts reading.
+      findCandidates();
+      return !candidates.some(isActuallyVisible);
     }
 
     function refresh() {
-      setSuppressed(candidates.some(isClearlyVisible));
+      var show = shouldReveal();
+      if (!show) {
+        if (revealTimer !== null) {
+          window.clearTimeout(revealTimer);
+          revealTimer = null;
+        }
+        setVisible(false); // Hide immediately whenever an in-page CTA appears.
+        return;
+      }
+      if (cta.style.visibility === 'visible' || revealTimer !== null) return;
+      // Small show-only delay prevents flicker at the edge of a CTA.
+      revealTimer = window.setTimeout(function () {
+        revealTimer = null;
+        if (shouldReveal()) setVisible(true);
+      }, 110);
     }
 
+    function scheduleRefresh() {
+      if (framePending) return;
+      framePending = true;
+      window.requestAnimationFrame(function () {
+        framePending = false;
+        refresh();
+      });
+    }
+
+    setVisible(false);
+    if ('IntersectionObserver' in window) {
+      observer = new window.IntersectionObserver(scheduleRefresh, {
+        threshold: [0, 0.05, 0.2, 0.5, 1]
+      });
+    }
+    findCandidates();
     refresh();
 
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(refresh, {
-        root: null,
-        rootMargin: '0px 0px -72px 0px',
-        threshold: [0, 0.55, 1]
-      });
-      candidates.forEach(function (link) { observer.observe(link); });
-    } else {
-      window.addEventListener('scroll', refresh, { passive: true });
+    window.addEventListener('scroll', scheduleRefresh, { passive: true });
+    window.addEventListener('resize', scheduleRefresh, { passive: true });
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', scheduleRefresh, { passive: true });
+      window.visualViewport.addEventListener('scroll', scheduleRefresh, { passive: true });
     }
+    if (mobile.addEventListener) mobile.addEventListener('change', scheduleRefresh);
+    if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', function () {
+      cta.style.transition = reducedMotion.matches ? 'none' : 'opacity 180ms ease, transform 180ms ease';
+    });
 
-    window.addEventListener('resize', refresh, { passive: true });
+    // If another site script inserts a CTA, treat it exactly like existing ones.
+    if (main && 'MutationObserver' in window) {
+      var mutations = new window.MutationObserver(scheduleRefresh);
+      mutations.observe(main, { childList: true, subtree: true });
+    }
   }
 
   function ensureMobileConsultationCTA() {
@@ -500,7 +584,7 @@
     // Never forward advertising identifiers or healthcare information to TherapyPortal.
     document.body.appendChild(cta);
     document.body.classList.add('sb-has-mobile-consultation-cta');
-    // Persistent and predictable: never dynamically suppress based on other CTAs.
+    syncMobileConsultationCTAVisibility(cta);
   }
 
   function init() {
