@@ -4,26 +4,32 @@ import {readFileSync} from "node:fs";
 
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 
-test("home hero keeps original booking, consultation, availability and clinician paths",()=>{
+test("homepage corrects the desktop hierarchy while retaining mobile options and existing pathways",()=>{
   for(const path of ["index.html","home-current.html"]){
     const html=read(path);
     assert.match(html,/A steadier place to/);
-    assert.match(html,/Request a Free Consultation/);
     assert.match(html,/See Available Appointments/);
-    assert.match(html,/Aetna &amp; BCBSIL — Plan and Clinician Eligibility Varies/);
-    assert.match(html,/Meet the Clinicians/);
     assert.match(html,/home-hero-room/);
-    assert.match(html,/Clinical depth\. Relational understanding\. Careful fit\./);
-    assert.match(html,/min-height:56px/);
+    assert.match(html,/Online psychotherapy in Illinois/);
+    assert.match(html,/Psychotherapy for adults, adolescents, couples, and families navigating anxiety, depression, trauma, substance use, and relationship difficulties\./);
+    assert.match(html,/home-hero-lede-default/);
+    assert.match(html,/home-consultation-label-mobile/);
+    assert.match(html,/home-consultation-label-desktop/);
+    assert.match(html,/Prefer to speak first\? Request a free consultation\./);
+    assert.match(html,/Aetna &amp; BCBSIL — Plan and Clinician Eligibility Varies/);
+    assert.match(html,/class="home-hero-facts"/);
+    assert.match(html,/body\.home-redesign \.home-hero \.home-hero-facts,\s*body\.home-redesign \.home-hero \.home-hero-support \{display:none\}/);
+    assert.match(html,/body\.home-redesign \.site-header\.sb-global-header \.header-cta \{display:none\}/);
+    assert.match(html,/sb-utility-strip--home-intro" aria-hidden="true"><\/div>/);
+    assert.match(html,/height:24px/);
     assert.match(html,/height:14px/);
-    assert.match(html,/sb-home-intro-rule/);
-    assert.match(html,/font-size:clamp\(\.8125rem,1\.1vw,\.875rem\)/);
-    assert.match(html,/\.home-hero-support a:focus-visible/);
-    const band=html.match(/<div class="sb-utility-strip sb-utility-strip--beige sb-utility-strip--home-intro">([\s\S]*?)<\/div>\s*<\/div>/);
-    assert.ok(band,"Dedicated editorial band missing");
-    assert.ok(!band[1].includes("Accepting new clients"),"Do not repeat hero availability in band");
+    assert.doesNotMatch(html,/Clinical depth\. Relational understanding\. Careful fit\./);
+    assert.doesNotMatch(html,/sb-home-intro-rule|sb-home-intro-statement/);
+    assert.match(html,/When something feels <span class="home-recognition-nowrap">difficult to change\.<\/span>/);
+    assert.match(html,/You do not need a diagnosis or perfect words before reaching out/);
   }
 });
+
 
 test("fees explainer retains cost disclosure but exactly one insurance jump link",()=>{
   const html=read("fees-insurance.html");
