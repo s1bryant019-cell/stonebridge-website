@@ -8,8 +8,8 @@ const HEADERS = {
   "X-Content-Type-Options": "nosniff"
 };
 
-function result(status, delivered) {
-  return new Response(JSON.stringify({ delivered }), { status, headers: HEADERS });
+function result(status, submitted) {
+  return new Response(JSON.stringify({ submitted }), { status, headers: HEADERS });
 }
 
 function optionalString(value, max) {
