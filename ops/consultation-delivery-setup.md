@@ -1,58 +1,54 @@
-# Consultation request delivery — required setup before production
+# Consultation request email delivery — current production setup
 
-The consultation form now POSTs to `/api/consultation-request` on the Stonebridge
-website. The endpoint is a Vercel Node function, not a browser-to-email or
-browser-to-vendor connection.
+The public consultation form on `contact.html` submits asynchronously to
+`/api/consultation-request`, implemented by `api/consultation-request.mjs`.
+Visitors stay on the site. There is **no mailto or copy-draft handoff**.
 
-## Healthcare and privacy gate
+## Current integration
 
-**Do not merge or activate this workflow until Stonebridge has approved the
-data processors and delivery destination.** The request can contain identifying
-information from a prospective psychotherapy client, even though the form does
-not solicit clinical details. Verify that the Vercel account has any required BAA
-and healthcare configuration, and select a secure intake provider under
-appropriate contractual/privacy arrangements. Ordinary unsecured email is not
-an acceptable default. Do not copy real submissions into issues, tests, analytics,
-error logs, or developer consoles.
+The Vercel production project already has the following server-side variables:
 
-The connected Vercel account did not provide access to project environment
-settings during implementation. No credentials were added to GitHub.
+- `RESEND_API_KEY`: Resend API credential.
+- `CONTACT_FROM_EMAIL`: configured sender.
+- `CONTACT_TO_EMAIL`: the Stonebridge recipient.
 
-## Provider configuration
+No `STONEBRIDGE_CONSULTATION_DELIVERY_URL` or
+`STONEBRIDGE_CONSULTATION_DELIVERY_TOKEN` is needed for this implementation.
+Do not reintroduce the unused external gateway requirement.
 
-Configure these **server-side only** Vercel environment variables:
+The server validates origin, JSON body size, field lengths, basic email format,
+a honeypot, and the supported `service` code. It submits a plain-text email
+to Resend over HTTPS containing the visitor's name, email, and any supplied
+administrative phone / contact / clinician / scheduling preferences. A group
+inquiry may indicate The Lobby. The server does not include Google click IDs,
+other URL parameters, clinical screening answers, or request body logs in the
+email. The email uses the prospective client's email in the `reply_to` field.
 
-- `STONEBRIDGE_CONSULTATION_DELIVERY_URL`: HTTPS URL of Stonebridge's approved
-  intake gateway (must be configured by Stonebridge, not a public analytics endpoint).
-- `STONEBRIDGE_CONSULTATION_DELIVERY_TOKEN`: secret bearer credential for that gateway.
+A successful Resend HTTP response with a nonempty email ID means the provider
+**accepted the email for sending**, not that the practice inbox delivered it.
+The API returns `{"submitted":true}` only after that acceptance. All failure
+paths return `{"submitted":false}` and a non-2xx status; the browser keeps the
+form visible for retry and never fires the Google Ads conversion on failure.
 
-The gateway receives a JSON POST with
-`type: "consultation-request"`, `fullName`, `email`, `phone`,
-`preferredContact`, `preferredClinician`, `availability`, and
-`attribution: { gclid, gbraid, wbraid }`. It must authenticate the request and
-deliver it to the agreed secure Stonebridge intake destination, not forward it
-to ad platforms. It must respond with JSON `{"delivered":true}` and HTTP 2xx
-**only when actual receipt has been confirmed**. A response indicating queued
-or accepted-for-processing is insufficient; other responses are treated as errors.
+## Production smoke test
 
-Do not direct this endpoint to a service whose only guarantee is enqueuing
-without a compatible confirmed-delivery acknowledgment. The gateway should
-implement spam controls, rate limiting, a deduplication/idempotency policy,
-restricted retention, and operational alerts without logging raw PII.
+October 27–28, 2026: from a network-enabled sandbox, the public
+`/contact.html` page returned HTTP 200; a synthetic POST to the production
+`/api/consultation-request` with the name "Test Website Submission" and
+address `consultation-test@example.com` returned HTTP 200 and
+`{"submitted":true}`. This confirms Resend API acceptance, not the final
+inbox disposition. Search the practice mailbox / Resend dashboard for the
+synthetic test notification when verifying inbox delivery.
 
-## Verification before release
+## Privacy and compliance boundary
 
-1. In a protected preview, send a fictitious request to the approved test
-   destination and verify the provider's receipt.
-2. Test HTTP 4xx/5xx, timeouts, and `{"accepted":true}` results. The visitor
-   must see an inline delivery error, never a success or Ads conversion.
-3. Confirm a valid response displays the on-page message and the Google Ads
-   conversion tag `AW-18474959338/oiH4CNOsuYYdEOqDxulE` fires once, with
-   `send_to` only and no form values or `user_data`.
-4. Verify one-column mobile layout, full-width button, keyboard navigation,
-   and collapsed optional preferences.
-5. Monitor provider outcomes and enable rate limiting/abuse protections
-   before accepting production traffic.
+Do not treat successful technical delivery as a HIPAA compliance determination.
+Resend's published security documentation states that Resend is not HIPAA
+compliant and does not sign a BAA. A name and email associated with a request
+to a psychotherapy provider can be identifiable health-related information.
+Stonebridge should confirm with its privacy/compliance advisor whether this
+workflow is appropriate and use a BAA-covered alternative if required.
 
-When variables are absent, the endpoint fails closed with HTTP 503 and never
-pretends that an inquiry was received.
+No clinical history or free-text clinical narrative should be added to this
+email workflow. Keep all secrets server-side. Do not put real submission
+content in logs, tickets, test fixtures, or advertising analytics.
