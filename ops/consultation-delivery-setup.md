@@ -1,4 +1,4 @@
-# Consultation request delivery — required setup before production
+> Status (October 27, 2026): The production consultation page has temporarily reverted to its previous browser-generated email draft workflow because secure on-site delivery could not be confirmed. The inactive server-side handler below is retained for future configuration. Do not reactivate it until the approved gateway has been configured and end-to-end delivery verified. Opening an email draft is not delivery, and must not generate a Google Ads conversion event.\n\n# Consultation request delivery — required setup before production
 
 The consultation form now POSTs to `/api/consultation-request` on the Stonebridge
 website. The endpoint is a Vercel Node function, not a browser-to-email or
