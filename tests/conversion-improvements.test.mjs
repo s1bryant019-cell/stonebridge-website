@@ -15,7 +15,9 @@ test("both homepage sources retain approved headline, paths and service scope", 
     assert.match(html, /Support for anxiety, depression, trauma, substance use/);
     assert.ok(html.includes('href="' + portal + '"'));
     assert.ok(html.includes('href="contact.html">Request a Free Consultation</a>'));
-    assert.ok(html.includes("Meet the Clinicians"));
+    assert.ok(html.includes("Meet Your Clinicians"));
+    assert.ok(html.includes("team.html"));
+    assert.match(html, /Prefer to speak first\? Request a free consultation\./);
     assert.match(html, /Aetna &amp; BCBSIL — Plan and Clinician Eligibility Varies/);
     assert.doesNotMatch(html, /home-founder home-founder-profile/);
   }
