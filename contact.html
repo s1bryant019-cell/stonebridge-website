@@ -1569,6 +1569,30 @@ body.contact-page .contact-optional-grid .contact-field-availability{
   body.contact-page #inquiry-form{scroll-margin-top:84px}
 }
 </style>
+<style id="stonebridge-consultation-copy-fallback">
+body.contact-page .contact-inline-action{
+  appearance:none;
+  background:none;
+  border:0;
+  padding:0;
+  color:var(--contact-navy);
+  font:inherit;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  cursor:pointer;
+}
+body.contact-page .contact-inline-action:focus-visible{
+  outline:3px solid var(--contact-navy);
+  outline-offset:3px;
+}
+body.contact-page #consultation-copy-result textarea{
+  display:block;
+  width:100%;
+  min-height:160px;
+  resize:vertical;
+}
+</style>
 </head>
 
 <body class="contact-page" data-static-hero-system="true">
@@ -1731,6 +1755,16 @@ body.contact-page .contact-optional-grid .contact-field-availability{
               </div>
             </div>
 
+            <p class="contact-brief-privacy" style="margin-top:10px!important">No email application opens? <button class="contact-inline-action" id="consultation-copy-button" type="button">Copy your prepared request</button> to paste into your own email application and send to Stonebridge.</p>
+            <div id="consultation-copy-result" hidden>
+              <p class="contact-brief-privacy">This request has not been sent. Paste the draft below into an email addressed to info@stonebridgepsychgroup.com and send it yourself. Do not include clinical details in ordinary email.</p>
+              <div class="contact-field" style="margin-top:10px">
+                <label for="consultation-copy-message">Prepared email request</label>
+                <textarea id="consultation-copy-message" rows="8" readonly></textarea>
+              </div>
+              <p class="contact-brief-privacy" id="consultation-copy-status" role="status" aria-live="polite"></p>
+            </div>
+
             <p style="margin-top:1rem">Prefer to contact us directly? Call <a href="tel:+17734171688">(773) 417-1688</a> or <a href="mailto:info@stonebridgepsychgroup.com?subject=Consultation%20request&body=Hello%20Stonebridge%2C%0A%0AI%20would%20like%20to%20request%20a%20brief%20consultation.%20Please%20reply%20to%20arrange%20a%20time.">open an email draft</a>. Ordinary email is not a secure clinical intake; please do not include clinical details. Opening a draft does not send it.</p>
           </div>
           <div class="contact-success" id="consultation-success" role="status" aria-live="polite" tabindex="-1" hidden>
@@ -1858,7 +1892,7 @@ body.contact-page .contact-optional-grid .contact-field-availability{
   </script>
 
   <script src="script.js?v=20261014access4"></script>
-  <script src="consultation-request.js?v=20261027maildraft1"></script>
+  <script src="consultation-request.js?v=20261027maildraft2"></script>
 
 </body>
 </html>
