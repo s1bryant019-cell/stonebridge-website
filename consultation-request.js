@@ -166,7 +166,7 @@
         })
       });
       var receipt=await response.json();
-      if(!response.ok || receipt.delivered!==true) throw new Error("Unconfirmed delivery");
+      if(!response.ok || receipt.submitted!==true) throw new Error("Unconfirmed delivery");
 
       completed=true;
       content.hidden=true;
