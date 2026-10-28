@@ -686,6 +686,18 @@
       .clinician-details h3{
         font-size:clamp(2rem,9vw,2.6rem);
       }
+
+      /* Stack only Careers trainee notes on phones so copy has a readable measure. */
+      .careers-page .team-growth-note,
+      .careers-page .team-professional-note{
+        grid-template-columns:minmax(0,1fr)!important;
+        gap:14px;
+      }
+
+      .careers-page .team-professional-link{
+        white-space:normal;
+        overflow-wrap:break-word;
+      }
     }
   
     .team-careers-path{
