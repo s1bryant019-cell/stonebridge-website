@@ -5,6 +5,7 @@ on:
       - fix/home-perspective-desktop-text-width-20261028
     paths:
       - .github/workflows/perspective-width-qa.yml
+      - index.html
   workflow_dispatch:
 permissions:
   contents: read
