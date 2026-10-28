@@ -40,7 +40,7 @@ test("only selected generic interior beige bands become decorative",()=>{
     const html=read(page);
     assert.match(html,/<div class="sb-utility-strip sb-utility-strip--beige sb-utility-strip--quiet-transition" aria-hidden="true"><\/div>/);
     assert.doesNotMatch(html,/<section class="sb-utility-strip sb-utility-strip--beige"/);
-    assert.match(html,/stonebridge-beige-refinement\\.css\\?v=20261028quietband1/);
+    assert.match(html,/stonebridge-beige-refinement\.css\?v=20261028quietband1/);
   }
   const styles=read("stonebridge-beige-refinement.css");
   assert.match(styles,/\.sb-utility-strip\.sb-utility-strip--quiet-transition::after/);
