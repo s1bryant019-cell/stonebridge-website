@@ -1,0 +1,66 @@
+name: Validate homepage WebP sources and visual crop
+on:
+  push:
+    branches:
+      - perf/homepage-service-cards-webp-20261028
+    paths:
+      - .github/workflows/homepage-webp-render-qa.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save --no-package-lock --no-audit --no-fund puppeteer-core@24
+      - name: Load all five service images with WebP at 390px and 1440px
+        run: |
+          export CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium)"
+          test -x "$CHROME_BIN"
+          node --input-type=module <<'NODE'
+          import puppeteer from 'puppeteer-core';
+          import fs from 'node:fs';
+          import http from 'node:http';
+          import path from 'node:path';
+          fs.mkdirSync('homepage-webp-check',{recursive:true});
+          const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.svg':'image/svg+xml'};
+          const server=http.createServer((req,res)=>{
+            const rel=decodeURIComponent(new URL(req.url,'http://localhost').pathname).replace(/^\/+/, '')||'index.html';
+            const file=path.resolve('.',rel);
+            if(!file.startsWith(process.cwd()+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404);res.end();return;}
+            res.setHeader('Content-Type',mime[path.extname(file)]||'application/octet-stream');
+            fs.createReadStream(file).pipe(res);
+          });
+          await new Promise(r=>server.listen(0,'127.0.0.1',r));
+          const browser=await puppeteer.launch({executablePath:process.env.CHROME_BIN,headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+          let bad=false;
+          for(const width of [390,1440]){
+            const page=await browser.newPage();
+            await page.setViewport({width,height:900,deviceScaleFactor:width===390?2:1,isMobile:width===390,hasTouch:width===390});
+            const errors=[];page.on('pageerror',e=>errors.push(e.message));
+            await page.goto('http://127.0.0.1:'+server.address().port+'/index.html',{waitUntil:'domcontentloaded'});
+            await page.evaluate(()=>document.fonts.ready);
+            const res=await page.evaluate(async()=>{
+              const images=[...document.querySelectorAll('.home-services-grid .home-service-media picture img')];
+              for(const img of images){img.scrollIntoView();await img.decode().catch(()=>{});}
+              return {overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
+                images:images.map(img=>({src:img.currentSrc.split('/').pop(),fallback:img.getAttribute('src'),naturalWidth:img.naturalWidth,fit:getComputedStyle(img).objectFit,rect:img.getBoundingClientRect().width}))};
+            });
+            await page.screenshot({path:'homepage-webp-check/home-'+width+'.png',fullPage:true});
+            console.log('VIEWPORT',width,JSON.stringify(res),'errors',errors);
+            if(res.images.length!==5||res.images.some(i=>!i.src.endsWith('.webp')||!i.naturalWidth||i.fit!=='cover'||i.rect<80||!i.fallback.endsWith('.png'))||res.overflow>1||errors.length)bad=true;
+            await page.close();
+          }
+          await browser.close();await new Promise(r=>server.close(r));if(bad)process.exitCode=1;
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: homepage-webp-390-1440-render
+          path: homepage-webp-check/
+          if-no-files-found: warn
