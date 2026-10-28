@@ -1569,30 +1569,6 @@ body.contact-page .contact-optional-grid .contact-field-availability{
   body.contact-page #inquiry-form{scroll-margin-top:84px}
 }
 </style>
-<style id="stonebridge-consultation-copy-fallback">
-body.contact-page .contact-inline-action{
-  appearance:none;
-  background:none;
-  border:0;
-  padding:0;
-  color:var(--contact-navy);
-  font:inherit;
-  font-weight:700;
-  text-decoration:underline;
-  text-underline-offset:2px;
-  cursor:pointer;
-}
-body.contact-page .contact-inline-action:focus-visible{
-  outline:3px solid var(--contact-navy);
-  outline-offset:3px;
-}
-body.contact-page #consultation-copy-result textarea{
-  display:block;
-  width:100%;
-  min-height:160px;
-  resize:vertical;
-}
-</style>
 </head>
 
 <body class="contact-page" data-static-hero-system="true">
@@ -1672,7 +1648,7 @@ body.contact-page #consultation-copy-result textarea{
             <div class="contact-form-head">
               <div class="form-eyebrow">Consultation request</div>
               <h2 id="consultation-request-title">Reach out to schedule a brief conversation.</h2>
-              <p>Complete your contact details to prepare an email to Stonebridge. Your email application will open, where you must review and send the message. Please do not include clinical details here.</p>
+              <p>Send Stonebridge your contact information and we’ll follow up to arrange the consultation. Please do not include clinical details here.</p>
               <p class="contact-required-note"><span><span aria-hidden="true">*</span> Required</span></p>
             </div>
 
@@ -1680,7 +1656,6 @@ body.contact-page #consultation-copy-result textarea{
               <h3>Review the highlighted fields.</h3>
               <ul id="consultation-error-list"></ul>
             </div>
-            <p class="contact-brief-privacy" id="consultation-delivery-fallback" hidden>The website could not confirm receipt of your request. As another option, <a href="mailto:info@stonebridgepsychgroup.com?subject=Consultation%20request&body=Hello%20Stonebridge%2C%0A%0AI%20would%20like%20to%20request%20a%20brief%20consultation.%20Please%20reply%20to%20arrange%20a%20time.">open an email draft</a> in your own email app, then review and send it yourself, or call <a href="tel:+17734171688">(773) 417-1688</a>. Please do not include clinical details in ordinary email.</p>
 
             <div class="contact-form-grid contact-form-grid--compact">
               <div class="contact-field">
@@ -1746,26 +1721,16 @@ body.contact-page #consultation-copy-result textarea{
               <input id="consultation-website" type="text" name="website" tabindex="-1" autocomplete="off">
             </div>
 
-            <p class="contact-brief-privacy">This form prepares an email draft in your own email application; it does not submit information to the Stonebridge website. Review and send the draft yourself. Ordinary email is not a secure clinical intake channel; please do not include clinical details. <a href="privacy-information.html">Privacy &amp; Information Use</a>.</p>
+            <p class="contact-brief-privacy">Your contact information and any optional preferences are submitted securely to Stonebridge for consultation follow-up. Please do not include clinical details. <a href="privacy-information.html">Privacy &amp; Information Use</a>.</p>
 
             <div class="contact-form-footer">
               <p class="contact-crisis-guidance">Stonebridge is not an emergency or crisis service. If you are experiencing a medical or psychiatric emergency, believe you may harm yourself or someone else, or feel unable to remain safe, call 911, go to the nearest emergency department, call or text 988, or use local crisis services.</p>
               <div class="contact-form-submit">
-                <button class="btn btn-primary" id="consultation-submit-button" type="submit">Open Email Draft</button>
+                <button class="btn btn-primary" id="consultation-submit-button" type="submit">Send Consultation Request</button>
               </div>
             </div>
 
-            <p class="contact-brief-privacy" style="margin-top:10px!important">No email application opens? <button class="contact-inline-action" id="consultation-copy-button" type="button">Copy your prepared request</button> to paste into your own email application and send to Stonebridge.</p>
-            <div id="consultation-copy-result" hidden>
-              <p class="contact-brief-privacy">This request has not been sent. Paste the draft below into an email addressed to info@stonebridgepsychgroup.com and send it yourself. Do not include clinical details in ordinary email.</p>
-              <div class="contact-field" style="margin-top:10px">
-                <label for="consultation-copy-message">Prepared email request</label>
-                <textarea id="consultation-copy-message" rows="8" readonly></textarea>
-              </div>
-              <p class="contact-brief-privacy" id="consultation-copy-status" role="status" aria-live="polite"></p>
-            </div>
-
-            <p style="margin-top:1rem">Prefer to contact us directly? Call <a href="tel:+17734171688">(773) 417-1688</a> or <a href="mailto:info@stonebridgepsychgroup.com?subject=Consultation%20request&body=Hello%20Stonebridge%2C%0A%0AI%20would%20like%20to%20request%20a%20brief%20consultation.%20Please%20reply%20to%20arrange%20a%20time.">open an email draft</a>. Ordinary email is not a secure clinical intake; please do not include clinical details. Opening a draft does not send it.</p>
+            <p style="margin-top:1rem">Prefer to call? <a href="tel:+17734171688">(773) 417-1688</a></p>
           </div>
           <div class="contact-success" id="consultation-success" role="status" aria-live="polite" tabindex="-1" hidden>
             <h2>Request received.</h2>
@@ -1892,7 +1857,7 @@ body.contact-page #consultation-copy-result textarea{
   </script>
 
   <script src="script.js?v=20261014access4"></script>
-  <script src="consultation-request.js?v=20261027maildraft2"></script>
+  <script src="consultation-request.js?v=20261019lobby1"></script>
 
 </body>
 </html>
