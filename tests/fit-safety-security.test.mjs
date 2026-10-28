@@ -77,11 +77,12 @@ test("consultation page has a non-clinical contact form with no Vercel submissio
   assert.doesNotMatch(contactHtml, /name="reason"|name="dateOfBirth"|name="insurancePreference"|\/api\/contact/i);
 });
 
-test("consultation opens a manual email draft without false conversions or website PII submissions", () => {
-  assert.ok(consultationJs.includes("mailto:info@stonebridgepsychgroup.com"));
-  for (const forbidden of ["fetch(", "gtag(", "googletagmanager", "/api/consultation-request"]) {
-    assert.ok(!consultationJs.includes(forbidden), "unexpected submission or tracking code: " + forbidden);
-  }
+test("consultation form restores the existing Google Ads conversion action", () => {
+  assert.match(consultationJs, /AW-18474959338/);
+  assert.match(consultationJs, /AW-18474959338\/oiH4CNOsuYYdEOqDxulE/);
+  assert.match(consultationJs, /gtag\("event","conversion"/);
+  assert.match(consultationJs, /allow_ad_personalization_signals",false/);
+  assert.doesNotMatch(consultationJs, /fullName.*gtag|email.*gtag|phone.*gtag|clinician.*gtag/is);
 });
 
 test("Google click IDs may continue to consultation but not the sensitive Fit & Safety screen", () => {
