@@ -179,7 +179,7 @@
     document.querySelectorAll(
       '.portrait-frame img, img[src*="practitioner-headshot-sbryant"], img[src*="founder-headshot"]'
     ).forEach(function (img) {
-      forceImage(img, headshotSrc, 'Dr. Stephen W. Bryant, PsyD, LCPC');
+      forceImage(img, headshotSrc, 'Dr. Stephen W. Bryant, PsyD, LCPC, CCTP-I');
     });
 
     document.querySelectorAll('.home-founder-media img').forEach(function (img) {
