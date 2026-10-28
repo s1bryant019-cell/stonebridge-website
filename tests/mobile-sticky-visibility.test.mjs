@@ -147,8 +147,8 @@ test("on pages without a top CTA, the sticky action appears only after initial s
 
 test("hidden, collapsed or menu appointment links do not suppress the sticky shortcut", () => {
   const h = harness(390, { path: "/team-founder.html" });
-  h.scroll(800, { heroTop: 200, finalTop: 2000 });
   h.heroLink.cssDisplay = "none";
+  h.scroll(800, { heroTop: 200, finalTop: 2000 });
   h.tick();
   assert.equal(h.visible(), true, "display-none link excluded");
   h.heroLink.cssDisplay = "block";
