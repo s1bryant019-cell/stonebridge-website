@@ -1,0 +1,38 @@
+name: Full-site visual consistency audit (390px and 1440px)
+
+on:
+  pull_request:
+    paths:
+      - 'ops/capture-sitewide-consistency.mjs'
+      - 'ops/visual-consistency-findings-20261028.md'
+      - '.github/workflows/full-site-visual-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    name: 21 sitemap pages plus 4 direct-access pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install screenshot tooling without changing package files
+        run: npm install --no-save --no-audit --no-fund --no-package-lock puppeteer-core@24
+      - name: Capture both viewports, full pages, header/hero and footer, with measured comparisons
+        run: |
+          export CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium)"
+          test -x "$CHROME_BIN"
+          node ops/capture-sitewide-consistency.mjs
+      - name: Upload complete report and screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stonebridge-visual-consistency-390-and-1440
+          path: visual-consistency-audit/
+          if-no-files-found: error
+          retention-days: 60
