@@ -687,15 +687,16 @@
         font-size:clamp(2rem,9vw,2.6rem);
       }
 
-      /* Keep the student-consultation link within the Careers mobile gutter. */
-      .careers-page .team-professional-note p{
-        min-width:0;
-        overflow-wrap:anywhere;
+      /* Stack only Careers trainee notes on phones so copy has a readable measure. */
+      .careers-page .team-growth-note,
+      .careers-page .team-professional-note{
+        grid-template-columns:minmax(0,1fr)!important;
+        gap:14px;
       }
 
       .careers-page .team-professional-link{
         white-space:normal;
-        overflow-wrap:anywhere;
+        overflow-wrap:break-word;
       }
     }
   
