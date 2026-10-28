@@ -94,7 +94,7 @@ test("Google click IDs may continue to consultation but not the sensitive Fit & 
 });
 
 test("new-client page offers the voluntary consultation route", () => {
-  assert.match(newClientsHtml, /href="contact\.html#inquiry-form"/);
+  assert.match(newClientsHtml, /href="contact\.html">Request a Free Consultation/);
 });
 
 test("sensitive screen retains no-store, no-referrer, and noindex headers", () => {

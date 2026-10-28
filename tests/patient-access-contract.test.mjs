@@ -92,7 +92,7 @@ test("general patient pages link directly to available appointments, preserving 
     assert.ok(!html.includes('href="' + PORTAL + '"'), `unexpected general portal link in ${page}`);
     assert.doesNotMatch(html, /href="fit-safety-check\.html"/);
   }
-  assert.match(read("new-clients.html"), /href="contact\.html#inquiry-form"/);
+  assert.ok(read("new-clients.html").includes('href="contact.html">Request a Free Consultation'));
   assert.match(read("portal.html"), /href="https:\/\/www\.therapyportal\.com\/p\/stonebridge60634\/"/);
   assert.match(read("group-therapy.html"), /Request a Group Consultation/);
 });

@@ -62,7 +62,7 @@ test("phone New Clients page puts direct appointments ahead of the retained cris
   assert.match(page, /Emergency or crisis care:/);
   assert.ok(page.includes('href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/"'));
   assert.match(page, /See Available Appointments/);
-  assert.match(page, /href="contact\.html#inquiry-form"/);
+  assert.match(page, /href="contact\.html">Request a Free Consultation/);
   assert.doesNotMatch(page, /href="fit-safety-check\.html"/);
 });
 test("phone Brief Check keeps urgent-help and privacy text above the untouched form", () => {
