@@ -47,8 +47,8 @@ async function visit(server,pathname,width,variant,capture) {
     secondaryUnderline:getComputedStyle(document.querySelector(".home-hero-actions .home-hero-action--secondary")).textDecorationLine,
     heroFactsDisplay:facts&&getComputedStyle(facts).display,
     meetDisplay:getComputedStyle(document.querySelector(".home-hero-support")).display,
-    mobileConsultationLabel:getComputedStyle(document.querySelector(".home-consultation-label-mobile")).display,
-    desktopConsultationLabel:getComputedStyle(document.querySelector(".home-consultation-label-desktop")).display,
+    mobileConsultationLabel:document.querySelector(".home-consultation-label-mobile")?getComputedStyle(document.querySelector(".home-consultation-label-mobile")).display:null,
+    desktopConsultationLabel:document.querySelector(".home-consultation-label-desktop")?getComputedStyle(document.querySelector(".home-consultation-label-desktop")).display:null,
     description:document.querySelector(".home-hero-lede")?.innerText?.trim()
    };
   });
