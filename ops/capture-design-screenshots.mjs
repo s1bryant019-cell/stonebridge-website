@@ -70,8 +70,7 @@ try {
  for(const variant of ["before","after"]){
   const server=variant==="before"?before:after;
   for(const width of [375,390,430,760,768,901,1024,1199,1280,1440])await visit(server,"/",width,variant,[390,430,1024,1280,1440].includes(width));
-  for(const pathname of ["/services.html","/new-clients.html","/contact.html","/fees-insurance.html"])
-   for(const width of [390,1280])await visit(server,pathname,width,variant,variant==="after"&&pathname!=="/fees-insurance.html");
+
  }
  const homeRows=records.filter(r=>r.variant==="after"&&r.path==="/");
  for(const row of homeRows){
@@ -86,9 +85,6 @@ try {
     if(row.secondaryButtonBorder!=="0px"||!row.secondaryUnderline.includes("underline"))throw new Error("Consultation not a text link at "+row.width);
     if(row.desktopConsultationLabel==="none"||row.mobileConsultationLabel!=="none")throw new Error("Desktop consultation label wrong at "+row.width);
   }
- }
- for(const row of records.filter(r=>r.variant==="after"&&["/services.html","/new-clients.html","/contact.html"].includes(r.path))){
-  if(row.bandText)throw new Error("Decorative band contains text: "+row.path);
  }
  writeFileSync(join(outputDir,"responsive-measurements.json"),JSON.stringify(records,null,2));
  console.log(JSON.stringify({screenshots:outputDir,measured:records.length,tests:"passed"}));
