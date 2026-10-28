@@ -8,6 +8,12 @@ const html = readFileSync(new URL("../contact.html", import.meta.url), "utf8");
 
 function setup(group = false) {
   let submitHandler;
+  let copyHandler;
+  const copied=[];
+  const copyButton={addEventListener(type,fn){if(type==="click")copyHandler=fn;}};
+  const copyResult={hidden:true};
+  const copyMessage={value:"",focus(){this.focused=true;},select(){this.selected=true;}};
+  const copyStatus={textContent:""};
   const errors=[];
   const summaryHeading={textContent:""};
   const summary={hidden:true,querySelector(){return summaryHeading;},focus(){this.focused=true;}};
@@ -26,6 +32,10 @@ function setup(group = false) {
     "consultation-request-form":form,
     "consultation-error-summary":summary,
     "consultation-error-list":list,
+    "consultation-copy-button":copyButton,
+    "consultation-copy-result":copyResult,
+    "consultation-copy-message":copyMessage,
+    "consultation-copy-status":copyStatus,
     "contact-page-title":{textContent:"Schedule a consultation"},
     "consultation-request-title":{textContent:"Reach out to schedule a brief conversation."},
     "consultation-hero-intro":{textContent:""},
@@ -40,8 +50,14 @@ function setup(group = false) {
     search: group ? "?service=teen-group&gclid=test-click" : "?gclid=test-click",
     origin:"https://stonebridgepsychgroup.com",pathname:"/contact.html"
   }};
-  runInNewContext(script,{document,window,URLSearchParams,encodeURIComponent});
-  return {submit(){submitHandler({preventDefault(){}});},window,elements,summary,errors};
+  const navigator={clipboard:{writeText:async function(text){copied.push(text);}}};
+  runInNewContext(script,{document,window,navigator,URLSearchParams,encodeURIComponent});
+  return {
+    submit(){submitHandler({preventDefault(){}});},
+    copy(){return copyHandler();},
+    copyResult,copyMessage,copyStatus,copied,
+    window,elements,summary,errors
+  };
 }
 
 test("valid consultation opens an addressed email draft without contacting a server",()=>{
@@ -83,4 +99,29 @@ test("draft is explicitly manual, not a confirmed website submission",()=>{
   assert.match(html,/Review and send the draft yourself/);
   assert.match(html,/Ordinary email is not a secure clinical intake channel/);
   assert.doesNotMatch(script,/fetch\s*\(|gtag\s*\(|googletagmanager|\/api\/consultation-request/);
+});
+
+test("copied consultation is a manual unsent draft and does not navigate or post data",async()=>{
+  const ui=setup();
+  await ui.copy();
+  assert.equal(ui.copyResult.hidden,false);
+  assert.equal(ui.copyMessage.focused,true);
+  assert.equal(ui.copyMessage.selected,true);
+  assert.match(ui.copyMessage.value,/To: info@stonebridgepsychgroup.com/);
+  assert.match(ui.copyMessage.value,/Name: Example Person/);
+  assert.match(ui.copyMessage.value,/Email: example@example.test/);
+  assert.equal(ui.copied[0],ui.copyMessage.value);
+  assert.match(ui.copyStatus.textContent,/Draft copied/);
+  assert.equal(ui.window.location.href,"https://stonebridgepsychgroup.com/contact.html");
+  assert.ok(!ui.copyMessage.value.includes("gclid"));
+});
+
+test("invalid consultation details cannot be copied as a ready request",async()=>{
+  const ui=setup();
+  ui.elements["consultation-email"].value="invalid";
+  await ui.copy();
+  assert.equal(ui.copyResult.hidden,true);
+  assert.equal(ui.copyMessage.value,"");
+  assert.equal(ui.copied.length,0);
+  assert.equal(ui.summary.hidden,false);
 });
