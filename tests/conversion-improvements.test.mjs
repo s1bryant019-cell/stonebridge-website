@@ -71,7 +71,8 @@ test("supporting pages distinguish pending appointments from consultation follow
   assert.ok(services.includes('href="contact.html">Request a Free Consultation</a>'));
   const fees = file("fees-insurance.html");
   assert.match(fees, /What Will Therapy Cost\?/);
-  assert.ok(fees.includes('href="#payment-options">View Accepted Insurance and Fees</a>'));
+  assert.ok(fees.includes('href="#payment-options">Review Accepted Insurance</a>'));
+  assert.ok(!fees.includes('href="#payment-options">View Accepted Insurance and Fees</a>'));
 });
 
 test("consultation delivery code is exactly unchanged by conversion project", () => {
