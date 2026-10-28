@@ -455,8 +455,7 @@
         // Exact existing booking destination. Include the named-clinician rail
         // buttons but never the header, mobile menu or sticky link itself.
         if (link === cta || link.closest('header, nav, footer, .sb-mobile-consultation-cta')) return false;
-        if (link.href !== appointmentUrl) return false;
-        return /appointment/i.test(link.textContent || '');
+        return link.href === appointmentUrl;
       }) : [];
 
       if (observer) {
