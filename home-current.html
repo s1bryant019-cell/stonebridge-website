@@ -146,7 +146,7 @@
   font-weight:600;
   line-height:1;
   text-align:center;
-  text-decoration:none!important;
+  text-decoration:none;
   transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
 }
 .home-hero-action--primary{
@@ -161,7 +161,7 @@
 .home-hero-action--secondary{
   background:transparent;
   border-color:rgba(16,47,77,.34);
-  color:var(--home-ink)!important;
+  color:var(--home-ink);
 }
 .home-hero-action--secondary:hover{
   background:rgba(16,47,77,.05);
@@ -485,73 +485,56 @@
  .home-steps-grid{gap:12px}.home-step-card{padding:18px}
 }
 </style>
-  <style id="stonebridge-home-editorial-transition-20261028">
-    /* Exactly one editorial band below the home hero, with a compact
-       purely decorative beige transition on mobile. */
+  <style id="stonebridge-home-quiet-transition-20261028">
+    /* Reuse the existing beige transition without another marketing message. */
     body.home-redesign .sb-utility-strip--home-intro {
-      min-height:56px;
-      padding:8px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display:block;
+      height:24px;
+      min-height:24px;
+      padding:0;
       background:#eee6dc;
-      border-top:1px solid rgba(163,138,103,.20);
-      border-bottom:1px solid rgba(163,138,103,.20);
+      border-top:1px solid rgba(163,138,103,.16);
+      border-bottom:1px solid rgba(163,138,103,.16);
     }
-    body.home-redesign .sb-utility-strip--home-intro .sb-utility-strip__inner {
-      display:flex;
-      width:auto;
-      min-height:0;
-      flex-wrap:nowrap;
-      justify-content:center;
-      gap:20px;
-    }
-    body.home-redesign .sb-utility-strip--home-intro .sb-home-intro-statement {
-      margin:0;
-      color:#102f4d;
-      font-family:"EB Garamond",Georgia,serif;
-      font-size:clamp(1.05rem,1.65vw,1.28rem);
-      font-weight:600;
-      line-height:1.3;
-      letter-spacing:.015em;
-      text-align:center;
-    }
-    body.home-redesign .sb-utility-strip--home-intro .sb-home-intro-rule {
-      flex:0 0 30px;
-      width:30px;
-      height:1px;
-      background:#b29969;
-      opacity:.85;
-    }
-    body.home-redesign .home-hero .home-hero-facts {
-      color:rgba(255,250,242,.94);
-      font-size:clamp(.8125rem,1.1vw,.875rem);
-      line-height:1.5;
-    }
-    body.home-redesign .home-hero .home-hero-support a {
-      color:#fffaf2;
-      font-weight:600;
-      text-decoration:underline;
-      text-decoration-color:#d1b47a;
-      text-decoration-thickness:1px;
-      text-underline-offset:4px;
-    }
-    body.home-redesign .home-hero .home-hero-support a:focus-visible {
-      outline:2px solid #d1b47a;
-      outline-offset:4px;
+    .home-hero .home-consultation-label-desktop {display:none}
+    body.home-redesign .home-hero-lede-desktop{display:none}
+    @media(min-width:761px) {
+      body.home-redesign .home-hero-lede-default{display:none}
+      body.home-redesign .home-hero-lede-desktop{display:inline}
+      /* One booking action in the hero, never a second filled header button. */
+      body.home-redesign .site-header.sb-global-header .header-cta {display:none}
+      body.home-redesign .home-hero .home-hero-facts,
+      body.home-redesign .home-hero .home-hero-support {display:none}
+      .home-hero .home-consultation-label-mobile {display:none}
+      .home-hero .home-consultation-label-desktop {display:inline}
+      body.home-redesign .home-hero-actions {gap:22px}
+      body.home-redesign .home-hero .home-hero-action--secondary {
+        min-width:0;
+        min-height:0;
+        width:auto;
+        padding:0;
+        border:0;
+        border-radius:0;
+        background:transparent;
+        box-shadow:none;
+        color:#fffaf2;
+        font-size:.88rem;
+        font-weight:500;
+        line-height:1.5;
+        text-decoration:underline;
+        text-decoration-color:#d1b47a;
+        text-underline-offset:4px;
+      }
+      body.home-redesign .home-hero .home-hero-action--secondary:hover {
+        background:transparent;
+        border-color:transparent;
+        text-decoration-color:#fffaf2;
+      }
     }
     @media(max-width:760px) {
       body.home-redesign .sb-utility-strip--home-intro {
-        display:block;
         height:14px;
         min-height:14px;
-        padding:0;
-      }
-      body.home-redesign .sb-utility-strip--home-intro .sb-utility-strip__inner {
-        display:none!important;
-      }
-      body.home-redesign .home-hero .home-hero-facts {
-        font-size:.8125rem;
       }
     }
   </style>
@@ -586,10 +569,10 @@
           <div class="home-hero-rule"></div>
           <p class="home-eyebrow">Online psychotherapy in Illinois</p>
           <h1 id="home-hero-title"><span class="home-hero-line">A steadier place to</span> <span class="home-hero-line">begin therapy.</span></h1>
-          <p class="home-hero-lede">Online psychotherapy for adults, adolescents, couples, and families throughout Illinois. Support for anxiety, depression, trauma, substance use, relationship difficulties, and patterns that feel difficult to change.</p>
+          <p class="home-hero-lede"><span class="home-hero-lede-default">Online psychotherapy for adults, adolescents, couples, and families throughout Illinois. Support for anxiety, depression, trauma, substance use, relationship difficulties, and patterns that feel difficult to change.</span><span class="home-hero-lede-desktop">Psychotherapy for adults, adolescents, couples, and families navigating anxiety, depression, trauma, substance use, and relationship difficulties.</span></p>
           <div class="home-hero-actions">
             <a class="home-hero-action home-hero-action--primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a>
-            <a class="home-hero-action home-hero-action--secondary" href="contact.html">Request a Free Consultation</a>
+            <a class="home-hero-action home-hero-action--secondary" href="contact.html"><span class="home-consultation-label-mobile">Request a Free Consultation</span><span class="home-consultation-label-desktop">Prefer to speak first? Request a free consultation.</span></a>
           </div>
           <p class="home-hero-support"><a href="team.html#clinicians">Meet the Clinicians</a></p>
           <ul class="home-hero-facts" aria-label="Practice information">
@@ -610,19 +593,13 @@
     </section>
 
     <template class="home-trust" aria-hidden="true"></template>
-    <div class="sb-utility-strip sb-utility-strip--beige sb-utility-strip--home-intro">
-      <div class="sb-utility-strip__inner">
-        <span class="sb-home-intro-rule" aria-hidden="true"></span>
-        <p class="sb-home-intro-statement">Clinical depth. Relational understanding. Careful fit.</p>
-        <span class="sb-home-intro-rule" aria-hidden="true"></span>
-      </div>
-    </div>
+    <div class="sb-utility-strip sb-utility-strip--beige sb-utility-strip--home-intro" aria-hidden="true"></div>
 
     <section class="home-recognition" aria-labelledby="recognition-title">
       <div class="home-container">
         <div class="home-section-intro">
           <div class="home-recognition-accent" aria-hidden="true"></div>
-          <h2 class="home-section-title" id="recognition-title">You may be here because something feels <span class="home-recognition-nowrap">difficult to change.</span></h2>
+          <h2 class="home-section-title" id="recognition-title">When something feels <span class="home-recognition-nowrap">difficult to change.</span></h2>
           <p>You do not need a diagnosis or perfect words before reaching out.</p>
         </div>
 
