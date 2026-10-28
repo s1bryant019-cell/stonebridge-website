@@ -1,0 +1,53 @@
+name: Design visual review screenshots
+
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'home-current.html'
+      - 'fees-insurance.html'
+      - 'services.html'
+      - 'new-clients.html'
+      - 'contact.html'
+      - 'stonebridge-beige-refinement.css'
+      - 'ops/capture-design-screenshots.mjs'
+      - '.github/workflows/design-visual-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    name: Baseline and revised Chrome screenshots
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependency without modifying lockfiles
+        run: npm install --no-audit --no-fund --no-save --no-package-lock puppeteer-core@24
+      - name: Restore verified baseline into separate directory
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/stonebridge-baseline"
+          git archive be31899ad128a9117d4f801e4e89d3149a77b172 | tar -x -C "$RUNNER_TEMP/stonebridge-baseline"
+      - name: Capture before and after screenshots and responsive metrics
+        env:
+          STONEBRIDGE_BASELINE_DIR: ${{ runner.temp }}/stonebridge-baseline
+        shell: bash
+        run: |
+          export CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium)"
+          test -x "$CHROME_BIN"
+          node ops/capture-design-screenshots.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stonebridge-design-before-after
+          path: visual-review-screenshots/
+          if-no-files-found: warn
+          retention-days: 30
