@@ -93,7 +93,7 @@
       "Best times to reach me: "+(availability||"Not provided"),
       "",
       "Please contact me to arrange a consultation."
-    ].join("\\n");
+    ].join("\n");
 
     // Do not include marketing identifiers, clinical data, or conversion events.
     // Opening a mail draft does not prove the visitor sent it.
