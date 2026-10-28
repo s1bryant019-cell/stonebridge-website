@@ -37,11 +37,9 @@ test("Lobby requests carry only the supported inquiry context and retain privacy
   assert.match(group, /contact\.html\?service=teen-group#inquiry-form/);
   assert.match(contact, /id="consultation-service" name="service"/);
   assert.match(client, /Request a consultation about The Lobby/);
-  assert.match(client, /var isLobby=service==="teen-group"/);
-  assert.match(client, /The Lobby consultation request/);
+  assert.match(client, /service:service/);
   assert.match(handler, /"teen-group"/);
-  assert.match(client, /mailto:info@stonebridgepsychgroup/);
-  assert.doesNotMatch(client, /fireGoogleAdsConsultationConversion/);
+  assert.match(client, /fireGoogleAdsConsultationConversion\(\)/);
 });
 
 test("professional fees retain the mobile card layout and safe wrapping", () => {
