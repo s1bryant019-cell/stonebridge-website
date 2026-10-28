@@ -781,7 +781,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
 @media(max-width:760px){
  .home-clinicians-grid,.home-steps-grid{grid-template-columns:1fr}
  .home-clinician-card>img{height:245px}
- .home-hero .home-hero-facts{font-size:.73rem}
+ .home-hero .home-hero-facts{font-size:.8125rem}
  .home-final .home-final-actions{flex-direction:column;align-items:stretch}
  .home-final .home-final-actions a{text-align:center}
 }
@@ -789,10 +789,73 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
  .home-steps-grid{gap:12px}.home-step-card{padding:18px}
 }
 </style>
-  <style id="stonebridge-home-mobile-duplicate-utility-strip-20261028">
-    @media (max-width: 760px) {
+  <style id="stonebridge-home-editorial-transition-20261028">
+    /* Exactly one editorial band below the home hero, with a compact
+       purely decorative beige transition on mobile. */
+    body.home-redesign .sb-utility-strip--home-intro {
+      min-height:56px;
+      padding:8px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#eee6dc;
+      border-top:1px solid rgba(163,138,103,.20);
+      border-bottom:1px solid rgba(163,138,103,.20);
+    }
+    body.home-redesign .sb-utility-strip--home-intro .sb-utility-strip__inner {
+      display:flex;
+      width:auto;
+      min-height:0;
+      flex-wrap:nowrap;
+      justify-content:center;
+      gap:20px;
+    }
+    body.home-redesign .sb-utility-strip--home-intro .sb-home-intro-statement {
+      margin:0;
+      color:#102f4d;
+      font-family:"EB Garamond",Georgia,serif;
+      font-size:clamp(1.05rem,1.65vw,1.28rem);
+      font-weight:600;
+      line-height:1.3;
+      letter-spacing:.015em;
+      text-align:center;
+    }
+    body.home-redesign .sb-utility-strip--home-intro .sb-home-intro-rule {
+      flex:0 0 30px;
+      width:30px;
+      height:1px;
+      background:#b29969;
+      opacity:.85;
+    }
+    body.home-redesign .home-hero .home-hero-facts {
+      color:rgba(255,250,242,.94);
+      font-size:clamp(.8125rem,1.1vw,.875rem);
+      line-height:1.5;
+    }
+    body.home-redesign .home-hero .home-hero-support a {
+      color:#fffaf2;
+      font-weight:600;
+      text-decoration:underline;
+      text-decoration-color:#d1b47a;
+      text-decoration-thickness:1px;
+      text-underline-offset:4px;
+    }
+    body.home-redesign .home-hero .home-hero-support a:focus-visible {
+      outline:2px solid #d1b47a;
+      outline-offset:4px;
+    }
+    @media(max-width:760px) {
       body.home-redesign .sb-utility-strip--home-intro {
-        display: none !important;
+        display:block;
+        height:14px;
+        min-height:14px;
+        padding:0;
+      }
+      body.home-redesign .sb-utility-strip--home-intro .sb-utility-strip__inner {
+        display:none;
+      }
+      body.home-redesign .home-hero .home-hero-facts {
+        font-size:.8125rem;
       }
     }
   </style>
@@ -851,13 +914,13 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
     </section>
 
     <template class="home-trust" aria-hidden="true"></template>
-    <section class="sb-utility-strip sb-utility-strip--beige sb-utility-strip--home-intro" aria-label="Practice information">
+    <div class="sb-utility-strip sb-utility-strip--beige sb-utility-strip--home-intro">
       <div class="sb-utility-strip__inner">
-        <span class="sb-utility-strip__item">Accepting new clients</span>
-        <span class="sb-utility-strip__item">Consultation available</span>
-        <span class="sb-utility-strip__item">Aetna + BCBSIL · Eligibility varies</span>
+        <span class="sb-home-intro-rule" aria-hidden="true"></span>
+        <p class="sb-home-intro-statement">Clinical depth. Relational understanding. Careful fit.</p>
+        <span class="sb-home-intro-rule" aria-hidden="true"></span>
       </div>
-    </section>
+    </div>
 
     <section class="home-recognition" aria-labelledby="recognition-title">
       <div class="home-container">
