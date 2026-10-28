@@ -5,6 +5,7 @@ on:
       - fix/careers-mobile-professional-link-overflow-20261028
     paths:
       - .github/workflows/careers-mobile-overflow-qa.yml
+      - careers.html
   workflow_dispatch:
 permissions:
   contents: read
