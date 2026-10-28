@@ -18,7 +18,8 @@ test("both homepage sources retain approved headline, paths and service scope", 
     assert.ok(html.includes("Meet Your Clinicians"));
     assert.ok(html.includes("team.html"));
     assert.match(html, /Prefer to speak first\? Request a free consultation\./);
-    assert.match(html, /Aetna &amp; BCBSIL — Plan and Clinician Eligibility Varies/);
+    assert.match(html, /Insurance options vary by clinician and plan/);
+    assert.match(html, /href="fees-insurance\.html#payment-options">Review accepted coverage\.<\/a>/);
     assert.doesNotMatch(html, /home-founder home-founder-profile/);
   }
 });

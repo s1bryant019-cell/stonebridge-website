@@ -602,17 +602,14 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
 </style>
 <style id="stonebridge-home-integrated-perspective-founder-desktop-20261016">
 /* Desktop-only: join the existing philosophy and founder sections with one soft photographic fade. */
-/* Desktop alternatives are hidden by default so tablet/mobile keep their approved text. */
-.home-perspective-founder-composition .home-perspective-copy-desktop,
+/* Only the founder eyebrow has a desktop alternate; perspective copy is identical at all widths. */
 .home-perspective-founder-composition .home-founder-eyebrow-desktop{
   display:none;
 }
 @media (min-width:1101px){
-  body.home-redesign .home-perspective-founder-composition .home-perspective-copy-default,
   body.home-redesign .home-perspective-founder-composition .home-founder-eyebrow-default{
     display:none;
   }
-  body.home-redesign .home-perspective-founder-composition .home-perspective-copy-desktop,
   body.home-redesign .home-perspective-founder-composition .home-founder-eyebrow-desktop{
     display:inline;
   }
@@ -753,6 +750,8 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
 .home-hero .home-hero-facts{display:flex;flex-wrap:wrap;gap:6px 15px;margin:13px 0 0;padding:0;list-style:none;font-size:.75rem;line-height:1.4}
 .home-hero .home-hero-facts li{position:relative;padding-left:13px}
 .home-hero .home-hero-facts li::before{content:"";position:absolute;left:0;top:.52em;width:5px;height:5px;border-radius:50%;background:#a88d69}
+.home-hero .home-hero-facts a{color:inherit;text-decoration:underline;text-decoration-color:currentColor;text-underline-offset:3px}
+.home-hero .home-hero-facts a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 .home-clinicians,.home-start-steps{padding:clamp(45px,6vw,84px) 0;background:#f8f5f0;color:#213142}
 .home-start-steps{background:#f1ece5}
 .home-conversion-intro{max-width:800px;margin:0 auto 26px;text-align:center}
@@ -872,7 +871,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
           <ul class="home-hero-facts" aria-label="Practice information">
             <li>Accepting New Clients</li>
             <li>Secure Telehealth Across Illinois</li>
-            <li>Aetna &amp; BCBSIL — Plan and Clinician Eligibility Varies</li>
+            <li>Insurance options vary by clinician and plan. <a href="fees-insurance.html#payment-options">Review accepted coverage.</a></li>
           </ul>
 
         </div>
@@ -926,7 +925,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
       <div class="home-container">
         <div class="home-services-head">
           <h2 class="home-services-title" id="services-title">Psychotherapy for individuals, relationships, and families</h2>
-          <p>Online psychotherapy throughout Illinois for a range of concerns and life stages.</p>
+          <p>Explore what each service offers.</p>
         </div>
 
         <div class="home-services-grid">
@@ -942,7 +941,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
           </a>
           <a class="home-service-card" href="group-therapy.html">
             <span class="home-service-media"><img src="group-therapy-hero-960.webp" srcset="group-therapy-hero-960.webp 960w, group-therapy-hero-1600.webp 1600w" sizes="(max-width: 768px) calc(100vw - 52px), 31vw" alt="" width="960" height="644" loading="lazy" decoding="async"></span>
-            <span class="home-service-copy"><h3>Group Therapy</h3><p>Clinician-led groups organized around shared concerns, connection, and a defined clinical purpose.</p></span>
+            <span class="home-service-copy"><h3>Group Therapy</h3><p>Clinician-led groups. Featured teen group gathering interest; consultation available.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
           <a class="home-service-card" href="couples-therapy.html">
@@ -999,7 +998,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
       <div class="home-perspective-inner">
         <p class="home-eyebrow">The Stonebridge perspective</p>
         <h2 class="home-founder-quote" id="perspective-title">“We do not choose every part of the story we inherit. We can still become more intentional authors of how we live it.”</h2>
-        <p class="home-perspective-copy"><span class="home-perspective-copy-default">Stonebridge provides clinically grounded psychotherapy within a clear and relational setting.</span><span class="home-perspective-copy-desktop">Clinically grounded, relational psychotherapy for adolescents, adults, couples, and families across Illinois.</span></p>
+        <p class="home-perspective-copy">Stonebridge provides clinically grounded psychotherapy within a clear and relational setting.</p>
       </div>
     </section>
 
@@ -1008,7 +1007,6 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
         <div class="home-conversion-intro">
           <p class="home-eyebrow">Getting started</p>
           <h2 id="home-start-steps-title">Starting Therapy at Stonebridge</h2>
-          <p>You do not need to have everything figured out before reaching out. Here's how to begin.</p>
         </div>
         <div class="home-steps-grid">
           <article class="home-step-card"><span class="home-step-number">01</span>
