@@ -631,34 +631,3 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
     display:none!important;
   }
 }
-
-/* Per-page decorative option for utility strips whose facts repeat the hero.
-   Only opted-in pages use this class; clinical/editorial bands remain intact. */
-.sb-utility-strip.sb-utility-strip--quiet-transition{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:30px;
-  min-height:30px;
-  padding:0 20px;
-  background:#eee6dc;
-  border-top:1px solid rgba(163,138,103,.18);
-  border-bottom:1px solid rgba(163,138,103,.18);
-}
-.sb-utility-strip.sb-utility-strip--quiet-transition::after{
-  content:"";
-  display:block;
-  width:40px;
-  height:1px;
-  background:#b29969;
-  opacity:.7;
-}
-@media(max-width:760px){
-  .sb-utility-strip.sb-utility-strip--quiet-transition{
-    display:block;
-    height:14px;
-    min-height:14px;
-    padding:0;
-  }
-  .sb-utility-strip.sb-utility-strip--quiet-transition::after{display:none}
-}
