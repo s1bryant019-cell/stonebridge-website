@@ -71,8 +71,8 @@ function setup(reply, group = false) {
   return { submit, events, scripts, errors, content, success, summary, button, posts, elements };
 }
 
-test("confirmed server delivery shows confirmation and fires Ads conversion with no PII", async () => {
-  const ui = setup(async () => ({ ok: true, json: async () => ({ delivered: true }) }));
+test("accepted email submission shows confirmation and fires Ads conversion with no PII", async () => {
+  const ui = setup(async () => ({ ok: true, json: async () => ({ submitted: true }) }));
   await ui.submit();
   assert.equal(ui.posts.length, 1);
   assert.equal(ui.posts[0].url, "/api/consultation-request");
@@ -102,8 +102,8 @@ test("confirmed server delivery shows confirmation and fires Ads conversion with
   assert.equal(ui.events.filter(([name]) => name === "event").length, 1);
 });
 
-test("non-delivered server receipt keeps form visible and does not fire conversion", async () => {
-  const ui = setup(async () => ({ ok: true, json: async () => ({ delivered: false }) }));
+test("rejected email submission keeps form visible and does not fire conversion", async () => {
+  const ui = setup(async () => ({ ok: true, json: async () => ({ submitted: false }) }));
   await ui.submit();
   assert.equal(ui.content.hidden, false);
   assert.equal(ui.success.hidden, true);
@@ -125,7 +125,7 @@ test("network failure keeps form on site, permits retry, and never opens email a
 });
 
 test("The Lobby link keeps inquiry context without changing advertising conversion fields", async () => {
-  const ui = setup(async () => ({ ok: true, json: async () => ({ delivered: true }) }), true);
+  const ui = setup(async () => ({ ok: true, json: async () => ({ submitted: true }) }), true);
   assert.equal(ui.elements["contact-page-title"].textContent, "Consultation for The Lobby");
   assert.equal(ui.elements["consultation-request-title"].textContent, "Request a consultation about The Lobby.");
   await ui.submit();
