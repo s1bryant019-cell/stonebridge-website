@@ -91,42 +91,55 @@ export async function POST(request) {
   const fields = validate(await readSmallBody(request));
   if (!fields) return result(422, false);
 
-  const gatewayUrl = process.env.STONEBRIDGE_CONSULTATION_DELIVERY_URL;
-  const gatewayToken = process.env.STONEBRIDGE_CONSULTATION_DELIVERY_TOKEN;
-  if (!gatewayUrl || !gatewayToken) return result(503, false);
+  // Restore the practice's already-configured Resend notification integration.
+  // Send only contact/scheduling fields. Never send advertising identifiers,
+  // URL parameters, clinical screening answers, or arbitrary narrative.
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.CONTACT_FROM_EMAIL;
+  const to = process.env.CONTACT_TO_EMAIL;
+  if (!apiKey || !from || !to) return result(503, false);
 
-  let parsedUrl;
-  try {
-    parsedUrl = new URL(gatewayUrl);
-    if (parsedUrl.protocol !== "https:" || parsedUrl.username || parsedUrl.password) {
-      return result(503, false);
-    }
-  } catch {
-    return result(503, false);
-  }
+  const lines = [
+    "New consultation request through the Stonebridge website.",
+    "",
+    "Name: " + fields.fullName,
+    "Email: " + fields.email
+  ];
+  if (fields.phone) lines.push("Phone: " + fields.phone);
+  if (fields.preferredContact) lines.push("Preferred contact: " + fields.preferredContact);
+  if (fields.preferredClinician) lines.push("Clinician preference: " + fields.preferredClinician);
+  if (fields.availability) lines.push("Best times to reach: " + fields.availability);
+  if (fields.service === "teen-group") lines.push("Inquiry: The Lobby");
+  lines.push("", "This notification is for administrative consultation follow-up only.");
 
   try {
-    // The approved gateway must return HTTP 2xx and {"delivered":true} ONLY
-    // after confirming receipt into Stonebridge's secure intake destination.
-    // A queued/accepted-only acknowledgment must NOT be translated to delivered.
-    const upstream = await fetch(parsedUrl.toString(), {
+    const upstream = await fetch("https://api.resend.com/emails", {
       method: "POST",
       redirect: "error",
       cache: "no-store",
       headers: {
-        "Authorization": "Bearer " + gatewayToken,
+        "Authorization": "Bearer " + apiKey,
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      body: JSON.stringify({ type: "consultation-request", ...fields }),
+      body: JSON.stringify({
+        from,
+        to: [to],
+        subject: "New Stonebridge consultation request",
+        reply_to: fields.email,
+        text: lines.join("\n")
+      }),
       signal: AbortSignal.timeout(10000)
     });
     if (!upstream.ok) return result(502, false);
     const receipt = await upstream.json();
-    if (receipt && receipt.delivered === true) return result(200, true);
+    // A Resend id confirms provider acceptance, not inbox delivery.
+    if (typeof receipt?.id === "string" && receipt.id.length > 0) {
+      return new Response(JSON.stringify({ submitted: true }), { status: 200, headers: HEADERS });
+    }
     return result(502, false);
   } catch {
-    // Never expose gateway errors, email addresses, or sensitive details to clients/logs.
+    // Never expose email contents, credentials, or provider responses to logs.
     return result(502, false);
   }
 }
