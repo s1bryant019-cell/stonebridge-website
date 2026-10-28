@@ -1,4 +1,4 @@
-name: Homepage hierarchy visual review
+name: Homepage content audit visual review
 
 on:
   pull_request:
@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   capture:
-    name: Five-width homepage before and after captures
+    name: Homepage content before and after captures
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -35,7 +35,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p "$RUNNER_TEMP/stonebridge-baseline"
-          git archive 5bf818c6e12351a73e2daafac1f8d396fb2642dd | tar -x -C "$RUNNER_TEMP/stonebridge-baseline"
+          git archive 86714814dc2e2a0b897cbcff8692c3840f2e5d03 | tar -x -C "$RUNNER_TEMP/stonebridge-baseline"
       - name: Capture before and after screenshots and responsive metrics
         env:
           STONEBRIDGE_BASELINE_DIR: ${{ runner.temp }}/stonebridge-baseline
@@ -47,7 +47,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: stonebridge-homepage-hierarchy-before-after
+          name: stonebridge-homepage-content-audit-before-after
           path: visual-review-screenshots/
           if-no-files-found: warn
           retention-days: 30
