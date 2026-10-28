@@ -37,15 +37,30 @@ async function visit(server,pathname,width,variant,capture) {
    const heading=document.querySelector(".home-services-title");
    const fee=document.querySelector(".fees-cost-explainer");
    return {path:location.pathname,width:innerWidth,scrollWidth:document.documentElement.scrollWidth,
-    bandHeight:band?.getBoundingClientRect().height,bandInnerDisplay:home&&getComputedStyle(home.querySelector(".sb-utility-strip__inner")).display,
+    bandHeight:band?.getBoundingClientRect().height,bandInnerDisplay:home?.querySelector(".sb-utility-strip__inner")&&getComputedStyle(home.querySelector(".sb-utility-strip__inner")).display,
     bandText:band?.innerText?.trim(),aria:quiet?.getAttribute("aria-hidden"),
     factsFontSize:facts&&getComputedStyle(facts).fontSize,meetUnderline:meet&&getComputedStyle(meet).textDecorationLine,
-    servicesOverflow:heading?.scrollWidth-heading?.clientWidth,insuranceAnchors:fee?.querySelectorAll('a[href="#payment-options"]').length};
+    servicesOverflow:heading?.scrollWidth-heading?.clientWidth,insuranceAnchors:fee?.querySelectorAll('a[href="#payment-options"]').length,
+    headerBookingDisplay:getComputedStyle(document.querySelector(".site-header .header-cta")).display,
+    heroBookingDisplay:getComputedStyle(document.querySelector(".home-hero-action--primary")).display,
+    secondaryButtonBorder:getComputedStyle(document.querySelector(".home-hero-actions .home-hero-action--secondary")).borderTopWidth,
+    secondaryUnderline:getComputedStyle(document.querySelector(".home-hero-actions .home-hero-action--secondary")).textDecorationLine,
+    heroFactsDisplay:facts&&getComputedStyle(facts).display,
+    meetDisplay:getComputedStyle(document.querySelector(".home-hero-support")).display,
+    mobileConsultationLabel:getComputedStyle(document.querySelector(".home-consultation-label-mobile")).display,
+    desktopConsultationLabel:getComputedStyle(document.querySelector(".home-consultation-label-desktop")).display,
+    description:document.querySelector(".home-hero-lede")?.innerText?.trim()
+   };
   });
   records.push({variant,...metric});
   if(capture){
    const slug=pathname==="/"?"homepage":pathname.replace(/^\//,"").replace(/\.html$/,"");
-   await page.screenshot({path:join(outputDir,variant+"-"+slug+"-"+width+".jpg"),type:"jpeg",quality:66,fullPage:true});
+   const height=await page.evaluate(()=>{
+    const recognition=document.querySelector(".home-recognition");
+    if(!recognition)return document.body.scrollHeight;
+    return Math.ceil(recognition.getBoundingClientRect().top+window.scrollY+Math.min(220,window.innerHeight*0.25));
+   });
+   await page.screenshot({path:join(outputDir,variant+"-"+slug+"-"+width+".jpg"),type:"jpeg",quality:70,clip:{x:0,y:0,width,height},captureBeyondViewport:true});
    const band=await page.$(".sb-utility-strip--home-intro, .sb-utility-strip--quiet-transition");
    if(band&&await band.isVisible())await band.screenshot({path:join(outputDir,variant+"-"+slug+"-band-"+width+".png")});
   }
@@ -54,16 +69,23 @@ async function visit(server,pathname,width,variant,capture) {
 try {
  for(const variant of ["before","after"]){
   const server=variant==="before"?before:after;
-  for(const width of [375,390,430,760,768,901,1024,1199,1280,1440])await visit(server,"/",width,variant,width===390||width===1280);
+  for(const width of [375,390,430,760,768,901,1024,1199,1280,1440])await visit(server,"/",width,variant,[390,430,1024,1280,1440].includes(width));
   for(const pathname of ["/services.html","/new-clients.html","/contact.html","/fees-insurance.html"])
    for(const width of [390,1280])await visit(server,pathname,width,variant,variant==="after"&&pathname!=="/fees-insurance.html");
  }
  const homeRows=records.filter(r=>r.variant==="after"&&r.path==="/");
  for(const row of homeRows){
   if(row.scrollWidth>row.width)throw new Error("Horizontal overflow at "+row.width);
+  if(row.bandText)throw new Error("Homepage band must contain zero text at "+row.width);
   if(row.width<=760){
-   if(row.bandHeight!==14||row.bandInnerDisplay!=="none")throw new Error("Mobile band wrong at "+row.width);
-  }else if(row.bandHeight<48||row.bandHeight>64)throw new Error("Desktop band wrong at "+row.width);
+    if(row.bandHeight!==14)throw new Error("Mobile band wrong at "+row.width);
+    if(row.heroFactsDisplay==="none"||row.desktopConsultationLabel!=="none")throw new Error("Mobile facts or consultation label missing at "+row.width);
+  }else{
+    if(row.bandHeight<20||row.bandHeight>28)throw new Error("Desktop band wrong at "+row.width);
+    if(row.headerBookingDisplay!=="none"||row.heroFactsDisplay!=="none"||row.meetDisplay!=="none")throw new Error("Competing desktop CTAs/facts visible at "+row.width);
+    if(row.secondaryButtonBorder!=="0px"||!row.secondaryUnderline.includes("underline"))throw new Error("Consultation not a text link at "+row.width);
+    if(row.desktopConsultationLabel==="none"||row.mobileConsultationLabel!=="none")throw new Error("Desktop consultation label wrong at "+row.width);
+  }
  }
  for(const row of records.filter(r=>r.variant==="after"&&["/services.html","/new-clients.html","/contact.html"].includes(r.path))){
   if(row.bandText)throw new Error("Decorative band contains text: "+row.path);
