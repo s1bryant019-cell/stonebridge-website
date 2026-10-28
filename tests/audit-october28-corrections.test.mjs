@@ -4,22 +4,22 @@ import { readFileSync } from "node:fs";
 
 const read = p => readFileSync(new URL("../" + p, import.meta.url), "utf8");
 
-test("home intro displays editorial copy on desktop and only decoration on mobile", () => {
+test("home intro becomes purely decorative on desktop and mobile", () => {
   for (const path of ["index.html", "home-current.html"]) {
     const html = read(path);
-    assert.match(html, /sb-utility-strip--home-intro/);
-    assert.match(html, /Clinical depth\. Relational understanding\. Careful fit\./);
-    assert.match(html, /height:14px;/);
-    assert.match(html, /body\.home-redesign \.sb-utility-strip--home-intro \.sb-utility-strip__inner \{\s*display:none!important;/);
+    assert.match(html, /sb-utility-strip--home-intro" aria-hidden="true"><\/div>/);
+    assert.match(html, /height:24px/);
+    assert.match(html, /height:14px/);
     assert.match(html, /class="home-hero-facts"/);
     assert.match(html, /See Available Appointments/);
     assert.match(html, /Request a Free Consultation/);
     assert.match(html, /home-hero-room/);
-    assert.doesNotMatch(html, /<span class="sb-utility-strip__item">Aetna \+ BCBSIL · Eligibility varies<\/span>/);
+    assert.doesNotMatch(html, /Clinical depth\. Relational understanding\. Careful fit\./);
   }
   assert.doesNotMatch(read("contact.html"), /sb-utility-strip--home-intro/);
   assert.doesNotMatch(read("fees-insurance.html"), /sb-utility-strip--home-intro/);
 });
+
 
 test("consultation headings accurately describe a request, preserving the existing form", () => {
   const page = read("contact.html");
