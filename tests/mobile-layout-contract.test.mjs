@@ -36,7 +36,7 @@ test("paid landing pages keep compact mobile heroes and appointment-first links"
     assert.ok(main.includes(availability), `${page} should link directly to appointment availability`);
     if (page === "bcbs-therapy-illinois.html") {
       assert.match(main, /See Available Appointments/);
-      assert.match(html, /script\.js\?v=20261015bcbsavail1/);
+      assert.match(html, /script\.js\?v=20261028stickyvisible2/);
       assert.match(html, /href="https:\/\/www\.therapyportal\.com\/p\/stonebridge60634\/appointments\/availability\/"/);
       assert.match(main, /Your request remains pending until Stonebridge reviews and confirms it/);
       assert.match(main, /Prefer to speak first\? Request a free consultation\./);
