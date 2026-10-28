@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const script = readFileSync(new URL("../consultation-request.js", import.meta.url), "utf8");
+const contactHtml = readFileSync(new URL("../contact.html", import.meta.url), "utf8");
 
 function setup(reply, group = false) {
   let handler;
@@ -12,6 +13,7 @@ function setup(reply, group = false) {
   const errors = [];
   const content = { hidden: false };
   const success = { hidden: true, focus() { this.focused = true; } };
+  const fallback = { hidden: true };
   const summaryHeading = { textContent: "" };
   const summary = {
     hidden: true,
@@ -38,6 +40,7 @@ function setup(reply, group = false) {
   const elements = {
     "consultation-request-form": form,
     "consultation-error-summary": summary,
+    "consultation-delivery-fallback": fallback,
     "consultation-error-list": list,
     "consultation-submit-button": button,
     "consultation-success": success,
@@ -68,7 +71,7 @@ function setup(reply, group = false) {
   };
   runInNewContext(script, { document, window, fetch, URL, URLSearchParams, Date, Promise, Error });
   const submit = () => handler({ preventDefault() {} });
-  return { submit, events, scripts, errors, content, success, summary, button, posts, elements };
+  return { submit, events, scripts, errors, content, success, summary, fallback, button, posts, elements };
 }
 
 test("confirmed server delivery shows confirmation and fires Ads conversion with no PII", async () => {
@@ -108,6 +111,7 @@ test("non-delivered server receipt keeps form visible and does not fire conversi
   assert.equal(ui.content.hidden, false);
   assert.equal(ui.success.hidden, true);
   assert.equal(ui.summary.hidden, false);
+  assert.equal(ui.fallback.hidden, false);
   assert.equal(ui.button.disabled, false);
   assert.equal(ui.events.filter(([name]) => name === "event").length, 0);
   assert.equal(ui.scripts.length, 0);
@@ -132,4 +136,12 @@ test("The Lobby link keeps inquiry context without changing advertising conversi
   assert.equal(JSON.parse(ui.posts[0].options.body).service, "teen-group");
   const conversion = ui.events.find(([name]) => name === "event");
   assert.deepEqual(Object.keys(conversion[2]), ["send_to"]);
+});
+
+
+test("delivery fallback opens a manual email draft with no form data and no false confirmation", () => {
+  assert.match(contactHtml, /id="consultation-delivery-fallback" hidden/);
+  assert.match(contactHtml, /mailto:info@stonebridgepsychgroup\.com\?subject=Consultation%20request/);
+  assert.match(contactHtml, /Opening a draft does not send it/);
+  assert.doesNotMatch(contactHtml, /mailto:[^"]*(fullName|preferredClinician|gclid)=/);
 });
