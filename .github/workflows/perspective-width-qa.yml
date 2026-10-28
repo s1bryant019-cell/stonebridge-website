@@ -57,7 +57,7 @@ jobs:
                 overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
             });
             await page.evaluate(()=>document.querySelector('.home-perspective').scrollIntoView());
-            await page.screenshot({path:'perspective-check/perspective-'+width+'.png'});
+            await (await page.$('.home-perspective')).screenshot({path:'perspective-check/perspective-'+width+'.png'});
             console.log('PERSPECTIVE_CHECK',width,JSON.stringify(data),'pageErrors',errors);
             if(data.overflow>1||errors.length)failed=true;
             if(width>=1024 && (data.quote.width<650||data.quote.width<data.inner.width*0.75||data.copy.width<data.inner.width*0.75))failed=true;
