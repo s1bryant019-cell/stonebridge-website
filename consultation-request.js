@@ -18,6 +18,7 @@
   }
 
   var summary=document.getElementById("consultation-error-summary");
+  var fallback=document.getElementById("consultation-delivery-fallback");
   var list=document.getElementById("consultation-error-list");
   var submit=document.getElementById("consultation-submit-button");
   var content=form.querySelector(".contact-form-content");
@@ -80,6 +81,7 @@
 
   function clearErrors(){
     summary.hidden=true;
+    if(fallback) fallback.hidden=true;
     summary.querySelector("h3").textContent="Review the highlighted fields.";
     list.innerHTML="";
     form.querySelectorAll(".field-error").forEach(function(el){
@@ -109,9 +111,10 @@
   function showSubmissionError(){
     summary.querySelector("h3").textContent="Request not confirmed.";
     var li=document.createElement("li");
-    li.textContent="We could not confirm delivery. Please try again or call Stonebridge at (773) 417-1688.";
+    li.textContent="We could not confirm delivery. Your request has not been confirmed as received. You can try again or use the email or phone options below.";
     list.appendChild(li);
     summary.hidden=false;
+    if(fallback) fallback.hidden=false;
     summary.focus();
   }
 
