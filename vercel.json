@@ -81,10 +81,6 @@
         {
           "key": "Cache-Control",
           "value": "no-store, max-age=0"
-        },
-        {
-          "key": "Link",
-          "value": "</script.js>; rel=preload; as=script, </stonebridge-brand-sync.css?v=20260914j>; rel=preload; as=style, </stonebridge-hotfix.css?v=20260914j>; rel=preload; as=style, </script-core.js?v=20260914j>; rel=preload; as=script, </stonebridge-header-logo.png?v=20260914j>; rel=preload; as=image"
         }
       ]
     },
@@ -94,10 +90,6 @@
         {
           "key": "Cache-Control",
           "value": "no-store, max-age=0"
-        },
-        {
-          "key": "Link",
-          "value": "</script.js>; rel=preload; as=script, </stonebridge-brand-sync.css?v=20260914j>; rel=preload; as=style, </stonebridge-hotfix.css?v=20260914j>; rel=preload; as=style, </script-core.js?v=20260914j>; rel=preload; as=script, </stonebridge-header-logo.png?v=20260914j>; rel=preload; as=image"
         }
       ]
     },
