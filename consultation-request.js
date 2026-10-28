@@ -20,6 +20,63 @@
   var summary=document.getElementById("consultation-error-summary");
   var list=document.getElementById("consultation-error-list");
   var submit=document.getElementById("consultation-submit-button");
+  var content=form.querySelector(".contact-form-content");
+  var success=document.getElementById("consultation-success");
+  var inFlight=false;
+  var completed=false;
+
+  var GOOGLE_ADS_ID="AW-18474959338";
+  var GOOGLE_ADS_SEND_TO="AW-18474959338/oiH4CNOsuYYdEOqDxulE";
+
+  function sanitizedMeasurementLocation(){
+    try{
+      var url=new URL(window.location.href);
+      var allowed=["gclid","gbraid","wbraid"];
+      Array.from(url.searchParams.keys()).forEach(function(key){
+        if(allowed.indexOf(key)===-1) url.searchParams.delete(key);
+      });
+      url.hash="";
+      return url.toString();
+    }catch(error){
+      return window.location.origin+window.location.pathname;
+    }
+  }
+
+  function clickIds(){
+    var result={};
+    var params=new URLSearchParams(window.location.search);
+    ["gclid","gbraid","wbraid"].forEach(function(key){
+      result[key]=params.get(key)||"";
+    });
+    return result;
+  }
+
+  function fireGoogleAdsConsultationConversion(){
+    if(window.__stonebridgeConsultationConversionSent) return;
+    window.__stonebridgeConsultationConversionSent=true;
+
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+
+    if(!document.getElementById("stonebridge-google-ads-tag")){
+      var tag=document.createElement("script");
+      tag.id="stonebridge-google-ads-tag";
+      tag.async=true;
+      tag.referrerPolicy="no-referrer";
+      tag.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(GOOGLE_ADS_ID);
+      document.head.appendChild(tag);
+    }
+
+    window.gtag("set","allow_ad_personalization_signals",false);
+    window.gtag("js",new Date());
+    window.gtag("config",GOOGLE_ADS_ID,{
+      send_page_view:false,
+      page_location:sanitizedMeasurementLocation(),
+      page_referrer:""
+    });
+    // Never pass form contents, user_data, or enhanced-conversion fields to Google.
+    window.gtag("event","conversion",{send_to:GOOGLE_ADS_SEND_TO});
+  }
 
   function clearErrors(){
     summary.hidden=true;
@@ -49,8 +106,18 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
-  // Prepare a consultation message locally without a website submission.
-  function prepareRequest(){
+  function showSubmissionError(){
+    summary.querySelector("h3").textContent="Request not confirmed.";
+    var li=document.createElement("li");
+    li.textContent="We could not confirm delivery. Please try again or call Stonebridge at (773) 417-1688.";
+    list.appendChild(li);
+    summary.hidden=false;
+    summary.focus();
+  }
+
+  form.addEventListener("submit",async function(event){
+    event.preventDefault();
+    if(inFlight || completed) return;
     clearErrors();
 
     var name=document.getElementById("consultation-name").value.trim();
@@ -73,61 +140,47 @@
       summary.hidden=false;
       summary.focus();
       if(errors[0].input) errors[0].input.focus();
-      return null;
+      return;
     }
 
-    var isLobby=service==="teen-group";
-    var subject=isLobby ? "The Lobby consultation request" : "Consultation request from "+name;
-    var body=[
-      "Hello Stonebridge,",
-      "",
-      isLobby ? "I would like to request a brief consultation about The Lobby." : "I would like to schedule a brief consultation.",
-      "",
-      "Name: "+name,
-      "Email: "+email,
-      "Phone: "+(phone||"Not provided"),
-      "Preferred contact: "+(preferred||"No preference"),
-      "Clinician preference: "+(clinician||"No preference — help me determine fit"),
-      "Best times to reach me: "+(availability||"Not provided"),
-      "",
-      "Please contact me to arrange a consultation."
-    ].join("\n");
+    inFlight=true;
+    submit.disabled=true;
+    submit.textContent="Sending request…";
 
-    return {subject:subject,body:body};
-  }
+    try{
+      var response=await fetch("/api/consultation-request",{
+        method:"POST",
+        credentials:"same-origin",
+        cache:"no-store",
+        headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body:JSON.stringify({
+          fullName:name,
+          email:email,
+          phone:phone,
+          preferredContact:preferred,
+          preferredClinician:clinician,
+          availability:availability,
+          service:service,
+          website:form.elements.website.value,
+          ...clickIds()
+        })
+      });
+      var receipt=await response.json();
+      if(!response.ok || receipt.delivered!==true) throw new Error("Unconfirmed delivery");
 
-  // Opening a draft does not prove it was sent or received.
-  form.addEventListener("submit",function(event){
-    event.preventDefault();
-    var request=prepareRequest();
-    if(!request) return;
-    window.location.href="mailto:info@stonebridgepsychgroup.com?subject="+
-      encodeURIComponent(request.subject)+"&body="+encodeURIComponent(request.body);
-  });
-
-  // An explicit copy option works even when the device has no mailto handler.
-  var copyButton=document.getElementById("consultation-copy-button");
-  var copyResult=document.getElementById("consultation-copy-result");
-  var copyMessage=document.getElementById("consultation-copy-message");
-  var copyStatus=document.getElementById("consultation-copy-status");
-  if(copyButton && copyResult && copyMessage && copyStatus){
-    copyButton.addEventListener("click",async function(){
-      var request=prepareRequest();
-      if(!request) return;
-      copyMessage.value="To: info@stonebridgepsychgroup.com\n"+
-        "Subject: "+request.subject+"\n\n"+request.body;
-      copyResult.hidden=false;
-      copyMessage.focus();
-      copyMessage.select();
-      copyStatus.textContent="Copy the selected draft, then paste it into your email application and send it.";
-      if(typeof navigator!=="undefined" && navigator.clipboard && navigator.clipboard.writeText){
-        try{
-          await navigator.clipboard.writeText(copyMessage.value);
-          copyStatus.textContent="Draft copied. Paste it into your email application and send it.";
-        }catch(error){
-          // Keep the selected draft available for manual copying.
-        }
+      completed=true;
+      content.hidden=true;
+      success.hidden=false;
+      success.focus();
+      fireGoogleAdsConsultationConversion();
+    }catch(error){
+      showSubmissionError();
+    }finally{
+      inFlight=false;
+      if(!completed){
+        submit.disabled=false;
+        submit.textContent="Send Consultation Request";
       }
-    });
-  }
+    }
+  });
 })();
