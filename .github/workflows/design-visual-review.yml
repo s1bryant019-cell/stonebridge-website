@@ -9,7 +9,7 @@ on:
       - 'services.html'
       - 'new-clients.html'
       - 'contact.html'
-      - 'stonebridge-brand-sync.css'
+      - 'stonebridge-beige-refinement.css'
       - 'ops/capture-design-screenshots.mjs'
       - '.github/workflows/design-visual-review.yml'
   workflow_dispatch:
