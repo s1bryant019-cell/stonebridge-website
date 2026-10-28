@@ -49,10 +49,8 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
-  // Restore the previous browser-to-email workflow until the approved
-  // on-site delivery gateway is configured and verified.
-  form.addEventListener("submit",function(event){
-    event.preventDefault();
+  // Prepare a consultation message locally without a website submission.
+  function prepareRequest(){
     clearErrors();
 
     var name=document.getElementById("consultation-name").value.trim();
@@ -75,7 +73,7 @@
       summary.hidden=false;
       summary.focus();
       if(errors[0].input) errors[0].input.focus();
-      return;
+      return null;
     }
 
     var isLobby=service==="teen-group";
@@ -95,10 +93,41 @@
       "Please contact me to arrange a consultation."
     ].join("\n");
 
-    // Do not include marketing identifiers, clinical data, or conversion events.
-    // Opening a mail draft does not prove the visitor sent it.
+    return {subject:subject,body:body};
+  }
+
+  // Opening a draft does not prove it was sent or received.
+  form.addEventListener("submit",function(event){
+    event.preventDefault();
+    var request=prepareRequest();
+    if(!request) return;
     window.location.href="mailto:info@stonebridgepsychgroup.com?subject="+
-      encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+      encodeURIComponent(request.subject)+"&body="+encodeURIComponent(request.body);
   });
 
+  // An explicit copy option works even when the device has no mailto handler.
+  var copyButton=document.getElementById("consultation-copy-button");
+  var copyResult=document.getElementById("consultation-copy-result");
+  var copyMessage=document.getElementById("consultation-copy-message");
+  var copyStatus=document.getElementById("consultation-copy-status");
+  if(copyButton && copyResult && copyMessage && copyStatus){
+    copyButton.addEventListener("click",async function(){
+      var request=prepareRequest();
+      if(!request) return;
+      copyMessage.value="To: info@stonebridgepsychgroup.com\n"+
+        "Subject: "+request.subject+"\n\n"+request.body;
+      copyResult.hidden=false;
+      copyMessage.focus();
+      copyMessage.select();
+      copyStatus.textContent="Copy the selected draft, then paste it into your email application and send it.";
+      if(typeof navigator!=="undefined" && navigator.clipboard && navigator.clipboard.writeText){
+        try{
+          await navigator.clipboard.writeText(copyMessage.value);
+          copyStatus.textContent="Draft copied. Paste it into your email application and send it.";
+        }catch(error){
+          // Keep the selected draft available for manual copying.
+        }
+      }
+    });
+  }
 })();
