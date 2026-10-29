@@ -20,8 +20,8 @@
 **Per-category semantics:** numeric score when the observed full-page screenshot, mobile/desktop interaction, computed text/layout data, and appropriate page context support a defensible judgment; **N/V** only where material verification is missing. Numeric values are calibrated design judgments, not statistical measurements. A score of 8.9 or below is an identified material limitation, not a theoretical possibility; 9.0 or higher denotes no identified issue materially undermining that category's inspected central question. **PASS / FAIL / NOT VERIFIED** is calculated separately from the score and the required minimum. Zero axe warnings is not final accessibility approval. A redirect route is not independently scored as a page.
 
 ## Scorecell summary
-- PASS: **367**
-- FAIL: **73**
+- PASS: **375**
+- FAIL: **65**
 - NOT VERIFIED: **184**
 
 These cells do not imply a sitewide pass: **each page must meet every required category**. In particular the **unfixed** Careers employment inquiry route remains a genuine FAIL, and New Clients mobile action placement and repeated appointment language remain FAIL.
@@ -71,3 +71,16 @@ The most relevant 3 visual scores are summarized below as `mobile / desktop`; th
 - A 'PASS' here applies to the supported **category judgment at that viewport**, not unverified operational and accessibility requirements.
 
 The accompanying machine-readable `sitewide-integrated-visual-scorecard.csv` contains the complete audit trail.
+
+## Issue-ID calibration and editorial hold
+The long-format CSV assigns an issue ID to **only the rubric categories affected**, never an unrelated category just because its page has an issue.
+
+- **C-01 (New Clients only):** repeated appointment/request framing across hero, H2 and first pathway card; editorial review only.
+- **V-11 (New Clients mobile only):** primary appointment CTA sits below initial screen on 320×568, 375×667, 390×844, and 393×852. No safety/clinical text removed.
+- **T-01 (only individual mobile readability/craft rows with measured sub-14.5px paragraph type):** occasional dense small supporting text; not a WCAG font-size violation, but an outstanding premium reading/typography judgment.
+- **L-01 (only mobile long-page complexity, grouping, premium-perception rows showing substantial content density):** the required information may still be legitimate; restructuring or trimming clinical/legal content needs owner approval.
+- **J-01 (Careers only):** future applicant action points at patient consultation; actual task failure remains open.
+- **V-01–V-10:** original scoped corrections as documented in PRs #64–#66 and the prior page register, marked corrected in integration where applicable.
+- **R-01:** retired Fit/Safety public redirect; no independent visual page is presented.
+
+Numbers at or above 9.0 reflect observed category-specific composition with no *identified material* shortcoming within tested dimensions, not a blanket site approval. Material verification gaps still prevent approval even when a visual category passes.
