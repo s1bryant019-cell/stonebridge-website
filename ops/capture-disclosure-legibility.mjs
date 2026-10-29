@@ -13,11 +13,11 @@ for(const [file,selector] of targets)for(const width of widths)for(const [versio
  await page.evaluate(()=>document.fonts.ready);
  const info=await page.evaluate(selector=>{
   const el=document.querySelector(selector),s=getComputedStyle(el),r=el.getBoundingClientRect();
-  return{fontSize:s.fontSize,lineHeight:s.lineHeight,height:Math.round(r.height),width:Math.round(r.width),overflow:document.documentElement.scrollWidth>innerWidth+1};
+  return{fontSize:s.fontSize,lineHeight:s.lineHeight,elementHeightCssPx:Math.round(r.height),elementWidthCssPx:Math.round(r.width),documentWidthCssPx:document.documentElement.scrollWidth,overflow:document.documentElement.scrollWidth>innerWidth+1};
  },selector);
  if([390,1440].includes(width))await page.screenshot({path:out+"/"+file+"-"+width+"-"+version+".jpg",type:"jpeg",quality:78,fullPage:true,animations:"disabled"});
  const axe=version==="after"&&[390,1440].includes(width)?await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21a","wcag21aa","wcag22aa"]).analyze():null;
- results.push({file,width,version,...info,axeViolations:axe?.violations?.map(v=>v.id)});
+ results.push({file,viewportWidthCssPx:width,viewportHeightCssPx:900,version,...info,axeViolations:axe?.violations?.map(v=>v.id)});
  await context.close();
 }
 await browser.close();
