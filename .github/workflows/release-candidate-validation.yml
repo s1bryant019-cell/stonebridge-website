@@ -15,10 +15,39 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - name: Check out exact candidate commit and base history
+      - name: Check out exact PR head commit and base history
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
+      - name: Confirm PR head and generated merge-test contain identical source trees
+        shell: bash
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          GENERATED_MERGE_SHA: ${{ github.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          mkdir -p release-candidate-proof
+          TESTED_HEAD=$(git rev-parse HEAD)
+          test "$TESTED_HEAD" = "$EXPECTED_HEAD"
+          HEAD_TREE=$(git rev-parse "${TESTED_HEAD}^{tree}")
+          if [ -n "$PR_NUMBER" ]; then
+            git fetch --quiet origin "refs/pull/${PR_NUMBER}/merge"
+            FETCHED_MERGE_SHA=$(git rev-parse FETCH_HEAD)
+            test "$FETCHED_MERGE_SHA" = "$GENERATED_MERGE_SHA"
+            MERGE_TREE=$(git rev-parse "${FETCHED_MERGE_SHA}^{tree}")
+            test "$HEAD_TREE" = "$MERGE_TREE"
+          else
+            MERGE_TREE="$HEAD_TREE"
+          fi
+          {
+            printf 'pr_head_sha=%s\n' "$TESTED_HEAD"
+            printf 'generated_merge_test_sha=%s\n' "$GENERATED_MERGE_SHA"
+            printf 'pr_head_tree=%s\n' "$HEAD_TREE"
+            printf 'generated_merge_test_tree=%s\n' "$MERGE_TREE"
+            printf 'source_trees_match=%s\n' 'true'
+          } | tee release-candidate-proof/head-vs-merge-tree.txt
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -47,7 +76,7 @@ jobs:
         run: node ops/capture-integrated-acceptance.mjs
       - name: Chromium, Firefox and WebKit 234-check cross-browser matrix
         run: node ops/release-candidate-crossbrowser.mjs
-      - name: Save exact tested SHA
+      - name: Save tested PR head SHA and unchanged source-file hashes
         if: always()
         run: |
           mkdir -p release-candidate-proof visual-integrated-proof
