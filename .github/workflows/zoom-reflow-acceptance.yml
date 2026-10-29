@@ -2,11 +2,6 @@ name: Stonebridge genuine zoom and text-resizing verification
 
 on:
   pull_request:
-    paths:
-      - 'stonebridge-brand-sync.css'
-      - 'home-visual-refresh.css'
-      - 'ops/zoom-reflow-verification.cjs'
-      - '.github/workflows/zoom-reflow-acceptance.yml'
   workflow_dispatch:
 
 permissions:
