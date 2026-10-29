@@ -7,7 +7,7 @@ const baseUrl = "http://127.0.0.1:8771";
 const headUrl = "http://127.0.0.1:8772";
 const affected = [
   "about.html", "adolescent-therapy-illinois.html", "bcbs-therapy-illinois.html",
-  "fees-insurance.html", "fit-safety-check.html", "for-clinicians.html",
+  "fees-insurance.html", "for-clinicians.html",
   "home-current.html", "index.html", "team-founder.html",
   "team-jasmine-wilson.html", "trauma-therapy-illinois.html"
 ];
@@ -25,6 +25,7 @@ for (const file of affected) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, deviceScaleFactor: 1 });
       const page = await context.newPage();
       await page.goto(url + "/" + file, { waitUntil: "load", timeout: 25000 });
+      await page.waitForTimeout(350);
       await page.evaluate(() => document.fonts.ready);
       const filename = file.replace(".html", "") + "-" + width + "-" + version + ".jpg";
       await page.screenshot({ path: path.join(out, filename), fullPage: true, type: "jpeg", quality: 78, animations: "disabled" });
@@ -45,9 +46,9 @@ for (const file of allPages) {
     const context = await browser.newContext({ viewport: { width, height: 900 } });
     const page = await context.newPage();
     await page.goto(headUrl + "/" + file, { waitUntil: "load", timeout: 25000 });
-    await page.waitForTimeout(150);
+    await page.waitForTimeout(400);
     const report = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]).analyze();
-    axe.push({ file, width, violations: report.violations.map(v => ({ id: v.id, impact: v.impact, selectors: v.nodes.map(n => n.target) })) });
+    axe.push({ file, actualPath: new URL(page.url()).pathname, width, violations: report.violations.map(v => ({ id: v.id, impact: v.impact, selectors: v.nodes.map(n => n.target) })) });
     await context.close();
   }
 }
@@ -72,6 +73,7 @@ for (const file of affected) {
 }
 html.push("</html>");
 fs.writeFileSync(path.join(out, "index.html"), html.join("\n"));
-const failures = axe.filter(x => x.violations.length);
-console.log(JSON.stringify({ images: images.length, sitewideAxeScans: axe.length, violationScans: failures.length, failures }, null, 2));
+const knownOutstanding = ["new-clients.html", "fit-safety-check.html"]; // Separate unmerged New Clients PR #64; old Fit/Safety route redirects there.
+const failures = axe.filter(x => x.violations.length && !knownOutstanding.includes(x.file));
+console.log(JSON.stringify({ images: images.length, sitewideAxeScans: axe.length, unexpectedViolationScans: failures.length, knownOutstanding: axe.filter(x => x.violations.length && knownOutstanding.includes(x.file)), failures }, null, 2));
 if (failures.length || results.some(x => x.horizontalOverflow || x.brokenImages)) process.exitCode = 1;
