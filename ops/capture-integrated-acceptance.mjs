@@ -6,7 +6,7 @@ const BASE=process.env.BASE_URL || 'http://127.0.0.1:8882';
 const TEST=process.env.TEST_URL || 'http://127.0.0.1:8001';
 const out='visual-integrated-proof';
 const pages=fs.readdirSync('.').filter(f=>f.endsWith('.html')).sort();
-const changed=['new-clients.html','about.html','adolescent-therapy-illinois.html','bcbs-therapy-illinois.html','trauma-therapy-illinois.html','fees-insurance.html','for-clinicians.html','index.html','home-current.html','team-founder.html','team-jasmine-wilson.html','contact.html','portal.html'];
+const changed=['new-clients.html','about.html','adolescent-therapy-illinois.html','bcbs-therapy-illinois.html','trauma-therapy-illinois.html','fees-insurance.html','for-clinicians.html','index.html','home-current.html','team-founder.html','team-jasmine-wilson.html','contact.html','portal.html','individual-therapy.html','family-therapy.html','couples-therapy.html','parent-support.html','privacy-information.html'];
 const widths=[390,1440],devices=[[320,568],[360,640],[375,667],[390,844],[393,852],[412,915],[430,932]];
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 fs.mkdirSync(out,{recursive:true});
