@@ -699,3 +699,11 @@ body.home-redesign a{color:inherit}
     animation-iteration-count:1!important;
   }
 }
+
+/* Improve legibility of only the existing home editorial/final supporting text. */
+.home-redesign .home-clinicians .home-conversion-intro .home-eyebrow,
+.home-redesign .home-start-steps .home-conversion-intro .home-eyebrow { color:#76542e!important; }
+.home-redesign .home-step-number { color:#67503a; }
+.home-redesign .home-footer-copy,
+.home-redesign .home-footer-bottom,
+.home-redesign .home-footer-bottom a { color:#48504b; }
