@@ -12,3 +12,14 @@ Until a properly approved pathway exists, remove or render non-interactive **onl
 Select **A** with a verified employment destination or **B** with express approval to suspend the two actions. Do not infer an address or employment policy. No clinical contact pathway or intake data handling changes are authorized by either option alone.
 
 **Status:** OPEN J-01. Not included as a silent code change in PR #72. Any final release should either resolve it by approved choice or explicitly record an accepted exception; a FAIL must never be reclassified as PASS merely because external details are unavailable.
+
+## Exact owner-review implementation boundary (NO CODE CHANGED)
+
+**If the owner authorizes Option B**, the change is confined to removing or withholding these two anchors from `careers.html`:
+
+- Hero actions: `<a class="btn btn-secondary" href="contact.html">Future Opportunities</a>`
+- Future-interest section: `<a class="btn btn-secondary" href="contact.html">Ask About Future Opportunities</a>`
+
+The current opening's genuine application link, **`View Role & Apply on Indeed`**, must remain intact and functional, as must the current-opening card and qualifications. The future-interest supporting text should not promise an inquiry route after the links are withheld; any replacement status wording needs separate owner approval. Option B is an explicit temporary removal of inquiry functionality, **not** a redirect or new applicant-data system.
+
+**Current release candidate status:** Neither anchor is modified. Owner approval is still required before implementing either option. The failing J-01 score remains open.
