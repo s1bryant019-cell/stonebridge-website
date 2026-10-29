@@ -22,4 +22,12 @@ for(const [browserName,engine] of Object.entries(engines)){
  for(const width of [320,390,1440]){
  const context=await browser.newContext({viewport:{width,height:900}}),page=await context.newPage();
  await page.goto('http://127.0.0.1:8001/new-clients.html',{waitUntil:'load'});
- const result=await page.evaluate(()=>({hero:Math.round(document.querySelector('.access-hero').getBoundingClientRect().height),cta:Math.round(document.querySelector('.access-path-row .btn-primary').getBoundingClientRect().bott...[truncated]
+ const result=await page.evaluate(()=>({hero:Math.round(document.querySelector('.access-hero').getBoundingClientRect().height),cta:Math.round(document.querySelector('.access-path-row .btn-primary').getBoundingClientRect().bottom+scrollY),horizontalOverflow:document.documentElement.scrollWidth>innerWidth+1}));
+ out.regressions.push({browser:browserName,width,...result});await context.close();
+ }
+ await browser.close();
+}
+fs.mkdirSync('release-candidate-proof',{recursive:true});fs.writeFileSync('release-candidate-proof/browser-results.json',JSON.stringify(out,null,2));
+const problem=out.browsers.filter(x=>x.error||x.overflow||x.pageErrors?.length||x.brokenImages);
+const axeFails=out.axe.filter(x=>x.violations.length);console.log(JSON.stringify({samples:out.browsers.length,problems:problem,axeScans:out.axe.length,axeFailures:axeFails,hero:out.regressions},null,2));
+if(problem.length||axeFails.length)process.exitCode=1;
