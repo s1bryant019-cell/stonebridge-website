@@ -24,7 +24,7 @@
 - FAIL: **73**
 - NOT VERIFIED: **184**
 
-These cells do not imply a sitewide pass: **each page must meet every required category**. In particular the fixed Careers employment inquiry route remains a genuine FAIL, and New Clients mobile action placement and repeated appointment language remain FAIL.
+These cells do not imply a sitewide pass: **each page must meet every required category**. In particular the **unfixed** Careers employment inquiry route remains a genuine FAIL, and New Clients mobile action placement and repeated appointment language remain FAIL.
 The most relevant 3 visual scores are summarized below as `mobile / desktop`; the linked CSV contains **all 12 categories for every page separately**, with score, threshold, status, evidence and exact issue IDs.
 
 | Entry | Hierarchy M / D | Readability M / D | Premium Feel M / D | Associated issue IDs |
