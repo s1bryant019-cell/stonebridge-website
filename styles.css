@@ -3470,3 +3470,21 @@ html body.paid-search-page main .paid-final-cta-inner{
     max-width:none!important;
   }
 }
+
+/* Focused WCAG 2.2 AA contrast corrections: retain Stonebridge's muted palette. */
+.about-page .about-philosophy article > span,
+.about-page .about-principles article > span { color:#6b5130; }
+.fees-page .fees-small-note { color:#4e5963!important; }
+.clinicians-page .clinicians-service-number { color:#6b5130; }
+.sbx-founder-page .cp-label,
+.sbx-founder-page .cp-number,
+.sbx-founder-page .cp-scope-scan strong,
+.sbx-founder-page .therapy-method-number,
+.sbx-founder-page .founder-credential-label { color:#674e30!important; }
+.sbx-founder-page .book-link-static { color:#4e5963!important; }
+.clinician-profile-page .cp-label,
+.clinician-profile-page .cp-number,
+.clinician-profile-page .cp-scope-scan strong,
+.clinician-profile-page .cp-meta-label,
+.clinician-profile-page .cp-focus-grid strong,
+.clinician-profile-page .cp-availability article > strong { color:#674e30!important; }
