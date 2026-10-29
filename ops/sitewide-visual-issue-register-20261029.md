@@ -101,3 +101,28 @@ The requested rubric has twelve categories: **Redundancy & Clarity, Comprehensio
 
 ## 7. Remaining tests for approval
 Native-resolution owner visual comparisons of changed pages, cross-browser WebKit/Safari and Firefox on representative phones/desktops, 200–400% zoom/reflow, real screen reader and manual focus checks, complete external portal/clinician selection, insurer and fee source validation, privacy-approved staging form delivery, and current Lighthouse/CWV measurements are all **NOT VERIFIED** until done. No merge or production deployment is authorized.
+
+## 8. Follow-up click verification and downloadable screenshot proofs
+After the initial contact-sheet review, the following representative actions were re-executed in Playwright Chromium at **390px and 1440px**, without any clinical submission:
+- Mobile menu expanded and Home → Services navigation succeeded; on desktop the visible Services link succeeded.
+- Services → Adult Therapy anchored to `individual-therapy.html#adult-therapy`.
+- Team retained both independent clinician profile links.
+- Fees & Insurance retained both `#fee-schedule` and `#payment-options`.
+- New Clients retained the existing pending appointment request link.
+- Services → Adolescent Therapy anchored to `#adolescent-therapy`.
+- The Lobby group consultation route preserved `service=teen-group` in the contact form.
+- New Clients continued to offer the clearly optional consultation path.
+- Client Portal retained its real external portal link (only the link was checked, not an authenticated session).
+- Professionals retained a professional-service-specific email inquiry link.
+- Blank consultation form validation blocked a network API request and marked required controls invalid.
+- The mobile menu opened using keyboard Enter and `aria-expanded=true`.
+- **Known failing journey:** Careers Future Opportunities was not distinct from patient intake at either tested width.
+
+This is **link and UI route evidence, not a claim that an adult, parent, patient, or employee completed a third-party booking or application.** Cross-browser, physical-screen and actual inbox delivery remain NOT VERIFIED.
+
+### Separate, reviewable image evidence
+- **New Clients** — [successful full-site + New Clients before/after action run](https://github.com/s1bryant019-cell/stonebridge-website/actions/runs/40806728859), artifact `stonebridge-mobile-desktop-visual-proof`, including full-size 390/1440 site captures and 8 New Clients before/after widths.
+- **11-page contrast scope, 10 active-page before/after comparisons** — [successful contrast run](https://github.com/s1bryant019-cell/stonebridge-website/actions/runs/40810639128), artifact `stonebridge-contrast-before-after`. The retired Fit/Safety route redirects, so no original-screen visual improvement is claimed.
+- **Contact / Portal disclosure legibility** — [successful before/after run](https://github.com/s1bryant019-cell/stonebridge-website/actions/runs/40810476047), artifact `stonebridge-disclosure-legibility-before-after`, both changed pages at 390 and 1440px.
+
+These galleries are the approval evidence for proposed code. The changes have **not** been merged or deployed.
