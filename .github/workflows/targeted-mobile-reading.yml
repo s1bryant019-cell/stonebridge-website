@@ -1,0 +1,55 @@
+name: Targeted mobile body-text visual review — no deployment
+on:
+  pull_request:
+    paths:
+      - 'team-founder.html'
+      - 'team-jasmine-wilson.html'
+      - 'for-clinicians.html'
+      - 'individual-therapy.html'
+      - 'family-therapy.html'
+      - 'couples-therapy.html'
+      - 'parent-support.html'
+      - 'privacy-information.html'
+      - 'ops/capture-targeted-mobile-reading-20261029.mjs'
+      - '.github/workflows/targeted-mobile-reading.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm test
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright @axe-core/playwright
+          npx playwright install --with-deps chromium
+      - name: Run frozen integrated base and candidate
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/sb-reading-base"
+          git archive "${BASE_SHA:-$(git rev-parse origin/test/integrated-visual-acceptance-20261029)}" | tar -x -C "$RUNNER_TEMP/sb-reading-base"
+          nohup python3 -m http.server 8821 --bind 127.0.0.1 --directory "$RUNNER_TEMP/sb-reading-base" >/tmp/sb-reading-before.log 2>&1 &
+          nohup python3 -m http.server 8822 --bind 127.0.0.1 --directory "$GITHUB_WORKSPACE" >/tmp/sb-reading-after.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8821/team-founder.html >/dev/null && curl -sf http://127.0.0.1:8822/team-founder.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - run: node ops/capture-targeted-mobile-reading-20261029.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-targeted-mobile-typography-before-after
+          path: targeted-mobile-reading-proof/
+          retention-days: 30
+          if-no-files-found: warn
