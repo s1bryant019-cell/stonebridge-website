@@ -3488,3 +3488,16 @@ html body.paid-search-page main .paid-final-cta-inner{
 .clinician-profile-page .cp-meta-label,
 .clinician-profile-page .cp-focus-grid strong,
 .clinician-profile-page .cp-availability article > strong { color:#674e30!important; }
+
+/* Preserve mobile text enlargement without horizontal overflow of existing sections. */
+@media(max-width:640px){
+  .site-footer .footer-grid,
+  .site-footer .footer-bottom{grid-template-columns:minmax(0,1fr)!important;}
+  .site-footer .footer-grid > *,
+  .site-footer .footer-bottom > *{min-width:0;overflow-wrap:anywhere;}
+  .new-client-access-page .access-template-intro h2,
+  .new-client-access-page .access-path-row h3,
+  .clinician-profile-page .cp-section-intro h2,
+  .clinician-profile-page .cp-panel h2{overflow-wrap:anywhere;}
+  .clinician-profile-page #clinical-approach .cp-layout{grid-template-columns:minmax(0,1fr)!important;}
+}
