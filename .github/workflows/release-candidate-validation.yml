@@ -76,6 +76,8 @@ jobs:
         run: node ops/capture-integrated-acceptance.mjs
       - name: Chromium, Firefox and WebKit 234-check cross-browser matrix
         run: node ops/release-candidate-crossbrowser.mjs
+      - name: Cross-browser keyboard, two-path focus, and no-submission form validation
+        run: node ops/keyboard-pathways-crossbrowser.mjs
       - name: Save tested PR head SHA and unchanged source-file hashes
         if: always()
         run: |
