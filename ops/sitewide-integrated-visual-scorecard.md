@@ -20,9 +20,9 @@
 **Per-category semantics:** numeric score when the observed full-page screenshot, mobile/desktop interaction, computed text/layout data, and appropriate page context support a defensible judgment; **N/V** only where material verification is missing. Numeric values are calibrated design judgments, not statistical measurements. A score of 8.9 or below is an identified material limitation, not a theoretical possibility; 9.0 or higher denotes no identified issue materially undermining that category's inspected central question. **PASS / FAIL / NOT VERIFIED** is calculated separately from the score and the required minimum. Zero axe warnings is not final accessibility approval. A redirect route is not independently scored as a page.
 
 ## Scorecell summary
-- PASS: **375**
-- FAIL: **65**
-- NOT VERIFIED: **184**
+- PASS: **387**
+- FAIL: **91**
+- NOT VERIFIED: **146**
 
 These cells do not imply a sitewide pass: **each page must meet every required category**. In particular the **unfixed** Careers employment inquiry route remains a genuine FAIL, and New Clients mobile action placement and repeated appointment language remain FAIL.
 The most relevant 3 visual scores are summarized below as `mobile / desktop`; the linked CSV contains **all 12 categories for every page separately**, with score, threshold, status, evidence and exact issue IDs.
@@ -84,3 +84,13 @@ The long-format CSV assigns an issue ID to **only the rubric categories affected
 - **R-01:** retired Fit/Safety public redirect; no independent visual page is presented.
 
 Numbers at or above 9.0 reflect observed category-specific composition with no *identified material* shortcoming within tested dimensions, not a blanket site approval. Material verification gaps still prevent approval even when a visual category passes.
+
+## Release-candidate evidence reconciliation (October 29)
+- PASS **387**, FAIL **91**, NOT VERIFIED **146** out of **624** page/viewport/category judgments. Numbers were **not** changed for the purpose of meeting thresholds. Some previous failing decimals lacked a grounded category-specific defect and are now N/V; others remain explicitly FAIL.
+- The Redundancy & Clarity category is now assessed against **complete visible main copy** on each of 24 active HTML entries; the two redirect-only URLs remain N/V. Full passage overlap, whether needed for different audience decisions, and owner-only consolidation options are documented in `complete-redundancy-clarity-review-20261029.md`.
+- The 9.5 Redundancy & Clarity requirement is retained. All other categories retain 9.0. Every row still separately records score, threshold, status and evidence. Close-to-threshold 9.0–9.1 PASS rows include section-specific explanation and a scope limitation.
+- `Open issue IDs (category-specific)` lists **only** actually unresolved problems applicable to that page and category. Corrected contrast IDs V-01–V-10 have their own `Resolved change IDs` column, and do not count as remaining typography faults.
+- Remaining mobile typography judgments are conservative: measured 15.36–16px improvements and scroll-height tradeoffs in PR #70 do not automatically elevate a category to PASS; owner visual confirmation still matters.
+- New Clients small-phone primary CTA after PR #69 is at y=893 (320×568, scroll 325px) and y=833 (390×844, scroll 0px). V-11 remains open at the smallest heights; visual restraint is valued over forced above-fold positioning.
+
+**No page-wide approved status is inferred from a handful of category PASS values.**
