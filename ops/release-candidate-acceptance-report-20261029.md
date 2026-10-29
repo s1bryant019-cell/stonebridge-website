@@ -50,7 +50,7 @@ The release-workflow outputs `tested-commit.txt` and source-file SHA-256 manifes
 
 ## 5. Full-site content review and corrected 12-category scorecard
 - [24-page completed redundancy report](./complete-redundancy-clarity-review-20261029.md): conceptual duplication with exact sections, KEEP/necessary reinforcement versus REVIEW/consolidate distinctions, and no content edits.
-- [Reconciled CSV for 26 entries × 2 viewports × 12 categories](./sitewide-integrated-visual-scorecard.csv): **387 PASS / 91 FAIL / 146 NOT VERIFIED** cells. Original stricter **9.5** for Redundancy & Clarity and **9.0** for the other categories. Each cell separates numeric score, threshold, decision, evidence, open category-specific issue ID and formerly corrected issue ID.
+- [Reconciled CSV for 26 entries × 2 viewports × 12 categories](./sitewide-integrated-visual-scorecard.csv): **383 PASS / 91 FAIL / 150 NOT VERIFIED** cells. Original stricter **9.5** for Redundancy & Clarity and **9.0** for the other categories. Each cell separates numeric score, threshold, decision, evidence, open category-specific issue ID and formerly corrected issue ID.
 - [Scorecard interpretation](./sitewide-integrated-visual-scorecard.md): missing manual/external evidence is N/V, not misreported as PASS. No score was raised just to reach a required threshold.
 
 ## 6. Genuine open failures
