@@ -1,0 +1,63 @@
+name: Integrated visual acceptance — no deployment
+
+on:
+  pull_request:
+    paths:
+      - 'new-clients.html'
+      - 'contact.html'
+      - 'portal.html'
+      - 'styles.css'
+      - 'home-visual-refresh.css'
+      - 'new-client-access.css'
+      - 'paid-search-landing.css'
+      - 'ops/capture-integrated-acceptance.mjs'
+      - '.github/workflows/integrated-visual-acceptance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrated-audit:
+    name: Integrated 112 tests, 52 axe scans and mobile action exposure
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Confirm no dependency/build-system changes
+        run: npm test
+      - name: Install temporary isolated browser review tools
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright @axe-core/playwright
+          npx playwright install --with-deps chromium
+      - name: Serve base branch and integrated test branch locally
+        shell: bash
+        env:
+          REVIEW_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/stonebridge-visual-base"
+          BASE_SHA="${REVIEW_BASE_SHA:-$(git rev-parse origin/main)}"
+          git archive "$BASE_SHA" | tar -x -C "$RUNNER_TEMP/stonebridge-visual-base"
+          nohup python3 -m http.server 8882 --bind 127.0.0.1 --directory "$RUNNER_TEMP/stonebridge-visual-base" >/tmp/sb-integrated-before.log 2>&1 &
+          nohup python3 -m http.server 8001 --bind 127.0.0.1 --directory "$GITHUB_WORKSPACE" >/tmp/sb-integrated-after.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8882/new-clients.html >/dev/null && curl -sf http://127.0.0.1:8001/new-clients.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Capture full-page before-after, 52 scan audit and 7 phone visibility checks
+        run: node ops/capture-integrated-acceptance.mjs
+      - name: Always save all review screenshots and machine-readable results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-integrated-acceptance-before-after
+          path: visual-integrated-proof/
+          retention-days: 30
+          if-no-files-found: warn

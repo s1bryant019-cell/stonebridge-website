@@ -1,0 +1,102 @@
+name: Stonebridge final candidate — integrated acceptance (no deployment)
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - 'ops/capture-integrated-acceptance.mjs'
+      - 'ops/release-candidate-crossbrowser.mjs'
+      - '.github/workflows/release-candidate-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out exact PR head commit and base history
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Confirm PR head and generated merge-test contain identical source trees
+        shell: bash
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          GENERATED_MERGE_SHA: ${{ github.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          mkdir -p release-candidate-proof
+          TESTED_HEAD=$(git rev-parse HEAD)
+          test "$TESTED_HEAD" = "$EXPECTED_HEAD"
+          HEAD_TREE=$(git rev-parse "${TESTED_HEAD}^{tree}")
+          if [ -n "$PR_NUMBER" ]; then
+            git fetch --quiet origin "refs/pull/${PR_NUMBER}/merge"
+            FETCHED_MERGE_SHA=$(git rev-parse FETCH_HEAD)
+            test "$FETCHED_MERGE_SHA" = "$GENERATED_MERGE_SHA"
+            MERGE_TREE=$(git rev-parse "${FETCHED_MERGE_SHA}^{tree}")
+            test "$HEAD_TREE" = "$MERGE_TREE"
+          else
+            MERGE_TREE="$HEAD_TREE"
+          fi
+          {
+            printf 'pr_head_sha=%s\n' "$TESTED_HEAD"
+            printf 'generated_merge_test_sha=%s\n' "$GENERATED_MERGE_SHA"
+            printf 'pr_head_tree=%s\n' "$HEAD_TREE"
+            printf 'generated_merge_test_tree=%s\n' "$MERGE_TREE"
+            printf 'source_trees_match=%s\n' 'true'
+          } | tee release-candidate-proof/head-vs-merge-tree.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run production regression suite on candidate
+        run: npm test
+      - name: Install temporary browser audit tools
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright @axe-core/playwright
+          npx playwright install --with-deps chromium firefox webkit
+      - name: Serve main and exact candidate locally (no live submissions)
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/sb-final-base"
+          git archive "${BASE_SHA:-$(git rev-parse origin/main)}" | tar -x -C "$RUNNER_TEMP/sb-final-base"
+          nohup python3 -m http.server 8882 --bind 127.0.0.1 --directory "$RUNNER_TEMP/sb-final-base" >/tmp/sb-final-before.log 2>&1 &
+          nohup python3 -m http.server 8001 --bind 127.0.0.1 --directory "$GITHUB_WORKSPACE" >/tmp/sb-final-after.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8882/new-clients.html >/dev/null && curl -sf http://127.0.0.1:8001/new-clients.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Integrated 52-scan axe, all changed full-page screenshots and six-phone CTA visibility
+        run: node ops/capture-integrated-acceptance.mjs
+      - name: Chromium, Firefox and WebKit 234-check cross-browser matrix
+        run: node ops/release-candidate-crossbrowser.mjs
+      - name: Cross-browser keyboard, two-path focus, and no-submission form validation
+        run: node ops/keyboard-pathways-crossbrowser.mjs
+      - name: Save tested PR head SHA and unchanged source-file hashes
+        if: always()
+        run: |
+          mkdir -p release-candidate-proof visual-integrated-proof
+          git rev-parse HEAD | tee release-candidate-proof/tested-commit.txt
+          sha256sum new-clients.html team-founder.html team-jasmine-wilson.html for-clinicians.html individual-therapy.html family-therapy.html couples-therapy.html parent-support.html privacy-information.html > release-candidate-proof/source-hashes.txt
+      - name: Preserve integrated before-after gallery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-final-candidate-before-after
+          path: visual-integrated-proof/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Preserve cross-browser checks and exact source hashes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-final-candidate-browsers-and-sha
+          path: release-candidate-proof/
+          retention-days: 30
+          if-no-files-found: warn

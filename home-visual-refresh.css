@@ -699,3 +699,38 @@ body.home-redesign a{color:inherit}
     animation-iteration-count:1!important;
   }
 }
+
+/* Improve legibility of only the existing home editorial/final supporting text. */
+.home-redesign .home-clinicians .home-conversion-intro .home-eyebrow,
+.home-redesign .home-start-steps .home-conversion-intro .home-eyebrow { color:#76542e!important; }
+.home-redesign .home-step-number { color:#67503a; }
+.home-redesign .home-footer-copy,
+.home-redesign .home-footer-bottom,
+.home-redesign .home-footer-bottom a { color:#48504b; }
+
+/* The recognition emphasis is free to wrap only if text enlargement needs it. */
+@media(max-width:360px) {
+  .home-redesign .home-recognition-nowrap {white-space:normal;overflow-wrap:anywhere;}
+}
+.home-redesign .home-services-title,
+.home-redesign .home-final-title,
+.home-redesign .home-hero-copy h1,
+.home-redesign .home-hero-copy p,
+.home-redesign .home-footer-links a,
+.home-redesign .home-footer-contact-column {
+  overflow-wrap:anywhere;
+  min-width:0;
+}
+.home-redesign .home-services-title {white-space:normal;}
+.home-redesign .home-footer-links {grid-template-columns:minmax(0,1fr);min-width:0;}
+
+/* Desktop one-line preference yields to Firefox text-only enlargement. */
+@media(max-width:1300px) {
+  body.home-redesign .home-services-title {white-space:normal!important;}
+}
+.home-redesign .home-footer-brand {overflow-wrap:anywhere;min-width:0;}
+.home-redesign .home-hero-copy {min-width:0;}
+.home-redesign #home-start-steps-title,
+.home-redesign .home-service-copy p {
+  overflow-wrap:anywhere;
+}

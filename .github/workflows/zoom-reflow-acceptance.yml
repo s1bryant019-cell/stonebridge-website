@@ -1,0 +1,50 @@
+name: Stonebridge genuine zoom and text-resizing verification
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  zoom-reflow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Existing regression suite
+        run: npm test
+      - name: Install temporary headed-browser test requirements
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y xdotool xvfb
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright
+          npx playwright install --with-deps chromium firefox
+      - name: Serve isolated candidate files; no external submissions
+        shell: bash
+        run: |
+          nohup python3 -m http.server 8811 --bind 127.0.0.1 --directory "$GITHUB_WORKSPACE" >/tmp/stonebridge-zoom-candidate.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8811/new-clients.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Reproduce actual Chromium full zoom and Firefox text-only resize
+        run: |
+          xvfb-run -a -s '-screen 0 1900x1100x24' node ops/zoom-reflow-verification.cjs
+      - name: Save measured zoom results and selected before/after zoom screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-actual-zoom-and-text-only-proof
+          path: zoom-reflow-proof/
+          retention-days: 30
+          if-no-files-found: warn

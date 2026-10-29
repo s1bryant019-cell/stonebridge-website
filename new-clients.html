@@ -19,14 +19,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style id="stonebridge-new-clients-two-paths-20261028">
+/* Keep the New Clients heading and choice grid in one shared reading width. */
+.new-client-access-page .access-template-intro h2{max-width:min(100%,48rem)}
+.new-client-access-page .access-path-number{color:#78613f}
 @media(min-width:900px){
  .new-client-access-page .access-template-layout{display:grid;grid-template-columns:1fr;gap:26px}
  .new-client-access-page .access-template-intro{position:static}
- .new-client-access-page .access-template-intro h2{max-width:24ch}
  .new-client-access-page .access-path-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;border-top:0}
  .new-client-access-page .access-path-row{border:1px solid rgba(33,49,66,.16);border-radius:9px;padding:26px 20px;min-width:0;background:#fff}
  .new-client-access-page .access-path-row>div:last-child{display:flex;flex-direction:column;align-items:flex-start}
  .new-client-access-page .access-path-row .btn{margin-top:auto}
+}
+
+@media (max-width:720px) {
+  /* New Clients only: reduce hero depth without changing imagery or text. */
+  .new-client-access-page .access-hero,
+  .new-client-access-page .access-hero-copy { min-height:300px!important; }
 }
 </style>
   <link href="stonebridge-beige-refinement.css?v=20261028quietband1" rel="stylesheet">
@@ -76,7 +84,7 @@
         <div class="access-template-layout">
           <div class="access-template-intro">
             <div class="access-template-label">Getting started</div>
-            <h2>Request an appointment. Consultation is available if you prefer.</h2>
+            <h2>Choose your next step.</h2>
             <div class="access-template-note access-template-note--rail">
               <strong>Emergency or crisis care:</strong> Stonebridge is not an emergency or crisis service. If you are experiencing a medical or psychiatric emergency, believe you may harm yourself or someone else, or feel unable to remain safe, call 911, go to the nearest emergency department, call or text 988, or use local crisis services.
             </div>

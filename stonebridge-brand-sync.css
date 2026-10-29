@@ -631,3 +631,65 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
     display:none!important;
   }
 }
+
+/* Text-only zoom: let established header/footer content reflow without
+   changing its normal-scale grid, logo artwork, or link destinations. */
+.site-footer .footer-grid {
+  grid-template-columns:minmax(0,1.28fr) minmax(0,.7fr) minmax(0,.72fr) minmax(0,1.08fr) minmax(0,.9fr);
+}
+.site-footer .footer-grid > *,
+.site-footer .footer-logo-right,
+.site-footer .sb-psychology-today-footer-seal {
+  min-width:0;
+}
+.site-footer .footer-brand,
+.site-footer .footer-sub,
+.site-footer .footer-title,
+.site-footer .footer-copy,
+.site-footer .footer-links a,
+.site-footer .footer-logo-right,
+.site-footer .sb-pt-caption {
+  overflow-wrap:anywhere;
+}
+.site-header.compact-site-header .nav,
+.site-header.compact-site-header .menu-wrap {
+  flex-wrap:wrap;
+  min-width:0;
+}
+@media (max-width:1000px) {
+  .site-footer .footer-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:760px) {
+  .site-footer .footer-grid {grid-template-columns:minmax(0,1fr);}
+}
+
+/* Allow copyright/contact lines to wrap when Firefox text-only zoom grows them. */
+.site-footer .footer-bottom {min-width:0;flex-wrap:wrap;}
+.site-footer .footer-small,
+.site-footer .footer-bottom a {min-width:0;overflow-wrap:anywhere;}
+@media (max-width:760px) {
+  .site-footer .footer-bottom {grid-template-columns:minmax(0,1fr);}
+}
+
+/* Only long form/hero words need an emergency soft wrap at enlarged text. */
+.contact-page .contact-form-head h2,
+.contact-page .contact-hero-copy h1 {overflow-wrap:anywhere;}
+
+/* Long labels must wrap at 200% text-only zoom without clipping. */
+.new-client-access-page .access-path-row h3,
+.team-page .team-consultation-heading h2,
+.clinician-profile-page .cp-section h2,
+.clinician-profile-page .cp-section-intro h2,
+.careers-page .team-intro h2,
+.careers-page .team-cta-inner h2,
+.careers-page .team-hero-copy h1 {
+  overflow-wrap:anywhere;
+  min-width:0;
+}
+@media(max-width:760px){
+  .clinician-profile-page .cp-shell.cp-layout,
+  .careers-page .team-cta-inner {
+    grid-template-columns:minmax(0,1fr);
+  }
+}
+.team-page .team-intro h2 {overflow-wrap:anywhere;}
