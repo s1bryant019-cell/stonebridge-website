@@ -94,3 +94,13 @@ Numbers at or above 9.0 reflect observed category-specific composition with no *
 - New Clients small-phone primary CTA after PR #69 is at y=893 (320×568, scroll 325px) and y=833 (390×844, scroll 0px). V-11 remains open at the smallest heights; visual restraint is valued over forced above-fold positioning.
 
 **No page-wide approved status is inferred from a handful of category PASS values.**
+
+## Final evidence boundary — additional targeted checks
+
+The numeric visual judgments remain unchanged: **383 PASS, 91 FAIL, 150 NOT VERIFIED**. All 52 Accessibility rubric cells remain **N/V** because automated axe success is not native screen-reader or zoom certification. All 50 unverified Function cells continue to exclude real third-party appointment selection and consultation email delivery.
+
+A separate headless Chromium diagnostic tested 11 representative pages at viewport widths of 1280, 640 and 320 CSS px with injected **root font-size multipliers** 1×, 2×, 4× (99 checks). It recorded overflow in **49** combinations. This is a **nonstandard font-enlargement stress test**, not a substitute for genuine browser zoom, and is **not** evidence of a completed WCAG browser-zoom failure determination. Treat the finding as an unresolved readability/reflow risk pending manual 200%/400% browser zoom testing on real browsers. At normal font sizing, 320px CSS viewport reflow in the existing Chromium/Firefox/WebKit matrix did not show document-level overflow.
+
+Keyboard Tab/Enter/skip-link checks on 11 representative pages succeeded in headless Chromium, and Chromium's accessibility tree exposed main landmarks and named controls. These are useful automated/manual-control probes, **not actual VoiceOver, TalkBack, NVDA or JAWS use**. Emulated touch menus on iPhone 13 (WebKit) and Pixel 7 (Chromium) worked; physical iOS and Android devices remain not verified. No scores were inflated or converted from N/V to PASS on the basis of these incomplete checks.
+
+The owner-only [New Clients editorial preview PR #73](https://github.com/s1bryant019-cell/stonebridge-website/pull/73) changes the single H2 to “Choose your next step.” It is **not included** in this scorecard's tested release-candidate code or score totals until approved and integrated into a retested candidate. Careers J-01 remains open.
