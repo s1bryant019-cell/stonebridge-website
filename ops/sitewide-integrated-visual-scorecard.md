@@ -20,11 +20,11 @@
 **Per-category semantics:** numeric score when the observed full-page screenshot, mobile/desktop interaction, computed text/layout data, and appropriate page context support a defensible judgment; **N/V** only where material verification is missing. Numeric values are calibrated design judgments, not statistical measurements. A score of 8.9 or below is an identified material limitation, not a theoretical possibility; 9.0 or higher denotes no identified issue materially undermining that category's inspected central question. **PASS / FAIL / NOT VERIFIED** is calculated separately from the score and the required minimum. Zero axe warnings is not final accessibility approval. A redirect route is not independently scored as a page.
 
 ## Scorecell summary
-- PASS: **383**
-- FAIL: **91**
+- PASS: **385**
+- FAIL: **89**
 - NOT VERIFIED: **150**
 
-These cells do not imply a sitewide pass: **each page must meet every required category**. In particular the **unfixed** Careers employment inquiry route remains a genuine FAIL, and New Clients mobile action placement and repeated appointment language remain FAIL.
+These cells do not imply a sitewide pass: **each page must meet every required category**. In particular the **unfixed** Careers employment inquiry route remains a genuine FAIL, and New Clients short-phone action placement remains FAIL. The approved H2 no longer repeats the appointment introduction, and Redundancy & Clarity now passes at 9.5 at the inspected mobile and desktop widths.
 The most relevant 3 visual scores are summarized below as `mobile / desktop`; the linked CSV contains **all 12 categories for every page separately**, with score, threshold, status, evidence and exact issue IDs.
 
 | Entry | Hierarchy M / D | Readability M / D | Premium Feel M / D | Associated issue IDs |
@@ -86,21 +86,21 @@ The long-format CSV assigns an issue ID to **only the rubric categories affected
 Numbers at or above 9.0 reflect observed category-specific composition with no *identified material* shortcoming within tested dimensions, not a blanket site approval. Material verification gaps still prevent approval even when a visual category passes.
 
 ## Release-candidate evidence reconciliation (October 29)
-- PASS **383**, FAIL **91**, NOT VERIFIED **150** out of **624** page/viewport/category judgments. Numbers were **not** changed for the purpose of meeting thresholds. Some previous failing decimals lacked a grounded category-specific defect and are now N/V; others remain explicitly FAIL.
+- PASS **385**, FAIL **89**, NOT VERIFIED **150** out of **624** page/viewport/category judgments. Numbers were **not** changed for the purpose of meeting thresholds. Some previous failing decimals lacked a grounded category-specific defect and are now N/V; others remain explicitly FAIL.
 - The Redundancy & Clarity category is now assessed against **complete visible main copy** on each of 24 active HTML entries; the two redirect-only URLs remain N/V. Full passage overlap, whether needed for different audience decisions, and owner-only consolidation options are documented in `complete-redundancy-clarity-review-20261029.md`.
 - The 9.5 Redundancy & Clarity requirement is retained. All other categories retain 9.0. Every row still separately records score, threshold, status and evidence. Close-to-threshold 9.0–9.1 PASS rows include section-specific explanation and a scope limitation.
 - `Open issue IDs (category-specific)` lists **only** actually unresolved problems applicable to that page and category. Corrected contrast IDs V-01–V-10 have their own `Resolved change IDs` column, and do not count as remaining typography faults.
 - Remaining mobile typography judgments are conservative: measured 15.36–16px improvements and scroll-height tradeoffs in PR #70 do not automatically elevate a category to PASS; owner visual confirmation still matters.
-- New Clients small-phone primary CTA after PR #69 is at y=893 (320×568, scroll 325px) and y=833 (390×844, scroll 0px). V-11 remains open at the smallest heights; visual restraint is valued over forced above-fold positioning.
+- New Clients small-phone primary CTA after the approved H2 is at y=798 (320×568, scroll 230px) and y=768 (390×844, scroll 0px). V-11 remains open at the smallest heights; visual restraint is valued over forced above-fold positioning.
 
 **No page-wide approved status is inferred from a handful of category PASS values.**
 
 ## Final evidence boundary — additional targeted checks
 
-The numeric visual judgments remain unchanged: **383 PASS, 91 FAIL, 150 NOT VERIFIED**. All 52 Accessibility rubric cells remain **N/V** because automated axe success is not native screen-reader or zoom certification. All 50 unverified Function cells continue to exclude real third-party appointment selection and consultation email delivery.
+The numeric visual judgments remain unchanged: **385 PASS, 89 FAIL, 150 NOT VERIFIED**. All 52 Accessibility rubric cells remain **N/V** because automated axe success is not native screen-reader or zoom certification. All 50 unverified Function cells continue to exclude real third-party appointment selection and consultation email delivery.
 
-A separate headless Chromium diagnostic tested 11 representative pages at viewport widths of 1280, 640 and 320 CSS px with injected **root font-size multipliers** 1×, 2×, 4× (99 checks). It recorded overflow in **49** combinations. This is a **nonstandard font-enlargement stress test**, not a substitute for genuine browser zoom, and is **not** evidence of a completed WCAG browser-zoom failure determination. Treat the finding as an unresolved readability/reflow risk pending manual 200%/400% browser zoom testing on real browsers. At normal font sizing, 320px CSS viewport reflow in the existing Chromium/Firefox/WebKit matrix did not show document-level overflow.
+The original nonstandard root-font enlargement probe produced **49 overflows in 99 cases**; the [complete 49-case selector register](./49-case-font-stress-selector-register.csv) distinguishes these from real browser behavior. Subsequent **headed Chromium keyboard-driven genuine full zoom** measured viewport/device-scale changes at 100%, 200% and 400%: **33/33 no-overflow checks** across the 11 representative pages. Genuine **Firefox text-only zoom** reproduced 200% overflow in 20/33 checks prior to the scoped fixes; after the fixes, **33/33 at 200% pass**. At the optional, beyond-1.4.4 threshold **400% Firefox text-only zoom**, 15/33 still overflow; retain those findings instead of treating them as WCAG 1.4.10 full-page-zoom failures. Full WCAG conformance is **NOT VERIFIED** without manual assistive-technology, focus/order and physical-device review.
 
 Keyboard Tab/Enter/skip-link checks on 11 representative pages succeeded in headless Chromium, and Chromium's accessibility tree exposed main landmarks and named controls. These are useful automated/manual-control probes, **not actual VoiceOver, TalkBack, NVDA or JAWS use**. Emulated touch menus on iPhone 13 (WebKit) and Pixel 7 (Chromium) worked; physical iOS and Android devices remain not verified. No scores were inflated or converted from N/V to PASS on the basis of these incomplete checks.
 
-The owner-only [New Clients editorial preview PR #73](https://github.com/s1bryant019-cell/stonebridge-website/pull/73) changes the single H2 to “Choose your next step.” It is **not included** in this scorecard's tested release-candidate code or score totals until approved and integrated into a retested candidate. Careers J-01 remains open.
+The New Clients H2 “Choose your next step.” is **owner-approved and now included** as the only New Clients text change in release candidate #72, replacing the original repetitive H2. The alternate [PR #73](https://github.com/s1bryant019-cell/stonebridge-website/pull/73) remains a non-release review branch and must **not** also be merged into main. The two Redundancy & Clarity score cells rose from 8.8 FAIL to 9.5 PASS based on the removed duplication; short-phone V-11 hierarchy/craft/Premium Feel failures and Careers J-01 remain open.
