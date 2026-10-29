@@ -675,3 +675,7 @@ body.paid-search-page{
     justify-content:center;
   }
 }
+
+/* The existing gold editorial labels need ordinary-text contrast on parchment. */
+.paid-search-page .paid-label,
+.paid-search-page .paid-detail-index { color:#76552e; }
