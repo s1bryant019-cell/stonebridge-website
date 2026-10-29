@@ -1,0 +1,71 @@
+name: Stonebridge final candidate — integrated acceptance (no deployment)
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - 'ops/capture-integrated-acceptance.mjs'
+      - 'ops/release-candidate-crossbrowser.mjs'
+      - '.github/workflows/release-candidate-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out exact candidate commit and base history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run production regression suite on candidate
+        run: npm test
+      - name: Install temporary browser audit tools
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright @axe-core/playwright
+          npx playwright install --with-deps chromium firefox webkit
+      - name: Serve main and exact candidate locally (no live submissions)
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/sb-final-base"
+          git archive "${BASE_SHA:-$(git rev-parse origin/main)}" | tar -x -C "$RUNNER_TEMP/sb-final-base"
+          nohup python3 -m http.server 8882 --bind 127.0.0.1 --directory "$RUNNER_TEMP/sb-final-base" >/tmp/sb-final-before.log 2>&1 &
+          nohup python3 -m http.server 8001 --bind 127.0.0.1 --directory "$GITHUB_WORKSPACE" >/tmp/sb-final-after.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8882/new-clients.html >/dev/null && curl -sf http://127.0.0.1:8001/new-clients.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Integrated 52-scan axe, all changed full-page screenshots and six-phone CTA visibility
+        run: node ops/capture-integrated-acceptance.mjs
+      - name: Chromium, Firefox and WebKit 234-check cross-browser matrix
+        run: node ops/release-candidate-crossbrowser.mjs
+      - name: Save exact tested SHA
+        if: always()
+        run: |
+          mkdir -p release-candidate-proof visual-integrated-proof
+          git rev-parse HEAD | tee release-candidate-proof/tested-commit.txt
+          sha256sum new-clients.html team-founder.html team-jasmine-wilson.html for-clinicians.html individual-therapy.html family-therapy.html couples-therapy.html parent-support.html privacy-information.html > release-candidate-proof/source-hashes.txt
+      - name: Preserve integrated before-after gallery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-final-candidate-before-after
+          path: visual-integrated-proof/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Preserve cross-browser checks and exact source hashes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-final-candidate-browsers-and-sha
+          path: release-candidate-proof/
+          retention-days: 30
+          if-no-files-found: warn
