@@ -1,0 +1,55 @@
+name: Stonebridge mobile and desktop visual evidence
+
+on:
+  pull_request:
+    paths:
+      - 'new-clients.html'
+      - 'ops/capture-mobile-first-evidence.mjs'
+      - '.github/workflows/mobile-first-visual-evidence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  visual-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - name: Check out review code and baseline history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser only for this review (no dependency changes)
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright
+          npx playwright install --with-deps chromium
+      - name: Prepare immutable base-branch snapshot and serve both versions locally
+        shell: bash
+        env:
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/stonebridge-baseline"
+          BASE_SHA="${PR_BASE_SHA:-$(git rev-parse origin/main)}"
+          git archive "$BASE_SHA" | tar -x -C "$RUNNER_TEMP/stonebridge-baseline"
+          nohup python3 -m http.server 8765 --directory "$RUNNER_TEMP/stonebridge-baseline" >/tmp/stonebridge-before.log 2>&1 &
+          nohup python3 -m http.server 8766 --directory "$GITHUB_WORKSPACE" >/tmp/stonebridge-after.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8765/new-clients.html >/dev/null && curl -sf http://127.0.0.1:8766/new-clients.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Capture nine-width site matrix and before/after New Clients screenshots
+        run: node ops/capture-mobile-first-evidence.mjs
+      - name: Upload visual gallery, original captures, and browser measurements
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-mobile-desktop-visual-proof
+          path: visual-proof/
+          retention-days: 30
+          if-no-files-found: warn
