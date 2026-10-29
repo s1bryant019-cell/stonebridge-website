@@ -1,0 +1,52 @@
+name: Disclosure typography before-after review
+
+on:
+  pull_request:
+    paths:
+      - 'contact.html'
+      - 'portal.html'
+      - 'ops/capture-disclosure-legibility.mjs'
+      - '.github/workflows/disclosure-legibility-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright @axe-core/playwright
+          npx playwright install --with-deps chromium
+      - name: Serve base branch and candidate in isolated environments
+        shell: bash
+        env:
+          REVIEW_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/stonebridge-disclosure-base"
+          BASE_SHA="${REVIEW_BASE_SHA:-$(git rev-parse origin/main)}"
+          git archive "$BASE_SHA" | tar -x -C "$RUNNER_TEMP/stonebridge-disclosure-base"
+          nohup python3 -m http.server 8773 --directory "$RUNNER_TEMP/stonebridge-disclosure-base" >/tmp/disclosure-before.log 2>&1 &
+          nohup python3 -m http.server 8774 --directory "$GITHUB_WORKSPACE" >/tmp/disclosure-after.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8773/contact.html >/dev/null && curl -sf http://127.0.0.1:8774/contact.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - run: node ops/capture-disclosure-legibility.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-disclosure-legibility-before-after
+          path: disclosure-legibility-proof/
+          retention-days: 30
+          if-no-files-found: warn
