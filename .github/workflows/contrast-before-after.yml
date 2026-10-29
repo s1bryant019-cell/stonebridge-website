@@ -1,0 +1,57 @@
+name: Contrast before-after visual review
+
+on:
+  pull_request:
+    paths:
+      - 'styles.css'
+      - 'home-visual-refresh.css'
+      - 'new-client-access.css'
+      - 'paid-search-landing.css'
+      - 'ops/capture-contrast-review.mjs'
+      - '.github/workflows/contrast-before-after.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install temporary review-only browser and axe tools
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright @axe-core/playwright
+          npx playwright install --with-deps chromium
+      - name: Start unchanged base and review branch on isolated local ports
+        shell: bash
+        env:
+          REVIEW_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/stonebridge-contrast-base"
+          BASE_SHA="${REVIEW_BASE_SHA:-$(git rev-parse origin/main)}"
+          git archive "$BASE_SHA" | tar -x -C "$RUNNER_TEMP/stonebridge-contrast-base"
+          nohup python3 -m http.server 8771 --directory "$RUNNER_TEMP/stonebridge-contrast-base" >/tmp/sb-contrast-before.log 2>&1 &
+          nohup python3 -m http.server 8772 --directory "$GITHUB_WORKSPACE" >/tmp/sb-contrast-after.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8771/about.html >/dev/null && curl -sf http://127.0.0.1:8772/about.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Capture full-page proof and audit 26 HTML entries
+        run: node ops/capture-contrast-review.mjs
+      - name: Preserve evidence whether or not gate passes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-contrast-before-after
+          path: contrast-review-proof/
+          retention-days: 30
+          if-no-files-found: warn
