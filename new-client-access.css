@@ -1189,3 +1189,6 @@ body.fit-safety-page{
   }
   .fit-safety-page .screen-section>p{margin-bottom:12px}
 }
+
+/* Scope the fit/safety step numeral contrast to that screening utility. */
+.fit-safety-page .access-path-number { color:#674e30; }
