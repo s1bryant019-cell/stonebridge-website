@@ -1,0 +1,48 @@
+name: New Clients mobile hero refinement — no deployment
+on:
+  pull_request:
+    paths:
+      - 'new-clients.html'
+      - 'ops/capture-new-clients-mobile-hero-20261029.mjs'
+      - '.github/workflows/new-clients-mobile-hero-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm test
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright @axe-core/playwright
+          npx playwright install --with-deps chromium
+      - name: Serve integrated base and candidate separately
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/sb-integrated-base"
+          git archive "${BASE_SHA:-$(git rev-parse origin/test/integrated-visual-acceptance-20261029)}" | tar -x -C "$RUNNER_TEMP/sb-integrated-base"
+          nohup python3 -m http.server 8811 --bind 127.0.0.1 --directory "$RUNNER_TEMP/sb-integrated-base" >/tmp/sb-hero-before.log 2>&1 &
+          nohup python3 -m http.server 8812 --bind 127.0.0.1 --directory "$GITHUB_WORKSPACE" >/tmp/sb-hero-after.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8811/new-clients.html >/dev/null && curl -sf http://127.0.0.1:8812/new-clients.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - run: node ops/capture-new-clients-mobile-hero-20261029.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-new-clients-mobile-hero-before-after
+          path: new-clients-mobile-proof/
+          retention-days: 30
+          if-no-files-found: warn
