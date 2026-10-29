@@ -1,0 +1,56 @@
+name: Stonebridge New Clients owner editorial preview
+
+on:
+  pull_request:
+    paths:
+      - 'new-clients.html'
+      - 'ops/review-new-clients-heading.mjs'
+      - '.github/workflows/new-clients-editorial-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  visual-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify existing tests
+        run: npm test
+      - name: Install temporary browser tools
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright
+          npx playwright install --with-deps chromium
+      - name: Serve PR base and proposed editorial alternative separately
+        shell: bash
+        env:
+          REVIEW_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/new-clients-current"
+          BASE_SHA="${REVIEW_BASE_SHA:-$(git rev-parse origin/release/stonebridge-mobile-acceptance-20261029)}"
+          git archive "$BASE_SHA" | tar -x -C "$RUNNER_TEMP/new-clients-current"
+          nohup python3 -m http.server 8781 --bind 127.0.0.1 --directory "$RUNNER_TEMP/new-clients-current" >/tmp/newclients-current.log 2>&1 &
+          nohup python3 -m http.server 8782 --bind 127.0.0.1 --directory "$GITHUB_WORKSPACE" >/tmp/newclients-editorial.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://127.0.0.1:8781/new-clients.html >/dev/null && curl -sf http://127.0.0.1:8782/new-clients.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Compare mobile and desktop editorial before/after
+        run: node ops/review-new-clients-heading.mjs
+      - name: Upload full-page proof and measurements
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-owner-review-new-clients-h2
+          path: editorial-h2-proof/
+          retention-days: 30
+          if-no-files-found: warn
