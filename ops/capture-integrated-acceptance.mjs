@@ -62,7 +62,7 @@ for(const [width,height] of devices)for(const [version,url] of [['before',BASE],
    safety:box('.access-template-note')};
  });
  task.push({version,requestedViewportWidthCssPx:width,requestedViewportHeightCssPx:height,...result});
- if([390,375,430].includes(width)) await page.screenshot({path:path.join(out,'new-clients-task-'+width+'x'+height+'-'+version+'.jpg'),type:'jpeg',quality:75,fullPage:false});
+ if(width!==360) await page.screenshot({path:path.join(out,'new-clients-task-'+width+'x'+height+'-'+version+'.jpg'),type:'jpeg',quality:75,fullPage:true,animations:'disabled'});
  await context.close();
 }
 await browser.close();
