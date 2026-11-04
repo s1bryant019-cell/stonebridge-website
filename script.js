@@ -17,7 +17,8 @@
     ].indexOf(page) !== -1) return 'services';
     if (page === 'fees-insurance.html') return 'fees';
     if (page === 'contact.html') return 'new-clients';
-    if (page === 'for-clinicians.html' || page === 'forensic.html') return 'professionals';
+    if (page === 'forensic.html') return 'forensic';
+    if (page === 'for-clinicians.html') return 'professionals';
     if (page === 'portal.html') return 'portal';
     return '';
   }
@@ -40,6 +41,7 @@
       '      <nav class="menu" aria-label="Primary navigation">',
       navLink('index.html','Home','home',active),
       navLink('services.html','Services','services',active),
+      navLink('forensic.html','Forensic Services','forensic',active),
       navLink('team.html','Team','team',active),
       navLink('new-clients.html','New Clients','new-clients',active),
       navLink('fees-insurance.html','Fees &amp; Insurance','fees',active),
@@ -102,6 +104,7 @@
     var mainLinks=[
       ['index.html','Home'],
       ['services.html','Services'],
+      ['forensic.html','Forensic Services'],
       ['team.html','Team'],
       ['new-clients.html','New Clients'],
       ['fees-insurance.html','Fees & Insurance'],
@@ -119,7 +122,7 @@
         node=document.createElement('a');
         node.href=href;
         node.textContent=label;
-        if(href==='new-clients.html' && (pageName()==='new-clients.html' || pageName()==='new-clients')){
+        if((href==='new-clients.html' && (pageName()==='new-clients.html' || pageName()==='new-clients')) || (href==='forensic.html' && pageName()==='forensic.html')){
           node.className='active';
           node.setAttribute('aria-current','page');
         }
