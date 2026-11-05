@@ -26,8 +26,8 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y xdotool xvfb
-          npm install --no-save --no-package-lock --no-audit --no-fund playwright
-          npx playwright install --with-deps chromium firefox
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.64.1
+          npx --no-install playwright install --with-deps chromium firefox
       - name: Serve isolated candidate files; no external submissions
         shell: bash
         run: |
