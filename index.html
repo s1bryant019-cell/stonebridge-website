@@ -836,55 +836,19 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
     }
   </style>
   <style id="stonebridge-home-forensic-pathway-review">
-    /* Distinct professional-services link; do not mix forensic work into psychotherapy cards or appointment CTAs. */
-    body.home-redesign .home-forensic{
-      background:#f2ece4;
+    /* Modest professional-services link within existing home service content. */
+    body.home-redesign .home-services-professional-ref{
+      display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px;
+      margin-top:22px;padding-top:17px;
       border-top:1px solid rgba(33,49,66,.14);
-      border-bottom:1px solid rgba(33,49,66,.14);
+      font:400 .88rem/1.6 "Inter",sans-serif;color:#52616f;
     }
-    body.home-redesign .home-forensic-inner{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      align-items:center;
-      gap:30px;
-      padding:clamp(30px,4.5vw,49px) 0;
+    body.home-redesign .home-services-professional-ref a{
+      color:#163b61;font-weight:600;text-decoration:underline;text-underline-offset:3px;
+      min-height:44px;display:inline-flex;align-items:center;
     }
-    body.home-redesign .home-forensic-label{
-      margin:0 0 9px;
-      color:#806847;
-      font:700 .74rem/1.5 "Inter",sans-serif;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-    }
-    body.home-redesign .home-forensic h2{
-      margin:0 0 11px;
-      color:#163b61;
-      font:600 clamp(1.85rem,3vw,2.55rem)/1.15 "EB Garamond",Georgia,serif;
-    }
-    body.home-redesign .home-forensic-copy>p:last-child{
-      max-width:74ch;
-      margin:0;
-      color:#425262;
-      font:400 .96rem/1.7 "Inter",sans-serif;
-    }
-    body.home-redesign .home-forensic-link{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      min-height:44px;
-      color:#163b61;
-      font:650 .92rem/1.4 "Inter",sans-serif;
-      text-decoration:underline;
-      text-underline-offset:4px;
-      white-space:nowrap;
-    }
-    body.home-redesign .home-forensic-link:focus-visible{
-      outline:2px solid #806847;
-      outline-offset:4px;
-    }
-    @media(max-width:760px){
-      body.home-redesign .home-forensic-inner{grid-template-columns:1fr;gap:14px}
-      body.home-redesign .home-forensic-link{white-space:normal}
+    body.home-redesign .home-services-professional-ref a:focus-visible{
+      outline:2px solid #806847;outline-offset:3px;
     }
   </style>
 </head>
@@ -902,7 +866,6 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
           <a href="about.html">About</a>
           <a href="team.html">Team</a>
           <a href="services.html">Services</a>
-          <a href="forensic.html">Forensic Services</a>
           <a href="fees-insurance.html">Fees &amp; Insurance</a>
           <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Portal</a>
@@ -1017,19 +980,13 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
         </div>
+        <div class="home-services-professional-ref" aria-label="Additional professional services">
+          <span>For attorneys and legal professionals</span>
+          <a href="forensic.html">Forensic Psychology Services <span aria-hidden="true">→</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="home-forensic" aria-labelledby="home-forensic-title">
-      <div class="home-container home-forensic-inner">
-        <div class="home-forensic-copy">
-          <p class="home-forensic-label">For attorneys, guardians ad litem, and legal professionals</p>
-          <h2 id="home-forensic-title">Forensic Psychology Services</h2>
-          <p>Separate from psychotherapy, Dr. Stephen W. Bryant, PsyD, offers forensic records review, attorney and guardian ad litem consultation, forensic case consultation, and expert witness services. Each potential engagement is reviewed individually.</p>
-        </div>
-        <a class="home-forensic-link" href="forensic.html">Explore Forensic Services <span aria-hidden="true">→</span></a>
-      </div>
-    </section>
 
     <div class="home-perspective-founder-composition">
     <section class="home-clinicians" aria-labelledby="home-clinicians-title">
