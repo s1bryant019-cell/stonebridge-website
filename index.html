@@ -836,20 +836,14 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
     }
   </style>
   <style id="stonebridge-home-forensic-pathway-review">
-    /* Modest professional-services link within existing home service content. */
-    body.home-redesign .home-services-professional-ref{
-      display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px;
-      margin-top:22px;padding-top:17px;
-      border-top:1px solid rgba(33,49,66,.14);
-      font:400 .88rem/1.6 "Inter",sans-serif;color:#52616f;
-    }
-    body.home-redesign .home-services-professional-ref a{
-      color:#163b61;font-weight:600;text-decoration:underline;text-underline-offset:3px;
-      min-height:44px;display:inline-flex;align-items:center;
-    }
-    body.home-redesign .home-services-professional-ref a:focus-visible{
-      outline:2px solid #806847;outline-offset:3px;
-    }
+  /* Contextual link inside the existing Services introduction—not another visual section. */
+  body.home-redesign .home-services-head .home-forensic-inline{color:#52616f}
+  body.home-redesign .home-services-head .home-forensic-inline a{
+    color:#163b61;text-decoration:underline;text-underline-offset:3px;font-weight:600
+  }
+  body.home-redesign .home-services-head .home-forensic-inline a:focus-visible{
+    outline:2px solid #806847;outline-offset:3px
+  }
   </style>
 </head>
 <body class="home-redesign">
@@ -945,7 +939,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
       <div class="home-container">
         <div class="home-services-head">
           <h2 class="home-services-title" id="services-title">Psychotherapy for individuals, relationships, and families</h2>
-          <p>Online psychotherapy throughout Illinois for a range of concerns and life stages.</p>
+          <p>Online psychotherapy throughout Illinois for a range of concerns and life stages. <span class="home-forensic-inline">For legal professionals, see <a href="forensic.html">forensic psychology services</a>.</span></p>
         </div>
 
         <div class="home-services-grid">
@@ -979,10 +973,6 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
             <span class="home-service-copy"><h3>Parent Support</h3><p>Guidance, boundaries, and family patterns.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
-        </div>
-        <div class="home-services-professional-ref" aria-label="Additional professional services">
-          <span>For attorneys and legal professionals</span>
-          <a href="forensic.html">Forensic Psychology Services <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
