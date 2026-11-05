@@ -3488,3 +3488,9 @@ html body.paid-search-page main .paid-final-cta-inner{
 .clinician-profile-page .cp-meta-label,
 .clinician-profile-page .cp-focus-grid strong,
 .clinician-profile-page .cp-availability article > strong { color:#674e30!important; }
+
+/* Single footer wordmark: prevent duplicate logo flash before shared enhancements load. */
+.site-footer .footer-logo-right > picture,
+.home-footer .home-footer-brandmarks > picture {
+  display:none!important;
+}
