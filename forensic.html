@@ -78,11 +78,23 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
 .forensic-page .forensic-billing{margin-top:23px}
 .forensic-page .forensic-billing ul{max-width:76ch;margin:12px 0 0;padding-left:22px}
 .forensic-page .forensic-billing li+li{margin-top:8px}
-.forensic-page .forensic-cta{padding:clamp(42px,5vw,60px) 0;background:#153857;color:#fff}
+.forensic-page .forensic-cta{padding:clamp(34px,4.5vw,48px) 0;background:#153857;color:#fff}
 .forensic-page .forensic-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}
 .forensic-page .forensic-cta h2{color:#fff}
 .forensic-page .forensic-cta p{max-width:66ch;margin:0 0 12px;font:400 1rem/1.7 "Inter",sans-serif;color:#f5f0e9}
 .forensic-page .forensic-cta .btn{flex-shrink:0}
+.forensic-page .interior-hero .hero-actions .btn-primary,
+.forensic-page .forensic-cta .btn-primary{
+  background:#FAF5EF;color:#0F2A45;border-color:#FAF5EF;box-shadow:none
+}
+.forensic-page .interior-hero .hero-actions .btn-primary:hover,
+.forensic-page .forensic-cta .btn-primary:hover{
+  background:#fffaf2;border-color:#fffaf2
+}
+.forensic-page .interior-hero .hero-actions .btn-primary:focus-visible,
+.forensic-page .forensic-cta .btn-primary:focus-visible{
+  outline:3px solid #B58A49;outline-offset:3px
+}
 .forensic-page .forensic-section a:not(.btn){color:#163b61;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){
   .forensic-page .forensic-service-grid{grid-template-columns:1fr}
@@ -136,7 +148,7 @@ html body[data-static-hero-system] .sb-standard-hero.sb-standard-hero::before{
     <div class="forensic-shell">
       <div class="forensic-kicker">For legal professionals</div>
       <h2 id="forensic-services-title">Available forensic services</h2>
-      <p class="forensic-service-intro">Led by Dr. Stephen W. Bryant, PsyD, a licensed clinical psychologist with training in clinical and forensic psychology. Engagements are reviewed individually for professional role, competence, scope, and availability.</p>
+      <p class="forensic-service-intro">Led by Dr. Stephen W. Bryant, PsyD, a licensed clinical psychologist with training in clinical and forensic psychology. Each referral is considered for appropriate professional scope and competence.</p>
       <div class="forensic-service-grid">
         <article class="forensic-service-card">
           <h3>Forensic Records Review</h3>
