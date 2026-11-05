@@ -40,7 +40,8 @@ test("five service and about pages offer one quiet optional consultation text li
 
 test("fees introduction describes clinician/plan eligibility without changing the accepted network list", () => {
   const fees = read("fees-insurance.html");
-  assert.match(fees, /Insurance participation varies by plan and clinician\. Review accepted plans and coverage details below\./);
+  assert.match(fees, /Insurance participation varies by clinician and plan\./);
+  assert.match(fees, /out-of-pocket cost may depend on your plan’s deductible, copay, coinsurance, and covered services\./);
   assert.match(fees, /href="#payment-options">Review Accepted Insurance<\/a>/);
   assert.doesNotMatch(fees, /<span class="sb-utility-strip__item">Aetna \+ BCBSIL<\/span>/);
   for(const name of ["Aetna", "Blue Cross Blue Shield of Illinois", "Medicaid FFS", "Guidehealth Behavioral Health Network - Advocate Medical Group West"]) {
