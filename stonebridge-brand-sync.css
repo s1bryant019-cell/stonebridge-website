@@ -694,85 +694,135 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
 }
 .team-page .team-intro h2 {overflow-wrap:anywhere;}
 
-/* Footer wordmark de-duplication — preview only (November 2026).
-   Keep the approved Stonebridge name at the beginning of each footer.
-   The secondary full-name image is redundant; retain the existing
-   Psychology Today professional verification and all navigation. */
-.site-footer .footer-logo-right.sb-pt-seal-static > picture,
-.site-footer .footer-logo-right:not(.sb-pt-seal-static) > picture,
-.home-footer .home-footer-brandmarks > picture {
-  display:none!important;
+/* Consistent footer brand and responsive composition — preview-only review.
+   Use the actual approved Stonebridge logo once, at the start of each footer.
+   The independent Psychology Today verification remains visible and separate. */
+.site-footer .sb-footer-wordmark,
+.home-footer .sb-footer-wordmark{
+  display:block;
+  width:min(100%,198px);
+  max-width:198px;
+  line-height:0;
 }
-
-/* The former logo column is now reserved for the independent verification
-   badge; it should not look like an empty bordered logo container. */
+.site-footer .sb-footer-wordmark img,
+.home-footer .sb-footer-wordmark img{
+  display:block;
+  width:100%;
+  max-width:100%;
+  max-height:100px;
+  height:auto;
+  object-fit:contain;
+  object-position:left center;
+  opacity:1;
+}
+.site-footer .footer-grid > *,
+.home-footer .home-footer-grid > *{min-width:0}
+.site-footer .footer-copy,
+.home-footer .home-footer-copy{margin-top:12px}
+.site-footer .footer-grid{
+  grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr) minmax(0,.8fr) minmax(0,1.16fr) minmax(0,.8fr);
+  column-gap:clamp(18px,2.1vw,30px);
+  row-gap:25px;
+}
+.home-footer .home-footer-grid{
+  grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr) minmax(0,.8fr) minmax(0,1.16fr) minmax(0,.8fr);
+  column-gap:clamp(18px,2.1vw,30px);
+  row-gap:25px;
+}
 .site-footer .footer-logo-right.sb-pt-seal-static{
   min-height:0!important;
-  padding-left:0!important;
   border-left:0!important;
+  padding-left:0!important;
   justify-content:flex-start!important;
   align-items:flex-start!important;
   gap:0!important;
 }
-.site-footer .footer-logo-right.sb-pt-seal-static .sb-psychology-today-footer-seal{
-  align-items:flex-start!important;
-}
-.site-footer .footer-logo-right.sb-pt-seal-static .sb-pt-caption{
-  text-align:left!important;
-}
-
-/* Two legacy utility pages had only a duplicate logo and no verified seal.
-   Collapse the now-empty column and let the existing four groups use it. */
-body.contact-page .site-footer .footer-logo-right:not(.sb-pt-seal-static),
-body.fit-safety-page .site-footer .footer-logo-right:not(.sb-pt-seal-static) {
-  display:none!important;
-}
-@media(min-width:1001px){
-  body.contact-page .site-footer .footer-grid,
-  body.fit-safety-page .site-footer .footer-grid{
-    grid-template-columns:minmax(0,1.28fr) minmax(0,.7fr) minmax(0,.72fr) minmax(0,1.08fr);
-  }
-}
-
-/* Home has its own approved footer classes. Show only the professional seal,
-   including where the old full-logo column was previously hidden on tablet. */
-.home-footer .home-footer-brandmarks{
-  display:flex!important;
-  flex-direction:column;
-  justify-content:flex-start;
-  align-items:flex-start;
-  gap:0;
-  min-width:0;
-}
+.site-footer .footer-logo-right.sb-pt-seal-static .sb-psychology-today-footer-seal,
 .home-footer .home-footer-brandmarks .sb-psychology-today-footer-seal{
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
-  gap:5px;
+  align-items:flex-start!important;
+  justify-content:flex-start;
   max-width:100%;
+  gap:5px;
 }
-.home-footer .home-footer-brandmarks .sb-pt-caption{
-  text-align:left;
+.site-footer .footer-logo-right.sb-pt-seal-static .sb-pt-caption,
+.home-footer .home-footer-brandmarks .sb-pt-caption{text-align:left!important}
+.home-footer .home-footer-brandmarks{
+  display:flex!important;
+  flex-direction:column;
+  align-items:flex-start!important;
+  justify-content:flex-start;
+  min-width:0;
+  gap:0;
 }
-@media(min-width:1201px){
-  .home-footer .home-footer-grid{
-    grid-template-columns:minmax(0,1.35fr) minmax(0,.75fr) minmax(0,.85fr) minmax(0,1.25fr) minmax(0,.8fr);
+/* These two utility pages had a logo-only fifth column and no verified seal. */
+body.contact-page .site-footer .footer-logo-right:not(.sb-pt-seal-static),
+body.fit-safety-page .site-footer .footer-logo-right:not(.sb-pt-seal-static){
+  display:none!important;
+}
+@media(min-width:1101px){
+  body.contact-page .site-footer .footer-grid,
+  body.fit-safety-page .site-footer .footer-grid{
+    grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr) minmax(0,.8fr) minmax(0,1.16fr);
   }
 }
-@media (min-width:769px) and (max-width:1200px) {
+/* Tablet: grouped navigation, distinct from the five-column desktop footer. */
+@media(min-width:701px) and (max-width:1100px){
+  .site-footer .footer-grid,
   .home-footer .home-footer-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-areas:"brand marks" "care practice" "contact contact";
+    column-gap:clamp(22px,4vw,45px);
+    row-gap:26px;
   }
-  .home-footer .home-footer-brandmarks{
-    grid-column:2;
+  .site-footer .footer-grid > :nth-child(1),
+  .home-footer .home-footer-brand-column{grid-area:brand}
+  .site-footer .footer-grid > :nth-child(2),
+  .home-footer .home-footer-care-column{grid-area:care}
+  .site-footer .footer-grid > :nth-child(3),
+  .home-footer .home-footer-practice-column{grid-area:practice}
+  .site-footer .footer-grid > :nth-child(4),
+  .home-footer .home-footer-contact-column{grid-area:contact}
+  .site-footer .footer-grid > :nth-child(5),
+  .home-footer .home-footer-brandmarks{grid-area:marks}
+  body.contact-page .site-footer .footer-grid,
+  body.fit-safety-page .site-footer .footer-grid{
+    grid-template-areas:"brand brand" "care practice" "contact contact";
   }
 }
-@media(max-width:768px){
+/* Phone: logo first, two navigation groups, contact, then verification. */
+@media(max-width:700px){
+  .site-footer .footer-grid,
   .home-footer .home-footer-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-areas:"brand brand" "care practice" "contact contact" "marks marks";
+    column-gap:18px;
+    row-gap:25px;
+  }
+  .site-footer .footer-grid > :nth-child(1),
+  .home-footer .home-footer-brand-column{grid-area:brand}
+  .site-footer .footer-grid > :nth-child(2),
+  .home-footer .home-footer-care-column{grid-area:care}
+  .site-footer .footer-grid > :nth-child(3),
+  .home-footer .home-footer-practice-column{grid-area:practice}
+  .site-footer .footer-grid > :nth-child(4),
+  .home-footer .home-footer-contact-column{grid-area:contact}
+  .site-footer .footer-grid > :nth-child(5),
+  .home-footer .home-footer-brandmarks{grid-area:marks}
+  body.contact-page .site-footer .footer-grid,
+  body.fit-safety-page .site-footer .footer-grid{
+    grid-template-areas:"brand brand" "care practice" "contact contact";
+  }
+  .site-footer .sb-footer-wordmark,
+  .home-footer .sb-footer-wordmark{width:min(100%,183px)}
+  .site-footer .footer-bottom,
+  .home-footer .home-footer-bottom{
+    display:grid;
     grid-template-columns:minmax(0,1fr);
+    gap:9px;
   }
-  .home-footer .home-footer-brandmarks{
-    grid-column:1;
-  }
+  .home-footer .home-footer-bottom > div:last-child{text-align:left}
 }
-
