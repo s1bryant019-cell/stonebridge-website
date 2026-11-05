@@ -49,3 +49,13 @@ test("consultation scripts do not leave escaped newline characters in page text"
   assert.doesNotMatch(contact, /<script src="script\.js[^"]*"><\/script>\\n\s*<script/);
   assert.match(contact, /<script src="script\.js[^"]*"><\/script>\n\s*<script src="consultation-request\.js/);
 });
+
+test("tablet menu preserves appointment access at 761 through 960 pixels", () => {
+  const css = page("stonebridge-brand-sync.css");
+  const app = page("script.js");
+  assert.match(css, /@media \(min-width:761px\) and \(max-width:960px\)/);
+  assert.match(css, /\.menu-wrap\.open \.header-cta/);
+  assert.match(css, /display:block!important/);
+  assert.match(app, /See Available Appointments/);
+  assert.match(app, /menu-wrap/);
+});
