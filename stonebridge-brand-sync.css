@@ -698,7 +698,8 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
    Keep the approved Stonebridge name at the beginning of each footer.
    The secondary full-name image is redundant; retain the existing
    Psychology Today professional verification and all navigation. */
-.site-footer .footer-logo-right > picture,
+.site-footer .footer-logo-right.sb-pt-seal-static > picture,
+.site-footer .footer-logo-right:not(.sb-pt-seal-static) > picture,
 .home-footer .home-footer-brandmarks > picture {
   display:none!important;
 }
