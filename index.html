@@ -460,31 +460,77 @@
 
 
 <style id="stonebridge-home-final-desktop-layout-20261014">
-/* Homepage closing CTA: distribute the existing content across desktop space only. */
-@media (min-width: 901px) {
-  .home-final {
-    min-height: 306px;
+/* Group the message as one idea and keep the actions together.
+   Desktop, tablet and phone layouts are intentionally different. */
+@media(min-width:1101px){
+  body.home-redesign .home-final{min-height:320px}
+  body.home-redesign .home-final .home-final-inner{
+    width:min(1050px,calc(100% - 88px));
+    display:grid;
+    grid-template-columns:minmax(0,1.15fr) minmax(270px,.8fr);
+    align-items:center;
+    column-gap:clamp(56px,7vw,104px);
+    padding:54px 0!important;
+    text-align:left;
   }
-  .home-final .home-final-inner {
-    width: min(1180px, calc(100% - 88px));
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr) auto;
-    align-items: center;
-    column-gap: clamp(26px, 3.25vw, 52px);
-    padding: 44px 0 !important;
-    text-align: left;
+  body.home-redesign .home-final .home-final-title{
+    grid-column:1;grid-row:1;
+    max-width:14ch;margin:0 0 12px;
   }
-  .home-final .home-final-title {
-    margin: 0;
+  body.home-redesign .home-final .home-final-inner>p{
+    grid-column:1;grid-row:2;
+    max-width:50ch;margin:0!important;
   }
-  .home-final .home-final-inner p {
-    max-width: 430px;
-    margin: 0 !important;
+  body.home-redesign .home-final .home-final-actions{
+    grid-column:2;grid-row:1 / span 2;
+    display:flex;flex-direction:column;
+    align-items:stretch;justify-content:center;
+    gap:12px;width:100%;max-width:320px;
+    justify-self:end;margin:0!important;
   }
-  .home-final .home-final-inner .home-primary-btn {
-    margin-top: 0 !important;
-    justify-self: end;
-    white-space: nowrap;
+  body.home-redesign .home-final .home-final-actions .home-hero-action{
+    min-height:46px;width:100%;justify-content:center;text-align:center;
+  }
+}
+@media(min-width:701px) and (max-width:1100px){
+  body.home-redesign .home-final{min-height:0}
+  body.home-redesign .home-final .home-final-inner{
+    display:flex;flex-direction:column;align-items:flex-start;
+    width:min(700px,calc(100% - 64px));
+    padding:52px 0!important;text-align:left;
+  }
+  body.home-redesign .home-final .home-final-title{margin:0 0 12px}
+  body.home-redesign .home-final .home-final-inner>p{
+    max-width:55ch;margin:0!important;
+  }
+  body.home-redesign .home-final .home-final-actions{
+    display:flex;flex-direction:row;flex-wrap:wrap;
+    align-items:center;justify-content:flex-start;
+    gap:12px;margin:24px 0 0!important;
+  }
+  body.home-redesign .home-final .home-final-actions .home-hero-action{
+    min-height:44px;
+  }
+}
+@media(max-width:700px){
+  body.home-redesign .home-final{min-height:0}
+  body.home-redesign .home-final .home-final-inner{
+    display:flex;flex-direction:column;align-items:stretch;
+    width:calc(100% - 40px);
+    padding:44px 0!important;text-align:left;
+  }
+  body.home-redesign .home-final .home-final-title{margin:0 0 12px}
+  body.home-redesign .home-final .home-final-inner>p{
+    max-width:44ch;margin:0!important;
+  }
+  body.home-redesign .home-final .home-final-actions{
+    display:flex;flex-direction:column;
+    align-items:stretch;justify-content:flex-start;
+    width:100%;gap:10px;margin:22px 0 0!important;
+  }
+  body.home-redesign .home-final .home-final-actions .home-hero-action{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:48px;width:100%;text-align:center;
   }
 }
 </style>
@@ -835,6 +881,16 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
       }
     }
   </style>
+  <style id="stonebridge-home-forensic-pathway-review">
+  /* Contextual link inside the existing Services introduction—not another visual section. */
+  body.home-redesign .home-services-head .home-forensic-inline{color:#52616f}
+  body.home-redesign .home-services-head .home-forensic-inline a{
+    color:#163b61;text-decoration:underline;text-underline-offset:3px;font-weight:600
+  }
+  body.home-redesign .home-services-head .home-forensic-inline a:focus-visible{
+    outline:2px solid #806847;outline-offset:3px
+  }
+  </style>
 </head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -929,7 +985,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
       <div class="home-container">
         <div class="home-services-head">
           <h2 class="home-services-title" id="services-title">Psychotherapy for individuals, relationships, and families</h2>
-          <p>Online psychotherapy throughout Illinois for a range of concerns and life stages.</p>
+          <p>Online psychotherapy throughout Illinois for a range of concerns and life stages. <span class="home-forensic-inline">For legal professionals, see <a href="forensic.html">forensic psychology services</a>.</span></p>
         </div>
 
         <div class="home-services-grid">
@@ -966,6 +1022,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
         </div>
       </div>
     </section>
+
 
     <div class="home-perspective-founder-composition">
     <section class="home-clinicians" aria-labelledby="home-clinicians-title">
@@ -1045,8 +1102,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
   <footer class="home-footer">
     <div class="home-container home-footer-grid">
       <div class="home-footer-brand-column">
-        <div class="home-footer-brand">STONEBRIDGE</div>
-        <div class="home-footer-sub">Psychological Group</div>
+        <picture class="sb-footer-wordmark"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width:700px) 183px, 198px"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" width="800" height="340" loading="eager" decoding="sync"></picture>
         <p class="home-footer-copy">Thoughtful online care for Illinois clients.</p>
       </div>
       <div class="home-footer-care-column">
@@ -1064,6 +1120,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
           <a href="team.html">Team</a>
           <a href="team-founder.html">Founder</a>
           <a href="for-clinicians.html">Professionals</a>
+          <a href="forensic.html">Forensic Services</a>
           <a href="portal.html">Client Portal</a>
           <a href="privacy-information.html">Privacy &amp; Information Use</a>
         </div>
@@ -1079,10 +1136,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
         </div>
       </div>
       <div class="home-footer-logo home-footer-brandmarks">
-        <picture>
-          <source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="220px">
-          <img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" width="800" height="340" loading="lazy" decoding="async">
-        </picture>
+        
       <div class="sb-psychology-today-footer-seal">
         <!-- Official professional verification provided by Psychology Today -->
         <a href="https://www.psychologytoday.com/profile/1052502" class="sx-verified-seal" aria-label="View Dr. Stephen W. Bryant's verified Psychology Today profile"></a>

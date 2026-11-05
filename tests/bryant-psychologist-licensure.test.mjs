@@ -38,7 +38,8 @@ test("founder profile retains education, adds licensure above LCPC, and preserve
   const list = founder.slice(founder.indexOf('class="founder-credential-list"'));
   assert.ok(list.indexOf("<h3>Licensed Clinical Psychologist</h3>") < list.indexOf("<h3>Licensed Clinical Professional Counselor (LCPC)</h3>"));
   for (const education of ["PsyD, Clinical Psychology", "MA, Clinical Psychology", "MA, Forensic Psychology"]) assert.ok(list.includes(education));
-  assert.match(founder, /Stonebridge does not provide emergency or crisis services and is not currently offering psychological testing or forensic evaluations\./);
+  assert.match(founder, /Stonebridge does not provide emergency or crisis services, psychological testing, or independent forensic psychological evaluations\./);
+  assert.match(founder, /forensic records review, attorney and guardian ad litem consultation, forensic case consultation, and expert witness services/);
   assert.match(founder, /<title>Dr\. Stephen W\. Bryant \| Licensed Clinical Psychologist \| Stonebridge<\/title>/);
   assert.match(founder, /<meta property="og:title" content="Dr\. Stephen W\. Bryant \| Licensed Clinical Psychologist \| Stonebridge">/);
   assert.ok(founder.includes(portal));

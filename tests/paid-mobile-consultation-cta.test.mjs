@@ -25,6 +25,7 @@ function renderCTA({ path = "/bcbs-therapy-illinois", search = "", existing = fa
       if (selector === '.sb-mobile-consultation-cta') return existingElement;
       if (selector === 'main') return { querySelectorAll() { return []; } };
       if (selector === '.site-header') return null;
+      if (selector === 'footer') return null; // Synthetic CTA fixture has no page footer.
       assert.fail('unexpected selector ' + selector);
     },
     createElement(tag) {

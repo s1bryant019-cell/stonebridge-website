@@ -55,8 +55,8 @@ jobs:
         run: npm test
       - name: Install temporary browser audit tools
         run: |
-          npm install --no-save --no-package-lock --no-audit --no-fund playwright @axe-core/playwright
-          npx playwright install --with-deps chromium firefox webkit
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.64.1 @axe-core/playwright
+          npx --no-install playwright install --with-deps chromium firefox webkit
       - name: Serve main and exact candidate locally (no live submissions)
         shell: bash
         env:

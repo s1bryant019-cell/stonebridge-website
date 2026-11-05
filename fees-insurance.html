@@ -1499,6 +1499,77 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
 .fees-cost-explainer p{font-size:.94rem;line-height:1.6;color:#435262;max-width:850px;margin:0 0 12px}
 .fees-cost-explainer a{font-weight:700;color:#163b61;text-decoration:underline;text-underline-offset:3px}
 </style>
+<style id="stonebridge-forensic-fees-review">
+/* Scoped professional-fee schedule: follow the established Fees & Insurance grid,
+   typography and restrained rules without altering the psychotherapy rate table. */
+.fees-page #forensic-professional-fees{border-top:1px solid var(--fees-warm-line)}
+.fees-page .fees-forensic-heading{max-width:780px;margin-bottom:25px}
+.fees-page .fees-forensic-heading h2{
+  margin:10px 0 0;color:var(--fees-ink);font-family:"EB Garamond",Georgia,serif;
+  font-size:clamp(2rem,3.1vw,3.15rem);line-height:1.08;letter-spacing:-.03em
+}
+.fees-page .fees-forensic-layout{
+  display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.85fr);
+  gap:clamp(26px,4vw,52px);align-items:start
+}
+.fees-page .fees-forensic-table{width:100%;border-collapse:collapse;font-family:"Inter",sans-serif}
+.fees-page .fees-forensic-table thead{background:#102F4D}
+.fees-page .fees-forensic-table th{
+  padding:12px 14px;color:#FFF8EF;font-size:.7rem;letter-spacing:.09em;
+  text-transform:uppercase;text-align:left;font-weight:700
+}
+.fees-page .fees-forensic-table th:last-child,
+.fees-page .fees-forensic-table td:last-child{text-align:right;white-space:nowrap}
+.fees-page .fees-forensic-table td{
+  padding:12px 14px;border-bottom:1px solid var(--fees-line);
+  color:var(--fees-muted);font-size:.89rem;line-height:1.55;vertical-align:top
+}
+.fees-page .fees-forensic-table td:first-child{color:var(--fees-ink);font-weight:600}
+.fees-page .fees-forensic-billing h3{
+  margin:0 0 11px;color:var(--fees-ink);
+  font:600 1.48rem/1.2 "EB Garamond",Georgia,serif
+}
+.fees-page .fees-forensic-billing ul{margin:0;padding-left:20px}
+.fees-page .fees-forensic-billing li{
+  color:var(--fees-muted);font:400 .89rem/1.62 "Inter",sans-serif;
+  padding-left:2px
+}
+.fees-page .fees-forensic-billing li+li{margin-top:10px}
+/* A distinct legal-professional inquiry directly follows the forensic fee schedule.
+   The existing psychotherapy scheduling CTA appears earlier, with clinical policies. */
+.fees-page .fees-forensic-inquiry{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(18px,3vw,36px);align-items:center;
+  border-top:1px solid var(--fees-line);margin-top:26px;padding-top:24px
+}
+.fees-page .fees-forensic-inquiry strong{
+  color:var(--fees-ink);font:600 1.35rem/1.2 "EB Garamond",Georgia,serif
+}
+.fees-page .fees-forensic-inquiry p{
+  margin:7px 0 0;color:var(--fees-muted);font:400 .89rem/1.6 "Inter",sans-serif;
+  max-width:65ch
+}
+.fees-page .fees-forensic-inquiry a{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--fees-ink);font:650 .9rem/1.5 "Inter",sans-serif;
+  text-decoration:underline;text-underline-offset:3px;white-space:nowrap
+}
+.fees-page .fees-forensic-inquiry a:focus-visible{
+  outline:2px solid var(--fees-ink);outline-offset:3px
+}
+@media(max-width:900px){
+  .fees-page .fees-forensic-inquiry{grid-template-columns:1fr;gap:13px}
+  .fees-page .fees-forensic-inquiry a{white-space:normal}
+}
+
+@media(max-width:900px){
+  .fees-page .fees-forensic-layout{grid-template-columns:minmax(0,1fr);gap:28px}
+}
+@media(max-width:480px){
+  .fees-page .fees-forensic-heading{margin-bottom:20px}
+  .fees-page .fees-forensic-table th,.fees-page .fees-forensic-table td{padding:11px 9px;font-size:.83rem}
+}
+</style>
 </head>
 
 <body class="fees-page" data-static-hero-system="true">
@@ -1529,6 +1600,7 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
 <a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
 <a href="family-therapy.html" role="menuitem">Family Therapy</a>
 <a href="parent-support.html" role="menuitem">Parent Support</a>
+<a href="forensic.html" role="menuitem">Forensic Services</a>
 </div>
   </div>
   <a href="fees-insurance.html" class="active" aria-current="page">Fees &amp; Insurance</a>
@@ -1568,9 +1640,8 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
     <section class="fees-cost-explainer" aria-labelledby="fees-cost-explainer-title">
       <div class="fees-shell">
         <h2 id="fees-cost-explainer-title">What Will Therapy Cost?</h2>
-        <p>Insurance participation varies by plan and clinician. Review accepted plans and coverage details below.</p>
+        <p>Insurance participation varies by clinician and plan. Your out-of-pocket cost may depend on your plan’s deductible, copay, coinsurance, and covered services. Review accepted insurance below and ask Stonebridge about anticipated costs before scheduling.</p>
         <a href="#payment-options">Review Accepted Insurance</a>
-        <p>If you use insurance, your out-of-pocket cost depends on your specific plan, benefits, deductible, copay, coinsurance, and covered services. The standard fees listed below are not necessarily the amount you will owe.</p>
       </div>
     </section>
 
@@ -1590,7 +1661,7 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
               <p><strong>Blue Cross Blue Shield of Illinois</strong></p>
               <p><strong>Medicaid FFS</strong></p>
               <p><strong>Guidehealth Behavioral Health Network - Advocate Medical Group West (Site 099)</strong></p>
-              <p class="fees-small-note">Participation varies by clinician, service, and specific plan. Stonebridge verifies eligibility before billing, but verification does not guarantee payment. Blue Cross Community Health Plans (BCCHP) is separate from BCBSIL participation; its status is listed in the networks not currently active section below.</p>
+              <p class="fees-small-note">Participation varies by clinician, service, and specific plan. Stonebridge verifies eligibility before billing, but verification does not guarantee payment. Blue Cross Community Health Plans (BCCHP) is separate from BCBSIL participation; its status is listed in the <a href="#pending-insurance-networks">networks not currently active section</a> below.</p>
             </div>
           </article>
 
@@ -1615,7 +1686,7 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
         <div class="fees-fee-content">
           <div class="fees-rate-context" aria-label="Insurance costs and standard fees">
             <strong>Using insurance?</strong>
-            <p>Your cost depends on your plan’s contracted rate, deductible, copay, coinsurance, and covered services. The rates below are Stonebridge’s standard fees, not necessarily what you will owe. Non-covered services and late cancellations or missed appointments may result in separate charges.</p>
+            <p>These are Stonebridge’s standard fees, not a guarantee of your out-of-pocket responsibility. Non-covered services and late cancellations or missed appointments may result in separate charges.</p>
           </div>
 
           <div class="fee-table-wrap" role="region" aria-label="Standard fee schedule" tabindex="0">
@@ -1650,6 +1721,8 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
 
       </div>
     </section>
+
+
 
     <section class="fees-section" id="pending-insurance-networks" aria-label="Insurance networks not yet active">
       <div class="fees-shell fees-relational-layout">
@@ -1713,13 +1786,53 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
         <div class="fees-access-actions"><a class="btn btn-secondary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a><a class="fees-access-consultation" href="contact.html#inquiry-form">Questions first? Request a free consultation.</a></div>
       </div>
     </section>
+
+    <section class="fees-section paper" id="forensic-professional-fees" aria-labelledby="forensic-professional-fees-title">
+      <div class="fees-shell">
+        <div class="fees-forensic-heading">
+          <div class="fees-label">Legal-related professional services</div>
+          <h2 id="forensic-professional-fees-title">Forensic &amp; Legal-Related Professional Fees</h2>
+        </div>
+        <div class="fees-forensic-layout">
+          <div>
+            <table class="fees-forensic-table">
+              <caption class="visually-hidden">Rates for forensic and legal-related professional services</caption>
+              <thead><tr><th scope="col">Professional service</th><th scope="col">Rate</th></tr></thead>
+              <tbody><tr><td>GAL consultation concerning an existing patient</td><td>$240/hour</td></tr>
+            <tr><td>Forensic records review</td><td>$240/hour</td></tr>
+            <tr><td>Attorney consultation</td><td>$240/hour</td></tr>
+            <tr><td>Forensic case consultation</td><td>$240/hour</td></tr>
+            <tr><td>Written case analysis and report preparation</td><td>$240/hour</td></tr>
+            <tr><td>Deposition testimony</td><td>$300/hour</td></tr>
+            <tr><td>Courtroom expert testimony</td><td>$350/hour</td></tr></tbody>
+            </table>
+          </div>
+          <div class="fees-forensic-billing">
+            <h3>Billing terms</h3>
+            <ul><li>Consultation, records review, and written professional work are billed in 15-minute increments ($60 per increment at the $240 hourly rate).</li>
+          <li>Deposition and courtroom testimony are billed according to the terms of the applicable written engagement agreement.</li>
+          <li>These fees are separate from psychotherapy services. Forensic and legal-related professional services are generally not covered by health insurance.</li>
+          <li>The responsible paying party and payment arrangements are confirmed before voluntary professional services begin.</li>
+          <li>Any applicable court order or legal requirement takes precedence over ordinary scheduling and payment policies.</li></ul>
+          </div>
+        </div>
+        <div class="fees-forensic-inquiry" aria-label="Forensic consultation inquiries">
+          <div>
+            <strong>Forensic consultation inquiries</strong>
+            <p>Attorneys, guardians ad litem, and other legal professionals can request a preliminary engagement review. Please do not email confidential clinical records without an approved secure process.</p>
+          </div>
+          <a href="mailto:info@stonebridgepsychgroup.com?subject=Forensic%20Consultation%20Inquiry">Request a Forensic Consultation <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <div class="footer-brand">STONEBRIDGE</div>
-        <div class="footer-sub">Psychological Group</div>
+        <picture class="sb-footer-wordmark"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width:700px) 183px, 198px"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" width="800" height="340" loading="eager" decoding="sync"></picture>
         <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
       </div>
       <div>
@@ -1749,7 +1862,7 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
           <a href="https://www.facebook.com/profile.php?id=61590354182651" target="_blank" rel="noopener noreferrer" aria-label="Stonebridge Psychological Group on Facebook">Facebook</a>
         </div>
       </div>
-      <div class="footer-logo-right sb-pt-seal-static"><picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
+      <div class="footer-logo-right sb-pt-seal-static">
         <!-- Psychology Today: official small neutral verified seal for Dr. Stephen W. Bryant -->
         <div class="sb-psychology-today-footer-seal">
           <a href="https://www.psychologytoday.com/profile/1052502" class="sx-verified-seal" aria-label="View Dr. Stephen W. Bryant's verified Psychology Today profile"></a>

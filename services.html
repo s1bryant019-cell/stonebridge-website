@@ -5,10 +5,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Services | Stonebridge Psychological Group</title>
-<meta content="Explore adult, adolescent, group, couples, family, and parent support services at Stonebridge Psychological Group." name="description"/>
+<meta content="Explore psychotherapy, forensic psychology consultation, and clinician-focused professional services at Stonebridge Psychological Group." name="description"/>
 <link rel="canonical" href="https://stonebridgepsychgroup.com/services.html">
 <meta property="og:title" content="Services | Stonebridge Psychological Group">
-<meta property="og:description" content="Explore adult, adolescent, group, couples, family, and parent support services at Stonebridge Psychological Group.">
+<meta property="og:description" content="Explore psychotherapy, forensic psychology consultation, and clinician-focused professional services at Stonebridge Psychological Group.">
 <meta property="og:url" content="https://stonebridgepsychgroup.com/services.html">
 <meta property="og:image" content="https://stonebridgepsychgroup.com/about-bridge-hero.png">
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -301,7 +301,7 @@
       align-items:start;
     }
 
-    /* Six distinct pathways share one restrained, scannable service directory. */
+    /* Eight distinct clinical, forensic, and professional pathways share one restrained, scannable service directory. */
     .services-primary-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -527,6 +527,23 @@
       font-family:"Inter",sans-serif;
       font-size:.89rem;
       line-height:1.6;
+    }
+
+    /* One information region with a subtle internal rule; not stacked full-width panels. */
+    .services-scope-inner--boundary{
+      border-top:1px solid var(--services-warm-line);
+      padding-top:20px;
+      padding-bottom:21px;
+    }
+    .services-scope a{
+      color:var(--services-ink);
+      font-weight:600;
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+    .services-scope a:focus-visible{
+      outline:2px solid var(--services-ink);
+      outline-offset:3px;
     }
 
     .services-cta{
@@ -1180,6 +1197,7 @@ body.services-page .services-hero-description-desktop { display:none; }
 <a href="couples-therapy.html" role="menuitem">Couples Therapy</a>
 <a href="family-therapy.html" role="menuitem">Family Therapy</a>
 <a href="parent-support.html" role="menuitem">Parent Support</a>
+<a href="forensic.html" role="menuitem">Forensic Services</a>
 </div></div><a href="fees-insurance.html">Fees &amp; Insurance</a><a href="for-clinicians.html">Professionals</a><a href="portal.html">Portal</a></nav>
 <div class="header-cta"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a></div>
 </div>
@@ -1191,10 +1209,11 @@ body.services-page .services-hero-description-desktop { display:none; }
 <div class="services-hero-rule"></div>
 <div class="services-kicker">Services</div>
 <h1><span class="services-hero-title-default">Therapy for individuals, couples, families, parents, and groups.</span><span class="services-hero-title-desktop">Therapy for individuals, couples, and families.</span></h1>
-<p><span class="services-hero-description-default">Stonebridge provides outpatient telehealth care for Illinois adults and adolescents, couples, families, and parents, with groups organized around a defined clinical purpose.</span><span class="services-hero-description-desktop">Outpatient telehealth across Illinois for adults and adolescents, with support for parents and clinically focused groups.</span></p>
+<p><span class="services-hero-description-default">Stonebridge provides outpatient telehealth care for Illinois adults and adolescents, couples, families, and parents, with groups organized around a defined clinical purpose. Forensic psychology and services for clinicians are available through separate professional pathways.</span><span class="services-hero-description-desktop">Outpatient telehealth across Illinois for adults and adolescents, with support for parents and clinically focused groups. Forensic and clinician-focused professional services are available separately.</span></p>
 <div class="services-hero-actions">
 
 <a class="btn btn-secondary" href="#services-offered">View Service Options</a>
+<a class="btn btn-secondary" href="#forensic-services">Forensic &amp; Professional Services</a>
 </div>
 </div>
 <figure class="services-hero-media sb-standard-hero-media">
@@ -1209,9 +1228,9 @@ body.services-page .services-hero-description-desktop { display:none; }
 <div class="services-primary-intro">
 <div>
 <div class="services-label">Ways to work with Stonebridge</div>
-<h2>Different needs call for different forms of care.</h2>
+<h2>Different needs call for different services.</h2>
 </div>
-<p>Choose the service that most closely matches who is seeking support and where the difficulty is occurring.</p>
+<p>Explore psychotherapy and separate professional pathways for legal and clinical work. Each service has its own purpose and way to inquire.</p>
 </div>
 <article class="services-primary-item" id="adult-therapy">
 <div class="services-item-label">Individual care</div>
@@ -1250,6 +1269,18 @@ body.services-page .services-hero-description-desktop { display:none; }
 <p>Consultation, family-based work, and education for parents seeking clearer understanding, steadier boundaries, and more workable responses.</p>
 <a class="services-primary-link" href="parent-support.html">Explore Parent Support</a>
 </article>
+<article class="services-primary-item" id="forensic-services">
+<div class="services-item-label">Legal and forensic consultation</div>
+<h3 id="services-forensic-title">Forensic Psychology Services</h3>
+<p>Records review, attorney and guardian ad litem consultation, forensic case consultation, and expert witness services for legal professionals. Separate from outpatient psychotherapy.</p>
+<a class="services-primary-link" href="forensic.html">Explore Forensic Services</a>
+</article>
+<article class="services-primary-item" id="professional-services">
+<div class="services-item-label">For clinicians and organizations</div>
+<h3>Professional Services</h3>
+<p>Clinical consultation, peer groups, potential external supervision, report and manuscript review, and professional education for clinicians, trainees, and organizations.</p>
+<a class="services-primary-link" href="for-clinicians.html">Explore Professional Services</a>
+</article>
 <div class="services-coverage-note">
 <strong>Format and coverage</strong>
 <div>
@@ -1260,10 +1291,10 @@ body.services-page .services-hero-description-desktop { display:none; }
 </div>
 </div>
 </section>
-<section aria-label="Outpatient scope" class="services-scope">
+<section class="services-scope" aria-label="Outpatient care scope">
 <div class="services-scope-inner">
 <strong>Outpatient scope</strong>
-<p>Stonebridge provides outpatient telehealth care. Emergency services, psychological testing, legal or court-related evaluations, and needs requiring a higher level of care require different resources.</p>
+<p>Stonebridge provides outpatient telehealth care. Emergency services, psychological testing, legal or court-related evaluations, and needs requiring a higher level of care require different resources. Forensic and clinician-focused professional engagements are separate from psychotherapy.</p>
 </div>
 </section>
 <section class="services-cta">
@@ -1282,8 +1313,7 @@ body.services-page .services-hero-description-desktop { display:none; }
 <footer class="site-footer">
 <div class="container footer-grid">
 <div>
-<div class="footer-brand">STONEBRIDGE</div>
-<div class="footer-sub">Psychological Group</div>
+<picture class="sb-footer-wordmark"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width:700px) 183px, 198px"><img src="stonebridge-logo.png" alt="Stonebridge Psychological Group logo" width="800" height="340" loading="eager" decoding="sync"></picture>
 <p class="footer-copy">Thoughtful online care for Illinois clients.</p>
 </div>
 <div>
@@ -1314,7 +1344,7 @@ body.services-page .services-hero-description-desktop { display:none; }
 </div>
 </div>
 <div class="footer-logo-right sb-pt-seal-static">
-<picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="stonebridge-logo-400.webp 400w, stonebridge-logo-800.webp 800w" sizes="(max-width: 640px) 180px, 220px"><img alt="Stonebridge Psychological Group logo" decoding="async" height="340" loading="lazy" src="stonebridge-logo.png" width="800"/></picture>
+
         <!-- Psychology Today: official small neutral verified seal for Dr. Stephen W. Bryant -->
         <div class="sb-psychology-today-footer-seal">
           <a href="https://www.psychologytoday.com/profile/1052502" class="sx-verified-seal" aria-label="View Dr. Stephen W. Bryant's verified Psychology Today profile"></a>

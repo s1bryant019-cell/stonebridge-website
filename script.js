@@ -17,7 +17,8 @@
     ].indexOf(page) !== -1) return 'services';
     if (page === 'fees-insurance.html') return 'fees';
     if (page === 'contact.html') return 'new-clients';
-    if (page === 'for-clinicians.html' || page === 'forensic.html') return 'professionals';
+    if (page === 'forensic.html') return 'services';
+    if (page === 'for-clinicians.html') return 'professionals';
     if (page === 'portal.html') return 'portal';
     return '';
   }
@@ -424,6 +425,7 @@
     var mobile = window.matchMedia('(max-width: 760px)');
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     var main = document.querySelector('main');
+    var footer = document.querySelector('footer');
     var candidates = [];
     var observer = null;
     var revealTimer = null;
@@ -504,6 +506,13 @@
       if (!mobile.matches) return false;
       var scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
       if (scrollTop <= 48) return false; // No sticky CTA before the visitor starts reading.
+      // The footer is a separate navigation destination. Hide the floating
+      // appointment control as soon as it would touch that content.
+      if (footer && footer.isConnected) {
+        var footerRect = footer.getBoundingClientRect();
+        var stickyRect = cta.getBoundingClientRect();
+        if (footerRect.bottom > 0 && footerRect.top <= stickyRect.top + 16) return false;
+      }
       findCandidates();
       return !candidates.some(isActuallyVisible);
     }
