@@ -560,6 +560,18 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
   max-width:100%;
 }
 
+/* At tablet widths the header collapses into a menu before the phone-only
+   sticky appointment shortcut activates. Restore the existing appointment
+   action inside the expanded menu, without adding another navigation item. */
+@media (min-width:761px) and (max-width:960px) {
+  body:not(.group-therapy-page) .site-header.sb-global-header .menu-wrap.open .header-cta,
+  body:not(.group-therapy-page) .site-header.sb-global-header.is-open .menu-wrap .header-cta,
+  body.group-therapy-page .site-header.sb-global-header .menu-wrap.open .header-cta,
+  body.group-therapy-page .site-header.sb-global-header.is-open .menu-wrap .header-cta {
+    display:block!important;
+  }
+}
+
 /* Sitewide patient-access hierarchy, scoped responsive reductions — 2026-10-14 */
 .profile-subpage-actions{
   display:flex;
