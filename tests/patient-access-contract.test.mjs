@@ -134,3 +134,16 @@ test("both retired public screener URLs redirect while the underlying clinical t
   }
   assert.match(read("fit-safety-check.html"), /id="fit-safety-form"/);
 });
+
+test("forensic fee inquiry is separate from psychotherapy booking", () => {
+  const fees = read("fees-insurance.html");
+  const forensic = fees.indexOf('id="forensic-professional-fees"');
+  const patientAction = fees.indexOf('<section class="fees-cta">');
+  assert.ok(patientAction >= 0 && patientAction < forensic, "psychotherapy booking CTA must precede the separate forensic fee section");
+  const professionalSection = fees.slice(forensic, fees.indexOf("</main>", forensic));
+  assert.match(professionalSection, /href="mailto:info@stonebridgepsychgroup\.com\?subject=Forensic%20Consultation%20Inquiry"/);
+  assert.doesNotMatch(professionalSection, /therapyportal\.com/);
+  assert.match(professionalSection, /do not email confidential clinical records/i);
+  const forensicPage = read("forensic.html");
+  assert.match(forensicPage, /href="fees-insurance\.html#forensic-professional-fees"/);
+});
