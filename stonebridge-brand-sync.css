@@ -497,48 +497,6 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
 }
 
 
-/* The added Forensic Services item needs one compact desktop row.
-   Between desktop and tablet widths, reuse the existing accessible menu
-   instead of allowing navigation to wrap below the approved header. */
-@media(min-width:1261px){
-  .site-header.sb-global-header .nav{gap:16px!important}
-  .site-header.sb-global-header .menu-wrap{gap:16px!important}
-  .site-header.sb-global-header .menu{gap:16px!important}
-}
-@media(min-width:1081px) and (max-width:1260px){
-  .site-header.sb-global-header .mobile-toggle{
-    display:inline-flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-  }
-  .site-header.sb-global-header .menu-wrap{
-    position:absolute!important;
-    left:0!important;
-    right:0!important;
-    top:100%!important;
-    margin:0!important;
-    padding:16px 22px 22px!important;
-    display:none!important;
-    align-items:stretch!important;
-    background:var(--sb-brand-ivory)!important;
-    border-bottom:1px solid var(--sb-brand-sand)!important;
-    box-shadow:0 14px 24px rgba(15,42,69,.08)!important;
-  }
-  .site-header.sb-global-header .menu-wrap.open,
-  .site-header.sb-global-header.is-open .menu-wrap{display:block!important}
-  .site-header.sb-global-header .menu{display:grid!important;gap:0!important;width:100%!important}
-  .site-header.sb-global-header .menu>a{
-    width:100%!important;
-    min-height:48px!important;
-    border-bottom:1px solid rgba(15,42,69,.08)!important;
-  }
-  .site-header.sb-global-header .header-cta{margin-top:16px!important}
-  .site-header.sb-global-header .header-cta .btn{
-    width:100%!important;
-    justify-content:center!important;
-  }
-}
-
 /* Sitewide desktop header brand scale - 2026-09-24 */
 @media(min-width:1081px){
   .site-header.sb-global-header .brand-link{
