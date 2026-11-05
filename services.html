@@ -529,6 +529,23 @@
       line-height:1.6;
     }
 
+    /* One information region with a subtle internal rule; not stacked full-width panels. */
+    .services-scope-inner--boundary{
+      border-top:1px solid var(--services-warm-line);
+      padding-top:20px;
+      padding-bottom:21px;
+    }
+    .services-scope a{
+      color:var(--services-ink);
+      font-weight:600;
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+    .services-scope a:focus-visible{
+      outline:2px solid var(--services-ink);
+      outline-offset:3px;
+    }
+
     .services-cta{
       background:linear-gradient(135deg,var(--services-navy),var(--services-navy-deep));
       color:var(--services-white);
@@ -1261,14 +1278,12 @@ body.services-page .services-hero-description-desktop { display:none; }
 </div>
 </div>
 </section>
-<section class="services-scope" aria-labelledby="services-forensic-title">
+<section class="services-scope" aria-label="Additional professional services and outpatient scope">
 <div class="services-scope-inner">
 <strong id="services-forensic-title">Forensic Psychology Services</strong>
-<p>Separate from outpatient psychotherapy, Stonebridge provides forensic records review, attorney and guardian ad litem consultation, forensic case consultation, and expert witness services under Dr. Stephen W. Bryant, PsyD. Engagements are reviewed individually. <a href="forensic.html">Explore Forensic Services</a>.</p>
+<p>Separate from outpatient psychotherapy, Dr. Stephen W. Bryant, PsyD, provides forensic records review, attorney and guardian ad litem consultation, case consultation, and expert witness services. <a href="forensic.html">Explore Forensic Services</a>.</p>
 </div>
-</section>
-<section aria-label="Outpatient scope" class="services-scope">
-<div class="services-scope-inner">
+<div class="services-scope-inner services-scope-inner--boundary">
 <strong>Outpatient scope</strong>
 <p>Stonebridge provides outpatient telehealth care. Emergency services, psychological testing, legal or court-related evaluations, and needs requiring a higher level of care require different resources.</p>
 </div>
