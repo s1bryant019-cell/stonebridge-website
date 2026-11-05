@@ -1535,6 +1535,33 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
   padding-left:2px
 }
 .fees-page .fees-forensic-billing li+li{margin-top:10px}
+/* A distinct legal-professional inquiry directly follows the forensic fee schedule.
+   The existing psychotherapy scheduling CTA appears earlier, with clinical policies. */
+.fees-page .fees-forensic-inquiry{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(18px,3vw,36px);align-items:center;
+  border-top:1px solid var(--fees-line);margin-top:26px;padding-top:24px
+}
+.fees-page .fees-forensic-inquiry strong{
+  color:var(--fees-ink);font:600 1.35rem/1.2 "EB Garamond",Georgia,serif
+}
+.fees-page .fees-forensic-inquiry p{
+  margin:7px 0 0;color:var(--fees-muted);font:400 .89rem/1.6 "Inter",sans-serif;
+  max-width:65ch
+}
+.fees-page .fees-forensic-inquiry a{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--fees-ink);font:650 .9rem/1.5 "Inter",sans-serif;
+  text-decoration:underline;text-underline-offset:3px;white-space:nowrap
+}
+.fees-page .fees-forensic-inquiry a:focus-visible{
+  outline:2px solid var(--fees-ink);outline-offset:3px
+}
+@media(max-width:900px){
+  .fees-page .fees-forensic-inquiry{grid-template-columns:1fr;gap:13px}
+  .fees-page .fees-forensic-inquiry a{white-space:normal}
+}
+
 @media(max-width:900px){
   .fees-page .fees-forensic-layout{grid-template-columns:minmax(0,1fr);gap:28px}
 }
@@ -1613,9 +1640,8 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
     <section class="fees-cost-explainer" aria-labelledby="fees-cost-explainer-title">
       <div class="fees-shell">
         <h2 id="fees-cost-explainer-title">What Will Therapy Cost?</h2>
-        <p>Insurance participation varies by plan and clinician. Review accepted plans and coverage details below.</p>
+        <p>Insurance participation and out-of-pocket costs vary by clinician and plan. Review the accepted networks below; Stonebridge can discuss your specific coverage questions before scheduling.</p>
         <a href="#payment-options">Review Accepted Insurance</a>
-        <p>If you use insurance, your out-of-pocket cost depends on your specific plan, benefits, deductible, copay, coinsurance, and covered services. The standard fees listed below are not necessarily the amount you will owe.</p>
       </div>
     </section>
 
@@ -1646,6 +1672,22 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
             <p>Private-pay clients are generally responsible for the standard fee. Limited reduced-fee arrangements may depend on clinician availability, service type, and practice capacity. Out-of-network reimbursement depends on your plan. <a href="contact.html#inquiry-form">Ask about payment options</a> before scheduling.</p>
           </article>
 
+          <article class="fees-payment-row" id="pending-insurance-networks" aria-label="Networks not currently active">
+            <h3>Networks not currently active</h3>
+            <div class="fees-payment-copy">
+              <p>Stonebridge is pursuing participation with the following plans and networks:</p>
+              <ul class="fees-pending-list">
+                <li>Blue Cross Community Health Plans (BCCHP)</li>
+                <li>Cigna Health Plans</li>
+                <li>Evernorth</li>
+                <li>Endeavor Health</li>
+                <li>TRICARE West</li>
+                <li>UnitedHealthcare</li>
+                <li>Duly Health and Care</li>
+              </ul>
+              <p class="fees-pending-status"><strong>Not currently active or billable as in-network.</strong> Credentialing or contracting does not guarantee future participation or an effective date. Status may vary by clinician, service, and plan. <a href="contact.html#inquiry-form">Ask about your coverage options</a> before scheduling.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1696,32 +1738,6 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
       </div>
     </section>
 
-    <section class="fees-section" id="pending-insurance-networks" aria-label="Insurance networks not yet active">
-      <div class="fees-shell fees-relational-layout">
-        <div class="fees-relational-intro">
-          <div class="fees-label">Future network updates</div>
-          <h2>Networks not currently active.</h2>
-        </div>
-        <div class="fees-payment-list">
-          <article class="fees-payment-row">
-            <h3>Credentialing in progress</h3>
-            <div class="fees-payment-copy">
-              <p>Stonebridge is pursuing participation with the following plans and networks:</p>
-              <ul class="fees-pending-list">
-                <li>Blue Cross Community Health Plans (BCCHP)</li>
-                <li>Cigna Health Plans</li>
-                <li>Evernorth</li>
-                <li>Endeavor Health</li>
-                <li>TRICARE West</li>
-                <li>UnitedHealthcare</li>
-                <li>Duly Health and Care</li>
-              </ul>
-              <p class="fees-pending-status"><strong>Not currently active or billable as in-network.</strong> Credentialing or contracting does not guarantee future participation or an effective date. Status may vary by clinician, service, and plan. <a href="contact.html#inquiry-form">Ask about your coverage options</a> before scheduling.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="fees-section">
       <div class="fees-shell">
@@ -1746,6 +1762,16 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
           <p>Consultation, external supervision, assessment-report support, scholarly review, and professional education follow a separate service and fee schedule.</p>
           <a class="btn btn-secondary" href="for-clinicians.html#professional-fees">View Professional Fees</a>
         </div>
+      </div>
+    </section>
+
+    <section class="fees-cta">
+      <div class="fees-cta-inner">
+        <div>
+          <h2>Ready to request an appointment?</h2>
+          <p>Review available appointments, or request a free consultation if you have questions about coverage, costs, or fit.</p>
+        </div>
+        <div class="fees-access-actions"><a class="btn btn-secondary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a><a class="fees-access-consultation" href="contact.html#inquiry-form">Questions first? Request a free consultation.</a></div>
       </div>
     </section>
 
@@ -1778,18 +1804,17 @@ body.fees-page .fees-policy-list + .fees-professional-note .btn {
           <li>Any applicable court order or legal requirement takes precedence over ordinary scheduling and payment policies.</li></ul>
           </div>
         </div>
+        <div class="fees-forensic-inquiry" aria-label="Forensic consultation inquiries">
+          <div>
+            <strong>Forensic consultation inquiries</strong>
+            <p>Attorneys, guardians ad litem, and other legal professionals can request a preliminary engagement review. Please do not email confidential clinical records without an approved secure process.</p>
+          </div>
+          <a href="mailto:info@stonebridgepsychgroup.com?subject=Forensic%20Consultation%20Inquiry">Request a Forensic Consultation <span aria-hidden="true">→</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="fees-cta">
-      <div class="fees-cta-inner">
-        <div>
-          <h2>Ready to request an appointment?</h2>
-          <p>Review available appointments, or request a free consultation if you have questions about coverage, costs, or fit.</p>
-        </div>
-        <div class="fees-access-actions"><a class="btn btn-secondary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a><a class="fees-access-consultation" href="contact.html#inquiry-form">Questions first? Request a free consultation.</a></div>
-      </div>
-    </section>
+
   </main>
 
   <footer class="site-footer">
