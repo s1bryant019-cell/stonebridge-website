@@ -42,6 +42,11 @@ function harness(width, { path = "/index.html", hero = true, second = true } = {
   const main = { querySelectorAll() { return links; } };
   const header = node();
   header.getBoundingClientRect = () => ({ top: 0, bottom: 70 });
+  const footer = node();
+  footer.visibleTop = 5000;
+  footer.getBoundingClientRect = () => ({
+    top: footer.visibleTop, bottom: footer.visibleTop + 520, height: 520
+  });
   const created = [];
   const document = {
     body: {
@@ -54,12 +59,18 @@ function harness(width, { path = "/index.html", hero = true, second = true } = {
       if (selector === ".sb-mobile-consultation-cta") return null;
       if (selector === "main") return main;
       if (selector === ".site-header") return header;
+      if (selector === "footer") return footer;
       throw new Error("Unexpected selector: " + selector);
     },
     createElement(tag) {
       assert.equal(tag, "a");
       const el = node();
       el.blur = () => { el.blurred = true; };
+      el.getBoundingClientRect = () => ({
+        top: window.innerHeight - 82, bottom: window.innerHeight - 18,
+        height: 64, left: 12, right: window.innerWidth - 12,
+        width: window.innerWidth - 24
+      });
       return el;
     }
   };
@@ -84,11 +95,12 @@ function harness(width, { path = "/index.html", hero = true, second = true } = {
   runInNewContext(code, context);
   const cta = created[0];
   return {
-    cta, created, links, heroLink, finalLink, document, window,
-    scroll(y, { heroTop, finalTop } = {}) {
+    cta, created, links, heroLink, finalLink, footer, document, window,
+    scroll(y, { heroTop, finalTop, footerTop } = {}) {
       window.scrollY = y;
       if (heroTop !== undefined) heroLink.visibleTop = heroTop;
       if (finalTop !== undefined) finalLink.visibleTop = finalTop;
+      if (footerTop !== undefined) footer.visibleTop = footerTop;
       (handlers.scroll || []).forEach(fn => fn());
     },
     tick() {
@@ -164,6 +176,19 @@ test("hidden, collapsed or menu appointment links do not suppress the sticky sho
   h.heroLink.closest = () => null;
   h.scroll(910);
   assert.equal(h.visible(), false, "visible in-page link suppresses sticky again");
+});
+
+test("sticky appointment access withdraws before the footer and returns when reading resumes", () => {
+  const h = harness(390, { path: "/fees-insurance.html", hero: false, second: false });
+  h.scroll(1400, { footerTop: 1100 });
+  h.tick();
+  assert.equal(h.visible(), true, "reading content: appointment shortcut available");
+  h.scroll(5800, { footerTop: 710 });
+  assert.equal(h.visible(), false, "footer enters button zone: hide before overlap");
+  assert.equal(h.accessible(), false, "hidden control removed from keyboard focus");
+  h.scroll(4800, { footerTop: 1180 });
+  h.tick();
+  assert.equal(h.visible(), true, "returning to content: shortcut restored");
 });
 
 test("the sticky shortcut is absent from group and consultation pages", () => {
