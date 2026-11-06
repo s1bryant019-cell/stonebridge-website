@@ -135,15 +135,30 @@ test("both retired public screener URLs redirect while the underlying clinical t
   assert.match(read("fit-safety-check.html"), /id="fit-safety-form"/);
 });
 
-test("forensic fee inquiry is separate from psychotherapy booking", () => {
+test("forensic professional fees are complete on the service page and distinct from psychotherapy billing", () => {
   const fees = read("fees-insurance.html");
-  const forensic = fees.indexOf('id="forensic-professional-fees"');
-  const patientAction = fees.indexOf('<section class="fees-cta">');
-  assert.ok(patientAction >= 0 && patientAction < forensic, "psychotherapy booking CTA must precede the separate forensic fee section");
-  const professionalSection = fees.slice(forensic, fees.indexOf("</main>", forensic));
-  assert.match(professionalSection, /href="mailto:info@stonebridgepsychgroup\.com\?subject=Forensic%20Consultation%20Inquiry"/);
-  assert.doesNotMatch(professionalSection, /therapyportal\.com/);
-  assert.match(professionalSection, /do not email confidential clinical records/i);
   const forensicPage = read("forensic.html");
-  assert.match(forensicPage, /href="fees-insurance\.html#forensic-professional-fees"/);
+  assert.match(fees, /href="forensic\.html#forensic-fees"/);
+  assert.doesNotMatch(fees, /id="forensic-professional-fees"/);
+  assert.match(fees, /id="fee-schedule"/);
+  const start = forensicPage.indexOf('id="forensic-fees"');
+  assert.ok(start >= 0);
+  const section = forensicPage.slice(start, forensicPage.indexOf("</section>", start));
+  assert.match(section, /Complete forensic professional fee schedule/);
+  const services = [
+    "GAL consultation concerning an existing patient", "Forensic records review",
+    "Attorney consultation", "Forensic case consultation",
+    "Written case analysis and report preparation", "Deposition testimony",
+    "Courtroom expert testimony"
+  ];
+  for (const name of services) assert.ok(section.includes(name), name);
+  assert.equal((section.match(/<tr>/g) || []).length, 8);
+  assert.equal((section.match(/<li>/g) || []).length, 5);
+  assert.match(section, /\$240\/hour/);
+  assert.match(section, /\$300\/hour/);
+  assert.match(section, /\$350\/hour/);
+  assert.doesNotMatch(section, /therapyportal\.com/);
+  assert.match(forensicPage, /do not send confidential clinical records through ordinary email/i);
+  assert.match(forensicPage, /mailto:info@stonebridgepsychgroup\.com\?subject=Forensic%20Consultation%20Inquiry/);
+  assert.match(forensicPage, /name="robots" content="noindex,follow"/);
 });
