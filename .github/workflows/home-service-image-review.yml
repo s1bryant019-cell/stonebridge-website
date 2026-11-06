@@ -1,0 +1,32 @@
+name: Homepage image optimization visual comparisons
+
+on:
+  pull_request:
+    paths:
+      - 'ops/prepare-home-service-image-review.mjs'
+      - '.github/workflows/home-service-image-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    name: Original PNG versus WebP 640/960
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install image encoder without changing repository dependencies
+        run: npm install --no-save --no-package-lock --no-audit --no-fund sharp@0.34.3
+      - name: Build visual comparison gallery and measure bytes
+        run: node ops/prepare-home-service-image-review.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-five-home-images-original-versus-webp
+          path: image-optimization-review/
+          if-no-files-found: error
+          retention-days: 60
