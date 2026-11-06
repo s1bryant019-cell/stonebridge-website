@@ -1,0 +1,54 @@
+name: Stonebridge refinement staging review
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.js'
+      - '**/*.mjs'
+      - '.github/workflows/refinement-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-review:
+    name: 23 pages x 6 widths, screenshots, service routes and axe
+    runs-on: ubuntu-latest
+    timeout-minutes: 23
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run unchanged application test command
+        run: npm test
+      - name: Install isolated browser test tools only (no app dependencies)
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.64.1 @axe-core/playwright
+          npx --no-install playwright install --with-deps chromium
+      - name: Start static staging test server
+        shell: bash
+        run: |
+          set -eu
+          nohup python3 -m http.server 8001 --bind 127.0.0.1 --directory "$GITHUB_WORKSPACE" >/tmp/stonebridge-refinement-static.log 2>&1 &
+          for i in $(seq 1 25); do
+            if curl -sf http://127.0.0.1:8001/index.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Render full-page screenshots, review all viewports, and check accessibility
+        run: node ops/capture-refinement-20261106.mjs
+      - name: Preserve review evidence even if a check fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stonebridge-refinement-staging-proof
+          path: refinement-review-proof/
+          retention-days: 30
+          if-no-files-found: warn
