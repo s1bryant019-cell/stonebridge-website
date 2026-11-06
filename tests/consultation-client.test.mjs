@@ -54,7 +54,7 @@ function setup(reply, group = false) {
   const window = {
     location: {
       href: "https://stonebridgepsychgroup.com/contact.html?gclid=click123&gbraid=gb123&wbraid=wb123&email=private%40example.test",
-      search: "?gclid=click123&gbraid=gb123&wbraid=wb123&email=private%40example.test" + (group ? "&service=teen-group" : ""),
+      search: "?gclid=click123&gbraid=gb123&wbraid=wb123&email=private%40example.test" + (group ? "&service=" + (group === true ? "teen-group" : group) : ""),
       origin: "https://stonebridgepsychgroup.com",
       pathname: "/contact.html"
     },
@@ -132,4 +132,13 @@ test("The Lobby link keeps inquiry context without changing advertising conversi
   assert.equal(JSON.parse(ui.posts[0].options.body).service, "teen-group");
   const conversion = ui.events.find(([name]) => name === "event");
   assert.deepEqual(Object.keys(conversion[2]), ["send_to"]);
+});
+
+
+test("Adult Therapy link preselects service without storing clinical information in conversion event", async () => {
+  const ui = setup(async () => ({ ok: true, json: async () => ({ submitted: true }) }), "adult");
+  assert.equal(ui.elements["consultation-service"].value, "adult");
+  await ui.submit();
+  assert.equal(JSON.parse(ui.posts[0].options.body).service, "adult");
+  assert.ok(!JSON.stringify(ui.events).includes("Adult Therapy"));
 });
