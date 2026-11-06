@@ -4,8 +4,10 @@
   var form=document.getElementById("consultation-request-form");
   if(!form) return;
 
-  // Preserve only this approved, non-clinical inquiry context.
-  var service=new URLSearchParams(window.location.search).get("service")==="teen-group" ? "teen-group" : "";
+  // Accept only non-clinical service labels. Ignore unrelated URL parameters.
+  var allowedServices=["adult","adolescent","couples","family","parent-support","group","teen-group"];
+  var requestedService=new URLSearchParams(window.location.search).get("service")||"";
+  var service=allowedServices.indexOf(requestedService)!==-1 ? requestedService : "";
   var serviceInput=document.getElementById("consultation-service");
   if(serviceInput) serviceInput.value=service;
   if(service==="teen-group"){
@@ -160,7 +162,7 @@
           preferredContact:preferred,
           preferredClinician:clinician,
           availability:availability,
-          service:service,
+          service:serviceInput ? serviceInput.value : "",
           website:form.elements.website.value,
           ...clickIds()
         })
