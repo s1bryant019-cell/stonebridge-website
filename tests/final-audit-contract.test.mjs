@@ -31,7 +31,7 @@ test("five service and about pages offer one quiet optional consultation text li
     const final = html.slice(start, stop);
     assert.equal(final.split('href="' + portal + '"').length - 1, 1, path);
     assert.equal(final.split(consultation).length - 1, 1, path);
-    assert.match(final, /class="profile-consultation-link" href="contact\.html#inquiry-form"/);
+    assert.match(final, /class="profile-consultation-link" href="contact\.html(?:\?service=(?:couples|family|parent-support))?#inquiry-form"/);
     assert.equal(html.split(consultation).length - 1, 1, path);
   }
   assert.doesNotMatch(read("group-therapy.html"), /Prefer to speak first\? Request a free consultation\./);
