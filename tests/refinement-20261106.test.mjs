@@ -60,7 +60,7 @@ test("The Lobby does not represent inquiries as confirmed enrollment", () => {
 });
 
 test("staging image candidates use existing repo files and preserve Professionals image", () => {
-  assert.match(page("services.html"), /src="home-bridge-v11\.jpg"/);
+  assert.match(page("services.html"), /src="stone_arch_bridge_over_calm_water\.png"/);
   assert.match(page("family-therapy.html"), /src="cozy_family_telehealth_session\.png"/);
   assert.match(page("for-clinicians.html"), /src="team-consultation-room\.png"/);
 });
