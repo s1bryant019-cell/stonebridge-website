@@ -1570,6 +1570,10 @@ body.contact-page .contact-optional-grid .contact-field-availability{
 }
 </style>
   <link href="stonebridge-beige-refinement.css?v=20261028quietband1" rel="stylesheet">
+<style id="stonebridge-service-inquiry-context">
+.contact-form #consultation-service{width:100%}
+.contact-form .contact-service-note{margin:7px 0 0;color:#5d5a55;font:400 .83rem/1.5 "Inter",sans-serif}
+</style>
 </head>
 
 <body class="contact-page" data-static-hero-system="true">
@@ -1638,7 +1642,7 @@ body.contact-page .contact-optional-grid .contact-field-availability{
     <section class="contact-form-section" id="inquiry-form">
       <div class="contact-shell">
         <form class="contact-form" id="consultation-request-form" novalidate aria-labelledby="consultation-request-title">
-          <input type="hidden" id="consultation-service" name="service" value="">
+          
           <div class="contact-form-content">
             <div class="contact-form-head">
               <div class="form-eyebrow">Consultation request</div>
@@ -1671,6 +1675,21 @@ body.contact-page .contact-optional-grid .contact-field-availability{
                   <span class="field-optional">Optional</span>
                 </label>
                 <input id="consultation-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="50">
+              </div>
+
+              <div class="contact-field contact-field-full">
+                <label class="field-label-row" for="consultation-service"><span>Service of interest</span><span class="field-optional">Optional</span></label>
+                <select id="consultation-service" name="service" aria-describedby="consultation-service-note">
+                  <option value="">Not sure — I'd like to discuss fit</option>
+                  <option value="adult">Adult Therapy</option>
+                  <option value="adolescent">Adolescent Therapy</option>
+                  <option value="couples">Couples Therapy</option>
+                  <option value="family">Family Therapy</option>
+                  <option value="parent-support">Parent Support</option>
+                  <option value="group">Group Therapy</option>
+                  <option value="teen-group">The Lobby — teen group</option>
+                </select>
+                <p class="contact-service-note" id="consultation-service-note">A general preference is enough; no clinical details are needed here.</p>
               </div>
 
               <details class="contact-form-optional">

@@ -1177,6 +1177,12 @@ body.services-page .services-hero-description-desktop { display:none; }
 @media(max-width:760px){.services-cta .services-conversion-actions{align-items:stretch;flex-direction:column}}
 </style>
   <link href="stonebridge-beige-refinement.css?v=20261028quietband1" rel="stylesheet">
+<style id="stonebridge-services-audience-grouping-review">
+/* Scoped labels preserve existing service cards and desktop/mobile columns. */
+.services-page .services-category-heading{grid-column:1/-1;margin:16px 0 0;padding:18px 0 12px;border-bottom:1px solid rgba(33,49,66,.14);font:600 clamp(1.3rem,2vw,1.6rem)/1.2 "EB Garamond",Georgia,serif;color:#163b61;scroll-margin-top:96px}
+.services-page .services-category-heading:first-of-type{margin-top:2px}
+@media(max-width:720px){.services-page .services-category-heading{margin-top:10px;padding:16px 0 10px}}
+</style>
 </head>
 <body class="services-page" data-static-hero-system="true">
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1217,7 +1223,7 @@ body.services-page .services-hero-description-desktop { display:none; }
 </div>
 </div>
 <figure class="services-hero-media sb-standard-hero-media">
-<picture class="sb-responsive-image" style="display:contents"><source type="image/webp" srcset="hero-services-room-960.webp 960w, hero-services-room-1600.webp 1600w, hero-services-room-2000.webp 2000w" sizes="100vw"><img alt="Warm, quiet psychotherapy room" decoding="async" fetchpriority="high" height="1116" src="hero-services-room.jpg" width="2000"/></picture>
+<picture class="sb-responsive-image" style="display:contents"><img alt="Stone arch bridge over calm water" decoding="async" fetchpriority="high" src="stone_arch_bridge_over_calm_water.png" /></picture>
 </figure>
 </section>
 
@@ -1232,6 +1238,7 @@ body.services-page .services-hero-description-desktop { display:none; }
 </div>
 <p>Explore psychotherapy and separate professional pathways for legal and clinical work. Each service has its own purpose and way to inquire.</p>
 </div>
+<h2 class="services-category-heading" id="clinical-care-heading">Clinical Care</h2>
 <article class="services-primary-item" id="adult-therapy">
 <div class="services-item-label">Individual care</div>
 <h3>Adult Therapy</h3>
@@ -1248,7 +1255,7 @@ body.services-page .services-hero-description-desktop { display:none; }
 <div class="services-item-label">Shared therapeutic work</div>
 <h3>Group Therapy</h3>
 <p>Clinician-led groups organized around a defined population, concern, or therapeutic purpose.</p>
-<div class="services-status"><strong>The Lobby: teen group therapy through cooperative play</strong><br/>Currently gathering interest.</div>
+<div class="services-status"><strong>The Lobby: teen group therapy through cooperative play</strong><br/>Interest inquiries open for a future cohort; no start date confirmed.</div>
 <a class="services-primary-link" href="group-therapy.html#groups-forming">Explore Group Therapy</a>
 </article>
 <article class="services-primary-item" id="couples-therapy">
@@ -1269,6 +1276,7 @@ body.services-page .services-hero-description-desktop { display:none; }
 <p>Consultation, family-based work, and education for parents seeking clearer understanding, steadier boundaries, and more workable responses.</p>
 <a class="services-primary-link" href="parent-support.html">Explore Parent Support</a>
 </article>
+<h2 class="services-category-heading" id="professional-care-heading">Professional Services</h2>
 <article class="services-primary-item" id="forensic-services">
 <div class="services-item-label">Legal and forensic consultation</div>
 <h3 id="services-forensic-title">Forensic Psychology Services</h3>

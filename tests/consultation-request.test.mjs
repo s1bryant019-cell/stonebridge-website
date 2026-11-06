@@ -96,7 +96,12 @@ test("uses existing Resend configuration and reports success only on provider ac
 
   response = await POST(request({ ...valid, service: "teen-group" }));
   assert.equal(response.status, 200);
-  assert.match(mail.text, /Inquiry: The Lobby/);
+  assert.match(mail.text, /Service interest: The Lobby/);
+
+  response = await POST(request({ ...valid, service: "adult" }));
+  assert.equal(response.status, 200);
+  assert.match(mail.text, /Service interest: Adult Therapy/);
+  assert.ok(!mail.text.includes("arbitrary-medical-details"));
 
   globalThis.fetch = async () => new Response(JSON.stringify({ accepted: true }), { status: 202 });
   response = await POST(request());

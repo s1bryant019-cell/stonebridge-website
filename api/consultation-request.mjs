@@ -1,5 +1,14 @@
 // Vercel server-side handler. Do not log request bodies, headers, or provider responses.
 // The configured delivery gateway must be approved for Stonebridge's healthcare use.
+const SERVICE_LABELS = Object.freeze({
+  "adult": "Adult Therapy",
+  "adolescent": "Adolescent Therapy",
+  "couples": "Couples Therapy",
+  "family": "Family Therapy",
+  "parent-support": "Parent Support",
+  "group": "Group Therapy",
+  "teen-group": "The Lobby"
+});
 const LIMIT = 8192;
 const HEADERS = {
   "Cache-Control": "no-store, max-age=0",
@@ -62,7 +71,7 @@ function validate(body) {
   const preferredClinician = optionalString(body.preferredClinician, 120);
   const availability = optionalString(body.availability, 300);
   const service = optionalString(body.service ?? "", 32);
-  if (!["", "teen-group"].includes(service)) return null;
+  if (service !== "" && !Object.hasOwn(SERVICE_LABELS, service)) return null;
   if (!fullName || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
   if ([phone, preferredContact, preferredClinician, availability].some(x => x === null)) return null;
   if (preferredContact && !["Email", "Phone"].includes(preferredContact)) return null;
@@ -109,7 +118,7 @@ export async function POST(request) {
   if (fields.preferredContact) lines.push("Preferred contact: " + fields.preferredContact);
   if (fields.preferredClinician) lines.push("Clinician preference: " + fields.preferredClinician);
   if (fields.availability) lines.push("Best times to reach: " + fields.availability);
-  if (fields.service === "teen-group") lines.push("Inquiry: The Lobby");
+  if (fields.service) lines.push("Service interest: " + SERVICE_LABELS[fields.service]);
   lines.push("", "This notification is for administrative consultation follow-up only.");
 
   try {
