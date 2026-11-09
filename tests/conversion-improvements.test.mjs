@@ -14,7 +14,7 @@ test("both homepage sources retain the approved headline, imagery and new appoin
     assert.match(html, /Online psychotherapy for adults, adolescents, couples, and families across Illinois/);
     assert.doesNotMatch(html, /home-insurance-band|Using Insurance for Therapy\?/);
     assert.match(html, /Aetna &amp; BCBSIL — Plan and Clinician Eligibility Varies/);
-    assert.ok(html.includes('href="' + portal + '">Request an Appointment</a>'));
+    assert.ok(html.includes('href="' + portal + '" rel="noreferrer">Request an Appointment</a>'));
     assert.ok(html.includes('href="team.html">Meet Our Clinicians</a>'));
     assert.match(html, /href="adult-therapy\.html"/);
     assert.match(html, /href="adolescent-therapy\.html"/);
