@@ -538,7 +538,19 @@
       }
     }
   </style>
-<style id="stonebridge-optimization-v2">body.home-redesign .home-hero .home-hero-facts{display:flex;flex-wrap:wrap;margin-top:16px;padding:0;gap:6px 16px}.home-insurance-band{background:#f2ece4;color:#213142;padding:clamp(30px,4vw,48px) 0;border-bottom:1px solid rgba(33,49,66,.12)}.home-insurance-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:26px}.home-insurance-copy{max-width:69ch}.home-insurance-copy .home-eyebrow{margin:0 0 9px;color:#78613f}.home-insurance-copy h2{font:600 clamp(1.8rem,2.7vw,2.35rem)/1.16 "EB Garamond",Georgia,serif;color:#163b61;margin:0 0 12px}.home-insurance-copy p:not(.home-eyebrow){font:400 .94rem/1.6 "Inter",sans-serif;margin:6px 0;color:#425262}.home-insurance-link{max-width:220px;white-space:normal;text-align:center}body.home-redesign .home-services .home-services-title{white-space:normal!important;text-wrap:balance}body.home-redesign .home-services .home-services-grid--focused{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:24px!important}.home-service-readmore{display:block;margin-top:12px;font:600 .84rem/1.4 "Inter",sans-serif;color:#163b61;text-decoration:underline;text-underline-offset:3px}.home-services-other{display:flex;align-items:center;flex-wrap:wrap;gap:13px 22px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(33,49,66,.14);font:500 .93rem/1.5 "Inter",sans-serif}.home-services-other span{color:#5d6870;font-weight:600}.home-services-other a,.home-services-professional a,.home-start-consultation a{color:#163b61;text-underline-offset:3px}.home-services-professional{font:400 .85rem/1.6 "Inter",sans-serif;color:#52616f;margin:16px 0 0}.home-clinician-card-copy .home-clinician-populations{font-weight:600;color:#163b61;margin-bottom:12px}.home-start-consultation{max-width:76ch;margin:18px auto 0;text-align:center;font:400 .93rem/1.6 "Inter",sans-serif;color:#425262}@media(max-width:760px){.home-insurance-inner{grid-template-columns:1fr;gap:18px}.home-insurance-link{width:100%;max-width:none}body.home-redesign .home-services .home-services-grid--focused{grid-template-columns:1fr!important;gap:18px!important}.home-services-other{align-items:flex-start;gap:12px 20px}}</style>
+<style id="stonebridge-homepage-status-restoration">
+/* Only restore understated hero facts across desktop widths. The approved layout remains unchanged. */
+@media (min-width:761px){
+  body.home-redesign .home-hero .home-hero-facts{
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:16px;
+    font-size:.75rem;
+    line-height:1.5;
+    color:rgba(255,250,242,.9);
+  }
+}
+</style>
 </head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -568,18 +580,17 @@
       <div class="home-hero-grid">
         <div class="home-hero-copy">
           <div class="home-hero-rule"></div>
-          <p class="home-eyebrow">ONLINE PSYCHOTHERAPY THROUGHOUT ILLINOIS</p>
+          <p class="home-eyebrow">Online psychotherapy in Illinois</p>
           <h1 id="home-hero-title"><span class="home-hero-line">A steadier place to</span> <span class="home-hero-line">begin therapy.</span></h1>
-          <p class="home-hero-lede">Stonebridge Psychological Group provides individualized online therapy for adolescents, adults, couples, and families throughout Illinois. Whether you're experiencing anxiety, depression, relationship difficulties, or something you haven't quite found the words for, our clinicians offer thoughtful, collaborative care shaped around your needs.</p>
+          <p class="home-hero-lede"><span class="home-hero-lede-default">Stonebridge offers online psychotherapy for adults, adolescents, couples, and families throughout Illinois. A thoughtful place to talk through what brings you here.</span><span class="home-hero-lede-desktop">Online psychotherapy throughout Illinois for adults, adolescents, couples, and families. Thoughtful care, with room to understand what matters to you.</span></p>
           <div class="home-hero-actions">
             <a class="home-hero-action home-hero-action--primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">Request an Appointment</a>
             <a class="home-hero-action home-hero-action--secondary" href="team.html">Meet Our Clinicians</a>
           </div>
-          <p class="home-hero-support"><a href="team.html#clinicians">Meet the Clinicians</a></p>
           <ul class="home-hero-facts" aria-label="Practice information">
             <li>Accepting New Clients</li>
-            <li>Online Therapy Throughout Illinois</li>
-            <li>Insurance Accepted — Eligibility Varies</li>
+            <li>Secure Telehealth Across Illinois</li>
+            <li>Aetna &amp; BCBSIL — Plan and Clinician Eligibility Varies</li>
           </ul>
 
         </div>
@@ -595,9 +606,6 @@
 
     <template class="home-trust" aria-hidden="true"></template>
     <div class="sb-utility-strip sb-utility-strip--beige sb-utility-strip--home-intro" aria-hidden="true"></div>
-
-    <section class="home-insurance-band" aria-labelledby="home-insurance-title"><div class="home-container home-insurance-inner"><div class="home-insurance-copy"><p class="home-eyebrow">Insurance &amp; fees</p><h2 id="home-insurance-title">Using Insurance for Therapy?</h2><p>Stonebridge participates with select insurance plans, including Aetna, Blue Cross Blue Shield of Illinois, Medicaid Fee-for-Service, and certain Guidehealth Behavioral Health Network arrangements.</p><p>Participation and coverage vary by clinician, service, and specific plan. Insurance eligibility and benefits must be verified.</p></div><a class="home-hero-action home-hero-action--secondary home-insurance-link" href="fees-insurance.html">Review Insurance &amp; Fees</a></div></section>
-
 
     <section class="home-recognition" aria-labelledby="recognition-title">
       <div class="home-container">
@@ -632,30 +640,62 @@
       </div>
     </section>
 
-    <section class="home-services" aria-labelledby="services-title"><div class="home-container"><div class="home-services-head"><h2 class="home-services-title" id="services-title">Therapy for Different Needs and Stages of Life</h2><p>People come to therapy for different reasons. Stonebridge offers individualized outpatient care that considers your experiences, relationships, goals, and circumstances.</p></div><div class="home-services-grid home-services-grid--focused"><a class="home-service-card" href="adult-therapy.html">
-            <span class="home-service-media"><picture><source type="image/webp" srcset="thoughtful_man_in_cozy_home_office-640.webp 640w, thoughtful_man_in_cozy_home_office-960.webp 960w" sizes="(max-width: 480px) calc(100vw - 40px), (max-width: 760px) 42vw, 200px"><img src="thoughtful_man_in_cozy_home_office.png" alt="" width="480" height="600" loading="lazy" decoding="async"></picture></span>
-            <span class="home-service-copy"><h3>Adult Therapy</h3><p>Individual psychotherapy for anxiety, depression, trauma, substance use, relationship difficulties, life transitions, and other concerns affecting daily life.</p><span class="home-service-readmore">Explore Adult Therapy</span></span>
+    <section class="home-services" aria-labelledby="services-title">
+      <div class="home-container">
+        <div class="home-services-head">
+          <h2 class="home-services-title" id="services-title">Psychotherapy for individuals, relationships, and families</h2>
+          <p>Online psychotherapy throughout Illinois for a range of concerns and life stages.</p>
+        </div>
+
+        <div class="home-services-grid">
+          <a class="home-service-card" href="adult-therapy.html">
+            <span class="home-service-media"><img src="thoughtful_man_in_cozy_home_office.png" alt="" width="480" height="600" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Adult Therapy</h3><p>Patterns, symptoms, relationships, and life transitions.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
-          </a><a class="home-service-card" href="adolescent-therapy.html">
-            <span class="home-service-media"><picture><source type="image/webp" srcset="focused_study_in_a_cozy_bedroom-640.webp 640w, focused_study_in_a_cozy_bedroom-960.webp 960w" sizes="(max-width: 480px) calc(100vw - 40px), (max-width: 760px) 42vw, 200px"><img src="focused_study_in_a_cozy_bedroom.png" alt="" width="480" height="600" loading="lazy" decoding="async"></picture></span>
-            <span class="home-service-copy"><h3>Adolescent Therapy</h3><p>Individual therapy for teens ages 12 and older, with attention to emotional well-being, development, relationships, and family context.</p><span class="home-service-readmore">Explore Adolescent Therapy</span></span>
+          </a>
+          <a class="home-service-card" href="adolescent-therapy.html">
+            <span class="home-service-media"><img src="focused_study_in_a_cozy_bedroom.png" alt="" width="480" height="600" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Adolescent Therapy</h3><p>Individual therapy for teens with attention to development and family context.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
-          </a></div><nav class="home-services-other" aria-label="Other therapy services"><span>Other ways to work with us</span><a href="couples-therapy.html">Couples Therapy</a><a href="family-therapy.html">Family Therapy</a><a href="parent-support.html">Parent Support</a></nav><p class="home-services-professional">For attorneys and other legal professionals, explore our <a href="forensic.html">forensic psychology services</a>. <a href="services.html">View all services</a>, including groups currently gathering interest.</p></div></section>
+          </a>
+          <a class="home-service-card" href="group-therapy.html">
+            <span class="home-service-media"><img src="group-therapy-hero-960.webp" srcset="group-therapy-hero-960.webp 960w, group-therapy-hero-1600.webp 1600w" sizes="(max-width: 768px) calc(100vw - 52px), 31vw" alt="" width="960" height="644" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Group Therapy</h3><p>Adolescent group therapy currently gathering interest for a future cohort.</p></span>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="home-service-card" href="couples-therapy.html">
+            <span class="home-service-media"><img src="couples_teletherapy_in_a_cozy_living_room.png" alt="" width="480" height="600" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Couples Therapy</h3><p>Conflict, connection, trust, and change.</p></span>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="home-service-card" href="family-therapy.html">
+            <span class="home-service-media"><img src="cozy_family_telehealth_session.png" alt="" width="480" height="600" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Family Therapy</h3><p>Communication, roles, strain, and repair.</p></span>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="home-service-card" href="parent-support.html">
+            <span class="home-service-media"><img src="cozy_home_office_video_call.png" alt="" width="480" height="600" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Parent Support</h3><p>Guidance, boundaries, and family patterns.</p></span>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <section class="home-clinicians" aria-labelledby="home-clinicians-title">
       <div class="home-container">
         <div class="home-conversion-intro">
           <p class="home-eyebrow">Finding the right fit</p>
           <h2 id="home-clinicians-title">Meet Your Clinicians</h2>
-          <p>Finding a therapist who feels like a good fit matters. Our clinicians bring different backgrounds and approaches, with a shared commitment to thoughtful, individualized care.</p>
+          <p>Finding a therapist who feels like a good fit matters. Meet the Stonebridge clinicians and learn more about their experience, areas of focus, and approach.</p>
         </div>
         <div class="home-clinicians-grid">
           <article class="home-clinician-card">
             <img src="founder-environmental.png" alt="Dr. Stephen W. Bryant, PsyD, LCPC, CCTP-I, in his office" width="1448" height="1086" loading="lazy" decoding="async">
             <div class="home-clinician-card-copy">
               <h3>Dr. Stephen W. Bryant, PsyD, LCPC, CCTP-I</h3>
-              <p class="home-clinician-role">Founder &amp; Clinical Director</p>
-              <p class="home-clinician-populations">Adolescents 12+ | Adults | Couples | Families</p><p>Dr. Bryant offers relational, exploratory psychotherapy that helps clients better understand recurring patterns, emotional experiences, and relationships. His approach is individualized, conversational, and appropriately direct.</p>
+              <p class="home-clinician-role">Founder &amp; Clinical Director · Clinical &amp; Forensic Psychologist</p>
+              <p>Dr. Bryant works with adolescents, adults, couples, and families, with particular experience in trauma, substance use, anxiety, depression, and recurring relationship patterns. His approach is relational, exploratory, and responsive to individual needs.</p>
               <a class="home-hero-action home-hero-action--secondary" href="team-founder.html">Meet Dr. Bryant</a>
             </div>
           </article>
@@ -663,8 +703,8 @@
             <img src="jasmine-wilson-headshot.png?v=20260921i" alt="Jasmine Wilson, LPC, Stonebridge Psychological Group" width="1122" height="1402" loading="lazy" decoding="async">
             <div class="home-clinician-card-copy">
               <h3>Jasmine Wilson, LPC</h3>
-              <p class="home-clinician-role">Licensed Professional Counselor | Postgraduate Clinical Associate</p>
-              <p class="home-clinician-populations">Adolescents 12+ | Adults</p><p>Jasmine brings a warm, collaborative approach to therapy, combining thoughtful reflection with practical strategies for managing emotions, navigating relationships, and responding to life’s challenges.</p>
+              <p class="home-clinician-role">Licensed Professional Counselor · Postgraduate Clinical Associate</p>
+              <p>Jasmine works with adolescents ages 12 and older and adults experiencing trauma, anxiety, depression, emotional overwhelm, and life transitions. Her approach combines warmth, collaboration, reflection, and practical support.</p>
               <a class="home-hero-action home-hero-action--secondary" href="team-jasmine-wilson.html">Meet Jasmine Wilson</a>
             </div>
           </article>
@@ -685,27 +725,29 @@
         <div class="home-conversion-intro">
           <p class="home-eyebrow">Getting started</p>
           <h2 id="home-start-steps-title">Starting Therapy at Stonebridge</h2>
-          <p>You don't need to have everything figured out before reaching out. Here's what to expect.</p>
+          <p>You do not need to have everything figured out before reaching out. Here's how to begin.</p>
         </div>
         <div class="home-steps-grid">
           <article class="home-step-card"><span class="home-step-number">01</span>
-            <h3>Request an Appointment</h3>
-            <p>Visit our appointment portal, indicate whether you’re a new or returning client, choose a clinician, and request an available appointment time.</p>
+            <h3>Choose Your Starting Point</h3>
+            <p>Review available appointments and request a time, or request a free 10–15 minute consultation if you would prefer to speak with someone first.</p>
           </article>
           <article class="home-step-card"><span class="home-step-number">02</span>
-            <h3>We Review Your Request</h3>
-            <p>Our team reviews your request for availability and clinical appropriateness. We typically respond within 24–48 hours to confirm the next steps.</p>
+            <h3>We'll Review Your Request</h3>
+            <p>Stonebridge reviews appointment requests for clinician availability and clinical fit. We typically respond within 24–48 hours with availability and next steps; a requested appointment is not confirmed until our team approves it.</p>
           </article>
           <article class="home-step-card"><span class="home-step-number">03</span>
-            <h3>Begin Therapy</h3>
-            <p>Once your appointment is confirmed, you'll receive the information needed to prepare for your first session. Your clinician will begin by learning about your concerns, background, and goals.</p>
+            <h3>Begin With a Clear Plan</h3>
+            <p>Once your appointment is confirmed, you'll receive the information needed to prepare for your first session. Treatment begins with an opportunity to discuss your concerns, background, and goals.</p>
           </article>
-        </div><p class="home-start-consultation">Appointment requests are reviewed by our team before confirmation. We typically respond within 24–48 hours with availability and next steps.</p><p class="home-start-consultation">Prefer to speak with someone before requesting an appointment? A <a href="contact.html">free 10–15-minute consultation</a> is also available.</p></div></section>
+        </div>
+      </div>
+    </section>
 
     <section class="home-final" aria-labelledby="final-title">
       <div class="home-final-inner">
         <h2 class="home-final-title" id="final-title">Ready to Begin?</h2>
-        <p>Whether you're ready to start therapy or still have questions, Stonebridge offers a straightforward way to take the next step.</p>
+        <p>Whether you're ready to request your first appointment or would prefer a brief conversation before deciding, Stonebridge offers a clear way to take the next step.</p>
         <div class="home-final-actions">
           <a class="home-hero-action home-hero-action--primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">Request an Appointment</a>
           <a class="home-hero-action home-hero-action--secondary" href="contact.html">Request a Free Consultation</a>
