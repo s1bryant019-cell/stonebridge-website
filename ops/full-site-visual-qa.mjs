@@ -39,7 +39,7 @@ function contrast(a,b) {
  const L=c=>{const x=c.map(n=>n/255).map(n=>n<=.04045?n/12.92:((n+.055)/1.055)**2.4);return x[0]*.2126+x[1]*.7152+x[2]*.0722};
  const v=[L(a),L(b)].sort((x,y)=>y-x);return Math.round(100*(v[0]+.05)/(v[1]+.05))/100;
 }
-const bgFor=(file,width)=>file==='index.html'&&width>=1101?'#0F2A45':'#FAF5EF';
+const bgFor=(file,width)=>['index.html','home-current.html'].includes(file)&&width>=901?'#0F2A45':'#FAF5EF';
 const fromHex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
 const cases=[...pages.flatMap(file=>widths.map(width=>({file,width}))),...extra];
 try{
@@ -105,6 +105,10 @@ try{
        if(parseFloat(item.fontSize)<14)browserErrors.push({file,width,error:'Visible hero status item font below 14px',item});
      }
      if(navBlock.secondaryContrast!==null&&navBlock.secondaryContrast<4.5)browserErrors.push({file,width,error:'Hero secondary contrast below WCAG AA',...navBlock});
+     if(navBlock.primaryContrast!==null&&navBlock.primaryContrast<4.5)browserErrors.push({file,width,error:'Primary hero booking control contrast below 4.5:1',...navBlock});
+     if(metric.hero.secondary&&metric.hero.secondary.visibility!=='visible')browserErrors.push({file,width,error:'Hero secondary link hidden'});
+     if(metric.hero.secondary&&parseFloat(metric.hero.secondary.opacity)<.99)browserErrors.push({file,width,error:'Hero secondary link opacity reduced'});
+     for(const item of metric.hero.statusItems)if(parseFloat(item.opacity)<.99||item.visibility!=='visible')browserErrors.push({file,width,error:'A hero status item was hidden or faded',text:item.text,opacity:item.opacity});
      if(status&&parseFloat(status.fontSize)<14)browserErrors.push({file,width,error:'Hero status below 14px',fontSize:status.fontSize});
      const link=await page.$('.home-hero-action--secondary');
      if(link){
