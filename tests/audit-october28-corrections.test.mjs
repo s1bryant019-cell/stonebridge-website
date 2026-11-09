@@ -11,7 +11,7 @@ test("home intro becomes purely decorative on desktop and mobile", () => {
     assert.match(html, /height:24px/);
     assert.match(html, /height:14px/);
     assert.match(html, /class="home-hero-facts"/);
-    assert.match(html, /See Available Appointments/);
+    assert.match(html, /Request an Appointment/);
     assert.match(html, /Request a Free Consultation/);
     assert.match(html, /home-hero-room/);
     assert.doesNotMatch(html, /Clinical depth\. Relational understanding\. Careful fit\./);
@@ -55,11 +55,16 @@ test("obsolete preload Link headers removed without losing unrelated caching and
 
 test("sitemap updates only substantively modified page entries", () => {
   const xml = read("sitemap.xml");
-  for (const path of ["/", "/about.html", "/team.html", "/services.html", "/fees-insurance.html", "/contact.html", "/new-clients"]) {
+  for (const path of ["/about.html", "/team.html", "/contact.html", "/new-clients"]) {
     const location = "https://stonebridgepsychgroup.com" + path;
     const index = xml.indexOf("<loc>" + location + "</loc>");
     assert.ok(index >= 0, path);
     assert.ok(xml.slice(index, index + 130).includes("<lastmod>2026-10-28</lastmod>"), path);
+  }
+  for (const path of ["/", "/services.html", "/individual-therapy.html", "/group-therapy.html", "/fees-insurance.html"]) {
+    const index = xml.indexOf("<loc>https://stonebridgepsychgroup.com" + path + "</loc>");
+    assert.ok(index >= 0, path);
+    assert.ok(xml.slice(index, index + 150).includes("<lastmod>2026-11-09</lastmod>"), path);
   }
   for (const path of ["/team-founder.html", "/team-jasmine-wilson.html", "/portal.html"]) {
     const index = xml.indexOf("<loc>https://stonebridgepsychgroup.com" + path + "</loc>");

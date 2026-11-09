@@ -4,14 +4,16 @@ import { readFileSync } from "node:fs";
 
 const read = file => readFileSync(new URL("../" + file, import.meta.url), "utf8");
 
-test("the two routes to individual therapy keep their age-specific anchors", () => {
+test("dedicated adult and adolescent routes are discoverable and legacy overview anchors remain", () => {
   for (const page of ["home-current.html", "index.html", "services.html"]) {
-    assert.match(read(page), /href="individual-therapy\.html#adult-therapy"/);
-    assert.match(read(page), /href="individual-therapy\.html#adolescent-therapy"/);
+    assert.match(read(page), /href="adult-therapy\.html"/);
+    assert.match(read(page), /href="adolescent-therapy\.html"/);
   }
-  const therapy = read("individual-therapy.html");
-  assert.match(therapy, /id="adult-therapy"/);
-  assert.match(therapy, /id="adolescent-therapy"/);
+  const overview = read("individual-therapy.html");
+  assert.match(overview, /id="adult-therapy"/);
+  assert.match(overview, /id="adolescent-therapy"/);
+  assert.match(read("adult-therapy.html"), /Individual Therapy for Adults/);
+  assert.match(read("adolescent-therapy.html"), /Therapy for Teens and Adolescents/);
 });
 
 test("fees prioritize confirmed coverage and rates before pending networks", () => {

@@ -335,21 +335,6 @@
 }
 </style>
 
-<style id="stonebridge-home-perspective-desktop-width-20261014">
-/* Desktop-only: allow the existing perspective quotation to read horizontally. */
-@media (min-width: 769px) {
-  .home-perspective .home-perspective-inner {
-    width: min(1200px, calc(100% - 64px));
-  }
-  .home-perspective .home-founder-quote {
-    max-width: 1100px !important;
-  }
-  .home-perspective .home-perspective-copy {
-    max-width: 1100px !important;
-  }
-}
-</style>
-
 <style id="stonebridge-home-footer-layout-20261014">
 /* Scope: homepage footer only. Preserve all approved copy, links and brand assets. */
 .home-footer .home-footer-grid{
@@ -535,108 +520,6 @@
 }
 </style>
 
-<style id="stonebridge-home-desktop-hero-fade-20261016">
-/* Homepage hero only. Keep the approved grid, image, copy, and smaller-screen layouts. */
-/* Keep the approved tablet/mobile hero copy unchanged. */
-body.home-redesign .home-hero-lede-desktop{display:none;}
-@media (min-width:761px){
-  body.home-redesign .home-hero-lede-default{display:none;}
-  body.home-redesign .home-hero-lede-desktop{display:inline;}
-}
-@media (min-width:1101px){
-  body.home-redesign .home-hero{
-    background:#0F2A45!important;
-  }
-  body.home-redesign .home-hero-grid{
-    position:relative;
-    overflow:hidden;
-    isolation:isolate;
-  }
-  /* Desktop full-hero media layer: grid-column offsets cannot expose the right edge. */
-  body.home-redesign .home-hero-media{
-    position:absolute;
-    inset:0;
-    z-index:0;
-    width:100%;
-    height:100%;
-    min-height:0!important;
-    overflow:hidden;
-  }
-  /* Restore the approved 48% image composition; anchor it to the far-right edge.
-     A full-width media layer stays behind the separate, unchanged navy overlay. */
-  body.home-redesign .home-hero-media picture{
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:auto;
-    display:block;
-    width:48%;
-    height:100%;
-    /* Fade the actual photo edge into navy; never alter its width, crop, or right alignment. */
-    -webkit-mask-image:linear-gradient(90deg,
-      transparent 0%,
-      rgba(0,0,0,.12) 8%,
-      rgba(0,0,0,.48) 19%,
-      #000 34%);
-    mask-image:linear-gradient(90deg,
-      transparent 0%,
-      rgba(0,0,0,.12) 8%,
-      rgba(0,0,0,.48) 19%,
-      #000 34%);
-  }
-  body.home-redesign .home-hero-media picture img{
-    display:block;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-  }
-  body.home-redesign .home-hero-grid::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:1;
-    pointer-events:none;
-    background:linear-gradient(90deg,
-      #0F2A45 0%,
-      #0F2A45 39%,
-      rgba(15,42,69,.98) 46%,
-      rgba(15,42,69,.74) 56%,
-      rgba(15,42,69,.28) 66%,
-      rgba(15,42,69,.02) 78%,
-      rgba(15,42,69,0) 85%
-    );
-  }
-  body.home-redesign .home-hero-copy{
-    position:relative;
-    z-index:2;
-  }
-  body.home-redesign .home-hero h1{
-    color:#FFFAF2!important;
-  }
-  body.home-redesign .home-hero .home-eyebrow{
-    color:#D3B57F!important;
-  }
-  body.home-redesign .home-hero .home-hero-lede{
-    color:rgba(255,250,242,.92)!important;
-  }
-  body.home-redesign .home-hero .home-hero-action--primary{
-    background:#F4EEE4!important;
-    border-color:#F4EEE4!important;
-    color:#0F2A45!important;
-  }
-  body.home-redesign .home-hero .home-hero-action--primary:hover{
-    background:#FFFAF2!important;
-    border-color:#FFFAF2!important;
-  }
-  body.home-redesign .home-hero .home-hero-action:focus-visible{
-    outline:3px solid #D3B57F!important;
-    outline-offset:3px;
-  }
-}
-</style>
-
 <style id="stonebridge-home-services-single-line-desktop-20261016">
 /* Desktop widths, including narrower desktop windows: preserve the heading on one line. */
 @media (min-width: 901px) {
@@ -649,158 +532,12 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
   }
 }
 </style>
-<style id="stonebridge-home-integrated-perspective-founder-desktop-20261016">
-/* Desktop-only: join the existing philosophy and founder sections with one soft photographic fade. */
-/* Desktop alternatives are hidden by default so tablet/mobile keep their approved text. */
-.home-perspective-founder-composition .home-perspective-copy-desktop,
-.home-perspective-founder-composition .home-founder-eyebrow-desktop{
-  display:none;
-}
-@media (min-width:1101px){
-  body.home-redesign .home-perspective-founder-composition .home-perspective-copy-default,
-  body.home-redesign .home-perspective-founder-composition .home-founder-eyebrow-default{
-    display:none;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-perspective-copy-desktop,
-  body.home-redesign .home-perspective-founder-composition .home-founder-eyebrow-desktop{
-    display:inline;
-  }
-  body.home-redesign .home-perspective-founder-composition{
-    position:relative;
-    isolation:isolate;
-    overflow:hidden;
-    background:#0F2A45;
-    border-bottom:1px solid rgba(15,42,69,.14);
-  }
-  body.home-redesign .home-perspective-founder-composition .home-perspective{
-    padding:32px 0 7px!important;
-    background:transparent!important;
-    border-bottom:0!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-perspective-inner{
-    position:relative;
-    z-index:2;
-    width:min(1260px,calc(100% - 96px))!important;
-    text-align:left!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-perspective .home-eyebrow{
-    margin-bottom:18px!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-perspective .home-founder-quote{
-    max-width:100%!important;
-    margin:0!important;
-    font-size:clamp(1.96rem,2.2vw,2.45rem)!important;
-    line-height:1.12!important;
-    text-wrap:wrap;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-perspective-copy{
-    max-width:100%;
-    margin:24px 0 0!important;
-    color:rgba(255,250,242,.94)!important;
-    font-size:1rem;
-    line-height:1.58;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-profile{
-    padding:0!important;
-    background:transparent!important;
-    border-bottom:0!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-grid{
-    /* Match the quote's actual left edge, overriding the older 1180px sitewide rule. */
-    width:min(1260px,calc(100% - 96px))!important;
-    min-height:0!important;
-    margin:0 auto;
-    display:block!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-portrait{
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    z-index:0;
-    width:49%;
-    height:100%;
-    margin:0;
-    overflow:hidden;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-portrait::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:1;
-    pointer-events:none;
-    background:linear-gradient(90deg,
-      #0F2A45 0%,
-      rgba(15,42,69,.91) 10%,
-      rgba(15,42,69,.61) 27%,
-      rgba(15,42,69,.18) 46%,
-      rgba(15,42,69,0) 70%);
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-media{
-    width:100%;
-    height:100%!important;
-    min-height:0!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-media img{
-    display:block;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center 45%;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-photo-caption{
-    display:none!important;
-  }
-  /* Compact founder signature: the rule groups it with, but subordinates it to, the perspective. */
-  body.home-redesign .home-perspective-founder-composition .home-founder-copy{
-    position:relative;
-    z-index:2;
-    box-sizing:border-box;
-    width:51%;
-    max-width:615px;
-    padding:15px 0 24px!important;
-    margin:29px 0 0;
-    border-top:1px solid rgba(255,250,242,.26);
-    align-self:flex-start!important;
-    justify-content:flex-start;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-copy .home-eyebrow{
-    margin:0 0 14px!important;
-    color:#D3B57F!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-heading{
-    color:#FFFAF2!important;
-    font-size:clamp(2.05rem,2.2vw,2.36rem)!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-role{
-    margin-top:6px!important;
-    color:rgba(255,250,242,.92)!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-role-extra{
-    display:none;
-  }
-  /* Detailed clinical focus already appears on Dr. Bryant's full profile. */
-  body.home-redesign .home-perspective-founder-composition .home-founder-summary{
-    display:none!important;
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-link{
-    margin-top:24px!important;
-    color:#FFFAF2!important;
-    text-decoration-color:rgba(255,250,242,.6);
-  }
-  body.home-redesign .home-perspective-founder-composition .home-founder-link:focus-visible{
-    outline:3px solid #D3B57F;
-    outline-offset:4px;
-  }
-}
-</style>
-
 <style id="stonebridge-conversion-improvements-20261028">
 /* Targeted additions use the existing Stonebridge typography and navy/cream palette. */
 .home-hero .home-hero-support{margin:14px 0 0;font-size:.86rem;line-height:1.55}
 .home-hero .home-hero-support a{color:inherit;text-underline-offset:3px}
-.home-hero .home-hero-facts{display:flex;flex-wrap:wrap;gap:6px 15px;margin:13px 0 0;padding:0;list-style:none;font-size:.75rem;line-height:1.4}
-.home-hero .home-hero-facts li{position:relative;padding-left:13px}
+.home-hero .home-hero-facts{display:flex;flex-wrap:wrap;gap:6px 15px;margin:13px 0 0;padding:0;list-style:none;font-size:.875rem;line-height:1.5;color:var(--sb-hero-status-text,#425262)}
+.home-hero .home-hero-facts li{position:relative;padding-left:13px;color:inherit;font-size:inherit}
 .home-hero .home-hero-facts li::before{content:"";position:absolute;left:0;top:.52em;width:5px;height:5px;border-radius:50%;background:#a88d69}
 .home-clinicians,.home-start-steps{padding:clamp(45px,6vw,84px) 0;background:#f8f5f0;color:#213142}
 .home-start-steps{background:#f1ece5}
@@ -823,12 +560,18 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
 @media(max-width:760px){
  .home-clinicians-grid,.home-steps-grid{grid-template-columns:1fr}
  .home-clinician-card>img{height:245px}
- .home-hero .home-hero-facts{font-size:.8125rem}
+ .home-hero .home-hero-facts{font-size:.875rem}
  .home-final .home-final-actions{flex-direction:column;align-items:stretch}
  .home-final .home-final-actions a{text-align:center}
 }
 @media(min-width:761px) and (max-width:1024px){
- .home-steps-grid{gap:12px}.home-step-card{padding:18px}
+ .home-steps-grid{gap:12px}
+ .home-step-card{padding:18px}
+}
+@media(min-width:761px) and (max-width:900px){
+ /* A three-card row is too narrow at tablet width; retain the sequential reading order. */
+ .home-steps-grid{grid-template-columns:1fr;max-width:700px;margin:0 auto}
+ .home-step-card{padding:22px 24px}
 }
 </style>
   <style id="stonebridge-home-quiet-transition-20261028">
@@ -846,7 +589,6 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
     @media(min-width:761px) {
       /* One booking action in the hero, never a second filled header button. */
       body.home-redesign .site-header.sb-global-header .header-cta {display:none}
-      body.home-redesign .home-hero .home-hero-facts,
       body.home-redesign .home-hero .home-hero-support {display:none}
       .home-hero .home-consultation-label-mobile {display:none}
       .home-hero .home-consultation-label-desktop {display:inline}
@@ -860,8 +602,8 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
         border-radius:0;
         background:transparent;
         box-shadow:none;
-        color:#fffaf2;
-        font-size:.88rem;
+        color:var(--sb-hero-secondary-text,#163b61);
+        font-size:.9rem;
         font-weight:500;
         line-height:1.5;
         text-decoration:underline;
@@ -871,7 +613,13 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
       body.home-redesign .home-hero .home-hero-action--secondary:hover {
         background:transparent;
         border-color:transparent;
-        text-decoration-color:#fffaf2;
+        color:var(--sb-hero-secondary-hover,#0F2A45);
+        text-decoration-color:currentColor;
+      }
+      body.home-redesign .home-hero .home-hero-action--secondary:focus-visible{
+        outline:3px solid #806847;
+        outline-offset:5px;
+        border-radius:2px;
       }
     }
     @media(max-width:760px) {
@@ -910,7 +658,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
           <a href="for-clinicians.html">Professionals</a>
           <a href="portal.html">Portal</a>
         </nav>
-        <div class="header-cta"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a></div>
+        <div class="header-cta"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">Request an Appointment</a></div>
       </div>
     </div>
   </header>
@@ -922,12 +670,11 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
           <div class="home-hero-rule"></div>
           <p class="home-eyebrow">Online psychotherapy in Illinois</p>
           <h1 id="home-hero-title"><span class="home-hero-line">A steadier place to</span> <span class="home-hero-line">begin therapy.</span></h1>
-          <p class="home-hero-lede"><span class="home-hero-lede-default">Online psychotherapy for adults, adolescents, couples, and families throughout Illinois. Support for anxiety, depression, trauma, substance use, relationship difficulties, and patterns that feel difficult to change.</span><span class="home-hero-lede-desktop">Psychotherapy for adults, adolescents, couples, and families navigating anxiety, depression, trauma, substance use, and relationship difficulties.</span></p>
+          <p class="home-hero-lede"><span class="home-hero-lede-default">Online psychotherapy for adults, adolescents, couples, and families across Illinois. Thoughtful care for what brings you here.</span><span class="home-hero-lede-desktop">Online psychotherapy throughout Illinois for adults, adolescents, couples, and families. A steady place to discuss what matters.</span></p>
           <div class="home-hero-actions">
-            <a class="home-hero-action home-hero-action--primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a>
-            <a class="home-hero-action home-hero-action--secondary" href="contact.html"><span class="home-consultation-label-mobile">Request a Free Consultation</span><span class="home-consultation-label-desktop">Prefer to speak first? Request a free consultation.</span></a>
+            <a class="home-hero-action home-hero-action--primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">Request an Appointment</a>
+            <a class="home-hero-action home-hero-action--secondary" href="team.html">Meet Our Clinicians</a>
           </div>
-          <p class="home-hero-support"><a href="team.html#clinicians">Meet the Clinicians</a></p>
           <ul class="home-hero-facts" aria-label="Practice information">
             <li>Accepting New Clients</li>
             <li>Secure Telehealth Across Illinois</li>
@@ -989,19 +736,14 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
         </div>
 
         <div class="home-services-grid">
-          <a class="home-service-card" href="individual-therapy.html#adult-therapy">
+          <a class="home-service-card" href="adult-therapy.html">
             <span class="home-service-media"><picture><source type="image/webp" srcset="thoughtful_man_in_cozy_home_office-640.webp 640w, thoughtful_man_in_cozy_home_office-960.webp 960w" sizes="(max-width: 480px) calc(100vw - 40px), (max-width: 760px) 42vw, 200px"><img src="thoughtful_man_in_cozy_home_office.png" alt="" width="480" height="600" loading="lazy" decoding="async"></picture></span>
             <span class="home-service-copy"><h3>Adult Therapy</h3><p>Patterns, symptoms, relationships, and life transitions.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
-          <a class="home-service-card" href="individual-therapy.html#adolescent-therapy">
+          <a class="home-service-card" href="adolescent-therapy.html">
             <span class="home-service-media"><picture><source type="image/webp" srcset="focused_study_in_a_cozy_bedroom-640.webp 640w, focused_study_in_a_cozy_bedroom-960.webp 960w" sizes="(max-width: 480px) calc(100vw - 40px), (max-width: 760px) 42vw, 200px"><img src="focused_study_in_a_cozy_bedroom.png" alt="" width="480" height="600" loading="lazy" decoding="async"></picture></span>
             <span class="home-service-copy"><h3>Adolescent Therapy</h3><p>Individual therapy for teens with attention to development and family context.</p></span>
-            <span class="home-service-arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="home-service-card" href="group-therapy.html">
-            <span class="home-service-media"><img src="group-therapy-hero-960.webp" srcset="group-therapy-hero-960.webp 960w, group-therapy-hero-1600.webp 1600w" sizes="(max-width: 768px) calc(100vw - 52px), 31vw" alt="" width="960" height="644" loading="lazy" decoding="async"></span>
-            <span class="home-service-copy"><h3>Group Therapy</h3><p>Clinician-led groups organized around shared concerns, connection, and a defined clinical purpose.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
           <a class="home-service-card" href="couples-therapy.html">
@@ -1019,12 +761,17 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
             <span class="home-service-copy"><h3>Parent Support</h3><p>Guidance, boundaries, and family patterns.</p></span>
             <span class="home-service-arrow" aria-hidden="true">→</span>
           </a>
+          <a class="home-service-card" href="group-therapy.html">
+            <span class="home-service-media"><img src="group-therapy-hero-960.webp" srcset="group-therapy-hero-960.webp 960w, group-therapy-hero-1600.webp 1600w" sizes="(max-width: 768px) calc(100vw - 52px), 31vw" alt="" width="960" height="644" loading="lazy" decoding="async"></span>
+            <span class="home-service-copy"><h3>Group Therapy</h3><p>Adolescent group therapy currently gathering interest for a future cohort.</p></span>
+            <span class="home-service-arrow" aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </section>
 
 
-    <div class="home-perspective-founder-composition">
+    
     <section class="home-clinicians" aria-labelledby="home-clinicians-title">
       <div class="home-container">
         <div class="home-conversion-intro">
@@ -1059,8 +806,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
       <div class="home-perspective-inner">
         <p class="home-eyebrow">The Stonebridge perspective</p>
         <h2 class="home-founder-quote" id="perspective-title">“We do not choose every part of the story we inherit. We can still become more intentional authors of how we live it.”</h2>
-        <p class="home-perspective-copy"><span class="home-perspective-copy-default">Stonebridge provides clinically grounded psychotherapy within a clear and relational setting.</span><span class="home-perspective-copy-desktop">Clinically grounded, relational psychotherapy for adolescents, adults, couples, and families across Illinois.</span></p>
-      </div>
+        </div>
     </section>
 
     <section class="home-start-steps" aria-labelledby="home-start-steps-title">
@@ -1077,7 +823,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
           </article>
           <article class="home-step-card"><span class="home-step-number">02</span>
             <h3>We'll Review Your Request</h3>
-            <p>Stonebridge reviews appointment requests to confirm clinician availability and whether the requested service is appropriate. Consultation requests are followed up separately to arrange a conversation.</p>
+            <p>Stonebridge reviews appointment requests for clinician availability and clinical fit. We typically respond within 24–48 hours with availability and next steps; a requested appointment is not confirmed until our team approves it.</p>
           </article>
           <article class="home-step-card"><span class="home-step-number">03</span>
             <h3>Begin With a Clear Plan</h3>
@@ -1092,7 +838,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
         <h2 class="home-final-title" id="final-title">Ready to Begin?</h2>
         <p>Whether you're ready to request your first appointment or would prefer a brief conversation before deciding, Stonebridge offers a clear way to take the next step.</p>
         <div class="home-final-actions">
-          <a class="home-hero-action home-hero-action--primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a>
+          <a class="home-hero-action home-hero-action--primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">Request an Appointment</a>
           <a class="home-hero-action home-hero-action--secondary" href="contact.html">Request a Free Consultation</a>
         </div>
       </div>

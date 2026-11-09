@@ -1,0 +1,41 @@
+name: Stonebridge full-site browser visual and accessibility QA (preview only)
+
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - 'ops/full-site-visual-qa.mjs'
+      - '.github/workflows/full-site-visual-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium browser audit dependencies without changing project lockfiles
+        run: npm install --no-save --no-audit --no-fund --no-package-lock puppeteer-core@24 axe-core@4
+      - name: Capture every site page at desktop, tablet and mobile sizes; inspect contrast and keyboard access
+        shell: bash
+        run: |
+          export CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium)"
+          test -x "$CHROME_BIN"
+          node ops/full-site-visual-qa.mjs
+      - name: Upload full-site screenshots and findings even when checks fail
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stonebridge-full-site-visual-and-accessibility-review
+          path: visual-full-site-review/
+          retention-days: 30
+          if-no-files-found: warn

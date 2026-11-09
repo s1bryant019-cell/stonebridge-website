@@ -211,7 +211,7 @@ test("desktop resize keeps sticky control hidden and non-focusable", () => {
 test("only the sanctioned appointment URL is used; no other script or form changes", () => {
   const h = harness(375);
   assert.equal(h.cta.href, APPOINTMENTS);
-  assert.equal(h.cta.textContent, "See Available Appointments");
+  assert.equal(h.cta.textContent, "Request an Appointment");
   assert.doesNotMatch(source, /never dynamically suppress based on other CTAs/);
   const css = readFileSync(new URL("../styles.css", import.meta.url), "utf8");
   assert.match(css, /bottom:calc\(12px \+ env\(safe-area-inset-bottom\)\)/);

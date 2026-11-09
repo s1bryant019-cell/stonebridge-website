@@ -170,7 +170,7 @@ body.home-redesign{
 .home-hero h1,
 .home-section-title,
 .home-services-title,
-.home-founder-quote,
+.home-founder .home-founder-quote,
 .home-final-title,
 .home-service-copy h3{
   color:var(--sb-brand-navy)!important;
@@ -227,7 +227,7 @@ body.home-redesign{
   object-position:center 34%!important;
 }
 .home-founder-copy{padding:0!important;max-width:650px!important}
-.home-founder-quote{font-size:clamp(2.25rem,3.2vw,3.25rem)!important;line-height:1.04!important;letter-spacing:-.035em!important}
+.home-founder .home-founder-quote{font-size:clamp(2.25rem,3.2vw,3.25rem)!important;line-height:1.04!important;letter-spacing:-.035em!important}
 .home-founder-copy>p:not(.home-eyebrow){color:var(--sb-brand-muted)!important}
 .home-founder-meta{border-color:var(--sb-brand-sand)!important}
 .home-founder-name{color:var(--sb-brand-navy)!important}
@@ -284,7 +284,7 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
   .home-founder-grid{width:min(100% - 38px,680px)!important;grid-template-columns:1fr!important;gap:30px!important}
   .home-founder-media{height:320px!important;max-width:520px!important;margin:0 auto!important}
   .home-founder-copy{max-width:none!important}
-  .home-founder-quote{font-size:clamp(2rem,9vw,2.65rem)!important}
+  .home-founder .home-founder-quote{font-size:clamp(2rem,9vw,2.65rem)!important}
 }
 @media(prefers-reduced-motion:reduce){
   .site-header.sb-global-header *,
@@ -293,37 +293,48 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
 }
 
 
-/* Homepage perspective/founder separation - 2026-09-24 */
-.home-perspective{
-  padding:76px 0!important;
-  background:var(--sb-brand-navy)!important;
-  color:#fff!important;
-  border-bottom:1px solid rgba(255,255,255,.10)!important;
+/* Homepage perspective — quote-only composition. Preserve existing Stonebridge colors/type. */
+.home-perspective {
+  padding: 62px 0;
+  background: var(--sb-brand-navy);
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.10);
 }
-.home-perspective-inner{
-  width:min(920px,calc(100% - 80px));
-  margin:0 auto;
-  text-align:center;
+.home-perspective-inner {
+  width: min(960px, calc(100% - 80px));
+  margin: 0 auto;
+  text-align: center;
 }
-.home-perspective .home-eyebrow{
-  margin:0 0 20px!important;
-  color:#D3B57F!important;
+.home-perspective .home-eyebrow {
+  margin: 0 0 18px;
+  color: #D3B57F;
 }
-.home-perspective .home-founder-quote{
-  max-width:22ch!important;
-  margin:0 auto!important;
-  color:#fff!important;
-  font-size:clamp(2.35rem,3.5vw,3.65rem)!important;
-  line-height:1.06!important;
-  letter-spacing:-.035em!important;
+.home-perspective .home-founder-quote {
+  max-width: 960px;
+  margin: 0 auto;
+  color: #fff;
+  font-family: var(--home-serif);
+  font-size: clamp(2.25rem,3vw,3.1rem);
+  font-weight: 450;
+  line-height: 1.16;
+  letter-spacing: -.035em;
+  text-wrap: balance;
 }
-.home-perspective-copy{
-  max-width:620px;
-  margin:24px auto 0!important;
-  color:rgba(255,255,255,.78)!important;
-  font-family:"Inter",sans-serif;
-  font-size:.98rem;
-  line-height:1.68;
+@media (min-width:761px) and (max-width:1100px) {
+  .home-perspective { padding: 56px 0; }
+  .home-perspective-inner { width: min(920px,calc(100% - 64px)); }
+}
+@media (max-width:760px) {
+  .home-perspective { padding: 48px 0; }
+  .home-perspective-inner {
+    width: min(620px,calc(100% - 36px));
+    text-align: left;
+  }
+  .home-perspective .home-founder-quote {
+    max-width: 100%;
+    font-size: clamp(2.05rem,8.8vw,2.55rem);
+    line-height: 1.16;
+  }
 }
 .home-founder-profile{
   padding:72px 0!important;
@@ -381,15 +392,6 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
 }
 
 @media(max-width:720px){
-  .home-perspective{
-    padding:54px 0!important;
-  }
-  .home-perspective-inner{
-    width:min(100% - 38px,680px);
-  }
-  .home-perspective .home-founder-quote{
-    font-size:clamp(2.05rem,9vw,2.75rem)!important;
-  }
   .home-founder-profile{
     padding:52px 0!important;
   }
@@ -408,29 +410,6 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
 }
 
 @media(max-width:720px){
-  .home-perspective{
-    padding:48px 0 50px!important;
-  }
-  .home-perspective-inner{
-    width:min(100% - 34px,620px)!important;
-    text-align:left!important;
-  }
-  .home-perspective .home-eyebrow{
-    margin-bottom:15px!important;
-  }
-  .home-perspective .home-founder-quote{
-    max-width:15ch!important;
-    margin:0!important;
-    font-size:clamp(2rem,9.2vw,2.65rem)!important;
-    line-height:1.04!important;
-  }
-  .home-perspective-copy{
-    max-width:34rem!important;
-    margin:20px 0 0!important;
-    font-size:.93rem!important;
-    line-height:1.62!important;
-  }
-
   .home-founder-profile{
     padding:44px 0 50px!important;
   }
@@ -481,13 +460,6 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
 }
 
 @media(max-width:480px){
-  .home-perspective{
-    padding:42px 0 44px!important;
-  }
-  .home-perspective .home-founder-quote{
-    max-width:16ch!important;
-    font-size:clamp(1.9rem,9.7vw,2.4rem)!important;
-  }
   .home-founder-profile{
     padding:38px 0 44px!important;
   }

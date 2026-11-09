@@ -48,7 +48,7 @@
       navLink('for-clinicians.html','Professionals','professionals',active),
       navLink('portal.html','Portal','portal',active),
       '      </nav>',
-      '      <div class="header-cta"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">See Available Appointments</a></div>',
+      '      <div class="header-cta"><a class="btn btn-primary" href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/" rel="noreferrer">Request an Appointment</a></div>',
       '    </div>',
       '  </div>',
       '</header>'
@@ -84,7 +84,7 @@
     }
     var group = page === 'group-therapy.html';
     header.querySelectorAll('.header-cta a, .home-header-cta a').forEach(function (link) {
-      link.textContent = group ? 'Request a Group Consultation' : 'See Available Appointments';
+      link.textContent = group ? 'Request a Group Consultation' : 'Request an Appointment';
       link.href = group ? 'contact.html?service=teen-group#inquiry-form' : 'https://www.therapyportal.com/p/stonebridge60634/appointments/availability/';
       if (!group) link.setAttribute('rel', 'noreferrer');
       else link.removeAttribute('rel');
@@ -587,7 +587,7 @@
     cta.className = 'sb-mobile-consultation-cta';
     cta.href = 'https://www.therapyportal.com/p/stonebridge60634/appointments/availability/';
     cta.rel = 'noreferrer';
-    cta.textContent = 'See Available Appointments';
+    cta.textContent = 'Request an Appointment';
     cta.setAttribute('aria-label', cta.textContent);
     // Never forward advertising identifiers or healthcare information to TherapyPortal.
     document.body.appendChild(cta);

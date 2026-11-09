@@ -6,19 +6,21 @@ const file = name => readFileSync(new URL("../" + name, import.meta.url), "utf8"
 const portal = "https://www.therapyportal.com/p/stonebridge60634/appointments/availability/";
 const homePages = ["index.html", "home-current.html"];
 
-test("both homepage sources retain approved headline, paths and service scope", () => {
+test("both homepage sources retain the approved headline, imagery and new appointment-first pathways", () => {
   for (const name of homePages) {
     const html = file(name);
     assert.match(html, /A steadier place to/);
     assert.match(html, /begin therapy\./);
-    assert.match(html, /Online psychotherapy for adults, adolescents, couples, and families throughout Illinois/);
-    assert.match(html, /Support for anxiety, depression, trauma, substance use/);
-    assert.ok(html.includes('href="' + portal + '"'));
-    assert.ok(html.includes('href="contact.html">Request a Free Consultation</a>'));
-    assert.ok(html.includes("Meet Your Clinicians"));
-    assert.ok(html.includes("team.html"));
-    assert.match(html, /Prefer to speak first\? Request a free consultation\./);
+    assert.match(html, /Online psychotherapy for adults, adolescents, couples, and families across Illinois/);
+    assert.doesNotMatch(html, /home-insurance-band|Using Insurance for Therapy\?/);
     assert.match(html, /Aetna &amp; BCBSIL — Plan and Clinician Eligibility Varies/);
+    assert.ok(html.includes('href="' + portal + '" rel="noreferrer">Request an Appointment</a>'));
+    assert.ok(html.includes('href="team.html">Meet Our Clinicians</a>'));
+    assert.match(html, /href="adult-therapy\.html"/);
+    assert.match(html, /href="adolescent-therapy\.html"/);
+    assert.ok(html.includes('href="contact.html">Request a Free Consultation</a>'));
+    assert.match(html, /Meet Your Clinicians/);
+    assert.match(html, /home-hero-room/);
     assert.doesNotMatch(html, /home-founder home-founder-profile/);
   }
 });
@@ -38,10 +40,10 @@ test("two equal clinician cards preserve names, profile destinations and real he
   assert.match(file("team-jasmine-wilson.html"), /under the clinical supervision of Dr\. Stephen W\. Bryant/);
 });
 
-test("starting steps and final homepage choices remain accurate", () => {
+test("starting steps clearly distinguish a pending appointment request from a free consultation", () => {
   for (const name of homePages) {
     const html = file(name);
-    for (const phrase of ["Starting Therapy at Stonebridge", "Choose Your Starting Point", "We'll Review Your Request", "Begin With a Clear Plan", "Ready to Begin?"]) assert.ok(html.includes(phrase));
+    for (const phrase of ["Starting Therapy at Stonebridge", "Request an Appointment", "Choose Your Starting Point", "We\'ll Review Your Request", "Begin With a Clear Plan", "Ready to Begin?", "24–48 hours"]) assert.ok(html.includes(phrase), name + " " + phrase);
     const final = html.split('<section class="home-final"')[1].split('</section>')[0];
     assert.ok(final.includes('href="' + portal + '"'));
     assert.ok(final.includes('href="contact.html">Request a Free Consultation</a>'));

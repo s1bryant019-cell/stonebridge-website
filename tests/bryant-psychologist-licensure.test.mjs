@@ -9,6 +9,7 @@ const portal = "https://www.therapyportal.com/p/stonebridge60634/appointments/av
 test("homepage keeps the approved founder card and updates only professional identity", () => {
   const home = file("index.html");
   assert.match(home, /<h3>Dr\. Stephen W\. Bryant, PsyD, LCPC, CCTP-I<\/h3>/);
+  assert.match(home, /Founder &amp; Clinical Director/);
   assert.match(home, /Founder &amp; Clinical Director · Clinical &amp; Forensic Psychologist/);
   assert.match(home, /founder-environmental\.png/);
   assert.match(home, /Meet Dr\. Bryant/);
