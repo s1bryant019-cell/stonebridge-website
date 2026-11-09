@@ -92,7 +92,7 @@ try{
    const safe=slug(file)+'-'+width;
    await page.screenshot({path:path.join(out,safe+'-full.jpg'),type:'jpeg',quality:67,fullPage:true,animations:'disabled'});
    if(metric.hero){
-     const hero=page.locator?null:await page.$('.home-hero');
+     const hero=await page.$('.home-hero');
      if(hero)await hero.screenshot({path:path.join(out,safe+'-hero.png')});
      const back=fromHex(bgFor(file,width));
      const status=metric.hero.status,secondary=metric.hero.secondary;
@@ -103,7 +103,7 @@ try{
      if(status&&parseFloat(status.fontSize)<14)browserErrors.push({file,width,error:'Hero status below 14px',fontSize:status.fontSize});
      const link=await page.$('.home-hero-action--secondary');
      if(link){
-       await link.focus();const focus=await page.evaluate(()=>{const a=document.activeElement,s=getComputedStyle(a);return {text:a.textContent.trim(),outline:s.outlineStyle,outlineWidth:s.outlineWidth,outlineColor:s.outlineColor,boxShadow:s.boxShadow}});
+       await page.keyboard.press('Tab');await link.focus();const focus=await page.evaluate(()=>{const a=document.activeElement,s=getComputedStyle(a);return {text:a.textContent.trim(),outline:s.outlineStyle,outlineWidth:s.outlineWidth,outlineColor:s.outlineColor,boxShadow:s.boxShadow}});
        if(width===1024||width===1440||width===390){
          await page.screenshot({path:path.join(out,safe+'-focus.jpg'),type:'jpeg',quality:72,clip:{x:0,y:0,width,height:Math.min(650,900)},captureBeyondViewport:true});
          await page.hover('.home-hero-action--secondary');
