@@ -55,7 +55,7 @@ async function visit(server,pathname,width,variant,capture) {
    const sections=[["hero",".home-hero"],["recognition",".home-recognition"],["services",".home-services"],["clinicians",".home-clinicians"],["perspective",".home-perspective"],["starting",".home-start-steps"],["final",".home-final"],["footer",".home-footer"]].map(([name,selector])=>{
      const el=document.querySelector(selector),r=el?.getBoundingClientRect(),st=el&&getComputedStyle(el);
      const heading=el?.querySelector("h1,h2");
-     return {name,top:r?.top,bottom:r?.bottom,height:r?.height,paddingTop:st?.paddingTop,paddingBottom:st?.paddingBottom,background:st?.backgroundColor,headingFontSize:heading&&getComputedStyle(heading).fontSize};
+     return {name,top:r?.top,bottom:r?.bottom,height:r?.height,paddingTop:st?.paddingTop,paddingBottom:st?.paddingBottom,display:st?.display,background:st?.backgroundColor,headingFontSize:heading&&getComputedStyle(heading).fontSize};
    });
    const pr=perspective?.getBoundingClientRect(),qr=quote?.getBoundingClientRect(),lr=label?.getBoundingClientRect(),np=next?.getBoundingClientRect();
    const pcss=perspective&&getComputedStyle(perspective),qcss=quote&&getComputedStyle(quote);
@@ -84,7 +84,7 @@ async function visit(server,pathname,width,variant,capture) {
     mobileConsultationLabel:document.querySelector(".home-consultation-label-mobile")?getComputedStyle(document.querySelector(".home-consultation-label-mobile")).display:null,
     desktopConsultationLabel:document.querySelector(".home-consultation-label-desktop")?getComputedStyle(document.querySelector(".home-consultation-label-desktop")).display:null,
     description:document.querySelector(".home-hero-lede")?.innerText?.trim(),
-    perspective:{present:!!perspective,paragraphCount:perspective?.querySelectorAll("p:not(.home-eyebrow)").length,quoteText:quote?.textContent?.trim(),labelText:label?.textContent?.trim(),height:pr?.height,paddingTop:pcss?.paddingTop,paddingBottom:pcss?.paddingBottom,labelQuoteGap:qr&&lr?qr.top-lr.bottom:null,quoteBottomGap:qr&&pr?pr.bottom-qr.bottom:null,quoteWidth:qr?.width,quoteFont:qcss?.fontFamily,fontSize:qcss?.fontSize,lineHeight:qcss?.lineHeight,background:pcss?.backgroundColor,nextTopGap:np&&pr?np.top-pr.bottom:null},
+    perspective:{present:!!perspective,paragraphCount:perspective?.querySelectorAll("p:not(.home-eyebrow)").length,quoteText:quote?.textContent?.trim(),labelText:label?.textContent?.trim(),height:pr?.height,paddingTop:pcss?.paddingTop,paddingBottom:pcss?.paddingBottom,labelQuoteGap:qr&&lr?qr.top-lr.bottom:null,quoteBottomGap:qr&&pr?pr.bottom-qr.bottom:null,quoteWidth:qr?.width,quoteFont:qcss?.fontFamily,quoteColor:qcss?.color,quoteVisibility:qcss?.visibility,quoteOpacity:qcss?.opacity,fontSize:qcss?.fontSize,lineHeight:qcss?.lineHeight,background:pcss?.backgroundColor,nextTopGap:np&&pr?np.top-pr.bottom:null},
     sections,cards
    };
   });
@@ -136,7 +136,8 @@ try {
   if(p.quoteBottomGap<minimum-2)throw new Error("Perspective quote sits too close to navy band bottom at "+row.width+": "+p.quoteBottomGap);
   if(p.quoteWidth>1000)throw new Error("Perspective quote runs too wide at "+row.width);
   if(p.nextTopGap!==0)throw new Error("Gap between Perspective and Starting Therapy at "+row.width);
-  if(row.sections.some(x=>x.height<=0))throw new Error("Collapsed homepage section at "+row.width);
+  if(row.sections.some(x=>x.height<=0&&x.display!=="none"))throw new Error("Unexpected collapsed visible homepage section at "+row.width);
+  if(p.quoteColor!=="rgb(255, 255, 255)"||p.quoteVisibility!=="visible"||p.quoteOpacity!=="1")throw new Error("Perspective quote must be visible white on navy at "+row.width+": "+p.quoteColor);
   if(row.bandText)throw new Error("Original quiet transition must contain no message at "+row.width);
   if(row.insuranceSectionPresent)throw new Error("Unapproved insurance section present at "+row.width);
   if(row.heroSupportPresent||row.meetDisplay)throw new Error("Redundant third hero action present at "+row.width);
