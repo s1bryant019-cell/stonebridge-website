@@ -531,6 +531,10 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
 @media (min-width:1101px){
   body.home-redesign .home-hero{
     background:#0F2A45!important;
+    /* Explicit text pairing for the existing navy desktop variant. */
+    --sb-hero-secondary-text:#FFFAF2;
+    --sb-hero-status-text:#DCE3E7;
+    --sb-hero-secondary-hover:#FFFFFF;
   }
   body.home-redesign .home-hero-grid{
     position:relative;
@@ -615,16 +619,6 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
     background:#FFFAF2!important;
     border-color:#FFFAF2!important;
   }
-  /* This desktop hero is navy; colors are paired with that actual background. */
-  body.home-redesign .home-hero .home-hero-facts{color:#DCE3E7;}
-  body.home-redesign .home-hero .home-hero-action--secondary{
-    color:#FFFAF2;
-    text-decoration-color:#D3B57F;
-  }
-  body.home-redesign .home-hero .home-hero-action--secondary:hover{
-    color:#FFFFFF;
-    text-decoration-color:#FFFAF2;
-  }
   body.home-redesign .home-hero .home-hero-action:focus-visible{
     outline:3px solid #D3B57F!important;
     outline-offset:3px;
@@ -648,7 +642,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
 /* Targeted additions use the existing Stonebridge typography and navy/cream palette. */
 .home-hero .home-hero-support{margin:14px 0 0;font-size:.86rem;line-height:1.55}
 .home-hero .home-hero-support a{color:inherit;text-underline-offset:3px}
-.home-hero .home-hero-facts{display:flex;flex-wrap:wrap;gap:6px 15px;margin:13px 0 0;padding:0;list-style:none;font-size:.875rem;line-height:1.5;color:#425262}
+.home-hero .home-hero-facts{display:flex;flex-wrap:wrap;gap:6px 15px;margin:13px 0 0;padding:0;list-style:none;font-size:.875rem;line-height:1.5;color:var(--sb-hero-status-text,#425262)}
 .home-hero .home-hero-facts li{position:relative;padding-left:13px}
 .home-hero .home-hero-facts li::before{content:"";position:absolute;left:0;top:.52em;width:5px;height:5px;border-radius:50%;background:#a88d69}
 .home-clinicians,.home-start-steps{padding:clamp(45px,6vw,84px) 0;background:#f8f5f0;color:#213142}
@@ -714,7 +708,7 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
         border-radius:0;
         background:transparent;
         box-shadow:none;
-        color:#163b61;
+        color:var(--sb-hero-secondary-text,#163b61);
         font-size:.9rem;
         font-weight:500;
         line-height:1.5;
@@ -725,8 +719,8 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
       body.home-redesign .home-hero .home-hero-action--secondary:hover {
         background:transparent;
         border-color:transparent;
-        color:#0F2A45;
-        text-decoration-color:#0F2A45;
+        color:var(--sb-hero-secondary-hover,#0F2A45);
+        text-decoration-color:currentColor;
       }
       body.home-redesign .home-hero .home-hero-action--secondary:focus-visible{
         outline:3px solid #806847;
