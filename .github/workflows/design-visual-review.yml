@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   capture:
-    name: Five-width homepage before and after captures
+    name: Production-reference homepage before/after screenshots
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -35,7 +35,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p "$RUNNER_TEMP/stonebridge-baseline"
-          git archive 5bf818c6e12351a73e2daafac1f8d396fb2642dd | tar -x -C "$RUNNER_TEMP/stonebridge-baseline"
+          git archive 8c5c8659b7914a57b58c20f25a500cfcf8d07f0a | tar -x -C "$RUNNER_TEMP/stonebridge-baseline"
       - name: Capture before and after screenshots and responsive metrics
         env:
           STONEBRIDGE_BASELINE_DIR: ${{ runner.temp }}/stonebridge-baseline
