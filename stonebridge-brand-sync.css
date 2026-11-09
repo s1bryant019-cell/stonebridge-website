@@ -170,7 +170,7 @@ body.home-redesign{
 .home-hero h1,
 .home-section-title,
 .home-services-title,
-.home-founder-quote,
+.home-founder .home-founder-quote,
 .home-final-title,
 .home-service-copy h3{
   color:var(--sb-brand-navy)!important;
@@ -227,7 +227,7 @@ body.home-redesign{
   object-position:center 34%!important;
 }
 .home-founder-copy{padding:0!important;max-width:650px!important}
-.home-founder-quote{font-size:clamp(2.25rem,3.2vw,3.25rem)!important;line-height:1.04!important;letter-spacing:-.035em!important}
+.home-founder .home-founder-quote{font-size:clamp(2.25rem,3.2vw,3.25rem)!important;line-height:1.04!important;letter-spacing:-.035em!important}
 .home-founder-copy>p:not(.home-eyebrow){color:var(--sb-brand-muted)!important}
 .home-founder-meta{border-color:var(--sb-brand-sand)!important}
 .home-founder-name{color:var(--sb-brand-navy)!important}
@@ -284,7 +284,7 @@ body textarea:focus-visible{outline-color:var(--sb-brand-gold)}
   .home-founder-grid{width:min(100% - 38px,680px)!important;grid-template-columns:1fr!important;gap:30px!important}
   .home-founder-media{height:320px!important;max-width:520px!important;margin:0 auto!important}
   .home-founder-copy{max-width:none!important}
-  .home-founder-quote{font-size:clamp(2rem,9vw,2.65rem)!important}
+  .home-founder .home-founder-quote{font-size:clamp(2rem,9vw,2.65rem)!important}
 }
 @media(prefers-reduced-motion:reduce){
   .site-header.sb-global-header *,
