@@ -58,7 +58,7 @@ function renderCTA({ path = "/bcbs-therapy-illinois", search = "", existing = fa
   return { created, classes };
 }
 
-function expectPortalCTA(result, label = "See Available Appointments", url = AVAILABILITY) {
+function expectPortalCTA(result, label = "Request an Appointment", url = AVAILABILITY) {
   assert.equal(result.created.length, 1);
   const link = result.created[0];
   assert.equal(link.className, "sb-mobile-consultation-cta");

@@ -24,7 +24,7 @@ function metadata(page) {
 
 test("indexable service and clinician pages have one description and one correct canonical regardless of attribute order", () => {
   const pages = [
-    "team-founder.html", "services.html", "individual-therapy.html",
+    "team-founder.html", "services.html", "individual-therapy.html", "adult-therapy.html", "adolescent-therapy.html",
     "couples-therapy.html", "family-therapy.html", "parent-support.html",
     "group-therapy.html"
   ];
@@ -51,7 +51,7 @@ test("sitemap lists canonical indexable paths without duplicates or stale modifi
   const xml = read("sitemap.xml");
   const entries = [...xml.matchAll(/<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>\s*<\/url>/g)]
     .map(m => ({ url: m[1], lastmod: m[2] }));
-  assert.equal(entries.length, 21);
+  assert.equal(entries.length, 23);
   assert.equal(new Set(entries.map(e => e.url)).size, entries.length);
   for (const entry of entries) {
     assert.match(entry.lastmod, /^\d{4}-\d{2}-\d{2}$/);
@@ -88,7 +88,7 @@ test("general patient pages link directly to available appointments, preserving 
     const html = read(page);
     const destination = PORTAL + "appointments/availability/";
     assert.ok(html.includes('href="' + destination + '"'), `no availability link: ${page}`);
-    assert.match(html, /See Available Appointments/);
+    assert.match(html, /Request an Appointment/);
     assert.ok(!html.includes('href="' + PORTAL + '"'), `unexpected general portal link in ${page}`);
     assert.doesNotMatch(html, /href="fit-safety-check\.html"/);
   }
@@ -135,15 +135,18 @@ test("both retired public screener URLs redirect while the underlying clinical t
   assert.match(read("fit-safety-check.html"), /id="fit-safety-form"/);
 });
 
-test("forensic fee inquiry is separate from psychotherapy booking", () => {
+test("complete forensic fees and engagement terms live on the forensic page, not the patient fee schedule", () => {
   const fees = read("fees-insurance.html");
-  const forensic = fees.indexOf('id="forensic-professional-fees"');
-  const patientAction = fees.indexOf('<section class="fees-cta">');
-  assert.ok(patientAction >= 0 && patientAction < forensic, "psychotherapy booking CTA must precede the separate forensic fee section");
-  const professionalSection = fees.slice(forensic, fees.indexOf("</main>", forensic));
-  assert.match(professionalSection, /href="mailto:info@stonebridgepsychgroup\.com\?subject=Forensic%20Consultation%20Inquiry"/);
-  assert.doesNotMatch(professionalSection, /therapyportal\.com/);
-  assert.match(professionalSection, /do not email confidential clinical records/i);
-  const forensicPage = read("forensic.html");
-  assert.match(forensicPage, /href="fees-insurance\.html#forensic-professional-fees"/);
+  const forensic = read("forensic.html");
+  assert.doesNotMatch(fees, /id="forensic-professional-fees"/);
+  assert.match(fees, /href="forensic\.html#forensic-fees"/);
+  const start = forensic.indexOf('id="forensic-fees"');
+  const end = forensic.indexOf('<section class="forensic-cta"', start);
+  assert.ok(start > 0 && end > start, "forensic fee table precedes professional inquiry section");
+  const schedule = forensic.slice(start, end);
+  assert.equal((schedule.match(/<tr><td>/g) || []).length, 7, "all seven approved rates preserved");
+  assert.match(schedule, /Billing terms/);
+  assert.match(schedule, /Courtroom expert testimony/);
+  assert.doesNotMatch(schedule, /therapyportal\.com/);
+  assert.match(forensic, /Do not send confidential clinical records/);
 });
