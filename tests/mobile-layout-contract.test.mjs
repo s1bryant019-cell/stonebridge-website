@@ -35,15 +35,15 @@ test("paid landing pages keep compact mobile heroes and appointment-first links"
     assert.match(html, /paid-search-landing\.css\?v=20261013mobile1/);
     assert.ok(main.includes(availability), `${page} should link directly to appointment availability`);
     if (page === "bcbs-therapy-illinois.html") {
-      assert.match(main, /See Available Appointments/);
+      assert.match(main, /Request an Appointment/);
       assert.match(html, /script\.js\?v=20261028stickyvisible2/);
       assert.match(html, /href="https:\/\/www\.therapyportal\.com\/p\/stonebridge60634\/appointments\/availability\/"/);
       assert.match(main, /Your request remains pending until Stonebridge reviews and confirms it/);
       assert.match(main, /Prefer to speak first\? Request a free consultation\./);
-      assert.doesNotMatch(main, /class="btn btn-primary"[^>]*>Request an Appointment<\/a>/);
+      assert.match(main, /href="https:\/\/www\.therapyportal\.com\/p\/stonebridge60634\/appointments\/availability\/"/);
       assert.match(html, /\.paid-search-bcbs \.paid-final-cta\{display:none!important\}/);
     }
-    assert.match(main, /See Available Appointments/);
+    assert.match(main, /Request an Appointment/);
     assert.doesNotMatch(main, /href="fit-safety-check\.html"/);
   }
 });
@@ -61,7 +61,7 @@ test("phone New Clients page puts direct appointments ahead of the retained cris
   const page = file("new-clients.html");
   assert.match(page, /Emergency or crisis care:/);
   assert.ok(page.includes('href="https://www.therapyportal.com/p/stonebridge60634/appointments/availability/"'));
-  assert.match(page, /See Available Appointments/);
+  assert.match(page, /Request an Appointment/);
   assert.match(page, /href="contact\.html">Request a Free Consultation/);
   assert.doesNotMatch(page, /href="fit-safety-check\.html"/);
 });

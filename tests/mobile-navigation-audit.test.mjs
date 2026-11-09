@@ -56,6 +56,6 @@ test("tablet menu preserves appointment access at 761 through 960 pixels", () =>
   assert.match(css, /@media \(min-width:761px\) and \(max-width:960px\)/);
   assert.match(css, /\.menu-wrap\.open \.header-cta/);
   assert.match(css, /display:block!important/);
-  assert.match(app, /See Available Appointments/);
+  assert.match(app, /Request an Appointment/);
   assert.match(app, /menu-wrap/);
 });

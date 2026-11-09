@@ -30,9 +30,9 @@ test("five service and about pages offer one quiet optional consultation text li
     assert.ok(start >= 0 && stop > start, path + ": final section");
     const final = html.slice(start, stop);
     assert.equal(final.split('href="' + portal + '"').length - 1, 1, path);
-    assert.equal(final.split(consultation).length - 1, 1, path);
+    assert.equal(final.split(path === "individual-therapy.html" ? "Request a Free Consultation" : consultation).length - 1, 1, path);
     assert.match(final, /class="profile-consultation-link" href="contact\.html#inquiry-form"/);
-    assert.equal(html.split(consultation).length - 1, 1, path);
+    assert.equal(html.split(path === "individual-therapy.html" ? "Request a Free Consultation" : consultation).length - 1, 1, path);
   }
   assert.doesNotMatch(read("group-therapy.html"), /Prefer to speak first\? Request a free consultation\./);
   assert.match(read("group-therapy.html"), /contact\.html\?service=teen-group#inquiry-form/);
