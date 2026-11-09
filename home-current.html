@@ -453,7 +453,7 @@
 /* Targeted additions use the existing Stonebridge typography and navy/cream palette. */
 .home-hero .home-hero-support{margin:14px 0 0;font-size:.86rem;line-height:1.55}
 .home-hero .home-hero-support a{color:inherit;text-underline-offset:3px}
-.home-hero .home-hero-facts{display:flex;flex-wrap:wrap;gap:6px 15px;margin:13px 0 0;padding:0;list-style:none;font-size:.75rem;line-height:1.4}
+.home-hero .home-hero-facts{display:flex;flex-wrap:wrap;gap:6px 15px;margin:13px 0 0;padding:0;list-style:none;font-size:.875rem;line-height:1.5;color:#425262}
 .home-hero .home-hero-facts li{position:relative;padding-left:13px}
 .home-hero .home-hero-facts li::before{content:"";position:absolute;left:0;top:.52em;width:5px;height:5px;border-radius:50%;background:#a88d69}
 .home-clinicians,.home-start-steps{padding:clamp(45px,6vw,84px) 0;background:#f8f5f0;color:#213142}
@@ -509,7 +509,6 @@
       body.home-redesign .home-hero-lede-desktop{display:inline}
       /* One booking action in the hero, never a second filled header button. */
       body.home-redesign .site-header.sb-global-header .header-cta {display:none}
-      body.home-redesign .home-hero .home-hero-facts,
       body.home-redesign .home-hero .home-hero-support {display:none}
       .home-hero .home-consultation-label-mobile {display:none}
       .home-hero .home-consultation-label-desktop {display:inline}
@@ -523,8 +522,8 @@
         border-radius:0;
         background:transparent;
         box-shadow:none;
-        color:#fffaf2;
-        font-size:.88rem;
+        color:#163b61;
+        font-size:.9rem;
         font-weight:500;
         line-height:1.5;
         text-decoration:underline;
@@ -534,7 +533,13 @@
       body.home-redesign .home-hero .home-hero-action--secondary:hover {
         background:transparent;
         border-color:transparent;
-        text-decoration-color:#fffaf2;
+        color:#0F2A45;
+        text-decoration-color:#0F2A45;
+      }
+      body.home-redesign .home-hero .home-hero-action--secondary:focus-visible{
+        outline:3px solid #806847;
+        outline-offset:5px;
+        border-radius:2px;
       }
     }
     @media(max-width:760px) {
@@ -544,27 +549,6 @@
       }
     }
   </style>
-<style id="stonebridge-homepage-status-restoration">
-/* Only restore understated hero facts across desktop widths. The approved layout remains unchanged. */
-@media (min-width:761px){
-  body.home-redesign .home-hero .home-hero-facts{
-    display:flex;
-    flex-wrap:wrap;
-    margin-top:16px;
-    font-size:.8rem;
-    line-height:1.5;
-    color:#52616f;
-  }
-  body.home-redesign .home-hero .home-hero-action--secondary{
-    color:#163b61!important;
-    text-decoration-color:#a88d69;
-  }
-  body.home-redesign .home-hero .home-hero-action--secondary:hover{
-    color:#102f4d!important;
-    text-decoration-color:#163b61;
-  }
-}
-</style>
 </head>
 <body class="home-redesign">
   <a class="skip-link" href="#main-content">Skip to main content</a>
