@@ -11,7 +11,7 @@ const mime={".html":"text/html",".css":"text/css",".js":"application/javascript"
 async function serve(root) {
  const server=createServer((req,res)=>{
   const path=decodeURIComponent(new URL(req.url,"http://localhost").pathname);
-  const file=resolve(root,"."+(path==="/"?"/index.html":path));
+  const file=resolve(root,"."+(path==="/"?"/home-current.html":path));
   if(!file.startsWith(resolve(root)+"/")||!existsSync(file)){res.writeHead(404);res.end("Not found");return}
   res.writeHead(200,{"Content-Type":mime[extname(file)]||"application/octet-stream","Cache-Control":"no-store"});
   res.end(readFileSync(file));
@@ -34,6 +34,8 @@ async function visit(server,pathname,width,variant,capture) {
    const band=home||quiet;
    const facts=document.querySelector(".home-hero-facts");
    const meet=document.querySelector(".home-hero-support a");
+   const support=document.querySelector(".home-hero-support");
+   const hero=document.querySelector(".home-hero");
    const heading=document.querySelector(".home-services-title");
    const fee=document.querySelector(".fees-cost-explainer");
    return {path:location.pathname,width:innerWidth,scrollWidth:document.documentElement.scrollWidth,
@@ -46,7 +48,14 @@ async function visit(server,pathname,width,variant,capture) {
     secondaryButtonBorder:getComputedStyle(document.querySelector(".home-hero-actions .home-hero-action--secondary")).borderTopWidth,
     secondaryUnderline:getComputedStyle(document.querySelector(".home-hero-actions .home-hero-action--secondary")).textDecorationLine,
     heroFactsDisplay:facts&&getComputedStyle(facts).display,
-    meetDisplay:getComputedStyle(document.querySelector(".home-hero-support")).display,
+    meetDisplay:support?getComputedStyle(support).display:null,
+    insuranceSectionPresent:!!document.querySelector(".home-insurance-band"),
+    heroSupportPresent:!!support,
+    serviceCardCount:document.querySelectorAll(".home-services-grid .home-service-card").length,
+    adultDestination:document.querySelector(".home-service-card[href*=adult-therapy]")?.getAttribute("href"),
+    adolescentDestination:document.querySelector(".home-service-card[href*=adolescent-therapy]")?.getAttribute("href"),
+    heroActionLabels:[...hero.querySelectorAll(".home-hero-actions a")].map(a=>a.textContent.trim()),
+    responseMentions:(document.querySelector(".home-start-steps")?.innerText.match(/24–48 hours/g)||[]).length,
     mobileConsultationLabel:document.querySelector(".home-consultation-label-mobile")?getComputedStyle(document.querySelector(".home-consultation-label-mobile")).display:null,
     desktopConsultationLabel:document.querySelector(".home-consultation-label-desktop")?getComputedStyle(document.querySelector(".home-consultation-label-desktop")).display:null,
     description:document.querySelector(".home-hero-lede")?.innerText?.trim()
@@ -63,6 +72,7 @@ async function visit(server,pathname,width,variant,capture) {
    await page.screenshot({path:join(outputDir,variant+"-"+slug+"-"+width+".jpg"),type:"jpeg",quality:70,clip:{x:0,y:0,width,height},captureBeyondViewport:true});
    const band=await page.$(".sb-utility-strip--home-intro, .sb-utility-strip--quiet-transition");
    if(band&&await band.isVisible())await band.screenshot({path:join(outputDir,variant+"-"+slug+"-band-"+width+".png")});
+   if(variant==="after"&&[390,1440].includes(width))await page.screenshot({path:join(outputDir,variant+"-"+slug+"-full-"+width+".jpg"),type:"jpeg",quality:74,fullPage:true});
   }
  }finally{await page.close()}
 }
@@ -73,19 +83,24 @@ try {
 
  }
  const homeRows=records.filter(r=>r.variant==="after"&&r.path==="/");
+ writeFileSync(join(outputDir,"responsive-measurements.json"),JSON.stringify(records,null,2));
  for(const row of homeRows){
   if(row.scrollWidth>row.width)throw new Error("Horizontal overflow at "+row.width);
-  if(row.bandText)throw new Error("Homepage band must contain zero text at "+row.width);
+  if(row.bandText)throw new Error("Original quiet transition must contain no message at "+row.width);
+  if(row.insuranceSectionPresent)throw new Error("Unapproved insurance section present at "+row.width);
+  if(row.heroSupportPresent||row.meetDisplay)throw new Error("Redundant third hero action present at "+row.width);
+  if(row.heroActionLabels.join("|")!=="Request an Appointment|Meet Our Clinicians")throw new Error("Hero actions incorrect at "+row.width+": "+row.heroActionLabels);
+  if(row.serviceCardCount!==6)throw new Error("Original six-card service layout not preserved at "+row.width);
+  if(row.adultDestination!=="adult-therapy.html"||row.adolescentDestination!=="adolescent-therapy.html")throw new Error("Dedicated therapy links missing at "+row.width);
+  if(row.responseMentions!==1)throw new Error("24–48-hour response message must occur once at "+row.width);
+  if(row.heroFactsDisplay==="none")throw new Error("Understated practice status missing at "+row.width);
   if(row.width<=760){
-    if(row.bandHeight!==14)throw new Error("Mobile band wrong at "+row.width);
-    if(row.heroFactsDisplay==="none"||row.desktopConsultationLabel!=="none")throw new Error("Mobile facts or consultation label missing at "+row.width);
+   if(row.bandHeight!==14)throw new Error("Mobile transition height changed at "+row.width);
   }else{
-    if(row.bandHeight<20||row.bandHeight>28)throw new Error("Desktop band wrong at "+row.width);
-    if(row.headerBookingDisplay!=="none"||row.heroFactsDisplay!=="none"||row.meetDisplay!=="none")throw new Error("Competing desktop CTAs/facts visible at "+row.width);
-    if(row.secondaryButtonBorder!=="0px"||!row.secondaryUnderline.includes("underline"))throw new Error("Consultation not a text link at "+row.width);
-    if(row.desktopConsultationLabel==="none"||row.mobileConsultationLabel!=="none")throw new Error("Desktop consultation label wrong at "+row.width);
+   if(row.bandHeight<20||row.bandHeight>28)throw new Error("Desktop transition height changed at "+row.width);
+   if(row.headerBookingDisplay!=="none")throw new Error("Two competing booking actions at "+row.width);
+   if(row.secondaryButtonBorder!=="0px"||!row.secondaryUnderline.includes("underline"))throw new Error("Desktop secondary link not quiet at "+row.width);
   }
  }
- writeFileSync(join(outputDir,"responsive-measurements.json"),JSON.stringify(records,null,2));
  console.log(JSON.stringify({screenshots:outputDir,measured:records.length,tests:"passed"}));
 }finally{await browser.close();await before.close();await after.close()}
