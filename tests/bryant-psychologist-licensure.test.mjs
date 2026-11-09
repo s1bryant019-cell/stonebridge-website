@@ -10,7 +10,7 @@ test("homepage keeps the approved founder card and updates only professional ide
   const home = file("index.html");
   assert.match(home, /<h3>Dr\. Stephen W\. Bryant, PsyD, LCPC, CCTP-I<\/h3>/);
   assert.match(home, /Founder &amp; Clinical Director/);
-  assert.match(home, /Adolescents 12\+ \| Adults \| Couples \| Families/);
+  assert.match(home, /Founder &amp; Clinical Director · Clinical &amp; Forensic Psychologist/);
   assert.match(home, /founder-environmental\.png/);
   assert.match(home, /Meet Dr\. Bryant/);
   assert.ok(home.includes(portal));
