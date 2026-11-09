@@ -27,7 +27,17 @@ async function visit(server,pathname,width,variant,capture) {
  try {
   await page.setViewport({width,height:width<=760?900:900,deviceScaleFactor:1,isMobile:width<=760&&width!==720,hasTouch:width<=760&&width!==720});
   await page.goto(server.base+pathname,{waitUntil:"domcontentloaded",timeout:30000});
-  await new Promise(r=>setTimeout(r,500));
+  // Full-page visual evidence must include below-the-fold image assets;
+  // scrolling screenshots alone does not trigger Chrome's lazy image loader.
+  await page.evaluate(async()=>{
+    const imgs=[...document.querySelectorAll("img")];
+    for(const img of imgs)img.loading="eager";
+    await Promise.all(imgs.map(img=>Promise.race([
+      img.decode().catch(()=>null),
+      new Promise(resolve=>setTimeout(resolve,1600))
+    ])));
+  });
+  await new Promise(r=>setTimeout(r,250));
   const metric=await page.evaluate(()=>{
    const home=document.querySelector(".sb-utility-strip--home-intro");
    const quiet=document.querySelector(".sb-utility-strip--quiet-transition");
