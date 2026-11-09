@@ -96,9 +96,14 @@ try{
      if(hero)await hero.screenshot({path:path.join(out,safe+'-hero.png')});
      const back=fromHex(bgFor(file,width));
      const status=metric.hero.status,secondary=metric.hero.secondary;
-     const navBlock={file,width,assumedHeroSurface:bgFor(file,width),statusColor:status?.color,secondaryColor:secondary?.color,statusContrast:contrast(rgb(status?.color),back),secondaryContrast:contrast(rgb(secondary?.color),back),fontSize:status?.fontSize,primaryColor:metric.hero.primary?.color,primaryBackground:metric.hero.primary?.backgroundColor,primaryContrast:contrast(rgb(metric.hero.primary?.color),rgb(metric.hero.primary?.backgroundColor))};
+     const individualStatus=metric.hero.statusItems.map(item=>({text:item.text,color:item.color,fontSize:item.fontSize,contrast:contrast(rgb(item.color),back)}));
+     const navBlock={file,width,assumedHeroSurface:bgFor(file,width),statusColor:status?.color,secondaryColor:secondary?.color,statusContrast:contrast(rgb(status?.color),back),statusItems:individualStatus,secondaryContrast:contrast(rgb(secondary?.color),back),fontSize:status?.fontSize,primaryColor:metric.hero.primary?.color,primaryBackground:metric.hero.primary?.backgroundColor,primaryContrast:contrast(rgb(metric.hero.primary?.color),rgb(metric.hero.primary?.backgroundColor))};
      heroEvidence.push(navBlock);
-     if(navBlock.statusContrast!==null&&navBlock.statusContrast<4.5)browserErrors.push({file,width,error:'Hero status contrast below WCAG AA',...navBlock});
+     if(navBlock.statusContrast!==null&&navBlock.statusContrast<4.5)browserErrors.push({file,width,error:'Hero status container contrast below WCAG AA',...navBlock});
+     for(const item of individualStatus){
+       if(item.contrast===null||item.contrast<4.5)browserErrors.push({file,width,error:'Visible hero status item contrast below WCAG AA',item,background:bgFor(file,width)});
+       if(parseFloat(item.fontSize)<14)browserErrors.push({file,width,error:'Visible hero status item font below 14px',item});
+     }
      if(navBlock.secondaryContrast!==null&&navBlock.secondaryContrast<4.5)browserErrors.push({file,width,error:'Hero secondary contrast below WCAG AA',...navBlock});
      if(status&&parseFloat(status.fontSize)<14)browserErrors.push({file,width,error:'Hero status below 14px',fontSize:status.fontSize});
      const link=await page.$('.home-hero-action--secondary');
