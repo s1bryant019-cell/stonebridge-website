@@ -667,7 +667,13 @@ body.home-redesign .home-hero-lede-desktop{display:none;}
  .home-final .home-final-actions a{text-align:center}
 }
 @media(min-width:761px) and (max-width:1024px){
- .home-steps-grid{gap:12px}.home-step-card{padding:18px}
+ .home-steps-grid{gap:12px}
+ .home-step-card{padding:18px}
+}
+@media(min-width:761px) and (max-width:900px){
+ /* A three-card row is too narrow at tablet width; retain the sequential reading order. */
+ .home-steps-grid{grid-template-columns:1fr;max-width:700px;margin:0 auto}
+ .home-step-card{padding:22px 24px}
 }
 </style>
   <style id="stonebridge-home-quiet-transition-20261028">
